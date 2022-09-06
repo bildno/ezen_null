@@ -16,7 +16,6 @@ public class Mycontroller {
 	public String main(Model model) {
 		
 		model.addAttribute("mainPage","main.jsp");
-		
 		return "index";
 	}
 	

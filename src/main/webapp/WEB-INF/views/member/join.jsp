@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>회원가입 페이지</title>
 </head>
-<link rel="stylesheet" href="join.css">
+<link rel="stylesheet" href="css/member/join.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 <body>
 
