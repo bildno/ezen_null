@@ -1,0 +1,66 @@
+/* *{
+    border: 1px solid black;
+} */
+
+.joinForm{
+    text-align: center;
+    border: lightgray 1px solid;
+    width: 500px;
+    margin: 0  auto;
+  
+}
+#insert div input{
+    width: 300px;
+    margin-bottom: 15px;
+}
+
+.container{
+    justify-content: center;
+}
+
+
+.joinForm div input{
+    border: lightgray 1px solid;
+    border-radius: 7px;
+}
+
+.joinForm p{
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 10px;
+    color: gray;
+}
+#insert{
+    color: gray;
+}
+
+#checkForm{
+    color: gray;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 100px;
+}
+#checkForm hr{
+    margin-left: 0px;
+    
+    width: 300px;
+    
+}
+
+#checkForm textarea{
+    width: 300px;
+    
+}
+
+#termsForm {
+ display: flex; 
+ 
+}
+
+#joinbtn{
+    width: 400px;
+    background-color:  white;
+    color: gray;
+    
+}
