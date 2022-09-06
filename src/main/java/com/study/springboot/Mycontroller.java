@@ -15,7 +15,7 @@ public class Mycontroller {
 	@RequestMapping("/main")
 	public String main(Model model) {
 		
-		model.addAttribute("mainPage","host/host.jsp");
+		model.addAttribute("mainPage","main.jsp");
 		return "index";
 	}
 	
