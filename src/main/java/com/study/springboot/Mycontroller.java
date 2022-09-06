@@ -11,11 +11,11 @@ public class Mycontroller {
 	public String root() {
 		return "redirect:main";
 	}
-	
+		
 	@RequestMapping("/main")
 	public String main(Model model) {
 		
-		model.addAttribute("mainPage","one2one2/one2one.jsp");
+		model.addAttribute("mainPage","main.jsp");
 		return "index";
 	}
 	
