@@ -18,12 +18,14 @@
 a {
     float: right;
     margin-right: 50px;
-    
+    text-decoration: none;
 }
 a:visited {
+	text-decoration: none;
     color: gray;
 }
 a:hover {
+	text-decoration: none;
     color: red; 
 }
 #loginbtn{
