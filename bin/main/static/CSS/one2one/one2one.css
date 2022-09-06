@@ -1,5 +1,5 @@
 .accordion {
-    background-color: #ffffff;
+    background-color: #FFFFFF;
     cursor: pointer;
     padding: 16px;
     width: 100%;
@@ -10,24 +10,20 @@
     transition: 0.4s;
 }
 .accordion:hover {
-    background-color: #f5f5f5;
+    background-color: #F5F5F5;
 }
 .active{
     background-color: lightgray;
 }
-
 .accordion:after {
     float: right;
     margin-left: 5px;
 }
-
-
-
 .panel {
     padding: 0 16px;
-    background-color: #ffffff;
+    background-color: #FFFFFF;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
-    border-bottom: 1px solid #eeeeee;
+    border-bottom: 1px solid #EEEEEE;
 }
