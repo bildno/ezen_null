@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <title>Document</title>
 
-    <link rel="stylesheet" href="mypage.css">
+    <link rel="stylesheet" href="CSS/member/mypage.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 </head>
 <body>
@@ -15,7 +15,7 @@
     <div class="section" style="margin-top: 200px;">
         <div class="section1">
             <div class="con1">
-                <img class="con-img1" src="img/cat.png" alt="contents1"><p>
+                <img class="con-img1" src="img/host/cat.png" alt="contents1"><p>
                 <div name="imgchange" style="font-size:10px;">
                     <a href="#">사진변경</a>
                 </div><p>
