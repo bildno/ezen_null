@@ -4,14 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-
-<title>1:1 문의 목록</title>
-<link rel="stylesheet" href="css/main.css">
-<link rel="stylesheet" href="css/one2one/one2one.css">
-
 <title>1:1 문의</title>
-<link rel="stylesheet" href="css/one2one.css">
-
+<link rel="stylesheet" href="css/one2one/one2one.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 </head>
 <body>
