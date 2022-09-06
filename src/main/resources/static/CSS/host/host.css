@@ -1,0 +1,59 @@
+@charset "UTF-8";
+/* * {
+    border: 1px solid black;
+} */
+
+.section {
+    display: flex;
+    justify-content: center;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+    color: rgb(254, 245, 172);
+}
+a:visited {
+    text-decoration: none;
+    color:  rgb(37, 49, 109);
+}
+
+.section1 {
+    width: 30%;
+    height: 70%;
+    display: inline-block;
+    margin-right: 50px;
+    text-align: center;
+    border: 1px solid red;
+}
+
+.hostlist {
+    padding-bottom: 20px;
+}
+
+.con1 {
+    overflow: hidden;
+    height: 300px;
+}
+
+.con-img1 {
+    margin-top: 40px;
+    width: 50%;
+    height: 40%;
+    object-fit: fill;
+}
+
+.section2 {
+    width: 60%;
+    align-self: center;
+    border: 1px solid red;
+}
+
+.con2 table {
+    width: 100%;
+    height: 300px;
+}
+.con2 th, td {
+    padding-left: 20px;
+}
