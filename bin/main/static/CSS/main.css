@@ -1,1 +1,322 @@
-@charset "UTF-8";
+/* * {
+    border: 1px solid black;
+} */
+
+.header {
+    display: flex;
+    background-color: white;
+    color: red;
+    justify-content: space-between;
+}
+
+.small_header {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.search{
+    margin-right: 50px;
+}
+
+#logo{
+    width: 200px; 
+    margin: 20px
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+}
+
+#space {
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 50px;
+    text-align: center;
+}
+
+#text {
+    border-radius:10px; 
+    margin:20px; 
+    width: 400px; 
+    height: 40px; 
+    border: none; 
+    background-color: rgb(238, 238, 238);
+    background-image: url(/img/search.png);
+    background-repeat: no-repeat;
+    background-size: 20px; 
+    background-position: 10px center; 
+    padding:0 35px;
+}
+
+#text:focus {
+    outline: 0.5px solid rgb(151, 210, 236);
+}
+
+.sidelist {
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    background-color:  rgb(238, 238, 238);
+    height: 250px;
+    top: 0;
+    right: 0;
+    color : black;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    border-radius: 10px;
+}
+
+.sidelist a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidelist a:hover {
+    color:  rgb(238, 238, 238);
+}
+
+.sidelist .listoff {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+}
+
+.liston {
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1;
+    background-color: white;
+    color: black;
+    padding: 10px 15px;
+    border: none;
+}
+
+/* .main {
+    border: 1px solid red;
+} */
+
+/* 부트스트랩 */
+#carouselExampleFade {
+    z-index: 0; 
+    align-content: center;
+    margin-top: 100px; 
+    margin-bottom: 100px; 
+    width: 70%; 
+    margin-left: 16%;
+}
+
+#intro{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 300;
+    font-size: 40px;
+}
+
+#info{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 50px;
+    font-weight: 500;
+    color: rgb(254, 245, 172);
+}
+
+#google{
+    width: 230px; 
+    height: 80px;
+    cursor: pointer; 
+}
+
+#apple{
+    width: 250px;
+    margin-bottom: 6px;
+    cursor: pointer; 
+}
+
+.playstore{
+    margin-top: 70px;
+}
+
+/* CONTENTS */
+.container{
+    margin-top: 150px;
+}
+.main{
+    margin-left: 40px;
+}
+.section {
+    background-color: white;
+    text-align: center;
+    justify-content: space-around;
+}
+.section1 {
+    width: 45%;
+    height: 300px;
+    display: inline-block;
+    margin-right: 50px;
+}
+.con1 {
+    overflow: hidden;
+    height: 250px;
+    position: relative;
+}
+h2{
+    position: absolute;
+    top: 60%;
+    left: 10%;
+    color: white;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.con-img1 {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+.section2 {
+    width: 45%;
+    height: 300px;
+    display: inline-block;
+    
+}
+.con2 {
+    overflow: hidden;
+    height: 250px;
+    position: relative;
+}
+.con-img2 {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+.section3 {
+    width: 45%;
+    height: 300px;
+    display: inline-block;
+    margin-right: 50px;
+}
+.con3 {
+    overflow: hidden;
+    height: 250px;
+    position: relative;
+}
+.con-img3 {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+.section4 {
+    width: 45%;
+    height: 300px;
+    display: inline-block;
+    
+}
+.con4 {
+    overflow: hidden;
+    height: 250px;
+    position: relative;
+}
+.con-img4 {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+/* 베너 */
+#banner{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#poster{
+    height: 180px;
+    width: 70%;
+    cursor: pointer;
+    
+}
+h3{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 500;
+}
+
+
+
+/* BEST게시글 */
+
+.aside {
+    background-color: white;
+    margin-top: 100px;
+}
+.hitxt {
+    display: block;
+    font-size: 14px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+}
+.since1 h1 {
+    display: flex;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: gray;
+
+}
+
+
+.sintxt {
+    text-align: justify;
+    margin-left:50px;
+    margin-right:50px;
+    font-size: 16px;
+}
+table {
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+}
+tr {
+    list-style: none;
+}
+tr > td {
+    width: 80%;
+}
+.sintxt li {
+    margin: 10px;
+}
+
+/* 푸터 */
+.footer {
+    background-color: rgb(151, 210, 236);
+    margin-top: 0;
+}
+
+.footer1{
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: 30px;
+}
+
+.footer2{
+    margin-left: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#footera::before{
+    content: "  |  ";
+    margin-left: 8px;
+}
+
+
+#underlogo{
+    font-family: 'Black Han Sans', sans-serif;
+    margin-right: 30px;
+    cursor: pointer;
+}
