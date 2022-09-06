@@ -10,7 +10,7 @@ a {
     color: rgb(37, 49, 109);
     text-decoration: none;
 }
-.hostlist a:hover {
+.mylist a:hover {
     text-decoration: none;
 }
 a:visited {
@@ -24,11 +24,10 @@ a:visited {
     display: inline-block;
     margin-right: 50px;
     text-align: center;
-    border: 1px solid black;
-    background-color: rgb(238, 238, 238);
+    border: 1px solid red;
 }
 
-.hostlist {
+.mylist {
     padding-bottom: 20px;
 }
 
@@ -47,8 +46,7 @@ a:visited {
 .section2 {
     width: 60%;
     align-self: center;
-    border: 1px solid black;
-    background-color: rgb(238, 238, 238);
+    border: 1px solid red;
 }
 
 .con2 table {
@@ -61,11 +59,7 @@ a:visited {
 .con2 a:hover {
     text-decoration: none;
 }
-
-button[type=submit] {
-    float: right;
-    margin-right: 50px;
-    margin-bottom: 50px;
-    background-color: rgb(37, 49, 109);
-    color: rgb(238, 238, 238);
+.con2 a:visited {
+    text-decoration: none;
+    color:  rgb(37, 49, 109);
 }
