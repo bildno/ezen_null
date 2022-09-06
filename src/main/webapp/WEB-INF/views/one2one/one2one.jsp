@@ -9,7 +9,9 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 </head>
 <body>
-<div class="container">
+<<<<<<< HEAD
+ 
+    <div class="container">
         <h2>1:1문의</h2>
         <button class="accordion">1 : 1 문의 1</button>
         <div class="panel">
