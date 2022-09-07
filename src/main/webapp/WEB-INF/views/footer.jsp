@@ -6,10 +6,9 @@
         @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500&display=swap');
     </style>
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"></script>
+    
 
-
-<div class="footer">
+<div class="footer" style="bottom: 0">
         <div>
             <div class=" footer " style="height: 200px; padding-top: 30px;">
                 <div class="footer1" style="font-size: 13px;">
