@@ -143,9 +143,6 @@
 }
 
 /* CONTENTS */
-.container{
-    margin-top: 150px;
-}
 .main{
     margin-left: 40px;
 }
@@ -213,7 +210,6 @@
     width: 45%;
     height: 300px;
     display: inline-block;
-    
 }
 .con4 {
     overflow: hidden;
@@ -290,7 +286,6 @@ tr > td {
     margin: 10px;
 }
 
-/* 푸터 */
 .footer {
     background-color: rgb(151, 210, 236);
     margin-top: 0;

@@ -1,27 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
+<%-- <%@ page trimDirectiveWhitespaces="true" %>  --%>
 
-<head>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/main.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"> -->
     <!-- 부트스트랩 js링크 -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
-        crossorigin="anonymous"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+    crossorigin="anonymous"></script> -->
 
     <!-- 구글웹폰트 링크 -->
-    <style>
+<style>
         @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500&display=swap');
-    </style>
+</style>
 
     <script>
         function playstore() {
@@ -39,12 +34,9 @@
 
 
 
-</head>
-
-<body>
 
     <!-- 헤더 -->
-    <div class="header">
+   <!--  <div class="header">
         <div class="small_header">
             <h1>
                 <a href="#">
@@ -63,7 +55,7 @@
             <a href="#">best 게시글</a>
         </div>
         <button id="liston" class="liston" onclick="sideon()">☰</button>
-    </div>
+    </div> -->
 
     <h1 style="margin: 50px 0px 0px 50px;" id="space">
         어떤 공간을 찾고 계세요?
@@ -267,7 +259,7 @@
 
 
     <!-- 푸터 -->
-    <div class="footer" style="margin-top: 100px;">
+  <!--   <div class="footer" style="margin-top: 100px;">
         <div>
             <div class=" footer " style="height: 200px; padding-top: 30px;">
                 <div class="footer1" style="font-size: 13px;">
@@ -294,7 +286,7 @@
             </div>
         </div>
     </div>    
-
+ -->
 
 
 
@@ -322,6 +314,3 @@
 
         </script>
 
-</body>
-
-</html>
