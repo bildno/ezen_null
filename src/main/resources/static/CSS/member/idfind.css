@@ -1,72 +1,56 @@
-.login{
-    padding-top: 40px;
+
+.title_idfind {
+    margin: 40px 20% 40px 20%;
+}
+
+.contents {
+    width: 60%;
+    margin: 40px 20% 40px 20%;
+    padding: 40px;
     text-align: center;
     margin: 0  auto;
 }
-.id, .pw {
-    
+.enter {
+    display: flex;
+    justify-content: end;
+    margin-right:20%;
+    margin-bottom: 40px;
+}
+.enter > :nth-child(1) {
+    margin-right: 20px;
+}
+.contents hr {
+	margin: 0 20% 20px 20%;
+}
+
+.phone, .name {
     margin-bottom: 30px;
-    width: 400px;
+    width: 60%;
     border-radius: 5px;
     border: 1px solid rgb(238, 238, 238);
 
 }
-
-.login{
-    color:black;
+#idfindbtn{
+    margin-bottom: 150px;
+    width: 60%;
+    background-color: white;
+    border: 1px solid rgb(238, 238, 238);
 }
-#id_find_btn{
-    width: 300px;
+#idchangebtn{
+    margin-bottom: 20px;
+    width: 100px;
+    background-color: white;
+    border: 1px solid rgb(238, 238, 238);
+    font-size: x-small;
 }
-
-#insert div input{
-    margin-bottom: 15px;
-    width: 300px;
+.idknow{
+    margin-bottom: 20px;
+    width: 60%;
+    background-color: white;
+    border: 1px solid rgb(238, 238, 238);
 }
-#id_select input{
-    width: 350px;
-    margin-bottom: 50px;
-}
-
-.login p {
-    text-align: left;
-    margin-top: 20px;
-    margin-left: 20px;
-}
-
-.check {
+.reset {
     display: flex;
-    flex-flow: row nowrap;
-    margin-left: 50px;
-}
-a {
-    float: right;
-    margin-right: 50px;
-    
-}
-a:visited {
-    color: gray;
-}
-a:hover {
-    color: red; 
-}
-#loginbtn{
-    margin-bottom: 10px;
-    width: 400px;
-    background-color: rgb(238, 238, 238);
-    border: 0;
-}
-.yet {
-    font-size: small;
-    color: gray;
-    margin-left: 20px;
-}
-.joingo {
-    display: flex;
-    flex-flow: row;
-    justify-content:space-evenly
-}
-.joingo a {
-    height: 20px;
-    font-size: small;
+    justify-content: right;
+    margin-right: 20%;
 }

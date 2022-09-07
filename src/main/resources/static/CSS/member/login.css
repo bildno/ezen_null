@@ -1,22 +1,30 @@
-.login{
-    text-align: center;
-    margin: 0  auto;
-}
 .id, .pw {
     margin-bottom: 30px;
-    width: 400px;
+    width: 60%;
     border-radius: 5px;
     border: 1px solid rgb(238, 238, 238);
     
 }
+.title_login {
+    margin: 100px 20% 40px 20%;
+}
+
+.contents {
+    /* border: 1px solid black; */
+    width: 60%;
+    margin: 40px 20% 40px 20%;
+    padding: 40px;
+    text-align: center;
+    margin: 0  auto;
+}
 .check {
     display: flex;
     flex-flow: row nowrap;
-    margin-left: 50px;
+    margin-left: 20%;
 }
 #find_a {
     float: right;
-    margin-right: 50px;
+    margin-right: 20%;
     text-decoration: none;
 }
 #find_a:visited {
@@ -28,15 +36,15 @@
     color: red; 
 }
 #loginbtn{
-    margin-bottom: 10px;
-    width: 400px;
+    width: 60%;
+    margin: 0 20% 10px 20%;
     background-color: rgb(238, 238, 238);
     border: 0;
 }
 .yet {
     font-size: small;
     color: gray;
-    margin-left: 20px;
+    margin-left: 20%;
 }
 .joingo {
     display: flex;
