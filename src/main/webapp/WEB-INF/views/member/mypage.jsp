@@ -18,7 +18,7 @@
             </div>
             <div class="mypage_mylist"><p>
                 <a href="/reserveList"><b>예약 내역</b></a><p>
-                <a href="#"><b>내가 쓴 리뷰/게시글</b></a><p>
+                <a href="/mylist"><b>내가 쓴 리뷰/게시글</b></a><p>
                 <a href="#"><b>1:1 문의 내역</b></a><p>
                 <a href="#"><b>ZZIM 한 공간</b></a><p>
                 <span>♥ X ?</span>
