@@ -1,38 +1,36 @@
-    <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <!-- 헤더 -->
-     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500&display=swap');
-    </style>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!-- 헤더 -->
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500&display=swap');
+</style>
     
 
 <html>
 <link rel="stylesheet" href="css/main.css">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"></script>
-        <script>
 
+<script>
 
-            let num = 1;
+	let num = 1;
 
-            function sideon() {
+    function sideon() {
 
-                if (num == 1) {
-                    document.getElementById("sidelist").style.width = "250px";
-                    document.getElementById("liston").style.backgroundColor = " rgb(238, 238, 238)";
-                    num = 0;
-                } else {
-                    document.getElementById("sidelist").style.width = "0";
-                    document.getElementById("liston").style.backgroundColor = "white";
-                    num = 1;
-                }
-            }
+    if (num == 1) {
+    	document.getElementById("sidelist").style.width = "250px";
+		document.getElementById("liston").style.backgroundColor = " rgb(238, 238, 238)";
+		
+		num = 0;
+		} else {
+		document.getElementById("sidelist").style.width = "0";
+		document.getElementById("liston").style.backgroundColor = "white";
+		num = 1;
+		}
+	}
 
-
-        </script>
+</script>
 	
-
     <div class="header">
         <div class="small_header">
             <h1>
