@@ -10,7 +10,7 @@
 </head>
 <body>
  <div class="container">
- <h2 style="color : black">로그인ㄴㄴㄴ</h2>
+ <h2 style="color : black">로그인</h2>
         <div class="login" style="border: navy 1px solid; width: 500px;">
                     <p>로그인</p>
                     <div id="insert">
@@ -26,18 +26,18 @@
                             
                         </div>
                         <div>
-                            <a href="#">아이디 찾기</a>
+                            <a id="find_a" href="#">아이디 찾기</a>
                         </div>
                         <br>
                         <div>
-                            <a href="#" style="margin-bottom: 30px;">비밀번호 찾기</a>
+                            <a id="find_a" href="#" style="margin-bottom: 30px;">비밀번호 찾기</a>
                         </div>
                         <div>
                             <input type="button" value="login" id="loginbtn">
                         </div>
                         <div class="joingo">
                             <p class="yet">아직 스페이스 그라운드 회원이 아니신가요?</p>
-                            <a href="#" style="margin-bottom: 30px;">회원가입</a>
+                            <a id="find_a" href="#" style="margin-bottom: 30px;">회원가입</a>
                         </div>
          </div>
         </div>

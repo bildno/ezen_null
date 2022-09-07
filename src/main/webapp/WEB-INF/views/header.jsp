@@ -19,7 +19,7 @@
             function sideon() {
 
                 if (num == 1) {
-                    document.getElementById("sidelist").style.width = "250px";
+                    document.getElementById("sidelist").style.width = "300px";
                     document.getElementById("liston").style.backgroundColor = " rgb(238, 238, 238)";
                     num = 0;
                 } else {
@@ -46,7 +46,10 @@
         </div>
 
         <div id="sidelist" class="sidelist">
-            <a href="#">홈</a>
+        
+        <a href="/login"><img src="img/member/login.png" alt="" style="width: 30px" /></a>
+        <a href="/mypage">마이페이지</a>
+            <a href="main">홈</a>
             <a href="">고객센터</a>
             <a href="/one2one">one2one</a>
             <a href="#">best 게시글</a>

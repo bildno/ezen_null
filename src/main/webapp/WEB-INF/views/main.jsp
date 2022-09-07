@@ -152,7 +152,7 @@
                         <div class="since1">
                             <h1><img src="/img/star.png" alt="star" style="width: 25px;">전지현</h1>
                             <div class="sintxt">
-                                <table border=1 style="border-color: lightgray;">
+                                <table id="main_table" border=1 style="border-color: lightgray;">
 
                                     <ul class="best-table">
                                         <tr style="list-style: none;">
