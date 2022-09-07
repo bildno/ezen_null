@@ -40,7 +40,7 @@
 <body>
 
     <!-- 헤더 -->
-    <div class="header">
+    <!-- <div class="header">
         <div class="small_header">
             <h1>
                 <a href="#">
@@ -55,11 +55,11 @@
         <div id="sidelist" class="sidelist">
             <a href="#">홈</a>
             <a href="#">고객센터</a>
-            <a href="#">one2one</a>
+            <a href="/one2one">one2one</a>
             <a href="#">best 게시글</a>
         </div>
         <button id="liston" class="liston" onclick="sideon()">☰</button>
-    </div>
+    </div> -->
 
     <h1 style="margin: 50px 0px 0px 50px;" id="space">
         어떤 공간을 찾고 계세요?
@@ -263,7 +263,7 @@
 
 
     <!-- 푸터 -->
-    <div class="footer">
+   <!--  <div class="footer">
         <div>
             <div class=" footer " style="height: 200px; padding-top: 30px;">
                 <div class="footer1" style="font-size: 13px;">
@@ -289,7 +289,7 @@
                 </div>
             </div>
         </div>
-    </div>    
+    </div>     -->
 
 
 
