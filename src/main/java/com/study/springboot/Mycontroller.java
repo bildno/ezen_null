@@ -19,6 +19,17 @@ public class Mycontroller {
 		return "index";
 	}
 	
-	
+	@RequestMapping("/one2one")
+	public String one2one(Model model) {
+		
+		model.addAttribute("mainPage","one2one/one2one.jsp");
+		return "index";
+	}
+	@RequestMapping("/login")
+	public String login(Model model) {
+		
+		model.addAttribute("mainPage","member/login.jsp");
+		return "index";
+	}
 	
 }
