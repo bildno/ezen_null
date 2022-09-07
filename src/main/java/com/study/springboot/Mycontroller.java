@@ -15,7 +15,7 @@ public class Mycontroller {
 	@RequestMapping("/main")
 	public String main(Model model) {
 		
-		model.addAttribute("mainPage","one2one/one2one.jsp");
+		model.addAttribute("mainPage","main.jsp");
 		return "index";
 	}
 	
@@ -32,4 +32,35 @@ public class Mycontroller {
 		return "index";
 	}
 	
+	@RequestMapping("/reserveList")
+	public String reserveList(Model model) {
+		
+		model.addAttribute("mainPage","member/myreserve.jsp");
+		return "index";
+	}
+	
+	
+	@RequestMapping("/mypage")
+	public String mypage(Model model) {
+		
+		
+		model.addAttribute("mainPage","member/mypage.jsp");
+		return "index";
+	}
+	
+	
+	@RequestMapping("/myreserve_info")
+	public String reserve_info(Model model) {
+		
+		model.addAttribute("mainPage","member/myreserve_info.jsp");
+		return "index";
+	}
+	
+	@RequestMapping("/mylist")
+	public String mylist(Model model) {
+		
+		model.addAttribute("mainPage","member/mylist.jsp");
+		return "index";
+	}
+
 }

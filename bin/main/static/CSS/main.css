@@ -59,7 +59,7 @@
     position: fixed;
     z-index: 1;
     background-color:  rgb(238, 238, 238);
-    height: 250px;
+    height: 400px;
     top: 0;
     right: 0;
     color : black;
@@ -143,9 +143,6 @@
 }
 
 /* CONTENTS */
-.container{
-    margin-top: 150px;
-}
 .main{
     margin-left: 40px;
 }
@@ -213,7 +210,6 @@
     width: 45%;
     height: 300px;
     display: inline-block;
-    
 }
 .con4 {
     overflow: hidden;
@@ -275,22 +271,21 @@
     margin-right:50px;
     font-size: 16px;
 }
-table {
+main_table {
     width: 100%;
     text-align: center;
     border-radius: 10px;
 }
-tr {
+main_table tr {
     list-style: none;
 }
-tr > td {
+main_table tr > td {
     width: 80%;
 }
 .sintxt li {
     margin: 10px;
 }
 
-/* 푸터 */
 .footer {
     background-color: rgb(151, 210, 236);
     margin-top: 0;

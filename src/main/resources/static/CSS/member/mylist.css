@@ -1,0 +1,23 @@
+.mylist {
+    margin: 100px 25% 40px 20%;
+}
+
+.myreview {
+
+    width: 60%;
+    margin: 40px 20% 40px 20%;
+}
+.enter {
+    display: flex;
+    justify-content: end;
+    margin-right:20%;
+    margin-bottom: 40px;
+}
+.enter > :nth-child(1) {
+    margin-right: 20px;
+}
+.myboard {
+
+    width: 60%;
+    margin: 40px 20% 40px 20%;
+}

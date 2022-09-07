@@ -1,5 +1,4 @@
 .login{
-    padding-top: 40px;
     text-align: center;
     margin: 0  auto;
 }
@@ -15,16 +14,16 @@
     flex-flow: row nowrap;
     margin-left: 50px;
 }
-a {
+#find_a {
     float: right;
     margin-right: 50px;
     text-decoration: none;
 }
-a:visited {
+#find_a:visited {
 	text-decoration: none;
     color: gray;
 }
-a:hover {
+#find_a:hover {
 	text-decoration: none;
     color: red; 
 }
