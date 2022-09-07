@@ -181,7 +181,7 @@
                         <div class="since1">
                             <h1><img src="/img/star.png" alt="star" style="width: 25px;">변요한</h1>
                             <div class="sintxt">
-                                <table border=1 style="border-color: lightgray;">
+                                <table id="main_table" border=1 style="border-color: lightgray;">
 
                                     <ul>
                                         <tr>
@@ -206,7 +206,7 @@
                         <div class="since1">
                             <h1><img src="/img/star.png" alt="star" style="width: 25px;">김혜수</h1>
                             <div class="sintxt">
-                                <table border=1 style="border-color: lightgray;">
+                                <table id="main_table" border=1 style="border-color: lightgray;">
 
                                     <ul>
                                         <tr>
@@ -231,7 +231,7 @@
                         <div class="since1">
                             <h1><img src="/img/star.png" alt="star" style="width: 25px;">이다희</h1>
                             <div class="sintxt">
-                                <table border=1 style="border-color: lightgray;">
+                                <table id="main_table" border=1 style="border-color: lightgray;">
 
                                     <ul>
                                         <tr>

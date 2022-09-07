@@ -3,10 +3,16 @@
 }
 
 .myreview {
-
     width: 60%;
     margin: 40px 20% 40px 20%;
 }
+.myreview a:link {
+	text-decoration: none;
+}
+.myreview a {
+	color: black;
+}
+
 .enter {
     display: flex;
     justify-content: end;
@@ -16,8 +22,15 @@
 .enter > :nth-child(1) {
     margin-right: 20px;
 }
-.myboard {
 
+.myboard {
     width: 60%;
     margin: 40px 20% 40px 20%;
+}
+.myboard a {
+	color: black;
+}
+.myboard a:link{
+	text-decoration: none;
+
 }
