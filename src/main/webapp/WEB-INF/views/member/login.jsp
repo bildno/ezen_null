@@ -10,10 +10,9 @@
 </head>
 <body>
  <div class="container">
- <h2 style="color : black">로그인</h2>
-        <div class="login" style="border: navy 1px solid; width: 500px;">
-                    <p>로그인</p>
-                    <div id="insert">
+ 		<h2 class="title_login">로그인</h2>
+ 		<hr>
+                    <div class="contents">
                         <div>
                             <input class="id" type="text" placeholder="아이디">
                         </div>
@@ -26,21 +25,20 @@
                             
                         </div>
                         <div>
-                            <a id="find_a" href="#">아이디 찾기</a>
+                            <a id="find_a" href="member/idfind.jsp">아이디 찾기</a>
                         </div>
                         <br>
                         <div>
-                            <a id="find_a" href="#" style="margin-bottom: 30px;">비밀번호 찾기</a>
+                            <a id="find_a" href="member/pwfind.jsp" style="margin-bottom: 30px;">비밀번호 찾기</a>
                         </div>
                         <div>
                             <input type="button" value="login" id="loginbtn">
                         </div>
                         <div class="joingo">
                             <p class="yet">아직 스페이스 그라운드 회원이 아니신가요?</p>
-                            <a id="find_a" href="#" style="margin-bottom: 30px;">회원가입</a>
+                            <a id="find_a" href="member/join.jsp" style="margin-bottom: 30px;">회원가입</a>
                         </div>
          </div>
-        </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>

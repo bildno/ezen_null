@@ -1,66 +1,43 @@
-/* *{
-    border: 1px solid black;
-} */
+.title_join {
+    margin: 40px 20% 40px 20%;
+}
 
-.joinForm{
-    text-align: center;
-    border: lightgray 1px solid;
-    width: 500px;
-    margin: 0  auto;
-  
+.contents {
+    width: 60%;
+    margin: 40px 20% 40px 20%;
+    padding: 40px 0 40px 0;
+    
 }
 #insert div input{
-    width: 300px;
+    width: 60%;
     margin-bottom: 15px;
+    margin-left:20%;
 }
-
-.container{
-    justify-content: center;
-}
-
-
-.joinForm div input{
-    border: lightgray 1px solid;
-    border-radius: 7px;
-}
-
-.joinForm p{
+.contents p{
     text-align: left;
     margin-top: 10px;
-    margin-left: 10px;
     color: gray;
 }
 #insert{
     color: gray;
 }
-
-#checkForm{
-    color: gray;
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    margin-left: 100px;
+.check {
+	display: flex;
+    flex-flow: row nowrap;
+    margin-left: 20%;
 }
-#checkForm hr{
-    margin-left: 0px;
-    
-    width: 300px;
-    
-}
-
 #checkForm textarea{
-    width: 300px;
-    
+    width: 60%;
+    margin-left:20%;
+    margin-bottom: 10px;
 }
-
-#termsForm {
- display: flex; 
- 
-}
-
 #joinbtn{
-    width: 400px;
-    background-color:  white;
+    width: 60%;
+    background-color:white;
     color: gray;
+    margin-left:20%
     
+}
+.contents hr {
+	margin: 40px 20% 40px 20%;
 }

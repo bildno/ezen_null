@@ -16,7 +16,7 @@
             </div>
             <div id="btn_box">
                 <button style=" right: 0; margin-left: 50px;">확인</button>
-                <button>예약취소11</button>
+                <button>예약취소</button>
             </div>
         </div>
       
