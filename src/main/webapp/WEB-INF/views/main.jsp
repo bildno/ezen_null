@@ -30,6 +30,10 @@
         function applestore() {
             window.open("https://www.apple.com/kr/app-store/")
         }
+        // 베너 클릭 시 로그인 팝업 뜨도록
+        function popup() {
+            window.open("login_pop.html","login하기","width=400, height=380, top=10, left=10")
+        }
     </script>
 
 
@@ -111,14 +115,14 @@
                 <div class="section1" onclick="location.href='main.html'" style="cursor:pointer;">
                     <div class="con1">
                         <img class="con-img1" src="img/yoga.jpg" alt="contents1">
-                        <h2>Active room</h2>
+                        <h2 id="main_h2">Active room</h2>
                     </div>
                 </div>
 
                 <div class="section2" onclick="location.href='main.html'" style="cursor:pointer;">
                     <div class="con2">
                         <img class="con-img1" src="img/cafe.jpg" alt="contents2">
-                        <h2>shooting room</h2>
+                        <h2 id="main_h2">shooting room</h2>
                     </div>
                 </div>
 
@@ -126,7 +130,7 @@
                 <div class="section3" onclick="location.href='main.html'" style="cursor:pointer;">
                     <div class="con3">
                         <img class="con-img1" src="img/party.jpg" alt="contents3">
-                        <h2>party room</h2>
+                        <h2 id="main_h2">party room</h2>
                     </div>
                 </div>
 
@@ -134,13 +138,13 @@
                 <div class="section4" onclick="location.href='main.html'" style="cursor:pointer;">
                     <div class="con4">
                         <img class="con-img1" src="img/갤러리.jpg" alt="contents4">
-                        <h2>gallery room</h2>
+                        <h2 id="main_h2">gallery room</h2>
                     </div>
                 </div>
             </div>
 
             <div id="banner">
-                <img src="/img/베너.JPG" alt="banner" id="poster" onclick="location.href='#'">
+                <img src="/img/베너.JPG" alt="banner" id="poster" onclick="popup()">
             </div>
         </div>
     </div>
@@ -150,7 +154,7 @@
             <div class="aside">
                 <div id="history">
                     <div class="hitxt">
-                        <h3>BEST 게시글</h3>
+                        <h3 id="main_h3">BEST 게시글</h3>
                         <hr>
 
                         <div class="since1">
@@ -263,7 +267,7 @@
 
 
     <!-- 푸터 -->
-    <div class="footer">
+    <div class="footer" style="margin-top: 100px;">
         <div>
             <div class=" footer " style="height: 200px; padding-top: 30px;">
                 <div class="footer1" style="font-size: 13px;">

@@ -165,7 +165,7 @@
     height: 250px;
     position: relative;
 }
-h2{
+#main_h2{
     position: absolute;
     top: 60%;
     left: 10%;
@@ -239,7 +239,7 @@ h2{
     cursor: pointer;
     
 }
-h3{
+#main_h3{
     font-family: 'Noto Sans KR', sans-serif;
     font-weight: 500;
 }
