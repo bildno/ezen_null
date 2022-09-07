@@ -59,7 +59,7 @@
     position: fixed;
     z-index: 1;
     background-color:  rgb(238, 238, 238);
-    height: 250px;
+    height: 400px;
     top: 0;
     right: 0;
     color : black;
@@ -271,15 +271,15 @@
     margin-right:50px;
     font-size: 16px;
 }
-table {
+main_table {
     width: 100%;
     text-align: center;
     border-radius: 10px;
 }
-tr {
+main_table tr {
     list-style: none;
 }
-tr > td {
+main_table tr > td {
     width: 80%;
 }
 .sintxt li {
