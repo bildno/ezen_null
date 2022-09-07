@@ -8,6 +8,7 @@
     text-align: left;
     font-size: 16px;
     transition: 0.4s;
+    border : none;
 }
 .accordion:hover {
     background-color: #F5F5F5;

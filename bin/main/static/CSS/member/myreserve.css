@@ -1,0 +1,32 @@
+
+.list{
+    border: 1px solid lightgray;
+    text-align: center;
+    width: 700px;
+    margin: 0 auto;
+    margin-top: 300px;
+    
+}
+.list h4{ 
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+.list div input{
+    width: 400px;
+    margin-right: 30px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+}
+
+.list div .detail_btn{
+    border-radius: 5px;
+    border: 1px solid lightgray;
+}
+
+.list hr{
+    width: 70%;
+    margin-left: 0px;
+}

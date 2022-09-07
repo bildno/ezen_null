@@ -32,4 +32,27 @@ public class Mycontroller {
 		return "index";
 	}
 	
+	@RequestMapping("/reserveList")
+	public String reserveList(Model model) {
+		
+		model.addAttribute("mainPage","member/myreserve.jsp");
+		return "index";
+	}
+	
+	
+	@RequestMapping("/mypage")
+	public String mypage(Model model) {
+		
+		
+		model.addAttribute("mainPage","member/mypage.jsp");
+		return "index";
+	}
+	
+	@RequestMapping("/myreserve_info")
+	public String reserve_info(Model model) {
+		
+		model.addAttribute("mainPage","member/myreserve_info.jsp");
+		return "index";
+	}
+
 }

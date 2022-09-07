@@ -6,7 +6,7 @@
 
     <div class="container">
     <div>
-        <h2>1:1문의ㅁㅇㄴㄴㅁㅇ</h2>
+        <h2>1:1문의</h2>
     </div>
     <div>    
         <button class="accordion">1 : 1 문의 1</button>

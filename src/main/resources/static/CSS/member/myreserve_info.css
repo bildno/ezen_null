@@ -1,0 +1,39 @@
+#reserve_info{
+    text-align: center;
+}
+#reserve_info h4{
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 100px;
+}
+
+#reserve_info div input{
+    width: 50%;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+
+}
+#reserve_info div textarea{
+    width: 50%;
+    margin-top: 30px;
+    border: 1px solid lightgray;
+
+}
+#reserve_info #btn_box button{
+    background-color: rgb(238, 238, 238);
+    border: 1px solid lightgray;
+    
+ 
+}
+#btn_box{
+    text-align: right;
+    margin-right: 130px;
+}
+
+#reserve_info div textarea:focus{
+    outline: none;
+}
+
+#reserve_info div input:focus{
+outline: none;
+}
