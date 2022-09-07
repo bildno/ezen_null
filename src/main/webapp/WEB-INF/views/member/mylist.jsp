@@ -17,19 +17,19 @@
     <div class="myreview">
     		<h4><b>리뷰</b></h4>
     		<hr>
-            <a href="#" style="text-decoration: none;">내가 작성한 리뷰1</a><br>
-            <a href="#" style="text-decoration: none;">내가 작성한 리뷰2</a><br>
-            <a href="#" style="text-decoration: none;">내가 작성한 리뷰3</a><br>
-            <a href="#" style="text-decoration: none;">내가 작성한 리뷰4</a>
+            <a href="#">내가 작성한 리뷰1</a><br>
+            <a href="#">내가 작성한 리뷰2</a><br>
+            <a href="#">내가 작성한 리뷰3</a><br>
+            <a href="#">내가 작성한 리뷰4</a>
     </div>
     <hr>
     <div class="myboard">
     		<h4><b>게시글</b></h4>
     		<hr>
-            <a href="#" style="text-decoration: none;">내가 작성한 게시글1</a><br>
-            <a href="#" style="text-decoration: none;">내가 작성한 게시글2</a><br>
-            <a href="#" style="text-decoration: none;">내가 작성한 게시글3</a><br>
-            <a href="#" style="text-decoration: none;">내가 작성한 게시글4</a>
+            <a href="#">내가 작성한 게시글1</a><br>
+            <a href="#">내가 작성한 게시글2</a><br>
+            <a href="#">내가 작성한 게시글3</a><br>
+            <a href="#">내가 작성한 게시글4</a>
     </div>
     <hr>
     <div class="enter">

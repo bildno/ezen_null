@@ -1,12 +1,16 @@
 /* * {
     border: 1px solid black;
 } */
+li {
+	list-style: none;
+}
 
 .header {
     display: flex;
     background-color: white;
     color: red;
     justify-content: space-between;
+
 }
 
 .small_header {
@@ -97,6 +101,7 @@
     color: black;
     padding: 10px 15px;
     border: none;
+
 }
 
 /* .main {
@@ -271,15 +276,13 @@
     margin-right:50px;
     font-size: 16px;
 }
-main_table {
+#main_table {
     width: 100%;
     text-align: center;
     border-radius: 10px;
 }
-main_table tr {
-    list-style: none;
-}
-main_table tr > td {
+
+#main_table tr > td {
     width: 80%;
 }
 .sintxt li {
