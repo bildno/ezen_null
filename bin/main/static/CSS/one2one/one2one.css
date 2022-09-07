@@ -1,10 +1,10 @@
+
 .accordion {
     background-color: #FFFFFF;
     cursor: pointer;
     padding: 16px;
     width: 100%;
     outline: none;
-    border: none;
     text-align: left;
     font-size: 16px;
     transition: 0.4s;
@@ -27,3 +27,48 @@
     transition: max-height 0.2s ease-out;
     border-bottom: 1px solid #EEEEEE;
 }
+.sidelist {
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    background-color:  rgb(238, 238, 238);
+    height: 250px;
+    top: 0;
+    right: 0;
+    color : black;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    border-radius: 10px;
+}
+
+
+/* .sidelist a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidelist a:hover {
+    color:  rgb(238, 238, 238);
+}
+
+.sidelist .listoff {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+}
+
+.liston {
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1;
+    background-color: white;
+    color: black;
+    padding: 10px 15px;
+    border: none;
+} */

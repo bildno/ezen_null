@@ -15,7 +15,7 @@ public class Mycontroller {
 	@RequestMapping("/main")
 	public String main(Model model) {
 		
-		model.addAttribute("mainPage","one2one/one2one.jsp");
+		model.addAttribute("mainPage","main.jsp");
 		return "index";
 	}
 	

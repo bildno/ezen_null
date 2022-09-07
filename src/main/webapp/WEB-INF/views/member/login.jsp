@@ -11,7 +11,7 @@
 <body>
  <div class="container">
  <h2 style="color : black">로그인ㄴㄴㄴ</h2>
-        <div class="login" style="margin-top:150px; border: navy 1px solid; width: 500px;">
+        <div class="login" style="border: navy 1px solid; width: 500px;">
                     <p>로그인</p>
                     <div id="insert">
                         <div>

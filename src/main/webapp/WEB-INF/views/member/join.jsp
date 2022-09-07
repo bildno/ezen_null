@@ -1,14 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>회원가입 페이지</title>
-</head>
-<link rel="stylesheet" href="css/member/join.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-<body>
+    <link rel="stylesheet" href="css/member/join.css">
 
 <div class="main">
 
@@ -55,6 +47,3 @@
         </div>
 
     </div>
-
-</body>
-</html>
