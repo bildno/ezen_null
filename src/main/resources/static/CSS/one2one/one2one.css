@@ -1,7 +1,6 @@
 #one2one_h1{
     font-family: 'Do Hyeon', sans-serif; 
     margin-left: 10%;
-    margin-top: 200px; 
     font-size: 50px;
     display: flex;
     flex-flow: row nowrap;
@@ -44,7 +43,7 @@
     width: 0;
     position: fixed;
     z-index: 1;
-    background-color:  rgb(238, 238, 238);
+    background-color: rgb(238, 238, 238);
     height: 250px;
     top: 0;
     right: 0;
@@ -54,9 +53,14 @@
     padding-top: 60px;
     border-radius: 10px;
 }
-.writebtn {
+.write {
 	display:flex;
 	justify-content: end;
+}
+.writebtn {
+	background-color: rgb(238, 238, 238);
+	padding:5px;
+	
 }
 
 /* .sidelist a {

@@ -22,8 +22,8 @@
             <p>1 : 1 문의 답변 3</p>
         </div>
         <br>
-        <div class="writebtn">
-       	<input type="button" value="글쓰기" onclick="location.href='/one2one_write'">
+        <div class="write">
+       	<input class="writebtn" type="button" value="글쓰기" onclick="location.href='/one2one_write'">
        	</div>
         </div>
          
