@@ -25,13 +25,6 @@ public class Mycontroller {
 		model.addAttribute("mainPage","one2one/one2one.jsp");
 		return "index";
 	}
-	@RequestMapping("/one2one_write")
-	public String one2one_write(Model model) {
-		
-		model.addAttribute("mainPage","one2one/one2one_write.jsp");
-		return "index";
-	}
-	
 	@RequestMapping("/login")
 	public String login(Model model) {
 		
@@ -69,24 +62,11 @@ public class Mycontroller {
 		model.addAttribute("mainPage","member/mylist.jsp");
 		return "index";
 	}
-
-	@RequestMapping("/member_join")
-	public String join(Model model) {
-		
-		model.addAttribute("mainPage","member/join.jsp");
-		return "index";
-	}
+	
 	@RequestMapping("/service")
 	public String service(Model model) {
 		
 		model.addAttribute("mainPage","service/service.jsp");
-		return "index";
-	}
-	
-	@RequestMapping("/idfind")
-	public String idfind(Model model) {
-		
-		model.addAttribute("mainPage","member/idfind.jsp");
 		return "index";
 	}
 	
@@ -95,17 +75,5 @@ public class Mycontroller {
 		
 		
 		return "/member/login_pop";
-	}
-	@RequestMapping("/pwfind")
-	public String pwfind(Model model) {
-		
-		model.addAttribute("mainPage","member/pwfind.jsp");
-		return"index";
-	}
-	@RequestMapping("/mywish")
-	public String mywish(Model model) {
-		
-		model.addAttribute("mainPage","member/mywish.jsp");
-		return"index";
 	}
 }

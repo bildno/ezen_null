@@ -33,11 +33,11 @@
     </script>
     <div class="container">
           <h1 style="font-family: 'Noto Sans KR', sans-serif; font-size: 20px; margin: 20px; font-weight: 500;" >
-            <img src="/img/member/circle.png" style="width: 10px; margin-right: 5px; margin-bottom: 5px;">잠시만요! 혹시 로그인 하셨나요?</h1>
+            <img src="/img/pop/circle.png" style="width: 10px; margin-right: 5px; margin-bottom: 5px;">잠시만요! 혹시 로그인 하셨나요?</h1>
         <h2 style="font-family: 'Noto Sans KR', sans-serif; font-size: 16px; color: gray; margin: 20px;">아직 로그인을 안하셨다면</h2>
         <div class="login_img" style="margin-top: 35px;">
-          <img src="/img/member/네이버.png" alt="네이버" style="width: 200px; margin-left: 20px; height: 40px; margin-top: 10px; cursor: pointer;" onclick="naver();">
-          <img src="/img/member/구글.png" alt="구글" style="width: 220px; margin-left :10px; margin-top: 10px; cursor: pointer;" onclick="google();">
+          <img src="/img/pop/네이버.png" alt="네이버" style="width: 200px; margin-left: 20px; height: 40px; margin-top: 10px; cursor: pointer;" onclick="naver();">
+          <img src="/img/pop/구글.png" alt="구글" style="width: 220px; margin-left :10px; margin-top: 10px; cursor: pointer;" onclick="google();">
         </div>
         
         

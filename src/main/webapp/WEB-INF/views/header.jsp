@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
 <style>
-	@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');/*   */
+	@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
 	@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
 	@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500&display=swap');
 </style>
@@ -31,32 +31,31 @@
                     num = 1;
                 }
             }
-            
+
+
         </script>
 </head>
 <body>
     <div class="header">
         <div class="small_header">
             <h1>
-                <a href="#">
-                    <img src="/img/로고.JPG" id="logo">
+                <a href="/main">
+                    <img src="/img/로고 완성본.png" id="logo">
                 </a>
             </h1>
-            <div class="search" style="margin-top: 5px;">
+            <div class="search" style="margin-top: 15px;">
                 <input type="text" id="text">
             </div>
         </div>
 
         <div id="sidelist" class="sidelist">
         
-        <a href="/login"><img src="img/member/login.png" alt="" style="width: 30px" /></a>
+        <a href="/login"><img src="img/member/login.png" alt="" style="width: 20px" /></a>
         <a href="/mypage">마이페이지</a>
             <a href="main">홈</a>
-            <a href="service">고객센터</a>
-            <a href="/one2one">one2one</a>
+            <a href="/service">고객센터</a>
+            <a href="one2one">one2one</a>
             <a href="#">best 게시글</a>
         </div>
-        <button id="liston" class="liston" onclick="sideon()">
-        	<img src="/img/sidelisticon.png" alt="sidelist" id="sidelisticon" />
-        </button>
+        <button id="liston" class="liston" onclick="sideon()">☰</button>
     </div>

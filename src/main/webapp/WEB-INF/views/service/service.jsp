@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<link rel="stylesheet" href="css/service/service.css">
+<link rel="stylesheet" href="/css/service/service.css">
 
 <div class="container">     
 
     <h1 id="service_h1">고객센터</h1>
     <h2 id="service_h2">공지사항과 도움말을 확인해주세요
-        <img src="/img/space_icon.png" alt="space_icon" id="space_icon">
+        <img src="/img/service/space_icon.png" alt="space_icon" id="space_icon">
     </h2>
     
     <!-- 공지사항 -->

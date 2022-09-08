@@ -10,24 +10,23 @@ li {
     background-color: white;
     color: red;
     justify-content: space-between;
+
 }
 
 .small_header {
     display: flex;
     flex-direction: row;
-    z-index: 1;
-    position: fixed;
 }
 
 
 .search{
     margin-right: 50px;
-    
+
 }
 
 #logo{
-    width: 200px; 
-    margin: 20px
+    width: 250px; 
+    margin-left: 15px
 }
 
 .nav {
@@ -40,7 +39,12 @@ li {
     font-family: 'Black Han Sans', sans-serif;
     font-size: 50px;
     text-align: center;
-
+    transition-duration: 0.5s;
+	transition-timing-function: ease-out;
+}
+#space:hover{
+	transition:0.5s;
+	transform:translateY(-5px);
 }
 
 #text {
@@ -66,7 +70,7 @@ li {
     position: fixed;
     z-index: 1;
     background-color:  rgb(238, 238, 238);
-    height: 400px;
+    height: 330px;
     top: 0;
     right: 0;
     color : black;
@@ -74,11 +78,9 @@ li {
     transition: 0.5s;
     padding-top: 60px;
     border-radius: 10px;
-}
-#sidelisticon {
-	width: 50px;
-	height: 50px;
-	margin-top: 5px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 300;
+   
 }
 
 .sidelist a {
@@ -95,11 +97,10 @@ li {
 }
 
 .sidelist .listoff {
-    /* position: absolute; */
-    top: 5px;
+    position: absolute;
+    top: 0;
     right: 25px;
     font-size: 36px;
-    position: fixed;
 }
 
 .liston {
@@ -110,9 +111,7 @@ li {
     color: black;
     padding: 10px 15px;
     border: none;
-	right: 0;
-	
-	position: fixed;
+
 }
 
 /* .main {
@@ -130,15 +129,13 @@ li {
 }
 
 #intro{
-    font-family: 'Noto Sans KR', sans-serif;
-    font-weight: 300;
+    font-family: 'Do Hyeon', sans-serif;
     font-size: 40px;
 }
 
 #info{
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 50px;
-    font-weight: 500;
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 60px;
     color: rgb(254, 245, 172);
 }
 
@@ -190,6 +187,22 @@ li {
     height: 100%;
     object-fit: fill;
 }
+.section1:hover{
+	transform: scale(1.1);
+	transition:0.5s;
+}
+.section2:hover{
+	transform: scale(1.1);
+	transition:0.5s;
+}
+.section3:hover{
+	transform: scale(1.1);
+	transition:0.5s;
+}
+.section4:hover{
+	transform: scale(1.1);
+	transition:0.5s;
+}
 .section2 {
     width: 45%;
     height: 300px;
@@ -240,10 +253,44 @@ li {
 
 /* 베너 */
 #banner{
-    margin-top: 50px;
+    margin-top: 100px;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    position: relative;
+}
+video{
+	width:100%;
+	height:300px;
+	object-fit:cover;
+}
+#more{
+	width:150px;
+	position:absolute;
+	top:25%;
+	left:80%;
+	transition-duration: 1s;
+	transition-timing-function: ease-out;
+}
+#more:hover{
+	transform: rotate( -45deg );
+	transition: all ease 1s;
+}
+.banner_ad{
+	position:absolute;
+	font-family: 'Black Han Sans', sans-serif;
+	color: white;
+	font-size:75px;
+	top: 10%;
+    left: 10%;
+}
+.banner_ad2{
+	position:absolute;
+	font-family: 'Black Han Sans', sans-serif;
+	color: white;
+	font-size:40px;
+	top: 50%;
+    left: 10%;
 }
 #poster{
     height: 180px;
@@ -260,6 +307,9 @@ li {
 
 /* BEST게시글 */
 
+.hits{
+	margin-bottom:150px;
+}
 .aside {
     background-color: white;
     margin-top: 100px;
@@ -302,7 +352,7 @@ li {
 
 .footer {
     background-color: rgb(151, 210, 236);
-    margin-top: 100px;
+    margin-top: 0;
 }
 
 .footer1{

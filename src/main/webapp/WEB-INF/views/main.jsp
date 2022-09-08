@@ -30,7 +30,7 @@
             window.open("https://www.apple.com/kr/app-store/")
         }
         // 베너 클릭 시 로그인 팝업 뜨도록
-         function popup() {
+ 		function popup() {
             /* window.open("member/login_pop","login하기","width=400, height=380, top=10, left=10") */
             let popurl = "/member/login_pop";
         	let popPosition = "width=400, height=380, top=10, left=10";
@@ -38,13 +38,6 @@
         	console.log(popPosition);
         	window.open(popurl,"팝업 열기",popPosition);
         } 
-        
-        /* unction popup(){
-        	let popurl = "/member/logion_pop";
-        	let popPostion = "width=400, height=380, top=10, left=10";
-        	
-        	window.open(popurl,"팝업 열기",popPosition);
-        } */
     </script>
 
 
@@ -73,7 +66,7 @@
         <button id="liston" class="liston" onclick="sideon()">☰</button>
     </div> -->
 
-    <h1 style="margin: 100px 0px 0px 50px;" id="space">
+    <h1 style="margin: 50px 0px 0px 50px;" id="space">
         어떤 공간을 찾고 계세요?
     </h1>
 
@@ -130,7 +123,7 @@
                 <div class="section2" onclick="location.href='main.html'" style="cursor:pointer;">
                     <div class="con2">
                         <img class="con-img1" src="img/cafe.jpg" alt="contents2">
-                        <h2 id="main_h2">shooting room</h2>
+                        <h2 id="main_h2">Shooting room</h2>
                     </div>
                 </div>
 
@@ -138,7 +131,7 @@
                 <div class="section3" onclick="location.href='main.html'" style="cursor:pointer;">
                     <div class="con3">
                         <img class="con-img1" src="img/party.jpg" alt="contents3">
-                        <h2 id="main_h2">party room</h2>
+                        <h2 id="main_h2">Party room</h2>
                     </div>
                 </div>
 
@@ -146,15 +139,18 @@
                 <div class="section4" onclick="location.href='main.html'" style="cursor:pointer;">
                     <div class="con4">
                         <img class="con-img1" src="img/갤러리.jpg" alt="contents4">
-                        <h2 id="main_h2">gallery room</h2>
+                        <h2 id="main_h2">Gallery room</h2>
                     </div>
                 </div>
             </div>
-
-            <div id="banner">
-                <img src="/img/베너.JPG" alt="banner" id="poster"  onclick="popup()">
-            </div>
         </div>
+    </div>
+    <div id="banner">
+       <video src="/img/light.mp4" muted autoplay loop >       
+       </video>
+       <h1 class="banner_ad">지금 바로</h1>
+	   <h2 class="banner_ad2">4개의 클래스와 공간에서 즐겨보세요</h2>
+	   <img alt="더보기" src="/img/더보기.png" id="more" onclick="popup()" style="cursor:pointer;">
     </div>
 
     <div class="hits">
