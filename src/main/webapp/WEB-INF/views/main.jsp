@@ -191,7 +191,7 @@
 									onMouseOver="this.style.backgroundColor='#eeeeee'"
 									onMouseOut="this.style.backgroundColor='#FFFFFF'">
 										<td >
-											<li>123123123</li>
+											<li>1231231233</li>
 										</td>
 										<td>조회수</td>
 									</tr>
