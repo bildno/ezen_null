@@ -1,7 +1,14 @@
 /* * {
     border: 1px solid black;
 } */
-
+#mypage_h1{
+    font-family: 'Do Hyeon', sans-serif; 
+    margin-left: 50px;
+    margin-top: 50px; 
+    font-size: 50px;
+    display: flex;
+    flex-flow: row nowrap;
+}
 .mypage_section {
     display: flex;
     justify-content: center;
@@ -20,8 +27,9 @@ a {
     display: inline-block;
     margin-right: 50px;
     text-align: center;
-    border: 1px solid red;
-}
+    border: 1px solid rgb(238, 238, 238);
+    border-radius:5%;
+    }
 
 .mypage_mylist {
     padding-bottom: 20px;
@@ -31,7 +39,9 @@ a {
     overflow: hidden;
     height: 300px;
 }
-
+.mypage_con1 hr {
+	margin:0 20% 0 20%;
+} 
 .mypage_con-img1 {
     margin-top: 40px;
     width: 50%;
@@ -42,13 +52,12 @@ a {
 .mypage_section2 {
     width: 60%;
     align-self: center;
-    border: 1px solid red;
 }
-
 .mypage_con2 table {
-    width: 100%;
+	width: 100%;
     height: 300px;
-    
+	border: 1px solid rgb(238, 238, 238);
+    border-radius:5%;
 }
 
 .mypage_con2 th, td {

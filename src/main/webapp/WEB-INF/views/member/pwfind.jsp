@@ -7,9 +7,7 @@
 
 
 	<div class="container">
-        <!-- <div class="login" style="margin-top:150px; border: navy 1px solid; width: 500px;"> -->
-                    <h2 class="title_pwfind">비밀번호 찾기</h2>
-                    <hr>
+                    <h1 id="idfind_h1">비밀번호 찾기</h1>
                     <div class="contents">
                         <div>
                             <input class="id" type="text" placeholder="아이디">

@@ -7,8 +7,7 @@ pageEncoding="UTF-8"%>
 
 
 	<div class="container">
-                    <h2 class="title_idfind">아이디 찾기</h2>
-                    <hr>
+                    <h1 id="idfind_h1">아이디 찾기</h1>
                     <div class="contents">
                         <div>
                             <input class="name" type="text" placeholder="이름">

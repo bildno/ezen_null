@@ -2,8 +2,7 @@
     pageEncoding="UTF-8"%>
     <link rel="stylesheet" href="css/member/join.css">
         <div class="container">
-      		 <h2 class="title_join">회원가입</h2>
-      		 <hr>
+      		 <h1 id="join_h1">회원가입</h1>
             <div class="contents">
             <div id="insert">
                 <div>

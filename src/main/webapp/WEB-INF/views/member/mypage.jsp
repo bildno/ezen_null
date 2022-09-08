@@ -3,10 +3,12 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="CSS/member/mypage.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-
+    
+    
     <div class="container">
-	
-    <div class="mypage_section" style="margin-top: 200px;">
+	<h1 id="mypage_h1">프로필 관리</h1>
+  
+    <div class="mypage_section" style="margin-top: 100px;">
         <div class="mypage_section1">
             <div class="mypage_con1">
                 <img class="mypage_con-img1" src="img/host/cat.png" alt="contents1"><p>
