@@ -130,7 +130,7 @@
 				style="cursor: pointer;">
 				<div class="con1">
 					<img class="con-img1" src="img/yoga.jpg" alt="contents1">
-					<h2 id="main_h2">Active room</h2>
+					<h2 id="main_h2">Active Class</h2>
 				</div>
 			</div>
 
@@ -138,7 +138,7 @@
 				style="cursor: pointer;">
 				<div class="con2">
 					<img class="con-img1" src="img/cafe.jpg" alt="contents2">
-					<h2 id="main_h2">Shooting room</h2>
+					<h2 id="main_h2">Shooting Class</h2>
 				</div>
 			</div>
 
@@ -147,7 +147,7 @@
 				style="cursor: pointer;">
 				<div class="con3">
 					<img class="con-img1" src="img/party.jpg" alt="contents3">
-					<h2 id="main_h2">Party room</h2>
+					<h2 id="main_h2">Party Class</h2>
 				</div>
 			</div>
 
@@ -156,7 +156,7 @@
 				style="cursor: pointer;">
 				<div class="con4">
 					<img class="con-img1" src="img/갤러리.jpg" alt="contents4">
-					<h2 id="main_h2">Gallery room</h2>
+					<h2 id="main_h2">Gallery Class</h2>
 				</div>
 			</div>
 		</div>
