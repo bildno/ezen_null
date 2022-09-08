@@ -187,18 +187,20 @@
 							<table id="main_table" border=1 style="border-color: lightgray;">
 
 								<ul class="best-table">
-									<tr style="list-style: none;">
-										<td>
+									<tr style="list-style: none;"
+									onMouseOver="this.style.backgroundColor='#eeeeee'"
+									onMouseOut="this.style.backgroundColor='#FFFFFF'">
+										<td >
 											<li>123123123</li>
 										</td>
 										<td>조회수</td>
 									</tr>
-									<tr style="list-style: none;">
-										<td>
-											<li>123123123</li>
-										</td>
-										<td>조회수</td>
-									</tr>
+								<tr style="list-style: none;">
+									<td>
+										<li>123123123</li>
+									</td>
+									<td>조회수</td>
+								</tr>
 								</ul>
 
 							</table>
@@ -286,7 +288,7 @@
 
 						</div>
 						<hr>
-						<img  src="/img/topmove.png" alt="" class="movetopbtn" />
+						<img src="/img/topmove.png" alt="" class="movetopbtn" />
 					</div>
 
 				</div>
@@ -341,19 +343,11 @@
 
 		if (num == 1) {
 			document.getElementById("sidelist").style.width = "250px";
-<<<<<<< HEAD
 			num = 0;
 		} else {
 			document.getElementById("sidelist").style.width = "0";
-=======
-	
-			num = 0;
-		} else {
-			document.getElementById("sidelist").style.width = "0";
-
->>>>>>> DO
 			num = 1;
-		}
+		} 
 	}
 </script>
 <script>
