@@ -7,7 +7,7 @@
 
     <h1 id="service_h1">고객센터</h1>
     <h2 id="service_h2">공지사항과 도움말을 확인해주세요
-        <img src="/img/space_icon.png" alt="space_icon" id="space_icon">
+        <img src="/img/service/space_icon.png" alt="space_icon" id="space_icon">
     </h2>
     
     <!-- 공지사항 -->
