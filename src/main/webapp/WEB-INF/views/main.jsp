@@ -339,11 +339,11 @@
 
 		if (num == 1) {
 			document.getElementById("sidelist").style.width = "250px";
-			document.getElementById("liston").style.backgroundColor = " rgb(238, 238, 238)";
+	
 			num = 0;
 		} else {
 			document.getElementById("sidelist").style.width = "0";
-			document.getElementById("liston").style.backgroundColor = "white";
+
 			num = 1;
 		}
 	}

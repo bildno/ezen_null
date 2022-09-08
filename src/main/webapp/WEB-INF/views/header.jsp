@@ -74,10 +74,8 @@
             <a href="#">best 게시글</a>
         </div>
         <img  class="liston" src="/img/sidelisticon.png" alt="sidelisticon" id="sidelisticon" onclick="sideon()" />
-        <button id="liston" class="liston" onclick="sideon()" style="background-color: black">
-        	
-        </button>
+		
     </div>
-        </div>
+   </div>
 
       

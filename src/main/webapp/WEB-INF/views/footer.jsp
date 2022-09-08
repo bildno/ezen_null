@@ -5,11 +5,11 @@
         <div>
             <div class=" footer " style="height: 200px; padding-top: 30px;">
                 <div class="footer1" style="font-size: 13px;">
-                    <a id="footera" href="" style="color: white;">이용약관 </a>
-                    <a id="footera" href="" style="color: white;">개인정보처리방침</a>
-                    <a id="footera" href="" style="color: white;">운영정책</a>
-                    <a id="footera" href="" style="color: white;">콘텐츠산업진흥법에 의한 표시</a>
-                    <a id="footera" href="" style="color: white;">고객문의</a>
+                    <b><a id="footera" href="" style="color: grey;">이용약관 </a></b>
+                    <b><a id="footera" href="" style="color: grey;">개인정보처리방침</a></b>
+                    <b><a id="footera" href="" style="color: grey;">운영정책</a></b>
+                    <b><a id="footera" href="" style="color: grey;">콘텐츠산업진흥법에 의한 표시</a></b>
+                    <b><a id="footera" href="" style="color: grey;">고객문의</a></b>
                 </div>
                 <hr>
                 <div class="footer2">
