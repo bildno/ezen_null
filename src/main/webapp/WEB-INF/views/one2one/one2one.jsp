@@ -5,10 +5,10 @@
 
 
     <div class="container">
-    <div>
+    <div class="one2one_title">
         <h2>1:1문의</h2>
     </div>
-    <div>    
+    <div>   
         <button class="accordion">1 : 1 문의 1</button>
         <div class="panel">
             <p>1 : 1 문의 답변 1</p>

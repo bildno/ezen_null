@@ -1,4 +1,7 @@
-
+.one2one_title {
+	margin-top: 50px;
+	font-family: 'Do Hyeon', sans-serif;
+}
 .accordion {
     background-color: #FFFFFF;
     cursor: pointer;
