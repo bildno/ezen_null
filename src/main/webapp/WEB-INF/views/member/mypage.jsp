@@ -8,7 +8,7 @@
     <div class="container">
 	<h1 id="mypage_h1">프로필 관리</h1>
   
-    <div class="mypage_section" style="margin-top: 100px;">
+    <div class="mypage_section" style="margin-top: 50px;">
         <div class="mypage_section1">
             <div class="mypage_con1">
                 <img class="mypage_con-img1" src="img/host/cat.png" alt="contents1"><p>

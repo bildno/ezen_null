@@ -1,7 +1,7 @@
 #idfind_h1{
     font-family: 'Do Hyeon', sans-serif; 
     margin-left: 220px;
-    margin-top: 50px; 
+    margin-top: 100px; 
     font-size: 50px;
     display: flex;
     flex-flow: row nowrap;
@@ -40,8 +40,8 @@
 }
 #pwfindbtn{
 	padding : 10px;
-	 border-radius: 5px;
-    margin-bottom: 150px;
+	border-radius: 5px;
+    margin-bottom: 80px;
     width: 60%;
     background-color: white;
     border: 1px solid rgb(238, 238, 238);

@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
     <link rel="stylesheet" href="css/member/myreserve.css">
  <div class="container">
-  <h1>예약 리스트</h1>
+  <h1 id="myreserve_title">예약 리스트</h1>
         <div class="list"> 
             <div id="myreserve_list">
                 <div>

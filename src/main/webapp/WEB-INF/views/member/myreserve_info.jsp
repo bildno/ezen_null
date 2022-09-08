@@ -5,7 +5,7 @@
 <div class="container">
 
         <div id="reserve_info">
-            <h4>예약 공간 상세</h4>
+            <h1>예약 공간 상세</h1>
         <hr>
             <img style="border-radius: 5px" id="reserve_info_image" src="img/member/image1jpg.jpg" alt="">
         <hr>

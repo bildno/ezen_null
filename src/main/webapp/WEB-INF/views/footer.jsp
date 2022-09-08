@@ -1,7 +1,7 @@
-  <%@ page language="java" contentType="text/html; charset=UTF-8"
+ <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-  <link rel="stylesheet" href="css/main.css">
- <div class="footer" style="margin-top: 100px;">
+ <link rel="stylesheet" href="css/main.css">
+ <div class="footer">
         <div>
             <div class=" footer " style="height: 200px; padding-top: 30px;">
                 <div class="footer1" style="font-size: 13px;">

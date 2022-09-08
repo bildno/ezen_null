@@ -1,11 +1,13 @@
 #reserve_info{
     text-align: center;
+    
 }
 
-#reserve_info h4{
+#reserve_info h1 {
     text-align: left;
-    margin-top: 100px;
-    margin-left: 100px;
+    margin: 100px 0 0 15%;
+    font-family: 'Do Hyeon', sans-serif;
+    font-weight: 500px;
 }
 
 #info_list{
