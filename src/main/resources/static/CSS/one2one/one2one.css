@@ -1,3 +1,8 @@
+.container{
+	margin-top:150px;
+	margin-bottom:100px;
+}
+
 #one2one_h1{
     font-family: 'Do Hyeon', sans-serif; 
     margin-left: 50px;
@@ -17,7 +22,8 @@
 .contents {
 	font-family : 'Noto Sans KR' , sans-serif;
 	width:80%;
-	margin: 0 10% 0 10%;
+	margin: 50px 10% 0 10%;
+	
 }
 .accordion {
     background-color: #FFFFFF;
@@ -46,10 +52,8 @@
 }
 #o_ans1,#o_ans2,#o_ans3,#o_ans4,#o_ans5{
 	font-family: 'Noto Sans KR', sans-serif;
-    font-size: 15px;
-    font-weight: 300;
-    color: gray;
-    margin-left: 10px;
+    font-weight: 500;
+    padding: 15px;
 }
 .panel {
     padding: 0 16px;
@@ -74,7 +78,15 @@
     border-radius: 10px;
 }
 .writebtn {
+	border: none; border-radius:3px;
+    width: 70px; padding: 5px; font-size: 13px;
+    background-color:rgb(238, 238, 238);
+    font-family: 'Noto Sans KR'; font-weight: 300;
+}
+
+.write{
 	display:flex;
+	flex-direction:row-reverse;
 	justify-content: end;
 }
 
