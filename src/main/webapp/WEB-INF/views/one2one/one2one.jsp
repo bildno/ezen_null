@@ -44,7 +44,7 @@
             var back = document.getElementsByClassName("accordion");
             for (i = 0; i < acc.length; i++) {
                 acc[i].addEventListener("click", function () {
-                    this.classList.toggle("active");
+                    this.classList.toggle("actives");
                     var panel = this.nextElementSibling;
                     if (panel.style.maxHeight) {
                         console.log(panel.style.maxHeight);
