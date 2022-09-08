@@ -23,7 +23,7 @@
         </div>
         <br>
         <div class="writebtn">
-       	<input type="button" value="글쓰기" onclick="location='/one2one_write'">
+       	<input type="button" value="글쓰기" onclick="location.href='/one2one_write'">
        	</div>
         </div>
          

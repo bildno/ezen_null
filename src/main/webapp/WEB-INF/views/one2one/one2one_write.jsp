@@ -10,7 +10,7 @@
 </head>
 <body>
 <div class="container">
-<h2>1:1 문의하기</h2>
+<h2 id="one2one_write">1:1 문의하기</h2>
 <hr />
 <div class="one2one">
 <div class="type">

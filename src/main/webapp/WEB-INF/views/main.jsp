@@ -73,7 +73,7 @@
         <button id="liston" class="liston" onclick="sideon()">☰</button>
     </div> -->
 
-    <h1 style="margin: 50px 0px 0px 50px;" id="space">
+    <h1 style="margin: 100px 0px 0px 50px;" id="space">
         어떤 공간을 찾고 계세요?
     </h1>
 
