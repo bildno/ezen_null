@@ -1,5 +1,6 @@
 #reserve_info{
     text-align: center;
+    margin-bottom: 50px;
     
 }
 
@@ -7,15 +8,17 @@
     text-align: left;
     margin: 100px 0 0 15%;
     font-family: 'Do Hyeon', sans-serif;
-    font-weight: 500px;
+    
 }
 
 #info_list{
 	font-family : 'Noto Sans KR' , sans-serif;
+	font-weight: 300;
 }
 
 #reserve_info div input{
     width: 50%;
+	padding: 10px;
     border-radius: 5px;
     border: 1px solid lightgray;
 
@@ -26,6 +29,9 @@
 }
 #reserve_info div textarea{
     width: 50%;
+    
+    font-family : 'Noto Sans KR';
+	font-weight : 300;
     margin-top: 30px;
     border: 1px solid lightgray;
     text-align: center;
@@ -36,6 +42,12 @@
 #reserve_info #btn_box button{
     background-color: rgb(238, 238, 238);
     border: 1px solid lightgray;
+	font-family : 'Noto Sans KR';
+	font-weight : 300;
+    padding: 10px 5px 10px 5px;
+    border-radius: 3px;
+    padding: 5px;
+    font-size: 13px;
     
  
 }
@@ -43,6 +55,8 @@
     text-align: right;
     margin-right: 130px;
 }
+
+
 
 #reserve_info div textarea:focus{
     outline: none;
