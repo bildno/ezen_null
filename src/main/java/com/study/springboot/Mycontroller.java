@@ -63,4 +63,20 @@ public class Mycontroller {
 		return "index";
 	}
 
+	@RequestMapping("/member_join")
+	public String join(Model model) {
+		
+		model.addAttribute("mainPage","member/join.jsp");
+		return "index";
+	}
+	
+	@RequestMapping("/idfind")
+	public String idfind(Model model) {
+		
+		model.addAttribute("mainPage","member/idfind.jsp");
+		return "index";
+	}
+	
+	
+	
 }

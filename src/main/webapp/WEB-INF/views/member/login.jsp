@@ -25,7 +25,7 @@
                             
                         </div>
                         <div>
-                            <a id="find_a" href="member/idfind.jsp">아이디 찾기</a>
+                            <a id="find_a" href="/idfind">아이디 찾기</a>
                         </div>
                         <br>
                         <div>
@@ -36,7 +36,7 @@
                         </div>
                         <div class="joingo">
                             <p class="yet">아직 스페이스 그라운드 회원이 아니신가요?</p>
-                            <a id="find_a" href="member/join.jsp" style="margin-bottom: 30px;">회원가입</a>
+                            <a id="find_a" href="member_join" style="margin-bottom: 30px;">회원가입</a>
                         </div>
          </div>
     </div>

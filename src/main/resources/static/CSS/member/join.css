@@ -9,6 +9,7 @@
     
 }
 #insert div input{
+	border-radius : 5px;
     width: 60%;
     margin-bottom: 15px;
     margin-left:20%;
@@ -27,6 +28,7 @@
     margin-left: 20%;
 }
 #checkForm textarea{
+	border-radius : 5px;
     width: 60%;
     margin-left:20%;
     margin-bottom: 10px;

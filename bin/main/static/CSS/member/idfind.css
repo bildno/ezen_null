@@ -54,3 +54,7 @@
     justify-content: right;
     margin-right: 20%;
 }
+
+#confirm_btn{
+	border: 1px solid lightgray;
+}
