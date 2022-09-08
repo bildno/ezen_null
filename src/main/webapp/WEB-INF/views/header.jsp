@@ -56,7 +56,7 @@
         <div class="small_header  deactive">
             <h1>
                 <a href="/main">
-                    <img src="/img/로고 완성본.png" id="logo">
+                    <img src="/img/로고 진짜최종 완성본.png" id="logo">
                 </a>
             </h1>
             <div class="search" style="margin-top: 15px;">
