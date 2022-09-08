@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="css/member/login.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 </head>
-<body>
+<body> 
  <div class="container">
  		<h2 class="title_login">로그인</h2>
  		<hr>

@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 
     <div class="container">
-
+	
     <div class="mypage_section" style="margin-top: 200px;">
         <div class="mypage_section1">
             <div class="mypage_con1">

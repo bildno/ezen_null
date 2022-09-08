@@ -1,0 +1,23 @@
+.container > h2 {
+    margin: 40px 20% 40px 20%;
+}
+
+.contents {
+    /* border: 1px solid black; */
+    width: 60%;
+    margin: 40px 20% 40px 20%;
+    padding: 40px;
+    text-align: center;
+    margin: 0  auto;
+}
+.title_wish {
+    margin: 100px 20% 40px 20%;
+}
+.wish {
+    margin-bottom: 30px;
+    width: 60%;
+    margin-left: 20%;
+}
+.wish input {
+    width: 60%;
+}
