@@ -6,8 +6,7 @@
 </head>
 <body>
     <div class="container">
-                    <h2 class="title_wish">찜 목록</h2>
-                    <hr>
+                    <h1 id="wish_h1">찜 목록</h1>
                     <div class="contents">
                         <div class="wish">
                             <input type="text" value="찜내역1">
