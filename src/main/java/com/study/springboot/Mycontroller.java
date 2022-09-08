@@ -62,5 +62,18 @@ public class Mycontroller {
 		model.addAttribute("mainPage","member/mylist.jsp");
 		return "index";
 	}
-
+	
+	@RequestMapping("/service")
+	public String service(Model model) {
+		
+		model.addAttribute("mainPage","service/service.jsp");
+		return "index";
+	}
+	
+	@RequestMapping("/member/login_pop")
+	public String login_pop() {
+		
+		
+		return "/member/login_pop";
+	}
 }

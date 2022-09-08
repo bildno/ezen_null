@@ -39,22 +39,22 @@
     <div class="header">
         <div class="small_header">
             <h1>
-                <a href="#">
-                    <img src="/img/로고.JPG" id="logo">
+                <a href="/main">
+                    <img src="/img/로고 완성본.png" id="logo">
                 </a>
             </h1>
-            <div class="search" style="margin-top: 5px;">
+            <div class="search" style="margin-top: 15px;">
                 <input type="text" id="text">
             </div>
         </div>
 
         <div id="sidelist" class="sidelist">
         
-        <a href="/login"><img src="img/member/login.png" alt="" style="width: 30px" /></a>
+        <a href="/login"><img src="img/member/login.png" alt="" style="width: 20px" /></a>
         <a href="/mypage">마이페이지</a>
             <a href="main">홈</a>
-            <a href="">고객센터</a>
-            <a href="/one2one">one2one</a>
+            <a href="/service">고객센터</a>
+            <a href="one2one">one2one</a>
             <a href="#">best 게시글</a>
         </div>
         <button id="liston" class="liston" onclick="sideon()">☰</button>
