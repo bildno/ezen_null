@@ -1,10 +1,15 @@
 #reserve_info{
     text-align: center;
 }
+
 #reserve_info h4{
     text-align: left;
     margin-top: 10px;
     margin-left: 100px;
+}
+
+#info_list{
+	font-family : 'Noto Sans KR' , sans-serif;
 }
 
 #reserve_info div input{

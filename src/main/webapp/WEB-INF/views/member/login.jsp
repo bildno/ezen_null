@@ -28,7 +28,7 @@
                         </div>
                         <br>
                         <div>
-                            <a id="find_a" href="member/pwfind.jsp" style="margin-bottom: 30px;">비밀번호 찾기</a>
+                            <a id="find_a" href="pwfind" style="margin-bottom: 30px;">비밀번호 찾기</a>
                         </div>
                         <div>
                             <input type="button" value="login" id="loginbtn">
