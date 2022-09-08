@@ -1,4 +1,15 @@
-
+#one2one_h1{
+    font-family: 'Do Hyeon', sans-serif; 
+    margin-left: 200px;
+    margin-top: 50px; 
+    font-size: 50px;
+    display: flex;
+    flex-flow: row nowrap;
+}
+.contents {
+	width:80%;
+	margin: 0 10% 0 10%;
+}
 .accordion {
     background-color: #FFFFFF;
     cursor: pointer;
@@ -42,7 +53,10 @@
     padding-top: 60px;
     border-radius: 10px;
 }
-
+.writebtn {
+	display:flex;
+	justify-content: end;
+}
 
 /* .sidelist a {
     padding: 8px 8px 8px 32px;

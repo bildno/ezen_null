@@ -5,10 +5,8 @@
 
 
     <div class="container">
-    <div>
-        <h2>1:1문의</h2>
-    </div>
-    <div>    
+        <h1 id="one2one_h1">1 : 1 문의</h1>
+    <div class=contents>    
         <button class="accordion">1 : 1 문의 1</button>
         <div class="panel">
             <p>1 : 1 문의 답변 1</p>
@@ -23,6 +21,10 @@
         <div class="panel">
             <p>1 : 1 문의 답변 3</p>
         </div>
+        <br>
+        <div class="writebtn">
+       	<input type="button" value="글쓰기" onclick="location='/one2one_write'">
+       	</div>
         </div>
          
         <script>
