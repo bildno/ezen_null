@@ -33,8 +33,8 @@
             <p id=o_ans5>1 : 1 문의 답변 5</p>
         </div>
         <br>
-        <div class="writebtn">
-       	<input type="button" value="글쓰기" onclick="location.href='/one2one_write'">
+        <div class="write">
+       	<input class="writebtn" type="button" value="글쓰기" onclick="location.href='/one2one_write'">
        	</div>
         </div>
          
