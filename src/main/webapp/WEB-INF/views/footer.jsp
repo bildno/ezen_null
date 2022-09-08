@@ -14,7 +14,7 @@
                 <hr>
                 <div class="footer2">
                     <div id="infoft">
-                        <p style="margin-bottom: 0; margin-top: 15px; font-size: 14px;">회사 : Space Ground, 주소 : 서울특별시 강남구 삼성로 414, 대표 : 이OO
+                        <p style="margin-bottom: 0; margin-top: 15px; font-size: 14px;">회사 : Space Ground, 주소 : 서울특별시 강남구 삼성로 414, 대표 : 애착인형
                         </p>
                         <p style="margin-bottom: 0; font-size: 14px;"> 고객지원 : 010-0000-0000, FAX : 1599-8282(평일 오전10시 ~ 오후5시 - 점심1시 ~ 2시 ),
                             EMAIL : office@spacegound.net, 사업자등록번호 : 000-00-00000, 통신판매업 : 제2022-서울강남-00000호</p>
