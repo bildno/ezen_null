@@ -6,7 +6,8 @@
 
         <div id="reserve_info">
             <h4>예약 공간 상세</h4>
-            <img src="img/member/image1jpg.jpg" alt="">
+        <hr>
+            <img style="border-radius: 5px" id="reserve_info_image" src="img/member/image1jpg.jpg" alt="">
         <hr>
             <div>
                 <input type="text" value="예약 공간 이름" readonly>

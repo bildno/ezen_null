@@ -22,9 +22,9 @@ pageEncoding="UTF-8"%>
                         <div>
                             <input style="text-align: left;" class="idknow" type="text" placeholder="아이디 : ">
                         </div>
-                        <div class="reset">
-                            <input type="button" value="아이디 재설정" id="idchangebtn">
-                        </div>
+              <div>
+              	<button id="confirm_btn" onclick="location.href='/login'">확인</button>
+              </div>          
          </div>
         </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

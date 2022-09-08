@@ -13,10 +13,17 @@
     border: 1px solid lightgray;
 
 }
+
+#reserve_info_image{
+	border-radius: 5px;	
+}
 #reserve_info div textarea{
     width: 50%;
     margin-top: 30px;
     border: 1px solid lightgray;
+    text-align: center;
+	margin-left: auto;
+	margin-right: auto;
 
 }
 #reserve_info #btn_box button{

@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
 <style>
-	@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');/*   */
 	@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
 	@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500&display=swap');
 </style>
@@ -53,7 +53,7 @@
         <a href="/login"><img src="img/member/login.png" alt="" style="width: 30px" /></a>
         <a href="/mypage">마이페이지</a>
             <a href="main">홈</a>
-            <a href="">고객센터</a>
+            <a href="service">고객센터</a>
             <a href="/one2one">one2one</a>
             <a href="#">best 게시글</a>
         </div>
