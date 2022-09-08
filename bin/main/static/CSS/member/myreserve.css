@@ -1,5 +1,8 @@
-#myreserve_title {
-	margin-top: 100px;
+#myreserve_h1 {
+	font-family: 'Do Hyeon', sans-serif; 
+    margin-left: 50px;
+    margin-top: 100px; 
+    font-size: 50px;
 }
 
 .list{
@@ -8,6 +11,7 @@
     width: 700px;
     margin: 0 auto;
     margin-top: 20px;
+    margin-bottom: 50px;
     
 }
 .container h1{ 
