@@ -387,6 +387,13 @@ video{
     background-color:  rgb(238, 238, 238);
     margin-top: 0;
 }
+.movetopbtn {
+  position: fixed;
+  bottom: 1rem;
+  right: 0;
+  width: 4rem;
+  height: 4rem;
+}
 
 .footer1{
     display: flex;
