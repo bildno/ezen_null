@@ -16,6 +16,7 @@ li {
 .small_header {
     display: flex;
     flex-direction: row;
+    position: fixed;
 }
 
 
@@ -97,10 +98,11 @@ li {
 }
 
 .sidelist .listoff {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 25px;
     font-size: 36px;
+    
 }
 
 .liston {
@@ -111,7 +113,6 @@ li {
     color: black;
     padding: 10px 15px;
     border: none;
-
 }
 
 /* .main {
