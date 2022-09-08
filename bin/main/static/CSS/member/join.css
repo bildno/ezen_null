@@ -1,11 +1,11 @@
 #join_h1{
     font-family: 'Do Hyeon', sans-serif; 
-    margin-left: 50px;
+    margin-left: 220px;
     margin-top: 50px; 
     font-size: 50px;
     display: flex;
     flex-flow: row nowrap;
-    margin-bottom: 100px;
+    margin-bottom: 30px;
 }
 .contents {
 	font-family : 'Noto Sans KR' , sans-serif;
