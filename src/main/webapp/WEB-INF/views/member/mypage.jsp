@@ -30,7 +30,7 @@
         <div class="mypage_section2">
             <div class="mypage_con2" >
 
-               <table border="1">
+               <table>
                     <tr>
                         <th>닉네임</th>
                         <td>이용자 닉네임</td>
