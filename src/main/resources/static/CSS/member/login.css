@@ -1,10 +1,11 @@
 #login_h1{
     font-family: 'Do Hyeon', sans-serif; 
-    margin-left: 200px;
+    margin-left: 220px;
     margin-top: 50px; 
     font-size: 50px;
     display: flex;
     flex-flow: row nowrap;
+    margin-bottom: 30px;
 }
 .id, .pw {
     margin-bottom: 15px;
@@ -49,7 +50,7 @@
     background-color: rgb(238, 238, 238);
     border: 0;
     padding: 10px;
-     border-radius: 5px;
+    border-radius: 5px;
 }
 .yet {
     font-size: small;

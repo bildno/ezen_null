@@ -11,7 +11,7 @@
 <body> 
  <div class="container">
  		<h1 id="login_h1">로그인</h1>
-                    <div class="contents">
+                    <div class="contents" >
                         <div>
                             <input class="id" type="text" placeholder="아이디">
                         </div>
