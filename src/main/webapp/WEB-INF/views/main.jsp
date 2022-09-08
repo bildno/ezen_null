@@ -286,6 +286,7 @@
 
 						</div>
 						<hr>
+						<img src="/img/topmove.png" alt="" class="movetopbtn" />
 					</div>
 
 				</div>
@@ -346,6 +347,14 @@
 			document.getElementById("liston").style.backgroundColor = "white";
 			num = 1;
 		}
+	}
+</script>
+<script>
+	const $topBtn = document.querySelector(".movetopbtn");
+
+	//버튼 클릭 시 맨 위로 이동
+	$topBtn.onclick = () => {
+	window.scrollTo({ top: 0, behavior: "smooth" });  
 	}
 </script>
 
