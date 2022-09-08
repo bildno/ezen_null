@@ -73,8 +73,13 @@
             <a href="one2one">one2one</a>
             <a href="#">best 게시글</a>
         </div>
+<<<<<<< HEAD
         <img class="liston" src="/img/sidelisticon.png" alt="sidelisticon" id="sidelisticon" onclick="sideon()" />
+=======
+        <img  class="liston" src="/img/sidelisticon.png" alt="sidelisticon" id="sidelisticon" onclick="sideon()" />
+		
+>>>>>>> DO
     </div>
-        </div>
+   </div>
 
       

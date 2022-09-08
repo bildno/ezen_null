@@ -341,9 +341,17 @@
 
 		if (num == 1) {
 			document.getElementById("sidelist").style.width = "250px";
+<<<<<<< HEAD
 			num = 0;
 		} else {
 			document.getElementById("sidelist").style.width = "0";
+=======
+	
+			num = 0;
+		} else {
+			document.getElementById("sidelist").style.width = "0";
+
+>>>>>>> DO
 			num = 1;
 		}
 	}
