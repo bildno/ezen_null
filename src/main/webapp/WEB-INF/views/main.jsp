@@ -30,9 +30,21 @@
             window.open("https://www.apple.com/kr/app-store/")
         }
         // 베너 클릭 시 로그인 팝업 뜨도록
-        function popup() {
-            window.open("login_pop.html","login하기","width=400, height=380, top=10, left=10")
-        }
+         function popup() {
+            /* window.open("member/login_pop","login하기","width=400, height=380, top=10, left=10") */
+            let popurl = "/member/login_pop";
+        	let popPosition = "width=400, height=380, top=10, left=10";
+        	console.log(popurl);
+        	console.log(popPosition);
+        	window.open(popurl,"팝업 열기",popPosition);
+        } 
+        
+        /* unction popup(){
+        	let popurl = "/member/logion_pop";
+        	let popPostion = "width=400, height=380, top=10, left=10";
+        	
+        	window.open(popurl,"팝업 열기",popPosition);
+        } */
     </script>
 
 
@@ -140,7 +152,7 @@
             </div>
 
             <div id="banner">
-                <img src="/img/베너.JPG" alt="banner" id="poster" onclick="popup()">
+                <img src="/img/베너.JPG" alt="banner" id="poster"  onclick="popup()">
             </div>
         </div>
     </div>

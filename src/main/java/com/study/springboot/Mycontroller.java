@@ -69,6 +69,12 @@ public class Mycontroller {
 		model.addAttribute("mainPage","member/join.jsp");
 		return "index";
 	}
+	@RequestMapping("/service")
+	public String service(Model model) {
+		
+		model.addAttribute("mainPage","service/service.jsp");
+		return "index";
+	}
 	
 	@RequestMapping("/idfind")
 	public String idfind(Model model) {
@@ -77,6 +83,11 @@ public class Mycontroller {
 		return "index";
 	}
 	
-	
+	@RequestMapping("/member/login_pop")
+	public String login_pop() {
+		
+		
+		return "/member/login_pop";
+	}
 	
 }
