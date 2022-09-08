@@ -15,9 +15,9 @@
     <div class="tb_notice">
     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
         <div class="panel panel-default" id="panel" onMouseOver="this.className='noti_over'" onMouseOut="this.className='noti_'">
-          <div class="panel-heading" role="tab" id="headingOne" >
+          <div class="panel-heading" role="tab" id="headingOne1" >
             <h4 class="panel-title">
-              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" id="num1">
+              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne1" aria-expanded="true" aria-controls="collapseOne1" id="num1">
                 [공지]스페이스그라운드 개인정보처리방침 변경안내
               </a>
               <span id="span1">
@@ -25,16 +25,16 @@
               </span>
             </h4>
           </div>
-          <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne" >
+          <div id="collapseOne1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne1" >
             <div class="panel-body" id="noti_answer">
               답변입니다^^
             </div>
           </div>
         </div>
         <div class="panel panel-default" id="panel" onMouseOver="this.className='noti_over'" onMouseOut="this.className='noti_'">
-          <div class="panel-heading" role="tab" id="headingTwo">
+          <div class="panel-heading" role="tab" id="headingTwo2">
             <h4 class="panel-title">
-              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" id="num2">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo2" id="num2">
                 [공지]스페이스그라운드 위치기반서비스 이용약관 변경안내
               </a>
               <span id="span2">
@@ -42,16 +42,16 @@
               </span>
             </h4>
           </div>
-          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div id="collapseTwo2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo2">
             <div class="panel-body" id="noti_answer">
               답변입니다^^
             </div>
           </div>
         </div>
         <div class="panel panel-default" id="panel" onMouseOver="this.className='noti_over'" onMouseOut="this.className='noti_'">
-          <div class="panel-heading" role="tab" id="headingThree">
+          <div class="panel-heading" role="tab" id="headingThree3">
             <h4 class="panel-title">
-              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree" id="num3">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree3" aria-expanded="false" aria-controls="collapseThree3" id="num3">
                 [공지]스페이스그라운드 이용약관 변경안내
               </a>
               <span id="span3">
@@ -59,16 +59,16 @@
               </span>
             </h4>
           </div>
-          <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div id="collapseThree3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree3">
             <div class="panel-body" id="noti_answer">
               답변입니다^^
             </div>
           </div>
         </div>
         <div class="panel panel-default" id="panel" onMouseOver="this.className='noti_over'" onMouseOut="this.className='noti_'">
-            <div class="panel-heading" role="tab" id="headingFour">
+            <div class="panel-heading" role="tab" id="headingFour4">
               <h4 class="panel-title">
-                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour" id="num4">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour4" aria-expanded="false" aria-controls="collapseFour4" id="num4">
                   [공지]SG 출석도장 이벤트 안내
                 </a>
                 <span id="span4">
@@ -76,16 +76,16 @@
                 </span>
               </h4>
             </div>
-            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+            <div id="collapseFour4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour4">
               <div class="panel-body" id="noti_answer">
                 답변입니다^^
               </div>
             </div>
           </div>
         <div class="panel panel-default" id="panel" onMouseOver="this.className='noti_over'" onMouseOut="this.className='noti_'">
-            <div class="panel-heading" role="tab" id="headingFive">
+            <div class="panel-heading" role="tab" id="headingFive5">
               <h4 class="panel-title">
-                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive" id="num5">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive5" aria-expanded="false" aria-controls="collapseFive5" id="num5">
                   [공지]신규 고객 사이트 이용방법 안내
                 </a>
                 <span id="span5">
@@ -93,7 +93,7 @@
                 </span>
               </h4>
             </div>
-            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+            <div id="collapseFive5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive5">
               <div class="panel-body" id="noti_answer">
                 답변입니다^^
               </div>
