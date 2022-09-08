@@ -9,6 +9,7 @@
         <hr>
             <img style="border-radius: 5px" id="reserve_info_image" src="img/member/image1jpg.jpg" alt="">
         <hr>
+        <div id="info_list">
             <div>
                 <input type="text" value="예약 공간 이름" readonly>
             </div>
@@ -20,6 +21,6 @@
                 <button>예약취소</button>
             </div>
         </div>
-      
+      </div>
        
     </div>

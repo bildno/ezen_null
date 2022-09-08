@@ -89,5 +89,11 @@ public class Mycontroller {
 		
 		return "/member/login_pop";
 	}
+	@RequestMapping("/pwfind")
+	public String pwfind(Model model) {
+		
+		model.addAttribute("mainPage","member/pwfind.jsp");
+		return"index";
+	}
 	
 }

@@ -16,6 +16,8 @@
     
 }
 .contents {
+	font-family: 'Noto Sans KR ', sans-serif;
+	font-weight:300px;
     border: 1px solid  rgb(238, 238, 238);
     width: 60%;
     margin: 10px 20% 40px 20%;
