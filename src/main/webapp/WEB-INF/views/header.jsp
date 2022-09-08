@@ -32,12 +32,28 @@
                 }
             }
 
+            $(function(){
+                // 스크롤 시 header fade-in
+                $(document).on('scroll', function(){
+                    if($(window).scrollTop() > 100){
+                        $(".small_header").removeClass("deactive");
+                   
+                        $(".small_header").addClass("active");
+                      
+                    }else{
+                        $(".small_header").removeClass("active");
+                       
+                    }
+                })
 
+            });
         </script>
+
+        
 </head>
 <body>
     <div class="header">
-        <div class="small_header">
+        <div class="small_header  deactive">
             <h1>
                 <a href="/main">
                     <img src="/img/로고 완성본.png" id="logo">
@@ -46,9 +62,9 @@
             <div class="search" style="margin-top: 15px;">
                 <input type="text" id="text">
             </div>
-        </div>
-
-        <div id="sidelist" class="sidelist">
+            
+            
+        <div id="sidelist" class="sidelist" >
         
         <a href="/login"><img src="img/member/login.png" alt="" style="width: 20px" /></a>
         <a href="/mypage">마이페이지</a>
@@ -57,7 +73,11 @@
             <a href="one2one">one2one</a>
             <a href="#">best 게시글</a>
         </div>
-        <button id="liston" class="liston" onclick="sideon()">
-        	<img src="/img/sidelisticon.png" alt="sidelisticon" id="sidelisticon" />
+        <img  class="liston" src="/img/sidelisticon.png" alt="sidelisticon" id="sidelisticon" onclick="sideon()" />
+        <button id="liston" class="liston" onclick="sideon()" style="background-color: black">
+        	
         </button>
     </div>
+        </div>
+
+      
