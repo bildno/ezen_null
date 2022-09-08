@@ -10,17 +10,19 @@ li {
     background-color: white;
     color: red;
     justify-content: space-between;
-
 }
 
 .small_header {
     display: flex;
     flex-direction: row;
+    z-index: 1;
+    position: fixed;
 }
 
 
 .search{
     margin-right: 50px;
+    
 }
 
 #logo{
@@ -38,6 +40,7 @@ li {
     font-family: 'Black Han Sans', sans-serif;
     font-size: 50px;
     text-align: center;
+
 }
 
 #text {
@@ -71,6 +74,8 @@ li {
     transition: 0.5s;
     padding-top: 60px;
     border-radius: 10px;
+    
+
 }
 
 .sidelist a {
@@ -87,10 +92,12 @@ li {
 }
 
 .sidelist .listoff {
-    position: absolute;
+    /* position: absolute; */
     top: 0;
     right: 25px;
     font-size: 36px;
+    
+    position: fixed;
 }
 
 .liston {
@@ -101,7 +108,9 @@ li {
     color: black;
     padding: 10px 15px;
     border: none;
-
+	right: 0;
+	
+	position: fixed;
 }
 
 /* .main {

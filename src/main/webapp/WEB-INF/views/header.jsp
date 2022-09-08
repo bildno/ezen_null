@@ -31,8 +31,7 @@
                     num = 1;
                 }
             }
-
-
+            
         </script>
 </head>
 <body>
