@@ -29,17 +29,17 @@
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"></script>
 <script>
-	let num = 1;
+	 num = 1;
 
 	function sideon() {
 
 		if (num == 1) {
 			document.getElementById("sidelist").style.width = "300px";
-			document.getElementById("liston").style.backgroundColor = " rgb(238, 238, 238)";
+
 			num = 0;
 		} else {
 			document.getElementById("sidelist").style.width = "0";
-			document.getElementById("liston").style.backgroundColor = "white";
+
 			num = 1;
 		}
 	}
@@ -88,3 +88,14 @@
 
 		</div>
 	</div>
+	<img src="/img/topmove.png" alt="" class="movetopbtn" />
+	
+	
+	<script>
+	const $topBtn = document.querySelector(".movetopbtn");
+
+	//버튼 클릭 시 맨 위로 이동
+	$topBtn.onclick = () => {
+	window.scrollTo({ top: 0, behavior: "smooth" });  
+	}
+</script>

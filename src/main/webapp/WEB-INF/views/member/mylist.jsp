@@ -12,6 +12,10 @@
 	
 	
     <h1 class="mylist">내가 쓴 리뷰/게시글</h1>
+    <h2 id="mylist_exp">
+		리뷰와 게시글을 확인해주세요
+		<img src="/img/service/space_icon.png" alt="space_icon"id="space_icon">
+	</h2>
     <hr>
     <!-- class="contents" 부터 내용 입력 -->
     <div class="myreview">
