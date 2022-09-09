@@ -24,7 +24,7 @@
                             
                         </div>
                         <div>
-                            <a id="find_a" href="/idfind">아이디 찾기</a>
+                            <a id="find_a" href="idfind">아이디 찾기</a>
                         </div>
                         <br>
                         <div>

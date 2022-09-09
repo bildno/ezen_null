@@ -5,7 +5,18 @@
     font-size: 50px;
     display: flex;
     flex-flow: row nowrap;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+}
+#idfind_exp{
+	font-family: 'Do Hyeon', sans-serif; 
+    font-weight: 300; 
+    margin-left: 220px;
+    font-size: 20px; 
+
+    color: rgb(37, 49, 109)
+}
+#space_icon{
+    width: 30px;
 }
 .contents {
 	font-family : 'Noto Sans KR' , sans-serif;
@@ -15,7 +26,7 @@
     padding: 40px;
     text-align: center;
     margin: 0  auto;
-    border-radius:5%;
+    border-radius:5px;
 }
 .enter {
     display: flex;
@@ -44,6 +55,7 @@
     background-color: white;
     border: 1px solid rgb(238, 238, 238);
     padding: 10px;
+    border-radius: 5px;	
 }
 #idchangebtn{
     margin-bottom: 20px;
@@ -57,9 +69,18 @@
     width: 60%;
     background-color: white;
     border: 1px solid rgb(238, 238, 238);
+    border-radius: 5px;
+    padding: 10px;
 }
 .reset {
     display: flex;
     justify-content: right;
     margin-right: 20%;
+}
+
+#confirm_btn{
+	padding : 10px;
+	width : 300px;
+	border-radius: 5px;
+	border: 1px solid rgb(238, 238, 238);
 }

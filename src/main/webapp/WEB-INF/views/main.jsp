@@ -288,7 +288,7 @@
 
 						</div>
 						<hr>
-						<img src="/img/topmove.png" alt="" class="movetopbtn" />
+						<!-- <img src="/img/topmove.png" alt="" class="movetopbtn" /> -->
 					</div>
 
 				</div>
@@ -336,12 +336,12 @@
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"></script>
 
-<script>
+<!-- <script>
 	const $topBtn = document.querySelector(".movetopbtn");
 
 	//버튼 클릭 시 맨 위로 이동
 	$topBtn.onclick = () => {
 	window.scrollTo({ top: 0, behavior: "smooth" });  
 	}
-</script>
+</script> -->
 

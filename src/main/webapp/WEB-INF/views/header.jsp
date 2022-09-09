@@ -88,3 +88,14 @@
 
 		</div>
 	</div>
+	<img src="/img/topmove.png" alt="" class="movetopbtn" />
+	
+	
+	<script>
+	const $topBtn = document.querySelector(".movetopbtn");
+
+	//버튼 클릭 시 맨 위로 이동
+	$topBtn.onclick = () => {
+	window.scrollTo({ top: 0, behavior: "smooth" });  
+	}
+</script>
