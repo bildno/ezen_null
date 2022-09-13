@@ -25,6 +25,13 @@ public class Mycontroller {
 		model.addAttribute("mainPage", "contents/community.jsp");
 		return "index";
 	}
+	
+	@RequestMapping("/community_info")
+	public String community_info(Model model) {
+		
+		model.addAttribute("mainPage", "contents/community_info.jsp");
+		return "index";
+	}
 
 	@RequestMapping("/one2one")
 	public String one2one(Model model) {
