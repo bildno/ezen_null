@@ -39,12 +39,12 @@
 				<input type="checkbox" id="terms_1">
 				<p style="margin: 0 0 0 5px">약관 1</p>
 			</div>
-			<textarea name="terms_1_content" rows="1" readonly>약관내용1</textarea>
+			<textarea name="terms_1_content" rows="1" readonly style="resize:none;">약관내용1</textarea>
 			<div class="check">
 				<input type="checkbox" id="terms_2">
 				<p style="margin: 0 0 0 5px">약관 2</p>
 			</div>
-			<textarea name="terms_2_content" rows="1" readonly>약관내용2</textarea>
+			<textarea name="terms_2_content" rows="1" readonly style="resize:none;">약관내용2</textarea>
 		</div>
 		<div>
 			<input type="button" value="회원가입" id="joinbtn">
