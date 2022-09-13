@@ -1,4 +1,4 @@
-#reserve_info {
+#review_info {
 	text-align: center;
 	margin-bottom: 50px;
 }
@@ -28,14 +28,14 @@
 	text-align: center;
 }
 
-#reserve_info div input {
+#review_info div input {
 	width: 80%;
 	padding: 10px;
 	border-radius: 5px;
-	border: 1px solid lightgray;
+	border: none;
 }
 
-#reserve_exp {
+#review_exp {
 	font-family: 'Do Hyeon', sans-serif;
 	font-weight: 300;
 	margin-left: 100px;
@@ -65,19 +65,18 @@
 	border-radius: 5px;
 }
 
-#reserve_info div textarea {
+#review_info div textarea {
 	width: 80%;
 	font-family: 'Noto Sans KR';
 	font-weight: 300;
 	margin-top: 30px;
 	border: 1px solid lightgray;
-	border-radius : 5px;
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-#reserve_info #btn_box button {
+#review_info #btn_box button {
 	background-color: rgb(238, 238, 238);
 	border: 1px solid lightgray;
 	font-family: 'Noto Sans KR';
@@ -90,13 +89,13 @@
 
 #btn_box {
 	text-align: right;
-	margin-right: 130px;
+	margin-right: 110px;
 }
 
-#reserve_info div textarea:focus {
+#review_info div textarea:focus {
 	outline: none;
 }
 
-#reserve_info div input:focus {
+#review_info div input:focus {
 	outline: none;
 }
