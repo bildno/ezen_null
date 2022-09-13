@@ -51,7 +51,7 @@
 				<input type="text" value="예약 공간 이름" readonly id="reserve_title">
 			</div>
 			<div>
-				<textarea name="예약공간 설명" id="" cols="30" rows="10" readonly>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure itaque odit ipsum ab facere, facilis voluptatem, nobis voluptas commodi veritatis vitae ipsa debitis est inventore pariatur sunt sapiente soluta fuga. lo</textarea>
+				<textarea name="예약공간 설명" id="" cols="30" rows="10" style="resize: none" readonly>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure itaque odit ipsum ab facere, facilis voluptatem, nobis voluptas commodi veritatis vitae ipsa debitis est inventore pariatur sunt sapiente soluta fuga. lo</textarea>
 			</div>
 
 		</div>
@@ -63,7 +63,7 @@
 			207KCg7Lu07ZOo7YSw7ZWZ7JuQIOydmOygleu2gOy6oO2NvOyKpA!5e0!3m2!1sko!2skr!4v16
 			63034928101!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 			
-			<textarea rows="10" cols="30" readonly="readonly" id="notice_area">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure itaque odit ipsum ab facere, facilis voluptatem, nobis voluptas commodi veritatis vitae ipsa debitis est inventore pariatur sunt sapiente soluta fuga. lo</textarea>
+			<textarea rows="10" cols="30" readonly="readonly" style="resize: none" id="notice_area">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure itaque odit ipsum ab facere, facilis voluptatem, nobis voluptas commodi veritatis vitae ipsa debitis est inventore pariatur sunt sapiente soluta fuga. lo</textarea>
 		</div>
 	
 
