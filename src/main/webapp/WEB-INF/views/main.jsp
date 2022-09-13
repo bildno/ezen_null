@@ -2,13 +2,12 @@
 	pageEncoding="UTF-8"%>
 <%-- <%@ page trimDirectiveWhitespaces="true" %>  --%>
 
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
+<title>ezen..null..</title>
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="css/main.css">
+
 <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"> -->
 <!-- 부트스트랩 js링크 -->
 <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -48,35 +47,7 @@
 	}
 </script>
 
-
-
-
-
-<!-- 헤더 -->
-<!--  <div class="header">
-        <div class="small_header">
-            <h1>
-                <a href="#">
-                    <img src="/img/로고.JPG" id="logo">
-                </a>
-            </h1>
-            <div class="search" style="margin-top: 5px;">
-                <input type="text" id="text">
-            </div>
-        </div>
-
-        <div id="sidelist" class="sidelist">
-            <a href="#">홈</a>
-            <a href="#">고객센터</a>
-            <a href="#">one2one</a>
-            <a href="#">best 게시글</a>
-        </div>
-        <button id="liston" class="liston" onclick="sideon()">☰</button>
-    </div> -->
-
 <h1 style="margin: 150px 0 0 0;" id="space">어떤 공간을 찾고 계세요?</h1>
-
-
 
 <!-- 부트스트랩 사용 -->
 <div id="carouselExampleFade" class="carousel slide carousel-fade"
@@ -187,24 +158,22 @@
 							<table id="main_table" border=1 style="border-color: lightgray;">
 
 								<ul class="best-table">
-									<tr 
-									style="list-style: none;"
-									onMouseOver="this.style.backgroundColor='#eeeeee'"
-									onMouseOut="this.style.backgroundColor='#FFFFFF'">
-										<td >
+									<tr style="list-style: none;"
+										onMouseOver="this.style.backgroundColor='#eeeeee'"
+										onMouseOut="this.style.backgroundColor='#FFFFFF'">
+										<td>
 											<li>1231231233</li>
 										</td>
 										<td>조회수</td>
 									</tr>
-								<tr 
-								style="list-style: none;"
-								onMouseOver="this.style.backgroundColor='#eeeeee'"
-								onMouseOut="this.style.backgroundColor='#FFFFFF'">
-									<td>
-										<li>123123123</li>
-									</td>
-									<td>조회수</td>
-								</tr>
+									<tr style="list-style: none;"
+										onMouseOver="this.style.backgroundColor='#eeeeee'"
+										onMouseOut="this.style.backgroundColor='#FFFFFF'">
+										<td>
+											<li>123123123</li>
+										</td>
+										<td>조회수</td>
+									</tr>
 								</ul>
 
 							</table>
@@ -220,19 +189,17 @@
 							<table id="main_table" border=1 style="border-color: lightgray;">
 
 								<ul>
-									<tr 
-								style="list-style: none;"
-								onMouseOver="this.style.backgroundColor='#eeeeee'"
-								onMouseOut="this.style.backgroundColor='#FFFFFF'">
+									<tr style="list-style: none;"
+										onMouseOver="this.style.backgroundColor='#eeeeee'"
+										onMouseOut="this.style.backgroundColor='#FFFFFF'">
 										<td>
 											<li>123123123</li>
 										</td>
 										<td>조회수</td>
 									</tr>
-									<tr 
-								style="list-style: none;"
-								onMouseOver="this.style.backgroundColor='#eeeeee'"
-								onMouseOut="this.style.backgroundColor='#FFFFFF'">
+									<tr style="list-style: none;"
+										onMouseOver="this.style.backgroundColor='#eeeeee'"
+										onMouseOut="this.style.backgroundColor='#FFFFFF'">
 										<td>
 											<li>123123123</li>
 										</td>
@@ -253,19 +220,17 @@
 							<table id="main_table" border=1 style="border-color: lightgray;">
 
 								<ul>
-									<tr 
-								style="list-style: none;"
-								onMouseOver="this.style.backgroundColor='#eeeeee'"
-								onMouseOut="this.style.backgroundColor='#FFFFFF'">
+									<tr style="list-style: none;"
+										onMouseOver="this.style.backgroundColor='#eeeeee'"
+										onMouseOut="this.style.backgroundColor='#FFFFFF'">
 										<td>
 											<li>123123123</li>
 										</td>
 										<td>조회수</td>
 									</tr>
-									<tr 
-								style="list-style: none;"
-								onMouseOver="this.style.backgroundColor='#eeeeee'"
-								onMouseOut="this.style.backgroundColor='#FFFFFF'">
+									<tr style="list-style: none;"
+										onMouseOver="this.style.backgroundColor='#eeeeee'"
+										onMouseOut="this.style.backgroundColor='#FFFFFF'">
 										<td>
 											<li>123123123</li>
 										</td>
@@ -286,19 +251,17 @@
 							<table id="main_table" border=1 style="border-color: lightgray;">
 
 								<ul>
-									<tr
-								style="list-style: none;"
-								onMouseOver="this.style.backgroundColor='#eeeeee'"
-								onMouseOut="this.style.backgroundColor='#FFFFFF'">
+									<tr style="list-style: none;"
+										onMouseOver="this.style.backgroundColor='#eeeeee'"
+										onMouseOut="this.style.backgroundColor='#FFFFFF'">
 										<td>
 											<li>123123123</li>
 										</td>
 										<td>조회수</td>
 									</tr>
-									<tr
-								style="list-style: none;"
-								onMouseOver="this.style.backgroundColor='#eeeeee'"
-								onMouseOut="this.style.backgroundColor='#FFFFFF'">
+									<tr style="list-style: none;"
+										onMouseOver="this.style.backgroundColor='#eeeeee'"
+										onMouseOut="this.style.backgroundColor='#FFFFFF'">
 										<td>
 											<li>123123123</li>
 										</td>
