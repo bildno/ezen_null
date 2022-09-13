@@ -1,0 +1,121 @@
+@charset "UTF-8";
+#carouselExampleIndicators{
+    width: 700px;
+    height: 500px;
+}
+#host_img1,#host_img2,#host_img3{
+    width: 700px;
+    height: 500px;
+}
+#space_icon{
+    width: 30px;
+}
+
+/* 컨테이너 - 부트스트랩 */
+#space_host_h1{
+    font-family: 'Do Hyeon', sans-serif;
+	margin-left: 50px;
+	margin-top: 50px;
+	font-size: 50px;
+}
+#space_host_h2{
+    font-family: 'Do Hyeon', sans-serif;
+	font-weight: 300;
+	font-size: 20px;
+	margin-left: 50px;
+	color: rgb(37, 49, 109)
+}
+
+.container {
+	margin-top: 150px;
+	margin-bottom: 100px;
+}
+#carouselExampleIndicators{
+    margin-left: 18%;
+    margin-top: 100px; 
+    margin-bottom: 100px; 
+}
+
+/* 공간 상세정보 입력란 */
+#space_host_enterh2{
+    font-family: 'Noto Sans KR', sans-serif; 
+    font-weight: 500;
+    font-size: 25px;
+    
+}
+#space_host_info{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    color: gray;
+    margin-bottom: 100px;
+}
+#space_host_h3{
+    font-size: 20px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 500;
+}
+#host_input{
+    padding: 10px;
+    width: 500px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+input::placeholder{
+    color: gray;
+    font-weight: bold;
+    font-size: 15px;
+}
+.caution_div{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+
+}
+#caution{
+    width: 20px;
+    margin: 5px;
+}
+#can_small{
+    padding-top: 5px;
+}
+.space_host_name{
+    margin-bottom: 50px;
+}
+#ch1{
+    font-size: 17px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 300;
+    padding-bottom: 10px;
+}
+input[id="ch"]{
+    -webkit-appearance: none;
+    position: relative;
+    cursor: pointer;
+    outline: none !important;
+    border: 1px solid #eeeeee;
+    border-radius: 2px;
+    background: #fbfbfb;
+}
+input[id="ch"]::before {
+    /* 체크박스 유니코드 2713 */
+    content: "\2713"; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    overflow: hidden;
+    transform: scale(0) translate(-50%, -50%);
+    line-height: 1;
+}
+input[id="ch"]:hover{
+    border-color: rgba(170, 170, 170, 0.5);
+}
+input[id="ch"]:checked{
+    background-color: #ff8955;
+    border-color: rgba(255, 255, 255, 0.3);
+    color: white;
+    
+}
+
+
+
