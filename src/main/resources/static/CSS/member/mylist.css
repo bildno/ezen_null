@@ -1,8 +1,18 @@
 .mylist {
-    margin: 100px 25% 40px 20%;
+    margin: 100px 25% 20px 20%;
     font-family: 'Do Hyeon', sans-serif;
 }
 
+#mylist_exp{
+	font-family: 'Do Hyeon', sans-serif; 
+    font-weight: 300; 
+    margin-left: 220px;
+    font-size: 20px; 
+    color: rgb(37, 49, 109)
+}
+#space_icon{
+    width: 30px;
+}
 .myreview {
     width: 60%;
     margin: 40px 20% 40px 20%;

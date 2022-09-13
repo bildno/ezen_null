@@ -76,4 +76,28 @@ public class Mycontroller {
 		
 		return "/member/login_pop";
 	}
+	@RequestMapping("/one2one_write")
+	public String one2one_write(Model model) {
+		
+		model.addAttribute("mainPage","one2one/one2one_write.jsp");
+		return "index";
+	}
+	@RequestMapping("/idfind")
+	public String idfind(Model model) {
+
+		model.addAttribute("mainPage","member/idfind.jsp");
+		return"index";
+	}
+	@RequestMapping("/pwfind")
+	public String pwfind(Model model) {
+		
+		model.addAttribute("mainPage","member/pwfind.jsp");
+		return"index";
+	}
+	@RequestMapping("/member_join")
+	public String member_join(Model model) {
+		
+		model.addAttribute("mainPage","member/join.jsp");
+		return "index";
+	}
 }
