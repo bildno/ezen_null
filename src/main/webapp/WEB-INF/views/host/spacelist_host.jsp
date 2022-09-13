@@ -14,7 +14,7 @@
 	</div>
 
 	<div id="spacelist" class="row">
-		<div class="col-4 spacebox">
+		<div onclick="location.href='/space_info_host'" class="col-4 spacebox">
 			<img class="spacelist_img" src="img/공간.jpg" alt="">
 			<div>
 				<textarea id="space_exp" rows="" cols="">asdas</textarea>

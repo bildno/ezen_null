@@ -5,7 +5,7 @@
 	<div class="container">
         <h1 id="space_host_h1">공간 상세페이지</h1>
         <h2 id="space_host_h2">호스트의 공간 상세페이지입니다
-        <img src="/img/service.img/space_icon.png" alt="space_icon"id="space_icon">
+        <img src="/img/service/space_icon.png" alt="space_icon"id="space_icon">
         </h2>
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" id="name_host_carousel">
             <ol class="carousel-indicators">
@@ -15,13 +15,13 @@
             </ol>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="/img/space_info_host.img/roof.jpg" class="d-block w-100" alt="..." id="host_img1">
+                <img src="/img/host/roof.jpg" class="d-block w-100" alt="..." id="host_img1">
               </div>
               <div class="carousel-item">
-                <img src="img/space_info_host.img/room1.jpg" class="d-block w-100" alt="..." id="host_img2">
+                <img src="img/host/room1.jpg" class="d-block w-100" alt="..." id="host_img2">
               </div>
               <div class="carousel-item">
-                <img src="img/space_info_host.img/roof3.jpg" class="d-block w-100" alt="..." id="host_img3">
+                <img src="img/host/roof3.jpg" class="d-block w-100" alt="..." id="host_img3">
               </div>
             </div>
             <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators" data-slide="prev">
@@ -43,7 +43,7 @@
             <h3 id="space_host_h3">공간명</h3>
             <input type="text" placeholder="고유 업체명을 입력해주세요.ex)하이브 회의실" id="host_input">
             <div class="caution_div">
-            <img src="/img/space_info_host.img/caution.png" alt="조심" id="caution"><small id="can_small">사용 가능한 특수문자 : ( , ) , [ , ] , - , .(마침표), ,(쉼표)</small>
+            <img src="/img/host/caution.png" alt="조심" id="caution"><small id="can_small">사용 가능한 특수문자 : ( , ) , [ , ] , - , .(마침표), ,(쉼표)</small>
             </div>
         </div>
         <div>

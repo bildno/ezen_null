@@ -136,4 +136,11 @@ public class Mycontroller {
 		return "index";
 	}
 
+	@RequestMapping("/space_info_host")
+	public String space_info_host(Model model) {
+		
+		model.addAttribute("mainPage","host/space_info_host.jsp");
+		return "index";
+	}
+	
 }
