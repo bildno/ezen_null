@@ -2,7 +2,6 @@
 	margin-top:150px;
 	margin-bottom:100px;
 }
-
 #one2one_h1{
     font-family: 'Do Hyeon', sans-serif; 
     margin-left: 50px;
@@ -20,10 +19,9 @@
     width: 30px;
 }
 .contents {
-	font-family : 'Noto Sans KR' , sans-serif;
+	font-family :'Noto Sans KR', sans-serif;
 	width:80%;
 	margin: 50px 10% 0 10%;
-	
 }
 .accordion {
     background-color: #FFFFFF;
@@ -34,9 +32,9 @@
     text-align: left;
     transition: 0.4s;
     border : none;
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family:'Noto Sans KR', sans-serif;
+    font-weight: 500;
     font-size: 20px;
-    font-weight: 300;
     color: black;
     text-decoration: none;
 }
@@ -52,7 +50,7 @@
 }
 #o_ans1,#o_ans2,#o_ans3,#o_ans4,#o_ans5{
 	font-family: 'Noto Sans KR', sans-serif;
-    font-weight: 500;
+    font-weight: 300;
     padding: 15px;
 }
 .panel {
@@ -81,7 +79,8 @@
 	border: none; border-radius:3px;
     width: 70px; padding: 5px; font-size: 13px;
     background-color:rgb(238, 238, 238);
-    font-family: 'Noto Sans KR'; font-weight: 300;
+    font-family: 'Noto Sans KR';
+    font-weight: 300;
 }
 
 .write{
