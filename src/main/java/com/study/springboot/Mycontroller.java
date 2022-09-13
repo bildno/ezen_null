@@ -82,6 +82,12 @@ public class Mycontroller {
 		model.addAttribute("mainPage","one2one/one2one_write.jsp");
 		return "index";
 	}
+	@RequestMapping("/one2one_writeAction")
+	public String one2one_writeAction(Model model) {
+		
+		model.addAttribute("mainPage","one2one/one2one.jsp");
+		return "index";
+	}
 	@RequestMapping("/idfind")
 	public String idfind(Model model) {
 

@@ -1,44 +1,53 @@
-#one2one_write {
-	margin-top: 100px;
-}
-hr {
-    border-color: navy;
-}
 .container {
-    color: navy;
+	margin-top: 150px;
+	margin-bottom: 100px;
 }
-#type{
-    border-radius: 5px;
-    border: 1px solid rgb(165, 165, 165);
+#one2one_write {
+	font-family: 'Do Hyeon', sans-serif;
+	font-weight: 500;
+	margin-top: 100px;
+	font-size: 50px;
+	display: flex;
+	flex-flow: row nowrap;
 }
-.one2one {
-    border: 1px solid red;
-    width: 1080px;
-    margin: 0 auto;
-    margin-bottom: 20px;
+.o2owrite_tb {
+	font-family: 'Noto Sans KR';
+	font-weight: 300;
+	width: 80%;
+	padding-top: 20px;
+	margin-bottom: 20px;
+	margin-right: 10%;
+	margin-left: 10%;
 }
-select {
-    width: 300px;
+.o2owrite_tb table {
+	width : 100%;
+	border: 1px solid  rgb(238, 238, 238);
+	border-radius: 5px;
+	text-align: center;
 }
-textarea {
-    margin: 10px;
+.o2owrite_tb th, td {
+	padding: 20px;	
 }
-select option[disabled] {
-	display: none;
+.o2owrite_tb select {
+	width: 49%;
 }
-.type {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
+.o2owrite_tb textarea {
+	width: 99%;
 }
-.contents {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
+.writebtn {
+	border: none;
+	border-radius: 3px;
+	width: 70px;
+	padding: 5px;
+	font-size: 13px;
+	background-color: rgb(238, 238, 238);
+	font-family: 'Noto Sans KR';
+	font-weight: 300;
+	margin-top: 30px;
 }
 
-.write{
-    display: flex;
-    justify-content: end;
-    margin-right: 17.5%;
+.write {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: end;
 }
