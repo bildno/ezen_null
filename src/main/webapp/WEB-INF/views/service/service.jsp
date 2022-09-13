@@ -126,7 +126,7 @@
             </div>  
         </div>
 
-    </div>
+    
 
     <hr id="customer_hr">
 
