@@ -7,8 +7,7 @@
 <head>
 <style>
 @import
-	url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap')
-	;
+	url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
 
 @import
 	url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
