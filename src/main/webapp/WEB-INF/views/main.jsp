@@ -337,18 +337,7 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"></script>
 <script>
 
-	num = 1;
-	function sideon() {
-		
 
-		if (num == 1) {
-			document.getElementById("sidelist").style.width = "250px";
-			num = 0;
-		} else {
-			document.getElementById("sidelist").style.width = "0";
-			num = 1;
-		} 
-	}
 </script>
 <script>
 	const $topBtn = document.querySelector(".movetopbtn");
