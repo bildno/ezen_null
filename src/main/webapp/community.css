@@ -1,0 +1,75 @@
+/* * {
+    border: 1px solid black;
+} */
+.container {
+    margin-top: 150px;
+    margin-bottom: 100px;
+}
+.section {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    border: 1px solid rgb(238, 238, 238);
+    border-radius: 5px;
+}
+.section a {
+    color: rgb(37, 49, 109);
+    text-decoration: none;
+}
+.section a:hover {
+    text-decoration: none;
+}
+.section a:visited {
+    text-decoration: none;
+    color:  rgb(37, 49, 109);
+}
+.section1 {
+    width: 20%;
+    margin-right: 50px;
+    text-align: center;
+    /* border: 1px solid red; */
+}
+.con1 {
+    border: 1px solid black;
+    overflow: hidden;
+}
+.con-img1 {
+    width: 100%;
+    object-fit: fill;
+}
+
+.section2 {
+    width: 70%;
+    height: 100%;
+    align-self: center;
+    /* border: 1px solid red; */
+}
+.con2 input[type=text] {
+    width: 100%;
+    margin: 20px 0 20px 0;
+    cursor: pointer;
+}
+.con2 a:hover {
+    text-decoration: none;
+}
+.con2 a:visited {
+    text-decoration: none;
+    color:  rgb(37, 49, 109);
+}
+#selectbox{
+    display: flex;
+    justify-content: end;
+	width: 100%;
+}
+#selectbox button{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(238, 238, 238);
+}
+#selectbox input{
+ width: 10%;
+ border-radius: 5px;
+ padding: 10px;
+ border: 1px solid rgb(238, 238, 238);
+ margin-right: 10px;
+}
