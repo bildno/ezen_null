@@ -27,6 +27,7 @@
 	display: flex;
 	justify-content: center;
 	margin-top: 20px;
+	font-family: 'Noto Sans KR', sans-serif; 
 }
 
 .asidecomm {
@@ -54,7 +55,9 @@
 	border: 1px solid rgb(238, 238, 238);
 	border-radius: 5px;
 }
-
+.con11:nth-child(1){
+	margin-top: 30px;
+}
 .con11 {
 	overflow: hidden;
 }
@@ -73,11 +76,15 @@
 }
 
 .con22 input[type=text] {
+	border-radius: 5px;
 	width: 100%;
 	margin: 20px 0 20px 0;
 	cursor: pointer;
+	border: 1px solid rgb(238, 238, 238);
 }
-
+.con22 input[type=text]:focus{
+	outline: none;
+}
 .con22 a:hover {
 	text-decoration: none;
 }
@@ -106,7 +113,9 @@
 	border: 1px solid rgb(238, 238, 238);
 	margin-right: 10px;
 }
-
+#selectbox input:focus{
+	outline: none;
+}
 .pagenavi {
 	display: flex;
 	flex-direction: row;
