@@ -115,4 +115,20 @@ public class Mycontroller {
 		model.addAttribute("mainPage", "member/mywish.jsp");
 		return "index";
 	}
+	@RequestMapping("/mypage_host")
+	public String spacelist_host(Model model) {
+		
+		model.addAttribute("mainPage","host/host.jsp");
+		return"index";
+	}
+	
+	
+	@RequestMapping("/host_info")
+	public String host_info(Model model) {
+		
+		model.addAttribute("mainPage","host/space_info_host.jsp");
+		return "index";
+	}
+	
+	
 }
