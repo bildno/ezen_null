@@ -16,26 +16,26 @@
 		<button>검색</button>
 	</div>
 	<div class="main">
-		<div class="aside">
-			<div class="section1">
-				<div class="con1">
-					<a href="#"> <img class="con-img1" src="img/cat.png"
+		<div class="asidecomm">
+			<div class="section11">
+				<div class="con11">
+					<a href="#"> <img class="con-img1" src="img/host/cat.png"
 						alt="contents1">
 						<div name="membername">
 							홍<br>진<br>웅
 						</div>
 					</a>
 				</div>
-				<div class="con1">
-					<a href="#"> <img class="con-img1" src="img/cat.png"
+				<div class="con11">
+					<a href="#"> <img class="con-img1" src="img/host/cat.png"
 						alt="contents1">
 						<div name="membername">
 							홍<br>진<br>웅
 						</div>
 					</a>
 				</div>
-				<div class="con1">
-					<a href="#"> <img class="con-img1" src="img/cat.png"
+				<div class="con11">
+					<a href="#"> <img class="con-img1" src="img/host/cat.png"
 						alt="contents1">
 						<div name="membername">
 							홍<br>진<br>웅
@@ -45,9 +45,9 @@
 			</div>
 		</div>
 
-		<div class="section">
-			<div class="section2">
-				<div class="con2" style="padding: 40px;">
+		<div class="sectioncomm">
+			<div class="section22">
+				<div class="con22" style="padding: 40px;">
 					<input type="text" name="con_text" id="con_text" value="게시글 제목1"
 						onclick="location.href='community_info'"> <input
 						type="text" name="con_text" id="con_text" value="게시글 제목2"
