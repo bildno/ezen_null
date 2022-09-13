@@ -115,4 +115,10 @@ public class Mycontroller {
 		model.addAttribute("mainPage", "member/mywish.jsp");
 		return "index";
 	}
+	@RequestMapping("/myreview")
+	public String myreview(Model model) {
+
+		model.addAttribute("mainPage", "member/myreview.jsp");
+		return "index";
+	}
 }

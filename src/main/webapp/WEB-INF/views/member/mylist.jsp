@@ -21,10 +21,10 @@
     <div class="myreview">
     		<h4><b>리뷰</b></h4>
     		<hr>
-            <a href="#">내가 작성한 리뷰1</a><br>
-            <a href="#">내가 작성한 리뷰2</a><br>
-            <a href="#">내가 작성한 리뷰3</a><br>
-            <a href="#">내가 작성한 리뷰4</a>
+            <a href="/myreview">내가 작성한 리뷰1</a><br>
+            <a href="/myreview">내가 작성한 리뷰2</a><br>
+            <a href="/myreview">내가 작성한 리뷰3</a><br>
+            <a href="/myreview">내가 작성한 리뷰4</a>
     </div>
     <hr>
     <div class="myboard">
