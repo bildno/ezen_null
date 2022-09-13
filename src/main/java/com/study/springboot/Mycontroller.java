@@ -122,7 +122,6 @@ public class Mycontroller {
 		return"index";
 	}
 	
-	
 	@RequestMapping("/spacselist_host")
 	public String spacselist_host(Model model) {
 		
@@ -130,5 +129,11 @@ public class Mycontroller {
 		return "index";
 	}
 	
-	
+	@RequestMapping("/myreview")
+	public String myreview(Model model) {
+
+		model.addAttribute("mainPage", "member/myreview.jsp");
+		return "index";
+	}
+
 }
