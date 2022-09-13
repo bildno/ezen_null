@@ -1,0 +1,70 @@
+@charset "UTF-8";.container{
+    margin-top: 150px;
+    margin-bottom: 100px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.container h1{
+    text-align: left;
+	margin-left: 50px;
+	font-family: 'Do Hyeon', sans-serif;
+}
+
+#host_list_exp{
+	font-family: 'Do Hyeon', sans-serif;
+	font-weight: 300;
+	margin-left: 50px;
+	font-size: 20px;
+	color: rgb(37, 49, 109)
+}
+
+#space_icon {
+	width: 30px;
+}
+#selectbox{
+    display: flex;
+    justify-content: end;
+	width: 100%;
+
+}
+#selectbox button{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(238, 238, 238);
+}
+#selectbox input{
+ width: 10%;
+ border-radius: 5px;
+ padding: 10px;
+ border: 1px solid rgb(238, 238, 238);
+ margin-right: 10px; 
+}
+#selectbox input:focus{
+	outline: none;
+}
+#spacelist{
+    border: 1px solid rgb(238, 238, 238);
+    border-radius: 5px;
+    margin-top: 30px;
+
+}
+
+.spacelist_img{
+	width: 250px;
+	border-radius: 5px;
+}
+.spacebox{
+	display:flex;
+	justify-content:space-around;
+	flex-flow:row wrap;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	
+	
+}
+#space_exp{
+width : 250px;
+resize: none;	
+border: 1px solid rgb(238, 238, 238); 
+border-radius: 5px;
+	
+}
