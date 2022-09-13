@@ -1,76 +1,81 @@
 .container {
-	margin-top:150px;
-	margin-bottom:100px;
+	margin-top: 150px;
+	margin-bottom: 100px;
 }
-#space_icon{
-    width: 30px;
-}
-#wish_h1{
-    font-family: 'Do Hyeon', sans-serif; 
-    margin-left: 150px;
-    margin-top: 50px; 
-    font-size: 50px;
-}
-#wish_h2{
-	font-family: 'Do Hyeon',sans-serif; 
-    font-weight: 300; 
-    font-size: 20px; 
-    margin-left: 50px;
-    margin-left: 150px;
-    color: rgb(37, 49, 109);
-}
-.container > h2 {
-    margin: 0px 20% 40px 20%;
-}
-.contents {
-    font-family : 'Noto Sans KR' , sans-serif;
-    width: 60%;
-    margin: 40px 20% 40px 20%;
-    padding: 65px;
-    text-align: center;
-    margin: 0  auto;
-    border:1px solid rgb(238, 238, 238);
-    border-radius:10px;
 
+#space_icon {
+	width: 30px;
 }
+
+#wish_h1 {
+	font-family: 'Do Hyeon', sans-serif;
+	margin-left: 150px;
+	margin-top: 50px;
+	font-size: 50px;
+}
+
+#wish_h2 {
+	font-family: 'Do Hyeon', sans-serif;
+	font-weight: 300;
+	font-size: 20px;
+	margin-left: 50px;
+	margin-left: 150px;
+	color: rgb(37, 49, 109);
+}
+
+.container>h2 {
+	margin: 0px 20% 40px 20%;
+}
+
+.contents {
+	font-family: 'Noto Sans KR', sans-serif;
+	width: 60%;
+	margin: 40px 20% 40px 20%;
+	padding: 65px;
+	text-align: center;
+	margin: 0 auto;
+	border: 1px solid rgb(238, 238, 238);
+	border-radius: 10px;
+}
+
 .wish {
-    margin-bottom: 50px;
-   
+	margin-bottom: 50px;
 }
+
 .wish input {
-    width: 80%;
-    padding:2%;
-    border:1px solid lightgrey;
-    border-radius:5px;
-    font-family: 'Noto Sans KR', sans-serif; 
-    font-weight:300;
+	width: 80%;
+	padding: 2%;
+	border: 1px solid lightgrey;
+	border-radius: 5px;
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: 300;
 }
-.wish button{
-	padding:2%;
-	background-color:rgb(238, 238, 238);
-	border:1px solid lightgrey;
-	border-radius:5px;
-	font-family: 'Noto Sans KR', sans-serif; 
-    font-weight:500;
-    margin-left:10px;
-	
+
+.wish button {
+	padding: 2%;
+	background-color: rgb(238, 238, 238);
+	border: 1px solid lightgrey;
+	border-radius: 5px;
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: 500;
+	margin-left: 10px;
 }
 
 .wish5 input {
-    width: 80%;
-    padding:2%;
-    border:1px solid lightgrey;
-    border-radius:5px;
-    font-family: 'Noto Sans KR', sans-serif; 
-    font-weight:300;
+	width: 80%;
+	padding: 2%;
+	border: 1px solid lightgrey;
+	border-radius: 5px;
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: 300;
 }
-.wish5 button{
-	padding:2%;
-	background-color:rgb(238, 238, 238);
-	border:1px solid lightgrey;
-	border-radius:5px;
-	font-family: 'Noto Sans KR', sans-serif; 
-    font-weight:500;
-    margin-left:10px;
-	
+
+.wish5 button {
+	padding: 2%;
+	background-color: rgb(238, 238, 238);
+	border: 1px solid lightgrey;
+	border-radius: 5px;
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: 500;
+	margin-left: 10px;
 }

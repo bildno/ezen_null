@@ -1,11 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<meta charset="UTF-8">
-<title>아이디 찾기 페이지</title>
-<link rel="stylesheet" href="css/member/idfind.css">
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 
+<link rel="stylesheet" href="css/member/idfind.css">
 
 <div class="container">
 	<h1 id="idfind_h1">아이디 찾기</h1>
