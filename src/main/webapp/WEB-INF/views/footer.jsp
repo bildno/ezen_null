@@ -6,11 +6,11 @@
 	<div>
 		<div class=" footer " style="height: 200px; padding-top: 30px;">
 			<div class="footer1" style="font-size: 13px;">
-				<b><a id="footera" href="" style="color: grey;">홍진웅 </a></b>
-				<b><a id="footera" href="" style="color: grey;">유민 </a></b> 
-				<b><a id="footera" href="" style="color: grey;">용단옥</a></b>
-				<b><a id="footera" href="" style="color: grey;">이진규</a></b>
-				<b><a id="footera" href="" style="color: grey;">이젠..널..</a></b> 
+				<b><a id="footera" href="" style="color: grey;">홍진웅 </a></b> <b><a
+					id="footera" href="" style="color: grey;">유민 </a></b> <b><a
+					id="footera" href="" style="color: grey;">용단옥</a></b> <b><a
+					id="footera" href="" style="color: grey;">이진규</a></b> <b><a
+					id="footera" href="" style="color: grey;">이젠..널..</a></b>
 			</div>
 			<hr>
 			<div class="footer2">
@@ -26,7 +26,7 @@
 				</div>
 				<div id="underlogo" onclick="location.href='main.html'">Space
 					Ground</div>
-				</div>
-				</div>
-				</div>
-				</div>
+			</div>
+		</div>
+	</div>
+</div>
