@@ -1,8 +1,10 @@
 @charset "UTF-8";
 #carouselExampleIndicators{
-    width: 700px;
+    width: 80%;
     height: 500px;
-}
+    margin-left: 10%;
+    margin-right: 10%;
+} 
 #host_img1,#host_img2,#host_img3{
     width: 700px;
     height: 500px;
@@ -31,12 +33,16 @@
 	margin-bottom: 100px;
 }
 #carouselExampleIndicators{
-    margin-left: 18%;
     margin-top: 100px; 
     margin-bottom: 100px; 
 }
 
 /* 공간 상세정보 입력란 */
+.contents_wrapper {
+	margin-left:10%;
+	margin-right:10%;
+	margin-bottom: 50px;
+}
 #space_host_enterh2{
     font-family: 'Noto Sans KR', sans-serif; 
     font-weight: 500;
@@ -48,12 +54,13 @@
     font-weight: 500;
     font-size: 15px;
     color: gray;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
-#space_host_h3{
-    font-size: 20px;
-    font-family: 'Noto Sans KR', sans-serif;
-    font-weight: 500;
+#space_host_tit {
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: 300;
+	font-size: 50px;
+	margin-left: 50px;
 }
 #host_input{
     padding: 10px;
@@ -116,6 +123,40 @@ input[id="ch"]:checked{
     color: white;
     
 }
-
-
-
+/* .navi_area li {
+    position: relative;
+    display: table-cell;
+    height: 40px;
+    background-color: #fff;
+    text-align: center;
+    border-bottom: 1px solid #704de4;
+    font-size: 16px;
+    height: 50px;
+    padding: 10px 15px;
+} */
+.navi_area li.selected {
+    background-color: rgb(254, 245, 172);
+}
+.nav_1 {
+	position: relative;
+    float:left;
+    height: 40px;
+    background-color: #fff;
+    text-align: center;
+    border-bottom: 1px solid #704de4;
+    font-size: 16px;
+    height: 50px;
+    padding: 10px 15px;
+}
+.navi_area li {
+	display:block;
+	width:16%
+}
+.navi_area ul {
+	width:100%;
+	margin: 0 auto;
+	overflow:hidden;
+}
+.nav_wrapper {
+	height:150px;
+}
