@@ -22,7 +22,7 @@
 					<a href="#">사진변경</a>
 				</div>
 				<p>
-				<div name="membername">이용자 이름</div>
+				<div name="membername">홍진웅</div>
 				<p>
 				<hr>
 			</div>
