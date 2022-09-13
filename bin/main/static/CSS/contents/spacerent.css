@@ -1,4 +1,4 @@
-.container{
+@charset "UTF-8";.container{
     margin-top: 150px;
     margin-bottom: 100px;
     font-family: 'Noto Sans KR', sans-serif;
@@ -58,7 +58,6 @@
 	flex-flow:row wrap;
 	margin-top: 30px;
 	margin-bottom: 30px;
-	cursor: pointer;
 	
 	
 }

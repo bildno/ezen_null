@@ -3,6 +3,7 @@
 <!-- 헤더 -->
 <!DOCTYPE html>
 <html lang="en">
+<title>ezen..null..</title>
 <head>
 <style>
 @import
