@@ -100,4 +100,10 @@ public class Mycontroller {
 		model.addAttribute("mainPage","member/join.jsp");
 		return "index";
 	}
+	@RequestMapping("/mywish")
+	public String mywish(Model model) {
+		
+		model.addAttribute("mainPage","member/mywish.jsp");
+		return "index";
+	}
 }
