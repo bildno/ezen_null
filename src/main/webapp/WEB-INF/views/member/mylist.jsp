@@ -37,8 +37,8 @@
     </div>
     <hr>
     <div class="enter">
-        <input type="button" value="확인">
-        <input type="button" value="취소">
+        <input type="button" value="확인" id="review_btn"> 
+        <input type="button" value="취소" id="review_btn">
     </div>
     
 
