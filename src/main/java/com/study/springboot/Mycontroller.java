@@ -123,10 +123,10 @@ public class Mycontroller {
 	}
 	
 	
-	@RequestMapping("/host_info")
-	public String host_info(Model model) {
+	@RequestMapping("/spacselist_host")
+	public String spacselist_host(Model model) {
 		
-		model.addAttribute("mainPage","host/space_info_host.jsp");
+		model.addAttribute("mainPage","host/spacelist_host.jsp");
 		return "index";
 	}
 	

@@ -20,9 +20,9 @@
             </div>
             <div class="hostlist"><p>
                 <a href="#"><b>예약 내역</b></a><p>
-                <a href="/host_info"><b>리뷰 관리</b></a><p>
+                <a href=""><b>리뷰 관리</b></a><p>
                 <a href="#"><b>정산</b></a><p>
-                <a href="#"><b>공간 정보 관리</b></a>
+                <a href="/spacselist_host"><b>공간 정보 관리</b></a>
             </div>
         </div>
 
