@@ -27,7 +27,7 @@
 			</tr>
 			<tr>
 				<th>문의 내용</th>
-				<td><textarea name="ask" id="ask" rows="15"></textarea></td>
+				<td><textarea name="ask" id="ask" rows="15" style="resize: none;"></textarea></td>
 			</tr>
 		</table>
 
