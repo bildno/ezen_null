@@ -10,8 +10,8 @@
 <div class="container">
 	<h1 id="idfind_h1">아이디 찾기</h1>
 	<h2 id="idfind_exp">
-		이름과 전화번호를 입력해주세요 
-		<img src="/img/service/space_icon.png" alt="space_icon"id="space_icon">
+		이름과 전화번호를 입력해주세요 <img src="/img/service/space_icon.png"
+			alt="space_icon" id="space_icon">
 	</h2>
 	<div class="contents">
 		<div>

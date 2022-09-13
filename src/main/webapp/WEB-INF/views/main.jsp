@@ -195,7 +195,10 @@
 										</td>
 										<td>조회수</td>
 									</tr>
-								<tr style="list-style: none;">
+								<tr style="list-style: none;
+								style="list-style: none;"
+									onMouseOver="this.style.backgroundColor='#eeeeee'"
+									onMouseOut="this.style.backgroundColor='#FFFFFF'">
 									<td>
 										<li>123123123</li>
 									</td>
@@ -216,13 +219,17 @@
 							<table id="main_table" border=1 style="border-color: lightgray;">
 
 								<ul>
-									<tr>
+									<tr style="list-style: none;"
+									onMouseOver="this.style.backgroundColor='#eeeeee'"
+									onMouseOut="this.style.backgroundColor='#FFFFFF'">
 										<td>
 											<li>123123123</li>
 										</td>
 										<td>조회수</td>
 									</tr>
-									<tr>
+									<tr style="list-style: none;"
+									onMouseOver="this.style.backgroundColor='#eeeeee'"
+									onMouseOut="this.style.backgroundColor='#FFFFFF'">
 										<td>
 											<li>123123123</li>
 										</td>
@@ -243,13 +250,17 @@
 							<table id="main_table" border=1 style="border-color: lightgray;">
 
 								<ul>
-									<tr>
+									<tr style="list-style: none;"
+									onMouseOver="this.style.backgroundColor='#eeeeee'"
+									onMouseOut="this.style.backgroundColor='#FFFFFF'">
 										<td>
 											<li>123123123</li>
 										</td>
 										<td>조회수</td>
 									</tr>
-									<tr>
+									<tr style="list-style: none;"
+									onMouseOver="this.style.backgroundColor='#eeeeee'"
+									onMouseOut="this.style.backgroundColor='#FFFFFF'">
 										<td>
 											<li>123123123</li>
 										</td>
@@ -270,13 +281,17 @@
 							<table id="main_table" border=1 style="border-color: lightgray;">
 
 								<ul>
-									<tr>
+									<tr style="list-style: none;"
+									onMouseOver="this.style.backgroundColor='#eeeeee'"
+									onMouseOut="this.style.backgroundColor='#FFFFFF'">
 										<td>
 											<li>123123123</li>
 										</td>
 										<td>조회수</td>
 									</tr>
-									<tr>
+									<tr style="list-style: none;"
+									onMouseOver="this.style.backgroundColor='#eeeeee'"
+									onMouseOut="this.style.backgroundColor='#FFFFFF'">
 										<td>
 											<li>123123123</li>
 										</td>

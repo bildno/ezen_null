@@ -1,7 +1,7 @@
 #login_h1{
     font-family: 'Do Hyeon', sans-serif; 
     margin-left: 220px;
-    margin-top: 100px; 
+    margin-top: 150px; 
     font-size: 50px;
     display: flex;
     flex-flow: row nowrap;
@@ -15,9 +15,12 @@
     padding: 10px;
     
 }
+.container{
+	margin-bottom: 180px;
+}
 .contents {
-	font-family: 'Noto Sans KR ', sans-serif;
-
+	font-family: 'Noto Sans KR', sans-serif;
+	
     border: 1px solid  rgb(238, 238, 238);
     width: 60%;
     margin: 10px 20% 40px 20%;
@@ -42,7 +45,7 @@
 }
 #find_a:hover {
 	text-decoration: none;
-    color: red; 
+   
 }
 #loginbtn{
     width: 60%;
