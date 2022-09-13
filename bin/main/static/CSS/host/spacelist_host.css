@@ -36,7 +36,10 @@
  border-radius: 5px;
  padding: 10px;
  border: 1px solid rgb(238, 238, 238);
- margin-right: 10px;
+ margin-right: 10px; 
+}
+#selectbox input:focus{
+	outline: none;
 }
 #spacelist{
     border: 1px solid rgb(238, 238, 238);
@@ -47,17 +50,21 @@
 
 .spacelist_img{
 	width: 250px;
+	border-radius: 5px;
 }
 .spacebox{
 	display:flex;
 	justify-content:space-around;
 	flex-flow:row wrap;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	
 	
 }
 #space_exp{
 width : 250px;
 resize: none;	
 border: 1px solid rgb(238, 238, 238); 
- border-radius: 5px;
+border-radius: 5px;
 	
 }
