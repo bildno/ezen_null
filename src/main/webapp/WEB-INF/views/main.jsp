@@ -97,7 +97,7 @@
 
 		<div class="section">
 
-			<div class="section1" onclick="location.href='main.html'"
+			<div class="section1" onclick="location.href='community'"
 				style="cursor: pointer;">
 				<div class="con1">
 					<img class="con-img1" src="img/yoga.jpg" alt="contents1">

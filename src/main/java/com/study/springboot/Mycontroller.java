@@ -18,6 +18,13 @@ public class Mycontroller {
 		model.addAttribute("mainPage", "main.jsp");
 		return "index";
 	}
+	
+	@RequestMapping("/community")
+	public String community(Model model) {
+		
+		model.addAttribute("mainPage", "contents/community.jsp");
+		return "index";
+	}
 
 	@RequestMapping("/one2one")
 	public String one2one(Model model) {
