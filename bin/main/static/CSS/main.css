@@ -174,18 +174,16 @@ li {
 	margin-bottom: 6px;
 	cursor: pointer;
 }
+
 .best-table tr:hover {
 	background-color: yellow;
 }
-
-
 
 .playstore {
 	margin-top: 70px;
 }
 
 /* CONTENTS */
-
 .section {
 	background-color: white;
 	text-align: center;

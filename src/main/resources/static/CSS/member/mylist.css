@@ -1,54 +1,61 @@
 .container {
-	margin-top:150px;
-	margin-bottom:100px;
-}
-.mylist {
-    margin: 100px 25% 20px 20%;
-    font-family: 'Do Hyeon', sans-serif;
+	margin-top: 150px;
+	margin-bottom: 100px;
 }
 
-#mylist_exp{
-	font-family: 'Do Hyeon', sans-serif; 
-    font-weight: 300; 
-    margin-left: 220px;
-    font-size: 20px; 
-    color: rgb(37, 49, 109)
+.mylist {
+	margin: 100px 25% 20px 20%;
+	font-family: 'Do Hyeon', sans-serif;
 }
-#space_icon{
-    width: 30px;
+
+#mylist_exp {
+	font-family: 'Do Hyeon', sans-serif;
+	font-weight: 300;
+	margin-left: 220px;
+	font-size: 20px;
+	color: rgb(37, 49, 109)
 }
+
+#space_icon {
+	width: 30px;
+}
+
 .myreview {
-    width: 60%;
-    margin: 40px 20% 40px 20%;
-    font-family: Noto Sans KR;
+	width: 60%;
+	margin: 40px 20% 40px 20%;
+	font-family: Noto Sans KR;
 }
+
 .myreview a:link {
 	text-decoration: none;
 }
+
 .myreview a {
 	color: black;
 }
 
 .enter {
-    display: flex;
-    justify-content: end;
-    margin-right:20%;
-    margin-bottom: 40px;
-    font-family: Noto Sans KR;
+	display: flex;
+	justify-content: end;
+	margin-right: 20%;
+	margin-bottom: 40px;
+	font-family: Noto Sans KR;
 }
-.enter > :nth-child(1) {
-    margin-right: 20px;
+
+.enter>:nth-child(1) {
+	margin-right: 20px;
 }
 
 .myboard {
-    width: 60%;
-    margin: 40px 20% 40px 20%;
-    font-family: Noto Sans KR;
+	width: 60%;
+	margin: 40px 20% 40px 20%;
+	font-family: Noto Sans KR;
 }
+
 .myboard a {
 	color: black;
 }
-.myboard a:link{
-	text-decoration: none;
 
+.myboard a:link {
+	text-decoration: none;
 }

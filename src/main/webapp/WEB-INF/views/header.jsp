@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!-- 헤더 -->
@@ -65,9 +64,9 @@
 </head>
 <body>
 	<div class="header">
-		<div class="small_header  deactive">
+		<div class="small_header deactive">
 			<h1>
-				<a href="/main"> <img src="/img/로고 진짜최종 완성본.png" id="logo">
+				<a href="/main"><img src="/img/로고 진짜최종 완성본.png" id="logo">
 				</a>
 			</h1>
 			<div class="search" style="margin-top: 15px;">

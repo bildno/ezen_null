@@ -1,16 +1,18 @@
 .container {
-	margin-top:150px;
-	margin-bottom:100px;
+	margin-top: 150px;
+	margin-bottom: 100px;
 }
-#join_h1{
-	margin-top: 100px; 
-    font-family: 'Do Hyeon', sans-serif; 
-    margin-left: 220px;
-    font-size: 50px;
-    display: flex;
-    flex-flow: row nowrap;
-    margin-bottom: 20px;
+
+#join_h1 {
+	margin-top: 100px;
+	font-family: 'Do Hyeon', sans-serif;
+	margin-left: 220px;
+	font-size: 50px;
+	display: flex;
+	flex-flow: row nowrap;
+	margin-bottom: 20px;
 }
+
 #join_exp {
 	font-family: 'Do Hyeon', sans-serif;
 	font-weight: 300;
@@ -24,52 +26,58 @@
 }
 
 .contents {
-	font-family : 'Noto Sans KR' , sans-serif;
-	border: 1px solid  rgb(238, 238, 238);
-    width: 60%;
-    margin: 40px 20% 40px 20%;
-    padding: 40px 0 40px 0;
-    border-radius:5%;
+	font-family: 'Noto Sans KR', sans-serif;
+	border: 1px solid rgb(238, 238, 238);
+	width: 60%;
+	margin: 40px 20% 40px 20%;
+	padding: 40px 0 40px 0;
+	border-radius: 5%;
 }
-#insert div input{
-	border: 1px solid  rgb(238, 238, 238);
-	padding : 10px;
-	border-radius : 5px;
-    width: 60%;
-    margin-bottom: 15px;
-    margin-left:20%;
+
+#insert div input {
+	border: 1px solid rgb(238, 238, 238);
+	padding: 10px;
+	border-radius: 5px;
+	width: 60%;
+	margin-bottom: 15px;
+	margin-left: 20%;
 }
-.contents p{
-    text-align: left;
-    margin-top: 10px;
-    color: gray;
+
+.contents p {
+	text-align: left;
+	margin-top: 10px;
+	color: gray;
 }
-#insert{
-    color: gray;
+
+#insert {
+	color: gray;
 }
+
 .check {
 	display: flex;
-    flex-flow: row nowrap;
-    margin-left: 20%;
+	flex-flow: row nowrap;
+	margin-left: 20%;
 }
-#checkForm textarea{
-	font-family : 'Noto Sans KR' , sans-serif;
-	border: 1px solid  rgb(238, 238, 238);
-	border-radius : 5px;
-    width: 60%;
-    margin-left:20%;
-    margin-bottom: 10px;
+
+#checkForm textarea {
+	font-family: 'Noto Sans KR', sans-serif;
+	border: 1px solid rgb(238, 238, 238);
+	border-radius: 5px;
+	width: 60%;
+	margin-left: 20%;
+	margin-bottom: 10px;
 }
-#joinbtn{
+
+#joinbtn {
 	padding: 10px;
-	border: 1px solid  rgb(238, 238, 238);
-	border-radius : 5px;
-    width: 60%;
-    background-color:white;
-    color: gray;
-    margin-left:20%
-    
+	border: 1px solid rgb(238, 238, 238);
+	border-radius: 5px;
+	width: 60%;
+	background-color: white;
+	color: gray;
+	margin-left: 20%
 }
+
 .contents hr {
 	margin: 40px 20% 40px 20%;
 }

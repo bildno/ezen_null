@@ -1,41 +1,40 @@
-#reserve_info{
-    text-align: center;
-    margin-bottom: 50px;
-    
+#reserve_info {
+	text-align: center;
+	margin-bottom: 50px;
 }
 
-.container{
+.container {
 	margin-top: 150px;
 	margin-bottom: 100px;
 }
-.container h1{
-	 text-align: left;
-    margin-left : 100px;
-    
-    font-family: 'Do Hyeon', sans-serif;
+
+.container h1 {
+	text-align: left;
+	margin-left: 100px;
+	font-family: 'Do Hyeon', sans-serif;
 }
 
-
-.carousel{
-	width:80%;
+.carousel {
+	width: 80%;
 	margin-left: 10%
-	
 }
 
-#info_list{
-	font-family : 'Noto Sans KR' , sans-serif;
+#info_list {
+	font-family: 'Noto Sans KR', sans-serif;
 	font-weight: 300;
 }
-.carousel-inner{
-	text-align: center;	
-}
-#reserve_info div input{
-    width: 80%;
-	padding: 10px;
-    border-radius: 5px;
-    border: 1px solid lightgray;
 
+.carousel-inner {
+	text-align: center;
 }
+
+#reserve_info div input {
+	width: 80%;
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid lightgray;
+}
+
 #reserve_exp {
 	font-family: 'Do Hyeon', sans-serif;
 	font-weight: 300;
@@ -48,56 +47,55 @@
 	width: 30px;
 }
 
-
-.img1{
+.img1 {
 	height: 500px;
 	width: 100%;
 	border-radius: 5px;
 }
-#map{
+
+#map {
 	width: 80%;
 	margin-bottom: 30px;
 }
-#notice_area{
-	 font-family : 'Noto Sans KR';
-	font-weight : 300;
+
+#notice_area {
+	font-family: 'Noto Sans KR';
+	font-weight: 300;
 	margin-bottom: 5%;
 	border-radius: 5px;
 }
-#reserve_info div textarea{
-    width: 80%;
-    font-family : 'Noto Sans KR';
-	font-weight : 300;
-    margin-top: 30px;
-    border: 1px solid lightgray;
-    text-align: center;
+
+#reserve_info div textarea {
+	width: 80%;
+	font-family: 'Noto Sans KR';
+	font-weight: 300;
+	margin-top: 30px;
+	border: 1px solid lightgray;
+	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
-
-}
-#reserve_info #btn_box button{
-    background-color: rgb(238, 238, 238);
-    border: 1px solid lightgray;
-	font-family : 'Noto Sans KR';
-	font-weight : 300;
-    padding: 10px 5px 10px 5px;
-    border-radius: 3px;
-    padding: 5px;
-    font-size: 13px;
-    
- 
-}
-#btn_box{
-    text-align: right;
-    margin-right: 130px;
 }
 
-
-
-#reserve_info div textarea:focus{
-    outline: none;
+#reserve_info #btn_box button {
+	background-color: rgb(238, 238, 238);
+	border: 1px solid lightgray;
+	font-family: 'Noto Sans KR';
+	font-weight: 300;
+	padding: 10px 5px 10px 5px;
+	border-radius: 3px;
+	padding: 5px;
+	font-size: 13px;
 }
 
-#reserve_info div input:focus{
-outline: none;
+#btn_box {
+	text-align: right;
+	margin-right: 130px;
+}
+
+#reserve_info div textarea:focus {
+	outline: none;
+}
+
+#reserve_info div input:focus {
+	outline: none;
 }

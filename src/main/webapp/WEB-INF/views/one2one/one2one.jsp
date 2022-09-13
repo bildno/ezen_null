@@ -3,7 +3,6 @@
 
 <link rel="stylesheet" href="css/one2one/one2one.css">
 
-
 <div class="container">
 	<h1 id="one2one_h1">1 : 1 문의</h1>
 	<h2 id="one2one_h2">

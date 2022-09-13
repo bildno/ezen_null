@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="css/member/join.css">
+
 <div class="container">
 	<h1 id="join_h1">회원가입</h1>
 	<h2 id="join_exp">
