@@ -19,7 +19,7 @@
 				<img class="mypage_con-img1" src="img/host/cat.png" alt="contents1">
 				<p>
 				<div name="imgchange" style="font-size: 10px;">
-					<a href="#">사진변경</a>
+					<a id="mypage_a" href="#" >사진변경</a>
 				</div>
 				<p>
 				<div name="membername">홍진웅</div>
@@ -28,13 +28,13 @@
 			</div>
 			<div class="mypage_mylist">
 				<p>
-					<a href="/reserveList"><b>예약 내역</b></a>
+					<a id="mypage_a" href="/reserveList"><b>예약 내역</b></a>
 				<p>
-					<a href="/mylist"><b>나의 활동</b></a>
+					<a id="mypage_a" href="/mylist"><b>나의 활동</b></a>
 				<p>
-					<a href="/one2one"><b>1:1 문의 내역</b></a>
+					<a id="mypage_a" href="/one2one"><b>1:1 문의 내역</b></a>
 				<p>
-					<a href="/mywish"><b>ZZIM 한 공간</b></a>
+					<a id="mypage_a" href="/mywish"><b>ZZIM 한 공간</b></a>
 				<p>
 					<span id="zzimimg"><img src="/img/member/zzim.png"
 						alt="zzim" /> X ?</span>
@@ -48,21 +48,21 @@
 					<tr>
 						<th>닉네임</th>
 						<td>이용자 닉네임</td>
-						<td><a href="#">변경하기</a></td>
+						<td><a id="mypage_a" href="#">변경하기</a></td>
 					</tr>
 					<tr>
 						<th>이메일</th>
 						<td>이용자 이메일</td>
-						<td><a href="#">변경하기</a></td>
+						<td><a id="mypage_a" href="#">변경하기</a></td>
 					</tr>
 					<tr>
 						<th>연락처</th>
 						<td>이용자 연락처</td>
-						<td><a href="#">변경하기</a></td>
+						<td><a id="mypage_a" href="#">변경하기</a></td>
 					</tr>
 					<tr>
 						<th>비밀번호</th>
-						<td colspan=2><a href="#">변경하기</a></td>
+						<td colspan=2><a id="mypage_a" href="#">변경하기</a></td>
 					</tr>
 				</table>
 			</div>
