@@ -52,7 +52,7 @@
                </table>
             </div>
 
-            <button type="submit"><a href="/enter_host">입점등록</a></button>
+            <button type="submit">입점등록</button>
         </div>
     </div>
     </div>

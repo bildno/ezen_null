@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-             <link rel="stylesheet" href="/css/host/enterhost.css">
+             <link rel="stylesheet" href="/css/enterhost.css">
 <div class="container">
         <h1 id="space_host_h1">공간 입점등록</h1>
         <h2 id="space_host_h2">호스트의 공간 입점등록페이지입니다
@@ -18,7 +18,7 @@
             <h3 id="space_host_h3">공간명</h3>
             <input type="text" placeholder="고유 업체명을 입력해주세요.ex)하이브 회의실" id="host_input">
             <div class="caution_div">
-            <img src="/img/host/caution.png" alt="조심" id="caution"><small id="can_small">사용 가능한 특수문자 : ( , ) , [ , ] , - , .(마침표), ,(쉼표)</small>
+            <img src="/img/space_info_host.img/caution.png" alt="조심" id="caution"><small id="can_small">사용 가능한 특수문자 : ( , ) , [ , ] , - , .(마침표), ,(쉼표)</small>
             </div>
         </div>
         
@@ -31,7 +31,7 @@
             <div class="div_ch"><input type="checkbox" style="zoom:10.5;" name="room" value="partyroom" id="ch" onclick='checkOnlyOne(this)'></div><label id="ch1">갤러리룸</label>
             </div>
             <div class="caution_div">
-                <img src="/img/host/caution.png" alt="조심" id="caution"><small id="can_small">적합한 용도 내에서 최대 1개만 선택가능</small>
+                <img src="/img/space_info_host.img/caution.png" alt="조심" id="caution"><small id="can_small">적합한 용도 내에서 최대 1개만 선택가능</small>
             </div>
         </div>
 
