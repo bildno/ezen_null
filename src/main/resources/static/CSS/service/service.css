@@ -93,4 +93,8 @@ li>.page-link {
 
 #customer_hr {
 	background-color: rgb(151, 210, 236);
+	width:1000px;
+	height:3px;
+	border: none;
+	border-radius:5px;
 }
