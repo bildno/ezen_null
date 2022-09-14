@@ -169,7 +169,7 @@
                 <button type="button" onclick="javascript:btn()" id="btnfn">저장</button>
             </div>
             <div class="cancel">
-                <button type="button" id="btnfn"><a id="canceler" href="/mypage_host"> 취소</a></button>
+                <button type="button" id="btnfn" onclick="window.open('/mypage_host')"><a id="canceler" href="/mypage_host"> 취소</a></button>
             </div>
         </div>
     </div>
