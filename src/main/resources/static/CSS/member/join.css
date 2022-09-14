@@ -91,3 +91,15 @@
 	flex-direction: row;
 	justify-content: center;
 }
+.gender{
+	margin-left: 20%;
+}
+
+#gender_female{
+	margin-top: 10px;
+}
+#gender_male{
+	margin-bottom: 20px
+}
+
+

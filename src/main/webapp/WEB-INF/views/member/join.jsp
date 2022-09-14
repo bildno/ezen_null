@@ -28,11 +28,18 @@
 			<div>
 				<input  type="password" placeholder="비밀번호 확인">
 			</div>
-		<div id="genderbox">
+		<!-- <div id="genderbox">
 			<div id="genderbox2">
 				<input type="checkbox" />여성
 				<input type="checkbox" />남성
 			</div>
+		</div> -->
+		<div class="gender" id="gender_female">
+			<input type="checkbox" />여성
+		</div>
+		
+		<div class="gender" id="gender_male">
+			<input type="checkbox" />남성
 		</div>
 			
 		</div>
