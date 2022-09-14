@@ -1,4 +1,3 @@
-@charset "UTF-8";
 #carouselExampleIndicators{
     width: 700px;
     height: 500px;
@@ -153,5 +152,113 @@ input[id="ch"]:checked{
 .space_host_caution{
     margin-bottom: 100px;
 }
+.space_host_img{
+    margin-bottom: 100px;
+}
+/* 이미지파일 css */
+.space_host_img input[type="file"]{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip:rect(0,0,0,0);
+    border: 0;
+}
+.space_host_img label{
+    display: inline-block;
+    padding: 10px;
+    color:  rgb(238, 238, 238);
+    font-size: 15px;
+    font-family: 'Noto Sans KR', sans-serif; 
+    font-weight: 300;
+    line-height: normal;
+    vertical-align: middle;
+    background-color: rgb(37, 49, 109);
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+.space_host_img input[type="button"]{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip:rect(0,0,0,0);
+    border: 0;
+}
+#imgFile{
+    width: 100px;
+    height: 50px;
+}
+#adr_input{
+    padding: 10px;
+    width: 400px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+#openzip{
+    margin: 20px;
+    border: none;
+    background-color: rgb(37, 49, 109);
+    padding: 10px 20px 10px 20px;
+    border-radius: 5px;
+    color: white;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 300;
+}
+.addr1{
+    margin: 0 10px 10px 0;
+}
+.addr2{
+    margin: 0 10px 10px 0;
+}
+.space_host_location{
+    margin-bottom: 100px;
+}
+.space_host_price{
+    margin-bottom: 100px;
+}
+.space_host_bnum{
+    margin-bottom: 100px;
+}
+.space_host_head{
+    margin-bottom: 150px;
+}
+.space_finish{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+#btnfn{
+    width: 300px;
+    height: 60px;
+    background-color: rgb(37, 49, 109);
+    border: none;
+    border-radius: 5px;
+    font-family: 'Noto Sans KR', sans-serif; 
+    font-weight: 500;
+    font-size: 20px;
+    color: white;
+    
+}
+#btnfn a{
+    text-decoration: none;    
+}
+#canceler:hover{
+    color: white;
+}
+#canceler:visited{
+    color: white;
+}
+#canceler:link{
+    color: white;
+}
 
+input[id="host_input"]:focus {outline: 0.5px solid rgb(151, 210, 236);}
+input[id="adr_input"]:focus{outline: 0.5px solid rgb(151, 210, 236);}
+input[id="host_input_des"]:focus{outline: 0.5px solid rgb(151, 210, 236);}
 
