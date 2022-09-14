@@ -13,12 +13,12 @@
 		<table>
 			<tr>
 				<th>문의 유형</th>
-				<td><select name="type1" id="type1">
+				<td><select class="selectbox" name="type1" id="type1">
 						<option value="1" disabled selected>선택해주세요</option>
 						<option value="2">dd</option>
 						<option value="3">dd</option>
 						<option value="4">dd</option>
-				</select> <select name="type2" id="type2">
+				</select> <select class="selectbox" name="type2" id="type2">
 						<option value="1" disabled selected>선택해주세요</option>
 						<option value="2">dd</option>
 						<option value="3">dd</option>
@@ -27,7 +27,8 @@
 			</tr>
 			<tr>
 				<th>문의 내용</th>
-				<td><textarea name="ask" id="ask" rows="15" style="resize: none;"></textarea></td>
+				<td><textarea name="ask" id="ask" rows="15"
+						style="resize: none;"></textarea></td>
 			</tr>
 		</table>
 
