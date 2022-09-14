@@ -14,8 +14,8 @@
                 <div name="imgchange" style="font-size:10px;">
                     <a href="#">사진변경</a>
                 </div><p>
-                <div name="hostname">호스트 이름</div><p>
-                <div name="spacename">공간 이름</div>
+                <div name="hostname" id="h_name">호스트 이름</div><p>
+                <div name="spacename" id="s_name">공간 이름</div>
                 <hr>
             </div>
             <div class="hostlist"><p>
@@ -32,22 +32,22 @@
                <table>
                     <tr>
                         <th>닉네임</th>
-                        <td>이용자 닉네임</td>
-                        <td><a href="#">변경하기</a></td>
+                        <td id="ho_name">이용자 닉네임</td>
+                        <td id="ho_name"><a href="#" >변경하기</a></td>
                     </tr>
                     <tr>
                         <th>이메일</th>
-                        <td>이용자 이메일</td>
-                        <td><a href="#">변경하기</a></td>
+                        <td id="ho_name">이용자 이메일</td>
+                        <td><a href="#" id="ho_name">변경하기</a></td>
                     </tr>
                     <tr>
                         <th>연락처</th>
-                        <td>이용자 연락처</td>
-                        <td><a href="#">변경하기</a></td>
+                        <td id="ho_name">이용자 연락처</td>
+                        <td><a href="#" id="ho_name">변경하기</a></td>
                     </tr>
                     <tr>
                         <th>비밀번호</th>
-                        <td colspan=2><a href="#">변경하기</a></td>
+                        <td colspan=2><a href="#" id="ho_name">변경하기</a></td>
                     </tr>
                </table>
             </div>
