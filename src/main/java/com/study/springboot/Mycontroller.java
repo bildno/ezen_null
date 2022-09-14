@@ -160,6 +160,12 @@ public class Mycontroller {
 		return "index";
 	}
 	
+	@RequestMapping("/reserve_host")
+	public String reserve_host(Model model) {
+		
+		model.addAttribute("mainPage","host/reserve_host.jsp");
+		return "index";
+	}
 	/* ----------------------------------------- */
 	
 	
@@ -184,7 +190,6 @@ public class Mycontroller {
 		model.addAttribute("mainPage","contents/spacerent.jsp");
 		return "index";
 	}
-	
 	@RequestMapping("/space_info")
 	public String space_info(Model model) {
 		
@@ -192,25 +197,4 @@ public class Mycontroller {
 		return "index";
 	}
 	/* ----------------------------------------- */
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-	
-	
-	
-
-	
-	
-	
-	
 }
