@@ -14,15 +14,30 @@
 				<input type="text" placeholder="이름">
 			</div>
 			<div>
+				<input type="email" placeholder="이메일">
+			</div>
+			<div>
+				<input type="text" placeholder="전화번호(번호만 입력해주세요)">
+			</div>
+			<div>
 				<input type="text" placeholder="아이디">
 			</div>
 			<div>
 				<input type="password" placeholder="비밀번호">
 			</div>
 			<div>
-				<input type="password" placeholder="비밀번호 확인">
+				<input  type="password" placeholder="비밀번호 확인">
+			</div>
+		<div id="genderbox">
+			<div id="genderbox2">
+				<input type="checkbox" />여성
+				<input type="checkbox" />남성
 			</div>
 		</div>
+			
+		</div>
+		
+
 
 		<div id="checkForm">
 			<div class="check">
@@ -39,12 +54,14 @@
 				<input type="checkbox" id="terms_1">
 				<p style="margin: 0 0 0 5px">약관 1</p>
 			</div>
-			<textarea name="terms_1_content" rows="1" readonly style="resize:none;">약관내용1</textarea>
+			<textarea name="terms_1_content" rows="1" readonly
+				style="resize: none;">약관내용1</textarea>
 			<div class="check">
 				<input type="checkbox" id="terms_2">
 				<p style="margin: 0 0 0 5px">약관 2</p>
 			</div>
-			<textarea name="terms_2_content" rows="1" readonly style="resize:none;">약관내용2</textarea>
+			<textarea name="terms_2_content" rows="1" readonly
+				style="resize: none;">약관내용2</textarea>
 		</div>
 		<div>
 			<input type="button" value="회원가입" id="joinbtn">
