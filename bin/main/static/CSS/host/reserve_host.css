@@ -33,29 +33,34 @@
 /* 검색박스 */
 .search_box {
     border: 1px solid rgb(37, 49, 109);
-    padding: 35px;
-    font-size: small;
+    padding: 20px 0 10px 0;
     margin-bottom: 100px;
     width: 100%;
 }
 #datepicker2, #datepicker {
     width: 150px;
-    height: 20px;
+    height: 30px;
     margin-right: 2px;
 }
 .ui-datepicker-trigger {
     width: 20px;
-    height: 20px;
+    height: 30px;
     margin-bottom: 5px;
 }
 .search_box_ul li {
     display: flex;
     flex-flow: row nowrap;
-    height: 20px;
+    height: 30px;
     margin-bottom: 20px;
 }
 .search_box_ul p {
     margin-right: 20px;
+}
+.search_box_ul label > input[type="checkbox"] {
+	margin-right: 5px;
+}
+#check_label {
+	margin-right: 10px;
 }
 .search_btn {
     display: flex;
