@@ -77,8 +77,7 @@
 }
 .txt_primary {
     font-size: small;
-    margin-left: 10%;
-    text-align:left;
+    text-align: left;
 }
 .pagination {
     display: flex;
