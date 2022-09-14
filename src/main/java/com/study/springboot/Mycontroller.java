@@ -150,10 +150,10 @@ public class Mycontroller {
 		return "index";
 	}
 
-	@RequestMapping("/space_info_host")
-	public String space_info_host(Model model) {
+	@RequestMapping("/enter_host")
+	public String enter_host(Model model) {
 		
-		model.addAttribute("mainPage","host/space_info_host.jsp");
+		model.addAttribute("mainPage","host/enter_host.jsp");
 		return "index";
 	}
 	
