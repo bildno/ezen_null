@@ -44,15 +44,29 @@
 		<div class="sectioncomm">
 			<div class="section22">
 				<div class="con22" style="padding: 40px 40px 0 40px;">
-					<textarea name="comm_info" id="comm_info" cols="90" rows="10"
+					<textarea name="comm_info" class="contents" readonly="readonly" id="comm_info" cols="90" rows="10"
 						style="resize: none; width: 100%;">게시글 내용</textarea>
 					<hr>
-					<textarea name="comm_info" id="comm_info" cols="90" rows="2"
-						style="resize: none;">게시글 댓글</textarea>
+					<div>
+						<div id="reple">
+							asdas
+						</div>
+						<div id="reple">
+							asdas
+						</div>
+						<div id="reple">
+							asdas
+						</div>
+					</div>
+					<div >
+						<textarea name="comm_info" id="comm_info" cols="90" rows="2"
+							style="resize: none;">게시글 댓글</textarea>
+							<button id="reple_btn" style="float: right;">답글달기</button> 
+					</div>						
 				</div>
 			</div>
 		</div>
 	</div>
-	<button type="submit" style="float: right;" onclick="location.href='/community'">리스트</button>
+	<button id="list_btn" type="submit" style="float: right;" onclick="location.href='/community'">리스트</button>
 </div>
 <!-- container -->

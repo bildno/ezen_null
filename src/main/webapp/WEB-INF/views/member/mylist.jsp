@@ -11,9 +11,9 @@
 
 	
 	
-    <h1 class="mylist">내가 쓴 리뷰/게시글</h1>
+    <h1 class="mylist">나의 활동</h1>
     <h2 id="mylist_exp">
-		리뷰와 게시글을 확인해주세요
+		나의 활동을 확인해주세요
 		<img src="/img/service/space_icon.png" alt="space_icon"id="space_icon">
 	</h2>
     <hr>
@@ -36,6 +36,15 @@
             <a href="#">내가 작성한 게시글4</a>
     </div>
     <hr>
+      <div class="myboard">
+    		<h4><b>댓글</b></h4>
+    		<hr>
+            <a href="#">내가 작성한 댓글1</a><br>
+            <a href="#">내가 작성한 댓글2</a><br>
+            <a href="#">내가 작성한 댓글3</a><br>
+            <a href="#">내가 작성한 댓글4</a>
+    </div>
+    <hr />
     <div class="enter">
         <input type="button" value="확인" id="review_btn"> 
         <input type="button" value="취소" id="review_btn" onclick="location.href='/mypage'">

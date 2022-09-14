@@ -30,7 +30,7 @@
 				<p>
 					<a href="/reserveList"><b>예약 내역</b></a>
 				<p>
-					<a href="/mylist"><b>내가 쓴 리뷰/게시글</b></a>
+					<a href="/mylist"><b>나의 활동</b></a>
 				<p>
 					<a href="/one2one"><b>1:1 문의 내역</b></a>
 				<p>
