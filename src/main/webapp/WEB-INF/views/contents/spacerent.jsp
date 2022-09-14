@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<link rel="stylesheet" href="css/host/spacelist_host.css">
+<link rel="stylesheet" href="css/contents/spacerent.css">
 <div class="container">
-	<h1>호스트 공간 리스트</h1>
+	<h1>공간 리스트</h1>
 	<h2 id="host_list_exp">
-		호스트님의 공간을 확인하세요 <img src="/img/service/space_icon.png"
+		공간을 확인하세요 <img src="/img/service/space_icon.png"
 			alt="space_icon" id="space_icon">
 	</h2>
 	<div id="selectbox">
