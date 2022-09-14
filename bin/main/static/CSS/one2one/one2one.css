@@ -73,20 +73,7 @@
 	border-bottom: 1px solid #EEEEEE;
 }
 
-.sidelist {
-	width: 0;
-	position: fixed;
-	z-index: 1;
-	background-color: rgb(238, 238, 238);
-	height: 250px;
-	top: 0;
-	right: 0;
-	color: black;
-	overflow-x: hidden;
-	transition: 0.5s;
-	padding-top: 60px;
-	border-radius: 10px;
-}
+
 
 .writebtn {
 	border: none;
