@@ -32,9 +32,7 @@
 	display: flex;
 	flex-flow: row nowrap;
 }
-{
-	text-decoration: none;
-}
+
 
 .mypage_section {
 	font-family: Noto Sans KR;
@@ -46,16 +44,16 @@
 	justify-content: center;
 }
 
-a {
-	color: rgb(37, 49, 109);
+#mypage_a{
 	text-decoration: none;
 }
-a:hover{
-	text-decoration: none;
+#mypage_a {
+	 color: rgb(37, 49, 109);
 }
 
 .mypage_mylist a:hover {
 	text-decoration: none;
+	color: rgb(37, 49, 109);
 }
 
 .mypage_section1 {
