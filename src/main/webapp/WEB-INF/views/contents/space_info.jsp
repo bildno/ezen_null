@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<link rel="stylesheet" href="/css/host/space_info_host.css">
+<link rel="stylesheet" href="/css/contents/spaceinfo.css">
 <div class="container">
 	<h1 id="space_host_h1">공간 상세페이지</h1>
 	<h2 id="space_host_h2">
