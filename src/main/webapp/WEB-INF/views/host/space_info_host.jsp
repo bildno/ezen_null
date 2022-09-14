@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="/css/contents/spaceinfo.css">
 <div class="container">
 	<h1 id="space_host_h1">공간 상세페이지</h1>
@@ -74,6 +74,46 @@
 			파티용 조화 테이블, 유니크 모형 케이크 세팅, 화관 등 무료 <br>- 120인치 빔프로젝터, 스크린 사용 무료
 			<br>- 스마트폰 미러링, 스마트TV, 유튜브, 넷플릭스 무료
 		</p>
+
+		<form action="/admin/admin_noticeup">
+			<div style="text-align: left;"></div>
+			<textarea rows="1000" cols="500" id="editor4" name="editor4">
+			📢 현재 신규오픈 [타임이벤트 특가할인]을 적용하고 있습니다.
+			<br>예약사이트 포토 리뷰 작성이 작은 조건입니다💜
+			
+			<br> <br>
+			🤩핫딜!!(문의주세요)
+			<br>
+			- 9/10 추석 당일 나잇패키지(6시간) 예약 가능합니다!
+			<br> <br>
+			
+			[공간 소개]
+			<br>
+			어디서도 볼 수 없는 커브형 메인 포토존과 파티테이블 포토존, 2면 모두 창문으로 이루어진 따뜻한 파티룸 공간입니다. 
+			
+			<br> <br>
+			-브라이덜샤워, 베이비샤워, 생일파티, 프로포즈 등 프라이빗 파티
+			<br>
+			- 빔프로젝트 활용한 소규모 세미나, 워크숍 등 
+			<br> <br>
+			[공간의 차별점]
+			<br>
+			- 샤로수길 도보 30초
+			<br>
+			- 인근 맛집,카페, 편의점 다수<br>
+			- 라운드 형태의 독특한 메인 포토존
+			 <br> <br>
+			 * 무료이용 이벤트
+			 <br>
+			 -파티용 조화 테이블, 유니크 모형 케이크 세팅, 화관 등 무료
+			  <br>
+			  - 120인치 빔프로젝터, 스크린 사용 무료
+				<br>
+			- 스마트폰 미러링, 스마트TV, 유튜브, 넷플릭스 무료
+		</p></textarea>
+
+			<button type="submit">수정하기</button>
+		</form>
 
 		<div>
 			<h4 id="space_host_sotit">시설안내</h4>
@@ -170,25 +210,39 @@
 				Q&amp;A <strong class="txt_primary"><em>0</em>개</strong>
 			</h4>
 			<a class="btn_qna_write"><span>질문 작성하기</span></a>
-			</div>
-			<div class="divide">
+		</div>
+		<div class="divide">
 			<hr class="line">
 		</div>
 		<div class="center txt_result">
-		<p class="p_result">등록된 질문이 아직 없습니다.</p>
+			<p class="p_result">등록된 질문이 아직 없습니다.</p>
 		</div>
-	
-	<div id="s_review">
+
+		<div id="s_review">
 			<h4 id="space_host_sotit">
 				이용후기 <strong class="txt_primary"><em>0</em>개</strong>
 			</h4>
 			<a class="btn_review_write"><span>후기 작성하기</span></a>
-			</div>
-			<div class="divide">
+		</div>
+		<div class="divide">
 			<hr class="line">
 		</div>
 		<div class="center txt_result">
-		<p class="p_result">등록된 후기가 아직 없습니다.</p>
-		</div>
+			<p class="p_result">등록된 후기가 아직 없습니다.</p>
 		</div>
 	</div>
+</div>
+
+
+
+
+<script>
+	var ckeditor_config = {
+		resize_enaleb : false,
+		enterMode : CKEDITOR.ENTER_BR,
+		shiftEnterMode : CKEDITOR.ENTER_P,
+		filebrowserUploadUrl : "${pageContext.request.contextPath}/ckUpload"
+	};
+
+	CKEDITOR.replace("editor4", ckeditor_config);
+</script>
