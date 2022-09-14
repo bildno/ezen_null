@@ -159,7 +159,7 @@ public class Mycontroller {
 	@RequestMapping("/space_info_host")
 	public String space_info_host(Model model) {
 		
-		model.addAttribute("mainPage","host/space_info_host.jsp");
+		model.addAttribute("mainPage","contents/space_info.jsp");
 		return "index";
 	}
 }
