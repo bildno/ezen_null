@@ -66,7 +66,7 @@
 		</div>
 	
 
-		<form action="/admin/admin_noticeup">
+		<form action="#">
 			<div style="text-align: left;"></div>
 			<textarea rows="40" cols="100" id="editor4" name="editor4">
 			📢 현재 신규오픈 [타임이벤트 특가할인]을 적용하고 있습니다.
