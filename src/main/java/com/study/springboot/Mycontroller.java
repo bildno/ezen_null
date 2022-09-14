@@ -130,14 +130,14 @@ public class Mycontroller {
 		return "index";
 	}
 	@RequestMapping("/mypage_host")
-	public String spacelist_host(Model model) {
+	public String mypage_host(Model model) {
 		
 		model.addAttribute("mainPage","host/host.jsp");
 		return"index";
 	}
 	
-	@RequestMapping("/spacselist_host")
-	public String spacselist_host(Model model) {
+	@RequestMapping("/spacelist_host")
+	public String spacelist_host(Model model) {
 		
 		model.addAttribute("mainPage","host/spacelist_host.jsp");
 		return "index";
