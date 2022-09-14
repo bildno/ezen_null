@@ -4,8 +4,8 @@
 <div class="container">
 	<h1>공간 리스트</h1>
 	<h2 id="host_list_exp">
-		공간을 확인하세요 <img src="/img/service/space_icon.png"
-			alt="space_icon" id="space_icon">
+		공간을 확인하세요 <img src="/img/service/space_icon.png" alt="space_icon"
+			id="space_icon">
 	</h2>
 	<div id="selectbox">
 		<input type="text" placeholder="지역"> <input type="text"
@@ -14,7 +14,7 @@
 	</div>
 
 	<div id="spacelist" class="row">
-		<div onclick="location.href='/space_info_host'" class="col-4 spacebox">
+		<div onclick="location.href='/space_info'" class="col-4 spacebox">
 			<img class="spacelist_img" src="img/공간.jpg" alt="">
 			<div>
 				<textarea id="space_exp" rows="" cols="" readonly="readonly">asdas</textarea>

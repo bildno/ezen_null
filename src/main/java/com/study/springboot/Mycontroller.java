@@ -162,4 +162,11 @@ public class Mycontroller {
 		model.addAttribute("mainPage","contents/space_info.jsp");
 		return "index";
 	}
+	
+	@RequestMapping("/spacerent")
+	public String spacerent(Model model) {
+		
+		model.addAttribute("mainPage","contents/spacerent.jsp");
+		return "index";
+	}
 }
