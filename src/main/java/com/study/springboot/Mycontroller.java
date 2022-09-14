@@ -169,4 +169,10 @@ public class Mycontroller {
 		model.addAttribute("mainPage","contents/spacerent.jsp");
 		return "index";
 	}
+	@RequestMapping("/reserve_host")
+	public String reserve_host(Model model) {
+		
+		model.addAttribute("mainPage","host/reserve_host.jsp");
+		return "index";
+	}
 }
