@@ -11,12 +11,12 @@
         <hr>
 
         <div class="aaaa">
-            <button class="spacelistbtn" onclick="location.href='/contents/spacerent'">더보기</button>
+            <button class="spacelistbtn" onclick="location.href='/spacerent'">더보기</button>
         </div>
 
         <div class="space_list">
             <div class="row">
-                <div class="community1 col-md-4">
+                <div class="community1 col-md-4" onclick="location.href='/space_info'">
                     <a href="#"> <img class="community1-img1" src="img/host/cat.png" alt="contents1">
                         <div name="membername">
                             홍진웅
