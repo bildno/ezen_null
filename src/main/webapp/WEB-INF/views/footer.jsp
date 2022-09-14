@@ -24,7 +24,7 @@
 					<p style="margin-bottom: 0; font-size: 12px;">Copyright SPACE
 						Corp. All Rights Reserved</p>
 				</div>
-				<div id="underlogo" onclick="location.href='main.html'">Space
+				<div id="underlogo" onclick="location.href='/main'">Space
 					Ground</div>
 			</div>
 		</div>

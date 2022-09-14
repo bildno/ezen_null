@@ -4,9 +4,10 @@
 .container {
 	margin-top: 150px;
 	margin-bottom: 100px;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
-.container > h1 {
+.container>h1 {
 	font-family: 'Do Hyeon', sans-serif;
 	font-weight: 500;
 	margin-left: 50px;
@@ -15,7 +16,8 @@
 	display: flex;
 	flex-flow: row nowrap;
 }
-.container > h2 {
+
+.container>h2 {
 	font-family: 'Do Hyeon', sans-serif;
 	font-weight: 300;
 	margin-left: 50px;
@@ -89,4 +91,40 @@
 
 #space_icon {
 	width: 30px;
+}
+
+#comm_info {
+	border: 1px solid rgb(238, 238, 238);
+	border-radius: 5px;
+}
+#comm_info:nth-child(1){
+	width: 85%;	
+	
+}
+.contents:focus{
+	outline: none;
+}
+
+
+#list_btn{
+	margin-top: 15px;
+	border: 1px solid rgb(238, 238, 238);
+	border-radius: 5px;
+	padding: 10px;
+}
+#reple{
+	border:none;
+	margin-top: 15px;
+	margin-bottom : 10px;
+	border-bottom: 1px solid rgb(238, 238, 238);
+	border-radius: 5px;
+	padding: 10px;
+	
+}
+#reple_btn{
+	margin-top : 5px;
+	border: 1px solid rgb(238, 238, 238);
+	border-radius: 5px;
+	padding: 10px;
+	float: right;
 }

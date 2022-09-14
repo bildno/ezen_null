@@ -22,11 +22,22 @@
 	margin-left: 10%;
 }
 
+.selectbox {
+	border: 1px solid rgb(238, 238, 238);
+	border-radius: 5px;
+}
+
+#ask {
+	border: 1px solid rgb(238, 238, 238);
+	border-radius: 5px;
+}
+
 .o2owrite_tb table {
 	width: 100%;
 	border: 1px solid rgb(238, 238, 238);
 	border-radius: 5px;
 	text-align: center;
+	border-collapse: separate;
 }
 
 .o2owrite_tb th, td {
