@@ -7,7 +7,8 @@
 <head>
 <style>
 @import
-	url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+	url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap')
+	;
 
 @import
 	url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
@@ -79,8 +80,7 @@
 				<a href="/login"><img src="img/member/login.png" alt=""
 					style="width: 20px" /></a> <a href="/mypage">마이페이지</a> <a href="/main">홈</a>
 				<a href="/service">고객센터</a> <a href="/one2one">one2one</a> <a
-					href="#">best 게시글</a>
-				<a href="/mypage_host">호스트 마이페이지</a>
+					href="#">best 게시글</a> <a href="/mypage_host">호스트 마이페이지</a>
 			</div>
 
 			<img class="liston" src="/img/sidelisticon.png" alt="sidelisticon"
