@@ -2,41 +2,40 @@
 	pageEncoding="UTF-8"%>
 
 <link rel="stylesheet" href="css/admin/ad_one2one.css">
-
-<div class="title">
-	<h1>1:1 문의 관리</h1>
-</div>
-<hr>
 <div class="container">
         <hr>
-        <div class="title">
-            <h1 id="ad_one2one_h1">1:1 문의 관리</h1>
-        </div>
-        <h2 id="ad_one2one_h2">
-            1대1 문의 페이지입니다. <img src="/img/service/space_icon.png"
-                alt="space_icon" id="space_icon">
-        </h2>
         <div class="list row">
 
             <div class="asidelist col-12 col-md-4">
                 <table>
                     <tr>
-                        <td>회원정보 관리</td>
+                        <td onclick="location.href='/ad_member'">회원정보 관리</td>
                     </tr>
                     <tr>
-                        <td>호스트정보 관리</td>
+                        <td onclick="location.href='/ad_host'">호스트정보 관리</td>
                     </tr>
                     <tr>
-                        <td>1:1문의 관리</td>
+                        <td onclick="location.href='/ad_one2one'" id="asd">1:1문의 관리</td>                     
+                    </tr>
+                     <tr>
+                        <td onclick="location.href='/ad_notice'" id="asd">공지사항 관리</td>
                     </tr>
                     <tr>
-                        <td>공지사항 관리</td>
+                        <td onclick="location.href='/ad_FAQ'" id="asd">도움말 관리</td>
                     </tr>
                 </table>
             </div>
             
 
             <div class="sectionlist col-12 col-md-8">
+                    <div class="title">
+            <h1 id="ad_one2one_h1">1:1 문의 관리</h1>
+        </div>
+        <h2 id="ad_one2one_h2">
+            1대1 문의 페이지입니다. <img src="/img/service/space_icon.png"
+                alt="space_icon" id="space_icon">
+        </h2>
+            
                 <div class="contents">
                     <div class="search_box">
                         <ul class="search_box_ul">

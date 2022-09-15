@@ -9,19 +9,19 @@
 		<div class="asidelist col-12 col-md-4">
 			<table>
 				<tr>
-					<td id="asd">회원정보 관리</td>
+					<td onclick="location.href='/ad_member'" id="asd">회원정보 관리</td>
 				</tr>
 				<tr>
-					<td id="asd">호스트정보 관리</td>
+					<td onclick="location.href='/ad_host'" id="asd">호스트정보 관리</td>
 				</tr>
 				<tr>
-					<td id="asd">1:1문의 관리</td>
+					<td onclick="location.href='/ad_one2one'" id="asd">1:1문의 관리</td>
 				</tr>
 				<tr>
-					<td id="asd">공지사항 관리</td>
+					<td onclick="location.href='/ad_notice'" id="asd">공지사항 관리</td>
 				</tr>
 				<tr>
-					<td id="asd">도움말 관리</td>
+					<td onclick="location.href='/ad_FAQ'" id="asd">도움말 관리</td>
 				</tr>
 			</table>
 		</div>
