@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>호스트 회원 상세정보</title>
+<title>호스트 회원 상세정보   </title>
 </head>
 <body>
 

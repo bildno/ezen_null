@@ -4,6 +4,9 @@
 <link rel="stylesheet" href="css/admin/ad_one2one.css">
 
 
+
+
+
 <div class="title">
             <h1>1:1 문의 관리</h1>
         </div>
