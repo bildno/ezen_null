@@ -37,7 +37,7 @@
                             <li>
                                 <p>검색항목</p> 
                                 <select>
-                                    <option value="name">이름</option>
+                                    <option value="name">이름 </option>
                                     <option value="rnum">예약번호</option>
                                     <option value="phone">전화번호</option>
                                     <option value="email">이메일</option>
