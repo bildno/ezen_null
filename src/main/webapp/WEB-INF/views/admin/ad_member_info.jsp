@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>회원정보상세</title>
+<title>회원정보상세   </title>
 </head>
 <body>
 

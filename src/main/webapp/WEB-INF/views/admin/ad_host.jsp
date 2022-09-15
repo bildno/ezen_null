@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <link rel="stylesheet" href="css/host/reserve_host.css">
+    <link rel="stylesheet" href="css/admin/ad_host.css">
+    
+    
+    
+    
   <div class="container">
         <hr>
         <div class="list row">
