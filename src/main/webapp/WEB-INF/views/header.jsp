@@ -76,6 +76,7 @@
 				<a href="/one2one">one2one</a>
 				<a href="#">best 게시글</a>
 				<a href="/mypage_host">호스트 마이페이지</a>
+				<a href="/ad_member">관리자 페이지 확인용용</a>
 			</div>
 
 			<img class="liston" src="/img/sidelisticon.png" alt="sidelisticon"
