@@ -56,6 +56,10 @@
 	margin-bottom: 5px;
 }
 
+.search_box_ul {
+	
+}
+
 .search_box_ul li {
 	display: flex;
 	flex-flow: row nowrap;
