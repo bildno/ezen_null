@@ -6,17 +6,21 @@
     <script type="text/javascript">
  
         function Validation(){
-    
+    	
+        //정규식 부분입니다
          var nameExp = /^[가-힣]{2,4}|[a-zA-Z]{2,10}\s[a-zA-Z]{2,10}$/; // 이름 유효성 검사
          var RegExp = /^[a-zA-Z0-9]{4,12}$/; // 아이디 유효성 검사
          var exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/; // 이메일 유효성 검사
          var patternPhone= /01[016789]-[^0][0-9]{2,3}-[0-9]{3,4}/;
+         var reg = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[~?!@#$%^&*_-]).{8,}$/;
+         var reg2 = /(\w)\1\1\1/;
+        	
 
          
          
          
          
-         
+         //변수 선언 부분입니다
          var userId = document.getElementById("userid");
          
          var userPs = document.getElementById("userPs");
@@ -33,7 +37,7 @@
          
          
          
-         // 이름이 영문자 썩여서 입력될 경우
+         // 이름이 영문자 섞여서 입력될 경우
          
          if(nameExp.test(userN.value) == false){
          
@@ -54,13 +58,21 @@
         
         }
 
+        
+        //핸드폰 번호가 제대로 입력 안될 경우
         if (patternPhone.test(phonenum.value) == false || phonenum.value=="") {
+        	
         alert("핸드폰 번호를 다시 확인해주세요.");
+        
         return false;
-      }
+        
+        }
          
 
 
+        
+        //----------------------------------------------------------
+        
          // 아이디에 아무것도 안들어가있을 경우
          
          if(userId.value == ""){
@@ -75,11 +87,12 @@
          
          if(!RegExp.test(userId.value)){
          
-          alert("4~12자리 영문대소문자와 숫자로만 입력해주세요");
+          alert("아이디를 4~12자리 문자,숫자로 해주세요.");
          
           return false;
          
          }
+         
          
          //id와 password가 같을 경우
          
@@ -101,33 +114,51 @@
          
          if(userPs.value==""){
          
-          alert("password가 입력되지 않았습니다.");
+          alert("비밀번호가 입력되지 않았습니다.");
          
           return false;
          
          }
          
-         //password 4~12자리 영문대소문자와 숫자로만 입력
+         //비밀번호를 8자 이상으로 입력하지 않을 경우
          
-         if(!RegExp.test(userPs.value)){
+         if(userPs.value.length <8){
          
-          alert("password를 4~12자리 영문대소문자와 숫자로만 입력해주세요.");
-         
-          return false;
-         
-         }
-         
-         //id와 password_check가 같을 경우
-         
-         if(userId.value == userPc.value){
-         
-          alert("id와 passwordCheck가 같습니다.");
+          alert("비밀번호는 8자 이상으로 작성해주세요.");
          
           return false;
          
          }
          
-         //password_check가 입력되지 않을 경우
+         
+         //정규식 이용한 비밀번호 유효성 검사
+         
+         if( !reg.test(userPs.value)){
+         
+          alert("password는 8자이상,숫자,대문자,소문자,특수문자 포함입니다.");
+         
+          return false;
+         
+         }
+         
+         
+         //같은 문자 4번 이상으로 비밀번호 불가
+         
+         if(/(\w)\1\1\1/.test(userPs.value)) {
+        	 
+        	 alert("같은 문자를 4번 이상 사용하실 수 없습니다.");
+        	 
+        	 return false;
+         }
+         
+         
+         
+         
+         
+         
+         //----------------------------------------------------------------
+         
+         //비밀번호 확인이 입력되지 않을 경우
          
          if(userPc.value==""){
          
@@ -137,9 +168,10 @@
          
          }
          
-         //password_check 4~12자리 영문대소문자와 숫자로만 입력
          
-         if(!RegExp.test(userPc.value)){
+         //정규식 이용한 비밀번호 확인 유효성 검사
+         
+         if(!reg.test(userPc.value)){
          
           alert("passwordCheck를 4~12자리 영문대소문자와 숫자로만 입력해주세요.");
          
@@ -147,7 +179,19 @@
          
          }
          
-         //===========================================================
+         
+         // 비밀번호와 비밀번호 확인이 같지 않을 경우
+         if(userPs.value != userPc.value) {
+        	 
+        	 alert("비밀번호와 비밀번호 확인이 맞지 않습니다.");
+        	 
+        	 return false;
+         }
+         
+         
+
+         
+         
 
         }
          
@@ -178,10 +222,10 @@
                     <input type="text" placeholder="아이디" name="id" id ="userid">
                 </div>
                 <div>
-                    <input type="password" placeholder="비밀번호"  name="password" id="userPs">
+                    <input type="password" placeholder="비밀번호"  name="password" id="userPs" >
                 </div>
                 <div>
-                    <input type="password" placeholder="비밀번호 확인" name="password" id ="userPc">
+                    <input type="password" placeholder="비밀번호 확인" name="password" id ="userPc" >
                 </div>
 				<div class="gender" id="gender_female">
 					<input type="checkbox" />여성
