@@ -4,29 +4,32 @@
 
 <div class="container">
 	<hr>
-	<div class="list row">
+	
+	<div class="list">
+	<div class="row">
 
-		<div class="asidelist col-12 col-md-4">
+		<div class="asidelist col-sm-12 col-md-3">		
 			<table>
 				<tr>
-					<td onclick="location.href='/ad_member'" id="asd">회원정보 관리</td>
+					<td onclick="location.href='/ad_member'">회원정보 관리</td>
 				</tr>
 				<tr>
-					<td onclick="location.href='/ad_host'" id="asd">호스트정보 관리</td>
+					<td onclick="location.href='/ad_host'">호스트정보 관리</td>
 				</tr>
 				<tr>
-					<td onclick="location.href='/ad_one2one'" id="asd">1:1문의 관리</td>
+					<td onclick="location.href='/ad_one2one'">1:1문의 관리</td>
 				</tr>
 				<tr>
-					<td onclick="location.href='/ad_notice'" id="asd">공지사항 관리</td>
+					<td onclick="location.href='/ad_notice'">공지사항 관리</td>
 				</tr>
 				<tr>
-					<td onclick="location.href='/ad_FAQ'" id="asd">도움말 관리</td>
+					<td onclick="location.href='/ad_FAQ'">도움말 관리</td>
 				</tr>
 			</table>
 		</div>
 
-		<div class="sectionlist col-12 col-md-8">
+		<div class="sectionlist col-sm-12 col-md-9">
+		
 			<h1 id="space_host_h1">회원정보관리</h1>
 			<h2 id="space_host_h2">
 				회원정보관리페이지입니다. <img src="/img/service/space_icon.png"
@@ -92,7 +95,8 @@
 					</nav>
 				</div>
 			</div>
-
+			
+		</div>
 		</div>
 	</div>
 </div>

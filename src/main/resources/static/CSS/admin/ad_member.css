@@ -121,10 +121,40 @@
 .asidelist {
 	display: flex;
 	justify-content: center;
-	margin-left: auto;
-	margin-right: auto;
+	flex-flow: column nowrap;
 }
 
-#asd {
-	height: 30px;
+/* @media screen and ( max-width: 767px )
+                      and ( orientation: portrait ) 
+{
+	.container { background-color: red; }
+	.asidelist {
+		flex: 1 100%;
+		order: 0;
+	}
+	.sectionlist {
+		flex: 1 100%;
+		order: 1;
+	}
 }
+
+@media screen and ( min-width: 768px )
+                      and ( max-width: 959px )
+{
+	.container { background-color: blue; }
+	.asidelist {
+		flex: 1 100%;
+		order: 0;
+	}
+	.sectionlist {
+		flex: 1 100%;
+		order: 1;
+	}
+} */
+                      
+                      
+                      
+                      
+                      
+                      
+                      
