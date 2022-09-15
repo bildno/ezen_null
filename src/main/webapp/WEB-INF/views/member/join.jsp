@@ -11,7 +11,7 @@
          var nameExp = /^[가-힣]{2,4}|[a-zA-Z]{2,10}\s[a-zA-Z]{2,10}$/; // 이름 유효성 검사
          var RegExp = /^[a-zA-Z0-9]{4,12}$/; // 아이디 유효성 검사
          var exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/; // 이메일 유효성 검사
-         var patternPhone= /01[016789]-[^0][0-9]{2,3}-[0-9]{3,4}/;
+         var patternPhone= /01[016789]-[^0][0-9]{2,3}-[0-9]{3,4}/; //핸드폰 번호 유효성 검사
          var reg = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[~?!@#$%^&*_-]).{8,}$/;
          var reg2 = /(\w)\1\1\1/;
         	
@@ -135,7 +135,7 @@
          
          if( !reg.test(userPs.value)){
          
-          alert("password는 8자이상,숫자,대문자,소문자,특수문자 포함입니다.");
+          alert("비밀번호는 8자이상,숫자,대문자,소문자,특수문자 포함입니다.");
          
           return false;
          
@@ -162,7 +162,7 @@
          
          if(userPc.value==""){
          
-          alert("passwordCheck가 입력되지 않았습니다.");
+          alert("비밀번호 확인이 입력되지 않았습니다.");
          
           return false;
          
@@ -173,7 +173,7 @@
          
          if(!reg.test(userPc.value)){
          
-          alert("passwordCheck를 4~12자리 영문대소문자와 숫자로만 입력해주세요.");
+          alert("비밀번호 확인을 4~12자리 영문대소문자와 숫자로만 입력해주세요.");
          
           return false;
          
