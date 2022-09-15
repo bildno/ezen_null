@@ -63,12 +63,10 @@
                                 <th>이메일</th>
                                 <th>전화번호</th>
                                 <th>성별</th>
-                                <th id="gender_th">호스트 여부</th>
                             </tr>
                             <tr>
                                 <th>das</th>
                                 <th>ads</th>
-                                <th></th>
                                 <th></th>
                                 <th></th>
                                 <th></th>
