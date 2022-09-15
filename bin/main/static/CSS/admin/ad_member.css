@@ -1,119 +1,130 @@
-@charset "UTF-8";#space_icon{
-    width: 30px;
-}
-.container{
-    font-family: 'Do Hyeon', sans-serif;
+#space_icon {
+	width: 30px;
 }
 
-
-
-
-
+.container {
+	font-family: 'Do Hyeon', sans-serif;
+}
 
 /* 컨테이너 - 부트스트랩 */
-#space_host_h1{
-    font-family: 'Do Hyeon', sans-serif;
+#space_host_h1 {
+	font-family: 'Do Hyeon', sans-serif;
 	margin-left: 50px;
 	margin-top: 50px;
 	font-size: 50px;
 }
-#space_host_h2{
-  
+
+#space_host_h2 {
 	font-weight: 300;
 	font-size: 20px;
 	margin-left: 50px;
 	color: rgb(37, 49, 109)
 }
+
 .container {
 	margin-top: 150px;
 	margin-bottom: 100px;
 }
-.contents{
-    width: 100%;
-    font-family : 'Noto Sans KR' , sans-serif;
-    margin: 40px 10% 40px 10%;
-    padding: 65px;
-    text-align: center;
-    margin: 0  auto;
-    border:1px solid rgb(238, 238, 238);
-    border-radius:10px;
+
+.contents {
+	width: 100%;
+	font-family: 'Noto Sans KR', sans-serif;
+	margin: 40px 10% 40px 10%;
+	padding: 65px;
+	text-align: center;
+	margin: 0 auto;
+	border: 1px solid rgb(238, 238, 238);
+	border-radius: 10px;
 }
 /* 검색박스 */
 .search_box {
-    border: 1px solid rgb(37, 49, 109);
-    padding: 20px 0 10px 0;
-    margin-bottom: 100px;
-    width: 100%;
+	border: 1px solid rgb(37, 49, 109);
+	padding: 20px 0 10px 0;
+	margin-bottom: 100px;
+	width: 100%;
 }
+
 #datepicker2, #datepicker {
-    width: 150px;
-    height: 30px;
-    margin-right: 2px;
+	width: 150px;
+	height: 30px;
+	margin-right: 2px;
 }
+
 .ui-datepicker-trigger {
-    width: 20px;
-    height: 30px;
-    margin-bottom: 5px;
+	width: 20px;
+	height: 30px;
+	margin-bottom: 5px;
 }
+
 .search_box_ul li {
-    display: flex;
-    flex-flow: row nowrap;
-    height: 30px;
-    margin-bottom: 20px;
+	display: flex;
+	flex-flow: row nowrap;
+	height: 30px;
+	margin-bottom: 20px;
 }
+
 .search_box_ul p {
-    margin-right: 20px;
+	margin-right: 20px;
 }
-.search_box_ul label > input[type="checkbox"] {
+
+.search_box_ul label>input[type="checkbox"] {
 	margin-right: 5px;
 }
+
 #check_label {
 	margin-right: 10px;
 }
+
 .search_btn {
-    display: flex;
-    justify-content: center;
+	display: flex;
+	justify-content: center;
 }
+
 .search_btn button {
-	border:0;
-    background-color: rgb(238, 238, 238);
-    padding:10px 20px 10px 20px;
-    border-radius: 5px
+	border: 0;
+	background-color: rgb(238, 238, 238);
+	padding: 10px 20px 10px 20px;
+	border-radius: 5px
 }
+
 .search_table {
-    width: 100%; 
+	width: 100%;
 }
+
 .search_table td {
-    text-align: center;
-    border-bottom: 2px solid rgb(37, 49, 109);
+	text-align: center;
+	border-bottom: 2px solid rgb(37, 49, 109);
 }
+
 .txt_primary {
-    font-size: small;
-    text-align: left;
+	font-size: small;
+	text-align: left;
 }
+
 .pagination {
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
+	display: flex;
+	justify-content: center;
+	margin-top: 50px;
 }
 
 .title {
-    text-align: center;
+	text-align: center;
 }
+
 .list {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    text-align: center;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	text-align: center;
 }
 
 .asidelist {
-    display: flex;
- 
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
+	display: flex;
+	justify-content: center;
+	margin-left: auto;
+	margin-right: auto;
 }
-#asd{
-    height: 30px;
+
+#asd {
+	height: 30px;
 }
