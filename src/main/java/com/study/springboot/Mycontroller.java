@@ -29,6 +29,12 @@ public class Mycontroller {
 		model.addAttribute("mainPage", "admin/ad_member.jsp");
 		return "index";
 	}
+	@RequestMapping("/ad_host")
+	public String ad_host(Model model) {
+		
+		model.addAttribute("mainPage", "admin/ad_host.jsp");
+		return "index";
+	}
 	@RequestMapping("/ad_one2one")
 	public String ad_one2one(Model model) {
 		
@@ -43,10 +49,10 @@ public class Mycontroller {
 		
 		return "index";
 	}
-	@RequestMapping("/ad_faq")
-	public String ad_faq(Model model) {
+	@RequestMapping("/ad_FAQ")
+	public String ad_FAQ(Model model) {
 		
-		model.addAttribute("mainPage","admin/ad_faq.jsp");
+		model.addAttribute("mainPage","admin/ad_FAQ.jsp");
 		
 		return "index";
 	}
