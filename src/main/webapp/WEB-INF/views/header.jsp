@@ -18,9 +18,9 @@
 	;
 </style>
 <link rel="stylesheet" href="css/main.css">
-
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+	
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script
@@ -29,17 +29,13 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"></script>
 
 <script>
-	 num = 1;
-
+	num = 1;
 	function sideon() {
-
 		if (num == 1) {
 			document.getElementById("sidelist").style.width = "300px";
-
 			num = 0;
 		} else {
 			document.getElementById("sidelist").style.width = "0";
-
 			num = 1;
 		}
 	}
@@ -49,15 +45,12 @@
 		$(document).on('scroll', function() {
 			if ($(window).scrollTop() > 90) {
 				$(".small_header").removeClass("deactive");
-
 				$(".small_header").addClass("active");
 
 			} else {
 				$(".small_header").removeClass("active");
-
 			}
 		})
-
 	});
 </script>
 
@@ -74,13 +67,15 @@
 				<input type="text" id="text">
 			</div>
 
-
 			<div id="sidelist" class="sidelist">
-
-				<a href="/login"><img src="img/member/login.png" alt=""
-					style="width: 20px" /></a> <a href="/mypage">마이페이지</a> <a href="/main">홈</a>
-				<a href="/service">고객센터</a> <a href="/one2one">one2one</a> <a
-					href="#">best 게시글</a> <a href="/mypage_host">호스트 마이페이지</a>
+				<a href="/login">
+				<img src="img/member/login.png" alt="" style="width: 20px" /></a>
+				<a href="/mypage">마이페이지</a>
+				<a href="/main">홈</a>
+				<a href="/service">고객센터</a>
+				<a href="/one2one">one2one</a>
+				<a href="#">best 게시글</a>
+				<a href="/mypage_host">호스트 마이페이지</a>
 			</div>
 
 			<img class="liston" src="/img/sidelisticon.png" alt="sidelisticon"
