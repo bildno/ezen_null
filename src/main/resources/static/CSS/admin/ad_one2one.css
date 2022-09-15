@@ -2,20 +2,21 @@
     border: 1px solid red;
 } */
 .title {
-    text-align: center;
+	text-align: center;
 }
+
 .list {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    text-align: center;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	text-align: center;
 }
 
 .asidelist {
-    display: flex;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
+	display: flex;
+	justify-content: center;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .container {
@@ -31,9 +32,6 @@
 	display: flex;
 	flex-flow: row nowrap;
 }
-
-
-
 
 .o2owrite_tb {
 	font-family: 'Noto Sans KR';
