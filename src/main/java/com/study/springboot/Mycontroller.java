@@ -19,6 +19,16 @@ public class Mycontroller {
 		return "index";
 	}
 	
+	/* ----------------------------------------- admin 폴더 */
+	
+	@RequestMapping("/ad_member")
+	public String ad_member(Model model) {
+		
+		model.addAttribute("mainPage", "admin/ad_member.jsp");
+		return "index";
+	}
+	/* ----------------------------------------- */
+	
 	/* ----------------------------------------- member 폴더 */
 	@RequestMapping("/login")
 	public String login(Model model) {
