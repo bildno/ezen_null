@@ -119,17 +119,24 @@
 #ad_th{
     padding: 10px;
 }
-#ad_one2one_h1{
+#ad_notice_h1{
     font-family: 'Do Hyeon', sans-serif;
     margin-left: 50px;
     margin-top: 50px;
     font-size: 50px;
 }
-#ad_one2one_h2{
+#ad_notice_h2{
     font-family: 'Do Hyeon', sans-serif;
     font-weight: 300;
     font-size: 20px;
     margin-left: 50px;
     color: rgb(37, 49, 109);
     text-align: center;
+}
+.btn_ad_notice{
+    border: none;
+    background-color:rgb(238, 238, 238);
+    padding: 3px 15px 3px 15px;
+    border-radius: 5px;
+    margin: 5px;
 }
