@@ -1,39 +1,38 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
-    
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
+<link rel="stylesheet" href="css/admin/ad_FAQ.css"> 
 <title>도움말관리</title>
-</head>
-<body>
+
 	<div class="container">
-        <div class="title">
-            <h1>도움말 관리</h1>
-        </div>
-        <hr>
+		<hr>
         <div class="list row">
 
             <div class="asidelist col-12 col-md-4">
                 <table>
                     <tr>
-                        <td>회원정보 관리</td>
+                        <td onclick="location.href='/ad_member'" id="asd">회원정보 관리</td>
                     </tr>
                     <tr>
-                        <td>호스트정보 관리</td>
+                        <td onclick="location.href='/ad_host'" id="asd">호스트정보 관리</td>
                     </tr>
                     <tr>
-                        <td>1:1문의 관리</td>
+                        <td onclick="location.href='/ad_one2one'" id="asd">1:1문의 관리</td>
                     </tr>
                     <tr>
-                        <td>공지사항 관리</td>
+                        <td onclick="location.href='/ad_notice'" id="asd">공지사항 관리</td>
+                    </tr>
+                    <tr>
+                        <td onclick="location.href='/ad_FAQ'" id="asd">도움말 관리</td>
                     </tr>
                 </table>
             </div>
 
             <div class="sectionlist col-12 col-md-8">
+			<h1 id="space_host_h1">도움말 관리</h1>
+			<h2 id="space_host_h2">
+				도움말관리페이지입니다. <img src="/img/service/space_icon.png"
+					alt="space_icon" id="space_icon">
+			</h2>
                 <div class="contents">
                     <div class="search_box">
                         <ul class="search_box_ul">

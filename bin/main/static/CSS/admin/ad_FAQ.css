@@ -1,3 +1,6 @@
+.container{
+	font-family: 'Noto Sans KR', sans-serif;
+}
 .title {
 	text-align: center;
 }
@@ -39,8 +42,8 @@
 .container {
 	margin-top: 150px;
 	margin-bottom: 100px;
+	font-family: 'Do Hyeon', sans-serif;
 }
-
 .contents {
 	width: 100%;
 	font-family: 'Noto Sans KR', sans-serif;
@@ -123,6 +126,9 @@
 	margin-top: 50px;
 }
 
-.btn_rev, .btn_del {
+.btn_rev{
 	border: 0;
+}
+#asd {
+	height: 30px;
 }
