@@ -19,6 +19,8 @@ public class Mycontroller {
 		return "index";
 	}
 	
+	
+	
 	/* ----------------------------------------- admin 폴더 */
 	
 	@RequestMapping("/ad_member")
@@ -27,6 +29,35 @@ public class Mycontroller {
 		model.addAttribute("mainPage", "admin/ad_member.jsp");
 		return "index";
 	}
+	@RequestMapping("/ad_one2one")
+	public String ad_one2one(Model model) {
+		
+		model.addAttribute("mainPage","admin/ad_one2one.jsp");
+		
+		return "index";
+	}
+	@RequestMapping("/ad_notice")
+	public String ad_notice(Model model) {
+		
+		model.addAttribute("mainPage","admin/ad_notice.jsp");
+		
+		return "index";
+	}
+	@RequestMapping("/ad_faq")
+	public String ad_faq(Model model) {
+		
+		model.addAttribute("mainPage","admin/ad_faq.jsp");
+		
+		return "index";
+	}
+	@RequestMapping("/ad_host_info")
+	public String ad_host_info(Model model) {
+		
+		model.addAttribute("mainPage","admin/ad_host_info.jsp");
+		
+		return "index";
+	}
+	
 	/* ----------------------------------------- */
 	
 	/* ----------------------------------------- member 폴더 */
@@ -207,4 +238,9 @@ public class Mycontroller {
 		return "index";
 	}
 	/* ----------------------------------------- */
+	
+	/*-------------------------------------------*/
+
+	
+	
 }
