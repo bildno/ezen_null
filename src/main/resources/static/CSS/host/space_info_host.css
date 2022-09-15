@@ -1,8 +1,7 @@
-
 #carouselExampleIndicators{
-    width: 100%;
+    width: 700px;
     height: 500px;
-} 
+}
 #host_img1,#host_img2,#host_img3{
     width: 700px;
     height: 500px;
@@ -25,46 +24,21 @@
 	margin-left: 50px;
 	color: rgb(37, 49, 109)
 }
-#space_host_h3{
-    font-family: 'Noto Sans KR', sans-serif;
-	font-weight: 500;
-	font-size: 14px;
-	margin-left: 0;
-	color: rgb(37, 49, 109)
-}
-.space_host_tit{
-    font-family: 'Noto Sans KR', sans-serif;
-	font-weight: 500;
-	font-size: 14px;
-	margin-left: 0;
-	color: rgb(37, 49, 109)
-}
-.space_host_simintro{
-    font-family: 'Do Hyeon', sans-serif;
-	font-weight: 300;
-	font-size: 20px;
-	margin-left: 0;
-	color: rgb(37, 49, 109)
-}
+
 .container {
 	margin-top: 150px;
 	margin-bottom: 100px;
 }
-#carouselExampleIndicators{
-    margin-top: 100px; 
-    margin-bottom: 100px; 
-}
+
 
 /* 공간 상세정보 입력란 */
-.contents_wrapper {
-	margin-left:10%;
-	margin-right:10%;
-	margin-bottom: 50px;
-}
+
 #space_host_enterh2{
     font-family: 'Noto Sans KR', sans-serif; 
     font-weight: 500;
     font-size: 25px;
+    margin-top: 70px;
+    text-align: center;
     
 }
 #space_host_info{
@@ -72,18 +46,20 @@
     font-weight: 500;
     font-size: 15px;
     color: gray;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
+    text-align: center;
 }
-#space_host_tit {
-	font-family: 'Noto Sans KR', sans-serif;
-	font-weight: 300;
-	font-size: 50px;
+#space_host_h3{
+    font-size: 20px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 500;
 }
 #host_input{
     padding: 10px;
-    width: 500px;
+    width: 800px;
     border: 1px solid lightgray;
     border-radius: 5px;
+
 }
 input::placeholder{
     color: gray;
@@ -104,13 +80,16 @@ input::placeholder{
     padding-top: 5px;
 }
 .space_host_name{
-    margin-bottom: 50px;
+    margin-bottom: 100px;
+}
+.space_host_select{
+    margin-bottom: 100px;
 }
 #ch1{
     font-size: 17px;
     font-family: 'Noto Sans KR', sans-serif;
     font-weight: 300;
-    padding-bottom: 10px;
+    margin-right: 100px;
 }
 input[id="ch"]{
     -webkit-appearance: none;
@@ -140,151 +119,146 @@ input[id="ch"]:checked{
     color: white;
     
 }
-/* .navi_area li {
-    position: relative;
-    display: table-cell;
-    height: 40px;
-    background-color: #fff;
-    text-align: center;
-    border-bottom: 1px solid #704de4;
-    font-size: 16px;
-    height: 50px;
-    padding: 10px 15px;
-} */
-.navi_area li.selected {
-    background-color: rgb(254, 245, 172);
+.div_ch{
+    vertical-align: middle;
+    padding-top: 3px;
+
 }
-.td-1 {
-	position: relative;
-    background-color: #fff;
-    text-align: center;
-    border-bottom: 1px solid rgb(37, 49, 109);
-    font-size: 16px;
-    height: 50px;
-    padding: 10px 15px;
-    width:20%;
+.div_select{
+    display: flex;
+    flex-direction: row;
 }
-.space_table {
-	width:100%;
+#small{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    font-size: 13px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 300;
 }
-.nav_wrapper {
-	height:150px;
-	width:100%
+.space_host_onerow{
+    margin-bottom: 100px;
 }
-.line {
-	border:3px solid rgb(37, 49, 109);
-	width:100px;
-	border-radius: 3px;
-	text-align:left;
-	margin-left:0;
-	margin-bottom: 50px;
+#host_input_des{
+    padding: 10px;
+    width: 800px;
+    height: 250px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
 }
-.p_intro {
-	margin-bottom: 50px;
+.space_host_description{
+    margin-bottom: 100px;
 }
-.info_wrapper {
-	margin-bottom: 50px;
+.space_host_caution{
+    margin-bottom: 100px;
 }
-.officehours td {
-	position: relative;
-    background-color: #fff;
-    text-align: left;
-    font-size: 16px;
-    height: 50px;
-    padding: 10px 15px;
-    width:20%;
+.space_host_img{
+    margin-bottom: 100px;
 }
-.caution_list{
-	padding-left:0;
-	margin-bottom: 50px;
+/* 이미지파일 css */
+.space_host_img input[type="file"]{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip:rect(0,0,0,0);
+    border: 0;
 }
-.caution_list li{
-	position: relative;
-    background-color: #fff;
-    text-align: left;
-    font-size: 16px;
-    height: 60px;
-    padding: 10px 15px;
-}
-.caution_list_info {
-	margin-left: 15px;
-}
-.refund {
-	margin-bottom: 100px;
-	font-family: 'Noto Sans KR', sans-serif;
-	font-size: 16px;
-}
-.inner {
-    padding: 33px 30px 38px;
-}
-.btn_way, .btn_call {
-	font-family: 'Noto Sans KR', sans-serif;
-	font-size: 16px;
-    height: 50px;
-    color: rgb(37, 49, 109);
-    line-height: 50px;
-    border-radius: 50px;
-    width:100%;
-    background-color: rgb(254, 245, 172);
-    border:0;
-}
-.inner {
-	border:0;
-	background-color: rgb(238, 238, 238);
-	font-family: 'Noto Sans KR', sans-serif;
-	font-size: 16px;
-}
-.sp_name {
-	font-size: 24px;
-	color: #000;
-}
-.sp_address {
-	font-size:16px;
-	color: #656565;
-}
-.sp_location a {
+.space_host_img label{
     display: inline-block;
-    font-size: 16px;
-    color: #656565;
+    padding: 10px;
+    color:  rgb(238, 238, 238);
+    font-size: 15px;
+    font-family: 'Noto Sans KR', sans-serif; 
+    font-weight: 300;
+    line-height: normal;
+    vertical-align: middle;
+    background-color: rgb(37, 49, 109);
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
 }
-#s_qna {
-	display:flex;
-	flex-flow:row nowrap;
-	justify-content: space-between;
+.space_host_img input[type="button"]{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip:rect(0,0,0,0);
+    border: 0;
 }
-.btn_qna_write span {
-	border:0;
-	border-radius: 15px;
-	vertical-align: middle;
-	padding:10px;
-	color: rgb(37, 49, 109);
-	background-color:rgb(238, 238, 238); 
-	
+#imgFile{
+    width: 100px;
+    height: 50px;
 }
-.btn_qna_write:hover {
-	text-decoration: none;
+#adr_input{
+    padding: 10px;
+    width: 400px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
 }
-.center {
-	display: table-cell;
+#openzip{
+    margin: 20px;
+    border: none;
+    background-color: rgb(37, 49, 109);
+    padding: 10px 20px 10px 20px;
+    border-radius: 5px;
+    color: white;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 300;
 }
-.p_result {
-	width:100%;
-	margin-bottom: 100px;
+.addr1{
+    margin: 0 10px 10px 0;
 }
-#s_review {
-	display:flex;
-	flex-flow:row nowrap;
-	justify-content: space-between;
+.addr2{
+    margin: 0 10px 10px 0;
 }
-.btn_review_write span {
-	border:0;
-	border-radius: 15px;
-	vertical-align: middle;
-	padding:10px;
-	color: rgb(37, 49, 109);
-	background-color:rgb(238, 238, 238); 
-	
+.space_host_location{
+    margin-bottom: 100px;
 }
-.btn_review_write:hover {
-	text-decoration: none;
+.space_host_price{
+    margin-bottom: 100px;
 }
+.space_host_bnum{
+    margin-bottom: 100px;
+}
+.space_host_head{
+    margin-bottom: 150px;
+}
+.space_finish{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+#btnfn{
+    width: 300px;
+    height: 60px;
+    background-color: rgb(37, 49, 109);
+    border: none;
+    border-radius: 5px;
+    font-family: 'Noto Sans KR', sans-serif; 
+    font-weight: 500;
+    font-size: 20px;
+    color: white;
+    
+}
+#btnfn a{
+    text-decoration: none;    
+}
+#canceler:hover{
+    color: white;
+}
+#canceler:visited{
+    color: white;
+}
+#canceler:link{
+    color: white;
+}
+
+input[id="host_input"]:focus {outline: 0.5px solid rgb(151, 210, 236);}
+input[id="adr_input"]:focus{outline: 0.5px solid rgb(151, 210, 236);}
+input[id="host_input_des"]:focus{outline: 0.5px solid rgb(151, 210, 236);}
+
