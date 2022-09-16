@@ -11,7 +11,7 @@
          var nameExp = /^[가-힣]{2,4}|[a-zA-Z]{2,10}\s[a-zA-Z]{2,10}$/; // 이름 유효성 검사
          var RegExp = /^[a-zA-Z0-9]{4,12}$/; // 아이디 유효성 검사
          var exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/; // 이메일 유효성 검사
-         var patternPhone= /01[016789]-[^0][0-9]{2,3}-[0-9]{3,4}/; //핸드폰 번호 유효성 검사
+         var patternPhone=/^[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}/; //핸드폰 번호 유효성 검사
          var reg = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[~?!@#$%^&*_-]).{8,}$/;
          var reg2 = /(\w)\1\1\1/;
         	
@@ -207,7 +207,7 @@
             스페이스 그라운드의 회원이 되어주세요 ! <img src="/img/service/space_icon.png" alt="space_icon" id="space_icon">
         </h2>
         <div class="contents">
-        <form action="" onsubmit="return Validation();">
+        <form action="/end" onsubmit="return Validation();">
             <div id="insert">
                 <div>
                     <input type="text" placeholder="이름" name="name" id="usern">
