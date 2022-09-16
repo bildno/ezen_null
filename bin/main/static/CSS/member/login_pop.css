@@ -1,0 +1,5 @@
+.login_img {
+	display:flex;
+	flex-flow: row nowrap;
+	width:1000px;
+}
