@@ -142,6 +142,13 @@ public class Mycontroller {
 		model.addAttribute("mainPage", "member/myreview.jsp");
 		return "index";
 	}
+	@RequestMapping("/end")
+	public String end(Model model) {
+		
+		model.addAttribute("mainPage","member/login.jsp");
+		return "index";
+	}
+	
 	/* ----------------------------------------- */
 	
 	
