@@ -5,13 +5,6 @@
 
 <div class="container">
 	<hr>
-	<div class="title">
-		<h1 id="ad_notice_h1">공지사항 관리</h1>
-	</div>
-	<h2 id="ad_notice_h2">
-		공지사항 관리 페이지입니다 <img src="/img/service/space_icon.png" alt="space_icon"
-			id="space_icon">
-	</h2>
 	<div class="list row">
 
 		<div class="asidelist col-12 col-md-4">
@@ -36,6 +29,13 @@
 
 
 		<div class="sectionlist col-12 col-md-8">
+			<div class="title">
+		<h1 id="ad_notice_h1">공지사항 관리</h1>
+	</div>
+	<h2 id="ad_notice_h2">
+		공지사항 관리 페이지입니다 <img src="/img/service/space_icon.png" alt="space_icon"
+			id="space_icon">
+	</h2>
 			<div class="contents">
 				<div class="search_box">
 					<ul class="search_box_ul">
