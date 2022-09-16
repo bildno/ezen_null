@@ -16,25 +16,25 @@
 			<div class="section11">
 				<div class="con11">
 					<a href="#"> <img class="con-img1" src="img/host/cat.png"
-						alt="contents1">
-						<div name="membername">
-							홍<br>진<br>웅
+						alt="contents1" id="cominfo">
+						<div name="membername" id="membername">
+							건대 라운지
 						</div>
 					</a>
 				</div>
 				<div class="con11">
 					<a href="#"> <img class="con-img1" src="img/host/cat.png"
-						alt="contents1">
-						<div name="membername">
-							홍<br>진<br>웅
+						alt="contents1" id="cominfo">
+						<div name="membername" id="membername">
+							홍대 루프탑
 						</div>
 					</a>
 				</div>
 				<div class="con11">
 					<a href="#"> <img class="con-img1" src="img/host/cat.png"
-						alt="contents1">
-						<div name="membername">
-							홍<br>진<br>웅
+						alt="contents1" id="cominfo">
+						<div name="membername" id="membername">
+							여의도 파티룸
 						</div>
 					</a>
 				</div>

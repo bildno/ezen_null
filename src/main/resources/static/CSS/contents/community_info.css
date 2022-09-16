@@ -59,7 +59,14 @@
 
 .con11 {
 	overflow: hidden;
+	margin-top: 21px;
+
 }
+
+#cominfo:hover{
+	filter:brightness(0.5);
+	transition: 1s;
+}    
 
 .con-img1 {
 	width: 70%;
