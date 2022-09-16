@@ -9,7 +9,7 @@
 }
 
 .new_pass, .new_pass_check, .now_pass {
-	margin-bottom: 15px;
+	margin-bottom: 30px;
 	width: 80%;
 	border-radius: 5px;
 	border: 1px solid rgb(238, 238, 238);
@@ -19,7 +19,6 @@
 .container {
 	margin-bottom: 180px;
 }
-
 .contents {
 	font-family: 'Noto Sans KR', sans-serif;
 	border: 1px solid rgb(238, 238, 238);
@@ -33,15 +32,15 @@
 .btn_change {
 	display:flex;
 	flex-flow: row nowrap;
+	justify-content: space-evenly;
 }
-/* #changebtn {
-	width: 60%;
-	margin: 0 20% 10px 20%;
+#changebtn, #cancelbtn {
+	width: 35%;
 	background-color: rgb(238, 238, 238);
 	border: 0;
 	padding: 10px;
 	border-radius: 5px;
-} */
+}
 
 .yet {
 	font-size: small;
