@@ -15,7 +15,8 @@ font-family: 'Noto Sans KR', sans-serif;
 }
 
 #space_host_h2 {
-	font-weight: 300;
+	font-family: 'Do Hyeon', sans-serif;
+    font-weight: 300;
 	font-size: 20px;
 	margin-left: 50px;
 	color: rgb(37, 49, 109)
@@ -55,11 +56,12 @@ font-family: 'Noto Sans KR', sans-serif;
 	height: 30px;
 	margin-bottom: 5px;
 }
-
 .search_box_ul {
-	
+	display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-right: 40px;
 }
-
 .search_box_ul li {
 	display: flex;
 	flex-flow: row nowrap;
@@ -94,12 +96,10 @@ font-family: 'Noto Sans KR', sans-serif;
 .search_table {
 	width: 100%;
 }
-
-.search_table td {
-	text-align: center;
-	border-bottom: 2px solid rgb(37, 49, 109);
+.search_table th {
+    text-align: center;
+    border-bottom: 2px solid rgb(37, 49, 109);
 }
-
 .txt_primary {
 	font-size: small;
 	text-align: left;
@@ -116,49 +116,21 @@ font-family: 'Noto Sans KR', sans-serif;
 }
 
 .list {
-	display: flex;
-	flex-flow: row nowrap;
-	justify-content: center;
-	text-align: center;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    text-align: center;
 }
 
 .asidelist {
-	display: flex;
-	justify-content: center;
-	flex-flow: column nowrap;
+    display: flex;
+    justify-content: center;
+	width: 30%;
+}
+.sectionlist {
+	width: 65%;
 }
 
-/* @media screen and ( max-width: 767px )
-                      and ( orientation: portrait ) 
-{
-	.container { background-color: red; }
-	.asidelist {
-		flex: 1 100%;
-		order: 0;
-	}
-	.sectionlist {
-		flex: 1 100%;
-		order: 1;
-	}
+#asd {
+	height: 30px;
 }
-
-@media screen and ( min-width: 768px )
-                      and ( max-width: 959px )
-{
-	.container { background-color: blue; }
-	.asidelist {
-		flex: 1 100%;
-		order: 0;
-	}
-	.sectionlist {
-		flex: 1 100%;
-		order: 1;
-	}
-} */
-                      
-                      
-                      
-                      
-                      
-                      
-                      

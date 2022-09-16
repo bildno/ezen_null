@@ -5,29 +5,29 @@
 
 	<div class="container">
 		<hr>
-        <div class="list row">
+        <div class="list">
 
-            <div class="asidelist col-12 col-md-4">
-                <table>
-                    <tr>
-                        <td onclick="location.href='/ad_member'" id="asd">회원정보 관리</td>
-                    </tr>
-                    <tr>
-                        <td onclick="location.href='/ad_host'" id="asd">호스트정보 관리</td>
-                    </tr>
-                    <tr>
-                        <td onclick="location.href='/ad_one2one'" id="asd">1:1문의 관리</td>
-                    </tr>
-                    <tr>
-                        <td onclick="location.href='/ad_notice'" id="asd">공지사항 관리</td>
-                    </tr>
-                    <tr>
-                        <td onclick="location.href='/ad_FAQ'" id="asd">도움말 관리</td>
-                    </tr>
-                </table>
-            </div>
+            <div class="asidelist">		
+			<table>
+				<tr>
+					<td onclick="location.href='/ad_member'">회원정보 관리</td>
+				</tr>
+				<tr>
+					<td onclick="location.href='/ad_host'">호스트정보 관리</td>
+				</tr>
+				<tr>
+					<td onclick="location.href='/ad_one2one'">1:1문의 관리</td>
+				</tr>
+				<tr>
+					<td onclick="location.href='/ad_notice'">공지사항 관리</td>
+				</tr>
+				<tr>
+					<td onclick="location.href='/ad_FAQ'">도움말 관리</td>
+				</tr>
+			</table>
+		</div>
 
-            <div class="sectionlist col-12 col-md-8">
+            <div class="sectionlist">
 			<h1 id="space_host_h1">도움말 관리</h1>
 			<h2 id="space_host_h2">
 				도움말관리페이지입니다. <img src="/img/service/space_icon.png"
@@ -60,7 +60,7 @@
                                 <th>제목</th>
                                 <th>작성자</th>
                                 <th>작성일시</th>
-                                <th>수정/삭제</th>
+                                <th>삭제</th>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -68,7 +68,6 @@
                                 <td>홀깅동</td>
                                 <td>2022-09-15</td>
                                 <td>
-                                    <button class="btn_rev">수정</button>
                                     <button class="btn_del">삭제</button>
                                 </td>
                             </tr>

@@ -4,7 +4,7 @@
 .container {
 	margin-top: 150px;
 	margin-bottom: 100px;
-	font-family: 'Noto Sans KR', sans-serif;
+	
 }
 
 .container>h1 {
@@ -59,13 +59,45 @@
 
 .con11 {
 	overflow: hidden;
-	margin-top: 21px;
+	margin-top: 37px;
 
 }
+
 
 #cominfo:hover{
 	filter:brightness(0.5);
 	transition: 1s;
+}
+
+
+.con11{
+	position:relative;
+}
+
+#membername{
+	position:absolute;
+	top:70%;
+	opacity:0;
+	left:20%;
+	display:flex;
+	flex-direction:row;
+	justify-content:center;
+}
+
+#cominfo:hover + #membername{
+	opacity:1;
+	transition:1.2s;
+}
+
+#comh3{
+	color:white;
+	font-size:20px;
+	text-align:center;
+	display:flex;
+	flex-direction:row;
+	justify-content:center;
+	font-family: 'Do Hyeon', sans-serif;
+	
 }    
 
 .con-img1 {
@@ -103,6 +135,7 @@
 #comm_info {
 	border: 1px solid rgb(238, 238, 238);
 	border-radius: 5px;
+	
 }
 #comm_info:nth-child(1){
 	width: 85%;	
@@ -118,6 +151,7 @@
 	border: 1px solid rgb(238, 238, 238);
 	border-radius: 5px;
 	padding: 10px;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 #reple{
 	border:none;
@@ -134,4 +168,5 @@
 	border-radius: 5px;
 	padding: 10px;
 	float: right;
+	font-family: 'Noto Sans KR', sans-serif;
 }

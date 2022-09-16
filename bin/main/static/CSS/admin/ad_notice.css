@@ -7,15 +7,17 @@
 .list {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: center;
+    justify-content: space-evenly;
     text-align: center;
 }
 
 .asidelist {
     display: flex;
     justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
+	width: 30%;
+}
+.sectionlist {
+	width: 65%;
 }
 #space_icon{
     width: 30px;
@@ -66,6 +68,12 @@
     height: 30px;
     margin-bottom: 5px;
 }
+.search_box_ul {
+	display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-right: 40px;
+}
 .search_box_ul li {
     display: flex;
     flex-flow: row nowrap;
@@ -95,7 +103,6 @@
     width: 100%; 
 }
 .search_table th {
-    width: 15%;
     text-align: center;
     border-bottom: 2px solid rgb(37, 49, 109);
 }
@@ -138,7 +145,7 @@
 .btn_ad_notice{
     border: none;
     background-color:rgb(238, 238, 238);
-    padding: 3px 15px 3px 15px;
+    padding: 1px 15px 1px 15px;
     border-radius: 5px;
     margin: 5px;
 }

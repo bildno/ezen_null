@@ -67,12 +67,11 @@
 							<th>성별</th>
 						</tr>
 						<tr>
-							<th>das</th>
-							<th>ads</th>
-							<th></th>
-							<th></th>
-							<th></th>
-							<th></th>
+							<td>das</td>
+							<td>ads</td>
+							<td>das</td>
+							<td>ads</td>
+							<td>ads</td>
 						</tr>
 					</table>
 				</div>

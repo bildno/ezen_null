@@ -7,7 +7,7 @@
 	<hr>
 	<div class="list row">
 
-		<div class="asidelist col-12 col-md-4">
+		<div class="asidelist">
 			<table>
 				<tr>
 					<td onclick="location.href='/ad_member'" id="asd">회원정보 관리</td>
@@ -28,7 +28,7 @@
 		</div>
 
 
-		<div class="sectionlist col-12 col-md-8">
+		<div class="sectionlist">
 			<div class="title">
 		<h1 id="ad_notice_h1">공지사항 관리</h1>
 	</div>
@@ -59,12 +59,12 @@
 						총 <em>0</em>건이 검색되었습니다.
 					</p>
 					<table class="search_table">
-						<tr id="ad_th">
-							<th id="ad_th">번호</th>
-							<th id="ad_th">제목</th>
-							<th id="ad_th">클래스</th>
-							<th id="ad_th">작성일시</th>
-							<th id="ad_th">삭제</th>
+						<tr>
+							<th>번호</th>
+							<th>제목</th>
+							<th>클래스</th>
+							<th>작성일시</th>
+							<th>삭제</th>
 						</tr>
 						<tr>
 							<td>1</td>

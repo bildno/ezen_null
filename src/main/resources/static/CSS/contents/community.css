@@ -40,8 +40,10 @@
     text-align: center;
     width: 100px;
     border-radius: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     color:rgb(37, 49, 109);
+    padding: 5px 8px 5px 8px;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 
@@ -129,6 +131,7 @@
 	justify-content: end;
 	width: 100%;
     margin-bottom: 10px;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 #selectbox button {
