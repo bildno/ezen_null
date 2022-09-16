@@ -424,6 +424,8 @@ video {
 }
 
 .footer2 {
+	font-family: 'Noto Sans KR', sans-serif; 
+	font-weight: 300;
 	margin-left: 50px;
 	display: flex;
 	flex-direction: row;

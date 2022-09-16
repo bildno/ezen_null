@@ -31,7 +31,7 @@
 	width: 60%;
 	margin: 40px 20% 40px 20%;
 	padding: 40px 0 40px 0;
-	border-radius: 5%;
+	border-radius: 5px;
 }
 
 #insert input[type=text],input[type=text],input[type=email],input[type=password]  {
