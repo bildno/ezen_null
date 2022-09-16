@@ -53,10 +53,12 @@
 	width: 90%;
 	 
 	object-fit: fill;
+	transition: 1s;
 }
 .community1-img1:hover {
-	transition: 0.5s;
-	transform: translateY(-15px);
+
+	filter:brightness(0.5);
+	
 	
 	
 	

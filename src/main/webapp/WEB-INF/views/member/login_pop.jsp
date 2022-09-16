@@ -36,7 +36,12 @@
 	function google() {
 		window.open("https://accounts.google.com/");
 	}
+	function show() {
+		window.open("/member_join");
+	}
 </script>
+
+
 <div class="container">
 	<h1
 		style="font-family: 'Noto Sans KR', sans-serif; font-size: 20px; margin: 20px; font-weight: 500;">
@@ -58,13 +63,13 @@
 
 	<div class="login_under"
 		style="margin-top: 30px; display: flex; flex-direction: row; justify-content: center;">
-		<input type="button" value="회원가입" onclick="location.href='#'"
-			style="background-color: rgb(37, 49, 109); border: none; border-radius: 3px; width: 150px; height: 40px; color: white; font-family: 'Noto Sans KR'; font-weight: 300;">
+		<input type="button" value="회원가입" onclick="show(); self.close();"
+			style="background-color: rgb(37, 49, 109); border: none; border-radius: 3px; width: 150px; height: 40px; color: white; font-family: 'Noto Sans KR'; font-weight: 300; cursor: pointer;">
 	</div>
 	<hr>
 	<div class="login_foot"
 		style="margin-top: 20px; display: flex; flex-direction: row-reverse">
 		<input type="button" value="닫기" onclick="self.close();"
-			style="border: none; border-radius: 3px; width: 40px; padding: 5px; font-size: 13px; background-color: rgb(238, 238, 238); font-family: 'Noto Sans KR'; font-weight: 300;">
+			style="border: none; border-radius: 3px; width: 40px; padding: 5px; font-size: 13px; background-color: rgb(238, 238, 238); font-family: 'Noto Sans KR'; font-weight: 300; cursor: pointer;">
 	</div>
 </div>

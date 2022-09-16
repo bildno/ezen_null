@@ -18,7 +18,7 @@
             <div class="row">
                 <div class="community1 col-md-4" onclick="location.href='/space_info'">
                     <a href="#"> <img class="community1-img1" src="img/host/cat.png" alt="contents1">
-                        <div name="membername">
+                        <div name="membername" id="membername">
                             홍진웅
                         </div>
                     </a>
@@ -26,14 +26,14 @@
                 <div class="community1 col-md-4">
                     <a href="#"> 
                     <img class="community1-img1" src="img/host/cat.png" alt="contents1">
-                        <div name="membername">
+                        <div name="membername" id="membername">
                             홍진웅
                         </div>
                     </a>
                 </div>
                 <div class="community1 col-md-4">
                     <a href="#"> <img class="community1-img1" src="img/host/cat.png" alt="contents1">
-                        <div name="membername">
+                        <div name="membername" id="membername">
                             홍진웅
                         </div>
                     </a>
