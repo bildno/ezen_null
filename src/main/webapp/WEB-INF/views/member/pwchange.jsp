@@ -12,21 +12,27 @@
  
     myform.onsubmit = function() {
       
-      let name = document.getElementById('lo_name').value; 
-      if (name.length < 2 || name==null) {
-        alert("아이디를 다시 확인해주세요.");
-        document.getElementById('lo_name').focus();
+    	let nowpass = document.getElementById('now_pass').value; 
+        let newpass = document.getElementById('new_pass').value;
+        let passcheck = document.getElementById('new_pass_check').value;
+        if (nowpass.length < 4 || nowpass==null) {
+          alert("비밀번호가 맞지 않습니다.");
+          document.getElementById('now_pass').focus();
+          return false;
+        }else 
+        if(newpass.length <4 || newpass=="") {
+          alert("비밀번호를 다시 입력해주세요.");
+          document.getElementById('new_pass').focus();
+          return false; 
+        } else
+        if(passcheck != newpass || passcheck=="") {
+          alert("비밀번호가 동일하지 않습니다.");
+          document.getElementById('new_pass_check').focus();
+          return false;
+        }
       }
-      console.log("asd");
-      let pass = document.getElementById('lo_pass').value;
-      if(pass.length <4 || pass=="") {
-        alert("비밀번호를 다시 확인해주세요.");
-        document.getElementById('lo_pass').focus();
-        return false;
-      }
-    }
-    return;
-  };
+      return;
+    };
     </script>
 
 
@@ -35,7 +41,7 @@
 	<div class="contents">
         <form  id="myform" action="">
 		<div>
-			<input class="now_pass" type="text" placeholder="현재 비밀번호" id="now_pass">
+			<input class="now_pass" type="password" placeholder="현재 비밀번호" id="now_pass">
 		</div>
 		<div>
 			<input class="new_pass" type="password" placeholder="새 비밀번호" id="new_pass">
@@ -45,8 +51,8 @@
 		</div>
         
 		<div class="btn_change">
-			<input type="submit" value="change" id="changebtn">
-			<input type="submit" value="cancel" id="cancelbtn">
+			<input type="submit" value="변경하기" id="changebtn">
+			<input type="submit" value="취소" id="cancelbtn">
 		</div>
     </form>
 	</div>
