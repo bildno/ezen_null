@@ -64,7 +64,7 @@
 				</a>
 			</h1>
 			<div class="search" style="margin-top: 15px;">
-				<input type="text" id="text">
+				<input type="text" id="text" placeholder="원하시는 공간을 입력해보세요">
 			</div>
 
 			<div id="sidelist" class="sidelist">
