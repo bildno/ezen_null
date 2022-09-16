@@ -59,12 +59,12 @@
 						총 <em>0</em>건이 검색되었습니다.
 					</p>
 					<table class="search_table">
-						<tr id="ad_th">
-							<th id="ad_th">번호</th>
-							<th id="ad_th">제목</th>
-							<th id="ad_th">클래스</th>
-							<th id="ad_th">작성일시</th>
-							<th id="ad_th">삭제</th>
+						<tr>
+							<th>번호</th>
+							<th>제목</th>
+							<th>클래스</th>
+							<th>작성일시</th>
+							<th>삭제</th>
 						</tr>
 						<tr>
 							<td>1</td>

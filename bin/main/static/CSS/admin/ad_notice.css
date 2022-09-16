@@ -7,15 +7,17 @@
 .list {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: center;
+    justify-content: space-evenly;
     text-align: center;
 }
 
 .asidelist {
     display: flex;
     justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
+	width: 30%;
+}
+.sectionlist {
+	width: 65%;
 }
 #space_icon{
     width: 30px;
