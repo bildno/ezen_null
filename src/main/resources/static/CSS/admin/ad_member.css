@@ -56,10 +56,6 @@
 	margin-bottom: 5px;
 }
 
-.search_box_ul {
-	
-}
-
 .search_box_ul li {
 	display: flex;
 	flex-flow: row nowrap;
@@ -125,40 +121,10 @@
 .asidelist {
 	display: flex;
 	justify-content: center;
-	flex-flow: column nowrap;
+	margin-left: auto;
+	margin-right: auto;
 }
 
-/* @media screen and ( max-width: 767px )
-                      and ( orientation: portrait ) 
-{
-	.container { background-color: red; }
-	.asidelist {
-		flex: 1 100%;
-		order: 0;
-	}
-	.sectionlist {
-		flex: 1 100%;
-		order: 1;
-	}
+#asd {
+	height: 30px;
 }
-
-@media screen and ( min-width: 768px )
-                      and ( max-width: 959px )
-{
-	.container { background-color: blue; }
-	.asidelist {
-		flex: 1 100%;
-		order: 0;
-	}
-	.sectionlist {
-		flex: 1 100%;
-		order: 1;
-	}
-} */
-                      
-                      
-                      
-                      
-                      
-                      
-                      
