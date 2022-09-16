@@ -10,7 +10,7 @@
 		<div class="asidelist">
 			<table>
 				<tr>
-					<td onclick="location.href='/ad_member'">회원정보 관리</td>
+					<td onclick="location.href='/ad_member' style="cursor:pointer"" >회원정보 관리</td>
 				</tr>
 				<tr>
 					<td onclick="location.href='/ad_host'">호스트정보 관리</td>
