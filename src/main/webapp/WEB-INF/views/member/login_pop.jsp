@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
 <!-- Bootstrap CSS -->
 <!-- <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
@@ -52,10 +51,11 @@
 	<h2
 		style="font-family: 'Noto Sans KR', sans-serif; font-size: 16px; color: gray; margin: 20px;">아직
 		로그인을 안하셨다면</h2>
-	<div class="login_img" style="margin-top: 35px;">
+	<div class="login_img">
 		<img src="/img/pop/네이버.png" alt="네이버"
 			style="width: 200px; margin-left: 20px; height: 40px; margin-top: 10px; cursor: pointer;"
-			onclick="naver();"> <img src="/img/pop/구글.png" alt="구글"
+			onclick="naver();">
+		<img src="/img/pop/구글.png" alt="구글"
 			style="width: 220px; margin-left: 10px; margin-top: 10px; cursor: pointer;"
 			onclick="google();">
 	</div>
