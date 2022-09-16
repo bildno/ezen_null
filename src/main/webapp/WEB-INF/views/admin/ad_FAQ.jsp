@@ -27,7 +27,7 @@
 			</table>
 		</div>
 
-            <div class="sectionlist col-12 col-md-8">
+            <div class="sectionlist">
 			<h1 id="space_host_h1">도움말 관리</h1>
 			<h2 id="space_host_h2">
 				도움말관리페이지입니다. <img src="/img/service/space_icon.png"

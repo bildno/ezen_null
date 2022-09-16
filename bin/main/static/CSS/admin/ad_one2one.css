@@ -68,6 +68,12 @@
     height: 30px;
     margin-bottom: 5px;
 }
+.search_box_ul {
+	display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-right: 40px;
+}
 .search_box_ul li {
     display: flex;
     flex-flow: row nowrap;
@@ -97,7 +103,6 @@
     width: 100%; 
 }
 .search_table th {
-    width: 15%;
     text-align: center;
     border-bottom: 2px solid rgb(37, 49, 109);
 }
