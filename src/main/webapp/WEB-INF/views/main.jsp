@@ -105,7 +105,7 @@
 				</div>
 			</div>
 
-			<div class="section2" onclick="location.href='main.html'"
+			<div class="section2" onclick="location.href='community'"
 				style="cursor: pointer;">
 				<div class="con2">
 					<img class="con-img1" src="img/cafe.jpg" alt="contents2">
@@ -114,7 +114,7 @@
 			</div>
 
 
-			<div class="section3" onclick="location.href='main.html'"
+			<div class="section3" onclick="location.href='community'"
 				style="cursor: pointer;">
 				<div class="con3">
 					<img class="con-img1" src="img/party.jpg" alt="contents3">
@@ -123,7 +123,7 @@
 			</div>
 
 
-			<div class="section4" onclick="location.href='main.html'"
+			<div class="section4" onclick="location.href='community'"
 				style="cursor: pointer;">
 				<div class="con4">
 					<img class="con-img1" src="img/갤러리.jpg" alt="contents4">
