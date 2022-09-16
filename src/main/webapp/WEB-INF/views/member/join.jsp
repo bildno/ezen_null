@@ -77,7 +77,7 @@
          
          if(userId.value == ""){
          
-          alert("id를 입력해주세요.");
+          alert("아이디를 입력해주세요.");
          
           return false;
          
@@ -98,7 +98,7 @@
          
          if(userId.value == userPs.value){
          
-          alert("id와 password가 같습니다.");
+          alert("아이디와 비밀번호가 같습니다.");
          
           return false;
          
