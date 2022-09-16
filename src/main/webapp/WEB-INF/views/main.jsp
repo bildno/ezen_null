@@ -157,16 +157,16 @@
 						<div class="sintxt">
 							<table id="main_table" border=1 style="border-color: lightgray;">
 
-								<ul class="best-table">
-									<tr style="list-style: none;"
+								<ul class="best-table" >
+									<tr style="list-style: none; cursor:pointer"
 										onMouseOver="this.style.backgroundColor='#eeeeee'"
-										onMouseOut="this.style.backgroundColor='#FFFFFF'">
+										onMouseOut="this.style.backgroundColor='#FFFFFF'" >
 										<td>
 											<li>1231231233</li>
 										</td>
 										<td>조회수</td>
 									</tr>
-									<tr style="list-style: none;"
+									<tr style="list-style: none; cursor:pointer"
 										onMouseOver="this.style.backgroundColor='#eeeeee'"
 										onMouseOut="this.style.backgroundColor='#FFFFFF'">
 										<td>
@@ -189,7 +189,7 @@
 							<table id="main_table" border=1 style="border-color: lightgray;">
 
 								<ul>
-									<tr style="list-style: none;"
+									<tr style="list-style: none; cursor:pointer" 
 										onMouseOver="this.style.backgroundColor='#eeeeee'"
 										onMouseOut="this.style.backgroundColor='#FFFFFF'">
 										<td>
@@ -197,7 +197,7 @@
 										</td>
 										<td>조회수</td>
 									</tr>
-									<tr style="list-style: none;"
+									<tr style="list-style: none; cursor:pointer" 
 										onMouseOver="this.style.backgroundColor='#eeeeee'"
 										onMouseOut="this.style.backgroundColor='#FFFFFF'">
 										<td>
@@ -220,7 +220,7 @@
 							<table id="main_table" border=1 style="border-color: lightgray;">
 
 								<ul>
-									<tr style="list-style: none;"
+									<tr style="list-style: none; cursor:pointer" 
 										onMouseOver="this.style.backgroundColor='#eeeeee'"
 										onMouseOut="this.style.backgroundColor='#FFFFFF'">
 										<td>
@@ -228,7 +228,7 @@
 										</td>
 										<td>조회수</td>
 									</tr>
-									<tr style="list-style: none;"
+									<tr style="list-style: none; cursor:pointer" 
 										onMouseOver="this.style.backgroundColor='#eeeeee'"
 										onMouseOut="this.style.backgroundColor='#FFFFFF'">
 										<td>
@@ -251,7 +251,7 @@
 							<table id="main_table" border=1 style="border-color: lightgray;">
 
 								<ul>
-									<tr style="list-style: none;"
+									<tr style="list-style: none; cursor:pointer" 
 										onMouseOver="this.style.backgroundColor='#eeeeee'"
 										onMouseOut="this.style.backgroundColor='#FFFFFF'">
 										<td>
@@ -259,7 +259,7 @@
 										</td>
 										<td>조회수</td>
 									</tr>
-									<tr style="list-style: none;"
+									<tr style="list-style: none; cursor:pointer" 
 										onMouseOver="this.style.backgroundColor='#eeeeee'"
 										onMouseOut="this.style.backgroundColor='#FFFFFF'">
 										<td>
