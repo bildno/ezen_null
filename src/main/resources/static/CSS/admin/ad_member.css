@@ -56,7 +56,12 @@ font-family: 'Noto Sans KR', sans-serif;
 	height: 30px;
 	margin-bottom: 5px;
 }
-
+.search_box_ul {
+	display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-right: 40px;
+}
 .search_box_ul li {
 	display: flex;
 	flex-flow: row nowrap;
@@ -91,12 +96,10 @@ font-family: 'Noto Sans KR', sans-serif;
 .search_table {
 	width: 100%;
 }
-
-.search_table td {
-	text-align: center;
-	border-bottom: 2px solid rgb(37, 49, 109);
+.search_table th {
+    text-align: center;
+    border-bottom: 2px solid rgb(37, 49, 109);
 }
-
 .txt_primary {
 	font-size: small;
 	text-align: left;

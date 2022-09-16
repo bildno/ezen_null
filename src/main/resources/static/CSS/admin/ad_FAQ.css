@@ -63,11 +63,15 @@ font-family: 'Noto Sans KR', sans-serif;
 	height: 30px;
 	margin-bottom: 20px;
 }
-
-.search_box_ul p {
-	margin-right: 20px;
+.search_box_ul {
+	display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-right: 40px;
 }
-
+.search_box_ul p {
+    margin-right: 20px;
+}
 .search_box_ul label>input[type="checkbox"] {
 	margin-right: 5px;
 }
@@ -130,4 +134,11 @@ font-family: 'Noto Sans KR', sans-serif;
 
 #asd {
 	height: 30px;
+}
+ .btn_del{
+    border: none;
+    background-color: rgb(238, 238, 238);
+    padding: 1px 15px 1px 15px;
+    border-radius: 5px;
+    margin: 5px;
 }

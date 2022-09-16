@@ -6,7 +6,7 @@
         <hr>
         <div class="list row">
 
-            <div class="asidelist col-12 col-md-4">
+            <div class="asidelist">
                 <table>
                     <tr>
                         <td onclick="location.href='/ad_member'">회원정보 관리</td>
@@ -27,7 +27,7 @@
             </div>
             
 
-            <div class="sectionlist col-12 col-md-8">
+            <div class="sectionlist">
                     <div class="title">
             <h1 id="ad_one2one_h1">1:1 문의 관리</h1>
         </div>
