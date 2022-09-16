@@ -41,7 +41,7 @@
 			</div>
 		</div>
 
-		<div class="mypage_section2">
+		<div class="mypage_section2" style="padding: 40px">
 			<div class="mypage_con2">
 
 				<table>
