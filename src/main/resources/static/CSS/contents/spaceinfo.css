@@ -1,4 +1,7 @@
 @charset "UTF-8";
+.container{
+	font-family: 'Noto Sans KR', sans-serif; 
+}
 #carouselExampleIndicators{
     width: 100%;
     height: 500px;
@@ -140,17 +143,6 @@ input[id="ch"]:checked{
     color: white;
     
 }
-/* .navi_area li {
-    position: relative;
-    display: table-cell;
-    height: 40px;
-    background-color: #fff;
-    text-align: center;
-    border-bottom: 1px solid #704de4;
-    font-size: 16px;
-    height: 50px;
-    padding: 10px 15px;
-} */
 .navi_area li.selected {
     background-color: rgb(254, 245, 172);
 }
@@ -163,6 +155,11 @@ input[id="ch"]:checked{
     height: 50px;
     padding: 10px 15px;
     width:20%;
+    cursor: pointer;
+}
+.td-1:hover{
+	background-color: rgb(254, 245, 172);
+	transition-duration: 0.5s;
 }
 .space_table {
 	width:100%;
