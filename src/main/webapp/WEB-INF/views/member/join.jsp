@@ -35,6 +35,15 @@
          
          var phonenum = document.getElementById("phonenum");
          
+         var chk1 = document.join.terms_1.checked; // chk1(약관1 체크박스)의 체크여부를 true로 설정 
+         
+         var chk2 = document.join.terms_2.checked; // chk2(약관2 체크박스)의 체크여부를 true로 설정
+         
+     
+         
+         
+         
+         
          
          
          // 이름이 영문자 섞여서 입력될 경우
@@ -152,8 +161,7 @@
          }
          
          
-         
-         
+    
          
          
          //----------------------------------------------------------------
@@ -178,6 +186,7 @@
           return false;
          
          }
+     
          
          
          // 비밀번호와 비밀번호 확인이 같지 않을 경우
@@ -189,25 +198,49 @@
          }
          
          
-
+         
+         
+         //----------------------------------------------------------------    
+        
+         
+         
+         
+         //chk1의 반전값이 true일 경우 alert창 띄우고 return false 
+         if(!chk1){ 
+        	 alert("약관 동의가 모두 체크되어 있지 않습니다.");
+        	 return false;
+         }
+       	//chk2의 반전값이 true일 경우 alert창 띄우고 return false
+         if(!chk2){
+        	 alert("약관 동의가 모두 체크되어 있지 않습니다.");
+        	 return false;
+         }
          
          
 
         }
          
+        
+        
         </script>
-         
-
-
-
-
+        
+           <script type="text/javascript">
+        	function checkall(){
+        		   if(document.getElementById("check_terms").checked==true){  //id 를 사용하여 하나의 객체만을 호출
+        		         for(var i=0;i<3;i++)   document.getElementsByName("termsck")[i].checked = true;   //name 을 사용하여 배열 형태로 담아 호출
+        		      }
+        		      if(document.getElementById("check_terms").checked==false){
+        		         for(var i=0;i<3;i++)   document.getElementsByName("termsck")[i].checked=false;  
+        		      }
+        	}
+        </script>
     <div class="container">
         <h1 id="join_h1">회원가입</h1>
         <h2 id="join_exp">
             스페이스 그라운드의 회원이 되어주세요 ! <img src="/img/service/space_icon.png" alt="space_icon" id="space_icon">
         </h2>
         <div class="contents">
-        <form action="/end" onsubmit="return Validation();">
+        <form name="join" action="/end" onsubmit="return Validation();">
             <div id="insert">
                 <div>
                     <input type="text" placeholder="이름" name="name" id="usern">
@@ -227,12 +260,13 @@
                 <div>
                     <input type="password" placeholder="비밀번호 확인" name="password" id ="userPc" >
                 </div>
+
 				<div class="gender" id="gender_female">
-					<input type="checkbox" />여성
+					<input type="radio" name="room" />여성
 				</div>
 
 				<div class="gender" id="gender_male">
-					<input type="checkbox" />남성
+					<input type="radio" name="room" />남성
 				</div>
 			</div>
 
@@ -245,17 +279,17 @@
                 </div>
                 <hr>
                 <div class="check">
-                    <input type="checkbox" id="check_terms">
+                    <input type="checkbox" id="check_terms" onclick=checkall()>
                     <p style="margin: 0 0 0 5px">아래 약관에 모두 동의합니다.</p>
                 </div>
                 <br>
                 <div class="check">
-                    <input type="checkbox" id="terms_1">
+                    <input type="checkbox" class="agreeck" id="terms_1" name="termsck">
                     <p style="margin: 0 0 0 5px">약관 1</p>
                 </div>
                 <textarea name="terms_1_content" rows="1" readonly style="resize: none;">약관내용1</textarea>
                 <div class="check">
-                    <input type="checkbox" id="terms_2">
+                    <input type="checkbox" class="agreeck" id="terms_2" name="termsck">
                     <p style="margin: 0 0 0 5px">약관 2</p>
                 </div>
                 <textarea name="terms_2_content" rows="1" readonly style="resize: none;">약관내용2</textarea>
@@ -266,5 +300,7 @@
             <br>
         </form>
         </div>
+     
     </div>
+    
 
