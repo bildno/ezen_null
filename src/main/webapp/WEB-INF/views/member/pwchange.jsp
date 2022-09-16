@@ -12,26 +12,27 @@
  
     myform.onsubmit = function() {
       
-      let nowpass = document.getElementById('now_pass').value; 
-      if (nowpass.length < 4 || nowpass==null) {
-        alert("비밀번호가 맞지 않습니다.");
-        document.getElementById('now_pass').focus();
+    	let nowpass = document.getElementById('now_pass').value; 
+        let newpass = document.getElementById('new_pass').value;
+        let passcheck = document.getElementById('new_pass_check').value;
+        if (nowpass.length < 4 || nowpass==null) {
+          alert("비밀번호가 맞지 않습니다.");
+          document.getElementById('now_pass').focus();
+          return false;
+        }else 
+        if(newpass.length <4 || newpass=="") {
+          alert("비밀번호를 다시 입력해주세요.");
+          document.getElementById('new_pass').focus();
+          return false; 
+        } else
+        if(passcheck != newpass || passcheck=="") {
+          alert("비밀번호가 동일하지 않습니다.");
+          document.getElementById('new_pass_check').focus();
+          return false;
+        }
       }
-      console.log("asd");
-      let newpass = document.getElementById('new_pass').value;
-      if(newpass.length <4 || newpass=="") {
-        alert("비밀번호를 다시 입력해주세요.");
-        document.getElementById('new_pass').focus();
-      }
-      let passcheck = document.getElementById('new_pass_check').value;
-      if(passcheck != newpass || passcheck=="") {
-        alert("비밀번호가 동일하지 않습니다.");
-        document.getElementById('new_pass').focus();
-        return false;
-      }
-    }
-    return;
-  };
+      return;
+    };
     </script>
 
 

@@ -13,12 +13,12 @@
     myform.onsubmit = function() {
       
       let name = document.getElementById('lo_name').value; 
+      let pass = document.getElementById('lo_pass').value;
       if (name.length < 2 || name==null) {
         alert("아이디를 다시 확인해주세요.");
         document.getElementById('lo_name').focus();
-      }
-      console.log("asd");
-      let pass = document.getElementById('lo_pass').value;
+        return false;
+      }else 
       if(pass.length <4 || pass=="") {
         alert("비밀번호를 다시 확인해주세요.");
         document.getElementById('lo_pass').focus();
