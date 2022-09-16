@@ -1,5 +1,7 @@
 .container{
 	font-family: 'Noto Sans KR', sans-serif;
+	margin-top: 150px;
+	margin-bottom: 100px;
 }
 .title {
     text-align: center;
@@ -36,10 +38,6 @@
 	font-size: 20px;
 	margin-left: 50px;
 	color: rgb(37, 49, 109)
-}
-.container {
-	margin-top: 150px;
-	margin-bottom: 100px;
 }
 .contents{
     width: 100%;
@@ -115,19 +113,12 @@
     justify-content: center;
     margin-top: 50px;
 }
-#ad_th{
-    background-color:  rgb(254, 245, 172);
-    padding: 10px;
-}
-.search_box_ul{
+/* .search_box_ul{
     display: flex;
     flex-direction: row;
     justify-content: center;
     margin-right: 40px;
-}
-#ad_th{
-    padding: 10px;
-}
+} */
 #ad_notice_h1{
     font-family: 'Do Hyeon', sans-serif;
     margin-left: 50px;

@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="css/admin/ad_one2one.css">
 <div class="container">
         <hr>
-        <div class="list row">
+        <div class="list">
 
             <div class="asidelist">
                 <table>
@@ -32,8 +32,8 @@
             <h1 id="ad_one2one_h1">1:1 문의 관리</h1>
         </div>
         <h2 id="ad_one2one_h2">
-            1대1 문의 페이지입니다. <img src="/img/service/space_icon.png"
-                alt="space_icon" id="space_icon">
+            1대1 문의 페이지입니다. 
+            <img src="/img/service/space_icon.png" alt="space_icon" id="space_icon">
         </h2>
             
                 <div class="contents">

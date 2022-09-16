@@ -5,24 +5,24 @@
 
 <div class="container">
 	<hr>
-	<div class="list row">
+	<div class="list">
 
 		<div class="asidelist">
 			<table>
 				<tr>
-					<td onclick="location.href='/ad_member'" id="asd" style="cursor:pointer">회원정보 관리</td>
+					<td onclick="location.href='/ad_member'" style="cursor:pointer">회원정보 관리</td>
 				</tr>
 				<tr>
-					<td onclick="location.href='/ad_host'" id="asd" style="cursor:pointer">호스트정보 관리</td>
+					<td onclick="location.href='/ad_host'" style="cursor:pointer">호스트정보 관리</td>
 				</tr>
 				<tr>
-					<td onclick="location.href='/ad_one2one'" id="asd" style="cursor:pointer">1:1문의 관리</td>
+					<td onclick="location.href='/ad_one2one'" style="cursor:pointer">1:1문의 관리</td>
 				</tr>
 				<tr>
-					<td onclick="location.href='/ad_notice'" id="asd" style="cursor:pointer">공지사항 관리</td>
+					<td onclick="location.href='/ad_notice'" style="cursor:pointer">공지사항 관리</td>
 				</tr>
 				<tr>
-					<td onclick="location.href='/ad_FAQ'" id="asd" style="cursor:pointer">도움말 관리</td>
+					<td onclick="location.href='/ad_FAQ'" style="cursor:pointer">도움말 관리</td>
 				</tr>
 			</table>
 		</div>
