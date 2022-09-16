@@ -60,7 +60,7 @@
                                 <th>제목</th>
                                 <th>작성자</th>
                                 <th>작성일시</th>
-                                <th>수정/삭제</th>
+                                <th>삭제</th>
                             </tr>
                             <tr>
                                 <td>1</td>
@@ -68,7 +68,6 @@
                                 <td>홀깅동</td>
                                 <td>2022-09-15</td>
                                 <td>
-                                    <button class="btn_rev">수정</button>
                                     <button class="btn_del">삭제</button>
                                 </td>
                             </tr>
