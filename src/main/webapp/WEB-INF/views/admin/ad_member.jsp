@@ -2,7 +2,6 @@
 	pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="css/admin/ad_member.css">
 
-<div class="container">
 	<hr>
 	
 	<div class="list">
@@ -26,7 +25,7 @@
 				</tr>
 			</table>
 		</div>
-
+<div class="container">
 		<div class="sectionlist">
 		
 			<h1 id="space_host_h1">회원정보관리</h1>

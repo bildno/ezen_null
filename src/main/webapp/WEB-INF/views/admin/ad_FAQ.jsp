@@ -3,7 +3,6 @@
 <link rel="stylesheet" href="css/admin/ad_FAQ.css"> 
 <title>도움말관리</title>
 
-	<div class="container">
 		<hr>
         <div class="list">
 
@@ -26,7 +25,7 @@
 				</tr>
 			</table>
 		</div>
-
+	<div class="container">
             <div class="sectionlist">
 			<h1 id="space_host_h1">도움말 관리</h1>
 			<h2 id="space_host_h2">

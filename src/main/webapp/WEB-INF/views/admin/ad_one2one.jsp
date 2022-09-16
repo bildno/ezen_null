@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 
 <link rel="stylesheet" href="css/admin/ad_one2one.css">
-<div class="container">
+
         <hr>
         <div class="list">
 
@@ -26,7 +26,7 @@
                 </table>
             </div>
             
-
+	<div class="container">
             <div class="sectionlist">
                     <div class="title">
             <h1 id="ad_one2one_h1">1:1 문의 관리</h1>

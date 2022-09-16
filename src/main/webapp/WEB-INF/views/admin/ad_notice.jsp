@@ -3,7 +3,6 @@
 
 <link rel="stylesheet" href="css/admin/ad_notice.css">
 
-<div class="container">
 	<hr>
 	<div class="list">
 
@@ -27,7 +26,7 @@
 			</table>
 		</div>
 
-
+<div class="container">
 		<div class="sectionlist">
 			<div class="title">
 		<h1 id="ad_notice_h1">공지사항 관리</h1>
