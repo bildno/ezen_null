@@ -49,7 +49,7 @@
 		혹시 로그인 하셨나요?
 	</h1>
 	<h2
-		style="font-family: 'Noto Sans KR', sans-serif; font-size: 16px; color: gray; margin: 20px;">아직
+		style="font-family: 'Noto Sans KR', sans-serif; font-size: 16px; color: gray; margin: 25px; font-weight:300;">아직
 		로그인을 안하셨다면</h2>
 	<div class="login_img">
 		<img src="/img/pop/네이버.png" alt="네이버"
