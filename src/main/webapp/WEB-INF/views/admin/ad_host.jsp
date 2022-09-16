@@ -29,7 +29,7 @@
 		<div class="sectionlist">
 			<h1 id="space_host_h1">호스트정보관리</h1>
 			<h2 id="space_host_h2">
-				회원정보관리페이지입니다. <img src="/img/service/space_icon.png"
+				호스트정보관리페이지입니다. <img src="/img/service/space_icon.png"
 					alt="space_icon" id="space_icon">
 			</h2>
 			<div class="contents">
