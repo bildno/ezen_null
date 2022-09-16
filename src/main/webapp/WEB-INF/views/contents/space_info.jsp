@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="/css/contents/spaceinfo.css">
 <div class="container">
+
 	<h1 id="space_host_h1">공간 상세페이지</h1>
 	<h2 id="space_host_h2">
 		호스트의 공간 상세페이지입니다 <img src="/img/service/space_icon.png"
@@ -49,16 +50,16 @@
 		<div class="nav_wrapper">
 			<table class="space_table">
 				<tr class="navi_area">
-					<td class="td-1"><a>공간소개</a></td>
-					<td class="td-1"><a>유의사항</a></td>
-					<td class="td-1"><a>환불정책</a></td>
-					<td class="td-1"><a>Q&amp;A</a></td>
-					<td class="td-1"><a>이용후기</a></td>
+					<td onclick= movespace(1); class="td-1"><a>공간소개</a></td>
+					<td onclick= movespace(2); class="td-1"><a>주의사항</a></td>
+					<td onclick= movespace(3); class="td-1"><a>환불정책</a></td>
+					<td onclick= movespace(4); class="td-1"><a>Q&amp;A</a></td>
+					<td onclick= movespace(5); class="td-1"><a>이용후기</a></td>
 				</tr>
 			</table>
 		</div>
 		<div>
-			<h4 id="space_host_sotit">공간소개</h4>
+			<h4 id="space_host_sotit" class="space_tag">공간소개</h4>
 		</div>
 		<div class="divide">
 			<hr class="line">
@@ -95,7 +96,7 @@
 			</table>
 		</div>
 		<div>
-			<h4 id="space_host_sotit">주의사항</h4>
+			<h4 id="space_host_sotit" class="sotiit">주의사항</h4>
 		</div>
 		<div class="divide">
 			<hr class="line">
@@ -124,7 +125,7 @@
 			</ul>
 		</div>
 		<div>
-			<h4 id="space_host_sotit">환불규정</h4>
+			<h4 id="space_host_sotit" class="refund_title">환불규정</h4>
 		</div>
 		<div class="divide">
 			<hr class="line">
@@ -165,8 +166,8 @@
 			referrerpolicy="no-referrer-when-downgrade"> </iframe>
 
 
-		<div id="s_qna">
-			<h4 id="space_host_sotit">
+		<div id="s_qna" >
+			<h4 id="space_host_sotit" class="info_QnA">
 				Q&amp;A <strong class="txt_primary"><em>0</em>개</strong>
 			</h4>
 			<a class="btn_qna_write"><span>질문 작성하기</span></a>
@@ -179,7 +180,7 @@
 		</div>
 	
 	<div id="s_review">
-			<h4 id="space_host_sotit">
+			<h4 id="space_host_sotit" class="review_tag">
 				이용후기 <strong class="txt_primary"><em>0</em>개</strong>
 			</h4>
 			<a class="btn_review_write"><span>후기 작성하기</span></a>
@@ -192,3 +193,34 @@
 		</div>
 		</div>
 	</div>
+	<script type="text/javascript">
+	function movespace(int){
+		switch (int) {
+            case 1:
+            var location = document.querySelector(".space_tag").offsetTop;
+                break;
+        
+            case 2:
+            var location = document.querySelector(".sotiit").offsetTop;
+                break;
+
+            case 3:
+            var location = document.querySelector(".refund_title").offsetTop;
+            	break;
+
+            case 4:
+            var location = document.querySelector(".info_QnA").offsetTop;
+            	break;
+
+            case 4:
+            var location = document.querySelector(".review_tag").offsetTop;
+            	break;
+        }
+	
+		window.scrollTo({top:location, behavior:'smooth'})
+	}
+
+</script>
+	
+	
+
