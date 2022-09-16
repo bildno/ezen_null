@@ -20,7 +20,7 @@
                     <a href="#"> <img class="community1-img1" src="img/host/cat.png" alt="contents1">
                         <div name="membername" id="membername">
                         	<h3 id="comh3">
-                            고산 진웅gym
+                            고산 gym
                             </h3>
                         </div>
                     </a>
@@ -30,7 +30,7 @@
                     <img class="community1-img1" src="img/host/cat.png" alt="contents1" id="communi1">
                         <div name="membername" id="membername">
                              <h3 id="comh3">
-                            민락 단옥 아쉬탕가 요가원
+                            민락 요가원
                             </h3>
                         </div>
                     </a>
@@ -39,7 +39,7 @@
                     <a href="#"> <img class="community1-img1" src="img/host/cat.png" alt="contents1">
                         <div name="membername" id="membername">
                             <h3 id="comh3">
-                            양주 진규 갓성비 연습실
+                            양주 댄스연습실
                             </h3>
                         </div>
                     </a>
