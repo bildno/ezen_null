@@ -18,7 +18,9 @@
 					<a href="#"> <img class="con-img1" src="img/host/cat.png"
 						alt="contents1" id="cominfo">
 						<div name="membername" id="membername">
-							건대 라운지
+                        	<h3 id="comh3">
+                            강남 파티룸
+                            </h3>
 						</div>
 					</a>
 				</div>
@@ -26,7 +28,9 @@
 					<a href="#"> <img class="con-img1" src="img/host/cat.png"
 						alt="contents1" id="cominfo">
 						<div name="membername" id="membername">
-							홍대 루프탑
+                        	<h3 id="comh3">
+                            홍대 루프탑
+                            </h3>
 						</div>
 					</a>
 				</div>
@@ -34,7 +38,9 @@
 					<a href="#"> <img class="con-img1" src="img/host/cat.png"
 						alt="contents1" id="cominfo">
 						<div name="membername" id="membername">
-							여의도 파티룸
+                        	<h3 id="comh3">
+                            건대라운지
+                            </h3>
 						</div>
 					</a>
 				</div>
