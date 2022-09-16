@@ -16,25 +16,31 @@
 
         <div class="space_list">
             <div class="row">
-                <div class="community1 col-md-4" onclick="location.href='/space_info'">
+                <div class="community1 col-md-4" onclick="location.href='/space_info'" id="communi1">
                     <a href="#"> <img class="community1-img1" src="img/host/cat.png" alt="contents1">
                         <div name="membername" id="membername">
-                            홍진웅
+                        	<h3 id="comh3">
+                            고산 진웅gym
+                            </h3>
                         </div>
                     </a>
                 </div>
-                <div class="community1 col-md-4">
+                <div class="community1 col-md-4" id="communi1">
                     <a href="#"> 
-                    <img class="community1-img1" src="img/host/cat.png" alt="contents1">
+                    <img class="community1-img1" src="img/host/cat.png" alt="contents1" id="communi1">
                         <div name="membername" id="membername">
-                            홍진웅
+                             <h3 id="comh3">
+                            민락 단옥 아쉬탕가 요가원
+                            </h3>
                         </div>
                     </a>
                 </div>
-                <div class="community1 col-md-4">
+                <div class="community1 col-md-4" id="communi1">
                     <a href="#"> <img class="community1-img1" src="img/host/cat.png" alt="contents1">
                         <div name="membername" id="membername">
-                            홍진웅
+                            <h3 id="comh3">
+                            양주 진규 갓성비 연습실
+                            </h3>
                         </div>
                     </a>
                 </div>

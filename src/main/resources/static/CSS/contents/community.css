@@ -53,18 +53,38 @@
 	width: 90%;
 	 
 	object-fit: fill;
-	transition: 1s;
+	
 }
 .community1-img1:hover {
 
 	filter:brightness(0.5);
-	
-	
-	
+	transition: 1s;
 	
 	/* transform: scale(1.1);
 	transition: 0.5s; */
 }
+
+#communi1{
+	position:relative;
+}
+
+#membername{
+	position:absolute;
+	top:70px;
+	left:150px;
+	opacity:0;
+}
+
+.community1-img1:hover + #membername{
+	opacity:1;
+	transition:1.2s;
+}
+
+#comh3{
+	color:white;
+}
+
+
 
 .section22 {
 	width: 100%;
