@@ -1,0 +1,50 @@
+#pwchange_h1 {
+	font-family: 'Do Hyeon', sans-serif;
+	margin-left: 220px;
+	margin-top: 150px;
+	font-size: 50px;
+	display: flex;
+	flex-flow: row nowrap;
+	margin-bottom: 30px;
+}
+
+.new_pass, .new_pass_check, .now_pass {
+	margin-bottom: 15px;
+	width: 80%;
+	border-radius: 5px;
+	border: 1px solid rgb(238, 238, 238);
+	padding: 10px;
+}
+
+.container {
+	margin-bottom: 180px;
+}
+
+.contents {
+	font-family: 'Noto Sans KR', sans-serif;
+	border: 1px solid rgb(238, 238, 238);
+	width: 60%;
+	margin: 10px 20% 40px 20%;
+	padding: 40px;
+	text-align: center;
+	/*     margin: 0  auto; */
+	border-radius: 5px;
+}
+.btn_change {
+	display:flex;
+	flex-flow: row nowrap;
+}
+/* #changebtn {
+	width: 60%;
+	margin: 0 20% 10px 20%;
+	background-color: rgb(238, 238, 238);
+	border: 0;
+	padding: 10px;
+	border-radius: 5px;
+} */
+
+.yet {
+	font-size: small;
+	color: gray;
+	margin-left: 20%;
+}
