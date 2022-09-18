@@ -1,67 +1,58 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-
-    <link rel="stylesheet" href="css/host/host.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-</head>
-<body>
-    <div class="container">
-
-    <div class="section" style="margin-top: 200px;">
-        <div class="section1">
-            <div class="con1">
-                <img class="con-img1" src="img/host/cat.png" alt="contents1"><p>
+     <link rel="stylesheet" href="css/host/host.css">
+  <div class="container">
+  <h1>호스트 마이페이지</h1>
+<h2 id="host_exp">
+            호스트님의 정보를 확인해주세요 ! <img src="/img/service/space_icon.png"
+                alt="space_icon" id="space_icon">
+        </h2>
+    <div class="section"  >
+        <div class="host_section1">
+            <div class="host_con1">
+                <img class="host_con-img1" src="img/host/cat.png" alt="contents1"><p>
                 <div name="imgchange" style="font-size:10px;">
                     <a href="#">사진변경</a>
                 </div><p>
-                <div name="hostname">호스트 이름</div><p>
-                <div name="spacename">공간 이름</div>
+                <div name="hostname" id="h_name">호스트 이름</div><p>
+                <div name="spacename" id="s_name">공간 이름</div>
                 <hr>
             </div>
             <div class="hostlist"><p>
-                <a href="#"><b>예약 내역</b></a><p>
-                <a href="#"><b>리뷰 관리</b></a><p>
-                <a href="#"><b>정산</b></a><p>
-                <a href="#"><b>공간 정보 관리</b></a>
+                <a href="/reserve_host">예약 내역</a><p>
+                <a href="">리뷰 관리</a><p>
+                <a href="#">정산</a><p>
+                <a href="/spacelist_host">공간 정보 관리</a>
             </div>
         </div>
 
-        <div class="section2">
-            <div class="con2" style="padding: 40px;">
+        <div class="host_section2">
+            <div class="host_con2" style="padding: 40px;">
 
                <table>
                     <tr>
                         <th>닉네임</th>
-                        <td>이용자 닉네임</td>
-                        <td><a href="#">변경하기</a></td>
+                        <td id="ho_name">이용자 닉네임</td>
+                        <td id="ho_name"><a href="#" >변경하기</a></td>
                     </tr>
                     <tr>
                         <th>이메일</th>
-                        <td>이용자 이메일</td>
-                        <td><a href="#">변경하기</a></td>
+                        <td id="ho_name">이용자 이메일</td>
+                        <td><a href="#" id="ho_name">변경하기</a></td>
                     </tr>
                     <tr>
                         <th>연락처</th>
-                        <td>이용자 연락처</td>
-                        <td><a href="#">변경하기</a></td>
+                        <td id="ho_name">이용자 연락처</td>
+                        <td><a href="#" id="ho_name">변경하기</a></td>
                     </tr>
                     <tr>
                         <th>비밀번호</th>
-                        <td colspan=2><a href="#">변경하기</a></td>
+                        <td colspan=2><a href="#" id="ho_name">변경하기</a></td>
                     </tr>
                </table>
             </div>
 
-            <button type="submit">입점등록</button>
+            <button type="submit"><a href="/enter_host"> 입점등록</a></button>
         </div>
     </div>
-
-
-    </div> <!-- container -->
-</body>
-</html>
+    </div>

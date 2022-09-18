@@ -88,7 +88,7 @@ li {
 	position: fixed;
 	z-index: 1;
 	background-color: rgb(238, 238, 238);
-	height: 330px;
+	height: 400px;
 	top: 0;
 	right: 0;
 	color: black;
@@ -114,10 +114,15 @@ li {
 	color: #818181;
 	display: block;
 	transition: 0.3s;
+	text-decoration: none;
 }
 
 .sidelist a:hover {
-	color: rgb(238, 238, 238);
+	color: rgb(37, 49, 109);
+	text-decoration: none;
+}
+sidelist a:visited{
+	text-decoration: none;
 }
 
 .sidelist .listoff {
@@ -174,18 +179,16 @@ li {
 	margin-bottom: 6px;
 	cursor: pointer;
 }
+
 .best-table tr:hover {
 	background-color: yellow;
 }
-
-
 
 .playstore {
 	margin-top: 70px;
 }
 
 /* CONTENTS */
-
 .section {
 	background-color: white;
 	text-align: center;
@@ -401,7 +404,7 @@ video {
 
 .footer {
 	background-color: rgb(238, 238, 238);
-	margin-top: 0;
+	margin-bottom: 0;
 }
 
 .movetopbtn {
@@ -421,6 +424,8 @@ video {
 }
 
 .footer2 {
+	font-family: 'Noto Sans KR', sans-serif; 
+	font-weight: 300;
 	margin-left: 50px;
 	display: flex;
 	flex-direction: row;

@@ -1,0 +1,167 @@
+/* * {
+    border: 1px solid black;
+} */
+.container {
+	margin-top: 150px;
+	margin-bottom: 100px;
+}
+
+.container > h1 {
+	font-family: 'Do Hyeon', sans-serif;
+	font-weight: 500;
+	margin-left: 50px;
+	font-size: 50px;
+	display: flex;
+	flex-flow: row nowrap;
+}
+.container > h2 {
+	font-family: 'Do Hyeon', sans-serif;
+	font-weight: 300;
+	margin-left: 50px;
+	font-size: 20px;
+	color: rgb(37, 49, 109)
+}
+
+.space_list {
+	border: 1px solid rgb(238, 238, 238);
+	border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.aaaa {
+    display: flex;
+    justify-content: end;
+}
+
+.spacelistbtn {
+    border: 1px solid rgb(238, 238, 238);
+	border-radius: 5px;
+    text-align: center;
+    width: 100px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    color:rgb(37, 49, 109);
+    padding: 5px 8px 5px 8px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+.community1 {
+	overflow: hidden;
+    width: 100%;
+}
+.community1-img1 {
+	width: 90%;
+	 
+	object-fit: fill;
+	
+}
+.community1-img1:hover {
+
+	filter:brightness(0.5);
+	transition: 1s;
+	
+	/* transform: scale(1.1);
+	transition: 0.5s; */
+}
+
+
+#communi1{
+	position:relative;
+}
+
+#membername{
+	position:absolute;
+	top:80%;
+	opacity:0;
+	left:15%;
+	display:flex;
+	flex-direction:row;
+	justify-content:center;
+}
+
+.community1-img1:hover + #membername{
+	opacity:1;
+	transition:1.2s;
+}
+
+#comh3{
+	color:white;
+	font-size:20px;
+	text-align:center;
+	display:flex;
+	flex-direction:row;
+	justify-content:center;
+	font-family: 'Do Hyeon', sans-serif;
+	
+}
+
+
+
+.section22 {
+	width: 100%;
+	height: 100%;
+	align-self: center;
+	border: 1px solid rgb(238, 238, 238);
+	border-radius: 5px;
+}
+
+.con22 input[type=text] {
+	border-radius: 5px;
+	width: 100%;
+	margin: 20px 0 20px 0;
+	cursor: pointer;
+	border: 1px solid rgb(238, 238, 238);
+}
+.con22 input[type=text]:focus{
+	outline: none;
+}
+.con22 a:hover {
+	text-decoration: none;
+}
+
+.con22 a:visited {
+	text-decoration: none;
+	color: rgb(37, 49, 109);
+}
+
+#selectbox {
+	display: flex;
+	justify-content: end;
+	width: 100%;
+    margin-bottom: 10px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+#selectbox button {
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid rgb(238, 238, 238);
+}
+
+#selectbox input {
+	width: 10%;
+	border-radius: 5px;
+	padding: 10px;
+	border: 1px solid rgb(238, 238, 238);
+	margin-right: 10px;
+}
+#selectbox input:focus{
+	outline: none;
+}
+.pagenavi {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-top: 30px;
+	margin-bottom: 50px;
+}
+
+community li>.page-link {
+	color: black;
+}
+
+#space_icon {
+	width: 30px;
+}

@@ -1,67 +1,310 @@
-#reserve_info{
-    text-align: center;
-    margin-bottom: 50px;
-    
+@charset "UTF-8";
+#carouselExampleIndicators{
+    width: 100%;
+    height: 500px;
+} 
+#host_img1,#host_img2,#host_img3{
+    width: 700px;
+    height: 500px;
+}
+#space_icon{
+    width: 30px;
 }
 
-#reserve_info h1 {
-    text-align: left;
-    margin: 100px 0 0 15%;
+/* 컨테이너 - 부트스트랩 */
+#space_host_h1{
     font-family: 'Do Hyeon', sans-serif;
-    
+	margin-left: 50px;
+	margin-top: 50px;
+	font-size: 50px;
 }
-
-#info_list{
-	font-family : 'Noto Sans KR' , sans-serif;
+#space_host_h2{
+    font-family: 'Do Hyeon', sans-serif;
 	font-weight: 300;
+	font-size: 20px;
+	margin-left: 50px;
+	color: rgb(37, 49, 109)
+}
+#space_host_h3{
+    font-family: 'Noto Sans KR', sans-serif;
+	font-weight: 500;
+	font-size: 14px;
+	margin-left: 0;
+	color: rgb(37, 49, 109)
+}
+.space_host_tit{
+    font-family: 'Noto Sans KR', sans-serif;
+	font-weight: 500;
+	font-size: 14px;
+	margin-left: 0;
+	color: rgb(37, 49, 109)
+}
+.space_host_simintro{
+    font-family: 'Do Hyeon', sans-serif;
+	font-weight: 300;
+	font-size: 20px;
+	margin-left: 0;
+	color: rgb(37, 49, 109)
+}
+.container {
+	margin-top: 150px;
+	margin-bottom: 100px;
+}
+#carouselExampleIndicators{
+    margin-top: 100px; 
+    margin-bottom: 100px; 
 }
 
-#reserve_info div input{
-    width: 50%;
-	padding: 10px;
+/* 공간 상세정보 입력란 */
+.contents_wrapper {
+	margin-left:10%;
+	margin-right:10%;
+	margin-bottom: 50px;
+}
+#space_host_enterh2{
+    font-family: 'Noto Sans KR', sans-serif; 
+    font-weight: 500;
+    font-size: 25px;
+    
+}
+#space_host_info{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    color: gray;
+    margin-bottom: 50px;
+}
+#space_host_tit {
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: 300;
+	font-size: 50px;
+}
+#host_input{
+    padding: 10px;
+    width: 500px;
+    border: 1px solid lightgray;
     border-radius: 5px;
-    border: 1px solid lightgray;
+}
+input::placeholder{
+    color: gray;
+    font-weight: bold;
+    font-size: 15px;
+}
+.caution_div{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
 
 }
-
-#reserve_info_image{
-	border-radius: 5px;	
+#caution{
+    width: 20px;
+    margin: 5px;
 }
-#reserve_info div textarea{
-    width: 50%;
+#can_small{
+    padding-top: 5px;
+}
+.space_host_name{
+    margin-bottom: 50px;
+}
+#ch1{
+    font-size: 17px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 300;
+    padding-bottom: 10px;
+}
+input[id="ch"]{
+    -webkit-appearance: none;
+    position: relative;
+    cursor: pointer;
+    outline: none !important;
+    border: 1px solid #eeeeee;
+    border-radius: 2px;
+    background: #fbfbfb;
+}
+input[id="ch"]::before {
+    /* 체크박스 유니코드 2713 */
+    content: "\2713"; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    overflow: hidden;
+    transform: scale(0) translate(-50%, -50%);
+    line-height: 1;
+}
+input[id="ch"]:hover{
+    border-color: rgba(170, 170, 170, 0.5);
+}
+input[id="ch"]:checked{
+    background-color: #ff8955;
+    border-color: rgba(255, 255, 255, 0.3);
+    color: white;
     
-    font-family : 'Noto Sans KR';
-	font-weight : 300;
-    margin-top: 30px;
-    border: 1px solid lightgray;
+}
+/* .navi_area li {
+    position: relative;
+    display: table-cell;
+    height: 40px;
+    background-color: #fff;
     text-align: center;
-	margin-left: auto;
-	margin-right: auto;
+    border-bottom: 1px solid #704de4;
+    font-size: 16px;
+    height: 50px;
+    padding: 10px 15px;
+} */
+.navi_area li.selected {
+    background-color: rgb(254, 245, 172);
+}
+.td-1 {
+	position: relative;
+    background-color: #fff;
+    text-align: center;
+    border-bottom: 1px solid rgb(37, 49, 109);
+    font-size: 16px;
+    height: 50px;
+    padding: 10px 15px;
+    width:20%;
+    cursor: pointer;
+}
+.td-1:hover{
+	background-color: rgb(254, 245, 172);
+	transition-duration: 0.5s;
+}
+.space_table {
+	width:100%;
+}
+.nav_wrapper {
+	height:150px;
+	width:100%
+}
+.line {
+	border:3px solid rgb(37, 49, 109);
+	width:100px;
+	border-radius: 3px;
+	text-align:left;
+	margin-left:0;
+	margin-bottom: 50px;
+}
+.p_intro {
+	margin-bottom: 50px;
+}
+.info_wrapper {
+	margin-bottom: 50px;
+}
+.officehours td {
+	position: relative;
+    background-color: #fff;
+    text-align: left;
+    font-size: 16px;
+    height: 50px;
+    padding: 10px 15px;
+    width:20%;
+}
+.caution_list{
+	padding-left:0;
+	margin-bottom: 50px;
+}
+.caution_list li{
+	position: relative;
+    background-color: #fff;
+    text-align: left;
+    font-size: 16px;
+    height: 60px;
+    padding: 10px 15px;
+}
+.caution_list_info {
+	margin-left: 15px;
+}
+.refund {
+	margin-bottom: 100px;
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size: 16px;
+}
+.inner {
+    padding: 33px 30px 38px;
+}
+.btn_way, .btn_call {
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size: 16px;
+    height: 50px;
+    color: rgb(37, 49, 109);
+    line-height: 50px;
+    border-radius: 50px;
+    width:100%;
+    background-color: rgb(254, 245, 172);
+    border:0;
+}
+.inner {
+	border:0;
+	background-color: rgb(238, 238, 238);
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size: 16px;
+}
+.sp_name {
+	font-size: 24px;
+	color: #000;
+}
+.sp_address {
+	font-size:16px;
+	color: #656565;
+}
+.sp_location a {
+    display: inline-block;
+    font-size: 16px;
+    color: #656565;
+}
+#s_qna {
+	display:flex;
+	flex-flow:row nowrap;
+	justify-content: space-between;
+}
+.btn_qna_write span {
+	border:0;
+	border-radius: 15px;
+	vertical-align: middle;
+	padding:10px;
+	color: rgb(37, 49, 109);
+	background-color:rgb(238, 238, 238); 
+	
+}
+.btn_qna_write:hover {
+	text-decoration: none;
+}
+.center {
+	display: table-cell;
+}
+.p_result {
+	width:100%;
+	margin-bottom: 100px;
+}
+#s_review {
+	display:flex;
+	flex-flow:row nowrap;
+	justify-content: space-between;
+}
+.btn_review_write span {
+	border:0;
+	border-radius: 15px;
+	vertical-align: middle;
+	padding:10px;
+	color: rgb(37, 49, 109);
+	background-color:rgb(238, 238, 238); 
+	
+}
+.btn_review_write:hover {
+	text-decoration: none;
+}
 
-}
-#reserve_info #btn_box button{
-    background-color: rgb(238, 238, 238);
-    border: 1px solid lightgray;
-	font-family : 'Noto Sans KR';
-	font-weight : 300;
-    padding: 10px 5px 10px 5px;
-    border-radius: 3px;
-    padding: 5px;
-    font-size: 13px;
-    
- 
-}
 #btn_box{
-    text-align: right;
-    margin-right: 130px;
+	text-align: right;
 }
-
-
-
-#reserve_info div textarea:focus{
-    outline: none;
-}
-
-#reserve_info div input:focus{
-outline: none;
+#btn_box button {
+	background-color: rgb(238, 238, 238);
+	border: 1px solid lightgray;
+	font-family: 'Noto Sans KR';
+	font-weight: 300;
+	padding: 10px 5px 10px 5px;
+	border-radius: 3px;
+	padding: 5px;
+	font-size: 13px;
+	padding: 10px;
 }

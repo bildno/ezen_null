@@ -1,86 +1,100 @@
-.container{
-	margin-top:150px;
+.container {
+	margin-top: 150px;
 }
 
-
-#service_h1{
-    font-family: 'Do Hyeon', sans-serif; 
-    margin-left: 50px;
-    margin-top: 50px; 
-    font-size: 50px;
-}
-#service_h2{
-    font-family: 'Do Hyeon', sans-serif; 
-    font-weight: 300; 
-    font-size: 20px; 
-    margin-left: 50px;
-    color: rgb(37, 49, 109)
-}
-#space_icon{
-    width: 30px;
-}
-.customer_notice{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+#service_h1 {
+	font-family: 'Do Hyeon', sans-serif;
+	margin-left: 50px;
+	margin-top: 50px;
+	font-size: 50px;
 }
 
-.tb_notice{
-    text-align: center;
-    width: 1000px;
-
-    border: 0.5px solid rgb(238, 238, 238);
-    font-family: 'Noto Sans KR', sans-serif; 
-    font-weight: 300;
-    align-content: center;
-}
-.notice{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
-    vertical-align: middle;
-    margin-top: 50px;
-}
-#num1,#num2,#num3,#num4,#num5{
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 20px;
-    font-weight: 300;
-    color: black;
-    text-decoration: none;
-}
-#span1,#span2,#span3,#span4,#span5{
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 15px;
-    font-weight: 300;
-    color: gray;
-    margin-left: 10px;
+#service_h2 {
+	font-family: 'Do Hyeon', sans-serif;
+	font-weight: 300;
+	font-size: 20px;
+	margin-left: 50px;
+	color: rgb(37, 49, 109)
 }
 
-#panel{
-    border: 1px solid rgb(238, 238, 238);
-    padding: 15px;
+#space_icon {
+	width: 30px;
 }
-.pagenavi{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 30px;
-    margin-bottom:50px;
+
+.customer_notice {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
 }
-li>.page-link{
-    color: black;
+
+.tb_notice {
+	text-align: center;
+	width: 1000px;
+	border: 0.5px solid rgb(238, 238, 238);
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: 300;
+	align-content: center;
 }
-.noti_{
-    background-color: white;
+
+.notice {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-content: center;
+	vertical-align: middle;
+	margin-top: 50px;
 }
-.noti_over{
-    background-color: rgb(238, 238, 238);
+
+#num1, #num2, #num3, #num4, #num5 {
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size: 20px;
+	font-weight: 300;
+	color: black;
+	text-decoration: none;
 }
-#noti_answer{
-    font-weight: 500;
-    padding: 15px;
+
+#span1, #span2, #span3, #span4, #span5 {
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size: 15px;
+	font-weight: 300;
+	color: gray;
+	margin-left: 10px;
 }
+
+#panel {
+	border: 1px solid rgb(238, 238, 238);
+	padding: 15px;
+}
+
+.pagenavi {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-top: 30px;
+	margin-bottom: 50px;
+}
+
+li>.page-link {
+	color: black;
+}
+
+.noti_ {
+	background-color: white;
+}
+
+.noti_over {
+	background-color: rgb(238, 238, 238);
+}
+
+#noti_answer {
+	font-weight: 500;
+	padding: 15px;
+}
+
 #customer_hr {
-    background-color: rgb(151, 210, 236);
+	background-color: rgb(151, 210, 236);
+	width:1000px;
+	height:3px;
+	border: none;
+	border-radius:5px;
 }

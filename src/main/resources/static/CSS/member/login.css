@@ -1,71 +1,79 @@
-#login_h1{
-    font-family: 'Do Hyeon', sans-serif; 
-    margin-left: 220px;
-    margin-top: 100px; 
-    font-size: 50px;
-    display: flex;
-    flex-flow: row nowrap;
-    margin-bottom: 30px;
+#login_h1 {
+	font-family: 'Do Hyeon', sans-serif;
+	margin-left: 220px;
+	margin-top: 150px;
+	font-size: 50px;
+	display: flex;
+	flex-flow: row nowrap;
+	margin-bottom: 30px;
 }
+
 .id, .pw {
-    margin-bottom: 15px;
-    width: 60%;
-    border-radius: 5px;
-    border: 1px solid rgb(238, 238, 238);
-    padding: 10px;
-    
+	margin-bottom: 15px;
+	width: 60%;
+	border-radius: 5px;
+	border: 1px solid rgb(238, 238, 238);
+	padding: 10px;
 }
+
+.container {
+	margin-bottom: 180px;
+}
+
 .contents {
-	font-family: 'Noto Sans KR ', sans-serif;
-	font-weight:300px;
-    border: 1px solid  rgb(238, 238, 238);
-    width: 60%;
-    margin: 10px 20% 40px 20%;
-    padding: 40px;
-    text-align: center;
-/*     margin: 0  auto; */
-    border-radius:5px;
+	font-family: 'Noto Sans KR', sans-serif;
+	border: 1px solid rgb(238, 238, 238);
+	width: 60%;
+	margin: 10px 20% 40px 20%;
+	padding: 40px;
+	text-align: center;
+	/*     margin: 0  auto; */
+	border-radius: 5px;
 }
+
 .check {
-    display: flex;
-    flex-flow: row nowrap;
-    margin-left: 20%;
+	display: flex;
+	flex-flow: row nowrap;
+	margin-left: 20%;
 }
+
 #find_a {
-    float: right;
-    margin-right: 20%;
-    text-decoration: none;
+	float: right;
+	margin-right: 20%;
+	text-decoration: none;
 }
+
 #find_a:visited {
 	text-decoration: none;
-    color: gray;
+	color: gray;
 }
+
 #find_a:hover {
 	text-decoration: none;
-    color: red; 
 }
-#loginbtn{
-    width: 60%;
-    margin: 0 20% 10px 20%;
-    background-color: rgb(238, 238, 238);
-    border: 0;
-    padding: 10px;
-    border-radius: 5px;
+
+#loginbtn {
+	width: 60%;
+	margin: 0 20% 10px 20%;
+	background-color: rgb(238, 238, 238);
+	border: 0;
+	padding: 10px;
+	border-radius: 5px;
 }
+
 .yet {
-    font-size: small;
-    color: gray;
-    margin-left: 20%;
+	font-size: small;
+	color: gray;
+	margin-left: 20%;
 }
+
 .joingo {
-    display: flex;
-    flex-flow: row;
-    justify-content:space-evenly
+	display: flex;
+	flex-flow: row;
+	justify-content: space-evenly
 }
+
 .joingo a {
-    height: 20px;
-    font-size: small;
-    
+	height: 20px;
+	font-size: small;
 }
-
-

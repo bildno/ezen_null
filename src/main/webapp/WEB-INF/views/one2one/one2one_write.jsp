@@ -1,42 +1,41 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>1:1 문의 글 쓰기</title>
+	pageEncoding="UTF-8"%>
+
 <link rel="stylesheet" href="css/one2one/one2one_write.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-</head>
-<body>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
 <div class="container">
-<h2 id="one2one_write">1:1 문의하기</h2>
-<hr />
-<div class="one2one">
-<div class="type">
-<div>문의유형</div>
-<div class="cols-md-3">
-    <select style="margin-left: 10px;" name="type" id="type">
-    <option value="1" disabled selected>선택해주세요</option>
-    <option value="2">dd</option>
-    <option value="3">dd</option>
-    <option value="4">dd</option>
-</select></div>
-<div class="cols-md-3">
-    <select style="margin-left: 10px;" name="type" id="type">
-    <option value="1" disabled selected>선택해주세요</option>
-    <option value="2">dd</option>
-    <option value="3">dd</option>
-    <option value="4">dd</option>
-</select></div>
+	<h1 id="one2one_write">1:1 문의하기</h1>
+	<hr />
+
+	<div class="o2owrite_tb">
+		<table>
+			<tr>
+				<th>문의 유형</th>
+				<td><select class="selectbox" name="type1" id="type1">
+						<option value="1" disabled selected>선택해주세요</option>
+						<option value="2">dd</option>
+						<option value="3">dd</option>
+						<option value="4">dd</option>
+				</select> <select class="selectbox" name="type2" id="type2">
+						<option value="1" disabled selected>선택해주세요</option>
+						<option value="2">dd</option>
+						<option value="3">dd</option>
+						<option value="4">dd</option>
+				</select></td>
+			</tr>
+			<tr>
+				<th>문의 내용</th>
+				<td><textarea name="ask" id="ask" rows="15"
+						style="resize: none;"></textarea></td>
+			</tr>
+		</table>
+
+		<div class="write">
+			<input class="writebtn" type="button" value="문의하기"
+				onclick="location.href='/one2one_writeAction'">
+		</div>
+
+	</div>
 </div>
-<br>
-<div class="contents">
-<div>문의내용</div>
-<textarea style="margin-left: 10px;" name="ask" id="" cols="80" rows="15"></textarea>
-</div>
-<div class="write"><button style="margin: 15px;">글쓰기</button></div>
-</div>
-</div>
-</body>
-</html>

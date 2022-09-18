@@ -1,0 +1,172 @@
+/* * {
+    border: 1px solid black;
+} */
+.container {
+	margin-top: 150px;
+	margin-bottom: 100px;
+	
+}
+
+.container>h1 {
+	font-family: 'Do Hyeon', sans-serif;
+	font-weight: 500;
+	margin-left: 50px;
+	margin-top: 100px;
+	font-size: 50px;
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+.container>h2 {
+	font-family: 'Do Hyeon', sans-serif;
+	font-weight: 300;
+	margin-left: 50px;
+	font-size: 20px;
+	color: rgb(37, 49, 109)
+}
+
+.main {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+}
+
+.asidecomm {
+	display: flex;
+	width: 40%;
+	margin-right: 30px;
+}
+
+.asidecomm a {
+	color: rgb(37, 49, 109);
+	text-decoration: none;
+}
+
+.asidecomm a:hover {
+	text-decoration: none;
+}
+
+.asidecomm a:visited {
+	text-decoration: none;
+	color: rgb(37, 49, 109);
+}
+
+.section11 {
+	text-align: center;
+	border: 1px solid rgb(238, 238, 238);
+	border-radius: 5px;
+}
+
+.con11 {
+	overflow: hidden;
+	margin-top: 37px;
+
+}
+
+
+#cominfo:hover{
+	filter:brightness(0.5);
+	transition: 1s;
+}
+
+
+.con11{
+	position:relative;
+}
+
+#membername{
+	position:absolute;
+	top:70%;
+	opacity:0;
+	left:20%;
+	display:flex;
+	flex-direction:row;
+	justify-content:center;
+}
+
+#cominfo:hover + #membername{
+	opacity:1;
+	transition:1.2s;
+}
+
+#comh3{
+	color:white;
+	font-size:20px;
+	text-align:center;
+	display:flex;
+	flex-direction:row;
+	justify-content:center;
+	font-family: 'Do Hyeon', sans-serif;
+	
+}    
+
+.con-img1 {
+	width: 70%;
+	object-fit: fill;
+}
+
+.section22 {
+	width: 100%;
+	height: 100%;
+	align-self: center;
+	border: 1px solid rgb(238, 238, 238);
+	border-radius: 5px;
+}
+
+.con22 input[type=text] {
+	width: 100%;
+	margin: 20px 0 20px 0;
+	cursor: pointer;
+}
+
+.con22 a:hover {
+	text-decoration: none;
+}
+
+.con22 a:visited {
+	text-decoration: none;
+	color: rgb(37, 49, 109);
+}
+
+#space_icon {
+	width: 30px;
+}
+
+#comm_info {
+	border: 1px solid rgb(238, 238, 238);
+	border-radius: 5px;
+	
+}
+#comm_info:nth-child(1){
+	width: 85%;	
+	
+}
+.contents:focus{
+	outline: none;
+}
+
+
+#list_btn{
+	margin-top: 15px;
+	border: 1px solid rgb(238, 238, 238);
+	border-radius: 5px;
+	padding: 10px;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+#reple{
+	border:none;
+	margin-top: 15px;
+	margin-bottom : 10px;
+	border-bottom: 1px solid rgb(238, 238, 238);
+	border-radius: 5px;
+	padding: 10px;
+	
+}
+#reple_btn{
+	margin-top : 5px;
+	border: 1px solid rgb(238, 238, 238);
+	border-radius: 5px;
+	padding: 10px;
+	float: right;
+	font-family: 'Noto Sans KR', sans-serif;
+}
