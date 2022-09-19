@@ -20,7 +20,7 @@
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-
+	
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script
@@ -65,26 +65,19 @@
 			</h1>
 			<div class="search" style="margin-top: 15px;">
 				<input type="text" id="text" placeholder="원하시는 공간을 입력해보세요">
+				<input type="button" value="출석체크 하러가기" id="head_btn" onclick="location.href='login'"> 
 			</div>
 
+
 			<div id="sidelist" class="sidelist">
-				<%
-				String member_id = (String) session.getAttribute("member_id");
-				//null체크
-				if (member_id != null) { //로그인 상태
-				%>
-					 <a href="/mypage">마이페이지</a> <a href="/main">홈</a>
-					 <a href="/logoutAction">로그아웃</a>
-				<%
-				} else { //로그아웃 상태
-				%>
-					<a href="/login"> <img src="img/member/login.png" alt=""style="width: 20px" /></a>
-				<%
-				}
-				%>
-				  <a href="/service">고객센터</a> <a href="/one2one">one2one</a>
-				  <a href="/mypage_host">호스트 마이페이지</a>
-				  <a href="/ad_member">관리자페이지 확인용용</a>
+				<a href="/login">
+				<img src="img/member/login.png" alt="" style="width: 20px" /></a>
+				<a href="/mypage">마이페이지</a>
+				<a href="/main">홈</a>
+				<a href="/service">고객센터</a>
+				<a href="/one2one">one2one</a>
+				<a href="/mypage_host">호스트 마이페이지</a>
+				<a href="/ad_member">관리자 페이지 확인용용</a>
 			</div>
 
 			<img class="liston" src="/img/sidelisticon.png" alt="sidelisticon"
