@@ -1,5 +1,7 @@
 package com.study.springboot;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,6 +12,7 @@ import com.study.springboot.service.memberService;
 
 @Controller
 public class Mycontroller {
+	
 	@Autowired
 	private memberService memberService;
 	
@@ -165,25 +168,34 @@ public class Mycontroller {
 	@RequestMapping("/loginAction")
 	public String loginAction(@RequestParam("lo_name") String member_id,
 							  @RequestParam("lo_pass") String member_pw,
+							  HttpServletRequest request,
 							  Model model) {
 	
-	System.out.println("loginAction 호출");
-		
-	int result = memberService.login(member_id, member_pw);
 	
+
+	int result = memberService.login(member_id, member_pw);
 	if(result == 1) {
 		
 		model.addAttribute("mainPage", "main.jsp");
-		return "redirect:/index";
+		request.getSession().setAttribute("member_id", member_id);
+		return "index";
 	}else {
 		
 		model.addAttribute("mainPage","member/login.jsp");
-		return "redirect:/index";
+		return "index";
 	}
 		
 		
 	}
 	
+	@RequestMapping("/logoutAction")
+	public String logoutAction(HttpServletRequest request, Model model) {
+		
+		request.getSession().invalidate();
+		
+		model.addAttribute("mainPage","main.jsp");
+		return "index"; 
+	}
 	/* ----------------------------------------- */
 	
 	

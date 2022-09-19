@@ -7,5 +7,4 @@ public interface ImemberDao {
 
 	public int login(String member_id, String member_pw);
 	
-	
 }

@@ -6,8 +6,8 @@
     
     <mapper namespace = "com.study.springboot.dao.ImemberDao">
     
-    <select id="login" resultType="_int" >
-    	select count(*) from member where member_id = #{param1} and member_pw = #{param2}
-    </select>
+	<select id="login" resultType="_int">
+		select count(*) from member where member_id = #{param1} and member_pw = #{param2} 
+	</select>
     
     </mapper>
