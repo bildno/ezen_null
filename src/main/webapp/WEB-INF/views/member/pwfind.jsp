@@ -13,20 +13,22 @@
 			alt="space_icon" id="space_icon">
 	</h2>
 	<div class="contents">
+		<form action="/pwfindAction">
 		<div>
-			<input class="id" type="text" placeholder="아이디">
+			<input name="pw_id" class="id" type="text" placeholder="아이디">
 		</div>
 		<div>
-			<input class="name" type="text" placeholder="이름">
+			<input name="pw_name" class="name" type="text" placeholder="이름">
 		</div>
 		<hr>
 		<div>
-			<input type="button" value="비밀번호 찾기" id="pwfindbtn">
+			<input type="submit" value="비밀번호 찾기" id="pwfindbtn">
 		</div>
 		<div>
 			<input style="text-align: left;" class="pwknow" type="text"
-				placeholder="비밀번호 : ">
+				placeholder="비밀번호 : " value="${member_pw }">
 		</div>
+		</form>
 		<div class="reset">
 			<input type="button" value="비밀번호 재설정" id="pwchangebtn">
 		</div>
