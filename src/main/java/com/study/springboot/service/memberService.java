@@ -1,9 +1,12 @@
 package com.study.springboot.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.study.springboot.dao.ImemberDao;
+import com.study.springboot.dto.memberDto;
 
 @Component
 public class memberService {
@@ -26,5 +29,12 @@ public class memberService {
 		return result;
 	}
 	
+	public List<memberDto> mypageload(String member_id){
+		
+		List<memberDto> memberlist = imemberDao.mypageload(member_id);
+		
+		return memberlist;
+		
+	}
 	
 }
