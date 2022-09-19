@@ -65,7 +65,9 @@
 			</h1>
 			<div class="search" style="margin-top: 15px;">
 				<input type="text" id="text" placeholder="원하시는 공간을 입력해보세요">
+				<input type="button" value="출석체크 하러가기" id="head_btn" onclick="location.href='login'"> 
 			</div>
+
 
 			<div id="sidelist" class="sidelist">
 				<a href="/login">
