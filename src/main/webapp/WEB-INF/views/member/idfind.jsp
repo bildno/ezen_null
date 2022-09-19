@@ -10,19 +10,21 @@
 			alt="space_icon" id="space_icon">
 	</h2>
 	<div class="contents">
+	<form action="/idfindAction">
 		<div>
-			<input class="name" type="text" placeholder="이름">
+			<input class="name" type="text" placeholder="이름" name="fi_name">
 		</div>
 		<div>
-			<input class="phone" type="text" placeholder="전화번호">
+			<input class="phone" type="text" placeholder="전화번호" name="fi_phone">
 		</div>
 		<hr>
 		<div>
-			<input type="button" value="아이디 찾기" id="idfindbtn">
-		</div>
+			<input type="submit" value="아이디 찾기" id="idfindbtn">
+		</div>	
+	</form>
 		<div>
 			<input style="text-align: left;" class="idknow" type="text"
-				placeholder="아이디 : ">
+				placeholder="아이디 : " value= "${idfind}">
 		</div>
 		<hr>
 		<div>

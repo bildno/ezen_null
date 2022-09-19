@@ -29,12 +29,22 @@ public class memberService {
 		return result;
 	}
 	
+	
+	
 	public List<memberDto> mypageload(String member_id){
 		
 		List<memberDto> memberlist = imemberDao.mypageload(member_id);
 		
 		return memberlist;
 		
+	}
+	
+	
+	public String idfind(String member_name,String member_phone) {
+		
+		String idfind = imemberDao.idfind(member_name,member_phone);
+		
+		return idfind;
 	}
 	
 }
