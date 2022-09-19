@@ -196,6 +196,15 @@ public class Mycontroller {
 		model.addAttribute("mainPage","main.jsp");
 		return "index"; 
 	}
+	
+	@RequestMapping("/mycheck")
+	public String mycheck(Model model) {
+
+		model.addAttribute("mainPage", "member/mycheck.jsp");
+		return "index";
+	}
+	
+	
 	/* ----------------------------------------- */
 	
 	

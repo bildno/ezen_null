@@ -1,0 +1,11 @@
+@charset "UTF-8";
+#mychk_btn{
+	padding:9px;
+	width:160px;
+	border:none;
+	border-radius:8px;
+	background-color:rgb(151, 210, 236);
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight:500;
+}
+
