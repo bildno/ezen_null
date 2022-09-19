@@ -8,26 +8,23 @@
         <div class="ad_aside">
             <!-- <div class="ad_asidetb"> -->
                 <a href="">
-                    <li class="ad_asideli">홈</li>
-                </a>
-                <a href="">
-                    <li class="ad_asideli">회원정보관리</li>
+                    <li class="ad_asideli" onclick="location.href='/ad_member'" style="cursor:pointer">회원정보관리</li>
                 </a>
 
                 <a href="">
-                    <li class="ad_asideli">호스트정보 관리</li>
+                    <li class="ad_asideli" onclick="location.href='/ad_host'" style="cursor:pointer">호스트정보 관리</li>
                 </a>
 
                 <a href="">
-                    <li class="ad_asideli">1:1문의 관리</li>
+                    <li class="ad_asideli" onclick="location.href='/ad_one2one'" style="cursor:pointer">1:1문의 관리</li>
                 </a>
 
                 <a href="">
-                    <li class="ad_asideli">공지사항 관리</li>
+                    <li class="ad_asideli" onclick="location.href='/ad_notice'" style="cursor:pointer">공지사항 관리</li>
                 </a>
 
                 <a href="">
-                    <li class="ad_asideli">도움말 관리</li>
+                    <li class="ad_asideli" onclick="location.href='/ad_FAQ'" style="cursor:pointer">도움말 관리</li>
                 </a>
             <!-- </div> -->
         </div>
