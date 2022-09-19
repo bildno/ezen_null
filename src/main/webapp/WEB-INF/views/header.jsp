@@ -68,6 +68,7 @@
 			</div>
 
 			<div id="sidelist" class="sidelist">
+		
 				<%
 				String member_id = (String) session.getAttribute("member_id");
 				//null체크
@@ -82,7 +83,9 @@
 				<%
 				}
 				%>
-				  <a href="/service">고객센터</a> <a href="/one2one">one2one</a>
+				  <a href="/main">홈</a> 
+				  <a href="/service">고객센터</a> 
+				  <a href="/one2one">one2one</a>
 				  <a href="/mypage_host">호스트 마이페이지</a>
 				  <a href="/ad_member">관리자페이지 확인용용</a>
 			</div>
