@@ -33,12 +33,12 @@
 <div class="container">
 	<h1 id="login_h1">로그인</h1>
 	<div class="contents">
-        <form  id="myform" action="">
+        <form id="myform" action="loginAction">
 		<div>
-			<input class="id" type="text" placeholder="아이디" id="lo_name">
+			<input class="id" type="text" placeholder="아이디" id="lo_name" name="lo_name">
 		</div>
 		<div>
-			<input class="pw" type="password" placeholder="비밀번호" id="lo_pass">
+			<input class="pw" type="password" placeholder="비밀번호" id="lo_pass" name="lo_pass">
 		</div>
         
 		<div class="check">
