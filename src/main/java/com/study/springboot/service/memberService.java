@@ -47,4 +47,12 @@ public class memberService {
 		return idfind;
 	}
 	
+	public String select_pw(String member_id, String member_name) {
+		
+		String member_pw = imemberDao.select_pw(member_id, member_name);
+		
+		return member_pw;
+	}
+	
+	
 }

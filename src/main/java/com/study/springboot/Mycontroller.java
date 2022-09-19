@@ -174,6 +174,22 @@ public class Mycontroller {
 		model.addAttribute("mainPage", "member/pwfind.jsp");
 		return "index";
 	}
+	
+	@RequestMapping("/pwfindAction")
+	public String pwfindAction(@RequestParam("pw_id") String member_id,
+							   @RequestParam("pw_name") String member_name,
+			Model model) {
+		
+		
+		String member_pw = memberService.select_pw(member_id, member_name);
+	
+		
+		model.addAttribute("member_pw",member_pw);
+		
+		model.addAttribute("mainPage", "member/pwfind.jsp");
+		return "index";
+	}
+	
 
 	@RequestMapping("/member_join")
 	public String member_join(Model model) {
