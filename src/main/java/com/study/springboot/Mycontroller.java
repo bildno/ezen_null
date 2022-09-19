@@ -1,6 +1,9 @@
 package com.study.springboot;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.study.springboot.dto.memberDto;
 import com.study.springboot.service.memberService;
 
 @Controller
@@ -106,8 +110,18 @@ public class Mycontroller {
 	}
 
 	@RequestMapping("/mypage")
-	public String mypage(Model model) {
-
+	public String mypage(
+			HttpServletRequest request,Model model) {
+		
+		HttpSession session = request.getSession();
+		String member_id = (String) session.getAttribute("member_id");
+		
+		
+		List<memberDto> memberlist = memberService.mypageload(member_id);
+		
+		
+		model.addAttribute("memberlist",memberlist);
+		
 		model.addAttribute("mainPage", "member/mypage.jsp");
 		return "index";
 	}
@@ -217,6 +231,8 @@ public class Mycontroller {
 		model.addAttribute("mainPage", "member/mycheck.jsp");
 		return "index";
 	}
+	
+	
 	
 	
 	/* ----------------------------------------- */
