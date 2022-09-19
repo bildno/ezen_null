@@ -63,6 +63,13 @@ public class Mycontroller {
 		
 		return "index";
 	}
+	@RequestMapping("/ad_one2one_answer")
+	public String ad_one2one_answer(Model model) {
+		
+		model.addAttribute("mainPage","admin/ad_one2one_answer.jsp");
+		
+		return "index";
+	}
 	
 	/* ----------------------------------------- */
 	
