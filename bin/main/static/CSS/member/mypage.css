@@ -90,8 +90,7 @@
 
 .mypage_section2 {
 	width: 60%;
-	/* align-self: center; */
-	height:400px;
+	 align-self: center; 
 	border: 1px solid rgb(238, 238, 238);
 	border-radius: 5px;
 }
@@ -99,6 +98,7 @@
 .mypage_con2 table {
 	width: 100%;
 	height: 300px;
+	
 	font-family: 'Noto Sans KR', sans-serif; 
 }
 
