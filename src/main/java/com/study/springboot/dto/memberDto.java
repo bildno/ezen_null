@@ -7,11 +7,11 @@ public class memberDto {
 
 	private String member_id;
 	private String member_pw;
-	private String MEMBER_EMAIL;
-	private String MEMBER_PHONE;
-	private int MEMBER_GENDER;
-	private String MEMBER_NAME;
-	private int MEMBER_HOST;
+	private String member_email;
+	private String member_phone;
+	private int member_gender;
+	private String member_name;
+	private int member_host;
 	
 	
 }

@@ -1,6 +1,9 @@
 package com.study.springboot;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.study.springboot.dto.memberDto;
 import com.study.springboot.service.memberService;
 
 @Controller
@@ -49,28 +53,42 @@ public class Mycontroller {
 	public String ad_one2one(Model model) {
 		
 		model.addAttribute("mainPage","admin/ad_one2one.jsp");
-		
 		return "index";
 	}
 	@RequestMapping("/ad_notice")
 	public String ad_notice(Model model) {
 		
 		model.addAttribute("mainPage","admin/ad_notice.jsp");
-		
 		return "index";
 	}
 	@RequestMapping("/ad_FAQ")
 	public String ad_FAQ(Model model) {
 		
 		model.addAttribute("mainPage","admin/ad_FAQ.jsp");
-		
 		return "index";
 	}
 	@RequestMapping("/ad_host_info")
 	public String ad_host_info(Model model) {
 		
 		model.addAttribute("mainPage","admin/ad_host_info.jsp");
+		return "index";
+	}
+	@RequestMapping("/ad_one2one_answer")
+	public String ad_one2one_answer(Model model) {
 		
+		model.addAttribute("mainPage","admin/ad_one2one_answer.jsp");
+		return "index";
+	}
+	@RequestMapping("/ad_notice_write")
+	public String ad_notice_write(Model model) {
+		
+		model.addAttribute("mainPage","admin/ad_notice_write.jsp");
+		return "index";
+	}
+	@RequestMapping("/ad_FAQ_write")
+	public String ad_FAQ_write(Model model) {
+		
+		model.addAttribute("mainPage","admin/ad_FAQ_write.jsp");
 		return "index";
 	}
 	
@@ -92,8 +110,18 @@ public class Mycontroller {
 	}
 
 	@RequestMapping("/mypage")
-	public String mypage(Model model) {
-
+	public String mypage(
+			HttpServletRequest request,Model model) {
+		
+		HttpSession session = request.getSession();
+		String member_id = (String) session.getAttribute("member_id");
+		
+		
+		List<memberDto> memberlist = memberService.mypageload(member_id);
+		
+		
+		model.addAttribute("memberlist",memberlist);
+		
 		model.addAttribute("mainPage", "member/mypage.jsp");
 		return "index";
 	}
@@ -203,6 +231,8 @@ public class Mycontroller {
 		model.addAttribute("mainPage", "member/mycheck.jsp");
 		return "index";
 	}
+	
+	
 	
 	
 	/* ----------------------------------------- */
