@@ -188,7 +188,7 @@ public class Mycontroller {
 	}
 	@RequestMapping("/pwchange")
 	public String pwchange(Model model) {
-
+		
 		model.addAttribute("mainPage", "member/pwchange.jsp");
 		return "index";
 	}
