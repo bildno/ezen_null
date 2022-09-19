@@ -16,4 +16,6 @@ public interface ImemberDao {
 	public String idfind(String member_name,String member_phone);
 	
 	public String select_pw(String member_id, String member_name);
+	
+	public String name_change(String member_name, String member_id);
 }
