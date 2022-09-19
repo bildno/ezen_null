@@ -13,5 +13,6 @@ public interface ImemberDao {
 	
 	public List<memberDto> mypageload(String member_id);
 	
+	public String idfind(String member_name,String member_phone);
 	
 }
