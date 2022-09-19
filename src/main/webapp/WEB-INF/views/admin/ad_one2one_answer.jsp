@@ -60,7 +60,7 @@
                 <tr>
                     <td></td>
                     <td class="ad_btn_td">
-                        <input class="ad_btn" type="button" value="답변하기" onclick="location.href='/one2one_writeAction'">
+                        <input class="ad_btn" type="button" value="답변하기" onclick="location.href='/ad_one2one'">
                     </td>
                 </tr>
             </table>

@@ -49,6 +49,8 @@
 
 <h1 style="margin: 150px 0 0 0;" id="space">어떤 공간을 찾고 계세요?</h1>
 
+
+
 <!-- 부트스트랩 사용 -->
 <div id="carouselExampleFade" class="carousel slide carousel-fade"
 	data-ride="carousel">
