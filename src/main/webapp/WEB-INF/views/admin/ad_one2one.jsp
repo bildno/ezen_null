@@ -4,31 +4,26 @@
 <link rel="stylesheet" href="css/admin/ad_one2one.css">
 
         <hr>
-        <div class="list">
-
-            <div class="asidelist">
+       
+<div class="container">
+<div class="list">
+            <div class="sectionlist">
+                    <div class="title">
+                    <div class="asidelist">
                 <table>
                     <tr>
 					<td onclick="location.href='/ad_member'" style="cursor:pointer">회원정보 관리</td>
-				</tr>
-				<tr>
+				
 					<td onclick="location.href='/ad_host'" style="cursor:pointer">호스트정보 관리</td>
-				</tr>
-				<tr>
+				
 					<td onclick="location.href='/ad_one2one'" style="cursor:pointer">1:1문의 관리</td>
-				</tr>
-				<tr>
+				
 					<td onclick="location.href='/ad_notice'" style="cursor:pointer">공지사항 관리</td>
-				</tr>
-				<tr>
+				
 					<td onclick="location.href='/ad_FAQ'" style="cursor:pointer">도움말 관리</td>
-				</tr>
+					</tr>
                 </table>
             </div>
-            
-	<div class="container">
-            <div class="sectionlist">
-                    <div class="title">
             <h1 id="ad_one2one_h1">1:1 문의 관리</h1>
         </div>
         <h2 id="ad_one2one_h2">
@@ -72,6 +67,43 @@
                                 <td>help119</td>
                                 <td>2022-09-15</td>
                             </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>도와주세요</td>
+                                <td>help119</td>
+                                <td>2022-09-15</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>도와주세요</td>
+                                <td>help119</td>
+                                <td>2022-09-15</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>도와주세요</td>
+                                <td>help119</td>
+                                <td>2022-09-15</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>도와주세요</td>
+                                <td>help119</td>
+                                <td>2022-09-15</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>도와주세요</td>
+                                <td>help119</td>
+                                <td>2022-09-15</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>도와주세요</td>
+                                <td>help119</td>
+                                <td>2022-09-15</td>
+                            </tr>
+                            
                         </table>
                     </div>
                     <div class="pagenavi">
@@ -95,4 +127,4 @@
 
             </div>
         </div>
-    </div>
+</div>
