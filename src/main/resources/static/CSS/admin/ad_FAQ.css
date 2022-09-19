@@ -2,31 +2,28 @@
 	width: 30px;
 }
 
-.container {
-font-family: 'Noto Sans KR', sans-serif;
-margin-left: 1px;
-
+.ad_wrap {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
 }
 
 /* 컨테이너 - 부트스트랩 */
-#space_host_h1 {
+#space_FAQ_h1 {
 	font-family: 'Do Hyeon', sans-serif;
 	margin-left: 50px;
-	margin-top: 50px;
+	margin-top: 80px;
 	font-size: 50px;
+	text-align: center;
 }
 
-#space_host_h2 {
+#space_FAQ_h2 {
 	font-family: 'Do Hyeon', sans-serif;
     font-weight: 300;
 	font-size: 20px;
 	margin-left: 50px;
-	color: rgb(37, 49, 109)
-}
-
-.container {
-	margin-top: 150px;
-	margin-bottom: 100px;
+	color: rgb(37, 49, 109);
+	text-align: center;
 }
 
 .contents {
@@ -58,22 +55,24 @@ margin-left: 1px;
 	height: 30px;
 	margin-bottom: 5px;
 }
-
+.search_box_ul {
+	display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-right: 40px;
+    min-width: 20%;
+}
 .search_box_ul li {
 	display: flex;
 	flex-flow: row nowrap;
 	height: 30px;
 	margin-bottom: 20px;
 }
-.search_box_ul {
-	display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-right: 40px;
-}
+
 .search_box_ul p {
-    margin-right: 20px;
+	margin-right: 20px;
 }
+
 .search_box_ul label>input[type="checkbox"] {
 	margin-right: 5px;
 }
@@ -91,7 +90,7 @@ margin-left: 1px;
 	border: 0;
 	background-color: rgb(238, 238, 238);
 	padding: 10px 20px 10px 20px;
-	border-radius: 5px
+	border-radius: 5px;
 }
 
 .search_table {
@@ -114,10 +113,6 @@ margin-left: 1px;
 	margin-top: 50px;
 }
 
-.title {
-	text-align: center;
-}
-
 .list {
     display: flex;
     flex-flow: row nowrap;
@@ -135,10 +130,60 @@ margin-left: 1px;
 .sectionlist {
 	width: 80%;
 }
- .btn_del{
-    border: none;
-    background-color: rgb(238, 238, 238);
-    padding: 1px 15px 1px 15px;
-    border-radius: 5px;
-    margin: 5px;
+
+.ad_asideli {
+    list-style: none;
+    padding: 20px;
+}
+.ad_asideli:hover {
+    width: 100%;
+    background-color: beige;
+}
+.ad_aside {
+    /* background-color: rgb(227, 227, 252); */
+    margin-top: 150px;
+    /* min-width: 20%; */
+}
+.ad_aside a:hover {
+    text-decoration: none;
+}
+
+.btn_FAQdel {
+	border: 0;
+	background-color: rgb(238, 238, 238);
+	padding: 10px 20px 10px 20px;
+	border-radius: 5px;
+}
+
+
+/* 모바일화면 */
+@media screen and (max-width:767px) and (orientation:portrait) {
+    /* .list {
+        display: flex;
+        justify-content: center;
+    } */
+    .ad_wrap {
+        display: block;
+        margin-top: 0;
+    }
+    .ad_aside {
+        display: flex;
+        flex-flow: row wrap;
+    }
+}
+
+/* 태블릿 화면 */
+@media screen and (min-width:768px) and (max-width:1023px) and (orientation:portrait) {
+    /* .list {
+        display: flex;
+        justify-content: center;
+    } */
+    .ad_wrap {
+        display: block;
+        margin-top: 0;
+    }
+    .ad_aside {
+        display: flex;
+        flex-flow: row wrap;
+    }
 }
