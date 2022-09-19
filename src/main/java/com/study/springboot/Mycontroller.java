@@ -1,11 +1,18 @@
 package com.study.springboot;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.study.springboot.service.memberService;
 
 @Controller
 public class Mycontroller {
+	@Autowired
+	private memberService memberService;
+	
 
 	@RequestMapping("/")
 	public String root() {
@@ -153,6 +160,28 @@ public class Mycontroller {
 
 		model.addAttribute("mainPage", "member/pwchange.jsp");
 		return "index";
+	}
+	
+	@RequestMapping("/loginAction")
+	public String loginAction(@RequestParam("lo_name") String member_id,
+							  @RequestParam("lo_pass") String member_pw,
+							  Model model) {
+	
+	System.out.println("loginAction 호출");
+		
+	int result = memberService.login(member_id, member_pw);
+	
+	if(result == 1) {
+		
+		model.addAttribute("mainPage", "main.jsp");
+		return "redirect:/index";
+	}else {
+		
+		model.addAttribute("mainPage","member/login.jsp");
+		return "redirect:/index";
+	}
+		
+		
 	}
 	
 	/* ----------------------------------------- */
