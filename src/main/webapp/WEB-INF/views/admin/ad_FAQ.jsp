@@ -2,8 +2,6 @@
 	pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="css/admin/ad_FAQ.css">
 
-<hr>
-
 <div class="ad_wrap">
 	<div class="ad_aside">
 		<!-- <div class="ad_asidetb"> -->

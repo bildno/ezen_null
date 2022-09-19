@@ -29,6 +29,8 @@ public class memberService {
 		return result;
 	}
 	
+	
+	
 	public List<memberDto> mypageload(String member_id){
 		
 		List<memberDto> memberlist = imemberDao.mypageload(member_id);
@@ -36,5 +38,21 @@ public class memberService {
 		return memberlist;
 		
 	}
+	
+	
+	public String idfind(String member_name,String member_phone) {
+		
+		String idfind = imemberDao.idfind(member_name,member_phone);
+		
+		return idfind;
+	}
+	
+	public String select_pw(String member_id, String member_name) {
+		
+		String member_pw = imemberDao.select_pw(member_id, member_name);
+		
+		return member_pw;
+	}
+	
 	
 }

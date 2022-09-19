@@ -7,23 +7,14 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
-<c:forEach var="dto" items="${memberlist }">
-	<div class="container">
-		<h1 id="mypage_h1">프로필 관리</h1>
-		<h2 id="mypage_exp">
-			프로필 정보를 관리해주세요 <img src="/img/service/space_icon.png"
-				alt="space_icon" id="space_icon">
-		</h2>
-		<script src="//code.jquery.com/jquery.min.js"></script>
-        <script>
-        const btn = document.querySelector('btn') //id가 'btn'인 요소를 반환한다.
-        if(btn.innerText == 'Follow' ){ //버튼의 텍스트값 확인
-          btn.innerText = 'Unfollow'  // 텍스트를 unfollow로 변경
-        }else{  // 반대일 경우 다시 변경
-          btn.innerText = 'Follow'
-        }
-        </script>
-        
+	<c:forEach var="dto" items="${ memberlist }">
+<div class="container">
+	<h1 id="mypage_h1">프로필 관리</h1>
+	<h2 id="mypage_exp">
+		프로필 정보를 관리해주세요 <img src="/img/service/space_icon.png" alt="space_icon"
+			id="space_icon">
+	</h2>
+
 
 		<div class="mypage_section" style="margin-top: 50px;">
 			<div class="mypage_section1">

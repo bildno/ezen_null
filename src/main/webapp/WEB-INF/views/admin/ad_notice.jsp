@@ -2,8 +2,6 @@
 	pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="css/admin/ad_notice.css">
 
-<hr>
-
 <div class="ad_wrap">
 	<div class="ad_aside">
 		<!-- <div class="ad_asidetb"> -->
@@ -80,7 +78,7 @@
 						</a></li>
 						<li class="page-item"><a class="page-link" href="#">1</a></li>
 						<li class="page-item"><a class="page-link" href="#">2</a></li>
-						<li class="page-item"><a class="page-link" href="#">3</a></li>
+						<li class="page-item"><a class="page-link" href="/ad_notice_write">3</a></li>
 						<li class="page-item"><a class="page-link" href="#">4</a></li>
 						<li class="page-item"><a class="page-link" href="#">5</a></li>
 						<li class="page-item"><a class="page-link" href="#"

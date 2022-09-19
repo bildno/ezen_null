@@ -21,7 +21,6 @@
 		$('#summernote').summernote();
 	});
 </script>
-<hr>
 
 <div class="ad_wrap">
 	<div class="ad_aside">

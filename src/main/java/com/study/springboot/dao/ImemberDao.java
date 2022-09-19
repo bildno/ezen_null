@@ -13,5 +13,7 @@ public interface ImemberDao {
 	
 	public List<memberDto> mypageload(String member_id);
 	
+	public String idfind(String member_name,String member_phone);
 	
+	public String select_pw(String member_id, String member_name);
 }
