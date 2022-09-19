@@ -16,7 +16,7 @@
     	select * from member where member_id = #{param1}
     </select>
     
-    <select id="idfind" resultType="com.study.springboot.dto.membersDto">
+    <select id="idfind" resultType="String">
     	select member_id from member where member_name = #{param1} and member_phone = #{param2}
     </select>
     

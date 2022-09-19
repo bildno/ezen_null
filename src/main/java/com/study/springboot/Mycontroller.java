@@ -152,6 +152,21 @@ public class Mycontroller {
 		model.addAttribute("mainPage", "member/idfind.jsp");
 		return "index";
 	}
+	
+	@RequestMapping("/idfindAction")
+	public String idfindAction(@RequestParam("fi_name") String member_name,
+			                  @RequestParam("fi_phone") String member_phone,
+			                  HttpServletRequest request,
+			                  Model model) {
+		
+		String idfind = memberService.idfind(member_name, member_phone);
+		
+		model.addAttribute("idfind",idfind);
+		model.addAttribute("mainPage","member/idfind.jsp");
+		
+		return "index";
+		
+	}
 
 	@RequestMapping("/pwfind")
 	public String pwfind(Model model) {
