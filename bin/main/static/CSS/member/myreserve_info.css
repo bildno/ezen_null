@@ -163,11 +163,6 @@ input[id="ch"]:checked{
     height: 50px;
     padding: 10px 15px;
     width:20%;
-    cursor: pointer;
-}
-.td-1:hover{
-	background-color: rgb(254, 245, 172);
-	transition-duration: 0.5s;
 }
 .space_table {
 	width:100%;

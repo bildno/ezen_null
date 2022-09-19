@@ -3,9 +3,9 @@
 <link rel="stylesheet" href="css/member/myreserve_info.css">
 
 <div class="container">
-	<h1 id="space_host_h1">예약 공간 상세페이지</h1>
+	<h1 id="space_host_h1">공간 상세페이지</h1>
 	<h2 id="space_host_h2">
-		예약공간 상세페이지입니다 <img src="/img/service/space_icon.png"
+		호스트의 공간 상세페이지입니다 <img src="/img/service/space_icon.png"
 			alt="space_icon" id="space_icon">
 	</h2>
 	<div class=contents_wrapper>
@@ -50,10 +50,11 @@
 		<div class="nav_wrapper">
 			<table class="space_table">
 				<tr class="navi_area">
-					<td onclick= movespace(1); class="td-1"><a>공간소개</a></td>
-					<td onclick= movespace(2); class="td-1"><a>주의사항</a></td>
-					<td onclick= movespace(3); class="td-1"><a>환불정책</a></td>
-					<td onclick= movespace(4); class="td-1"><a>위치</a></td>
+					<td class="td-1"><a>공간소개</a></td>
+					<td class="td-1"><a>유의사항</a></td>
+					<td class="td-1"><a>환불정책</a></td>
+					<td class="td-1"><a>Q&amp;A</a></td>
+					<td class="td-1"><a>이용후기</a></td>
 				</tr>
 			</table>
 		</div>
@@ -76,7 +77,7 @@
 		</p>
 
 		<div>
-			<h4 id="space_host_sotit" class="space_tag">시설안내</h4>
+			<h4 id="space_host_sotit">시설안내</h4>
 		</div>
 		<div class="divide">
 			<hr class="line">
@@ -95,7 +96,7 @@
 			</table>
 		</div>
 		<div>
-			<h4 id="space_host_sotit" class="sotiit">주의사항</h4>
+			<h4 id="space_host_sotit">주의사항</h4>
 		</div>
 		<div class="divide">
 			<hr class="line">
@@ -124,7 +125,7 @@
 			</ul>
 		</div>
 		<div>
-			<h4 id="space_host_sotit" class="refund_title">환불규정</h4>
+			<h4 id="space_host_sotit">환불규정</h4>
 		</div>
 		<div class="divide">
 			<hr class="line">
@@ -154,7 +155,7 @@
 				</div>
 			</div>
 		</div>
-		<iframe id="map" class="map"
+		<iframe id="map"
 			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3155.
 			164599740011!2d127.0426239156514!3d37.739282521972946!2m3!1f0!2f0!3f0!3m2!
 			1i1024!2i768!4f13.1!3m3!1m2!1s0x357cc730e7a0a4e5%3A0xcea407a2baced2ee!2z7J
@@ -172,30 +173,7 @@
 		</div>
 		
 	</div>
-<script type="text/javascript">
-	function movespace(int){
-		switch (int) {
-            case 1:
-            var location = document.querySelector(".space_tag").offsetTop;
-                break;
-        
-            case 2:
-            var location = document.querySelector(".sotiit").offsetTop;
-                break;
 
-            case 3:
-            var location = document.querySelector(".refund_title").offsetTop;
-            	break;
-            case 4:
-                var location = document.querySelector(".map").offsetTop;
-                	break;
-         
-        }
-	
-		window.scrollTo({top:location, behavior:'smooth'})
-	}
-
-	</script>
 
 </div>
 
