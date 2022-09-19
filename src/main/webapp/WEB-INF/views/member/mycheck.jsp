@@ -22,6 +22,7 @@ $(document).ready(function(){
 	        custom2: {
 	          text: '출석체크하기',
 	          id: 'check',
+	          color:'blue',
 	          click: function() {	
                     // ajax 통신으로 출석 정보 저장하기 
                     // POST "/users/attendances" -> { status: "success", date:"2018-07-01"}
@@ -43,6 +44,6 @@ $(document).ready(function(){
 </script>
 
 
-    <div class="container calendar-container">
+    <div class="container calendar-container" class=chk_calendar style="margin-top:160px; margin-bottom:100px;" >
         <div id="calendar" style="max-width:900px; margin:40px auto;"></div>
     </div>

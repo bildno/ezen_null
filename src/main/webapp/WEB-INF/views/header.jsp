@@ -18,6 +18,7 @@
 	;
 </style>
 <link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/member/mycheck.css">
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 
@@ -65,11 +66,27 @@
 			</h1>
 			<div class="search" style="margin-top: 15px;">
 				<input type="text" id="text" placeholder="원하시는 공간을 입력해보세요">
+				
+				<%
+				String member_id = (String) session.getAttribute("member_id");
+				if(member_id != null) {
+					%>
+						<input type="button" id="mychk_btn" value="출석체크 하러가기" onclick="location.href='/mycheck'">
+						<% 
+				}else{
+						%>
+							
+					    <% 
+				}
+					    %>
+						
+
+
+				
 			</div>
 
 			<div id="sidelist" class="sidelist">
 				<%
-				String member_id = (String) session.getAttribute("member_id");
 				//null체크
 				if (member_id != null) { //로그인 상태
 				%>
