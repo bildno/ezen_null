@@ -3,9 +3,13 @@
 }
 
 .container {
-font-family: 'Noto Sans KR', sans-serif;
-margin-left: 0px;
-
+	font-family: 'Noto Sans KR', sans-serif;
+	margin-left: 0;
+}
+.ad_wrap {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
 }
 
 /* 컨테이너 - 부트스트랩 */
@@ -14,6 +18,7 @@ margin-left: 0px;
 	margin-left: 50px;
 	margin-top: 50px;
 	font-size: 50px;
+	text-align: center;
 }
 
 #space_host_h2 {
@@ -21,9 +26,9 @@ margin-left: 0px;
     font-weight: 300;
 	font-size: 20px;
 	margin-left: 50px;
-	color: rgb(37, 49, 109)
+	color: rgb(37, 49, 109);
+	text-align: center;
 }
-
 .container {
 	margin-top: 150px;
 	margin-bottom: 100px;
@@ -63,6 +68,7 @@ margin-left: 0px;
     flex-direction: row;
     justify-content: center;
     margin-right: 40px;
+    min-width: 20%;
 }
 .search_box_ul li {
 	display: flex;
@@ -132,6 +138,25 @@ margin-left: 0px;
 .sectionlist {
 	width: 80%;
 }
+
+.ad_asideli {
+    list-style: none;
+    padding: 20px;
+}
+.ad_asideli:hover {
+    width: 100%;
+    background-color: beige;
+}
+.ad_aside {
+    /* background-color: rgb(227, 227, 252); */
+    margin-top: 150px;
+    /* min-width: 20%; */
+}
+.ad_aside a:hover {
+    text-decoration: none;
+}
+
+
 @media screen and (min-width:480px) and (max-width:767px) and (orientation:portrait) {
     /* .list {
         display: flex;

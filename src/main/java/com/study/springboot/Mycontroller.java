@@ -49,28 +49,30 @@ public class Mycontroller {
 	public String ad_one2one(Model model) {
 		
 		model.addAttribute("mainPage","admin/ad_one2one.jsp");
-		
 		return "index";
 	}
 	@RequestMapping("/ad_notice")
 	public String ad_notice(Model model) {
 		
 		model.addAttribute("mainPage","admin/ad_notice.jsp");
-		
 		return "index";
 	}
 	@RequestMapping("/ad_FAQ")
 	public String ad_FAQ(Model model) {
 		
 		model.addAttribute("mainPage","admin/ad_FAQ.jsp");
-		
 		return "index";
 	}
 	@RequestMapping("/ad_host_info")
 	public String ad_host_info(Model model) {
 		
 		model.addAttribute("mainPage","admin/ad_host_info.jsp");
+		return "index";
+	}
+	@RequestMapping("/ad_one2one_answer")
+	public String ad_one2one_answer(Model model) {
 		
+		model.addAttribute("mainPage","admin/ad_one2one_answer.jsp");
 		return "index";
 	}
 	
