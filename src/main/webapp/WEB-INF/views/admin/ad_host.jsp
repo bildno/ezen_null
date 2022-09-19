@@ -38,13 +38,14 @@
 				<div class="search_box">
 					<ul class="search_box_ul">
 						<li>
-							<p>검색항목</p> <select>
+							<p style="min-width: 20%;">검색항목</p> <select>
 								<option value="name">이름</option>
 								<option value="rnum">예약번호</option>
 								<option value="phone">전화번호</option>
 								<option value="email">이메일</option>
-						</select> &nbsp;&nbsp;<input type="text" name="search_contents"
-							id="search_contents">
+						</select> &nbsp;&nbsp;
+						<input type="text" name="search_contents"
+							id="search_contents" style="width: 100%;">
 
 						</li>
 					</ul>
