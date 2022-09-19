@@ -12,8 +12,8 @@
     
     <!-- 로그인																		-  -->
     
-    <select id="mypageload" resultType="com.study.springboot.dto.memberdto">
-    	select * from member
+    <select id="mypageload" resultType="com.study.springboot.dto.memberDto">
+    	select * from member where member_id = #{param1}
     </select>
     
     <!--  마이페이지 -->

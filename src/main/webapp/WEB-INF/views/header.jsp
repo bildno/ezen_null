@@ -91,7 +91,7 @@
 				//null체크
 				if (member_id != null) { //로그인 상태
 				%>
-					 <a href="/mypage">마이페이지</a> <a href="/main">홈</a>
+					 <a href="/mypage">마이페이지</a>
 					 <a href="/logoutAction">로그아웃</a>
 				<%
 				} else { //로그아웃 상태
@@ -105,13 +105,15 @@
 				  <a href="/one2one">one2one</a>
 				  <a href="/mypage_host">호스트 마이페이지</a>
 				  <a href="/ad_member">관리자페이지 확인용용</a>
+				
 			</div>
-
+	
 			<img class="liston" src="/img/sidelisticon.png" alt="sidelisticon"
 				id="sidelisticon" onclick="sideon()" />
 
 		</div>
 	</div>
+	
 	<img src="/img/topmove.png" alt="" class="movetopbtn" />
 
 

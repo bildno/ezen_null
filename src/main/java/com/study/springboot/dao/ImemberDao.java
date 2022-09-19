@@ -11,6 +11,7 @@ public interface ImemberDao {
 
 	public int login(String member_id, String member_pw);
 	
-	public List<memberDto> mypageload();
+	public List<memberDto> mypageload(String member_id);
+	
 	
 }

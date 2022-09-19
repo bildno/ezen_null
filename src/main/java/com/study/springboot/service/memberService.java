@@ -29,9 +29,9 @@ public class memberService {
 		return result;
 	}
 	
-	public List<memberDto> mypageload(){
+	public List<memberDto> mypageload(String member_id){
 		
-		List<memberDto> memberlist = imemberDao.mypageload();
+		List<memberDto> memberlist = imemberDao.mypageload(member_id);
 		
 		return memberlist;
 		
