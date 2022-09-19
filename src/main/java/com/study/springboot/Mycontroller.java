@@ -75,6 +75,18 @@ public class Mycontroller {
 		model.addAttribute("mainPage","admin/ad_one2one_answer.jsp");
 		return "index";
 	}
+	@RequestMapping("/ad_notice_write")
+	public String ad_notice_write(Model model) {
+		
+		model.addAttribute("mainPage","admin/ad_notice_write.jsp");
+		return "index";
+	}
+	@RequestMapping("/ad_FAQ_write")
+	public String ad_FAQ_write(Model model) {
+		
+		model.addAttribute("mainPage","admin/ad_FAQ_write.jsp");
+		return "index";
+	}
 	
 	/* ----------------------------------------- */
 	
