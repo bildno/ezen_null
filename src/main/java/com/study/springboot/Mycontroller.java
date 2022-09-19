@@ -79,6 +79,18 @@ public class Mycontroller {
 		model.addAttribute("mainPage","admin/ad_one2one_answer.jsp");
 		return "index";
 	}
+	@RequestMapping("/ad_notice_write")
+	public String ad_notice_write(Model model) {
+		
+		model.addAttribute("mainPage","admin/ad_notice_write.jsp");
+		return "index";
+	}
+	@RequestMapping("/ad_FAQ_write")
+	public String ad_FAQ_write(Model model) {
+		
+		model.addAttribute("mainPage","admin/ad_FAQ_write.jsp");
+		return "index";
+	}
 	
 	/* ----------------------------------------- */
 	
@@ -139,6 +151,21 @@ public class Mycontroller {
 
 		model.addAttribute("mainPage", "member/idfind.jsp");
 		return "index";
+	}
+	
+	@RequestMapping("/idfindAction")
+	public String idfindAction(@RequestParam("fi_name") String member_name,
+			                  @RequestParam("fi_phone") String member_phone,
+			                  HttpServletRequest request,
+			                  Model model) {
+		
+		String idfind = memberService.idfind(member_name, member_phone);
+		
+		model.addAttribute("idfind",idfind);
+		model.addAttribute("mainPage","member/idfind.jsp");
+		
+		return "index";
+		
 	}
 
 	@RequestMapping("/pwfind")

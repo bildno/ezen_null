@@ -1,17 +1,118 @@
 #space_icon {
 	width: 30px;
 }
-.container{
+
+.ad_wrap {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+/* 컨테이너 - 부트스트랩 */
+#ad_notice_h1 {
+	font-family: 'Do Hyeon', sans-serif;
+	margin-left: 50px;
+	margin-top: 80px;
+	font-size: 50px;
+	text-align: center;
+}
+
+#ad_notice_h2 {
+	font-family: 'Do Hyeon', sans-serif;
+    font-weight: 300;
+	font-size: 20px;
+	margin-left: 50px;
+	color: rgb(37, 49, 109);
+	text-align: center;
+}
+
+.contents {
+	width: 100%;
 	font-family: 'Noto Sans KR', sans-serif;
-	margin-left: 0px;
+	margin: 40px 10% 40px 10%;
+	padding: 65px;
+	text-align: center;
+	margin: 0 auto;
+	border: 1px solid rgb(238, 238, 238);
+	border-radius: 10px;
 }
-.container {
-	margin-top: 150px;
+/* 검색박스 */
+.search_box {
+	border: 1px solid rgb(37, 49, 109);
+	padding: 20px 0 10px 0;
 	margin-bottom: 100px;
+	width: 100%;
 }
-.title {
-    text-align: center;
+
+#datepicker2, #datepicker {
+	width: 150px;
+	height: 30px;
+	margin-right: 2px;
 }
+
+.ui-datepicker-trigger {
+	width: 20px;
+	height: 30px;
+	margin-bottom: 5px;
+}
+.search_box_ul {
+	display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-right: 40px;
+    min-width: 20%;
+}
+.search_box_ul li {
+	display: flex;
+	flex-flow: row nowrap;
+	height: 30px;
+	margin-bottom: 20px;
+}
+
+.search_box_ul p {
+	margin-right: 20px;
+}
+
+.search_box_ul label>input[type="checkbox"] {
+	margin-right: 5px;
+}
+
+#check_label {
+	margin-right: 10px;
+}
+
+.search_btn {
+	display: flex;
+	justify-content: center;
+}
+
+.search_btn button {
+	border: 0;
+	background-color: rgb(238, 238, 238);
+	padding: 10px 20px 10px 20px;
+	border-radius: 5px;
+}
+
+.search_table {
+	width: 100%;
+}
+
+.search_table th {
+	text-align: center;
+	border-bottom: 2px solid rgb(37, 49, 109);
+}
+
+.txt_primary {
+	font-size: small;
+	text-align: left;
+}
+
+.pagination {
+	display: flex;
+	justify-content: center;
+	margin-top: 50px;
+}
+
 .list {
     display: flex;
     flex-flow: row nowrap;
@@ -30,118 +131,57 @@
 	width: 80%;
 }
 
-/* 컨테이너 - 부트스트랩 */
-#space_host_h1{
-    font-family: 'Do Hyeon', sans-serif;
-	margin-left: 50px;
-	margin-top: 50px;
-	font-size: 50px;
+.ad_asideli {
+    list-style: none;
+    padding: 20px;
 }
-#space_host_h2{
-    font-family: 'Do Hyeon', sans-serif;
-	font-weight: 300;
-	font-size: 20px;
-	margin-left: 50px;
-	color: rgb(37, 49, 109)
-}
-.contents{
+.ad_asideli:hover {
     width: 100%;
-    font-family : 'Noto Sans KR' , sans-serif;
-    margin: 40px 10% 40px 10%;
-    padding: 65px;
-    text-align: center;
-    margin: 0  auto;
-    border:1px solid rgb(238, 238, 238);
-    border-radius:10px;
+    background-color: beige;
 }
-/* 검색박스 */
-.search_box {
-    border: 1px solid rgb(37, 49, 109);
-    padding: 20px 0 10px 0;
-    margin-bottom: 100px;
-    width: 100%;
+.ad_aside {
+    /* background-color: rgb(227, 227, 252); */
+    margin-top: 150px;
+    /* min-width: 20%; */
 }
-#datepicker2, #datepicker {
-    width: 150px;
-    height: 30px;
-    margin-right: 2px;
+.ad_aside a:hover {
+    text-decoration: none;
 }
-.ui-datepicker-trigger {
-    width: 20px;
-    height: 30px;
-    margin-bottom: 5px;
+
+.btn_ad_notice {
+	border: 0;
+	background-color: rgb(238, 238, 238);
+	padding: 10px 20px 10px 20px;
+	border-radius: 5px;
 }
-.search_box_ul {
-	display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-right: 40px;
+
+
+/* 모바일화면 */
+@media screen and (max-width:767px) and (orientation:portrait) {
+    /* .list {
+        display: flex;
+        justify-content: center;
+    } */
+    .ad_wrap {
+        display: block;
+    }
+    .ad_aside {
+        display: flex;
+        flex-flow: row wrap;
+    }
 }
-.search_box_ul li {
-    display: flex;
-    flex-flow: row nowrap;
-    height: 30px;
-    margin-bottom: 20px;
-}
-.search_box_ul p {
-    margin-right: 20px;
-}
-.search_box_ul label > input[type="checkbox"] {
-	margin-right: 5px;
-}
-#check_label {
-	margin-right: 10px;
-}
-.search_btn {
-    display: flex;
-    justify-content: center;
-}
-.search_btn button {
-	border:0;
-    background-color: rgb(238, 238, 238);
-    padding:10px 20px 10px 20px;
-    border-radius: 5px
-}
-.search_table {
-    width: 100%; 
-}
-.search_table th {
-    text-align: center;
-    border-bottom: 2px solid rgb(37, 49, 109);
-}
-.txt_primary {
-    font-size: small;
-    text-align: left;
-}
-.pagination {
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-}
-/* .search_box_ul{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-right: 40px;
-} */
-#ad_notice_h1{
-    font-family: 'Do Hyeon', sans-serif;
-    margin-left: 50px;
-    margin-top: 50px;
-    font-size: 50px;
-}
-#ad_notice_h2{
-    font-family: 'Do Hyeon', sans-serif;
-    font-weight: 300;
-    font-size: 20px;
-    margin-left: 50px;
-    color: rgb(37, 49, 109);
-    text-align: center;
-}
-.btn_ad_notice{
-    border: none;
-    background-color:rgb(238, 238, 238);
-    padding: 1px 15px 1px 15px;
-    border-radius: 5px;
-    margin: 5px;
+
+/* 태블릿 화면 */
+@media screen and (min-width:768px) and (max-width:1023px) and (orientation:portrait) {
+    /* .list {
+        display: flex;
+        justify-content: center;
+    } */
+    .ad_wrap {
+        display: block;
+    }
+    .ad_aside {
+        display: flex;
+        flex-flow: row wrap;
+    }
 }

@@ -10,11 +10,23 @@
 		select count(*) from member where member_id = #{param1} and member_pw = #{param2} 
 	</select>
     
-    <!-- 로그인																		-  -->
+    <!-- 로그인	- -->
     
     <select id="mypageload" resultType="com.study.springboot.dto.memberDto">
     	select * from member where member_id = #{param1}
     </select>
     
+    <select id="idfind" resultType="String">
+    	select member_id from member where member_name = #{param1} and member_phone = #{param2}
+    </select>
+    
+    
+    
+    
     <!--  마이페이지 -->
+    
+
+    
+
+
     </mapper>

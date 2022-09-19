@@ -7,7 +7,7 @@
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
-	<c:forEach var="dto" items="${memberlist }">
+	<c:forEach var="dto" items="${ memberlist }">
 <div class="container">
 	<h1 id="mypage_h1">프로필 관리</h1>
 	<h2 id="mypage_exp">
