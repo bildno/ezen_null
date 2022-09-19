@@ -14,4 +14,5 @@ public interface ImemberDao {
 	public List<memberDto> mypageload(String member_id);
 	
 	
+	
 }
