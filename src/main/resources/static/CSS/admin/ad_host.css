@@ -132,3 +132,16 @@ margin-left: 0px;
 .sectionlist {
 	width: 80%;
 }
+@media screen and (min-width:480px) and (max-width:767px) and (orientation:portrait) {
+    /* .list {
+        display: flex;
+        justify-content: center;
+    } */
+    .ad_wrap {
+        display: block;
+    }
+    .ad_aside {
+        display: flex;
+        flex-flow: row wrap;
+    }
+}
