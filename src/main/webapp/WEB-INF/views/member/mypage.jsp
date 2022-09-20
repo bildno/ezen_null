@@ -14,8 +14,6 @@
 		프로필 정보를 관리해주세요 <img src="/img/service/space_icon.png" alt="space_icon"
 			id="space_icon">
 	</h2>
-
-
 		<div class="mypage_section" style="margin-top: 50px;">
 			<div class="mypage_section1">
 				<div class="mypage_con1">
@@ -65,13 +63,13 @@
         }
     </script>
 
-					<table>
+					<table class="profile">
 						<tr>
 							<th>이름</th>
 							<td>
-							<p id="name"> ${ dto.member_name } </p>
+							<p id="name" style="margin-bottom: 0;"> ${ dto.member_name } </p>
 							<div id="noneDiv" style="display: none;">
-							<input type="text" value="${ dto.member_name }" style="width:100px;">
+							<input type="text" value="${ dto.member_name }" style="width:130px;">
 							<button>확인</button>
 							</div>
 							</td>
