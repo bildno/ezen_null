@@ -374,14 +374,14 @@ public class Mycontroller {
 			HttpSession session = request.getSession();
 			String member_id = (String) session.getAttribute("member_id");
 			
-			System.out.println(member_id);
+	
 			
 			int newemail = memberService.email_change(member_newemail, member_id);
 			
-			System.out.println(member_newemail);
+
 			
 			if(newemail == 1) {
-				System.out.println(member_newemail);
+	
 				return "redirect:/mypage";
 			}
 			else {
