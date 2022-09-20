@@ -54,10 +54,5 @@ public class memberService {
 		return member_pw;
 	}
 	
-	public String name_change(String member_name, String member_id) {
-		
-		String name_change = imemberDao.name_change(member_name, member_id);
-		
-		return name_change;
-	}
+
 }

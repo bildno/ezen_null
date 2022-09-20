@@ -263,6 +263,14 @@ public class Mycontroller {
 		return "index";
 	}
 	
+	@RequestMapping("/name_change")
+	public String name_change(@RequestParam("member_name") String member_name,
+							  HttpServletRequest request, Model model) {
+		
+		
+		return "index";
+	}
+	
 	
 	
 	

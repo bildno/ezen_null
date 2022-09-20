@@ -53,7 +53,7 @@
 					<tr>
 						<th>이름</th>
 						<td>${ dto.member_name }</td>
-						<td><a id="mypage_a" href="#">변경하기</a></td>
+						<td><a name="member_name" id="mypage_a" href="#">변경하기</a></td>
 					</tr>
 					<tr>
 						<th>이메일</th>
@@ -67,7 +67,7 @@
 					</tr>
 					<tr>
 						<th>비밀번호</th>
-						<td colspan=2><a id="mypage_a" href="/pwchange">변경하기</a></td>
+						<td colspan=2><a name="member_pw" id="mypage_a" href="/pwchange">변경하기</a></td>
 					</tr>
 				</table>
 			
