@@ -1,6 +1,7 @@
 package com.study.springboot.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -54,5 +55,12 @@ public class memberService {
 		return member_pw;
 	}
 	
-	
+	public int name_change(Map<String, Object> map) {
+		
+		int name_change = imemberDao.name_change(map);
+		
+		return name_change;
+	}
+
+
 }
