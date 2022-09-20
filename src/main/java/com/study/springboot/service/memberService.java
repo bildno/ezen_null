@@ -1,7 +1,6 @@
 package com.study.springboot.service;
 
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -48,6 +47,8 @@ public class memberService {
 		return idfind;
 	}
 	
+	
+	
 	public String select_pw(String member_id, String member_name) {
 		
 		String member_pw = imemberDao.select_pw(member_id, member_name);
@@ -55,12 +56,14 @@ public class memberService {
 		return member_pw;
 	}
 	
-	public int name_change(Map<String, Object> map) {
+	
+	public int update_pw(String member_id, String member_pw) {
 		
-		int name_change = imemberDao.name_change(map);
+		int update_pw = imemberDao.update_pw(member_id,member_pw);
 		
-		return name_change;
+		return update_pw;
+		
 	}
-
+	
 
 }

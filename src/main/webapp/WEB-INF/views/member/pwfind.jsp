@@ -15,7 +15,7 @@
 	<div class="contents">
 		<form action="/pwfindAction">
 		<div>
-			<input name="pw_id" class="id" type="text" placeholder="아이디">
+			<input name="pw_id" class="id" type="text" placeholder="아이디" > 
 		</div>
 		<div>
 			<input name="pw_name" class="name" type="text" placeholder="이름">
@@ -26,11 +26,11 @@
 		</div>
 		<div>
 			<input style="text-align: left;" class="pwknow" type="text"
-				placeholder="비밀번호 : " value="${member_pw }">
+				placeholder="비밀번호 : " value="${member_pw }"  >
 		</div>
 		</form>
 		<div class="reset">
-			<input type="button" value="비밀번호 재설정" id="pwchangebtn">
+			<input type="button" onclick="location.href='/pwchange'" value="비밀번호 재설정" id="pwchangebtn">
 		</div>
 	</div>
 </div>
