@@ -48,11 +48,20 @@
 			<div class="mypage_section2" style="padding: 40px">
 				<div class="mypage_con2">
     <script>
+    $(document).ready(function(){
+    	$('#ofd').hide();
+    })
         function onDisplay() {
+        	$("#name").hide();
             $('#noneDiv').show();
+            $('#od').hide();
+            $('#ofd').show();
         }
         function offDisplay() {
             $('#noneDiv').hide();
+            $('#name').show();
+            $('#od').show();
+            $('#ofd').hide();
         }
     </script>
 
@@ -60,14 +69,15 @@
 						<tr>
 							<th>이름</th>
 							<td>
-							${ dto.member_name }
+							<p id="name"> ${ dto.member_name } </p>
 							<div id="noneDiv" style="display: none;">
-							<input type="text" value="${ dto.member_name }">
+							<input type="text" value="${ dto.member_name }" style="width:100px;">
 							<button>확인</button>
 							</div>
 							</td>
-							<td><button onclick="onDisplay()">변경하기</button></td>
-							<td><button onclick="offDisplay()">취소하기</button></td>
+							<td><button id="od" onclick="onDisplay()">변경하기</button>
+							<button id="ofd" onclick="offDisplay()">취소하기</button></td>
+							
 						</tr>
 						<tr>
 							<th>이메일</th>
