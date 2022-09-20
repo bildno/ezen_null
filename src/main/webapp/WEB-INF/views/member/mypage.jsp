@@ -69,7 +69,7 @@
 							<td>
 							<p id="name" style="margin-bottom: 0;"> ${ dto.member_name } </p>
 							<div id="noneDiv" style="display: none;">
-							<input type="text" value="${ dto.member_name }" style="width:100px;">
+							<input type="text" value="${ dto.member_name }" style="width:130px;">
 							<button>확인</button>
 							</div>
 							</td>
