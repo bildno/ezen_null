@@ -17,5 +17,6 @@ public interface ImemberDao {
 	
 	public String select_pw(String member_id, String member_name);
 	
-	public String name_change(String member_name, String member_id);
+	public int update_pw(String member_id,String member_pw);
+	
 }

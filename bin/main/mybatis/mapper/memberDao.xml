@@ -27,15 +27,13 @@
 		select member_pw from member where member_id=#{param1} and member_name =
 		#{param2}
 	</select>
+	
+	<update id="update_pw" parameterType="String">
+		update member set member_pw=#{param2} where member_id=#{param1}
+    </update>
 
 
 	<!-- 마이페이지 -->
-	<update id="name_change"
-		parameterType="com.study.springboot.memberDto">
-		UPDATE member
-		SET member_name = #{ param1 }
-		where member_id = #{ param2 }
-	</update>
 
 
 

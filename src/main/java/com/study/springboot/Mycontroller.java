@@ -109,10 +109,13 @@ public class Mycontroller {
 		return "index";
 	}
 
+	
+	// 현재 페이지에서 값을 가져올 때 (읽어올 때)
 	@RequestMapping("/mypage")
 	public String mypage(
 			HttpServletRequest request,Model model) {
 		
+		//member_id세션 값 가져오기(member_id의 memberlist를 보여주기 위해)
 		HttpSession session = request.getSession();
 		String member_id = (String) session.getAttribute("member_id");
 		
@@ -156,7 +159,7 @@ public class Mycontroller {
 	@RequestMapping("/idfindAction")
 	public String idfindAction(@RequestParam("fi_name") String member_name,
 			                  @RequestParam("fi_phone") String member_phone,
-			                  HttpServletRequest request,
+			                  
 			                  Model model) {
 		
 		String idfind = memberService.idfind(member_name, member_phone);
@@ -175,21 +178,52 @@ public class Mycontroller {
 		return "index";
 	}
 	
+	
 	@RequestMapping("/pwfindAction")
-	public String pwfindAction(@RequestParam("pw_id") String member_id,
+	public String pwfindAction(@RequestParam("pw_id") String member_id, //입력한 아이디,이름 가져오기
 							   @RequestParam("pw_name") String member_name,
+							   HttpServletRequest request,
 			Model model) {
 		
+		//나중에 비밀번호 변경에서 써야하므로 id 값을 setattribute로 넘겨주기(그럼 session에 남아있게 됨)
+		request.getSession().setAttribute("member_id", member_id);
 		
+		//가져온 아이디,이름을 검색해서(xml에서 검색이 실행됨) member_pw에 넣는다
 		String member_pw = memberService.select_pw(member_id, member_name);
 	
-		
-		model.addAttribute("member_pw",member_pw);
-		
+		//member_pw의 값을 addattribute를 사용해 보여줌(jsp에 ${member_pw}입력!)
+		model.addAttribute("member_pw",member_pw);	
 		model.addAttribute("mainPage", "member/pwfind.jsp");
 		return "index";
 	}
+		
 	
+	@RequestMapping("/pwchangeAction")
+	public String pwchangeAction(@RequestParam("up_pw")String up_pw,//바꿀 새 비번 가져오기,
+			HttpServletRequest request,
+			Model model) {
+		
+		//어떤 아이디의 비밀번호 변경인지를 위해 session에 있는 아이디 값을 가져와준다
+		HttpSession session = request.getSession();
+		String member_id = (String)session.getAttribute("member_id");
+		
+	   //id와 새 비번을 result에 넣어줌
+		int result = memberService.update_pw(member_id,up_pw);
+
+		if(result!=1) {
+			//1은 실행됨, 0은 실행안됨
+			request.getSession().invalidate();
+			model.addAttribute("mainPage", "member/pwchange.jsp");
+			return "index";
+		}
+		else {
+			request.getSession().invalidate();
+			model.addAttribute("mainPage", "member/login.jsp");
+			return "index";
+		}
+						
+		
+	}
 
 	@RequestMapping("/member_join")
 	public String member_join(Model model) {
@@ -230,7 +264,6 @@ public class Mycontroller {
 							  HttpServletRequest request,
 							  Model model) {
 	
-	
 
 	int result = memberService.login(member_id, member_pw);
 	if(result == 1) {
@@ -250,7 +283,7 @@ public class Mycontroller {
 	@RequestMapping("/logoutAction")
 	public String logoutAction(HttpServletRequest request, Model model) {
 		
-		request.getSession().invalidate();
+		request.getSession().invalidate(); //세션 값 상실시킬 때 씀
 		
 		model.addAttribute("mainPage","main.jsp");
 		return "index"; 
