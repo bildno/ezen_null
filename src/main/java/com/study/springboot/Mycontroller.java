@@ -166,7 +166,6 @@ public class Mycontroller {
 		model.addAttribute("mainPage", "member/idfind.jsp");
 
 		return "index";
-
 	}
 
 	@RequestMapping("/pwfind")
@@ -194,6 +193,12 @@ public class Mycontroller {
 		return "index";
 	}
 	
+	@RequestMapping("/pwchange")
+	public String pwchange(Model model) {
+
+		model.addAttribute("mainPage", "member/pwchange.jsp");
+		return "index";
+	}
 	
 	@RequestMapping("/pwchangeAction")
 	public String pwchangeAction(@RequestParam("up_pw")String up_pw,//바꿀 새 비번 가져오기,
@@ -220,8 +225,6 @@ public class Mycontroller {
 
 		}
 	}
-						
-		
 	
 	@RequestMapping("/member_join")
 	public String member_join(Model model) {
@@ -297,15 +300,6 @@ public class Mycontroller {
 		}else {
 			return "redirect:/member_join";
 		}
-		
-		
-	}
-
-	@RequestMapping("/pwchange")
-	public String pwchange(Model model) {
-
-		model.addAttribute("mainPage", "member/pwchange.jsp");
-		return "index";
 	}
 
 	@RequestMapping("/loginAction")
@@ -363,15 +357,66 @@ public class Mycontroller {
 		if (name_change == 1) {
 //			model.addAttribute("mainPage", "member/mypage.jsp");
 //			return "index";
-			return "redirect:mypage";
+			return "redirect:/mypage";
 		} else {
 //			model.addAttribute("mainPage", "member/mypage.jsp");
 //			return "index";
-			return "redirect:mypage";
+			return "redirect:/mypage";
 		}
 
 	}
+	
+//	------------------------------------------------------------------ email 변경
+	@RequestMapping("/emailchangeAction")
+	public String emailchangeAction(@RequestParam("member_email") String member_newemail,
+			HttpServletRequest request,
+			Model model) {
+			HttpSession session = request.getSession();
+			String member_id = (String) session.getAttribute("member_id");
+			
+			System.out.println(member_id);
+			
+			int newemail = memberService.email_change(member_newemail, member_id);
+			
+			System.out.println(member_newemail);
+			
+			if(newemail == 1) {
+				System.out.println(member_newemail);
+				return "redirect:/mypage";
+			}
+			else {
+				return "redirect:/mypage";
+			}
+		
+	}
+//	------------------------------------------------------------------
 
+//	------------------------------------------------------------------ 전화번호 변경
+	@RequestMapping("/phonechangeAction")
+	public String phonechangeAction(@RequestParam("member_phone") String member_newphone,
+			HttpServletRequest request,
+			Model model) {
+			HttpSession session = request.getSession();
+			String member_id = (String) session.getAttribute("member_id");
+			
+			System.out.println(member_id);
+			
+			int newephone = memberService.phone_change(member_newphone, member_id);
+			
+			System.out.println(member_newphone);
+			
+			if(newephone == 1) {
+				System.out.println(member_newphone);
+				return "redirect:/mypage";
+			}
+			else {
+				return "redirect:/mypage";
+			}
+		
+	}
+//	------------------------------------------------------------------
+	
+	
 	/* ----------------------------------------- */
 
 	/* ----------------------------------------- one2one 폴더 */

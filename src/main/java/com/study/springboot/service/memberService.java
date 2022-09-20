@@ -55,11 +55,28 @@ public class memberService {
 		return member_pw;
 	}
 	
+//	이름변경
 	public int name_change(Map<String, Object> map) {
 		
 		int name_change = imemberDao.name_change(map);
 		
 		return name_change;
+		
+	}
+//	이메일변경
+	public int email_change(String member_email, String member_id) {
+		
+		int email_change = imemberDao.email_change(member_email, member_id);
+		
+		return email_change;
+	}
+	
+//	전화번호변경
+	public int phone_change(String member_phone, String member_id) {
+		
+		int phone_change = imemberDao.phone_change(member_phone, member_id);
+		
+		return phone_change;
 	}
 	
 	public int update_pw(String member_id, String member_pw) {
