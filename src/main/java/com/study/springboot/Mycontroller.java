@@ -1,6 +1,7 @@
 package com.study.springboot;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -16,10 +17,9 @@ import com.study.springboot.service.memberService;
 
 @Controller
 public class Mycontroller {
-	
+
 	@Autowired
 	private memberService memberService;
-	
 
 	@RequestMapping("/")
 	public String root() {
@@ -32,68 +32,74 @@ public class Mycontroller {
 		model.addAttribute("mainPage", "main.jsp");
 		return "index";
 	}
-	
-	
-	
+
 	/* ----------------------------------------- admin 폴더 */
-	
+
 	@RequestMapping("/ad_member")
 	public String ad_member(Model model) {
-		
+
 		model.addAttribute("mainPage", "admin/ad_member.jsp");
 		return "index";
 	}
+
 	@RequestMapping("/ad_host")
 	public String ad_host(Model model) {
-		
+
 		model.addAttribute("mainPage", "admin/ad_host.jsp");
 		return "index";
 	}
+
 	@RequestMapping("/ad_one2one")
 	public String ad_one2one(Model model) {
-		
-		model.addAttribute("mainPage","admin/ad_one2one.jsp");
+
+		model.addAttribute("mainPage", "admin/ad_one2one.jsp");
 		return "index";
 	}
+
 	@RequestMapping("/ad_notice")
 	public String ad_notice(Model model) {
-		
-		model.addAttribute("mainPage","admin/ad_notice.jsp");
+
+		model.addAttribute("mainPage", "admin/ad_notice.jsp");
 		return "index";
 	}
+
 	@RequestMapping("/ad_FAQ")
 	public String ad_FAQ(Model model) {
-		
-		model.addAttribute("mainPage","admin/ad_FAQ.jsp");
+
+		model.addAttribute("mainPage", "admin/ad_FAQ.jsp");
 		return "index";
 	}
+
 	@RequestMapping("/ad_host_info")
 	public String ad_host_info(Model model) {
-		
-		model.addAttribute("mainPage","admin/ad_host_info.jsp");
+
+		model.addAttribute("mainPage", "admin/ad_host_info.jsp");
 		return "index";
 	}
+
 	@RequestMapping("/ad_one2one_answer")
 	public String ad_one2one_answer(Model model) {
-		
-		model.addAttribute("mainPage","admin/ad_one2one_answer.jsp");
+
+		model.addAttribute("mainPage", "admin/ad_one2one_answer.jsp");
 		return "index";
 	}
+
 	@RequestMapping("/ad_notice_write")
 	public String ad_notice_write(Model model) {
-		
-		model.addAttribute("mainPage","admin/ad_notice_write.jsp");
+
+		model.addAttribute("mainPage", "admin/ad_notice_write.jsp");
 		return "index";
 	}
+
 	@RequestMapping("/ad_FAQ_write")
 	public String ad_FAQ_write(Model model) {
-		
-		model.addAttribute("mainPage","admin/ad_FAQ_write.jsp");
+
+		model.addAttribute("mainPage", "admin/ad_FAQ_write.jsp");
 		return "index";
 	}
-	
+
 	/* ----------------------------------------- */
-	
+
 	/* ----------------------------------------- member 폴더 */
 	@RequestMapping("/login")
 	public String login(Model model) {
@@ -109,22 +115,16 @@ public class Mycontroller {
 		return "index";
 	}
 
-	
-	// 현재 페이지에서 값을 가져올 때 (읽어올 때)
 	@RequestMapping("/mypage")
-	public String mypage(
-			HttpServletRequest request,Model model) {
-		
-		//member_id세션 값 가져오기(member_id의 memberlist를 보여주기 위해)
+	public String mypage(HttpServletRequest request, Model model) {
+
 		HttpSession session = request.getSession();
 		String member_id = (String) session.getAttribute("member_id");
-		
-		
+
 		List<memberDto> memberlist = memberService.mypageload(member_id);
-		
-		
-		model.addAttribute("memberlist",memberlist);
-		
+
+		model.addAttribute("memberlist", memberlist);
+
 		model.addAttribute("mainPage", "member/mypage.jsp");
 		return "index";
 	}
@@ -142,33 +142,31 @@ public class Mycontroller {
 		model.addAttribute("mainPage", "member/mylist.jsp");
 		return "index";
 	}
-	
+
 	@RequestMapping("/member/login_pop")
 	public String login_pop() {
 
 		return "/member/login_pop";
 	}
-	
+
 	@RequestMapping("/idfind")
 	public String idfind(Model model) {
 
 		model.addAttribute("mainPage", "member/idfind.jsp");
 		return "index";
 	}
-	
+
 	@RequestMapping("/idfindAction")
 	public String idfindAction(@RequestParam("fi_name") String member_name,
-			                  @RequestParam("fi_phone") String member_phone,
-			                  
-			                  Model model) {
-		
+			@RequestParam("fi_phone") String member_phone, HttpServletRequest request, Model model) {
+
 		String idfind = memberService.idfind(member_name, member_phone);
-		
-		model.addAttribute("idfind",idfind);
-		model.addAttribute("mainPage","member/idfind.jsp");
-		
+
+		model.addAttribute("idfind", idfind);
+		model.addAttribute("mainPage", "member/idfind.jsp");
+
 		return "index";
-		
+
 	}
 
 	@RequestMapping("/pwfind")
@@ -177,8 +175,7 @@ public class Mycontroller {
 		model.addAttribute("mainPage", "member/pwfind.jsp");
 		return "index";
 	}
-	
-	
+
 	@RequestMapping("/pwfindAction")
 	public String pwfindAction(@RequestParam("pw_id") String member_id, //입력한 아이디,이름 가져오기
 							   @RequestParam("pw_name") String member_name,
@@ -196,7 +193,7 @@ public class Mycontroller {
 		model.addAttribute("mainPage", "member/pwfind.jsp");
 		return "index";
 	}
-		
+	
 	
 	@RequestMapping("/pwchangeAction")
 	public String pwchangeAction(@RequestParam("up_pw")String up_pw,//바꿀 새 비번 가져오기,
@@ -220,11 +217,12 @@ public class Mycontroller {
 			request.getSession().invalidate();
 			model.addAttribute("mainPage", "member/login.jsp");
 			return "index";
+
 		}
+	}
 						
 		
-	}
-
+	
 	@RequestMapping("/member_join")
 	public String member_join(Model model) {
 
@@ -238,70 +236,144 @@ public class Mycontroller {
 		model.addAttribute("mainPage", "member/mywish.jsp");
 		return "index";
 	}
-	
+
 	@RequestMapping("/myreview")
 	public String myreview(Model model) {
 
 		model.addAttribute("mainPage", "member/myreview.jsp");
 		return "index";
 	}
-	@RequestMapping("/end")
-	public String end(Model model) {
+
+	@RequestMapping("/joinAction")
+	public String joinAction(@RequestParam("name") String join_name,
+							 @RequestParam("mail") String join_email,
+							 @RequestParam("phone") String join_phone,
+							 @RequestParam("id") String join_id,
+							 @RequestParam("password") String join_pw,
+							 @RequestParam("room") String join_gender,
+							 @RequestParam(value="host_check", required=false) String host_check,
+			Model model) {
 		
-		model.addAttribute("mainPage","member/login.jsp");
-		return "index";
+		int result = 0;
+		
+	
+		if( host_check == null ) {
+			host_check = "0";
+		}else {
+			host_check = "1";
+		}
+		
+		
+		String member_id = join_id;
+		System.out.println(join_id);
+		String member_pw = join_pw;
+		System.out.println(join_pw);
+		String member_email = join_email;
+		System.out.println(join_email);
+		String member_phone = join_phone;
+		System.out.println(join_phone);
+		String member_gender = join_gender;
+		System.out.println(join_gender);
+		String member_name = join_name;
+		System.out.println(join_name);
+		String member_host_check = host_check;
+		System.out.println(host_check);
+		
+		
+		try {
+			result = memberService.join_member(
+					member_id, member_pw, 
+					member_email, member_phone,
+					member_gender, member_name, 
+					member_host_check);
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		if(result == 1) {
+			
+			return "redirect:/main";
+		}else {
+			return "redirect:/member_join";
+		}
+		
+		
 	}
+
 	@RequestMapping("/pwchange")
 	public String pwchange(Model model) {
 
 		model.addAttribute("mainPage", "member/pwchange.jsp");
 		return "index";
 	}
-	
-	@RequestMapping("/loginAction")
-	public String loginAction(@RequestParam("lo_name") String member_id,
-							  @RequestParam("lo_pass") String member_pw,
-							  HttpServletRequest request,
-							  Model model) {
-	
 
-	int result = memberService.login(member_id, member_pw);
-	if(result == 1) {
-		
-		model.addAttribute("mainPage", "main.jsp");
-		request.getSession().setAttribute("member_id", member_id);
-		return "index";
-	}else {
-		
-		model.addAttribute("mainPage","member/login.jsp");
-		return "index";
+	@RequestMapping("/loginAction")
+	public String loginAction(@RequestParam("lo_name") String member_id, @RequestParam("lo_pass") String member_pw,
+			HttpServletRequest request, Model model) {
+
+		int result = memberService.login(member_id, member_pw);
+		if (result == 1) {
+
+			model.addAttribute("mainPage", "main.jsp");
+			request.getSession().setAttribute("member_id", member_id);
+			return "index";
+		} else {
+
+			model.addAttribute("mainPage", "member/login.jsp");
+			return "index";
+		}
+
 	}
-		
-		
-	}
-	
+
 	@RequestMapping("/logoutAction")
 	public String logoutAction(HttpServletRequest request, Model model) {
-		
-		request.getSession().invalidate(); //세션 값 상실시킬 때 씀
-		
-		model.addAttribute("mainPage","main.jsp");
-		return "index"; 
+
+		request.getSession().invalidate();
+
+		model.addAttribute("mainPage", "main.jsp");
+		return "index";
 	}
-	
+
 	@RequestMapping("/mycheck")
 	public String mycheck(Model model) {
 
 		model.addAttribute("mainPage", "member/mycheck.jsp");
 		return "index";
 	}
-	
-	
-	
-	
+
+	@RequestMapping("/namechangeAction")
+	public String namechangeAction(@RequestParam("member_name") String member_name, Map<String, Object> map,
+			HttpServletRequest request, Model model) {
+		System.out.println(member_name);
+		HttpSession session = request.getSession();
+
+		String member_id = (String) session.getAttribute("member_id");
+
+		System.out.println(member_id);
+
+		map.put("member_name", member_name);
+		map.put("member_id", member_id);
+
+		System.out.println(map);
+
+		int name_change = memberService.name_change(map);
+		System.out.println(name_change);
+
+		if (name_change == 1) {
+//			model.addAttribute("mainPage", "member/mypage.jsp");
+//			return "index";
+			return "redirect:mypage";
+		} else {
+//			model.addAttribute("mainPage", "member/mypage.jsp");
+//			return "index";
+			return "redirect:mypage";
+		}
+
+	}
+
 	/* ----------------------------------------- */
-	
-	
+
 	/* ----------------------------------------- one2one 폴더 */
 	@RequestMapping("/one2one")
 	public String one2one(Model model) {
@@ -309,7 +381,7 @@ public class Mycontroller {
 		model.addAttribute("mainPage", "one2one/one2one.jsp");
 		return "index";
 	}
-	
+
 	@RequestMapping("/one2one_write")
 	public String one2one_write(Model model) {
 
@@ -324,8 +396,7 @@ public class Mycontroller {
 		return "index";
 	}
 	/* ----------------------------------------- */
-	
-	
+
 	/* ----------------------------------------- service 폴더 */
 	@RequestMapping("/service")
 	public String service(Model model) {
@@ -334,76 +405,74 @@ public class Mycontroller {
 		return "index";
 	}
 	/* ----------------------------------------- */
-	
-	
+
 	/* ----------------------------------------- host 폴더 */
 	@RequestMapping("/mypage_host")
 	public String mypage_host(Model model) {
-		
-		model.addAttribute("mainPage","host/host.jsp");
-		return"index";
+
+		model.addAttribute("mainPage", "host/host.jsp");
+		return "index";
 	}
-	
+
 	@RequestMapping("/spacelist_host")
 	public String spacelist_host(Model model) {
-		
-		model.addAttribute("mainPage","host/spacelist_host.jsp");
+
+		model.addAttribute("mainPage", "host/spacelist_host.jsp");
 		return "index";
 	}
+
 	@RequestMapping("/enter_host")
 	public String enter_host(Model model) {
-		
-		model.addAttribute("mainPage","host/enter_host.jsp");
+
+		model.addAttribute("mainPage", "host/enter_host.jsp");
 		return "index";
 	}
-	
+
 	@RequestMapping("/space_info_host")
 	public String space_info_host(Model model) {
-		
-		model.addAttribute("mainPage","host/space_info_host.jsp");
+
+		model.addAttribute("mainPage", "host/space_info_host.jsp");
 		return "index";
 	}
-	
+
 	@RequestMapping("/reserve_host")
 	public String reserve_host(Model model) {
-		
-		model.addAttribute("mainPage","host/reserve_host.jsp");
+
+		model.addAttribute("mainPage", "host/reserve_host.jsp");
 		return "index";
 	}
 	/* ----------------------------------------- */
-	
-	
+
 	/* ----------------------------------------- contents 폴더 */
 	@RequestMapping("/community")
 	public String community(Model model) {
-		
+
 		model.addAttribute("mainPage", "contents/community.jsp");
 		return "index";
 	}
-	
+
 	@RequestMapping("/community_info")
 	public String community_info(Model model) {
-		
+
 		model.addAttribute("mainPage", "contents/community_info.jsp");
 		return "index";
 	}
-	
+
 	@RequestMapping("/spacerent")
 	public String spacerent(Model model) {
-		
-		model.addAttribute("mainPage","contents/spacerent.jsp");
+
+		model.addAttribute("mainPage", "contents/spacerent.jsp");
 		return "index";
 	}
+
 	@RequestMapping("/space_info")
 	public String space_info(Model model) {
-		
-		model.addAttribute("mainPage","contents/space_info.jsp");
+
+		model.addAttribute("mainPage", "contents/space_info.jsp");
 		return "index";
 	}
 	/* ----------------------------------------- */
-	
+
 	/*-------------------------------------------*/
 
-	
-	
 }

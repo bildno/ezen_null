@@ -9,9 +9,9 @@ public class memberDto {
 	private String member_pw;
 	private String member_email;
 	private String member_phone;
-	private int member_gender;
+	private String member_gender;
 	private String member_name;
-	private int member_host;
+	private String member_host;
 	
 	
 }

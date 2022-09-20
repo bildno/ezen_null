@@ -240,33 +240,33 @@
             스페이스 그라운드의 회원이 되어주세요 ! <img src="/img/service/space_icon.png" alt="space_icon" id="space_icon">
         </h2>
         <div class="contents">
-        <form name="join" action="/end" onsubmit="return Validation();">
+        <form name="join" action="/joinAction" onsubmit="return Validation();">
             <div id="insert">
                 <div>
                     <input type="text" placeholder="이름" name="name" id="usern">
                 </div>
                 <div>
-                    <input type="email" placeholder="이메일"name="mail" id = "userm">
+                    <input type="email" placeholder="이메일" name="mail" id ="userm">
                 </div>
                 <div>
-                    <input type="text" placeholder="전화번호('-'까지 입력해주세요)" id="phonenum">
+                    <input type="text" placeholder="전화번호('-'까지 입력해주세요)" id="phonenum" name="phone">
                 </div>
                 <div>
-                    <input type="text" placeholder="아이디" name="id" id ="userid">
+                    <input type="text" placeholder="아이디" name="id" id ="userid" >
                 </div>
                 <div>
-                    <input type="password" placeholder="비밀번호"  name="password" id="userPs" >
+                    <input type="password" placeholder="비밀번호"  name="password" id="userPs"  >
                 </div>
                 <div>
-                    <input type="password" placeholder="비밀번호 확인" name="password" id ="userPc" >
+                    <input type="password" placeholder="비밀번호 확인" name="password_check" id ="userPc" >
                 </div>
 
 				<div class="gender" id="gender_female">
-					<input type="radio" name="room" />여성
+					<input type="radio" name="room"  value="female"/>여성
 				</div>
 
 				<div class="gender" id="gender_male">
-					<input type="radio" name="room" />남성
+					<input type="radio" name="room" value="male"/>남성
 				</div>
 			</div>
 
@@ -274,7 +274,7 @@
 
             <div id="checkForm">
                 <div class="check">
-                    <input type="checkbox" id="check_host">
+                    <input type="checkbox" id="check_host" name="host_check" value="1">
                     <p style="margin: 0 0 0 5px">호스트 자격으로 가입합니다.</p>
                 </div>
                 <hr>
