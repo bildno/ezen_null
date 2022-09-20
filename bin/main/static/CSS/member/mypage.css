@@ -33,10 +33,8 @@
 	flex-flow: row nowrap;
 }
 
-
 .mypage_section {
 	font-family: Noto Sans KR;
-
 }
 
 .mypage_section {
@@ -120,4 +118,27 @@
 }
 .profile td {
 	width:200px;
+}
+#od, #ofd, #namechange {
+	border: none;
+	font-family: 'Noto Sans KR';
+	padding: 5px;
+	background-color: white;
+	color: navy;
+}
+
+#od1, #ofd1, #mailchange {
+	border: none;
+	font-family: 'Noto Sans KR';
+	padding: 5px;
+	background-color: white;
+	color: navy;
+}
+
+#od2, #ofd2, #phonechange {
+	border: none;
+	font-family: 'Noto Sans KR';
+	padding: 5px;
+	background-color: white;
+	color: navy;
 }

@@ -374,11 +374,7 @@ public class Mycontroller {
 			HttpSession session = request.getSession();
 			String member_id = (String) session.getAttribute("member_id");
 			
-	
-			
 			int newemail = memberService.email_change(member_newemail, member_id);
-			
-
 			
 			if(newemail == 1) {
 	
