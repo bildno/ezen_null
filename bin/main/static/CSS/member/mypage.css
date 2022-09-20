@@ -118,3 +118,6 @@
 .mypage_con2 table {
 	border-radius: 5px;
 }
+.profile td {
+	width:200px;
+}
