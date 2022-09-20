@@ -29,6 +29,11 @@
 
 	<!-- 마이페이지 -->
 	
+	<update id="name_change" parameterType="HashMap">
+		UPDATE member
+		SET member_name = #{ member_name }
+		where member_id = #{ member_id }
+	</update>
 
 
 

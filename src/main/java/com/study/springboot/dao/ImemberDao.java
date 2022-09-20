@@ -1,6 +1,7 @@
 package com.study.springboot.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 
@@ -17,5 +18,5 @@ public interface ImemberDao {
 	
 	public String select_pw(String member_id, String member_name);
 	
-
+	public int name_change(Map<String, Object> map);
 }
