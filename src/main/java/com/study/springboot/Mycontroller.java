@@ -158,6 +158,9 @@ public class Mycontroller {
 			                  @RequestParam("fi_phone") String member_phone,
 			                  HttpServletRequest request,
 			                  Model model) {
+		HttpSession session = request.getSession();
+		String member_id = (String) session.getAttribute("member_id");
+		
 		
 		String idfind = memberService.idfind(member_name, member_phone);
 		
