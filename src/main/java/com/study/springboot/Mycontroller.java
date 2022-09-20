@@ -177,17 +177,52 @@ public class Mycontroller {
 	}
 
 	@RequestMapping("/pwfindAction")
-	public String pwfindAction(@RequestParam("pw_id") String member_id, @RequestParam("pw_name") String member_name,
+	public String pwfindAction(@RequestParam("pw_id") String member_id, //입력한 아이디,이름 가져오기
+							   @RequestParam("pw_name") String member_name,
+							   HttpServletRequest request,
 			Model model) {
-
+		
+		//나중에 비밀번호 변경에서 써야하므로 id 값을 setattribute로 넘겨주기(그럼 session에 남아있게 됨)
+		request.getSession().setAttribute("member_id", member_id);
+		
+		//가져온 아이디,이름을 검색해서(xml에서 검색이 실행됨) member_pw에 넣는다
 		String member_pw = memberService.select_pw(member_id, member_name);
-
-		model.addAttribute("member_pw", member_pw);
-
+	
+		//member_pw의 값을 addattribute를 사용해 보여줌(jsp에 ${member_pw}입력!)
+		model.addAttribute("member_pw",member_pw);	
 		model.addAttribute("mainPage", "member/pwfind.jsp");
 		return "index";
 	}
+	
+	
+	@RequestMapping("/pwchangeAction")
+	public String pwchangeAction(@RequestParam("up_pw")String up_pw,//바꿀 새 비번 가져오기,
+			HttpServletRequest request,
+			Model model) {
+		
+		//어떤 아이디의 비밀번호 변경인지를 위해 session에 있는 아이디 값을 가져와준다
+		HttpSession session = request.getSession();
+		String member_id = (String)session.getAttribute("member_id");
+		
+	   //id와 새 비번을 result에 넣어줌
+		int result = memberService.update_pw(member_id,up_pw);
 
+		if(result!=1) {
+			//1은 실행됨, 0은 실행안됨
+			request.getSession().invalidate();
+			model.addAttribute("mainPage", "member/pwchange.jsp");
+			return "index";
+		}
+		else {
+			request.getSession().invalidate();
+			model.addAttribute("mainPage", "member/login.jsp");
+			return "index";
+
+		}
+	}
+						
+		
+	
 	@RequestMapping("/member_join")
 	public String member_join(Model model) {
 
@@ -209,11 +244,61 @@ public class Mycontroller {
 		return "index";
 	}
 
-	@RequestMapping("/end")
-	public String end(Model model) {
-
-		model.addAttribute("mainPage", "member/login.jsp");
-		return "index";
+	@RequestMapping("/joinAction")
+	public String joinAction(@RequestParam("name") String join_name,
+							 @RequestParam("mail") String join_email,
+							 @RequestParam("phone") String join_phone,
+							 @RequestParam("id") String join_id,
+							 @RequestParam("password") String join_pw,
+							 @RequestParam("room") String join_gender,
+							 @RequestParam(value="host_check", required=false) String host_check,
+			Model model) {
+		
+		int result = 0;
+		
+	
+		if( host_check == null ) {
+			host_check = "0";
+		}else {
+			host_check = "1";
+		}
+		
+		
+		String member_id = join_id;
+		System.out.println(join_id);
+		String member_pw = join_pw;
+		System.out.println(join_pw);
+		String member_email = join_email;
+		System.out.println(join_email);
+		String member_phone = join_phone;
+		System.out.println(join_phone);
+		String member_gender = join_gender;
+		System.out.println(join_gender);
+		String member_name = join_name;
+		System.out.println(join_name);
+		String member_host_check = host_check;
+		System.out.println(host_check);
+		
+		
+		try {
+			result = memberService.join_member(
+					member_id, member_pw, 
+					member_email, member_phone,
+					member_gender, member_name, 
+					member_host_check);
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		if(result == 1) {
+			
+			return "redirect:/main";
+		}else {
+			return "redirect:/member_join";
+		}
+		
+		
 	}
 
 	@RequestMapping("/pwchange")

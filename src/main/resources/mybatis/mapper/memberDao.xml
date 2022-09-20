@@ -26,6 +26,9 @@
 		select member_pw from member where member_id=#{param1} and member_name = #{param2}
 	</select>
 
+	<update id="update_pw" parameterType="String">
+		update member set member_pw=#{param2} where member_id=#{param1}
+    </update>
 
 	<!-- 마이페이지 -->
 	
@@ -34,8 +37,13 @@
 		SET member_name = #{ member_name }
 		where member_id = #{ member_id }
 	</update>
+	
+	
 
-
+	<insert id="join_member" parameterType="com.study.springboot.dto.memberDto">
+		insert into member(member_id,member_pw,member_email,member_phone,member_gender,member_name,member_host)
+		 values(#{member_id},#{member_pw},#{member_email},#{member_phone},#{member_gender},#{member_name},#{member_host})
+	</insert>
 
 
 
