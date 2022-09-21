@@ -9,7 +9,7 @@
 
 
 <select id="notice" resultType="com.study.springboot.dto.noticeDto">
-	select * from notice 
+	select * from notice
 </select>
 
 

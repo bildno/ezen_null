@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 
 <link rel="stylesheet" href="/css/service/service.css">
 
@@ -29,13 +29,12 @@
 					<div class="panel-heading" role="tab" id="headingOne1">
 						<h4 class="panel-title">
 							<a role="button" data-toggle="collapse" data-parent="#accordion"
-								href="#collapseOne${dto.notice_number }" aria-expanded="true"
-								aria-controls="collapseOne1" id="num1"> 
-								${dto.notice_title } </a> <span id="span1"> 2022-09-07 </span>
+								href="#collapseOne${ dto.notice_number }" aria-expanded="true"
+								aria-controls="collapseOne1" id="num1"> ${ dto.notice_title } </a> <span id="span1"> ${ dto.notice_date } </span>
 						</h4>
 					</div>
-					<div id="collapseOne${dto.notice_number }" class="panel-collapse collapse in"
-						role="tabpanel" aria-labelledby="headingOne${dto.notice_number }">
+					<div id="collapseOne${dto.notice_number}" class="panel-collapse collapse in"
+						role="tabpanel" aria-labelledby="headingOne1">
 						<div class="panel-body" id="noti_answer">${ dto.notice_content }</div>
 					</div>
 				</div>
