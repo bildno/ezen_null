@@ -48,6 +48,7 @@
 			<div class="mypage_section2" style="padding: 40px">
 				<div class="mypage_con2">
 					<script>
+						/* 이름변경 */
 						$(document).ready(function() {
 							$('#ofd').hide();
 						})
@@ -63,37 +64,130 @@
 							$('#od').show();
 							$('#ofd').hide();
 						}
+						
+						/* 이메일변경 */
+						$(document).ready(function() {
+							$('#ofd1').hide();
+						})
+						function onDisplay1() {
+							$("#email").hide();
+							$('#noneDiv1').show();
+							$('#od1').hide();
+							$('#ofd1').show();
+						}
+						function offDisplay1() {
+							$('#noneDiv1').hide();
+							$('#email').show();
+							$('#od1').show();
+							$('#ofd1').hide();
+						}
+						
+						/* 전화번호변경 */
+						$(document).ready(function() {
+							$('#ofd2').hide();
+						})
+						function onDisplay2() {
+							$("#phone").hide();
+							$('#noneDiv2').show();
+							$('#od2').hide();
+							$('#ofd2').show();
+						}
+						function offDisplay2() {
+							$('#noneDiv2').hide();
+							$('#phone').show();
+							$('#od2').show();
+							$('#ofd2').hide();
+						}
 					</script>
 
-					<table class="profile">
-						<form action="/namechangeAction">
-						<tr>
+<script type="text/javascript">
+	function check_email(){
+		  var exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
+		  var user_email = document.getElementById("member_email");
+		
+		  
+		  if(exptext.test(user_email.value) == false){
+			  
+			  alert("이메일 형식이 아닙니다.");
+			  
+			  return false;
+		  }else{
+			  alert("변경되었습니다.");
+			  
+			  return true;	  
+		  }
+		
+	}
 
+	function check_phone(){
+		 var patternPhone=/^[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}/; //핸드폰 번호 유효성 검사
+		 var user_phone = document.getElementById("member_phone");
+		 
+  	if(patternPhone.test(user_phone.value) == false){
+			  
+			  alert("번호 형식이 아닙니다.");
+			  
+			  return false;
+		  }else{
+			  alert("변경되었습니다.");
+			  
+			  return true;	  
+		  }
+	}
+</script>
+
+
+					<table class="profile">
+						
+						<tr>
+						<form action="/namechangeAction" method="get" >
 							<th>이름</th>
 							<td>
-
 								<p id="name" style="margin-bottom: 0;">${ dto.member_name }
 								</p>
 								<div id="noneDiv" style="display: none;">
 									<input id="member_name" name="member_name" type="text"
 										value="${ dto.member_name }" style="width: 130px;">
 									<button id="namechange" type="submit">확인</button>
-									</form>
+						</form>
 								</div>
 							</td>
 							<td><button id="od" onclick="onDisplay()">변경하기</button>
 								<button id="ofd" onclick="offDisplay()">취소하기</button></td>
 						</tr>
 
+						
 						<tr>
+						<form action="/emailchangeAction" onsubmit="return check_email();">
 							<th>이메일</th>
-							<td>${ dto.member_email }</td>
-							<td><a id="mypage_a" href="#">변경하기</a></td>
+							<td>
+								<p id="email" style="margin-bottom: 0;">${ dto.member_email }
+								</p>
+								<div id="noneDiv1" style="display: none;">
+									<input id="member_email" name="member_email" type="text"
+										value="${ dto.member_email }" style="width: 130px;">
+									<button id="mailchange" type="submit">확인</button>
+						</form>
+								</div>
+							</td>
+							<td><button id="od1" onclick="onDisplay1()">변경하기</button>
+								<button id="ofd1" onclick="offDisplay1()">취소하기</button></td>
 						</tr>
 						<tr>
-							<th>연락처</th>
-							<td>${ dto.member_phone }</td>
-							<td><a id="mypage_a" href="#">변경하기</a></td>
+						<form action="/phonechangeAction" onsubmit="return check_phone(); ">
+							<th>번호</th>
+							<td>
+								<p id="phone" style="margin-bottom: 0;">${ dto.member_phone }
+								</p>
+								<div id="noneDiv2" style="display: none;">
+									<input id="member_phone" name="member_phone" type="text"
+										value="${ dto.member_phone }" style="width: 130px;">
+									<button id="phonechange" onclick= type="submit">확인</button>
+						</form>
+								</div>
+							</td>
+							<td><button id="od2" onclick="onDisplay2()">변경하기</button>
+								<button id="ofd2" onclick="offDisplay2()">취소하기</button></td>
 						</tr>
 						<tr>
 							<th>비밀번호</th>
