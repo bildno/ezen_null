@@ -29,14 +29,14 @@
 					<div class="panel-heading" role="tab" id="headingOne1">
 						<h4 class="panel-title">
 							<a role="button" data-toggle="collapse" data-parent="#accordion"
-								href="#collapseOne${dto.notice_number }" aria-expanded="true"
-								aria-controls="collapseOne1" id="num1"> 
-								${dto.notice_title } </a> <span id="span1"> 2022-09-07 </span>
+								href="#collapseOne1" aria-expanded="true"
+								aria-controls="collapseOne1" id="num1"> [공지]스페이스그라운드
+								개인정보처리방침 변경안내 </a> <span id="span1"> 2022-09-07 </span>
 						</h4>
 					</div>
-					<div id="collapseOne${dto.notice_number }" class="panel-collapse collapse in"
-						role="tabpanel" aria-labelledby="headingOne${dto.notice_number }">
-						<div class="panel-body" id="noti_answer">${ dto.notice_content }</div>
+					<div id="collapseOne1" class="panel-collapse collapse in"
+						role="tabpanel" aria-labelledby="headingOne1">
+						<div class="panel-body" id="noti_answer">${ dto.noticelist }</div>
 					</div>
 				</div>
 			</c:forEach>
