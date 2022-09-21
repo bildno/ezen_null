@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
+	
+	
+	<!-- c태그 꼭 써야 foreach문 사용 가능 -->	
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <link rel="stylesheet" href="css/one2one/one2one.css">
 
@@ -10,33 +16,40 @@
 			id="space_icon">
 	</h2>
 	<div class=contents>
-		<button class="accordion" id=o_num1>1 : 1 문의 1</button>
+	<c:forEach var="dto" items="${one2one_list}" varStatus="">
+		<button class="accordion" id="o_num${dto.one2one_number}" value="${dto.one2one_number}" name="one2one_number">
+		<div id="one_list_div">
+		<span id="list_span">
+		  ${dto.one2one_content}
+		</span> 
+		<span id="list_span_id">
+		  ${dto.one2one_member_id}
+		</span> 
+		<span id="list_span_date">
+		  ${dto.one2one_date}
+		</span>
+		</div> 
+		</button>
+		</c:forEach>
+		
+				
 		<div class="panel">
-			<p id=o_ans1>1 : 1 문의 답변 1</p>
+		<c:forEach var="dto2" items="${qwer}">
+			<p id="o_ans1" >
+			<span id="list_anspan">
+			${dto2.one2oneanswer_content }
+			</span>
+			</p>
+		</c:forEach>	
 		</div>
 
-		<button class="accordion" id=o_num2>1 : 1 문의 2</button>
-		<div class="panel">
-			<p id=o_ans2>1 : 1 문의 답변 2</p>
-		</div>
 
-		<button class="accordion" id=o_num3>1 : 1 문의 3</button>
-		<div class="panel">
-			<p id=o_ans3>1 : 1 문의 답변 3</p>
-		</div>
-		<button class="accordion" id=o_num4>1 : 1 문의 4</button>
-		<div class="panel">
-			<p id=o_ans4>1 : 1 문의 답변 4</p>
-		</div>
-		<button class="accordion" id=o_num5>1 : 1 문의 5</button>
-		<div class="panel">
-			<p id=o_ans5>1 : 1 문의 답변 5</p>
-		</div>
 		<br>
 		<div class="write">
 			<input class="writebtn" type="button" value="글쓰기"
 				onclick="location.href='/one2one_write'">
 		</div>
+
 	</div>
 
 	<script>

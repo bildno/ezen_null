@@ -14,8 +14,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.study.springboot.dto.memberDto;
 import com.study.springboot.dto.noticeDto;
+import com.study.springboot.dto.one2oneDto;
+import com.study.springboot.dto.one2one_answerDto;
 import com.study.springboot.service.memberService;
 import com.study.springboot.service.noticeService;
+import com.study.springboot.service.one2oneService;
+import com.study.springboot.service.one2one_answerService;
 
 @Controller
 public class Mycontroller {
@@ -37,6 +41,13 @@ public class Mycontroller {
 	
 	@Autowired
 	private noticeService noticeService;
+	
+	
+	@Autowired
+	private one2oneService one2oneService;
+	
+	@Autowired
+	private one2one_answerService one2one_answerService;
 
 	/* ----------------------------------------- admin 폴더 */
 
@@ -422,11 +433,27 @@ public class Mycontroller {
 
 	/* ----------------------------------------- one2one 폴더 */
 	@RequestMapping("/one2one")
-	public String one2one(Model model) {
+	public String one2one(
+			HttpServletRequest request,
+			Model model) {
+		
+		HttpSession session = request.getSession();
+		String member_id = (String)session.getAttribute("member_id");
+		
+		List<one2oneDto> one2one_list = one2oneService.one2one_list(member_id);
+		List<one2one_answerDto> one2oneanswer_list = one2one_answerService.one2one_answer(member_id);
+
+
+		model.addAttribute("one2one_list", one2one_list);
+		System.out.println(one2oneanswer_list);
+		model.addAttribute("qwer",one2oneanswer_list );
 
 		model.addAttribute("mainPage", "one2one/one2one.jsp");
 		return "index";
 	}
+	
+	
+	
 
 	@RequestMapping("/one2one_write")
 	public String one2one_write(Model model) {
@@ -454,16 +481,16 @@ public class Mycontroller {
 	@RequestMapping("/notice")
 	public String notice(HttpServletRequest request,
 			Model model) {
-		System.out.println("adasdf");
+
 		/*
 		 * HttpSession session = request.getSession(); String notice
 		 * =(String)session.getAttribute("dto");
 		 */
-		//session은 http와 같은 페이지가 열려있을 때의 값을 유지한 채로 가져와주는 역할을 함
+		//sesion은 http에서 로그인 된 채로 다른 페이지로 넘어가게 해주는 역할임
+		//(그래서 다른 페이지에서도 로그인 된 화면을 보여줌)
 		//sql을 보여주는 것과는 무관하다
 		
 		List<noticeDto> noticelist = noticeService.notice();
-		System.out.println(noticelist);
 		
 		model.addAttribute("noticelist",noticelist);
 		model.addAttribute("mainPage","service/service.jsp");
