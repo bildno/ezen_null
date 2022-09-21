@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <title>페이지 제목</title>
 
@@ -21,10 +22,11 @@
     <div class="myreview">
     		<h4><b>리뷰</b></h4>
     		<hr>
-            <a href="/myreview">내가 작성한 리뷰1</a><br>
-            <a href="/myreview">내가 작성한 리뷰2</a><br>
-            <a href="/myreview">내가 작성한 리뷰3</a><br>
-            <a href="/myreview">내가 작성한 리뷰4</a>
+    		<c:forEach var="dto" items="${reviewlist }">
+    		<a href="/myreview">${dto.review_content }</a><br>
+    		</c:forEach>
+            
+            
     </div>
     <hr>
     <div class="myboard">
