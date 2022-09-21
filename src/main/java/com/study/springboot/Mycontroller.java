@@ -16,10 +16,12 @@ import com.study.springboot.dto.memberDto;
 import com.study.springboot.dto.noticeDto;
 import com.study.springboot.dto.one2oneDto;
 import com.study.springboot.dto.one2one_answerDto;
+import com.study.springboot.dto.reviewDto;
 import com.study.springboot.service.memberService;
 import com.study.springboot.service.noticeService;
 import com.study.springboot.service.one2oneService;
 import com.study.springboot.service.one2one_answerService;
+import com.study.springboot.service.reviewService;
 
 @Controller
 public class Mycontroller {
@@ -48,6 +50,9 @@ public class Mycontroller {
 	
 	@Autowired
 	private one2one_answerService one2one_answerService;
+	
+	@Autowired
+	private reviewService reviewService;
 
 	/* ----------------------------------------- admin 폴더 */
 
@@ -153,8 +158,17 @@ public class Mycontroller {
 	}
 
 	@RequestMapping("/mylist")
-	public String mylist(Model model) {
+	public String mylist(
+			HttpServletRequest request,
+			Model model) {
 
+		HttpSession session = request.getSession();
+		String member_id = (String)session.getAttribute("member_id");
+		
+		List<reviewDto> reviewlist = reviewService.select_review(member_id);
+		System.out.println(reviewlist);
+		
+		model.addAttribute("reviewlist",reviewlist);
 		model.addAttribute("mainPage", "member/mylist.jsp");
 		return "index";
 	}
@@ -426,6 +440,9 @@ public class Mycontroller {
 			}
 		
 	}
+	
+	
+	
 //	------------------------------------------------------------------
 	
 	
