@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.study.springboot.dto.memberDto;
+import com.study.springboot.dto.noticeDto;
 import com.study.springboot.service.memberService;
+import com.study.springboot.service.noticeService;
 
 @Controller
 public class Mycontroller {
@@ -32,6 +34,9 @@ public class Mycontroller {
 		model.addAttribute("mainPage", "main.jsp");
 		return "index";
 	}
+	
+	@Autowired
+	private noticeService noticeService;
 
 	/* ----------------------------------------- admin 폴더 */
 
@@ -445,6 +450,28 @@ public class Mycontroller {
 		model.addAttribute("mainPage", "service/service.jsp");
 		return "index";
 	}
+	
+	@RequestMapping("/notice")
+	public String notice(HttpServletRequest request,
+			Model model) {
+		System.out.println("adasdf");
+		/*
+		 * HttpSession session = request.getSession(); String notice
+		 * =(String)session.getAttribute("dto");
+		 */
+		//session은 http와 같은 페이지가 열려있을 때의 값을 유지한 채로 가져와주는 역할을 함
+		//sql을 보여주는 것과는 무관하다
+		
+		List<noticeDto> noticelist = noticeService.notice();
+		System.out.println(noticelist);
+		
+		model.addAttribute("noticelist",noticelist);
+		model.addAttribute("mainPage","service/service.jsp");
+		
+		return "index";
+	}
+	
+	
 	/* ----------------------------------------- */
 
 	/* ----------------------------------------- host 폴더 */

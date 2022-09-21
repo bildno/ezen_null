@@ -1,7 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <link rel="stylesheet" href="/css/service/service.css">
+
 
 <div class="container">
 
@@ -12,26 +15,31 @@
 	</h2>
 
 	<!-- 공지사항 -->
+
 	<div class="notice">
 		<div class="tb_notice">
+
 			<div class="panel-group" id="accordion" role="tablist"
 				aria-multiselectable="true">
+		<c:forEach var="dto" items="${ noticelist }">
 				<div class="panel panel-default" id="panel"
 					onMouseOver="this.className='noti_over'"
 					onMouseOut="this.className='noti_'">
+			
 					<div class="panel-heading" role="tab" id="headingOne1">
 						<h4 class="panel-title">
 							<a role="button" data-toggle="collapse" data-parent="#accordion"
-								href="#collapseOne1" aria-expanded="true"
-								aria-controls="collapseOne1" id="num1"> [공지]스페이스그라운드
-								개인정보처리방침 변경안내 </a> <span id="span1"> 2022-09-07 </span>
+								href="#collapseOne${dto.notice_number }" aria-expanded="true"
+								aria-controls="collapseOne1" id="num1"> 
+								${dto.notice_title } </a> <span id="span1"> 2022-09-07 </span>
 						</h4>
 					</div>
-					<div id="collapseOne1" class="panel-collapse collapse in"
-						role="tabpanel" aria-labelledby="headingOne1">
-						<div class="panel-body" id="noti_answer">답변입니다^^</div>
+					<div id="collapseOne${dto.notice_number }" class="panel-collapse collapse in"
+						role="tabpanel" aria-labelledby="headingOne${dto.notice_number }">
+						<div class="panel-body" id="noti_answer">${ dto.notice_content }</div>
 					</div>
 				</div>
+			</c:forEach>
 				<div class="panel panel-default" id="panel"
 					onMouseOver="this.className='noti_over'"
 					onMouseOut="this.className='noti_'">
@@ -46,7 +54,7 @@
 					</div>
 					<div id="collapseTwo2" class="panel-collapse collapse"
 						role="tabpanel" aria-labelledby="headingTwo2">
-						<div class="panel-body" id="noti_answer">답변입니다^^</div>
+						<div class="panel-body" id="noti_answer">${dto.noticelist}</div>
 					</div>
 				</div>
 				<div class="panel panel-default" id="panel"
@@ -100,6 +108,7 @@
 			</div>
 		</div>
 	</div>
+	
 	<!-- pagination 부트 스트랩 사용 -->
 	<div class="pagenavi">
 		<nav aria-label="Page navigation example">
@@ -239,6 +248,7 @@
 		</ul>
 	</nav>
 </div>
+
 </div>
 
 </div>
