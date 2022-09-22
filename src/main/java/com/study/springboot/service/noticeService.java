@@ -21,6 +21,5 @@ public class noticeService {
 		
 		return notice;
 	}
-	
 
 }

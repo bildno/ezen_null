@@ -19,12 +19,6 @@ public class communityService {
 		List<communityDto> communityload = icommunityDao.communityload(contents_number);
 
 		return communityload;
-
 	}
 	
-//	public int community_hit(int contents_number) {
-//		int community_hit = icommunityDao.community_hit(contents_number);
-//		return community_hit;
-//	}
-
 }

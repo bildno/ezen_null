@@ -14,7 +14,6 @@ public class one2oneService {
 	@Autowired
 	private Ione2oneDao ione2oneDao;
 	
-	
 	public List<one2oneDto> one2one_list(String member_id) {
 		
 		List<one2oneDto> one2one_list = ione2oneDao.one2one_list(member_id);

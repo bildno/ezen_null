@@ -13,5 +13,4 @@ public class memberDto {
 	private String member_name;
 	private String member_host;
 	
-	
 }

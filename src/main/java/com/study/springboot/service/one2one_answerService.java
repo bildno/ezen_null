@@ -15,10 +15,10 @@ public class one2one_answerService {
 		private Ione2one_answerDao ione2one_answerDao;
 		
 		public List<one2one_answerDto> one2one_answer(String member_id) {
+			
 			List<one2one_answerDto> one2oneanswer_list = ione2one_answerDao.one2one_answer(member_id);
 			
 			return one2oneanswer_list;
 			
 		}
-		
 }

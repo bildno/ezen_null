@@ -100,91 +100,99 @@
 						}
 					</script>
 
-<script type="text/javascript">
-	function check_email(){
-		  var exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
-		  var user_email = document.getElementById("member_email");
+					<script type="text/javascript">
+					
+	function check_name() {
+		var nameExp = /^[가-힣]{2,4}|[a-zA-Z]{2,10}\s[a-zA-Z]{2,10}$/;
+		var user_name = document.getElementById("member_name");
 		
-		  
-		  if(exptext.test(user_email.value) == false){
+		if(exptext.test(user_name.value) == false){
 			  
-			  alert("이메일 형식이 아닙니다.");
+			alert("이름 형식이 아닙니다.");
+			return false;
+			
+		}else{
+			alert("변경되었습니다.");
+			return true;
+			
+		}
+	}
+					
+	function check_email() {
+		var exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
+		var user_email = document.getElementById("member_email");
+
+		if(exptext.test(user_email.value) == false){
 			  
-			  return false;
-		  }else{
-			  alert("변경되었습니다.");
-			  
-			  return true;	  
-		  }
-		
+			alert("이메일 형식이 아닙니다.");
+			return false;
+		}else{
+			alert("변경되었습니다.");
+			return true;	  
+		}
 	}
 
-	function check_phone(){
+	function check_phone() {
 		 var patternPhone=/^[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}/; //핸드폰 번호 유효성 검사
 		 var user_phone = document.getElementById("member_phone");
 		 
   	if(patternPhone.test(user_phone.value) == false){
-			  
 			  alert("번호 형식이 아닙니다.");
-			  
 			  return false;
 		  }else{
 			  alert("변경되었습니다.");
-			  
 			  return true;	  
 		  }
 	}
 </script>
 
-
 					<table class="profile">
-						
 						<tr>
-						<form action="/namechangeAction" method="get" >
-							<th>이름</th>
-							<td>
-								<p id="name" style="margin-bottom: 0;">${ dto.member_name }
-								</p>
-								<div id="noneDiv" style="display: none;">
-									<input id="member_name" name="member_name" type="text"
-										value="${ dto.member_name }" style="width: 130px;">
-									<button id="namechange" type="submit">확인</button>
+						<form action="/namechangeAction" method="get" onsubmit="return check_name();>
+								<th>이름</th>
+								<td>
+									<p id="name" style="margin-bottom: 0;">${ dto.member_name }
+									</p>
+									<div id="noneDiv" style="display: none;">
+										<input id="member_name" name="member_name" type="text"
+											value="${ dto.member_name }" style="width: 130px;">
+										<button id="namechange" type="submit">확인</button>
 						</form>
-								</div>
+							</div>
 							</td>
 							<td><button id="od" onclick="onDisplay()">변경하기</button>
 								<button id="ofd" onclick="offDisplay()">취소하기</button></td>
 						</tr>
 
-						
 						<tr>
-						<form action="/emailchangeAction" onsubmit="return check_email();">
-							<th>이메일</th>
-							<td>
-								<p id="email" style="margin-bottom: 0;">${ dto.member_email }
-								</p>
-								<div id="noneDiv1" style="display: none;">
-									<input id="member_email" name="member_email" type="text"
-										value="${ dto.member_email }" style="width: 130px;">
-									<button id="mailchange" type="submit">확인</button>
+						<form action="/emailchangeAction" onsubmit="return check_phone();>
+								<th>이메일</th>
+								<td>
+									<p id="email" style="margin-bottom: 0;">${ dto.member_email }
+									</p>
+									<div id="noneDiv1" style="display: none;">
+										<input id="member_email" name="member_email" type="text"
+											value="${ dto.member_email }" style="width: 130px;">
+										<button id="mailchange" type="submit">확인</button>
 						</form>
-								</div>
+							</div>
 							</td>
 							<td><button id="od1" onclick="onDisplay1()">변경하기</button>
 								<button id="ofd1" onclick="offDisplay1()">취소하기</button></td>
 						</tr>
+						
 						<tr>
-						<form action="/phonechangeAction" onsubmit="return check_phone(); ">
-							<th>번호</th>
-							<td>
-								<p id="phone" style="margin-bottom: 0;">${ dto.member_phone }
-								</p>
-								<div id="noneDiv2" style="display: none;">
-									<input id="member_phone" name="member_phone" type="text"
-										value="${ dto.member_phone }" style="width: 130px;">
-									<button id="phonechange" onclick= type="submit">확인</button>
-						</form>
-								</div>
+							<form action="/phonechangeAction" onsubmit="return check_phone();">
+								<th>번호</th>
+								<td>
+									<p id="phone" style="margin-bottom: 0;">${ dto.member_phone }
+									</p>
+									<div id="noneDiv2" style="display: none;">
+										<input id="member_phone" name="member_phone" type="text"
+											value="${ dto.member_phone }" style="width: 130px;">
+										<button id="phonechange" onclick=type="submit">확인</button>
+							</form>
+							</div>
 							</td>
 							<td><button id="od2" onclick="onDisplay2()">변경하기</button>
 								<button id="ofd2" onclick="offDisplay2()">취소하기</button></td>

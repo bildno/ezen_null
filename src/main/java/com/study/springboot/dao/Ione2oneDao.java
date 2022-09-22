@@ -11,5 +11,4 @@ public interface Ione2oneDao {
 	
 	public  List<one2oneDto> one2one_list(String member_id);
 	
-
 }
