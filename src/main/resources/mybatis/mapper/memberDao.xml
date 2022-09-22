@@ -18,27 +18,42 @@
 		select * from member where member_id = #{param1}
 	</select>
 
+	<select id="host_find" resultType="_int">
+		select member_host from member
+		where member_id = #{param1}
+	</select>
+
 	<select id="idfind" resultType="String">
-		select member_id from member where member_name = #{param1} and member_phone = #{param2}
+		select member_id from member
+		where member_name = #{param1} and member_phone = #{param2}
 	</select>
 
 	<select id="select_pw" resultType="String">
-		select member_pw from member where member_id=#{param1} and member_name = #{param2}
+		select member_pw from member
+		where member_id=#{param1} and member_name = #{param2}
 	</select>
 
 	<update id="update_pw" parameterType="String">
-		update member set member_pw=#{param2} where member_id=#{param1}
-    </update>
+		update member set
+		member_pw=#{param2} where member_id=#{param1}
+	</update>
+
+	<insert id="join_member" parameterType="com.study.springboot.dto.memberDto">
+		insert into
+		member(member_id,member_pw,member_email,member_phone,member_gender,member_name,member_host)
+		values(#{member_id},#{member_pw},#{member_email},#{member_phone},#{member_gender},#{member_name},#{member_host})
+	</insert>
 
 
 	<!-- 마이페이지 -->
-	
+
 	<update id="name_change" parameterType="HashMap">
 		UPDATE member
-		SET member_name = #{ member_name }
+		SET
+		member_name = #{ member_name }
 		where member_id = #{ member_id }
 	</update>
-	
+
 
 
 

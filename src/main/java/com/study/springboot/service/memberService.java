@@ -87,7 +87,33 @@ public class memberService {
 		
 	}
 	
-
+	public int host_find(String member_id) {
+		
+		int member_host = imemberDao.host_find(member_id);
+		
+		return member_host;
+	}
 	
-
+	public int join_member(String member_id, String member_pw, String member_email, String member_phone, String member_gender, String member_name, String member_host) {
+		
+		int result = 0;
+		memberDto dto = new memberDto();
+		dto.setMember_id(member_id);
+		dto.setMember_pw(member_pw);
+		dto.setMember_email(member_email);
+		dto.setMember_phone(member_phone);
+		dto.setMember_gender(member_host);
+		dto.setMember_name(member_name);
+		dto.setMember_host(member_host);
+		
+		try {
+			result = imemberDao.join_member(dto);
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		}
+		
+		return result;
+		
+	}
 }
