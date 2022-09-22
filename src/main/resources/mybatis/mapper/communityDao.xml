@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.study.springboot.dao.IcommunityDao">
+	
+  	<select id="communityload" resultType="com.study.springboot.dto.communityDto">
+		select * from community where community_contents_number = #{ param1 }
+	</select>
+
+	<!-- 조회수증가 -->
+<!-- 	<update id="community_hit">
+   		update community set community_hit=community_hit+1 where community_hit=#{ param1 }
+	</update> -->
+
+</mapper>

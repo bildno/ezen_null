@@ -1,5 +1,12 @@
 package com.study.springboot.dto;
 
-public class contentsDto {
+import lombok.Data;
 
+@Data
+public class contentsDto {
+	
+	private String contents_number;
+	private String contents_title;
+	private String contents_content;
+	
 }
