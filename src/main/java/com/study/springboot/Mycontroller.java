@@ -7,10 +7,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import com.study.springboot.dto.communityDto;
 import com.study.springboot.dto.contentsDto;
@@ -157,6 +161,8 @@ public class Mycontroller {
 
 		int result = memberService.login(member_id, member_pw);
 		int member_host = memberService.host_find(member_id);
+			
+		
 		if (result == 1) {
 
 			model.addAttribute("mainPage", "main.jsp");
@@ -602,5 +608,61 @@ public class Mycontroller {
 	/* ----------------------------------------- */
 
 	/*-------------------------------------------*/
-
+	@Bean(name = "multipartResolver")
+	public CommonsMultipartResolver multipartResolver() {
+		CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
+		multipartResolver.setMaxUploadSize(200000000);
+		multipartResolver.setMaxInMemorySize(200000000);
+		multipartResolver.setDefaultEncoding("utf-8");
+		return multipartResolver;
+	}
+ @Autowired
+ fileUploadService fileUploadService;
+	
+	@RequestMapping(value="/uploadMultiFileOk", method = RequestMethod.POST)
+	public String uploadMultiFileOk( 
+			@RequestParam(value="user_id", required=false, defaultValue="") String user_id,
+			@RequestParam(value="user_pw", required=false, defaultValue="") String user_pw,
+			@RequestParam(value="filename", required=false) MultipartFile[] filelist,
+			Model model) {
+		
+		System.out.println("filelist:" + filelist);
+		for( MultipartFile file : filelist) {
+			System.out.println("filename:" + file);
+			
+			String upload_url = fileUploadService.restore(file);
+			// 한 개의 파일 처리코드를 여기에 
+			System.out.println( "upload_url:" + upload_url );
+			
+			if( upload_url != null ) {
+				if( upload_url.length() > 0 ) {
+					System.out.println("업로드 성공!");
+				}else {
+					System.out.println("업로드 실패!");	
+				}
+			}else {
+				System.out.println("업로드 실패!");
+			}
+			
+			model.addAttribute("upload_url", upload_url);
+			
+			try {
+				Thread.sleep(5000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			
+		}
+		
+		
+		
+		model.addAttribute("mainPage","host/enter_host.jsp");
+		return "index"; //fileUploadForm.jsp 디스패치됨.
+	}
+	
+	
+	
+	
+	
+	
 }

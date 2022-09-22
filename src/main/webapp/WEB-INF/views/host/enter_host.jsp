@@ -20,14 +20,16 @@
             console.log(file);
             var reg = /(.*?)\.(jpg|jpeg|png|gif|bmp|JPG|PNG|JPEG|GIF|BMP)$/;
             if (file.match(reg)) {
-                alert("업로드 되었습니다.");
+            	  alert('저장이 완료되었습니다');
+                return true;
             } else {
                 alert("해당 파일은 이미지 파일이 아닙니다.");
+                return false;
             }
         }
 
         // 이미지 미리보기
-        function readURL(input) {
+      /*   function readURL(input) {
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
                 reader.onload = function (e) {
@@ -37,8 +39,28 @@
             } else {
                 document.getElementById('preview').src = "";
             }
-        }
+        } */
     </script>
+
+<script>
+		function setDetailImage(event){
+			console.log("호출");
+			for(var image of event.target.files){
+				var reader = new FileReader();
+				
+				reader.onload = function(event){
+					var img = document.createElement("img");
+					img.setAttribute("src", event.target.result);
+					img.setAttribute("class", "col-lg-6");
+					document.querySelector("div#images_container").appendChild(img);
+				};
+				
+				console.log(image);
+				reader.readAsDataURL(image);
+			}
+		}
+	</script>
+
 
 <!-- 주소검색 -->
     <script>
@@ -53,18 +75,9 @@
         }
     </script>
 
-   <!-- 저장 알럿창 -->
-    <script>
-        function btn() {
-            alert('저장이 완료되었습니다');
-        }
-    </script>
 
     <!-- 주소검색 링크 -->
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-
-
-
 
     <div class="container">
         <h1 id="space_host_h1">공간 입점등록</h1>
@@ -76,9 +89,11 @@
         <div>
             <h2 id="space_host_enterh2">공간 입점등록입니다.</h2>
             <h2 id="space_host_info">호스트님께서 등록하실 공간에 대해 작성하는 '공간 입점등록'입니다.<br>
-                각 입력란에 맞는 규격으로 아래의 공간 상세정보 신청서를 작성하시기 바랍니다</h2>
+                각 입력란에 맞는 규격으로 아래의 공간 상세정보 신청서를 작성하시기 바랍니다</h2>  
         </div>
-
+        
+        
+	<form action="uploadMultiFileOk" method="post" enctype="multipart/form-data" onsubmit="return confirmFileExtension(imgFile.value);">
         <div class="space_host_name">
             <h3 id="space_host_h3">공간명</h3>
             <input type="text" placeholder="고유 업체명을 입력해주세요.ex)하이브 회의실" id="host_input">
@@ -127,20 +142,19 @@
             <input type="text" placeholder="게스트들이 확인해야 하는 주의사항을 상세히 써주세요" id="host_input">
         </div>
 
+
+	
         <div class="space_host_img">
             <h3 id="space_host_h3">이미지</h3>
             <label for="imgFile">파일선택</label>
-            <input type="file" id="imgFile" onchange="readURL(this);" required multiple />
-            <img id="preview" style="width: 150px;" />
-            <br />
-            <label for="imgFile2">업로드</label>
-            <input type="button" onClick="confirmFileExtension(imgFile.value);" value="업로드" id="imgFile2" />
+            <input name="filename" type="file" id="imgFile" accept="image/*" onchange="setDetailImage(event);" required multiple="multiple" />
+            <div style="width: 150px;" id="images_container"></div>
         </div>
 
         <div class="space_host_location">
             <h3 id="space_host_h3">주소</h3>
             <div class="small">
-                <h3 id="small">*최초 등록 이후 변경될 수 없습니다(고객센터를 통해 변경 가능)</h3>
+             	<h3 id="small">*최초 등록 이후 변경될 수 없습니다(고객센터를 통해 변경 가능)</h3>   
             </div>
             <input type="text" name="zip" id="adr_input" placeholder="우편번호 입력">
             <button type="button" onclick="openZipSearch()" id="openzip">검색</button><br>
@@ -166,10 +180,12 @@
 
         <div class="space_finish">
             <div class="saver">
-                <button type="button" onclick="javascript:btn()" id="btnfn">저장</button>
+                <button type="submit" id="btnfn">저장</button>
             </div>
             <div class="cancel">
                 <button type="button" id="btnfn" onclick="window.open('/mypage_host')"><a id="canceler" href="/mypage_host"> 취소</a></button>
             </div>
         </div>
+        	</form>
     </div>
+    

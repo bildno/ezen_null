@@ -146,59 +146,61 @@
 	}
 </script>
 
-					<table class="profile">
-					
-				<form action="/namechangeAction" onsubmit="return check_name();">
+					<table class="profile">	
 						<tr>
 								<th>이름</th>
 								<td>
+									<form action="/namechangeAction" method="get"onsubmit="return check_name();">
 									<p id="name" style="margin-bottom: 0;">${ dto.member_name }
 									</p>
 									<div id="noneDiv" style="display: none;">
 										<input id="member_name" name="member_name" type="text"
 											value="${ dto.member_name }" style="width: 130px;">
 										<button id="namechange" type="submit">확인</button>
-					</form>
+					
 							</div>
+							</form>
 							</td>
 							<td><button id="od" onclick="onDisplay()">변경하기</button>
 								<button id="ofd" onclick="offDisplay()">취소하기</button></td>
 						</tr>
 		
 				
-				<form action="/emailchangeAction" onsubmit="return check_phone();">
+				
 						<tr>
 					
 								<th>이메일</th>
 								<td>
+								<form action="/emailchangeAction" onsubmit="return check_phone();">
 									<p id="email" style="margin-bottom: 0;">${ dto.member_email }
 									</p>
 									<div id="noneDiv1" style="display: none;">
 										<input id="member_email" name="member_email" type="text"
 											value="${ dto.member_email }" style="width: 130px;">
 										<button id="mailchange" type="submit">확인</button>
-				</form>
+				
 							</div>
+							</form>
 							</td>
 							<td><button id="od1" onclick="onDisplay1()">변경하기</button>
 								<button id="ofd1" onclick="offDisplay1()">취소하기</button></td>
 						</tr>
 				
-				<form action="/phonechangeAction" onsubmit="return check_phone();">		
+				
 						<tr>
 				
 								<th>번호</th>
 								<td>
+								<form action="/phonechangeAction" onsubmit="return check_phone();">		
 									<p id="phone" style="margin-bottom: 0;">${ dto.member_phone }
 									</p>
 									<div id="noneDiv2" style="display: none;">
 										<input id="member_phone" name="member_phone" type="text"
 											value="${ dto.member_phone }" style="width: 130px;">
-										<button id="phonechange" onclick=type="submit">
-								확인
-								</button>
-				</form>			
+										<button id="phonechange" type="submit">확인</button>
+				
 								</div>
+								</form>			
 							</td>
 							<td><button id="od2" onclick="onDisplay2()">변경하기</button>
 								<button id="ofd2" onclick="offDisplay2()">취소하기</button></td>
