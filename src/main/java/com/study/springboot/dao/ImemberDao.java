@@ -20,7 +20,7 @@ public interface ImemberDao {
 	
 	public int update_pw(String member_id, String member_pw);
 	
-	public int join_member(memberDto dto);
+
 	
 	public int name_change(Map<String, Object> map);
 	
