@@ -110,16 +110,20 @@
 .con22 input[type=text] {
 	border-radius: 5px;
 	width: 100%;
-	margin: 20px 0 20px 0;
+	margin: 5px 0 5px 0;
 	cursor: pointer;
 	border: 1px solid rgb(238, 238, 238);
 }
 .con22 input[type=text]:focus{
 	outline: none;
 }
-.con22 a:hover {
-	text-decoration: none;
+.con22 table {
+	width: 100%;
+	text-align: center;
 }
+/* .con22 a:hover {
+	text-decoration: none;
+} */
 
 .con22 a:visited {
 	text-decoration: none;

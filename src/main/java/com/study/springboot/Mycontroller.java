@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.study.springboot.dto.memberDto;
 import com.study.springboot.dto.noticeDto;
+import com.study.springboot.service.contentsService;
 import com.study.springboot.service.memberService;
 import com.study.springboot.service.noticeService;
 
@@ -37,6 +38,10 @@ public class Mycontroller {
 	
 	@Autowired
 	private noticeService noticeService;
+	
+	@Autowired
+	private contentsService contentsService;
+	
 
 	/* ----------------------------------------- admin 폴더 */
 
@@ -512,12 +517,7 @@ public class Mycontroller {
 	/* ----------------------------------------- */
 
 	/* ----------------------------------------- contents 폴더 */
-	@RequestMapping("/community")
-	public String community(Model model) {
-
-		model.addAttribute("mainPage", "contents/community.jsp");
-		return "index";
-	}
+	
 
 	@RequestMapping("/community_info")
 	public String community_info(Model model) {
@@ -539,6 +539,8 @@ public class Mycontroller {
 		model.addAttribute("mainPage", "contents/space_info.jsp");
 		return "index";
 	}
+	
+	
 	/* ----------------------------------------- */
 
 	/*-------------------------------------------*/

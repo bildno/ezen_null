@@ -1,5 +1,14 @@
 package com.study.springboot.dao;
 
-public interface IcontentsDao {
+import java.util.List;
 
+import org.apache.ibatis.annotations.Mapper;
+
+import com.study.springboot.dto.contentsDto;
+
+@Mapper
+public interface IcontentsDao {
+	
+	public List<contentsDto> contentsload(String contents_number);
+	
 }

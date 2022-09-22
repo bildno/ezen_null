@@ -90,24 +90,21 @@
 	</button>
 </div>
 
-
-
 <!-- 중앙 콘텐츠 4개 -->
 <div class="container">
 
 	<div class="main">
 
-		<div class="section">
 
-			<div class="section1" onclick="location.href='community'"
+			<div class="section1" onclick="location.href='community?contents_number=1'" 
 				style="cursor: pointer;">
-				<div class="con1">
+				<div class="con1" name="contents_number" value="1">
 					<img class="con-img1" src="img/yoga.jpg" alt="contents1">
 					<h2 id="main_h2">Active Class</h2>
 				</div>
 			</div>
 
-			<div class="section2" onclick="location.href='community'"
+			<div class="section2" onclick="location.href='community?contents_number=2'"
 				style="cursor: pointer;">
 				<div class="con2">
 					<img class="con-img1" src="img/cafe.jpg" alt="contents2">
@@ -115,8 +112,7 @@
 				</div>
 			</div>
 
-
-			<div class="section3" onclick="location.href='community'"
+			<div class="section3" onclick="location.href='community?contents_number=3'"
 				style="cursor: pointer;">
 				<div class="con3">
 					<img class="con-img1" src="img/party.jpg" alt="contents3">
@@ -124,8 +120,7 @@
 				</div>
 			</div>
 
-
-			<div class="section4" onclick="location.href='community'"
+			<div class="section4" onclick="location.href='community?contents_number=4'"
 				style="cursor: pointer;">
 				<div class="con4">
 					<img class="con-img1" src="img/갤러리.jpg" alt="contents4">
@@ -133,10 +128,14 @@
 				</div>
 			</div>
 		</div>
+		
+
+
 	</div>
 </div>
+
 <div id="banner">
-	<video src="/img/light.mp4" muted autoplay loop>
+	<!-- <video src="/img/light.mp4" muted autoplay loop> -->
 	</video>
 	<h1 class="banner_ad">지금 바로</h1>
 	<h2 class="banner_ad2">4개의 클래스와 공간에서 즐겨보세요</h2>
