@@ -106,7 +106,7 @@
 		var nameExp = /^[가-힣]{2,4}|[a-zA-Z]{2,10}\s[a-zA-Z]{2,10}$/;
 		var user_name = document.getElementById("member_name");
 		
-		if(exptext.test(user_name.value) == false){
+		if(nameExp.test(user_name.value) == false){
 			  
 			alert("이름 형식이 아닙니다.");
 			return false;
@@ -147,8 +147,9 @@
 </script>
 
 					<table class="profile">
+					
+				<form action="/namechangeAction" onsubmit="return check_name();">
 						<tr>
-						<form action="/namechangeAction" method="get" onsubmit="return check_name();>
 								<th>이름</th>
 								<td>
 									<p id="name" style="margin-bottom: 0;">${ dto.member_name }
@@ -157,15 +158,17 @@
 										<input id="member_name" name="member_name" type="text"
 											value="${ dto.member_name }" style="width: 130px;">
 										<button id="namechange" type="submit">확인</button>
-						</form>
+					</form>
 							</div>
 							</td>
 							<td><button id="od" onclick="onDisplay()">변경하기</button>
 								<button id="ofd" onclick="offDisplay()">취소하기</button></td>
 						</tr>
-
+		
+				
+				<form action="/emailchangeAction" onsubmit="return check_phone();">
 						<tr>
-						<form action="/emailchangeAction" onsubmit="return check_phone();>
+					
 								<th>이메일</th>
 								<td>
 									<p id="email" style="margin-bottom: 0;">${ dto.member_email }
@@ -174,15 +177,16 @@
 										<input id="member_email" name="member_email" type="text"
 											value="${ dto.member_email }" style="width: 130px;">
 										<button id="mailchange" type="submit">확인</button>
-						</form>
+				</form>
 							</div>
 							</td>
 							<td><button id="od1" onclick="onDisplay1()">변경하기</button>
 								<button id="ofd1" onclick="offDisplay1()">취소하기</button></td>
 						</tr>
-						
+				
+				<form action="/phonechangeAction" onsubmit="return check_phone();">		
 						<tr>
-							<form action="/phonechangeAction" onsubmit="return check_phone();">
+				
 								<th>번호</th>
 								<td>
 									<p id="phone" style="margin-bottom: 0;">${ dto.member_phone }
@@ -190,17 +194,21 @@
 									<div id="noneDiv2" style="display: none;">
 										<input id="member_phone" name="member_phone" type="text"
 											value="${ dto.member_phone }" style="width: 130px;">
-										<button id="phonechange" onclick=type="submit">확인</button>
-							</form>
-							</div>
+										<button id="phonechange" onclick=type="submit">
+								확인
+								</button>
+				</form>			
+								</div>
 							</td>
 							<td><button id="od2" onclick="onDisplay2()">변경하기</button>
 								<button id="ofd2" onclick="offDisplay2()">취소하기</button></td>
 						</tr>
+						
 						<tr>
 							<th>비밀번호</th>
 							<td colspan=2><a id="mypage_a" href="/pwchange">변경하기</a></td>
 						</tr>
+						
 					</table>
 
 				</div>
