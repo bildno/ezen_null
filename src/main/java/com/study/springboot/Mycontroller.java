@@ -287,60 +287,7 @@ public class Mycontroller {
 		return "index";
 	}
 
-	@RequestMapping("/joinAction")
-	public String joinAction(@RequestParam("name") String join_name,
-							 @RequestParam("mail") String join_email,
-							 @RequestParam("phone") String join_phone,
-							 @RequestParam("id") String join_id,
-							 @RequestParam("password") String join_pw,
-							 @RequestParam("room") String join_gender,
-							 @RequestParam(value="host_check", required=false) String host_check,
-			Model model) {
-		
-		int result = 0;
-		
 	
-		if( host_check == null ) {
-			host_check = "0";
-		}else {
-			host_check = "1";
-		}
-		
-		
-		String member_id = join_id;
-		System.out.println(join_id);
-		String member_pw = join_pw;
-		System.out.println(join_pw);
-		String member_email = join_email;
-		System.out.println(join_email);
-		String member_phone = join_phone;
-		System.out.println(join_phone);
-		String member_gender = join_gender;
-		System.out.println(join_gender);
-		String member_name = join_name;
-		System.out.println(join_name);
-		String member_host_check = host_check;
-		System.out.println(host_check);
-		
-		
-		try {
-			result = memberService.join_member(
-					member_id, member_pw, 
-					member_email, member_phone,
-					member_gender, member_name, 
-					member_host_check);
-			
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-		
-		if(result == 1) {
-			
-			return "redirect:/main";
-		}else {
-			return "redirect:/member_join";
-		}
-	}
 
 	@RequestMapping("/loginAction")
 	public String loginAction(@RequestParam("lo_name") String member_id, @RequestParam("lo_pass") String member_pw,

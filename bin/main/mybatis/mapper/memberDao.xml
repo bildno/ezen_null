@@ -39,10 +39,7 @@
 		where member_id = #{ member_id }
 	</update>
 	
-	<insert id="join_member" parameterType="com.study.springboot.dto.memberDto">
-		insert into member(member_id,member_pw,member_email,member_phone,member_gender,member_name,member_host)
-		values(#{member_id},#{member_pw},#{member_email},#{member_phone},#{member_gender},#{member_name},#{member_host})
-	</insert>
+
 
 
 
