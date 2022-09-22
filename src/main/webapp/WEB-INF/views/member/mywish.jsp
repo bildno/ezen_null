@@ -35,5 +35,10 @@
 				<button class="detail">세부내역</button>
 			</div>
 		</div>
+		
+		<div class="wish_cancel">
+			<input class="wish_cancel2" type="button" value="취소"
+			onclick="location.href='/mypage'">
+		</div>
 	</div>
 </div>
