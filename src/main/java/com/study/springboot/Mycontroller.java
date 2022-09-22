@@ -12,11 +12,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.study.springboot.dto.communityDto;
+import com.study.springboot.dto.contentsDto;
 import com.study.springboot.dto.memberDto;
 import com.study.springboot.dto.noticeDto;
 import com.study.springboot.dto.one2oneDto;
 import com.study.springboot.dto.one2one_answerDto;
 import com.study.springboot.dto.reviewDto;
+import com.study.springboot.service.communityService;
+import com.study.springboot.service.contentsService;
 import com.study.springboot.service.memberService;
 import com.study.springboot.service.noticeService;
 import com.study.springboot.service.one2oneService;
@@ -53,6 +57,12 @@ public class Mycontroller {
 	
 	@Autowired
 	private reviewService reviewService;
+	
+	@Autowired
+	private communityService communityService;
+	
+	@Autowired
+	private contentsService contentsService;
 
 	/* ----------------------------------------- admin 폴더 */
 
@@ -557,8 +567,18 @@ public class Mycontroller {
 
 	/* ----------------------------------------- contents 폴더 */
 	@RequestMapping("/community")
-	public String community(Model model) {
+	public String community(@RequestParam("contents_number") String contents_number,
+							HttpServletRequest request, Model model) {
+		System.out.println(contents_number);
 
+		List<contentsDto> contentsload = contentsService.contentsload(contents_number);
+		List<communityDto> communityload = communityService.communityload(contents_number);
+		
+		model.addAttribute("contentsload", contentsload);
+		model.addAttribute("communityload", communityload);
+		System.out.println(contentsload);
+		System.out.println(communityload);
+		
 		model.addAttribute("mainPage", "contents/community.jsp");
 		return "index";
 	}
