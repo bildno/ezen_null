@@ -27,6 +27,7 @@ import com.study.springboot.dto.reviewDto;
 import com.study.springboot.service.communityService;
 import com.study.springboot.service.contentsService;
 import com.study.springboot.service.faqService;
+import com.study.springboot.service.hostenterService;
 import com.study.springboot.service.memberService;
 import com.study.springboot.service.noticeService;
 import com.study.springboot.service.one2oneService;
@@ -72,6 +73,9 @@ public class Mycontroller {
 	@Autowired
 	private contentsService contentsService;
 
+	@Autowired
+	private hostenterService hostenterService;
+	
 	/* ----------------------------------------- admin 폴더 */
 
 	@RequestMapping("/ad_member")
@@ -621,10 +625,47 @@ public class Mycontroller {
 	
 	@RequestMapping(value="/uploadMultiFileOk", method = RequestMethod.POST)
 	public String uploadMultiFileOk( 
+			@RequestParam("host_name") String host_name_,
+			@RequestParam("room") String host_contents_number_,
+			@RequestParam("host_onerow") String host_onerow_,
+			@RequestParam("host_des") String host_des_,
+			@RequestParam("host_caution") String host_caution_,
+			@RequestParam("host_zip") String host_zip_,
+			@RequestParam("host_location") String host_location_,
+			@RequestParam("host_location_detail") String host_location_detail_,
+			@RequestParam("host_price") String host_price_,
+			@RequestParam("host_bnumber") String host_bnumber_, 
+			@RequestParam("host_headcount") String host_headcount_,
 			@RequestParam(value="user_id", required=false, defaultValue="") String user_id,
 			@RequestParam(value="user_pw", required=false, defaultValue="") String user_pw,
 			@RequestParam(value="filename", required=false) MultipartFile[] filelist,
+			HttpServletRequest request,
 			Model model) {
+		
+		HttpSession session = request.getSession();
+		String member_id = (String) session.getAttribute("member_id");
+		
+		int result = 0;
+		
+		
+		 String host_name = host_name_; 
+		 String host_contents_number = host_contents_number_; 
+		 String host_onerow = host_onerow_; 
+		 String host_des = host_des_; 
+		 String host_caution = host_caution_; 
+		 String host_zip = host_zip_; 
+		 String host_location = host_location_; 
+		 String host_location_detail = host_location_detail_; 
+		 String host_price = host_price_; 
+		 String host_bnumber = host_bnumber_; 
+		 String host_headcount = host_headcount_; 
+		
+		
+		//hostenter 이미지 테이블 따로 설계 
+		
+		
+		
+		
 		
 		System.out.println("filelist:" + filelist);
 		for( MultipartFile file : filelist) {
@@ -652,6 +693,16 @@ public class Mycontroller {
 				e.printStackTrace();
 			}
 			
+		}
+		
+		try {
+			result = hostenterService.insert_hostenter(
+					host_contents_number,
+					host_name,host_des,host_caution,host_zip,
+					host_location,host_location_detail,
+					host_price,member_id,host_bnumber,host_headcount);
+		} catch (Exception e) {
+			// TODO: handle exception
 		}
 		
 		
