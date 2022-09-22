@@ -509,8 +509,9 @@ public class Mycontroller {
 
 		HttpSession session = request.getSession();
 		String member_id = (String) session.getAttribute("member_id");
+		
 		int member_host = (int) session.getAttribute("member_host");
-
+		
 		List<memberDto> member_list = memberService.mypageload(member_id);
 
 		if (member_host == 1) {

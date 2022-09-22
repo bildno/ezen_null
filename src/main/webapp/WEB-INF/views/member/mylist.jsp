@@ -48,7 +48,7 @@
     </div>
     <hr />
     <div class="enter">
-        <input type="button" value="확인" id="review_btn"> 
+        <input type="button" value="확인" id="review_btn" onclick="location.href='/mypage'"> 
         <input type="button" value="취소" id="review_btn" onclick="location.href='/mypage'">
     </div>
     

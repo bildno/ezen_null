@@ -48,6 +48,8 @@
 		<div class="write">
 			<input class="writebtn" type="button" value="글쓰기"
 				onclick="location.href='/one2one_write'">
+			<input class="writebtn" type="button" value="취소"
+				onclick="location.href='/mypage'">
 		</div>
 
 	</div>

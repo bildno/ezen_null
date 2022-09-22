@@ -64,6 +64,24 @@
 	
 	
 }
+
+
+.ho_space_list2 {
+	border: none;
+	border-radius: 5px;
+	width: 70px;
+	padding: 10px;
+	font-size: 13px;
+	background-color: rgb(238, 238, 238);
+	font-family: 'Noto Sans KR';
+}
+
+.ho_space_list{
+	display:flex;
+	flex-direction:row-reverse;
+	margin-top:100px;
+}
+
 #space_exp{
 width : 250px;
 resize: none;	

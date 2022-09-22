@@ -31,8 +31,13 @@
 			<div>
 				<textarea id="space_exp" rows="" cols="" readonly="readonly">asdas</textarea>
 			</div>
-		</div>
-
-
+		</div>	
 	</div>
+	
+			<div class="ho_space_list">
+		    <input class ="ho_space_list2" type="button" value="취소"
+			onclick="location.href='/host'">	
+		</div>
+		
+		
 </div>
