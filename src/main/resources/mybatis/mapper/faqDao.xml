@@ -5,10 +5,10 @@
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
     
-<mapper namespace="com.study.springboot.dao.InoticeDao">
+<mapper namespace="com.study.springboot.dao.IfaqDao">
 
-<select id="notice" resultType="com.study.springboot.dto.noticeDto">
-	select * from notice
+<select id="faq" resultType="com.study.springboot.dto.faqDto">
+	select * from faq
 </select>
 
 
