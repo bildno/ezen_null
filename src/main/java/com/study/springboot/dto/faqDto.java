@@ -1,5 +1,16 @@
 package com.study.springboot.dto;
 
-public class faqDto {
+import java.sql.Date;
 
+import lombok.Data;
+
+@Data
+public class faqDto {
+	
+	private String faq_number;
+	private String faq_title;
+	private String faq_content;
+	private String faq_contents_number;
+	private Date faq_date;
+	
 }
