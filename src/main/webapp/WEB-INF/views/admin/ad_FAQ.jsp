@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <link rel="stylesheet" href="css/admin/ad_FAQ.css">
 
 <div class="ad_wrap">
@@ -49,19 +52,21 @@
                             <tr>
                                 <th>번호</th>
                                 <th>제목</th>
-                                <th>작성자</th>
                                 <th>작성일시</th>
-                                <th>삭제</th>
+                                <th>관리</th>
                             </tr>
+                            
+                            <c:forEach var="dto" items="${ faq_list }">
                             <tr>
-                                <td>1</td>
-                                <td>효율적인 이용방법 3가지</td>
-                                <td>홀깅동</td>
-                                <td>2022-09-15</td>
+                                <td>${ dto.faq_number }</td>
+                                <td>${ dto.faq_title }</td>
+                                <td>${ dto.faq_date }</td>
                                 <td>
+                                    <button class="btn_FAQdel" onclick="location.href='/ad_FAQ_write'">작성</button>
                                     <button class="btn_FAQdel">삭제</button>
                                 </td>
                             </tr>
+                            </c:forEach>
                         </table>
                     </div>
                     <div class="pagenavi">
@@ -72,7 +77,7 @@
                                 </a></li>
                                 <li class="page-item"><a class="page-link" href="#">1</a></li>
                                 <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="/ad_FAQ_write">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
                                 <li class="page-item"><a class="page-link" href="#">4</a></li>
                                 <li class="page-item"><a class="page-link" href="#">5</a></li>
                                 <li class="page-item"><a class="page-link" href="#"

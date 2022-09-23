@@ -10,5 +10,16 @@
 	<select id="faq" resultType="com.study.springboot.dto.faqDto">
 		select * from faq
 	</select>
+	
+	<insert id="faq_write">
+		insert into faq 
+		values(#{ faq_number }, #{ faq_title }, #{ faq_content }, #{ faq_contents_number }, #{ faq_date });
+	</insert>
+	
 
+	<!-- FAQ_NUMBER NUMBER(20) PRIMARY KEY,
+    FAQ_TITLE VARCHAR(50),
+    FAQ_CONTENT VARCHAR(500),
+    FAQ_CONTENTS_NUMBER NUMBER(20) REFERENCES CONTENTS(CONTENTS_NUMBER),     
+    FAQ_DATE DATE -->
 </mapper>

@@ -1,14 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
     
-    <link rel="stylesheet" href="css/member/mycheck.css">
+<link rel="stylesheet" href="css/member/mycheck.css">
 
 <!-- calendar를 위한 라이브러리들 지우면 안됨 -->
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
 <script src='https://fullcalendar.io/releases/fullcalendar/3.9.0/lib/moment.min.js'></script>
 <link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css'rel='stylesheet'/>
 <link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.print.css' rel='stylesheet' media='print'/>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js'></script>
+
 
 
 <script type="text/javascript">
@@ -22,10 +25,12 @@ $(document).ready(function(){
 	        custom2: {
 	          text: '출석체크하기',
 	          id: 'check',
-	          click: function() {	
+	          click: function() {
+	        	  
                     // ajax 통신으로 출석 정보 저장하기 
                     // POST "/users/attendances" -> { status: "success", date:"2018-07-01"}
                     // 통신 성공시 버튼 바꾸고, property disabled 만들기 
+                    
 	          }
 	        }
 	    },
