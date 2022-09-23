@@ -12,7 +12,7 @@ public interface IreplyDao {
 	public List<replyDto>replyView(String community_number,String member_id);
 	
 	
-	
+	public int replyInsert(replyDto dto);
 	
 //	public String community_hit(String contents_number);
 	

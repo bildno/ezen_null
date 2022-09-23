@@ -21,6 +21,24 @@ public class replyService {
 	}
 	
 	//댓글 달기
+	public int replyInsert(String reply_content, String reply_member_id, String reply_community_number, String reply_number) {
+		
+		int result = 0;
+		replyDto dto = new replyDto();
+		dto.setReply_content(reply_content);
+		dto.setReply_member_id(reply_member_id);
+		dto.setReply_community_number(reply_community_number);
+		dto.setReply_number(reply_number);
+		
+		try {
+			result = ireplyDao.replyInsert(dto);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+		
+		
+	}
 
 	
 }
