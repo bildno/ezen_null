@@ -154,46 +154,7 @@
 			<input type="text" placeholder="${dto.hostenter_caution }"
 				id="host_input">
 		</div>
-
-		<div id="carouselExampleFade" class="carousel slide carousel-fade"
-			data-ride="carousel">
-			<div class="carousel-inner">
-				<div class="carousel-item active">
-					<img src="${dto.hostenter_img }" class="d-block w-100" alt="..."
-						style="height: 650px;">
-				</div>
-				<div class="carousel-item">
-					<img src="${dto.hostenter_img }" class="d-block w-100" alt="..."
-						style="height: 650px;">
-				</div>
-				<!-- <div class="carousel-item">
-					<div class="carousel-caption" style="margin-bottom: 120px;">
-						carousel-caption이라는 예약어 따로 추가시킴
-						<p id="intro">Space Ground는 누구나 즐길 수 있는</p>
-						<h1 id="info">복합 커뮤니티 & 공간대여 플랫폼입니다</h1>
-						<div class="playstore">
-							<img src="img/google.png" alt="android" id="google"
-								onclick="playstore();"> <img src="img/apple.png"
-								alt="apple" id="apple" onclick="applestore();">
-						</div>
-					</div> -->
-					<img src="${dto.hostenter_img }" class="d-block w-100" alt="..."
-						style="height: 650px;">
-				</div>
-			</div>
-			<button class="carousel-control-prev" type="button"
-				data-target="#carouselExampleFade" data-slide="prev">
-				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				<span class="sr-only">Previous</span>
-			</button>
-			<button class="carousel-control-next" type="button"
-				data-target="#carouselExampleFade" data-slide="next">
-				<span class="carousel-control-next-icon" aria-hidden="true"></span>
-				<span class="sr-only">Next</span>
-			</button>
-		</div>
-
-
+	
 		<div class="space_host_img">
 			<h3 id="space_host_h3">이미지</h3>
 			<label for="imgFile">파일선택</label> <input type="file" id="imgFile"
