@@ -108,28 +108,6 @@ public class Mycontroller {
 		model.addAttribute("mainPage", "admin/ad_one2one.jsp");
 		return "index";
 	}
-
-	@RequestMapping("/ad_notice")
-	public String ad_notice(Model model) {
-
-		model.addAttribute("mainPage", "admin/ad_notice.jsp");
-		return "index";
-	}
-
-	@RequestMapping("/ad_FAQ")
-	public String ad_FAQ(Model model) {
-
-		model.addAttribute("mainPage", "admin/ad_FAQ.jsp");
-		return "index";
-	}
-
-	@RequestMapping("/ad_host_info")
-	public String ad_host_info(Model model) {
-
-		model.addAttribute("mainPage", "admin/ad_host_info.jsp");
-		return "index";
-	}
-
 	@RequestMapping("/ad_one2one_answer")
 	public String ad_one2one_answer(Model model) {
 
@@ -137,6 +115,12 @@ public class Mycontroller {
 		return "index";
 	}
 
+	@RequestMapping("/ad_notice")
+	public String ad_notice(Model model) {
+
+		model.addAttribute("mainPage", "admin/ad_notice.jsp");
+		return "index";
+	}
 	@RequestMapping("/ad_notice_write")
 	public String ad_notice_write(Model model) {
 
@@ -144,10 +128,25 @@ public class Mycontroller {
 		return "index";
 	}
 
+	@RequestMapping("/ad_FAQ")
+	public String ad_FAQ(HttpServletRequest request, Model model) {
+		List<faqDto> faq_list = faqService.faq();
+		request.setAttribute("faq_list", faq_list);
+
+		model.addAttribute("mainPage", "admin/ad_FAQ.jsp");
+		return "index";
+	}
 	@RequestMapping("/ad_FAQ_write")
 	public String ad_FAQ_write(Model model) {
 
 		model.addAttribute("mainPage", "admin/ad_FAQ_write.jsp");
+		return "index";
+	}
+
+	@RequestMapping("/ad_host_info")
+	public String ad_host_info(Model model) {
+
+		model.addAttribute("mainPage", "admin/ad_host_info.jsp");
 		return "index";
 	}
 

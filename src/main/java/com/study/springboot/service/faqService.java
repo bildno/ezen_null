@@ -1,5 +1,6 @@
 package com.study.springboot.service;
 
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,4 +22,11 @@ public class faqService {
 		return faq;
 	}
 
+	public int qna_write(faqDto dto) {
+		int result = ifaqDao.faq_write(dto);
+		return result;
+	}
+	
+	
+	
 }

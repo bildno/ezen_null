@@ -11,6 +11,5 @@ public interface IcommunityDao {
 
 	public List<communityDto> communityload(String contents_number);
 	
-//	public String community_hit(String contents_number);
 	
 }

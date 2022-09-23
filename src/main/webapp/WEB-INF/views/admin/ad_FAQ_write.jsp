@@ -71,11 +71,11 @@
 			</div>
 			<div class="btn_revise">
 			<input class="ad_btn_revise" type="button" value="작성"
-				onclick="location.href='/ad_notice'">
+				onclick="location.href='/ad_FAQ'">
 			<input class="ad_btn_revise" type="button" value="수정"
-				onclick="location.href='/ad_notice'">
+				onclick="location.href='/ad_FAQ'">
 				<input class="ad_btn_revise" type="button" value="삭제"
-				onclick="location.href='/ad_notice'">
+				onclick="location.href='/ad_FAQ'">
 			</div>
 
 		</div>
