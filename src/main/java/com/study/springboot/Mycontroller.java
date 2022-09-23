@@ -28,6 +28,7 @@ import com.study.springboot.service.communityService;
 import com.study.springboot.service.contentsService;
 import com.study.springboot.service.faqService;
 import com.study.springboot.service.hostenterService;
+import com.study.springboot.service.hostenter_imgDaoService;
 import com.study.springboot.service.memberService;
 import com.study.springboot.service.noticeService;
 import com.study.springboot.service.one2oneService;
@@ -75,6 +76,9 @@ public class Mycontroller {
 
 	@Autowired
 	private hostenterService hostenterService;
+	
+	@Autowired
+	private hostenter_imgDaoService hostenter_imgDaoService;
 	
 	/* ----------------------------------------- admin 폴더 */
 
@@ -630,9 +634,9 @@ public class Mycontroller {
 			@RequestParam("host_onerow") String host_onerow_,
 			@RequestParam("host_des") String host_des_,
 			@RequestParam("host_caution") String host_caution_,
-			@RequestParam("host_zip") String host_zip_,
-			@RequestParam("host_location") String host_location_,
-			@RequestParam("host_location_detail") String host_location_detail_,
+			@RequestParam("zip") String host_zip_,
+			@RequestParam("addr1") String host_location_,
+			@RequestParam("addr2") String host_location_detail_,
 			@RequestParam("host_price") String host_price_,
 			@RequestParam("host_bnumber") String host_bnumber_, 
 			@RequestParam("host_headcount") String host_headcount_,
@@ -649,16 +653,27 @@ public class Mycontroller {
 		
 		
 		 String host_name = host_name_; 
+		 System.out.println(host_name);
 		 String host_contents_number = host_contents_number_; 
+		 System.out.println(host_contents_number);
 		 String host_onerow = host_onerow_; 
+		 System.out.println(host_onerow);
 		 String host_des = host_des_; 
+		 System.out.println(host_des);
 		 String host_caution = host_caution_; 
+		 System.out.println(host_caution);
 		 String host_zip = host_zip_; 
+		 System.out.println(host_zip);
 		 String host_location = host_location_; 
+		 System.out.println(host_location);
 		 String host_location_detail = host_location_detail_; 
+		 System.out.println(host_location_detail);
 		 String host_price = host_price_; 
+		 System.out.println(host_price);
 		 String host_bnumber = host_bnumber_; 
+		 System.out.println(host_bnumber);
 		 String host_headcount = host_headcount_; 
+		 System.out.println(host_headcount);
 		
 		
 		//hostenter 이미지 테이블 따로 설계 
@@ -674,41 +689,55 @@ public class Mycontroller {
 			String upload_url = fileUploadService.restore(file);
 			// 한 개의 파일 처리코드를 여기에 
 			System.out.println( "upload_url:" + upload_url );
-			
-			if( upload_url != null ) {
-				if( upload_url.length() > 0 ) {
-					System.out.println("업로드 성공!");
-				}else {
-					System.out.println("업로드 실패!");	
-				}
-			}else {
-				System.out.println("업로드 실패!");
-			}
-			
-			model.addAttribute("upload_url", upload_url);
-			
 			try {
-				Thread.sleep(5000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
+				result = hostenterService.insert_hostenter(
+						host_contents_number,host_name,
+						host_des,host_caution,
+						host_zip,host_location,
+						host_location_detail,host_price,
+						member_id,host_bnumber,
+						host_headcount,host_onerow);
+				System.out.println(result +"1번");
+			} catch (Exception e) {
+				// TODO: handle exception
 			}
+			
+			if(result == 1) {
+				if( upload_url != null ) {
+					if( upload_url.length() > 0 ) {
+						result = hostenter_imgDaoService.hostenter_img_up(host_name_,member_id,upload_url);
+						System.out.println("업로드 성공!");
+						model.addAttribute("mainPage","host/host.jsp");
+						return "index";
+						
+					}else {
+						System.out.println("업로드 실패!");	
+						model.addAttribute("mainPage","host/enter_host.jsp");
+						return "index";
+					}
+				}else {
+					System.out.println("업로드 실패!");
+					model.addAttribute("mainPage","host/enter_host.jsp");
+					return "index";
+				}
+				
+				
+			}else {
+				model.addAttribute("mainPage","host/enter_host.jsp");
+				return "index";
+			}
+			
+			
+		
 			
 		}
 		
-		try {
-			result = hostenterService.insert_hostenter(
-					host_contents_number,
-					host_name,host_des,host_caution,host_zip,
-					host_location,host_location_detail,
-					host_price,member_id,host_bnumber,host_headcount);
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-		
-		
-		
+	
 		model.addAttribute("mainPage","host/enter_host.jsp");
-		return "index"; //fileUploadForm.jsp 디스패치됨.
+		return "index";
+		
+		
+		 
 	}
 	
 	

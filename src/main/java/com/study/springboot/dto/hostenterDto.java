@@ -15,7 +15,7 @@ public class hostenterDto {
 	private String hostenter_price;
 	private String hostenter_headcount;
 	private String hostenter_member_id;
-	private String hostenter_bumber;
+	private String hostenter_bnumber;
 	private String hostenter_onerow;
 	
 	

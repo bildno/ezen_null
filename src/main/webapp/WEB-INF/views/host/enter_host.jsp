@@ -156,10 +156,10 @@
             <div class="small">
              	<h3 id="small">*최초 등록 이후 변경될 수 없습니다(고객센터를 통해 변경 가능)</h3>   
             </div>
-            <input type="text" name="zip" id="adr_input" placeholder="우편번호 입력">
-            <button type="button" onclick="openZipSearch()" id="openzip" name="host_zip">검색</button><br>
-            <input type="text" name="addr1" id="host_input" readonly class="addr1" name="host_location">
-            <input type="text" name="addr2" id="host_input" class="addr2" placeholder="상세주소 입력란입니다" name="host_location_detail">
+            <input type="text" name="zip" id="adr_input" placeholder="우편번호 입력" >
+            <button type="button" onclick="openZipSearch()" id="openzip" >검색</button><br>
+            <input type="text" name="addr1" id="host_input" readonly class="addr1" >
+            <input type="text" name="addr2" id="host_input" class="addr2" placeholder="상세주소 입력란입니다" >
         </div>
 
         <div class="space_host_price">

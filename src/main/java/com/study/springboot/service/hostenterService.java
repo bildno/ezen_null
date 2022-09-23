@@ -24,6 +24,7 @@ public class hostenterService {
 			String hostenter_price,
 			String hostenter_member_id,
 			String hostenter_bumber,
+			String hostenter_headcount,
 			String hostenter_onerow) {
 		
 		int result = 0;
@@ -33,11 +34,12 @@ public class hostenterService {
 		dto.setHostenter_description(hostenter_description);
 		dto.setHostenter_caution(hostenter_caution);
 		dto.setHostenter_zipcode(hostenter_zipcode);
-		dto.setHostenter_location(hostenter_location_detail);
-		dto.setHostenter_location(hostenter_location_detail);
+		dto.setHostenter_location(hostenter_location);
+		dto.setHostenter_location_detail(hostenter_location_detail);
 		dto.setHostenter_price(hostenter_price);
 		dto.setHostenter_member_id(hostenter_member_id);
-		dto.setHostenter_bumber(hostenter_bumber);
+		dto.setHostenter_bnumber(hostenter_bumber);
+		dto.setHostenter_headcount(hostenter_headcount);
 		dto.setHostenter_onerow(hostenter_onerow);
 		
 		try {
