@@ -6,8 +6,8 @@
     
     <mapper namespace="com.study.springboot.dao.Ihostenter_imgDao">
     	
-    	<insert id="hostenter_img_up">
-    		insert into hostenter_img values(hostenter_img_idx.nextval,#{hostenter_img_name},#{hostenter_member_id},#{hostenter_img})
+    	<insert id="title_img_up">
+    		insert into title_img values(title_img_idx.nextval,#{title_img_url},#{title_img_member_id},#{title_img_contents_name})
     	</insert>
     
     </mapper>

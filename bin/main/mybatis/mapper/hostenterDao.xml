@@ -25,5 +25,9 @@
     		
     	</insert>
     
+    <select id="select_space" resultType="com.study.springboot.dto.hostenterDto">
+    	select * from hostenter where hostenter_member_id = #{param1}
+    </select>
+    
     
     </mapper>

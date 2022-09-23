@@ -8,8 +8,6 @@
     	
     	<insert id="hostenter_img_up">
     		insert into hostenter_img values(hostenter_img_idx.nextval,#{hostenter_img_name},#{hostenter_member_id},#{hostenter_img})
-    	
     	</insert>
-    
     
     </mapper>

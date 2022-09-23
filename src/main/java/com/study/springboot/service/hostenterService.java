@@ -1,5 +1,7 @@
 package com.study.springboot.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -57,5 +59,9 @@ public class hostenterService {
 	}
 	
 	
-	
+	public List<hostenterDto> select_space(String member_id){
+		 List<hostenterDto> enter_list = ihostenterDao.select_space(member_id);
+		
+		return enter_list;
+	}
 }

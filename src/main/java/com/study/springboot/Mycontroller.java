@@ -19,6 +19,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import com.study.springboot.dto.communityDto;
 import com.study.springboot.dto.contentsDto;
 import com.study.springboot.dto.faqDto;
+import com.study.springboot.dto.hostenterDto;
 import com.study.springboot.dto.memberDto;
 import com.study.springboot.dto.noticeDto;
 import com.study.springboot.dto.one2oneDto;
@@ -532,7 +533,9 @@ public class Mycontroller {
 		int member_host = (int) session.getAttribute("member_host");
 		
 		List<memberDto> member_list = memberService.mypageload(member_id);
-
+		
+		
+		
 		if (member_host == 1) {
 			model.addAttribute("member_list", member_list);
 			model.addAttribute("mainPage", "host/host.jsp");
@@ -545,8 +548,17 @@ public class Mycontroller {
 
 	/* 공간대여 */
 	@RequestMapping("/spacelist_host")
-	public String spacelist_host(Model model) {
-
+	public String spacelist_host(
+			HttpServletRequest request,
+			Model model) {
+		
+		HttpSession session = request.getSession();
+		String member_id = (String) session.getAttribute("member_id");
+		
+		List<hostenterDto> enter_list = hostenterService.select_space(member_id);
+		
+		
+		model.addAttribute("enter_list",enter_list);
 		model.addAttribute("mainPage", "host/spacelist_host.jsp");
 		return "index";
 	}
@@ -676,8 +688,7 @@ public class Mycontroller {
 			@RequestParam("host_price") int host_price_,
 			@RequestParam("host_bnumber") int host_bnumber_, 
 			@RequestParam("host_headcount") int host_headcount_,
-			@RequestParam(value="user_id", required=false, defaultValue="") String user_id,
-			@RequestParam(value="user_pw", required=false, defaultValue="") String user_pw,
+			@RequestParam(value="filename2", required=false) MultipartFile File_title,
 			@RequestParam(value="filename", required=false) MultipartFile[] filelist,
 			HttpServletRequest request,
 			Model model) {
@@ -711,7 +722,7 @@ public class Mycontroller {
 		 int host_headcount = host_headcount_; 
 		 System.out.println(host_headcount);
 		
-		
+		 String upload_url_title = fileUploadService.restore(File_title);
 	
 		
 			try {

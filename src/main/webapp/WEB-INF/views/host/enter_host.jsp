@@ -29,7 +29,7 @@
         }
 
         // 이미지 미리보기
-      /*   function readURL(input) {
+         function readURL(input) {
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
                 reader.onload = function (e) {
@@ -39,7 +39,7 @@
             } else {
                 document.getElementById('preview').src = "";
             }
-        } */
+        } 
     </script>
 
 <script>
@@ -93,7 +93,18 @@
         </div>
         
         
+        
+        
 	<form action="uploadMultiFileOk" method="post" enctype="multipart/form-data" onsubmit="return confirmFileExtension(imgFile.value);">
+	
+	  <div class="space_host_img">
+            <h3 id="space_host_h3">대표 이미지</h3>
+            <label for="imgFile2">파일선택</label>
+            <input name="filename2" type="file" id="imgFile2" accept="image/*" onchange="readURL(this);" />
+            <div style="width: 150px;" id="preview"></div>
+        </div>
+	
+	
         <div class="space_host_name">
             <h3 id="space_host_h3">공간명</h3>
             <input type="text" placeholder="고유 업체명을 입력해주세요.ex)하이브 회의실" id="host_input" name="host_name">
