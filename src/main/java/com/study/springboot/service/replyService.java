@@ -21,7 +21,7 @@ public class replyService {
 	}
 	
 	//댓글 달기
-	public int replyInsert(String reply_content, String reply_member_id, String reply_community_number, String reply_number) {
+	public int replyInsert(String reply_content, String reply_member_id, String reply_community_number, int reply_number) {
 		
 		int result = 0;
 		replyDto dto = new replyDto();

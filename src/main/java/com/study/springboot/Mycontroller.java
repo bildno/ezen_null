@@ -13,9 +13,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
+import com.study.springboot.dao.IreplyDao;
 import com.study.springboot.dto.communityDto;
 import com.study.springboot.dto.contentsDto;
 import com.study.springboot.dto.faqDto;
@@ -84,6 +86,11 @@ public class Mycontroller {
 	
 	@Autowired
 	private replyService replyService;
+	
+	@Autowired 
+	private IreplyDao ireplyDao;
+	
+
 	
 	/* ----------------------------------------- admin 폴더 */
 
@@ -625,13 +632,36 @@ public class Mycontroller {
 	
 	
 	@RequestMapping("/community_infoAction")
-	public String community_infoAction(@RequestParam(""))
+	@ResponseBody
+	public String community_infoAction(@RequestParam(value="content", required=false) String reply_content,
+			@RequestParam("reply_idx") int reply_number, 
+			replyDto dto,
+			HttpServletRequest request,Model model) {
+		System.out.println("호출");
+		
+		HttpSession session = request.getSession();
+		String community_number = (String)session.getAttribute("community_number");
+		String member_id = (String)session.getAttribute("member_id");
+		
+		
+		dto.setReply_member_id(member_id);
+		dto.setReply_community_number(community_number);
+		dto.setReply_content(reply_content);
+		dto.setReply_number(reply_number);
+		
+
+			int result = ireplyDao.replyInsert(dto);
+			System.out.println(result);
+
 	
-	
-	
-	
-	
-	
+		if(result !=1) {
+			return "<script> alert('댓글 실패'); location.back(); </script>";
+		} 
+		else {
+			return "<script> alert('댓글 성공'); location.back(); </script>";
+		}
+		
+	}
 	
 	
 

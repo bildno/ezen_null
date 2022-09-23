@@ -11,7 +11,7 @@
 			id="space_icon">
 	</h2>
 	<hr>
-
+	
 	<div class="main">
 		<div class="asidecomm">
 			<div class="section11">
@@ -62,12 +62,14 @@
 						</div>
 					</c:forEach>	
 					</div>
-					
+					<form action="community_infoAction" method="pst">
 					<div >
+					<input type="hidden"  name="reply_idx" />
 						<textarea name="comm_info" id="comm_info" cols="90" rows="2"
 							style="resize: none;" class="com_info2" name="content">게시글 댓글</textarea>
 							<button id="reple_btn" style="float: right;">답글달기</button> 
-					</div>				
+					</div>
+					</form>				
 				</div>
 			</div>
 		</div>
