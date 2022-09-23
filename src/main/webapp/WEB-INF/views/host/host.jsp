@@ -17,7 +17,7 @@
                     <a href="#">사진변경</a>
                 </div><p>
                 <div name="hostname" id="h_name">${dto.member_name }</div><p>
-                <div name="spacename" id="s_name">공간 이름</div>
+
                 <hr>
             </div>
             <div class="hostlist"><p>

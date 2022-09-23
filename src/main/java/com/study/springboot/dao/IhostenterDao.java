@@ -8,4 +8,6 @@ import com.study.springboot.dto.hostenterDto;
 public interface IhostenterDao {
 	
 	public int insert_hostenter(hostenterDto dto);
+	
+	
 }

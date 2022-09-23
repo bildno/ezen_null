@@ -6,20 +6,23 @@
     
     <mapper namespace="com.study.springboot.dao.IhostenterDao">
     	
-    	<insert id="insert_hostenter" parameterType="com.study.springboot.dto.hostenterDto">
-    		insert into hostenter values(hostenter_idx.nextval,
+    	<insert id="insert_hostenter" parameterType="com.study.springboot.dto.hostenterDto">	
+    		insert into hostenter values(
+    		hostenter_idx.nextval,
     		#{hostenter_contents_number},
     		#{hostenter_name},
     		#{hostenter_description},
     		#{hostenter_caution},
     		#{hostenter_zipcode},
     		#{hostenter_location},
-    		#{hostenter_location_detail}
+    		#{hostenter_location_detail},
     		#{hostenter_price},
     		#{hostenter_headcount},
     		#{hostenter_member_id},
     		#{hostenter_bnumber},
-    		#{hostenter_onerow})
+    		#{hostenter_onerow}
+    		)
+    		
     	</insert>
     
     

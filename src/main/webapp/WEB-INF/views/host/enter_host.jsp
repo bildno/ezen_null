@@ -107,11 +107,11 @@
             <h3 id="space_host_h3">공간유형</h3>
             <div class="div_select">
                 <div class="div_ch"><input value="1" type="checkbox" style="zoom:10.5;" name="room"  checked
-                        id="ch" onclick='checkOnlyOne(this)'></div><label id="ch1">파티룸</label>
+                        id="ch" onclick='checkOnlyOne(this)'></div><label id="ch1">액티브룸</label>
                 <div class="div_ch"><input value="2" type="checkbox" style="zoom:10.5;" name="room"  id="ch"
-                        onclick='checkOnlyOne(this)'></div><label id="ch1">엑티브룸</label>
-                <div class="div_ch"><input value="3" type="checkbox" style="zoom:10.5;" name="room"  id="ch"
                         onclick='checkOnlyOne(this)'></div><label id="ch1">슈팅룸</label>
+                <div class="div_ch"><input value="3" type="checkbox" style="zoom:10.5;" name="room"  id="ch"
+                        onclick='checkOnlyOne(this)'></div><label id="ch1">파티룸</label>
                 <div class="div_ch"><input value="4" type="checkbox" style="zoom:10.5;" name="room"  id="ch"
                         onclick='checkOnlyOne(this)'></div><label id="ch1">갤러리룸</label>
             </div>

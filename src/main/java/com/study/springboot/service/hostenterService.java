@@ -9,22 +9,21 @@ import com.study.springboot.dto.hostenterDto;
 @Component
 public class hostenterService {
 
-	
 	@Autowired
 	private IhostenterDao ihostenterDao;
 	
 	public int insert_hostenter(
-			String hostenter_contents_number, 
+			int hostenter_contents_number, 
 			String hostenter_name,
 			String hostenter_description,
 			String hostenter_caution,
 			String hostenter_zipcode,
 		    String hostenter_location, 
 		    String hostenter_location_detail,
-			String hostenter_price,
+			int hostenter_price,
+			int hostenter_headcount,
 			String hostenter_member_id,
-			String hostenter_bumber,
-			String hostenter_headcount,
+			int hostenter_bumber,
 			String hostenter_onerow) {
 		
 		int result = 0;
@@ -37,15 +36,19 @@ public class hostenterService {
 		dto.setHostenter_location(hostenter_location);
 		dto.setHostenter_location_detail(hostenter_location_detail);
 		dto.setHostenter_price(hostenter_price);
+		dto.setHostenter_headcount(hostenter_headcount);
 		dto.setHostenter_member_id(hostenter_member_id);
 		dto.setHostenter_bnumber(hostenter_bumber);
-		dto.setHostenter_headcount(hostenter_headcount);
 		dto.setHostenter_onerow(hostenter_onerow);
+		
+		System.out.println(dto+ "   dasd");
 		
 		try {
 			result = ihostenterDao.insert_hostenter(dto);
+			System.out.println("service " + result); 
 		} catch (Exception e) {
-			// TODO: handle exception
+			System.out.println("실패"); 
+			return result;
 		}
 		
 		
