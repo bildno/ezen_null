@@ -708,8 +708,7 @@ public class Mycontroller {
 					if( upload_url.length() > 0 ) {
 						result = hostenter_imgDaoService.hostenter_img_up(host_name_,member_id,upload_url);
 						System.out.println("업로드 성공!");
-						model.addAttribute("mainPage","host/host.jsp");
-						return "redirect:/mypage_host";
+					
 						
 					}else {
 						System.out.println("업로드 실패!");	
@@ -721,8 +720,7 @@ public class Mycontroller {
 					model.addAttribute("mainPage","host/enter_host.jsp");
 					return "index";
 				}
-				
-				
+
 			}
 			
 
