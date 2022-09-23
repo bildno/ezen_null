@@ -169,7 +169,7 @@
 		<div id="reserve_cancel">
 		 <div id="reserve_cancel2">
 			<input class ="reserve_cancel3" type="button" value="취소"
-			onclick="location.href='/host'">
+			onclick="location.href='/mypage_host'">
 		 </div>
 		</div>
 		

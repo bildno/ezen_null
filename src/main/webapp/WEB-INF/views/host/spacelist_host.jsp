@@ -36,7 +36,7 @@
 	
 			<div class="ho_space_list">
 		    <input class ="ho_space_list2" type="button" value="취소"
-			onclick="location.href='/host'">	
+			onclick="location.href='/mypage_host'">	
 		</div>
 		
 		
