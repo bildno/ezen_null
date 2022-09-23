@@ -604,28 +604,29 @@ public class Mycontroller {
 	@RequestMapping("/community_info")
 	public String community_info(HttpServletRequest request,Model model) {
 
-		System.out.println("zzzcdsadz");
+
 		
 		HttpSession session = request.getSession();
 		
-		System.out.println("gfjhg");
+
 		String community_number = (String)session.getAttribute("community_number");
 		
-		System.out.println("qwewq");
 		String member_id = (String)session.getAttribute("member_id");
 		
 		
 		
 		List<replyDto>replyViewlist = replyService.replyView(community_number,member_id);
 		
-		model.addAttribute("replyView",replyViewlist);
-		
-		System.out.println("ㅇㅇ");
-		
+		model.addAttribute("replyView",replyViewlist);	
 	
 		model.addAttribute("mainPage", "contents/community_info.jsp");
 		return "index";
 	}
+	
+	
+	@RequestMapping("/community_infoAction")
+	public String community_infoAction(@RequestParam(""))
+	
 	
 	
 	

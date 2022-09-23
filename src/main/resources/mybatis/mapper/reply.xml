@@ -10,6 +10,9 @@
 	select * from reply
 </select>
 
-
+<insert id="replyInsert">
+	insert into reply(reply_content,reply_member_id,reply_community_number,reply_number)
+	values(#{reply_content},#{reply_member_id},#{reply_community_number},#{reply_number})
+</insert>
 
 </mapper>    

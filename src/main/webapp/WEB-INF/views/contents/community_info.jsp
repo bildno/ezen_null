@@ -65,7 +65,7 @@
 					
 					<div >
 						<textarea name="comm_info" id="comm_info" cols="90" rows="2"
-							style="resize: none;" class="com_info2">게시글 댓글</textarea>
+							style="resize: none;" class="com_info2" name="content">게시글 댓글</textarea>
 							<button id="reple_btn" style="float: right;">답글달기</button> 
 					</div>				
 				</div>
