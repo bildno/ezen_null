@@ -23,6 +23,7 @@ import com.study.springboot.dto.memberDto;
 import com.study.springboot.dto.noticeDto;
 import com.study.springboot.dto.one2oneDto;
 import com.study.springboot.dto.one2one_answerDto;
+import com.study.springboot.dto.replyDto;
 import com.study.springboot.dto.reviewDto;
 import com.study.springboot.service.communityService;
 import com.study.springboot.service.contentsService;
@@ -33,6 +34,7 @@ import com.study.springboot.service.memberService;
 import com.study.springboot.service.noticeService;
 import com.study.springboot.service.one2oneService;
 import com.study.springboot.service.one2one_answerService;
+import com.study.springboot.service.replyService;
 import com.study.springboot.service.reviewService;
 
 @Controller
@@ -79,6 +81,9 @@ public class Mycontroller {
 	
 	@Autowired
 	private hostenter_imgDaoService hostenter_imgDaoService;
+	
+	@Autowired
+	private replyService replyService;
 	
 	/* ----------------------------------------- admin 폴더 */
 
@@ -574,10 +579,15 @@ public class Mycontroller {
 	/* ----------------------------------------- contents 폴더 */
 	/* 게시글리스트 */
 	@RequestMapping("/community")
-	public String community(@RequestParam("contents_number") String contents_number, HttpServletRequest request,
+	public String community(@RequestParam("contents_number") String contents_number, 
+			@RequestParam(value= "community_number", required=false)String community_number,
+			HttpServletRequest request,
 			Model model) {
-		System.out.println(contents_number);
-
+		
+		
+		request.getSession().setAttribute("community_number", community_number);
+		
+		
 		List<contentsDto> contentsload = contentsService.contentsload(contents_number);
 		List<communityDto> communityload = communityService.communityload(contents_number);
 
@@ -592,11 +602,37 @@ public class Mycontroller {
 
 	/* 게시글내용 */
 	@RequestMapping("/community_info")
-	public String community_info(Model model) {
+	public String community_info(HttpServletRequest request,Model model) {
 
+		System.out.println("zzzcdsadz");
+		
+		HttpSession session = request.getSession();
+		
+		System.out.println("gfjhg");
+		String community_number = (String)session.getAttribute("community_number");
+		
+		System.out.println("qwewq");
+		String member_id = (String)session.getAttribute("member_id");
+		
+		
+		
+		List<replyDto>replyViewlist = replyService.replyView(community_number,member_id);
+		
+		model.addAttribute("replyView",replyViewlist);
+		
+		System.out.println("ㅇㅇ");
+		
+	
 		model.addAttribute("mainPage", "contents/community_info.jsp");
 		return "index";
 	}
+	
+	
+	
+	
+	
+	
+	
 
 	/* 공간대여(일반회원) */
 	@RequestMapping("/spacerent")
