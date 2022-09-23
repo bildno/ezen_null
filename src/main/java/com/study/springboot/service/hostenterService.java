@@ -15,6 +15,7 @@ public class hostenterService {
 	private IhostenterDao ihostenterDao;
 	
 	public int insert_hostenter(
+			String hostenter_title_img,
 			int hostenter_contents_number, 
 			String hostenter_name,
 			String hostenter_description,
@@ -30,6 +31,7 @@ public class hostenterService {
 		
 		int result = 0;
 		hostenterDto dto = new hostenterDto();
+		dto.setHostenter_title_img(hostenter_title_img);
 		dto.setHostenter_contents_number(hostenter_contents_number);
 		dto.setHostenter_name(hostenter_name);
 		dto.setHostenter_description(hostenter_description);

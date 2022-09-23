@@ -9,6 +9,7 @@
     	<insert id="insert_hostenter" parameterType="com.study.springboot.dto.hostenterDto">	
     		insert into hostenter values(
     		hostenter_idx.nextval,
+    		#{hostenter_title_img},
     		#{hostenter_contents_number},
     		#{hostenter_name},
     		#{hostenter_description},

@@ -9,7 +9,10 @@
 #space_icon{
     width: 30px;
 }
-
+#title_img{
+	margin-bottom: 20px;
+	border-radius: 5px;
+}
 /* 컨테이너 - 부트스트랩 */
 #space_host_h1{
     font-family: 'Do Hyeon', sans-serif;

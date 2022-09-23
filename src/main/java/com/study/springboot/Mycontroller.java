@@ -20,6 +20,7 @@ import com.study.springboot.dto.communityDto;
 import com.study.springboot.dto.contentsDto;
 import com.study.springboot.dto.faqDto;
 import com.study.springboot.dto.hostenterDto;
+import com.study.springboot.dto.hostenter_imgDto;
 import com.study.springboot.dto.memberDto;
 import com.study.springboot.dto.noticeDto;
 import com.study.springboot.dto.one2oneDto;
@@ -85,6 +86,8 @@ public class Mycontroller {
 	
 	@Autowired
 	private replyService replyService;
+	
+
 	
 	/* ----------------------------------------- admin 폴더 */
 
@@ -535,7 +538,6 @@ public class Mycontroller {
 		List<memberDto> member_list = memberService.mypageload(member_id);
 		
 		
-		
 		if (member_host == 1) {
 			model.addAttribute("member_list", member_list);
 			model.addAttribute("mainPage", "host/host.jsp");
@@ -573,8 +575,18 @@ public class Mycontroller {
 
 	/* 공간상세 */
 	@RequestMapping("/space_info_host")
-	public String space_info_host(Model model) {
-
+	public String space_info_host(
+			HttpServletRequest request,
+			@RequestParam("host_name") String hostenter_img_title,
+			Model model) {
+		HttpSession session = request.getSession();
+		String member_id = (String) session.getAttribute("member_id");
+		
+		
+		List<hostenter_imgDto> img_list = hostenter_imgDaoService.hostenter_img_sel(hostenter_img_title);
+		List<hostenterDto> enter_list = hostenterService.select_space(member_id);
+		model.addAttribute("img_list",img_list);
+		model.addAttribute("enter_list",enter_list);
 		model.addAttribute("mainPage", "host/space_info_host.jsp");
 		return "index";
 	}
@@ -697,7 +709,7 @@ public class Mycontroller {
 		String member_id = (String) session.getAttribute("member_id");
 		
 		int result = 0;
-		
+		int qq = 0;
 		
 		 String host_name = host_name_; 
 		 System.out.println(host_name);
@@ -724,9 +736,12 @@ public class Mycontroller {
 		
 		 String upload_url_title = fileUploadService.restore(File_title);
 	
-		
+	
+		 
+		 
 			try {
 				result = hostenterService.insert_hostenter(
+						upload_url_title,
 						host_contents_number,
 						host_name,
 						host_des,
@@ -778,8 +793,8 @@ public class Mycontroller {
 		}
 		
 		
-		model.addAttribute("mainPage","host/enter_host.jsp");
-		return "index";
+		model.addAttribute("mainPage","host/host.jsp");
+		return "redirect:/mypage_host";
 		
 
 		
