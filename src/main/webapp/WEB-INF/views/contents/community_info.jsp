@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <link rel="stylesheet" href="/css/contents/community_info.css">
 
@@ -53,22 +54,20 @@
 					<textarea name="comm_info" class="contents" readonly="readonly" id="comm_info" cols="90" rows="10"
 						style="resize: none; width: 100%;">게시글 내용</textarea>
 					<hr>
+					
 					<div>
+					<c:forEach var="dtowe" items="${replyView}">
 						<div id="reple">
-							asdas
+							${dtowe.reply_content}
 						</div>
-						<div id="reple">
-							asdas
-						</div>
-						<div id="reple">
-							asdas
-						</div>
+					</c:forEach>	
 					</div>
+					
 					<div >
 						<textarea name="comm_info" id="comm_info" cols="90" rows="2"
 							style="resize: none;" class="com_info2">게시글 댓글</textarea>
 							<button id="reple_btn" style="float: right;">답글달기</button> 
-					</div>						
+					</div>				
 				</div>
 			</div>
 		</div>

@@ -9,5 +9,7 @@
   	<select id="communityload" resultType="com.study.springboot.dto.communityDto">
 		select * from community where community_contents_number = #{ param1 }
 	</select>
+	
+	
 
 </mapper>

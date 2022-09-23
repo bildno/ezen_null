@@ -44,6 +44,7 @@
     color:rgb(37, 49, 109);
     padding: 5px 8px 5px 8px;
     font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 300;
 }
 
 
@@ -136,12 +137,14 @@
 	width: 100%;
     margin-bottom: 10px;
     font-family: 'Noto Sans KR', sans-serif;
+    
 }
 
 #selectbox button {
 	padding: 10px;
 	border-radius: 5px;
 	border: 1px solid rgb(238, 238, 238);
+	font-weight: 300;
 }
 
 #selectbox input {
@@ -168,4 +171,22 @@ community li>.page-link {
 
 #space_icon {
 	width: 30px;
+}
+
+
+#Btn_write{
+	display:flex;
+	flex-direction: row-reverse;
+	margin-right: 10px;
+	margin-top:50px;
+	
+}
+
+#btn_write{
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size: 15px;
+	padding: 10px;
+	border: none;
+	border-radius:5px;
+	font-weight: 300;
 }
