@@ -12,4 +12,8 @@ public interface IfaqDao {
 
 	public List<faqDto> faq();
 	
+	public int faq_write(faqDto dto);
+	
+
+	
 }

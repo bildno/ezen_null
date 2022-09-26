@@ -7,9 +7,13 @@
 <mapper namespace = "com.study.springboot.dao.IreplyDao">
 
 <select id="replyView" resultType="com.study.springboot.dto.replyDto">
-	select * from reply
+	select * from reply where reply_communty_number = #{param1}
 </select>
 
 
+<insert id="replyInsert" parameterType="com.study.springboot.dto.replyDto">
+	insert into reply(reply_content,reply_member_id,reply_communty_number,reply_number)
+	values(#{reply_content},#{reply_member_id},#{reply_community_number},reply_idx.nextval)
+</insert>
 
 </mapper>    
