@@ -11,5 +11,6 @@ import com.study.springboot.dto.faqDto;
 public interface IfaqDao {
 
 	public List<faqDto> faq();
+	public List<faqDto> faqpage( String startRowNum_faq, String endRowNum_faq );
 	
 }

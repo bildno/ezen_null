@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="css/admin/ad_one2one.css">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <div class="ad_wrap">
 	<div class="ad_aside">
@@ -46,78 +47,56 @@
 			</div>
 
 			<div>
+			
 				<p class="txt_primary">
 					총 <em>0</em>건이 검색되었습니다.
 				</p>
 				<table class="search_table">
 					<tr>
 						<th>번호</th>
-						<th>제목</th>
+						<!-- <th>제목</th> -->
+						<th>내용</th>
 						<th>아이디</th>
 						<th>작성일시</th>
 					</tr>
+			<c:forEach var="dto" items="${ one2one_list}" varStatus="">
 					<tr>
-						<td>1</td>
-						<td>도와주세요</td>
-						<td>help119</td>
-						<td>2022-09-15</td>
+						<td>${dto.one2one_number}</td>
+						<%-- <td>${dto.one2one_title}추가해야됨</td> --%>
+						<td>${dto.one2one_content}</td>
+						<td>${dto.one2one_member_id}</td>
+						<td>${dto.one2one_date}</td>
 					</tr>
-					<tr>
-						<td>1</td>
-						<td>도와주세요</td>
-						<td>help119</td>
-						<td>2022-09-15</td>
-					</tr>
-					<tr>
-						<td>1</td>
-						<td>도와주세요</td>
-						<td>help119</td>
-						<td>2022-09-15</td>
-					</tr>
-					<tr>
-						<td>1</td>
-						<td>도와주세요</td>
-						<td>help119</td>
-						<td>2022-09-15</td>
-					</tr>
-					<tr>
-						<td>1</td>
-						<td>도와주세요</td>
-						<td>help119</td>
-						<td>2022-09-15</td>
-					</tr>
-					<tr>
-						<td>1</td>
-						<td>도와주세요</td>
-						<td>help119</td>
-						<td>2022-09-15</td>
-					</tr>
-					<tr>
-						<td>1</td>
-						<td>도와주세요</td>
-						<td>help119</td>
-						<td>2022-09-15</td>
-					</tr>
-
+			</c:forEach>
 				</table>
 			</div>
-			<div class="pagenavi">
-				<nav aria-label="Page navigation example community">
+			<div class="container-fluid">
+				<div class="row" style="justify-content: center; margin-top: 30px;">
 					<ul class="pagination">
-						<li class="page-item"><a class="page-link" href="#"
-							aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
-						</a></li>
-						<li class="page-item"><a class="page-link" href="#">1</a></li>
-						<li class="page-item"><a class="page-link" href="#">2</a></li>
-						<li class="page-item"><a class="page-link"
-							href="/ad_one2one_answer">3</a></li>
-						<li class="page-item"><a class="page-link" href="#">4</a></li>
-						<li class="page-item"><a class="page-link" href="#">5</a></li>
-						<li class="page-item"><a class="page-link" href="#"
-							aria-label="Next"> <span aria-hidden="true">&raquo;</span>
-						</a></li>
+						<li class="page-item <c:if test="${ page == 1 }">disabled</c:if>">
+							<a class="page-link" href="/ad_one2one?page=${page-1}">Previous</a>
+						</li>
+
+						<li class="page-item <c:if test="${ page == 1 }">active</c:if>">
+							<a class="page-link" href="/ad_one2one?page=1">1</a>
+						</li>
+						<li class="page-item <c:if test="${ page == 2 }">active</c:if>">
+							<a class="page-link" href="/ad_one2one?page=2">2</a>
+						</li>
+						<li class="page-item <c:if test="${ page == 3 }">active</c:if>">
+							<a class="page-link" href="/ad_one2one?page=3">3</a>
+						</li>
+						<li class="page-item <c:if test="${ page == 4 }">active</c:if>">
+							<a class="page-link" href="/ad_one2one?page=4">4</a>
+						</li>
+						<li class="page-item <c:if test="${ page == 5 }">active</c:if>">
+							<a class="page-link" href="/ad_one2one?page=5">5</a>
+						</li>
+						<li class="page-item <c:if test="${ page == 5 }">disabled</c:if>">
+							<a class="page-link" href="/ad_one2one?page=${page+1}">Next</a>
+						</li>
 					</ul>
-				</nav>
+				</div>
 			</div>
 		</div>
 

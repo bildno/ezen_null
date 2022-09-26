@@ -9,7 +9,7 @@
 		예약내역을 확인해주세요 ! <img src="/img/service/space_icon.png" alt="space_icon"
 			id="space_icon">
 	</h2>
-	<c:forEach var="dto" items="${reservelist}">
+	<%-- <c:forEach var="dto" items="${reservelist}"> --%>
 	<div class="list">
 		<div id="myreserve_list">
 			<div>
@@ -29,6 +29,6 @@
 			<hr>
 		</div>
 	</div>
-	</c:forEach>
-
+<%-- 	</c:forEach>
+ --%>
 </div>

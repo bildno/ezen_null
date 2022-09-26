@@ -10,6 +10,16 @@
 <select id="faq" resultType="com.study.springboot.dto.faqDto">
 	select * from faq
 </select>
-
+<select id="faqpage" resultType="com.study.springboot.dto.faqDto">
+		SELECT * FROM
+	    (
+	        SELECT 
+	            ROWNUM AS RNUM, faq.*
+	        FROM
+	            faq
+	        ORDER BY faq_date desc
+	    )
+		WHERE RNUM BETWEEN #{param1} AND #{param2}
+	</select>
 
 </mapper>

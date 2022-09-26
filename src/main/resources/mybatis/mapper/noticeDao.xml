@@ -11,5 +11,18 @@
 	select * from notice
 </select>
 
-
+<select id="noticepage" resultType="com.study.springboot.dto.noticeDto">
+		SELECT * FROM
+	    (
+	        SELECT 
+	            ROWNUM AS RNUM, notice.*
+	        FROM
+	            notice
+	        ORDER BY notice_date desc
+	    )
+		WHERE RNUM BETWEEN #{param1} AND #{param2}
+	</select>
+<insert id="notice_write" parameterType="com.study.springboot.dto.noticeDto">
+		insert into notice values(notice_idx.nextval,#{notice_title},#{notice_content},#{notice_contents_number},sysdate)
+	</insert>
 </mapper>

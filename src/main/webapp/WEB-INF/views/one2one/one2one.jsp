@@ -16,7 +16,7 @@
 			id="space_icon">
 	</h2>
 	<div class=contents>
-	<c:forEach var="dto" items="${one2one_list}" varStatus="">
+	<c:forEach var="dto" items="${one2one_list}">
 		<button class="accordion" id="o_num${dto.one2one_number}" value="${dto.one2one_number}" name="one2one_number">
 		<div id="one_list_div">
 		<span id="list_span">

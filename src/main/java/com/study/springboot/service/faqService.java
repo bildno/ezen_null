@@ -22,5 +22,4 @@ public List<faqDto> faq() {
 		return faq;
 	}
 	
-
 }

@@ -22,5 +22,9 @@ public class noticeService {
 		return notice;
 	}
 	
+	public int notice_write(noticeDto dto) {
+		int result = inoticeDao.notice_write(dto);
+		return result;
+	}
 
 }

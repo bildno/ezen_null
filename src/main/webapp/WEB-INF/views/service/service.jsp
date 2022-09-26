@@ -42,22 +42,34 @@
 			</c:forEach>
 				
 	<!-- pagination 부트 스트랩 사용 -->
-	<div class="pagenavi">
-		<nav aria-label="Page navigation example">
-			<ul class="pagination">
-				<li class="page-item"><a class="page-link" href="#"
-					aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
-				</a></li>
-				<li class="page-item"><a class="page-link" href="#">1</a></li>
-				<li class="page-item"><a class="page-link" href="#">2</a></li>
-				<li class="page-item"><a class="page-link" href="#">3</a></li>
-				<li class="page-item"><a class="page-link" href="#">4</a></li>
-				<li class="page-item"><a class="page-link" href="#">5</a></li>
-				<li class="page-item"><a class="page-link" href="#"
-					aria-label="Next"> <span aria-hidden="true">&raquo;</span>
-				</a></li>
-			</ul>
-		</nav>
+	<div class="container-fluid">
+		<div class="row" style="justify-content: center; margin-top:30px;">
+		  <ul class="pagination">
+		    
+		    <li class="page-item <c:if test="${ page_notice == 1 }">disabled</c:if>">
+		    	<a class="page-link" href="/service?page_notice=${page_notice-1}">Previous</a>
+		    </li>
+		    
+		    <li class="page-item <c:if test="${ page_notice == 1 }">active</c:if>">
+		    	<a class="page-link" href="/service?page_notice=1">1</a>
+		    </li>
+		    <li class="page-item <c:if test="${ page_notice == 2 }">active</c:if>">
+		    	<a class="page-link" href="/service?page_notice=2">2</a>
+		    </li>
+		    <li class="page-item <c:if test="${ page_notice == 3 }">active</c:if>">
+		    	<a class="page-link" href="/service?page_notice=3">3</a>
+		    </li>
+		    <li class="page-item <c:if test="${ page_notice == 4 }">active</c:if>">
+		    	<a class="page-link" href="/service?page_notice=4">4</a>
+		    </li>
+		    <li class="page-item <c:if test="${ page_notice == 5 }">active</c:if>">
+		    	<a class="page-link" href="/service?page_notice=5">5</a>
+		    </li>
+		    <li class="page-item <c:if test="${ page_notice == 5 }">disabled</c:if>">
+		    	<a class="page-link" href="/service?page_notice=${page_notice+1}">Next</a>
+		    </li>
+		  </ul>
+		</div> 
 	</div>
 </div>
 
@@ -93,23 +105,35 @@
 			</div>
 		</div>
 	</div>
-	<div class="pagenavi">
-	<nav aria-label="Page navigation example">
-		<ul class="pagination">
-			<li class="page-item"><a class="page-link" href="#"
-				aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
-			</a></li>
-			<li class="page-item"><a class="page-link" href="#">1</a></li>
-			<li class="page-item"><a class="page-link" href="#">2</a></li>
-			<li class="page-item"><a class="page-link" href="#">3</a></li>
-			<li class="page-item"><a class="page-link" href="#">4</a></li>
-			<li class="page-item"><a class="page-link" href="#">5</a></li>
-			<li class="page-item"><a class="page-link" href="#"
-				aria-label="Next"> <span aria-hidden="true">&raquo;</span>
-			</a></li>
-		</ul>
-	</nav>
-</div>
+	<div class="container-fluid">
+		<div class="row" style="justify-content: center; margin-top:30px;">
+		  <ul class="pagination">
+		    
+		    <li class="page-item <c:if test="${ page_faq == 1 }">disabled</c:if>">
+		    	<a class="page-link" href="/service?page_faq=${page_faq-1}">Previous</a>
+		    </li>
+		    
+		    <li class="page-item <c:if test="${ page_faq == 1 }">active</c:if>">
+		    	<a class="page-link" href="/service?page_faq=1">1</a>
+		    </li>
+		    <li class="page-item <c:if test="${ page_faq == 2 }">active</c:if>">
+		    	<a class="page-link" href="/service?page_faq=2">2</a>
+		    </li>
+		    <li class="page-item <c:if test="${ page_faq == 3 }">active</c:if>">
+		    	<a class="page-link" href="/service?page_faq=3">3</a>
+		    </li>
+		    <li class="page-item <c:if test="${ page_faq == 4 }">active</c:if>">
+		    	<a class="page-link" href="/service?page_faq=4">4</a>
+		    </li>
+		    <li class="page-item <c:if test="${ page_faq == 5 }">active</c:if>">
+		    	<a class="page-link" href="/service?page_faq=5">5</a>
+		    </li>
+		    <li class="page-item <c:if test="${ page_faq == 5 }">disabled</c:if>">
+		    	<a class="page-link" href="/service?page_faq=${page_faq+1}">Next</a>
+		    </li>
+		  </ul>
+		</div> 
+	</div>
 </div>
 <!-- pagination 부트 스트랩 사용 -->
 

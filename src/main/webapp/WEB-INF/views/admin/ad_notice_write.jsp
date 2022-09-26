@@ -47,13 +47,17 @@
 		</h2>
 
 		<div class="ad_section">
+		<form method="post" action="/ad_notice_writeAction">
 			<div class="write_tit">공지사항 > 글쓰기</div>
 			<div class="tit">
-				<input type="text" placeholder="제목을 입력하시오." style="width: 100%;">
+				<input type="text" placeholder="제목을 입력하시오." style="width: 100%;"name="notice_title">
+			</div>
+			<div class="tit">
+				<input type="text" placeholder="클래스를 입력하시오." style="width: 100%;"name="notice_contents_number">
 			</div>
 			<div class="form-group">
-				<label for="exampleInputPassword1">Content</label>
-				<textarea class="form-control" name="content" rows="3" id="content"></textarea>
+				<label for="exampleInputPassword1" >Content</label>
+				<textarea class="form-control" name="notice_content" rows="3" id="content"></textarea>
 
 				<!-- include summernote-ko-KR -->
 				<script src="/summernote/lang/summernote-ko-KR.js"></script>
@@ -70,14 +74,14 @@
 
 			</div>
 			<div class="btn_revise">
-			<input class="ad_btn_revise" type="button" value="작성"
+			<input class="ad_btn_revise" type="submit" value="작성"
 				onclick="location.href='/ad_notice'">
 			<input class="ad_btn_revise" type="button" value="수정"
 				onclick="location.href='/ad_notice'">
 				<input class="ad_btn_revise" type="button" value="삭제"
 				onclick="location.href='/ad_notice'">
 			</div>
-
+		</form>
 		</div>
 
 

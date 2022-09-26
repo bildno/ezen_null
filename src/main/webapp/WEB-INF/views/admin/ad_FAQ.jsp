@@ -19,71 +19,82 @@
 		<!-- </div> -->
 	</div>
 	<div class="sectionlist">
-			<h1 id="space_FAQ_h1">도움말 관리</h1>
-			<h2 id="space_FAQ_h2">
-				도움말관리페이지입니다. <img src="/img/service/space_icon.png"
-					alt="space_icon" id="space_icon">
-			</h2>
-                <div class="contents">
-                    <div class="search_box">
-                        <ul class="search_box_ul">
-                            <li>
-                                <p>검색항목</p> 
-                                <select>
-                                    <option value="title">제목</option>
-                                    <option value="name">작성자</option>
-                                </select> 
-                                &nbsp;&nbsp;<input type="text" name="search_contents" id="search_contents">
-                            </li>
-                            </ul>
-                        <div class="search_btn">
-                            <button>검색</button>
-                        </div>
-                    </div>
-            
-                    <div>
-                        <p class="txt_primary">
-                            총 <em>0</em>건이 검색되었습니다.
-                        </p>
-                        <table class="search_table">
-                            <tr>
-                                <th>번호</th>
-                                <th>제목</th>
-                                <th>작성자</th>
-                                <th>작성일시</th>
-                                <th>삭제</th>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>효율적인 이용방법 3가지</td>
-                                <td>홀깅동</td>
-                                <td>2022-09-15</td>
-                                <td>
-                                    <button class="btn_FAQdel">삭제</button>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div class="pagenavi">
-                        <nav aria-label="Page navigation example community">
-                            <ul class="pagination">
-                                <li class="page-item"><a class="page-link" href="#"
-                                    aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
-                                </a></li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="/ad_FAQ_write">3</a></li>
-                                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                <li class="page-item"><a class="page-link" href="#">5</a></li>
-                                <li class="page-item"><a class="page-link" href="#"
-                                    aria-label="Next"> <span aria-hidden="true">&raquo;</span>
-                                </a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
+		<h1 id="space_FAQ_h1">도움말 관리</h1>
+		<h2 id="space_FAQ_h2">
+			도움말관리페이지입니다. <img src="/img/service/space_icon.png" alt="space_icon"
+				id="space_icon">
+		</h2>
+		<div class="contents">
+			<div class="search_box">
+				<ul class="search_box_ul">
+					<li>
+						<p>검색항목</p> <select>
+							<option value="title">제목</option>
+							<option value="name">작성자</option>
+					</select> &nbsp;&nbsp;<input type="text" name="search_contents"
+						id="search_contents">
+					</li>
+				</ul>
+				<div class="search_btn">
+					<button>검색</button>
+				</div>
+			</div>
 
-            </div>
+			<div>
+				<p class="txt_primary">
+					총 <em>0</em>건이 검색되었습니다.
+				</p>
+				<table class="search_table">
+					<tr>
+						<th>번호</th>
+						<th>제목</th>
+						<th>작성자</th>
+						<th>작성일시</th>
+						<th>삭제</th>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>효율적인 이용방법 3가지</td>
+						<td>홀깅동</td>
+						<td>2022-09-15</td>
+						<td>
+							<button class="btn_FAQdel">삭제</button>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="container-fluid">
+				<div class="row" style="justify-content: center; margin-top: 30px;">
+					<ul class="pagination">
+
+						<li class="page-item <c:if test="${ page == 1 }">disabled</c:if>">
+							<a class="page-link" href="/ad_FAQ?page=${page-1}">Previous</a>
+						</li>
+
+						<li class="page-item <c:if test="${ page == 1 }">active</c:if>">
+							<a class="page-link" href="/ad_FAQ?page=1">1</a>
+						</li>
+						<li class="page-item <c:if test="${ page == 2 }">active</c:if>">
+							<a class="page-link" href="/ad_FAQ?page=2">2</a>
+						</li>
+						<li class="page-item <c:if test="${ page == 3 }">active</c:if>">
+							<a class="page-link" href="/ad_FAQ?page=3">3</a>
+						</li>
+						<li class="page-item <c:if test="${ page == 4 }">active</c:if>">
+							<a class="page-link" href="/ad_FAQ?page=4">4</a>
+						</li>
+						<li class="page-item <c:if test="${ page == 5 }">active</c:if>">
+							<a class="page-link" href="/ad_FAQ?page=5">5</a>
+						</li>
+						<li class="page-item <c:if test="${ page == 5 }">disabled</c:if>">
+							<a class="page-link" href="/ad_FAQ?page=${page+1}">Next</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</div>
 	<!-- <div class="ad_section">
             <table class="ad_sectiontb" style="width: 100%">
                 <tr>

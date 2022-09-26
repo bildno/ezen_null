@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="css/admin/ad_notice.css">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <div class="ad_wrap">
 	<div class="ad_aside">
@@ -58,34 +59,51 @@
 						<th>작성일시</th>
 						<th>삭제</th>
 					</tr>
+				<c:forEach var="dto" items="${notice_list}" varStatus="">
 					<tr>
-						<td>1</td>
-						<td>공지입니다</td>
-						<td>Active class</td>
-						<td>2022-09-15</td>
+						<td>${dto.notice_number}</td>
+						<td>${dto.notice_title}</td>
+						<td>${dto.notice_contents_number}</td>
+						<td>${dto.notice_date}</td>
 						<td>
-							<button class="btn_ad_notice">삭제</button>
+							<button class="btn_ad_notice" 
+							onclick="location.href='noticeDelete?num=${dto.notice_number}'">삭제</button>
 						</td>
-
 					</tr>
+					</c:forEach>
 				</table>
 			</div>
-			<div class="pagenavi">
-				<nav aria-label="Page navigation example community">
+			<div>
+			<input type="button" onclick="location.href='/ad_notice_write'" value="글쓰기">
+			</div>
+			<div class="container-fluid">
+				<div class="row" style="justify-content: center; margin-top: 30px;">
 					<ul class="pagination">
-						<li class="page-item"><a class="page-link" href="#"
-							aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
-						</a></li>
-						<li class="page-item"><a class="page-link" href="#">1</a></li>
-						<li class="page-item"><a class="page-link" href="#">2</a></li>
-						<li class="page-item"><a class="page-link" href="/ad_notice_write">3</a></li>
-						<li class="page-item"><a class="page-link" href="#">4</a></li>
-						<li class="page-item"><a class="page-link" href="#">5</a></li>
-						<li class="page-item"><a class="page-link" href="#"
-							aria-label="Next"> <span aria-hidden="true">&raquo;</span>
-						</a></li>
+
+						<li class="page-item <c:if test="${ page == 1 }">disabled</c:if>">
+							<a class="page-link" href="/ad_notice?page=${page-1}">Previous</a>
+						</li>
+
+						<li class="page-item <c:if test="${ page == 1 }">active</c:if>">
+							<a class="page-link" href="/ad_notice?page=1">1</a>
+						</li>
+						<li class="page-item <c:if test="${ page == 2 }">active</c:if>">
+							<a class="page-link" href="/ad_notice?page=2">2</a>
+						</li>
+						<li class="page-item <c:if test="${ page == 3 }">active</c:if>">
+							<a class="page-link" href="/ad_notice?page=3">3</a>
+						</li>
+						<li class="page-item <c:if test="${ page == 4 }">active</c:if>">
+							<a class="page-link" href="/ad_notice?page=4">4</a>
+						</li>
+						<li class="page-item <c:if test="${ page == 5 }">active</c:if>">
+							<a class="page-link" href="/ad_notice?page=5">5</a>
+						</li>
+						<li class="page-item <c:if test="${ page == 5 }">disabled</c:if>">
+							<a class="page-link" href="/ad_notice?page=${page+1}">Next</a>
+						</li>
 					</ul>
-				</nav>
+				</div>
 			</div>
 		</div>
 
