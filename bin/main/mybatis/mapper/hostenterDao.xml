@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    <mapper namespace="com.study.springboot.dao.IhostenterDao">
+    	
+    	<insert id="insert_hostenter" parameterType="com.study.springboot.dto.hostenterDto">	
+    		insert into hostenter values(
+    		hostenter_idx.nextval,
+    		#{hostenter_contents_number},
+    		#{hostenter_name},
+    		#{hostenter_description},
+    		#{hostenter_caution},
+    		#{hostenter_zipcode},
+    		#{hostenter_location},
+    		#{hostenter_location_detail},
+    		#{hostenter_price},
+    		#{hostenter_headcount},
+    		#{hostenter_member_id},
+    		#{hostenter_bnumber},
+    		#{hostenter_onerow}
+    		)
+    		
+    	</insert>
+    
+    <select id="select_space" resultType="com.study.springboot.dto.hostenterDto">
+    	select * from hostenter where hostenter_member_id = #{param1}
+    </select>
+    
+    
+    </mapper>

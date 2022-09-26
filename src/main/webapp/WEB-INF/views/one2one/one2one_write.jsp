@@ -35,6 +35,8 @@
 		<div class="write">
 			<input class="writebtn" type="button" value="문의하기"
 				onclick="location.href='/one2one_writeAction'">
+			<input class="writebtn" type="button" value="취소"
+				onclick="location.href='/one2one'">
 		</div>
 
 	</div>

@@ -10,13 +10,13 @@ import com.study.springboot.dto.reviewDto;
 
 @Component
 public class reviewService {
-	
+
 	@Autowired
 	private IreviewDao ireviewDao;
-	
-	public List<reviewDto> select_review(String member_id){
+
+	public List<reviewDto> select_review(String member_id) {
 		List<reviewDto> reviewlist = ireviewDao.select_review(member_id);
-		
+
 		return reviewlist;
 	}
 

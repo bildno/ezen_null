@@ -9,10 +9,12 @@
   	<select id="communityload" resultType="com.study.springboot.dto.communityDto">
 		select * from community where community_contents_number = #{ param1 }
 	</select>
-
-	<!-- 조회수증가 -->
-<!-- 	<update id="community_hit">
-   		update community set community_hit=community_hit+1 where community_hit=#{ param1 }
-	</update> -->
+	
+	 <select id="community_content" resultType="com.study.springboot.dto.communityDto">
+	 	select * from community where community_number = #{param1}
+	 </select>
+	 
+	
+	
 
 </mapper>

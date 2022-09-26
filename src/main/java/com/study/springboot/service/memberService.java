@@ -14,9 +14,8 @@ public class memberService {
 
 	@Autowired
 	private ImemberDao imemberDao;
-
 	
-	
+//	로그인판별
 	public int login(String member_id, String member_pw) {
 		int result = 0;
 		
@@ -26,21 +25,18 @@ public class memberService {
 		if(count > 0) {
 			result = 1;
 		}
-		
 		return result;
 	}
 	
-	
-	
+//	멤버리스트
 	public List<memberDto> mypageload(String member_id){
 		
 		List<memberDto> memberlist = imemberDao.mypageload(member_id);
 		
 		return memberlist;
-		
 	}
 	
-	
+//	아이디찾기
 	public String idfind(String member_name,String member_phone) {
 		
 		String idfind = imemberDao.idfind(member_name,member_phone);
@@ -48,6 +44,7 @@ public class memberService {
 		return idfind;
 	}
 	
+//	비밀번호찾기
 	public String select_pw(String member_id, String member_name) {
 		
 		String member_pw = imemberDao.select_pw(member_id, member_name);
@@ -79,14 +76,16 @@ public class memberService {
 		return phone_change;
 	}
 	
+//	비밀번호변경
 	public int update_pw(String member_id, String member_pw) {
 		
-		int update_pw = imemberDao.update_pw(member_id,member_pw);
+		int update_pw = imemberDao.update_pw(member_id, member_pw);
 		
 		return update_pw;
 		
 	}
 	
+//	호스트판별
 	public int host_find(String member_id) {
 		
 		int member_host = imemberDao.host_find(member_id);
@@ -94,6 +93,7 @@ public class memberService {
 		return member_host;
 	}
 	
+//	회원가입
 	public int join_member(String member_id, String member_pw, String member_email, String member_phone, String member_gender, String member_name, String member_host) {
 		
 		int result = 0;
@@ -112,8 +112,6 @@ public class memberService {
 			
 			e.printStackTrace();
 		}
-		
 		return result;
-		
 	}
 }

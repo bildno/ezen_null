@@ -135,7 +135,7 @@
 </div>
 
 <div id="banner">
-	<!-- <video src="/img/light.mp4" muted autoplay loop> -->
+	<video src="/img/light.mp4" muted autoplay loop>
 	</video>
 	<h1 class="banner_ad">지금 바로</h1>
 	<h2 class="banner_ad2">4개의 클래스와 공간에서 즐겨보세요</h2>

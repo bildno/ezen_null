@@ -13,4 +13,8 @@ public interface IfaqDao {
 	public List<faqDto> faq();
 	public List<faqDto> faqpage( String startRowNum_faq, String endRowNum_faq );
 	
+	public int faq_write(faqDto dto);
+	
+
+	
 }

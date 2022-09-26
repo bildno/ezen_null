@@ -130,23 +130,14 @@
         <div class="space_host_img">
             <h3 id="space_host_h3">이미지</h3>
             <label for="imgFile">파일선택</label>
-            <input type="file" id="imgFile" onchange="readURL(this);" required multiple />
+            <input type="file" id="imgFile"  required multiple="multiple" />
             <img id="preview" style="width: 150px;" />
             <br />
             <label for="imgFile2">업로드</label>
             <input type="button" onClick="confirmFileExtension(imgFile.value);" value="업로드" id="imgFile2" />
         </div>
 
-        <div class="space_host_location">
-            <h3 id="space_host_h3">주소</h3>
-            <div class="small">
-                <h3 id="small">*최초 등록 이후 변경될 수 없습니다(고객센터를 통해 변경 가능)</h3>
-            </div>
-            <input type="text" name="zip" id="adr_input" placeholder="우편번호 입력">
-            <button type="button" onclick="openZipSearch()" id="openzip">검색</button><br>
-            <input type="text" name="addr1" id="host_input" readonly class="addr1">
-            <input type="text" name="addr2" id="host_input" class="addr2" placeholder="상세주소 입력란입니다">
-        </div>
+
 
         <div class="space_host_price">
             <h3 id="space_host_h3">가격</h3>

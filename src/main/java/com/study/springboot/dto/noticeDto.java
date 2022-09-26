@@ -13,8 +13,4 @@ public class noticeDto {
 	private String notice_contents_number;
 	private Date notice_date;
 	
-	
-	
 }
-
-

@@ -49,7 +49,7 @@
 				</div>
 			</div>
 			<div id="btn_box">
-				<button style="right: 0; margin-left: 50px;">확인</button>
+				<button style="right: 0; margin-left: 50px;" onclick="location.href='/mylist'">확인</button>
 				<button>리뷰 수정</button>
 			</div>
 		</div>

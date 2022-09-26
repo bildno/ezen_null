@@ -14,17 +14,21 @@ public class communityService {
 	@Autowired
 	private IcommunityDao icommunityDao;
 	
+	
+	//커뮤니티 리스트
 	public List<communityDto> communityload(String contents_number) {
 
 		List<communityDto> communityload = icommunityDao.communityload(contents_number);
 
 		return communityload;
-
 	}
 	
-//	public int community_hit(int contents_number) {
-//		int community_hit = icommunityDao.community_hit(contents_number);
-//		return community_hit;
-//	}
-
+	//커뮤니티 글
+	public List<communityDto> community_content(String community_number) {
+		
+		List<communityDto> community_content = icommunityDao.community_content(community_number);
+		
+		return community_content;
+	}
+	
 }

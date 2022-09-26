@@ -180,16 +180,7 @@ input[id="ch"]:checked{
     border: none;
     border-radius: 5px;
 }
-.space_host_img input[type="button"]{
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip:rect(0,0,0,0);
-    border: 0;
-}
+
 #imgFile{
     width: 100px;
     height: 50px;

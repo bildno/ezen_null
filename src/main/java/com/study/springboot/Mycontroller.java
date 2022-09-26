@@ -7,15 +7,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
-import com.study.springboot.dao.IadminDao;
-import com.study.springboot.dao.IfaqDao;
-import com.study.springboot.dao.InoticeDao;
-import com.study.springboot.dto.adminDto;
+import com.study.springboot.dao.IreplyDao;
 import com.study.springboot.dto.communityDto;
 import com.study.springboot.dto.contentsDto;
 import com.study.springboot.dto.faqDto;
@@ -23,15 +24,18 @@ import com.study.springboot.dto.memberDto;
 import com.study.springboot.dto.noticeDto;
 import com.study.springboot.dto.one2oneDto;
 import com.study.springboot.dto.one2one_answerDto;
+import com.study.springboot.dto.replyDto;
 import com.study.springboot.dto.reviewDto;
-import com.study.springboot.service.adminService;
 import com.study.springboot.service.communityService;
 import com.study.springboot.service.contentsService;
 import com.study.springboot.service.faqService;
+import com.study.springboot.service.hostenterService;
+import com.study.springboot.service.hostenter_imgDaoService;
 import com.study.springboot.service.memberService;
 import com.study.springboot.service.noticeService;
 import com.study.springboot.service.one2oneService;
 import com.study.springboot.service.one2one_answerService;
+import com.study.springboot.service.replyService;
 import com.study.springboot.service.reviewService;
 
 @Controller
@@ -51,28 +55,39 @@ public class Mycontroller {
 		model.addAttribute("mainPage", "main.jsp");
 		return "index";
 	}
-	
+
 	@Autowired
 	private noticeService noticeService;
-	@Autowired
-	private faqService faqService;
-	
+
 	@Autowired
 	private one2oneService one2oneService;
-	
+
+	@Autowired
+	private faqService faqService;
+
 	@Autowired
 	private one2one_answerService one2one_answerService;
-	
+
 	@Autowired
 	private reviewService reviewService;
-	
+
 	@Autowired
 	private communityService communityService;
-	
+
 	@Autowired
 	private contentsService contentsService;
+
 	@Autowired
-	private adminService adminService;
+	private hostenterService hostenterService;
+
+	@Autowired
+	private hostenter_imgDaoService hostenter_imgDaoService;
+
+	@Autowired
+	private replyService replyService;
+
+	@Autowired
+	private IreplyDao ireplyDao;
 
 	/* ----------------------------------------- admin 폴더 */
 
@@ -90,91 +105,20 @@ public class Mycontroller {
 		return "index";
 	}
 
-	@Autowired
-	private IadminDao iadminDao;
-	
 	@RequestMapping("/ad_one2one")
-	public String ad_one2one(@RequestParam(value="page",required=false) String page,
-			Model model) {
-		
-		if( page == null) {
-			page = "1";
-		}
-		
-		model.addAttribute("page", page);
-		
-		int num_page_size = 5; //한페이지당 Row갯수
-		int num_page_no = Integer.parseInt( page ); //page번호 1,2,3,4
-		int startRowNum = (num_page_no - 1) * num_page_size + 1; // 1, 6, 11 페이지 시작 줄번호		
-		int endRowNum = (num_page_no * num_page_size);	// 5, 10, 15 페이지 끝 줄번호
-		
-		List<adminDto>one2one_list = iadminDao.one2onepage(String.valueOf(startRowNum), String.valueOf(endRowNum) );
-		System.out.println(one2one_list);
-	
-		model.addAttribute("one2one_list", one2one_list);
-		model.addAttribute("mainPage", "admin/ad_one2one.jsp"); 
-		
+	public String ad_one2one(Model model) {
+
+		model.addAttribute("mainPage", "admin/ad_one2one.jsp");
 		return "index";
 	}
 
 	@RequestMapping("/ad_notice")
-	public String ad_notice(@RequestParam(value="page",required=false) String page,
-			Model model) {
-		
-		if( page == null) {
-			page = "1";
-		}
-		
-		model.addAttribute("page", page);
-		
-		int num_page_size = 5; //한페이지당 Row갯수
-		int num_page_no = Integer.parseInt( page ); //page번호 1,2,3,4
-		int startRowNum = (num_page_no - 1) * num_page_size + 1; // 1, 6, 11 페이지 시작 줄번호		
-		int endRowNum = (num_page_no * num_page_size);	// 5, 10, 15 페이지 끝 줄번호
-		
-		List<adminDto>notice_list = iadminDao.noticepage(String.valueOf(startRowNum), String.valueOf(endRowNum) );
-		System.out.println(notice_list);
-	
-		model.addAttribute("notice_list", notice_list);
-		model.addAttribute("mainPage", "admin/ad_notice.jsp"); 
-		
+	public String ad_notice(Model model) {
+
+		model.addAttribute("mainPage", "admin/ad_notice.jsp");
 		return "index";
 	}
-	@RequestMapping("/noticeDelete")
-	public String noticeDelete(@RequestParam("num") int num) {
-		int result = iadminDao.noticeDelete( num );
-		if( result != 1) {
-			return "/ad_notice";
-		}else {
-			return "redirect:/ad_notice";   
-		}
-	}
-	@RequestMapping("/ad_notice_writeAction")
-	public String ad_notice_writeAction(HttpServletRequest request, Model model) {
-		
-		String notice_title = request.getParameter("notice_title");
-		String notice_contents_number = request.getParameter("notice_contents_number");
-		String notice_content = request.getParameter("notice_content");
-		
-		System.out.println("notice_title:"+notice_title);
-		System.out.println("notice_contents_number:"+notice_contents_number);
-		System.out.println("notice_content:"+notice_content);
-		
-		noticeDto dto = new noticeDto();
-		dto.setNotice_title(notice_title);
-		dto.setNotice_contents_number(notice_contents_number);
-		dto.setNotice_content(notice_content);
-		
-		int result = noticeService.notice_write(dto);
-		System.out.println("result:" + result);
-		if( result > 0 ) {
-			model.addAttribute("alert", "글작성이 성공하였습니다.");
-			return "redirect:/ad_notice";  
-		}else {
-			model.addAttribute("alert", "글작성이 실패하였습니다.");
-			return "/ad_notice"; 
-		}
-	}
+
 	@RequestMapping("/ad_FAQ")
 	public String ad_FAQ(Model model) {
 
@@ -213,217 +157,20 @@ public class Mycontroller {
 	/* ----------------------------------------- */
 
 	/* ----------------------------------------- member 폴더 */
+	/* 로그인화면 */
 	@RequestMapping("/login")
 	public String login(Model model) {
 
 		model.addAttribute("mainPage", "member/login.jsp");
 		return "index";
 	}
-	@RequestMapping("/joinAction")
-	public String joinAction(@RequestParam("name") String join_name,
-							 @RequestParam("mail") String join_email,
-							 @RequestParam("phone") String join_phone,
-							 @RequestParam("id") String join_id,
-							 @RequestParam("password") String join_pw,
-							 @RequestParam("room") String join_gender,
-							 @RequestParam(value="host_check", required=false) String host_check,
-			Model model) {
-		
-		int result = 0;
-		
-	
-		if( host_check == null ) {
-			host_check = "0";
-		}else {
-			host_check = "1";
-		}
-		
-		
-		String member_id = join_id;
-		System.out.println(join_id);
-		String member_pw = join_pw;
-		System.out.println(join_pw);
-		String member_email = join_email;
-		System.out.println(join_email);
-		String member_phone = join_phone;
-		System.out.println(join_phone);
-		String member_gender = join_gender;
-		System.out.println(join_gender);
-		String member_name = join_name;
-		System.out.println(join_name);
-		String member_host_check = host_check;
-		System.out.println(host_check);
-		
-		
-		try {
-			result = memberService.join_member(
-					member_id, member_pw, 
-					member_email, member_phone,
-					member_gender, member_name, 
-					member_host_check);
-			
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-		
-		if(result == 1) {
-			
-			return "redirect:/main";
-		}else {
-			return "redirect:/member_join";
-		}
-	}
-	
-	
-	@RequestMapping("/reserveList")
-	public String reserveList(Model model) {
 
-		model.addAttribute("mainPage", "member/myreserve.jsp");
-		return "index";
-	}
-
-	@RequestMapping("/mypage")
-	public String mypage(HttpServletRequest request, Model model) {
-
-		HttpSession session = request.getSession();
-		String member_id = (String) session.getAttribute("member_id");
-
-		List<memberDto> memberlist = memberService.mypageload(member_id);
-
-		model.addAttribute("memberlist", memberlist);
-
-		model.addAttribute("mainPage", "member/mypage.jsp");
-		return "index";
-	}
-
-	@RequestMapping("/myreserve_info")
-	public String reserve_info(Model model) {
-
-		model.addAttribute("mainPage", "member/myreserve_info.jsp");
-		return "index";
-	}
-
-	@RequestMapping("/mylist")
-	public String mylist(
-			HttpServletRequest request,
-			Model model) {
-
-		HttpSession session = request.getSession();
-		String member_id = (String)session.getAttribute("member_id");
-		
-		List<reviewDto> reviewlist = reviewService.select_review(member_id);
-		System.out.println(reviewlist);
-		
-		model.addAttribute("reviewlist",reviewlist);
-		model.addAttribute("mainPage", "member/mylist.jsp");
-		return "index";
-	}
-
+	/* 로그인확인팝업 */
 	@RequestMapping("/member/login_pop")
 	public String login_pop() {
 
 		return "/member/login_pop";
 	}
-
-	@RequestMapping("/idfind")
-	public String idfind(Model model) {
-
-		model.addAttribute("mainPage", "member/idfind.jsp");
-		return "index";
-	}
-
-	@RequestMapping("/idfindAction")
-	public String idfindAction(@RequestParam("fi_name") String member_name,
-			@RequestParam("fi_phone") String member_phone, HttpServletRequest request, Model model) {
-
-		String idfind = memberService.idfind(member_name, member_phone);
-
-		model.addAttribute("idfind", idfind);
-		model.addAttribute("mainPage", "member/idfind.jsp");
-
-		return "index";
-	}
-
-	@RequestMapping("/pwfind")
-	public String pwfind(Model model) {
-
-		model.addAttribute("mainPage", "member/pwfind.jsp");
-		return "index";
-	}
-
-	@RequestMapping("/pwfindAction")
-	public String pwfindAction(@RequestParam("pw_id") String member_id, //입력한 아이디,이름 가져오기
-							   @RequestParam("pw_name") String member_name,
-							   HttpServletRequest request,
-			Model model) {
-		
-		//나중에 비밀번호 변경에서 써야하므로 id 값을 setattribute로 넘겨주기(그럼 session에 남아있게 됨)
-		request.getSession().setAttribute("member_id", member_id);
-		
-		//가져온 아이디,이름을 검색해서(xml에서 검색이 실행됨) member_pw에 넣는다
-		String member_pw = memberService.select_pw(member_id, member_name);
-	
-		//member_pw의 값을 addattribute를 사용해 보여줌(jsp에 ${member_pw}입력!)
-		model.addAttribute("member_pw",member_pw);	
-		model.addAttribute("mainPage", "member/pwfind.jsp");
-		return "index";
-	}
-	
-	@RequestMapping("/pwchange")
-	public String pwchange(Model model) {
-
-		model.addAttribute("mainPage", "member/pwchange.jsp");
-		return "index";
-	}
-	
-	@RequestMapping("/pwchangeAction")
-	public String pwchangeAction(@RequestParam("up_pw")String up_pw,//바꿀 새 비번 가져오기,
-			HttpServletRequest request,
-			Model model) {
-		
-		//어떤 아이디의 비밀번호 변경인지를 위해 session에 있는 아이디 값을 가져와준다
-		HttpSession session = request.getSession();
-		String member_id = (String)session.getAttribute("member_id");
-		
-	   //id와 새 비번을 result에 넣어줌
-		int result = memberService.update_pw(member_id,up_pw);
-
-		if(result!=1) {
-			//1은 실행됨, 0은 실행안됨
-			request.getSession().invalidate();
-			model.addAttribute("mainPage", "member/pwchange.jsp");
-			return "index";
-		}
-		else {
-			request.getSession().invalidate();
-			model.addAttribute("mainPage", "member/login.jsp");
-			return "index";
-
-		}
-	}
-	
-	@RequestMapping("/member_join")
-	public String member_join(Model model) {
-
-		model.addAttribute("mainPage", "member/join.jsp");
-		return "index";
-	}
-
-	@RequestMapping("/mywish")
-	public String mywish(Model model) {
-
-		model.addAttribute("mainPage", "member/mywish.jsp");
-		return "index";
-	}
-
-	@RequestMapping("/myreview")
-	public String myreview(Model model) {
-
-		model.addAttribute("mainPage", "member/myreview.jsp");
-		return "index";
-	}
-
-	
 
 	@RequestMapping("/loginAction")
 	public String loginAction(@RequestParam("lo_name") String member_id, @RequestParam("lo_pass") String member_pw,
@@ -431,8 +178,9 @@ public class Mycontroller {
 
 		int result = memberService.login(member_id, member_pw);
 		int member_host = memberService.host_find(member_id);
+
 		if (result == 1) {
-			
+
 			model.addAttribute("mainPage", "main.jsp");
 			request.getSession().setAttribute("member_host", member_host);
 			request.getSession().setAttribute("member_id", member_id);
@@ -454,6 +202,193 @@ public class Mycontroller {
 		return "index";
 	}
 
+	/* 회원가입 */
+	@RequestMapping("/member_join")
+	public String member_join(Model model) {
+
+		model.addAttribute("mainPage", "member/join.jsp");
+		return "index";
+	}
+
+	@RequestMapping("/joinAction")
+	public String joinAction(@RequestParam("name") String join_name, @RequestParam("mail") String join_email,
+			@RequestParam("phone") String join_phone, @RequestParam("id") String join_id,
+			@RequestParam("password") String join_pw, @RequestParam("room") String join_gender,
+			@RequestParam(value = "host_check", required = false) String host_check, Model model) {
+		int result = 0;
+
+		if (host_check == null) {
+			host_check = "0";
+		} else {
+			host_check = "1";
+		}
+
+		String member_id = join_id;
+		System.out.println(join_id);
+		String member_pw = join_pw;
+		System.out.println(join_pw);
+		String member_email = join_email;
+		System.out.println(join_email);
+		String member_phone = join_phone;
+		System.out.println(join_phone);
+		String member_gender = join_gender;
+		System.out.println(join_gender);
+		String member_name = join_name;
+		System.out.println(join_name);
+		String member_host_check = host_check;
+		System.out.println(host_check);
+
+		try {
+			result = memberService.join_member(member_id, member_pw, member_email, member_phone, member_gender,
+					member_name, member_host_check);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		if (result == 1) {
+			return "redirect:/main";
+		} else {
+			return "redirect:/member_join";
+		}
+	}
+
+	/* 마이페이지 */
+	@RequestMapping("/mypage")
+	public String mypage(HttpServletRequest request, Model model) {
+
+		HttpSession session = request.getSession();
+		String member_id = (String) session.getAttribute("member_id");
+
+		List<memberDto> memberlist = memberService.mypageload(member_id);
+
+		model.addAttribute("memberlist", memberlist);
+
+		model.addAttribute("mainPage", "member/mypage.jsp");
+		return "index";
+	}
+
+	/* 예약내역 */
+	@RequestMapping("/reserveList")
+	public String reserveList(Model model) {
+
+		model.addAttribute("mainPage", "member/myreserve.jsp");
+		return "index";
+	}
+
+	@RequestMapping("/myreserve_info")
+	public String reserve_info(Model model) {
+
+		model.addAttribute("mainPage", "member/myreserve_info.jsp");
+		return "index";
+	}
+
+	/* 내가쓴글리뷰_나의활동 */
+	@RequestMapping("/mylist")
+	public String mylist(HttpServletRequest request, Model model) {
+
+		HttpSession session = request.getSession();
+		String member_id = (String) session.getAttribute("member_id");
+
+		List<reviewDto> reviewlist = reviewService.select_review(member_id);
+		System.out.println(reviewlist);
+
+		model.addAttribute("reviewlist", reviewlist);
+		model.addAttribute("mainPage", "member/mylist.jsp");
+		return "index";
+	}
+
+	/* 내가쓴리뷰 */
+	@RequestMapping("/myreview")
+	public String myreview(Model model) {
+
+		model.addAttribute("mainPage", "member/myreview.jsp");
+		return "index";
+	}
+
+	/* 내찜내역 */
+	@RequestMapping("/mywish")
+	public String mywish(Model model) {
+
+		model.addAttribute("mainPage", "member/mywish.jsp");
+		return "index";
+	}
+
+	/* 아이디찾기 */
+	@RequestMapping("/idfind")
+	public String idfind(Model model) {
+
+		model.addAttribute("mainPage", "member/idfind.jsp");
+		return "index";
+	}
+
+	@RequestMapping("/idfindAction")
+	public String idfindAction(@RequestParam("fi_name") String member_name,
+			@RequestParam("fi_phone") String member_phone, HttpServletRequest request, Model model) {
+
+		String idfind = memberService.idfind(member_name, member_phone);
+
+		model.addAttribute("idfind", idfind);
+		model.addAttribute("mainPage", "member/idfind.jsp");
+
+		return "index";
+	}
+
+	/* 비밀번호찾기 */
+	@RequestMapping("/pwfind")
+	public String pwfind(Model model) {
+
+		model.addAttribute("mainPage", "member/pwfind.jsp");
+		return "index";
+	}
+
+	@RequestMapping("/pwfindAction")
+	public String pwfindAction(@RequestParam("pw_id") String member_id, // 입력한 아이디,이름 가져오기
+			@RequestParam("pw_name") String member_name, HttpServletRequest request, Model model) {
+
+		// 나중에 비밀번호 변경에서 써야하므로 id 값을 setattribute로 넘겨주기(그럼 session에 남아있게 됨)
+		request.getSession().setAttribute("member_id", member_id);
+
+		// 가져온 아이디,이름을 검색해서(xml에서 검색이 실행됨) member_pw에 넣는다
+		String member_pw = memberService.select_pw(member_id, member_name);
+
+		// member_pw의 값을 addattribute를 사용해 보여줌(jsp에 ${member_pw}입력!)
+		model.addAttribute("member_pw", member_pw);
+		model.addAttribute("mainPage", "member/pwfind.jsp");
+		return "index";
+	}
+
+	/* 비밀번호변경 */
+	@RequestMapping("/pwchange")
+	public String pwchange(Model model) {
+
+		model.addAttribute("mainPage", "member/pwchange.jsp");
+		return "index";
+	}
+
+	@RequestMapping("/pwchangeAction")
+	public String pwchangeAction(@RequestParam("up_pw") String up_pw, // 바꿀 새 비번 가져오기,
+			HttpServletRequest request, Model model) {
+
+		// 어떤 아이디의 비밀번호 변경인지를 위해 session에 있는 아이디 값을 가져와준다
+		HttpSession session = request.getSession();
+		String member_id = (String) session.getAttribute("member_id");
+
+		// id와 새 비번을 result에 넣어줌
+		int result = memberService.update_pw(member_id, up_pw);
+
+		if (result != 1) {
+			// 1은 실행됨, 0은 실행안됨
+			request.getSession().invalidate();
+			model.addAttribute("mainPage", "member/pwchange.jsp");
+			return "index";
+		} else {
+			request.getSession().invalidate();
+			model.addAttribute("mainPage", "member/login.jsp");
+			return "index";
+
+		}
+	}
+
+	/* 출석체크 */
 	@RequestMapping("/mycheck")
 	public String mycheck(Model model) {
 
@@ -461,6 +396,7 @@ public class Mycontroller {
 		return "index";
 	}
 
+	/* 이름변경 */
 	@RequestMapping("/namechangeAction")
 	public String namechangeAction(@RequestParam("member_name") String member_name, Map<String, Object> map,
 			HttpServletRequest request, Model model) {
@@ -480,93 +416,75 @@ public class Mycontroller {
 		System.out.println(name_change);
 
 		if (name_change == 1) {
-//			model.addAttribute("mainPage", "member/mypage.jsp");
-//			return "index";
 			return "redirect:/mypage";
 		} else {
-//			model.addAttribute("mainPage", "member/mypage.jsp");
-//			return "index";
 			return "redirect:/mypage";
 		}
-
 	}
-	
-//	------------------------------------------------------------------ email 변경
+
+// email변경
 	@RequestMapping("/emailchangeAction")
-	public String emailchangeAction(@RequestParam("member_email") String member_newemail,
-			HttpServletRequest request,
+	public String emailchangeAction(@RequestParam("member_email") String member_newemail, HttpServletRequest request,
 			Model model) {
-			HttpSession session = request.getSession();
-			String member_id = (String) session.getAttribute("member_id");
-			
-			int newemail = memberService.email_change(member_newemail, member_id);
-			
-			if(newemail == 1) {
-	
-				return "redirect:/mypage";
-			}
-			else {
-				return "redirect:/mypage";
-			}
-		
+		HttpSession session = request.getSession();
+		String member_id = (String) session.getAttribute("member_id");
+		System.out.println(member_id);
+
+		int newemail = memberService.email_change(member_newemail, member_id);
+		System.out.println(newemail);
+
+		if (newemail == 1) {
+			return "redirect:/mypage";
+		} else {
+			return "redirect:/mypage";
+		}
 	}
 //	------------------------------------------------------------------
 
-//	------------------------------------------------------------------ 전화번호 변경
+//	전화번호변경
 	@RequestMapping("/phonechangeAction")
-	public String phonechangeAction(@RequestParam("member_phone") String member_newphone,
-			HttpServletRequest request,
+	public String phonechangeAction(@RequestParam("member_phone") String member_newphone, HttpServletRequest request,
 			Model model) {
-			HttpSession session = request.getSession();
-			String member_id = (String) session.getAttribute("member_id");
-			
-			System.out.println(member_id);
-			
-			int newephone = memberService.phone_change(member_newphone, member_id);
-			
+		HttpSession session = request.getSession();
+		String member_id = (String) session.getAttribute("member_id");
+
+		System.out.println(member_id);
+
+		int newphone = memberService.phone_change(member_newphone, member_id);
+
+		System.out.println(newphone);
+
+		if (newphone == 1) {
 			System.out.println(member_newphone);
-			
-			if(newephone == 1) {
-				System.out.println(member_newphone);
-				return "redirect:/mypage";
-			}
-			else {
-				return "redirect:/mypage";
-			}
-		
+			return "redirect:/mypage";
+		} else {
+			return "redirect:/mypage";
+		}
 	}
-	
-	
-	
 //	------------------------------------------------------------------
-	
-	
+
 	/* ----------------------------------------- */
 
 	/* ----------------------------------------- one2one 폴더 */
+	/* 1:1문의내역 */
 	@RequestMapping("/one2one")
-	public String one2one(
-			HttpServletRequest request,
-			Model model) {
-		
+	public String one2one(HttpServletRequest request, Model model) {
+
 		HttpSession session = request.getSession();
-		String member_id = (String)session.getAttribute("member_id");
-		
+		String member_id = (String) session.getAttribute("member_id");
+
 		List<one2oneDto> one2one_list = one2oneService.one2one_list(member_id);
 		List<one2one_answerDto> one2oneanswer_list = one2one_answerService.one2one_answer(member_id);
 
-
 		model.addAttribute("one2one_list", one2one_list);
 		System.out.println(one2oneanswer_list);
-		model.addAttribute("qwer",one2oneanswer_list );
+		model.addAttribute("qwer", one2oneanswer_list);
 
 		model.addAttribute("mainPage", "one2one/one2one.jsp");
 		return "index";
 	}
-	
-	
-	
 
+	/* 1:1작성 */
 	@RequestMapping("/one2one_write")
 	public String one2one_write(Model model) {
 
@@ -583,93 +501,52 @@ public class Mycontroller {
 	/* ----------------------------------------- */
 
 	/* ----------------------------------------- service 폴더 */
-	
-	@Autowired
-	private IfaqDao faqDao;
-	@Autowired
-	private InoticeDao noticeDao;
-	
+	/* 공지사항_도움말 */
 	@RequestMapping("/service")
-	public String notice(@RequestParam(value="page_notice",required=false) String page_notice,
-			@RequestParam(value="page_faq",required=false) String page_faq,
-			HttpServletRequest request,
-			Model model) {
+	public String notice(HttpServletRequest request, Model model) {
+
 		/*
 		 * HttpSession session = request.getSession(); String notice
 		 * =(String)session.getAttribute("dto");
 		 */
-		//session은 http와 같은 페이지가 열려있을 때의 값을 유지한 채로 가져와주는 역할을 함
-		//sql을 보여주는 것과는 무관하다
-		
-		
-		if( page_notice == null) {
-			page_notice = "1";
-		}
-		
-		if( page_faq == null) {
-			page_faq = "1";
-		}
-		
-		model.addAttribute("page_notice", page_notice);
-		model.addAttribute("page_faq", page_faq);
-		
-		int num_page_size = 5; //한페이지당 Row갯수
-		
-		int num_page_no_notice = Integer.parseInt( page_notice ); //page번호 1,2,3,4
-		int num_page_no_faq = Integer.parseInt( page_faq ); //page번호 1,2,3,4
-		
-		
-		int startRowNum_notice = (num_page_no_notice - 1) * num_page_size + 1; // 1, 6, 11 페이지 시작 줄번호
-		int startRowNum_faq = (num_page_no_faq - 1) * num_page_size + 1; // 1, 6, 11 페이지 시작 줄번호
-		
-		int endRowNum_notice = (num_page_no_notice * num_page_size);           // 5, 10, 15 페이지 끝 줄번호
-		int endRowNum_faq = (num_page_no_faq * num_page_size);           // 5, 10, 15 페이지 끝 줄번호
-		
-		
-		// row 1~5 까지...
-		List<faqDto> faqlist = faqDao.faqpage(String.valueOf(startRowNum_faq), String.valueOf(endRowNum_faq) );
-		System.out.println(faqlist);
-		List<noticeDto> noticelist = noticeDao.noticepage(String.valueOf(startRowNum_notice), String.valueOf(endRowNum_notice) );
-		System.out.println(noticelist);
-		
-		model.addAttribute("noticelist",noticelist);
-		model.addAttribute("faqlist",faqlist);
-		model.addAttribute("mainPage","service/service.jsp");
-		
+		// sesion은 http에서 로그인 된 채로 다른 페이지로 넘어가게 해주는 역할임
+		// (그래서 다른 페이지에서도 로그인 된 화면을 보여줌)
+		// sql을 보여주는 것과는 무관하다
+
+		List<noticeDto> noticelist = noticeService.notice();
+		List<faqDto> faqlist = faqService.faq();
+
+		model.addAttribute("noticelist", noticelist);
+		model.addAttribute("faqlist", faqlist);
+		model.addAttribute("mainPage", "service/service.jsp");
+
 		return "index";
 	}
-	
-	
 	/* ----------------------------------------- */
 
 	/* ----------------------------------------- host 폴더 */
+	/* 호스트마이페이지 */
 	@RequestMapping("/mypage_host")
-	public String mypage_host(
-			HttpServletRequest request,
-			Model model) {
-		
+	public String mypage_host(HttpServletRequest request, Model model) {
+
 		HttpSession session = request.getSession();
-		String member_id = (String)session.getAttribute("member_id");
-		int member_host = (int)session.getAttribute("member_host");
-		
+		String member_id = (String) session.getAttribute("member_id");
+
+		int member_host = (int) session.getAttribute("member_host");
+
 		List<memberDto> member_list = memberService.mypageload(member_id);
-		
-		if(member_host == 1) {
+
+		if (member_host == 1) {
 			model.addAttribute("member_list", member_list);
 			model.addAttribute("mainPage", "host/host.jsp");
 			return "index";
-		}else {
-			
-			
-			model.addAttribute("mainPage","main.jsp");
+		} else {
+			model.addAttribute("mainPage", "main.jsp");
 			return "index";
 		}
-		
-
-
-		
 	}
 
+	/* 공간대여 */
 	@RequestMapping("/spacelist_host")
 	public String spacelist_host(Model model) {
 
@@ -677,6 +554,7 @@ public class Mycontroller {
 		return "index";
 	}
 
+	/* 입점등록 */
 	@RequestMapping("/enter_host")
 	public String enter_host(Model model) {
 
@@ -684,6 +562,7 @@ public class Mycontroller {
 		return "index";
 	}
 
+	/* 공간상세 */
 	@RequestMapping("/space_info_host")
 	public String space_info_host(Model model) {
 
@@ -691,6 +570,7 @@ public class Mycontroller {
 		return "index";
 	}
 
+	/* 예약내역관리 */
 	@RequestMapping("/reserve_host")
 	public String reserve_host(Model model) {
 
@@ -700,30 +580,95 @@ public class Mycontroller {
 	/* ----------------------------------------- */
 
 	/* ----------------------------------------- contents 폴더 */
+	/* 게시글리스트 */
 	@RequestMapping("/community")
 	public String community(@RequestParam("contents_number") String contents_number,
-							HttpServletRequest request, Model model) {
-		System.out.println(contents_number);
+			@RequestParam(value = "community_number", required = false) String community_number,
+			HttpServletRequest request, Model model) {
+
+		
+		request.getSession().setAttribute("community_number", community_number);
+		request.getSession().setAttribute("contents_number", contents_number);
 
 		List<contentsDto> contentsload = contentsService.contentsload(contents_number);
 		List<communityDto> communityload = communityService.communityload(contents_number);
-		
+
 		model.addAttribute("contentsload", contentsload);
 		model.addAttribute("communityload", communityload);
 		System.out.println(contentsload);
 		System.out.println(communityload);
-		
+
 		model.addAttribute("mainPage", "contents/community.jsp");
 		return "index";
 	}
 
+	
+	
+	/* 게시글 내용,댓글 보기 */
 	@RequestMapping("/community_info")
-	public String community_info(Model model) {
+	public String community_info(@RequestParam("community_number")String community_number
+			,HttpServletRequest request, Model model) {
 
+		HttpSession session = request.getSession();
+		String member_id = (String) session.getAttribute("member_id");
+		
+		
+		List<replyDto> replyViewlist = replyService.replyView(community_number);
+		
+		List<communityDto> community_contents = communityService.community_content(community_number);
+
+
+		
+		model.addAttribute("replyView", replyViewlist);
 		model.addAttribute("mainPage", "contents/community_info.jsp");
+		
+		model.addAttribute("community_contents", community_contents);
+		model.addAttribute("mainPage", "contents/community_info.jsp");
+		
+		
+	
 		return "index";
+
 	}
 
+	
+	
+	/* 댓글 달기 */
+	@RequestMapping("/community_infoAction")
+	public String community_infoAction(
+			@RequestParam("commu_info") String reply_content,
+			//form안에 있어서 community_number 가져올 수 있음
+			@RequestParam( "community_number") String community_number,
+			replyDto dto, HttpServletRequest request, Model model) {
+
+		
+
+		HttpSession session = request.getSession();
+		String member_id = (String) session.getAttribute("member_id");
+		
+
+		dto.setReply_member_id(member_id);
+		dto.setReply_community_number(community_number);
+		dto.setReply_content(reply_content);
+
+
+		
+		 int result = ireplyDao.replyInsert(dto); System.out.println(result);
+		 
+		 
+		 if(result !=1) { 
+			 
+			 return "<script> alert('댓글 실패'); location.back(); </script>"; } 
+		 
+		 else {		
+
+			return "redirect:/community_info?community_number="+community_number;
+		 }
+		
+
+	}
+
+	/* 공간대여(일반회원) */
 	@RequestMapping("/spacerent")
 	public String spacerent(Model model) {
 
@@ -731,6 +676,7 @@ public class Mycontroller {
 		return "index";
 	}
 
+	/* 공간상세(일반회원) */
 	@RequestMapping("/space_info")
 	public String space_info(Model model) {
 
@@ -740,5 +686,105 @@ public class Mycontroller {
 	/* ----------------------------------------- */
 
 	/*-------------------------------------------*/
+	@Bean(name = "multipartResolver")
+	public CommonsMultipartResolver multipartResolver() {
+		CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
+		multipartResolver.setMaxUploadSize(200000000);
+		multipartResolver.setMaxInMemorySize(200000000);
+		multipartResolver.setDefaultEncoding("utf-8");
+		return multipartResolver;
+	}
+
+	@Autowired
+	fileUploadService fileUploadService;
+
+	@RequestMapping(value = "/uploadMultiFileOk", method = RequestMethod.POST)
+	public String uploadMultiFileOk(@RequestParam("host_name") String host_name_,
+			@RequestParam("room") String host_contents_number_, @RequestParam("host_onerow") String host_onerow_,
+			@RequestParam("host_des") String host_des_, @RequestParam("host_caution") String host_caution_,
+			@RequestParam("zip") String host_zip_, @RequestParam("addr1") String host_location_,
+			@RequestParam("addr2") String host_location_detail_, @RequestParam("host_price") String host_price_,
+			@RequestParam("host_bnumber") String host_bnumber_, @RequestParam("host_headcount") String host_headcount_,
+			@RequestParam(value = "user_id", required = false, defaultValue = "") String user_id,
+			@RequestParam(value = "user_pw", required = false, defaultValue = "") String user_pw,
+			@RequestParam(value = "filename", required = false) MultipartFile[] filelist, HttpServletRequest request,
+			Model model) {
+
+		HttpSession session = request.getSession();
+		String member_id = (String) session.getAttribute("member_id");
+
+		int result = 0;
+
+		String host_name = host_name_;
+		System.out.println(host_name);
+		String host_contents_number = host_contents_number_;
+		System.out.println(host_contents_number);
+		String host_onerow = host_onerow_;
+		System.out.println(host_onerow);
+		String host_des = host_des_;
+		System.out.println(host_des);
+		String host_caution = host_caution_;
+		System.out.println(host_caution);
+		String host_zip = host_zip_;
+		System.out.println(host_zip);
+		String host_location = host_location_;
+		System.out.println(host_location);
+		String host_location_detail = host_location_detail_;
+		System.out.println(host_location_detail);
+		String host_price = host_price_;
+		System.out.println(host_price);
+		String host_bnumber = host_bnumber_;
+		System.out.println(host_bnumber);
+		String host_headcount = host_headcount_;
+		System.out.println(host_headcount);
+
+		// hostenter 이미지 테이블 따로 설계
+
+		System.out.println("filelist:" + filelist);
+		for (MultipartFile file : filelist) {
+			System.out.println("filename:" + file);
+
+			String upload_url = fileUploadService.restore(file);
+			// 한 개의 파일 처리코드를 여기에
+			System.out.println("upload_url:" + upload_url);
+			try {
+				result = hostenterService.insert_hostenter(host_contents_number, host_name, host_des, host_caution,
+						host_zip, host_location, host_location_detail, host_price, member_id, host_bnumber,
+						host_headcount, host_onerow);
+				System.out.println(result + "1번");
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+
+			if (result == 1) {
+				if (upload_url != null) {
+					if (upload_url.length() > 0) {
+						result = hostenter_imgDaoService.hostenter_img_up(host_name_, member_id, upload_url);
+						System.out.println("업로드 성공!");
+						model.addAttribute("mainPage", "host/host.jsp");
+						return "index";
+
+					} else {
+						System.out.println("업로드 실패!");
+						model.addAttribute("mainPage", "host/enter_host.jsp");
+						return "index";
+					}
+				} else {
+					System.out.println("업로드 실패!");
+					model.addAttribute("mainPage", "host/enter_host.jsp");
+					return "index";
+				}
+
+			} else {
+				model.addAttribute("mainPage", "host/enter_host.jsp");
+				return "index";
+			}
+
+		}
+
+		model.addAttribute("mainPage", "host/enter_host.jsp");
+		return "index";
+
+	}
 
 }

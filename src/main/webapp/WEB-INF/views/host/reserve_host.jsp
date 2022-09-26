@@ -165,6 +165,14 @@
 				</tr>
 			</table>
 		</div>
+		
+		<div id="reserve_cancel">
+		 <div id="reserve_cancel2">
+			<input class ="reserve_cancel3" type="button" value="취소"
+			onclick="location.href='/mypage_host'">
+		 </div>
+		</div>
+		
 		<div class="pagenavi">
 			<nav aria-label="Page navigation example community">
 				<ul class="pagination">

@@ -10,5 +10,4 @@
 		select * from contents where contents_number = #{ param1 }
 	</select>
 
-
 </mapper>

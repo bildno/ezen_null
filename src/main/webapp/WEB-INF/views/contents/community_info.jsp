@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <link rel="stylesheet" href="/css/contents/community_info.css">
 
@@ -10,7 +11,7 @@
 			id="space_icon">
 	</h2>
 	<hr>
-
+	
 	<div class="main">
 		<div class="asidecomm">
 			<div class="section11">
@@ -48,29 +49,40 @@
 		</div>
 
 		<div class="sectioncomm">
+		
+		
+		<form action="community_infoAction" method="post">
 			<div class="section22">
 				<div class="con22" style="padding: 40px 40px 0 40px;">
+					<!-- 게시글 보기 -->
+					<c:forEach var="dtowo" items="${ community_contents}">
+					<input name="community_number" type="hidden" value="${dtowo.community_number}">
 					<textarea name="comm_info" class="contents" readonly="readonly" id="comm_info" cols="90" rows="10"
-						style="resize: none; width: 100%;">게시글 내용</textarea>
+						style="resize: none; width: 100%;">${dtowo.community_content}</textarea>
 					<hr>
+					</c:forEach>
+					
+					<!-- 댓글보기 -->
 					<div>
+					<c:forEach var="dtowe" items="${replyView}">
 						<div id="reple">
-							asdas
+							${dtowe.reply_content}
 						</div>
-						<div id="reple">
-							asdas
-						</div>
-						<div id="reple">
-							asdas
-						</div>
+					</c:forEach>	
 					</div>
-					<div >
-						<textarea name="comm_info" id="comm_info" cols="90" rows="2"
+					
+					<!-- 댓글 달기 -->
+					<div>		
+					<input type="hidden"  name="reply_idx" />
+						<textarea name="commu_info" id="comm_info" cols="90" rows="2"
 							style="resize: none;" class="com_info2">게시글 댓글</textarea>
 							<button id="reple_btn" style="float: right;">답글달기</button> 
-					</div>						
+					</div>				
 				</div>
 			</div>
+		</form>
+		
+		
 		</div>
 	</div>
 	<button id="list_btn" type="submit" style="float: right;" onclick="location.href='/community'">리스트</button>

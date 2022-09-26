@@ -15,25 +15,30 @@
 	<div class="w_contents">
 		<div class="contents">
 			<div class="wish">
-				<input type="text" value="찜내역1">
+				<input type="text" value="찜내역1" readonly>
 				<button class="detail">세부내역</button>
 			</div>
 			<div class="wish">
-				<input type="text" value="찜내역2">
+				<input type="text" value="찜내역2" readonly>
 				<button class="detail">세부내역</button>
 			</div>
 			<div class="wish">
-				<input type="text" value="찜내역3">
+				<input type="text" value="찜내역3" readonly>
 				<button class="detail">세부내역</button>
 			</div>
 			<div class="wish">
-				<input type="text" value="찜내역4">
+				<input type="text" value="찜내역4" readonly>
 				<button class="detail">세부내역</button>
 			</div>
 			<div class="wish5">
-				<input type="text" value="찜내역5">
+				<input type="text" value="찜내역5" readonly>
 				<button class="detail">세부내역</button>
 			</div>
+		</div>
+		
+		<div class="wish_cancel">
+			<input class="wish_cancel2" type="button" value="취소"
+			onclick="location.href='/mypage'">
 		</div>
 	</div>
 </div>
