@@ -13,4 +13,6 @@ public interface IcommunityDao {
 	
 //	public String community_hit(String contents_number);
 	
+	public List<communityDto> community_content(String community_number);
+	
 }

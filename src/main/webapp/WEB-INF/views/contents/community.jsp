@@ -76,7 +76,7 @@
 						<td><span>${ dto.community_number }</span></td>
 						<td><input type="text" name="con_text" id="con_text"
 							value="${ dto.community_title }"
-							onclick="location.href='community_info'" readonly></td>
+							onclick="location.href='community_info?community_number=${dto.community_number}'" readonly></td>
 						<td><span>${ dto.community_member_name }</span></td>
 						<td><span><fmt:formatDate
 									value="${ dto.community_date }" pattern="yyyy-MM-dd" /></span></td>

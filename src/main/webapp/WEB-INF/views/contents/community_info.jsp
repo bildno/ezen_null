@@ -49,12 +49,20 @@
 		</div>
 
 		<div class="sectioncomm">
+		
+		
+		<form action="community_infoAction" method="post">
 			<div class="section22">
 				<div class="con22" style="padding: 40px 40px 0 40px;">
+					<!-- 게시글 보기 -->
+					<c:forEach var="dtowo" items="${ community_contents}">
+					<input name="community_number" type="hidden" value="${dtowo.community_number}">
 					<textarea name="comm_info" class="contents" readonly="readonly" id="comm_info" cols="90" rows="10"
-						style="resize: none; width: 100%;">게시글 내용</textarea>
+						style="resize: none; width: 100%;">${dtowo.community_content}</textarea>
 					<hr>
+					</c:forEach>
 					
+					<!-- 댓글보기 -->
 					<div>
 					<c:forEach var="dtowe" items="${replyView}">
 						<div id="reple">
@@ -62,16 +70,19 @@
 						</div>
 					</c:forEach>	
 					</div>
-					<form action="community_infoAction" method="pst">
-					<div >
+					
+					<!-- 댓글 달기 -->
+					<div>		
 					<input type="hidden"  name="reply_idx" />
-						<textarea name="comm_info" id="comm_info" cols="90" rows="2"
-							style="resize: none;" class="com_info2" name="content">게시글 댓글</textarea>
+						<textarea name="commu_info" id="comm_info" cols="90" rows="2"
+							style="resize: none;" class="com_info2">게시글 댓글</textarea>
 							<button id="reple_btn" style="float: right;">답글달기</button> 
-					</div>
-					</form>				
+					</div>				
 				</div>
 			</div>
+		</form>
+		
+		
 		</div>
 	</div>
 	<button id="list_btn" type="submit" style="float: right;" onclick="location.href='/community'">리스트</button>
