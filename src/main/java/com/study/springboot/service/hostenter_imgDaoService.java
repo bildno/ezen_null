@@ -38,5 +38,11 @@ public class hostenter_imgDaoService {
 		return img_list;
 	}
 	
+	public int hostenter_img_update(String hostenter_img, String hostenter_img_name) {
+		int result = ihostenter_imgDao.hostenter_img_update(hostenter_img, hostenter_img_name);
+		
+		return result;
+		
+	}
 
 }

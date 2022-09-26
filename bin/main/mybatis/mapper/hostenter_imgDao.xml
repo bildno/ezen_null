@@ -14,4 +14,8 @@
     		select hostenter_img from hostenter_img where hostenter_img_name = '${param1}'
     	</select>
     
+    	<update id="hostenter_img_update">
+    		update hostenter_img set hostenter_img = ${param1} where hostenter_img_name = ${parma2}
+    	</update>
+    
     </mapper>

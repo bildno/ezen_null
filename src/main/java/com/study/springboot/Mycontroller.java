@@ -7,14 +7,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import com.study.springboot.dto.communityDto;
 import com.study.springboot.dto.contentsDto;
@@ -584,9 +580,9 @@ public class Mycontroller {
 		
 		
 		List<hostenter_imgDto> img_list = hostenter_imgDaoService.hostenter_img_sel(hostenter_img_title);
-		List<hostenterDto> enter_list = hostenterService.select_space(member_id);
+		List<hostenterDto> detail_list = hostenterService.detail_space(hostenter_img_title);
 		model.addAttribute("img_list",img_list);
-		model.addAttribute("enter_list",enter_list);
+		model.addAttribute("detail_list",detail_list);
 		model.addAttribute("mainPage", "host/space_info_host.jsp");
 		return "index";
 	}
@@ -626,7 +622,8 @@ public class Mycontroller {
 
 	/* 게시글내용 */
 	@RequestMapping("/community_info")
-	public String community_info(HttpServletRequest request,Model model) {
+	public String community_info(
+			HttpServletRequest request,Model model) {
 
 		System.out.println("zzzcdsadz");
 		
@@ -676,134 +673,7 @@ public class Mycontroller {
 	/* ----------------------------------------- */
 
 	/*-------------------------------------------*/
-	@Bean(name = "multipartResolver")
-	public CommonsMultipartResolver multipartResolver() {
-		CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
-		multipartResolver.setMaxUploadSize(200000000);
-		multipartResolver.setMaxInMemorySize(200000000);
-		multipartResolver.setDefaultEncoding("utf-8");
-		return multipartResolver;
-	}
- @Autowired
- fileUploadService fileUploadService;
-	
-	@RequestMapping(value="/uploadMultiFileOk", method = RequestMethod.POST)
-	public String uploadMultiFileOk( 
-			@RequestParam("host_name") String host_name_,
-			@RequestParam("room") int host_contents_number_,
-			@RequestParam("host_onerow") String host_onerow_,
-			@RequestParam("host_des") String host_des_,
-			@RequestParam("host_caution") String host_caution_,
-			@RequestParam("zip") String host_zip_,
-			@RequestParam("addr1") String host_location_,
-			@RequestParam("addr2") String host_location_detail_,
-			@RequestParam("host_price") int host_price_,
-			@RequestParam("host_bnumber") int host_bnumber_, 
-			@RequestParam("host_headcount") int host_headcount_,
-			@RequestParam(value="filename2", required=false) MultipartFile File_title,
-			@RequestParam(value="filename", required=false) MultipartFile[] filelist,
-			HttpServletRequest request,
-			Model model) {
-		
-		HttpSession session = request.getSession();
-		String member_id = (String) session.getAttribute("member_id");
-		
-		int result = 0;
-		int qq = 0;
-		
-		 String host_name = host_name_; 
-		 System.out.println(host_name);
-		 int host_contents_number = host_contents_number_; 
-		 System.out.println(host_contents_number);
-		 String host_onerow = host_onerow_; 
-		 System.out.println(host_onerow);
-		 String host_des = host_des_; 
-		 System.out.println(host_des);
-		 String host_caution = host_caution_; 
-		 System.out.println(host_caution);
-		 String host_zip = host_zip_; 
-		 System.out.println(host_zip);
-		 String host_location = host_location_; 
-		 System.out.println(host_location);
-		 String host_location_detail = host_location_detail_; 
-		 System.out.println(host_location_detail);
-		 int host_price = host_price_; 
-		 System.out.println(host_price);
-		 int host_bnumber = host_bnumber_; 
-		 System.out.println(host_bnumber);
-		 int host_headcount = host_headcount_; 
-		 System.out.println(host_headcount);
-		
-		 String upload_url_title = fileUploadService.restore(File_title);
-	
-	
-		 
-		 
-			try {
-				result = hostenterService.insert_hostenter(
-						upload_url_title,
-						host_contents_number,
-						host_name,
-						host_des,
-						host_caution,
-						host_zip,
-						host_location,
-						host_location_detail,
-						host_price,
-						host_headcount,
-						member_id,
-						host_bnumber,
-						host_onerow);
-			
-			} catch (Exception e) {
-				
-			}
-			
-			if(result == 1) {
-				for( MultipartFile file : filelist) {
-					System.out.println("filelist:" + filelist);
-					System.out.println("filename:" + file);
-					String upload_url = fileUploadService.restore(file);
-					System.out.println( "upload_url:" + upload_url );
-					
-				if( upload_url != null ) {
-					if( upload_url.length() > 0 ) {
-						result = hostenter_imgDaoService.hostenter_img_up(host_name_,member_id,upload_url);
-						System.out.println("업로드 성공!");
-					
-						
-					}else {
-						System.out.println("업로드 실패!");	
-						model.addAttribute("mainPage","host/enter_host.jsp");
-						return "index";
-					}
-				}else {
-					System.out.println("업로드 실패!");
-					model.addAttribute("mainPage","host/enter_host.jsp");
-					return "index";
-				}
 
-			}
-			
-
-		}else {
-			System.out.println("DB연동 실패 2");
-			model.addAttribute("mainPage","host/enter_host.jsp");
-			return "index";
-		}
-		
-		
-		model.addAttribute("mainPage","host/host.jsp");
-		return "redirect:/mypage_host";
-		
-
-		
-		 
-	}
-	
-	
-	
-	
 	
 	
 }
