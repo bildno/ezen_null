@@ -10,6 +10,11 @@
 		select * from community where community_contents_number = #{ param1 }
 	</select>
 	
+	 <select id="community_content" resultType="com.study.springboot.dto.communityDto">
+	 	select * from community where community_number = #{param1}
+	 </select>
+	 
+	
 	
 
 </mapper>

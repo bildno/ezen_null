@@ -12,4 +12,6 @@ public interface IcommunityDao {
 	public List<communityDto> communityload(String contents_number);
 	
 	
+	public List<communityDto> community_content(String community_number);
+	
 }

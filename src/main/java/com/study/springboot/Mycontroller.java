@@ -16,10 +16,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
+import com.study.springboot.dao.IreplyDao;
 import com.study.springboot.dto.communityDto;
 import com.study.springboot.dto.contentsDto;
 import com.study.springboot.dto.faqDto;
-import com.study.springboot.dto.hostenterDto;
 import com.study.springboot.dto.memberDto;
 import com.study.springboot.dto.noticeDto;
 import com.study.springboot.dto.one2oneDto;
@@ -79,13 +79,16 @@ public class Mycontroller {
 
 	@Autowired
 	private hostenterService hostenterService;
-	
+
 	@Autowired
 	private hostenter_imgDaoService hostenter_imgDaoService;
-	
+
 	@Autowired
 	private replyService replyService;
-	
+
+	@Autowired
+	private IreplyDao ireplyDao;
+
 	/* ----------------------------------------- admin 폴더 */
 
 	@RequestMapping("/ad_member")
@@ -108,12 +111,6 @@ public class Mycontroller {
 		model.addAttribute("mainPage", "admin/ad_one2one.jsp");
 		return "index";
 	}
-	@RequestMapping("/ad_one2one_answer")
-	public String ad_one2one_answer(Model model) {
-
-		model.addAttribute("mainPage", "admin/ad_one2one_answer.jsp");
-		return "index";
-	}
 
 	@RequestMapping("/ad_notice")
 	public String ad_notice(Model model) {
@@ -121,25 +118,11 @@ public class Mycontroller {
 		model.addAttribute("mainPage", "admin/ad_notice.jsp");
 		return "index";
 	}
-	@RequestMapping("/ad_notice_write")
-	public String ad_notice_write(Model model) {
-
-		model.addAttribute("mainPage", "admin/ad_notice_write.jsp");
-		return "index";
-	}
 
 	@RequestMapping("/ad_FAQ")
-	public String ad_FAQ(HttpServletRequest request, Model model) {
-		List<faqDto> faq_list = faqService.faq();
-		request.setAttribute("faq_list", faq_list);
+	public String ad_FAQ(Model model) {
 
 		model.addAttribute("mainPage", "admin/ad_FAQ.jsp");
-		return "index";
-	}
-	@RequestMapping("/ad_FAQ_write")
-	public String ad_FAQ_write(Model model) {
-
-		model.addAttribute("mainPage", "admin/ad_FAQ_write.jsp");
 		return "index";
 	}
 
@@ -147,6 +130,27 @@ public class Mycontroller {
 	public String ad_host_info(Model model) {
 
 		model.addAttribute("mainPage", "admin/ad_host_info.jsp");
+		return "index";
+	}
+
+	@RequestMapping("/ad_one2one_answer")
+	public String ad_one2one_answer(Model model) {
+
+		model.addAttribute("mainPage", "admin/ad_one2one_answer.jsp");
+		return "index";
+	}
+
+	@RequestMapping("/ad_notice_write")
+	public String ad_notice_write(Model model) {
+
+		model.addAttribute("mainPage", "admin/ad_notice_write.jsp");
+		return "index";
+	}
+
+	@RequestMapping("/ad_FAQ_write")
+	public String ad_FAQ_write(Model model) {
+
+		model.addAttribute("mainPage", "admin/ad_FAQ_write.jsp");
 		return "index";
 	}
 
@@ -174,8 +178,7 @@ public class Mycontroller {
 
 		int result = memberService.login(member_id, member_pw);
 		int member_host = memberService.host_find(member_id);
-			
-		
+
 		if (result == 1) {
 
 			model.addAttribute("mainPage", "main.jsp");
@@ -429,7 +432,7 @@ public class Mycontroller {
 
 		int newemail = memberService.email_change(member_newemail, member_id);
 		System.out.println(newemail);
-		
+
 		if (newemail == 1) {
 			return "redirect:/mypage";
 		} else {
@@ -528,13 +531,11 @@ public class Mycontroller {
 
 		HttpSession session = request.getSession();
 		String member_id = (String) session.getAttribute("member_id");
-		
+
 		int member_host = (int) session.getAttribute("member_host");
-		
+
 		List<memberDto> member_list = memberService.mypageload(member_id);
-		
-		
-		
+
 		if (member_host == 1) {
 			model.addAttribute("member_list", member_list);
 			model.addAttribute("mainPage", "host/host.jsp");
@@ -547,17 +548,8 @@ public class Mycontroller {
 
 	/* 공간대여 */
 	@RequestMapping("/spacelist_host")
-	public String spacelist_host(
-			HttpServletRequest request,
-			Model model) {
-		
-		HttpSession session = request.getSession();
-		String member_id = (String) session.getAttribute("member_id");
-		
-		List<hostenterDto> enter_list = hostenterService.select_space(member_id);
-		
-		
-		model.addAttribute("enter_list",enter_list);
+	public String spacelist_host(Model model) {
+
 		model.addAttribute("mainPage", "host/spacelist_host.jsp");
 		return "index";
 	}
@@ -590,15 +582,14 @@ public class Mycontroller {
 	/* ----------------------------------------- contents 폴더 */
 	/* 게시글리스트 */
 	@RequestMapping("/community")
-	public String community(@RequestParam("contents_number") String contents_number, 
-			@RequestParam(value= "community_number", required=false)String community_number,
-			HttpServletRequest request,
-			Model model) {
-		
+	public String community(@RequestParam("contents_number") String contents_number,
+			@RequestParam(value = "community_number", required = false) String community_number,
+			HttpServletRequest request, Model model) {
+
 		
 		request.getSession().setAttribute("community_number", community_number);
-		
-		
+		request.getSession().setAttribute("contents_number", contents_number);
+
 		List<contentsDto> contentsload = contentsService.contentsload(contents_number);
 		List<communityDto> communityload = communityService.communityload(contents_number);
 
@@ -611,40 +602,71 @@ public class Mycontroller {
 		return "index";
 	}
 
-	/* 게시글내용 */
+	
+	
+	/* 게시글 내용,댓글 보기 */
 	@RequestMapping("/community_info")
-	public String community_info(HttpServletRequest request,Model model) {
+	public String community_info(@RequestParam("community_number")String community_number
+			,HttpServletRequest request, Model model) {
 
-
-		
 		HttpSession session = request.getSession();
+		String member_id = (String) session.getAttribute("member_id");
+		
+		
+		List<replyDto> replyViewlist = replyService.replyView(community_number);
+		
+		List<communityDto> community_contents = communityService.community_content(community_number);
+
+
+		
+		model.addAttribute("replyView", replyViewlist);
+		model.addAttribute("mainPage", "contents/community_info.jsp");
+		
+		model.addAttribute("community_contents", community_contents);
+		model.addAttribute("mainPage", "contents/community_info.jsp");
+		
+		
+	
+		return "index";
+
+	}
+
+	
+	
+	/* 댓글 달기 */
+	@RequestMapping("/community_infoAction")
+	public String community_infoAction(
+			@RequestParam("commu_info") String reply_content,
+			//form안에 있어서 community_number 가져올 수 있음
+			@RequestParam( "community_number") String community_number,
+			replyDto dto, HttpServletRequest request, Model model) {
+
 		
 
-		String community_number = (String)session.getAttribute("community_number");
+		HttpSession session = request.getSession();
+		String member_id = (String) session.getAttribute("member_id");
 		
-		String member_id = (String)session.getAttribute("member_id");
+
+		dto.setReply_member_id(member_id);
+		dto.setReply_community_number(community_number);
+		dto.setReply_content(reply_content);
+
+
 		
+		 int result = ireplyDao.replyInsert(dto); System.out.println(result);
+		 
+		 
+		 if(result !=1) { 
+			 
+			 return "<script> alert('댓글 실패'); location.back(); </script>"; } 
+		 
+		 else {		
+
+			return "redirect:/community_info?community_number="+community_number;
+		 }
 		
-		
-		List<replyDto>replyViewlist = replyService.replyView(community_number,member_id);
-		
-		model.addAttribute("replyView",replyViewlist);	
-	
-		model.addAttribute("mainPage", "contents/community_info.jsp");
-		return "index";
+
 	}
-	
-	
-	@RequestMapping("/community_infoAction")
-	public String community_infoAction(@RequestParam(""))
-	
-	
-	
-	
-	
-	
-	
-	
 
 	/* 공간대여(일반회원) */
 	@RequestMapping("/spacerent")
@@ -672,123 +694,97 @@ public class Mycontroller {
 		multipartResolver.setDefaultEncoding("utf-8");
 		return multipartResolver;
 	}
- @Autowired
- fileUploadService fileUploadService;
-	
-	@RequestMapping(value="/uploadMultiFileOk", method = RequestMethod.POST)
-	public String uploadMultiFileOk( 
-			@RequestParam("host_name") String host_name_,
-			@RequestParam("room") int host_contents_number_,
-			@RequestParam("host_onerow") String host_onerow_,
-			@RequestParam("host_des") String host_des_,
-			@RequestParam("host_caution") String host_caution_,
-			@RequestParam("zip") String host_zip_,
-			@RequestParam("addr1") String host_location_,
-			@RequestParam("addr2") String host_location_detail_,
-			@RequestParam("host_price") int host_price_,
-			@RequestParam("host_bnumber") int host_bnumber_, 
-			@RequestParam("host_headcount") int host_headcount_,
-			@RequestParam(value="filename2", required=false) MultipartFile File_title,
-			@RequestParam(value="filename", required=false) MultipartFile[] filelist,
-			HttpServletRequest request,
+
+	@Autowired
+	fileUploadService fileUploadService;
+
+	@RequestMapping(value = "/uploadMultiFileOk", method = RequestMethod.POST)
+	public String uploadMultiFileOk(@RequestParam("host_name") String host_name_,
+			@RequestParam("room") String host_contents_number_, @RequestParam("host_onerow") String host_onerow_,
+			@RequestParam("host_des") String host_des_, @RequestParam("host_caution") String host_caution_,
+			@RequestParam("zip") String host_zip_, @RequestParam("addr1") String host_location_,
+			@RequestParam("addr2") String host_location_detail_, @RequestParam("host_price") String host_price_,
+			@RequestParam("host_bnumber") String host_bnumber_, @RequestParam("host_headcount") String host_headcount_,
+			@RequestParam(value = "user_id", required = false, defaultValue = "") String user_id,
+			@RequestParam(value = "user_pw", required = false, defaultValue = "") String user_pw,
+			@RequestParam(value = "filename", required = false) MultipartFile[] filelist, HttpServletRequest request,
 			Model model) {
-		
+
 		HttpSession session = request.getSession();
 		String member_id = (String) session.getAttribute("member_id");
-		
+
 		int result = 0;
-		
-		
-		 String host_name = host_name_; 
-		 System.out.println(host_name);
-		 int host_contents_number = host_contents_number_; 
-		 System.out.println(host_contents_number);
-		 String host_onerow = host_onerow_; 
-		 System.out.println(host_onerow);
-		 String host_des = host_des_; 
-		 System.out.println(host_des);
-		 String host_caution = host_caution_; 
-		 System.out.println(host_caution);
-		 String host_zip = host_zip_; 
-		 System.out.println(host_zip);
-		 String host_location = host_location_; 
-		 System.out.println(host_location);
-		 String host_location_detail = host_location_detail_; 
-		 System.out.println(host_location_detail);
-		 int host_price = host_price_; 
-		 System.out.println(host_price);
-		 int host_bnumber = host_bnumber_; 
-		 System.out.println(host_bnumber);
-		 int host_headcount = host_headcount_; 
-		 System.out.println(host_headcount);
-		
-		 String upload_url_title = fileUploadService.restore(File_title);
-	
-		
+
+		String host_name = host_name_;
+		System.out.println(host_name);
+		String host_contents_number = host_contents_number_;
+		System.out.println(host_contents_number);
+		String host_onerow = host_onerow_;
+		System.out.println(host_onerow);
+		String host_des = host_des_;
+		System.out.println(host_des);
+		String host_caution = host_caution_;
+		System.out.println(host_caution);
+		String host_zip = host_zip_;
+		System.out.println(host_zip);
+		String host_location = host_location_;
+		System.out.println(host_location);
+		String host_location_detail = host_location_detail_;
+		System.out.println(host_location_detail);
+		String host_price = host_price_;
+		System.out.println(host_price);
+		String host_bnumber = host_bnumber_;
+		System.out.println(host_bnumber);
+		String host_headcount = host_headcount_;
+		System.out.println(host_headcount);
+
+		// hostenter 이미지 테이블 따로 설계
+
+		System.out.println("filelist:" + filelist);
+		for (MultipartFile file : filelist) {
+			System.out.println("filename:" + file);
+
+			String upload_url = fileUploadService.restore(file);
+			// 한 개의 파일 처리코드를 여기에
+			System.out.println("upload_url:" + upload_url);
 			try {
-				result = hostenterService.insert_hostenter(
-						host_contents_number,
-						host_name,
-						host_des,
-						host_caution,
-						host_zip,
-						host_location,
-						host_location_detail,
-						host_price,
-						host_headcount,
-						member_id,
-						host_bnumber,
-						host_onerow);
-			
+				result = hostenterService.insert_hostenter(host_contents_number, host_name, host_des, host_caution,
+						host_zip, host_location, host_location_detail, host_price, member_id, host_bnumber,
+						host_headcount, host_onerow);
+				System.out.println(result + "1번");
 			} catch (Exception e) {
-				
+				// TODO: handle exception
 			}
-			
-			if(result == 1) {
-				for( MultipartFile file : filelist) {
-					System.out.println("filelist:" + filelist);
-					System.out.println("filename:" + file);
-					String upload_url = fileUploadService.restore(file);
-					System.out.println( "upload_url:" + upload_url );
-					
-				if( upload_url != null ) {
-					if( upload_url.length() > 0 ) {
-						result = hostenter_imgDaoService.hostenter_img_up(host_name_,member_id,upload_url);
+
+			if (result == 1) {
+				if (upload_url != null) {
+					if (upload_url.length() > 0) {
+						result = hostenter_imgDaoService.hostenter_img_up(host_name_, member_id, upload_url);
 						System.out.println("업로드 성공!");
-					
-						
-					}else {
-						System.out.println("업로드 실패!");	
-						model.addAttribute("mainPage","host/enter_host.jsp");
+						model.addAttribute("mainPage", "host/host.jsp");
+						return "index";
+
+					} else {
+						System.out.println("업로드 실패!");
+						model.addAttribute("mainPage", "host/enter_host.jsp");
 						return "index";
 					}
-				}else {
+				} else {
 					System.out.println("업로드 실패!");
-					model.addAttribute("mainPage","host/enter_host.jsp");
+					model.addAttribute("mainPage", "host/enter_host.jsp");
 					return "index";
 				}
 
+			} else {
+				model.addAttribute("mainPage", "host/enter_host.jsp");
+				return "index";
 			}
-			
 
-		}else {
-			System.out.println("DB연동 실패 2");
-			model.addAttribute("mainPage","host/enter_host.jsp");
-			return "index";
 		}
-		
-		
-		model.addAttribute("mainPage","host/enter_host.jsp");
-		return "index";
-		
 
-		
-		 
+		model.addAttribute("mainPage", "host/enter_host.jsp");
+		return "index";
+
 	}
-	
-	
-	
-	
-	
-	
+
 }
