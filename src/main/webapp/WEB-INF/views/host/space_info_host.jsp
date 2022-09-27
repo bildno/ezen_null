@@ -29,18 +29,98 @@
 
         // 이미지 미리보기
         function readURL(input) {
+        	console.log("호출11")
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
                 reader.onload = function (e) {
-                    document.getElementById('preview').src = e.target.result;
+                	$("#title_img").attr("src"," ");
+                	console.log("호출2")
+                    document.getElementById('title_img').src = e.target.result;
                 };
                 reader.readAsDataURL(input.files[0]);
             } else {
-                document.getElementById('preview').src = "";
+                document.getElementById('title_img').src = "";
             }
         }
     </script>
 
+<script>
+		function setDetailImage(event){
+			console.log("호출");
+			for(var image of event.target.files){
+				var reader = new FileReader();
+				
+				reader.onload = function(event){
+					var img = document.createElement("img");
+					img.setAttribute("src", event.target.result);
+					img.setAttribute("class", "col-lg-6");
+					img.setAttribute("name", "create_img")
+					document.querySelector("div#images_container").appendChild(img);
+				};
+				
+				console.log(image);
+				reader.readAsDataURL(image);
+			}
+		}
+	</script>
+
+	<script type="text/javascript">
+		function fileReset(form){
+			
+			console.log("지우기 호출");
+			$("#imgFile").val("");
+		
+			
+		/* 	var ele= document.getElementsByName("create_img");
+			len = ele.length;
+			parentNode = ele[0].parentNode;
+			for(var i=0; i<len; i++)
+			{
+			  parentNode.removeChild(ele[0]);
+			} */
+			
+			
+			var arrayImg = document.getElementsByName("create_img");
+			console.log(arrayImg.length);
+			
+			len = arrayImg.length
+			parent = arrayImg[0].parentNode;
+	 		 for(var i = 0; i<len; i++){
+	 			parent.removeChild(arrayImg[0])
+			}   
+			 
+			
+	
+		}
+function fileReset2(form){
+			
+			console.log("지우기 호출");
+			$("#imgFile2").val("");
+			$("#title_img").attr("src"," ");
+			
+		/* 	var ele= document.getElementsByName("create_img");
+			len = ele.length;
+			parentNode = ele[0].parentNode;
+			for(var i=0; i<len; i++)
+			{
+			  parentNode.removeChild(ele[0]);
+			} */
+			
+			
+			/* var arrayImg = document.getElementsByName("create_img");
+			console.log(arrayImg.length);
+			
+			len = arrayImg.length
+			parent = arrayImg[0].parentNode;
+	 		 for(var i = 0; i<len; i++){
+	 			parent.removeChild(arrayImg[0])
+			}   
+			  */
+			
+	
+		}
+
+</script>
 <!-- 주소검색 -->
 <script>
         function openZipSearch() {
@@ -69,8 +149,9 @@
 
 
 <div class="container">
-	<c:forEach var="dto" items="${ enter_list}">
 
+	<c:forEach var="dto" items="${ detail_list}" >
+<form action="udateuploadMultiFileOk?hostenter_name=${dto.hostenter_name }" method="post" enctype="multipart/form-data" onsubmit="return confirmFileExtension(imgFile.value);">
 
 		<h1 id="space_host_h1">공간 상세정보</h1>
 		<h2 id="space_host_h2">
@@ -87,13 +168,25 @@
 			</h2>
 		</div>
 
-		<img id="title_img" src="${dto.hostenter_title_img } " alt="" />
+
+
+		<img id="title_img" src="${dto.hostenter_title_img } " alt="" style="width: 250px; height: 170px" />
+		
+		  <div class="space_host_img">
+            <h3 id="space_host_h3">대표 이미지</h3>
+            <label for="imgFile2">파일선택</label>
+            <input name="filename2" type="file" id="imgFile2" accept="image/*" onchange="readURL(this);" />
+          <div>
+             <label for="imgFile4" id="delete_img2" onclick="fileReset2(this.form)">지우기</label>
+             </div>
+        </div>
+
 
 
 		<div class="space_host_name">
 			<h3 id="space_host_h3">공간명</h3>
-			<input type="text" placeholder="${dto.hostenter_name }"
-				id="host_input">
+			<input type="text" value="${dto.hostenter_name }"
+				id="host_input" name="host_name">
 			<div class="caution_div">
 				<img src="/img/host/caution.png" alt="조심" id="caution"><small
 					id="can_small">사용 가능한 특수문자 : ( , ) , [ , ] , - , .(마침표),
@@ -101,27 +194,29 @@
 			</div>
 		</div>
 
+
+
 		<div class="space_host_select">
 			<h3 id="space_host_h3">공간유형</h3>
 			<div class="div_select">
 				<div class="div_ch">
 					<input type="checkbox" style="zoom: 10.5;" name="room"
-						value="partyroom" checked id="ch" onclick='checkOnlyOne(this)'>
+						value="1" <c:if test="${dto.hostenter_contents_number eq '1' }"> checked</c:if> id="ch" onclick='checkOnlyOne(this)'>
 				</div>
 				<label id="ch1">파티룸</label>
 				<div class="div_ch">
 					<input type="checkbox" style="zoom: 10.5;" name="room"
-						value="partyroom" id="ch" onclick='checkOnlyOne(this)'>
+						value="2" <c:if test="${dto.hostenter_contents_number eq '2' }"> checked</c:if> id="ch" onclick='checkOnlyOne(this)'>
 				</div>
 				<label id="ch1">엑티브룸</label>
 				<div class="div_ch">
 					<input type="checkbox" style="zoom: 10.5;" name="room"
-						value="partyroom" id="ch" onclick='checkOnlyOne(this)'>
+						value="3" <c:if test="${dto.hostenter_contents_number eq '3' }"> checked</c:if> id="ch" onclick='checkOnlyOne(this)'>
 				</div>
 				<label id="ch1">슈팅룸</label>
 				<div class="div_ch">
 					<input type="checkbox" style="zoom: 10.5;" name="room"
-						value="partyroom" id="ch" onclick='checkOnlyOne(this)'>
+						value="4" <c:if test="${dto.hostenter_contents_number eq '4' }"> checked</c:if> id="ch" onclick='checkOnlyOne(this)'>
 				</div>
 				<label id="ch1">갤러리룸</label>
 			</div>
@@ -136,8 +231,8 @@
 			<div class="small">
 				<h3 id="small">*최대 30자</h3>
 			</div>
-			<input type="text" placeholder="${dto.hostenter_onerow }"
-				id="host_input">
+			<input type="text" value="${dto.hostenter_onerow }"
+				id="host_input" name="host_onerow">
 		</div>
 
 		<div class="space_host_description">
@@ -145,49 +240,48 @@
 			<div class="small">
 				<h3 id="small">*최대 500자</h3>
 			</div>
-			<input type="text" placeholder="${dto.hostenter_description }"
-				id="host_input_des">
+			<input type="text" value="${dto.hostenter_description }"
+				id="host_input_des" name="host_des">
 		</div>
 
 		<div class="space_host_caution">
 			<h3 id="space_host_h3">공간 예약 시 주의사항</h3>
-			<input type="text" placeholder="${dto.hostenter_caution }"
-				id="host_input">
+			<input type="text" value="${dto.hostenter_caution }"
+				id="host_input" name="host_caution">
 		</div>
 	
-		<div class="space_host_img">
-			<h3 id="space_host_h3">이미지</h3>
-			<label for="imgFile">파일선택</label> <input type="file" id="imgFile"
-				required multiple="multiple" /> <img id="preview"
-				style="width: 150px;" /> <br /> <label for="imgFile2">업로드</label>
-			<input type="button" onClick="confirmFileExtension(imgFile.value);"
-				value="업로드" id="imgFile2" />
-		</div>
+    <div class="space_host_img">
+            <h3 id="space_host_h3">이미지</h3>
+            <label for="imgFile">파일선택</label>
+            <input name="filename" type="file" id="imgFile" accept="image/*" onchange="setDetailImage(event);" required multiple="multiple" />
+            <div style="width: 150px;" id="images_container"></div>
+             <label for="imgFile3" id="delete_img" onclick="fileReset(this.form)">지우기</label>
+        </div>
 
 
 
 		<div class="space_host_price">
 			<h3 id="space_host_h3">가격</h3>
-			<input type="text" placeholder="${dto.hostenter_price }"
-				id="host_input">
+			<input type="text" value="${dto.hostenter_price }"
+				id="host_input" name="host_price">
 		</div>
 
 
 		<div class="space_host_bnum">
 			<h3 id="space_host_h3">사업자등록번호</h3>
-			<input type="text" placeholder="${dto.hostenter_bnumber}"
-				id="host_input">
+			<input type="text" value="${dto.hostenter_bnumber}"
+				id="host_input" name="host_bnumber">
 		</div>
 
 		<div class="space_host_head">
 			<h3 id="space_host_h3">수용 가능 인원</h3>
-			<input type="text" placeholder="${dto.hostenter_headcount }"
-				id="host_input">
+			<input type="text" value="${dto.hostenter_headcount }"
+				id="host_input" name="host_headcount">
 		</div>
 
 		<div class="space_finish">
 			<div class="saver">
-				<button type="button" onclick="javascript:btn()" id="btnfn">저장</button>
+				<button type="submit" onclick="javascript:btn()" id="btnfn">저장</button>
 			</div>
 			<div class="cancel">
 				<button type="button" id="btnfn"
@@ -196,5 +290,6 @@
 				</button>
 			</div>
 		</div>
+		</form>
 	</c:forEach>
 </div>

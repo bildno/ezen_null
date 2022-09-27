@@ -52,6 +52,7 @@
 					var img = document.createElement("img");
 					img.setAttribute("src", event.target.result);
 					img.setAttribute("class", "col-lg-6");
+					img.setAttribute("name", "create_img")
 					document.querySelector("div#images_container").appendChild(img);
 				};
 				
@@ -75,6 +76,63 @@
         }
     </script>
 
+
+	<script type="text/javascript">
+		function fileReset(form){
+			
+			console.log("지우기 호출");
+			$("#imgFile").val("");
+		
+			
+		/* 	var ele= document.getElementsByName("create_img");
+			len = ele.length;
+			parentNode = ele[0].parentNode;
+			for(var i=0; i<len; i++)
+			{
+			  parentNode.removeChild(ele[0]);
+			} */
+			
+			
+			var arrayImg = document.getElementsByName("create_img");
+			console.log(arrayImg.length);
+			
+			len = arrayImg.length
+			parent = arrayImg[0].parentNode;
+	 		 for(var i = 0; i<len; i++){
+	 			parent.removeChild(arrayImg[0])
+			}   
+			 
+			
+	
+		}
+function fileReset2(form){
+			
+			console.log("지우기 호출");
+			$("#imgFile2").val("");
+			$("#preview").attr("src"," ");
+			
+		/* 	var ele= document.getElementsByName("create_img");
+			len = ele.length;
+			parentNode = ele[0].parentNode;
+			for(var i=0; i<len; i++)
+			{
+			  parentNode.removeChild(ele[0]);
+			} */
+			
+			
+			/* var arrayImg = document.getElementsByName("create_img");
+			console.log(arrayImg.length);
+			
+			len = arrayImg.length
+			parent = arrayImg[0].parentNode;
+	 		 for(var i = 0; i<len; i++){
+	 			parent.removeChild(arrayImg[0])
+			}   
+			  */
+			
+	
+		}
+	</script>
 
     <!-- 주소검색 링크 -->
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
@@ -101,9 +159,11 @@
             <h3 id="space_host_h3">대표 이미지</h3>
             <label for="imgFile2">파일선택</label>
             <input name="filename2" type="file" id="imgFile2" accept="image/*" onchange="readURL(this);" />
-            <div style="width: 150px;" id="preview"></div>
+            <img src="" alt="" id="preview" style="width: 150px"/>
+            <div>
+             <label for="imgFile4" id="delete_img2" onclick="fileReset2(this.form)">지우기</label>
+             </div>
         </div>
-	
 	
         <div class="space_host_name">
             <h3 id="space_host_h3">공간명</h3>
@@ -160,6 +220,7 @@
             <label for="imgFile">파일선택</label>
             <input name="filename" type="file" id="imgFile" accept="image/*" onchange="setDetailImage(event);" required multiple="multiple" />
             <div style="width: 150px;" id="images_container"></div>
+             <label for="imgFile3" id="delete_img" onclick="fileReset(this.form)">지우기</label>
         </div>
 
         <div class="space_host_location">
