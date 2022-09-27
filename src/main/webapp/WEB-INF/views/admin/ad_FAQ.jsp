@@ -56,12 +56,13 @@
 						<th>?</th>
 					</tr>
 				<c:forEach var="dto" items="${ faq_list }">
-					<tr onclick="location.href='/ad_FAQ_update?faq_number=${ dto.faq_number }'" style="cursor: pointer;">
-						<td>${ dto.faq_number }</td>
-						<td>${ dto.faq_title }</td>
-						<td>${ dto.faq_date }</td>
+					<tr>
+						<td onclick="location.href='/ad_FAQ_update?faq_number=${ dto.faq_number }'" style="cursor: pointer;">${ dto.faq_number }</td>
+						<td onclick="location.href='/ad_FAQ_update?faq_number=${ dto.faq_number }'" style="cursor: pointer;">${ dto.faq_title }</td>
+						<td onclick="location.href='/ad_FAQ_update?faq_number=${ dto.faq_number }'" style="cursor: pointer;">
+						<fmt:formatDate value="${ dto.faq_date }" pattern = "yyyy-MM-dd HH:mm:ss"/></td>
 						<td>
-							<button class="btn_FAQdel">삭제</button>
+							<button class="btn_FAQdel" onclick="location.href='/ad_FAQ_delete?faq_number=${ dto.faq_number }'">삭제</button>
 						</td>
 					</tr>
 				</c:forEach>

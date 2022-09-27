@@ -18,4 +18,6 @@ public interface IfaqDao {
 	
 	public List<faqDto> ad_FAQ_update(String faq_number);
 	
+	public int ad_FAQ_delete(String faq_number);
+	
 }
