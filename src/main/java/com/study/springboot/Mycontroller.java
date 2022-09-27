@@ -792,6 +792,48 @@ public class Mycontroller {
 		model.addAttribute("mainPage", "contents/community.jsp");
 		return "index";
 	}
+	
+	
+	
+	/* 게시글 글쓰기 */
+	@RequestMapping("/community_write")
+	public String community_write(Model model) {
+
+		model.addAttribute("mainPage", "contents/community_write.jsp");
+		return "index";
+	}
+	
+	
+	@RequestMapping("/community_writeAction")
+	public String community_writeAction(
+			@RequestParam("commu_title")String community_title,
+			@RequestParam("commu_contents_number")int contents_number,
+			@RequestParam("commu_content")String community_content,
+			@RequestParam("commu_name")String member_name,
+			HttpServletRequest request,Model model) {
+		
+		HttpSession session = request.getSession();
+		String member_id = (String) session.getAttribute("member_id");
+		
+		System.out.println(contents_number);
+		communityDto dto = new communityDto();
+		dto.setCommunity_title(community_title);
+		dto.setCommunity_content(community_content);
+		dto.setCommunity_contents_number(contents_number);
+		dto.setCommunity_member_name(member_name);
+		dto.setCommunity_member_id(member_id);
+		
+		
+		int result = communityService.community_write(dto);
+		
+		if(result > 0) {
+			model.addAttribute("alert","글 작성이 성공하였습니다");
+			return "redirect:/community?contents_number=" +contents_number;
+		} else {
+			model.addAttribute("alert","글 작성이 실패하였습니다");
+			return "/community";
+		}
+	}
 
 	
 	
