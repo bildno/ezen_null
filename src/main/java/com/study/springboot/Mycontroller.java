@@ -195,11 +195,68 @@ public class Mycontroller {
 			return "/ad_notice"; 
 		}
 	}
+//	@RequestMapping("/ad_FAQ")
+//	public String ad_FAQ(Model model) {
+//
+//		model.addAttribute("mainPage", "admin/ad_FAQ.jsp");
+//		return "index";
+//	}
+//	FAQ 리스트
 	@RequestMapping("/ad_FAQ")
-	public String ad_FAQ(Model model) {
+	public String ad_FAQ(
+			HttpServletRequest request, Model model) {
+		
+		List<faqDto> faq_list = faqService.faq();
+		request.setAttribute("faq_list", faq_list);
+		System.out.println(faq_list);
 
+//		model.addAttribute("faq_list", faq_list);
 		model.addAttribute("mainPage", "admin/ad_FAQ.jsp");
 		return "index";
+	}
+
+	
+//	FAQ 수정,삭제, 확인
+	@RequestMapping("/ad_FAQ_update")
+	public String ad_FAQ_write(@RequestParam("faq_number") String faq_number,
+			HttpServletRequest request, Model model) {
+		
+		System.out.println(faq_number);
+		List<faqDto> ad_FAQ_update = faqService.ad_FAQ_update(faq_number);
+		System.out.println(ad_FAQ_update);
+		
+		model.addAttribute("ad_FAQ_update", ad_FAQ_update);
+		model.addAttribute("mainPage", "admin/ad_FAQ_update.jsp");
+		return "index";
+	}
+
+
+//	FAQ 작성
+	@RequestMapping("/ad_FAQ_writeAction")
+	public String ad_FAQ_writeAction(
+			@RequestParam("faq_title") String faq_title, 
+			@RequestParam("faq_content") String faq_content, 
+			HttpServletRequest request, Model model, faqDto dto) {
+		
+		System.out.println(faq_title);
+		System.out.println(faq_content);
+		
+		dto.setFaq_title(faq_title);
+		dto.setFaq_content(faq_content);
+		
+
+		int result = faqService.ad_FAQ_write(dto);
+		System.out.println("result" + result);
+
+		if (result == 0) {
+			System.out.println("실패");
+			return "redirect:/ad_FAQ";
+			
+		} else {
+			System.out.println("성공");
+			return "redirect:/ad_FAQ";
+		}
+
 	}
 
 	@RequestMapping("/ad_host_info")

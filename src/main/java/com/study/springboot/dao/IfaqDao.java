@@ -11,10 +11,11 @@ import com.study.springboot.dto.faqDto;
 public interface IfaqDao {
 
 	public List<faqDto> faq();
+	
 	public List<faqDto> faqpage( String startRowNum_faq, String endRowNum_faq );
 	
-	public int faq_write(faqDto dto);
+	public int ad_FAQ_write(faqDto dto);
 	
-
+	public List<faqDto> ad_FAQ_update(String faq_number);
 	
 }
