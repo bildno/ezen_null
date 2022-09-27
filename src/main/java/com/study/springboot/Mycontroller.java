@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
@@ -160,6 +161,34 @@ public class Mycontroller {
 		
 		return "index";
 	}
+	
+	@Autowired
+	private InoticeDao inoticeDao;
+	
+	@RequestMapping("/ad_notice_update")
+	@ResponseBody
+	public String contentAction(
+			@RequestParam("notice_title") String notice_title,
+			@RequestParam("notice_number") String notice_number,
+			@RequestParam("notice_contents_number") String notice_contents_number,
+			@RequestParam("notice_content") String notice_content,
+			noticeDto dto) {
+		
+		dto.setNotice_title(notice_title);
+		dto.setNotice_number(notice_number);
+		dto.setNotice_contents_number(notice_contents_number);
+		dto.setNotice_content(notice_content);
+		 
+		int result = inoticeDao.ad_notice_update(dto);
+		if( result != 1 ) {
+			System.out.println("수정 실패했지만 아쉽습니다.");
+			return "<script>alert('수정 실패');history.back();</script>";
+		}else {
+			System.out.println("수정 성공!");
+			return "<script>alert('수정 성공');location.href='/ad_notice';</script>";
+		}
+		
+	}
 	@RequestMapping("/noticeDelete")
 	public String noticeDelete(@RequestParam("num") int num) {
 		int result = iadminDao.noticeDelete( num );
@@ -194,6 +223,18 @@ public class Mycontroller {
 			model.addAttribute("alert", "글작성이 실패하였습니다.");
 			return "/ad_notice"; 
 		}
+	}
+	
+//	notice확인
+	@RequestMapping("/ad_notice_info")
+	public String ad_notice_write(@RequestParam("notice_number") String notice_number,
+			HttpServletRequest request, Model model) {
+		
+		List<noticeDto> ad_notice_info = noticeService.ad_notice_info(notice_number);
+		
+		model.addAttribute("ad_notice_info", ad_notice_info);
+		model.addAttribute("mainPage", "admin/ad_notice_info.jsp");
+		return "index";
 	}
 
 //	FAQ 리스트
