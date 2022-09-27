@@ -36,6 +36,7 @@
 		update member set
 		member_pw=#{param2} where member_id=#{param1}
 	</update>
+	
 	<!-- 회원가입 -->
 	<insert id="join_member" parameterType="com.study.springboot.dto.memberDto">
 		insert into

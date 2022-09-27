@@ -9,5 +9,13 @@
     	<insert id="hostenter_img_up">
     		insert into hostenter_img values(hostenter_img_idx.nextval,#{hostenter_img_name},#{hostenter_member_id},#{hostenter_img})
     	</insert>
+    	
+    	<select id="hostenter_img_sel" resultType="com.study.springboot.dto.hostenterDto">
+    		select hostenter_img from hostenter_img where hostenter_img_name = '${param1}'
+    	</select>
+    
+    	<update id="hostenter_img_update">
+    		update hostenter_img set hostenter_img = ${param1} where hostenter_img_name = ${parma2}
+    	</update>
     
     </mapper>

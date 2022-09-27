@@ -9,6 +9,7 @@
     	<insert id="insert_hostenter" parameterType="com.study.springboot.dto.hostenterDto">	
     		insert into hostenter values(
     		hostenter_idx.nextval,
+    		#{hostenter_title_img},
     		#{hostenter_contents_number},
     		#{hostenter_name},
     		#{hostenter_description},
@@ -26,8 +27,35 @@
     	</insert>
     
     <select id="select_space" resultType="com.study.springboot.dto.hostenterDto">
-    	select * from hostenter where hostenter_member_id = #{param1}
+    	select * from hostenter where hostenter_member_id = #{param1} 
     </select>
     
+     <select id="detail_space" resultType="com.study.springboot.dto.hostenterDto">
+    	select * from hostenter where hostenter_name = #{param1} 
+    </select>
+    
+    <update id="update_hostenter" >
+    	<!-- update hostenter set hostenter_title_img = #{hostenter_title_img},
+    						 hostenter_contents_number = #{hostenter_contents_number},
+    						 hostenter_name = #{hostenter_name},
+    						 hostenter_description = #{hostenter_description},
+    						 hostenter_caution = #{hostenter_caution}, 
+    						 hostenter_price = #{hostenter_price},
+    						 hostenter_headcount = #{hostenter_headcount}, 
+    						 hostenter_bnumber = #{hostenter_bnumber},
+    						 hostenter_onerow = #{hostenter_onerow}
+    						 where hostenter_name = #{param1} -->
+    						 
+    		update hostenter set hostenter_title_img = #{hostenter_title_img},
+    							 hostenter_contents_number = #{hostenter_contents_number},
+    							 hostenter_name = #{hostenter_name},
+    							 hostenter_description = #{hostenter_description},
+    							 hostenter_caution = #{hostenter_caution},
+    							 hostenter_price = #{hostenter_price},
+    							 hostenter_headcount = #{hostenter_headcount},
+    							 hostenter_bnumber = #{hostenter_bnumber},
+    							 hostenter_onerow = #{hostenter_onerow}
+    						 	 where hostenter_name = #{param2}
+    </update>
     
     </mapper>

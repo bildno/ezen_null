@@ -52,14 +52,14 @@ public class fileUploadService {
 			System.out.println("saveFileName : " + savefileName);
 			
 			writeFile(multipartFile, savefileName);
-			url = PREFIX_URL + "/" + savefileName;
+			url = PREFIX_URL + "" + savefileName;
 		}
 		catch(IOException e) {
 			
 		}
 		
 		// "/upload/20210114121803123.jpg"
-		return "/upload/" + savefileName;
+		return "upload/" + savefileName;
 	}
 	
 	// 현재 시간을 기준으로 파일 이름 생성

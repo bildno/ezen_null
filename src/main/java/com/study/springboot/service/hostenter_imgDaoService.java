@@ -1,6 +1,8 @@
 package com.study.springboot.service;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -28,5 +30,19 @@ public class hostenter_imgDaoService {
 		return result;
 	}
 	
+	public List<hostenter_imgDto> hostenter_img_sel(String hostenter_img_name){
+		
+		List<hostenter_imgDto> img_list = ihostenter_imgDao.hostenter_img_sel(hostenter_img_name);
+		
+		
+		return img_list;
+	}
+	
+	public int hostenter_img_update(String hostenter_img, String hostenter_img_name) {
+		int result = ihostenter_imgDao.hostenter_img_update(hostenter_img, hostenter_img_name);
+		
+		return result;
+		
+	}
 
 }
