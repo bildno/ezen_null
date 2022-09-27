@@ -17,6 +17,8 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import com.study.springboot.dao.IadminDao;
+import com.study.springboot.dao.IfaqDao;
+import com.study.springboot.dao.InoticeDao;
 import com.study.springboot.dao.IreplyDao;
 import com.study.springboot.dto.adminDto;
 import com.study.springboot.dto.communityDto;
@@ -575,24 +577,58 @@ public class Mycontroller {
 
 	/* ----------------------------------------- service 폴더 */
 	/* 공지사항_도움말 */
+	@Autowired
+	private IfaqDao faqDao;
+	@Autowired
+	private InoticeDao noticeDao;
+	
 	@RequestMapping("/service")
-	public String notice(HttpServletRequest request, Model model) {
-
+	public String notice(@RequestParam(value="page_notice",required=false) String page_notice,
+			@RequestParam(value="page_faq",required=false) String page_faq,
+			HttpServletRequest request,
+			Model model) {
 		/*
 		 * HttpSession session = request.getSession(); String notice
 		 * =(String)session.getAttribute("dto");
 		 */
-		// sesion은 http에서 로그인 된 채로 다른 페이지로 넘어가게 해주는 역할임
-		// (그래서 다른 페이지에서도 로그인 된 화면을 보여줌)
-		// sql을 보여주는 것과는 무관하다
-
-		List<noticeDto> noticelist = noticeService.notice();
-		List<faqDto> faqlist = faqService.faq();
-
-		model.addAttribute("noticelist", noticelist);
-		model.addAttribute("faqlist", faqlist);
-		model.addAttribute("mainPage", "service/service.jsp");
-
+		//session은 http와 같은 페이지가 열려있을 때의 값을 유지한 채로 가져와주는 역할을 함
+		//sql을 보여주는 것과는 무관하다
+		
+		
+		if( page_notice == null) {
+			page_notice = "1";
+		}
+		
+		if( page_faq == null) {
+			page_faq = "1";
+		}
+		
+		model.addAttribute("page_notice", page_notice);
+		model.addAttribute("page_faq", page_faq);
+		
+		int num_page_size = 5; //한페이지당 Row갯수
+		
+		int num_page_no_notice = Integer.parseInt( page_notice ); //page번호 1,2,3,4
+		int num_page_no_faq = Integer.parseInt( page_faq ); //page번호 1,2,3,4
+		
+		
+		int startRowNum_notice = (num_page_no_notice - 1) * num_page_size + 1; // 1, 6, 11 페이지 시작 줄번호
+		int startRowNum_faq = (num_page_no_faq - 1) * num_page_size + 1; // 1, 6, 11 페이지 시작 줄번호
+		
+		int endRowNum_notice = (num_page_no_notice * num_page_size);           // 5, 10, 15 페이지 끝 줄번호
+		int endRowNum_faq = (num_page_no_faq * num_page_size);           // 5, 10, 15 페이지 끝 줄번호
+		
+		
+		// row 1~5 까지...
+		List<faqDto> faqlist = faqDao.faqpage(String.valueOf(startRowNum_faq), String.valueOf(endRowNum_faq) );
+		System.out.println(faqlist);
+		List<noticeDto> noticelist = noticeDao.noticepage(String.valueOf(startRowNum_notice), String.valueOf(endRowNum_notice) );
+		System.out.println(noticelist);
+		
+		model.addAttribute("noticelist",noticelist);
+		model.addAttribute("faqlist",faqlist);
+		model.addAttribute("mainPage","service/service.jsp");
+		
 		return "index";
 	}
 	/* ----------------------------------------- */
