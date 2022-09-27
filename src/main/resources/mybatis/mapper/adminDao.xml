@@ -33,6 +33,7 @@
 	    )
 		WHERE RNUM BETWEEN #{param1} AND #{param2}
 	</select> 
+ 
 	
 	<select id="notice_list" resultType="com.study.springboot.dto.adminDto">
 		select * from notice

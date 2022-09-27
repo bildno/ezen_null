@@ -198,31 +198,62 @@ public class Mycontroller {
 
 //	FAQ 리스트
 	@RequestMapping("/ad_FAQ")
-	public String ad_FAQ(
-			HttpServletRequest request, Model model) {
+	public String ad_FAQ(@RequestParam(value="page",required=false) String page,
+			Model model) {
 		
-		List<faqDto> faq_list = faqService.faq();
-		request.setAttribute("faq_list", faq_list);
+		if( page == null) {
+			page = "1";
+		}
+		
+		model.addAttribute("page", page);
+		
+		int num_page_size = 5; //한페이지당 Row갯수
+		int num_page_no = Integer.parseInt( page ); //page번호 1,2,3,4
+		int startRowNum_faq = (num_page_no - 1) * num_page_size + 1; // 1, 6, 11 페이지 시작 줄번호		
+		int endRowNum_faq = (num_page_no * num_page_size);	// 5, 10, 15 페이지 끝 줄번호
+		
+		List<faqDto> faq_list = faqDao.faqpage(String.valueOf(startRowNum_faq), String.valueOf(endRowNum_faq) );
 		System.out.println(faq_list);
 
-//		model.addAttribute("faq_list", faq_list);
+		model.addAttribute("faq_list", faq_list);
 		model.addAttribute("mainPage", "admin/ad_FAQ.jsp");
 		return "index";
 	}
-
 	
-//	FAQ 수정,삭제, 확인
-	@RequestMapping("/ad_FAQ_update")
+//	FAQ 확인, 삭제
+	@RequestMapping("/ad_FAQ_info")
 	public String ad_FAQ_write(@RequestParam("faq_number") String faq_number,
 			HttpServletRequest request, Model model) {
 		
 		System.out.println(faq_number);
-		List<faqDto> ad_FAQ_update = faqService.ad_FAQ_update(faq_number);
+		List<faqDto> ad_FAQ_info = faqService.ad_FAQ_info(faq_number);
+		System.out.println(ad_FAQ_info);
+		
+		model.addAttribute("ad_FAQ_info", ad_FAQ_info);
+		model.addAttribute("mainPage", "admin/ad_FAQ_info.jsp");
+		return "index";
+	}
+	
+//	FAQ 수정
+	@RequestMapping("ad_FAQ_update")
+	public String ad_FAQ_update(
+			@RequestParam("faq_number") String faq_number,
+			@RequestParam("faq_title") String faq_title,
+			@RequestParam("faq_content") String faq_content,
+			HttpServletRequest request, Model model) {
+		
+		System.out.println(faq_number);
+		System.out.println(faq_title);
+		System.out.println(faq_content);
+		
+		
+		int ad_FAQ_update = faqService.ad_FAQ_update(faq_title, faq_content, faq_number);
+		
+		
 		System.out.println(ad_FAQ_update);
 		
 		model.addAttribute("ad_FAQ_update", ad_FAQ_update);
-		model.addAttribute("mainPage", "admin/ad_FAQ_update.jsp");
-		return "index";
+		return "redirect:ad_FAQ";
 	}
 
 	@RequestMapping("/ad_FAQ_delete")

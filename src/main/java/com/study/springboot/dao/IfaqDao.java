@@ -16,8 +16,10 @@ public interface IfaqDao {
 	
 	public int ad_FAQ_write(faqDto dto);
 	
-	public List<faqDto> ad_FAQ_update(String faq_number);
+	public List<faqDto> ad_FAQ_info(String faq_number);
 	
 	public int ad_FAQ_delete(String faq_number);
+	
+	public int ad_FAQ_update(String faq_number, String faq_title, String faq_content);
 	
 }
