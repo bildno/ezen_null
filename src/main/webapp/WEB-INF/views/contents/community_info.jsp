@@ -79,7 +79,19 @@
 					<input type="hidden"  name="reply_idx" />
 						<textarea name="commu_info" id="comm_info" cols="90" rows="2"
 							style="resize: none;" class="com_info2">게시글 댓글</textarea>
-							<button id="reple_btn" style="float: right;">답글달기</button> 
+							<%
+							String member_id = (String) session.getAttribute("member_id");
+							if(member_id != null) {
+							%>
+								<button id="reple_btn" style="float: right;">답글달기</button>
+							<%
+							} else {		
+							%>
+							
+							<% 
+							}
+							%>
+							
 					</div>				
 				</div>
 				
