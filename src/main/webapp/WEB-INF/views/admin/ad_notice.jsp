@@ -61,12 +61,12 @@
 					</tr>
 				<c:forEach var="dto" items="${notice_list}" varStatus="">
 					<tr>
-						<td>${dto.notice_number}</td>
-						<td>${dto.notice_title}</td>
-						<td>${dto.notice_contents_number}</td>
-						<td>${dto.notice_date}</td>
+						<td onclick="location.href='/ad_notice_info?notice_number=${ dto.notice_number }'" style="cursor: pointer;">${dto.notice_number}</td>
+						<td onclick="location.href='/ad_notice_info?notice_number=${ dto.notice_number }'" style="cursor: pointer;">${dto.notice_title}</td>
+						<td onclick="location.href='/ad_notice_info?notice_number=${ dto.notice_number }'" style="cursor: pointer;">${dto.notice_contents_number}</td>
+						<td onclick="location.href='/ad_notice_info?notice_number=${ dto.notice_number }'" style="cursor: pointer;">${dto.notice_date}</td>
 						<td>
-							<button class="btn_ad_notice" 
+							<button class=" btn_ad_notice" 
 							onclick="location.href='noticeDelete?num=${dto.notice_number}'">삭제</button>
 						</td>
 					</tr>
