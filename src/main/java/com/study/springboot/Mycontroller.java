@@ -16,7 +16,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
+import com.study.springboot.dao.IadminDao;
 import com.study.springboot.dao.IreplyDao;
+import com.study.springboot.dto.adminDto;
 import com.study.springboot.dto.communityDto;
 import com.study.springboot.dto.contentsDto;
 import com.study.springboot.dto.faqDto;
@@ -105,20 +107,91 @@ public class Mycontroller {
 		return "index";
 	}
 
+	@Autowired
+	private IadminDao iadminDao;
+	
 	@RequestMapping("/ad_one2one")
-	public String ad_one2one(Model model) {
-
-		model.addAttribute("mainPage", "admin/ad_one2one.jsp");
+	public String ad_one2one(@RequestParam(value="page",required=false) String page,
+			Model model) {
+		
+		if( page == null) {
+			page = "1";
+		}
+		
+		model.addAttribute("page", page);
+		
+		int num_page_size = 5; //한페이지당 Row갯수
+		int num_page_no = Integer.parseInt( page ); //page번호 1,2,3,4
+		int startRowNum = (num_page_no - 1) * num_page_size + 1; // 1, 6, 11 페이지 시작 줄번호		
+		int endRowNum = (num_page_no * num_page_size);	// 5, 10, 15 페이지 끝 줄번호
+		
+		List<adminDto>one2one_list = iadminDao.one2onepage(String.valueOf(startRowNum), String.valueOf(endRowNum) );
+		System.out.println(one2one_list);
+	
+		model.addAttribute("one2one_list", one2one_list);
+		model.addAttribute("mainPage", "admin/ad_one2one.jsp"); 
+		
 		return "index";
 	}
 
 	@RequestMapping("/ad_notice")
-	public String ad_notice(Model model) {
-
-		model.addAttribute("mainPage", "admin/ad_notice.jsp");
+	public String ad_notice(@RequestParam(value="page",required=false) String page,
+			Model model) {
+		
+		if( page == null) {
+			page = "1";
+		}
+		
+		model.addAttribute("page", page);
+		
+		int num_page_size = 5; //한페이지당 Row갯수
+		int num_page_no = Integer.parseInt( page ); //page번호 1,2,3,4
+		int startRowNum = (num_page_no - 1) * num_page_size + 1; // 1, 6, 11 페이지 시작 줄번호		
+		int endRowNum = (num_page_no * num_page_size);	// 5, 10, 15 페이지 끝 줄번호
+		
+		List<adminDto>notice_list = iadminDao.noticepage(String.valueOf(startRowNum), String.valueOf(endRowNum) );
+		System.out.println(notice_list);
+	
+		model.addAttribute("notice_list", notice_list);
+		model.addAttribute("mainPage", "admin/ad_notice.jsp"); 
+		
 		return "index";
 	}
-
+	@RequestMapping("/noticeDelete")
+	public String noticeDelete(@RequestParam("num") int num) {
+		int result = iadminDao.noticeDelete( num );
+		if( result != 1) {
+			return "/ad_notice";
+		}else {
+			return "redirect:/ad_notice";   
+		}
+	}
+	@RequestMapping("/ad_notice_writeAction")
+	public String ad_notice_writeAction(HttpServletRequest request, Model model) {
+		
+		String notice_title = request.getParameter("notice_title");
+		String notice_contents_number = request.getParameter("notice_contents_number");
+		String notice_content = request.getParameter("notice_content");
+		
+		System.out.println("notice_title:"+notice_title);
+		System.out.println("notice_contents_number:"+notice_contents_number);
+		System.out.println("notice_content:"+notice_content);
+		
+		noticeDto dto = new noticeDto();
+		dto.setNotice_title(notice_title);
+		dto.setNotice_contents_number(notice_contents_number);
+		dto.setNotice_content(notice_content);
+		
+		int result = noticeService.notice_write(dto);
+		System.out.println("result:" + result);
+		if( result > 0 ) {
+			model.addAttribute("alert", "글작성이 성공하였습니다.");
+			return "redirect:/ad_notice";  
+		}else {
+			model.addAttribute("alert", "글작성이 실패하였습니다.");
+			return "/ad_notice"; 
+		}
+	}
 	@RequestMapping("/ad_FAQ")
 	public String ad_FAQ(Model model) {
 
