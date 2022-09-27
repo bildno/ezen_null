@@ -195,12 +195,7 @@ public class Mycontroller {
 			return "/ad_notice"; 
 		}
 	}
-//	@RequestMapping("/ad_FAQ")
-//	public String ad_FAQ(Model model) {
-//
-//		model.addAttribute("mainPage", "admin/ad_FAQ.jsp");
-//		return "index";
-//	}
+
 //	FAQ 리스트
 	@RequestMapping("/ad_FAQ")
 	public String ad_FAQ(
@@ -230,6 +225,26 @@ public class Mycontroller {
 		return "index";
 	}
 
+	@RequestMapping("/ad_FAQ_delete")
+	public String ad_FAQ(@RequestParam("faq_number") String faq_number,
+			HttpServletRequest request, Model model) {
+
+		int result = faqService.ad_FAQ_delete(faq_number);
+		
+		if( result == 1) {
+			return "redirect:ad_FAQ";
+		}
+		else {
+			return "<script>alert('삭제실패') history.back();</script>";
+		}
+		
+		
+//		model.addAttribute("mainPage", "admin/ad_FAQ.jsp");
+//		return "index";
+		
+		
+		
+	}
 
 //	FAQ 작성
 	@RequestMapping("/ad_FAQ_writeAction")
