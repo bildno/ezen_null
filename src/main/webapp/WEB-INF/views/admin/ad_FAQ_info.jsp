@@ -51,26 +51,16 @@
 	
 		<div class="ad_section">
 			<div class="write_tit">도움말 > 글쓰기</div>
-			
-<c:forEach var="dto" items="${ ad_FAQ_update }">
+
+<c:forEach var="dto" items="${ ad_FAQ_info }">
+<form action="/ad_FAQ_update" method="post">
+<input type="hidden" name="faq_number" value="${ dto.faq_number }" />
 			<div class="tit">
-				<input type="text" placeholder="제목을 입력하시오." value="${ dto.faq_title }" style="width: 100%;">
+				<input name="faq_title" type="text" placeholder="제목을 입력하시오." value="${ dto.faq_title }" style="width: 100%;">
 			</div>
 			<div class="form-group">
 				<label for="exampleInputPassword1"></label>
-				<textarea class="form-control" name="content" rows="3" id="content">${ dto.faq_content }</textarea>
-
-
-		<div class="ad_section">
-			<div class="write_tit">도움말 > 글쓰기</div>
-			<div class="tit">
-				<input type="text" placeholder="제목을 입력하시오." style="width: 100%;">
-			</div>
-			<div class="form-group">
-				<label for="exampleInputPassword1">Content</label>
-				<textarea class="form-control" name="content" rows="3" id="content"></textarea>
-
-
+				<textarea class="form-control" name="faq_content" rows="3" id="content">${ dto.faq_content }</textarea>
 				<!-- include summernote-ko-KR -->
 				<script src="/summernote/lang/summernote-ko-KR.js"></script>
 
@@ -84,24 +74,15 @@
 					});
 				</script>
 
-</c:forEach>
 			</div>
 			<div class="btn_revise">
 
-			<input class="ad_btn_revise" type="button" value="수정" onclick="location.href='/ad_FAQ'">
-			<input class="ad_btn_revise" type="button" value="삭제" onclick="location.href='/ad_FAQ'">
-
-
-			</div>
-			<div class="btn_revise">
-			<input class="ad_btn_revise" type="button" value="작성"
-				onclick="location.href='/ad_FAQ'">
-			<input class="ad_btn_revise" type="button" value="수정"
-				onclick="location.href='/ad_FAQ'">
-				<input class="ad_btn_revise" type="button" value="삭제"
-				onclick="location.href='/ad_FAQ'">
+			<input class="ad_btn_revise" type="submit" value="수정"></form>
+			<input class="ad_btn_revise" type="button" value="삭제" onclick="location.href='/ad_FAQ_delete?faq_number=${ dto.faq_number }'">
 
 			</div>
+
+</c:forEach>			
 
 		</div>
 

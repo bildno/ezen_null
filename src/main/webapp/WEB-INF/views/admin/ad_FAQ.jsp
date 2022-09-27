@@ -57,17 +57,23 @@
 					</tr>
 				<c:forEach var="dto" items="${ faq_list }">
 					<tr>
-						<td onclick="location.href='/ad_FAQ_update?faq_number=${ dto.faq_number }'" style="cursor: pointer;">${ dto.faq_number }</td>
-						<td onclick="location.href='/ad_FAQ_update?faq_number=${ dto.faq_number }'" style="cursor: pointer;">${ dto.faq_title }</td>
-						<td onclick="location.href='/ad_FAQ_update?faq_number=${ dto.faq_number }'" style="cursor: pointer;">
+						<td onclick="location.href='/ad_FAQ_info?faq_number=${ dto.faq_number }'" style="cursor: pointer;">${ dto.faq_number }</td>
+						<td onclick="location.href='/ad_FAQ_info?faq_number=${ dto.faq_number }'" style="cursor: pointer;">${ dto.faq_title }</td>
+						<td onclick="location.href='/ad_FAQ_info?faq_number=${ dto.faq_number }'" style="cursor: pointer;">
 						<fmt:formatDate value="${ dto.faq_date }" pattern = "yyyy-MM-dd HH:mm:ss"/></td>
 						<td>
 							<button class="btn_FAQdel" onclick="location.href='/ad_FAQ_delete?faq_number=${ dto.faq_number }'">삭제</button>
 						</td>
 					</tr>
 				</c:forEach>
+				<tr>
+					<td></td><td></td><td></td>
+					<td>
+						<input class="ad_btn" type="button" value="작성" onclick="location.href='/ad_FAQ_write'">
+					</td>
+				</tr>
 				</table>
-				<input class="ad_btn" type="button" value="작성" onclick="location.href='/ad_FAQ_write'">
+				
 			</div>
 
 			
@@ -103,39 +109,5 @@
 		</div>
 
 	</div>
-	<!-- <div class="ad_section">
-            <table class="ad_sectiontb" style="width: 100%">
-                <tr>
-                    <th colspan="2">
-                        <h1>1:1문의 관리</h1>
-                    </th>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <hr>
-                    </td>
-                </tr>
-                <tr>
-                    <th class="ad_sectionth">문의 내용</th>
-                    <td style="width: 600px; height: 200px;">
-                        <textarea 
-                            style="resize: none; border-radius: 5px; width:100%; height:100%;" disabled>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates labore in odio aliquam a rem, harum necessitatibus cupiditate. Voluptates tenetur excepturi vitae quasi aliquam accusamus nisi? Ipsa nam minus temporibus?</textarea>
-                    </td>
-                </tr>
-                <tr>
-                    <th class="ad_sectionth">답변 내용</th>
-                    <td style="width: 600px; height: 400px;">
-                        <textarea
-                        style="resize: none; border-radius: 5px; width:100%; height:100%;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat eligendi odit nam autem! Nostrum neque ea dicta quaerat vitae non odit, ullam excepturi impedit, consequuntur laboriosam ratione amet molestias. Omnis!Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat eligendi odit nam autem! Nostrum neque ea dicta quaerat vitae non odit, ullam excepturi impedit, consequuntur laboriosam ratione amet molestias. Omnis!Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat eligendi odit nam autem! Nostrum neque ea dicta quaerat vitae non odit, ullam excepturi impedit, consequuntur laboriosam ratione amet molestias. Omnis!</textarea>
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td class="ad_btn_td">
-                        <input class="ad_btn" type="button" value="답변하기" onclick="location.href='/one2one_writeAction'">
-                    </td>
-                </tr>
-            </table>
-        </div> -->
 
 </div>

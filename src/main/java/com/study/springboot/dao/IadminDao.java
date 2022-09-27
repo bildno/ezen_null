@@ -16,4 +16,5 @@ public interface IadminDao {
 	public List<adminDto>notice_list();
 	public List<adminDto>noticepage( String startRowNum, String endRowNum );
 	public int noticeDelete(int num);
+	
 }

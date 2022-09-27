@@ -22,15 +22,15 @@ public class faqService {
 		return faq;
 	}
 
-	/* faq 상세보기 */
-	public List<faqDto> ad_FAQ_update(String faq_number) {
+	/* faq 상세보기 select */
+	public List<faqDto> ad_FAQ_info(String faq_number) {
 
-		List<faqDto> ad_FAQ_update = ifaqDao.ad_FAQ_update(faq_number);
+		List<faqDto> ad_FAQ_info = ifaqDao.ad_FAQ_info(faq_number);
 
-		return ad_FAQ_update;
+		return ad_FAQ_info;
 	}
 
-	/* faq 작성하기 */
+	/* faq 작성하기 insert */
 	public int ad_FAQ_write(faqDto dto) {
 
 		int result = ifaqDao.ad_FAQ_write(dto);
@@ -45,5 +45,15 @@ public class faqService {
 		
 		return result;
 	}
+	
+	/* faq 수정하기 */
+	public int ad_FAQ_update(String faq_number, String faq_title, String faq_content) {
+		
+		int ad_FAQ_update = ifaqDao.ad_FAQ_update(faq_number, faq_title, faq_content);
+		
+		return ad_FAQ_update;
+	}
+	
+
 
 }
