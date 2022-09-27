@@ -195,11 +195,114 @@ public class Mycontroller {
 			return "/ad_notice"; 
 		}
 	}
-	@RequestMapping("/ad_FAQ")
-	public String ad_FAQ(Model model) {
 
+//	FAQ 리스트
+	@RequestMapping("/ad_FAQ")
+	public String ad_FAQ(@RequestParam(value="page",required=false) String page,
+			Model model) {
+		
+		if( page == null) {
+			page = "1";
+		}
+		
+		model.addAttribute("page", page);
+		
+		int num_page_size = 5; //한페이지당 Row갯수
+		int num_page_no = Integer.parseInt( page ); //page번호 1,2,3,4
+		int startRowNum_faq = (num_page_no - 1) * num_page_size + 1; // 1, 6, 11 페이지 시작 줄번호		
+		int endRowNum_faq = (num_page_no * num_page_size);	// 5, 10, 15 페이지 끝 줄번호
+		
+		List<faqDto> faq_list = faqDao.faqpage(String.valueOf(startRowNum_faq), String.valueOf(endRowNum_faq) );
+		System.out.println(faq_list);
+
+		model.addAttribute("faq_list", faq_list);
 		model.addAttribute("mainPage", "admin/ad_FAQ.jsp");
 		return "index";
+	}
+	
+//	FAQ 확인, 삭제
+	@RequestMapping("/ad_FAQ_info")
+	public String ad_FAQ_write(@RequestParam("faq_number") String faq_number,
+			HttpServletRequest request, Model model) {
+		
+		System.out.println(faq_number);
+		List<faqDto> ad_FAQ_info = faqService.ad_FAQ_info(faq_number);
+		System.out.println(ad_FAQ_info);
+		
+		model.addAttribute("ad_FAQ_info", ad_FAQ_info);
+		model.addAttribute("mainPage", "admin/ad_FAQ_info.jsp");
+		return "index";
+	}
+	
+//	FAQ 수정
+	@RequestMapping("ad_FAQ_update")
+	public String ad_FAQ_update(
+			@RequestParam("faq_number") String faq_number,
+			@RequestParam("faq_title") String faq_title,
+			@RequestParam("faq_content") String faq_content,
+			HttpServletRequest request, Model model) {
+		
+		System.out.println(faq_number);
+		System.out.println(faq_title);
+		System.out.println(faq_content);
+		
+		
+		int ad_FAQ_update = faqService.ad_FAQ_update(faq_title, faq_content, faq_number);
+		
+		
+		System.out.println(ad_FAQ_update);
+		
+		model.addAttribute("ad_FAQ_update", ad_FAQ_update);
+		return "redirect:ad_FAQ";
+	}
+
+	@RequestMapping("/ad_FAQ_delete")
+	public String ad_FAQ(@RequestParam("faq_number") String faq_number,
+			HttpServletRequest request, Model model) {
+
+		int result = faqService.ad_FAQ_delete(faq_number);
+		
+		if( result == 1) {
+			return "redirect:ad_FAQ";
+		}
+		else {
+			return "<script>alert('삭제실패') history.back();</script>";
+		}
+		
+		
+//		model.addAttribute("mainPage", "admin/ad_FAQ.jsp");
+//		return "index";
+		
+		
+		
+	}
+
+//	FAQ 작성
+	@RequestMapping("/ad_FAQ_writeAction")
+	public String ad_FAQ_writeAction(
+			@RequestParam("faq_title") String faq_title, 
+			@RequestParam("faq_content") String faq_content, 
+			HttpServletRequest request, Model model, faqDto dto) {
+		
+		System.out.println(faq_title);
+		System.out.println(faq_content);
+		
+		dto.setFaq_title(faq_title);
+		dto.setFaq_content(faq_content);
+		
+
+		int result = faqService.ad_FAQ_write(dto);
+		System.out.println("result" + result);
+
+		if (result == 0) {
+			System.out.println("실패");
+			return "redirect:/ad_FAQ";
+			
+		} else {
+			System.out.println("성공");
+			return "redirect:/ad_FAQ";
+		}
+
 	}
 
 	@RequestMapping("/ad_host_info")
@@ -719,6 +822,48 @@ public class Mycontroller {
 
 		model.addAttribute("mainPage", "contents/community.jsp");
 		return "index";
+	}
+	
+	
+	
+	/* 게시글 글쓰기 */
+	@RequestMapping("/community_write")
+	public String community_write(Model model) {
+
+		model.addAttribute("mainPage", "contents/community_write.jsp");
+		return "index";
+	}
+	
+	
+	@RequestMapping("/community_writeAction")
+	public String community_writeAction(
+			@RequestParam("commu_title")String community_title,
+			@RequestParam("commu_contents_number")int contents_number,
+			@RequestParam("commu_content")String community_content,
+			@RequestParam("commu_name")String member_name,
+			HttpServletRequest request,Model model) {
+		
+		HttpSession session = request.getSession();
+		String member_id = (String) session.getAttribute("member_id");
+		
+		System.out.println(contents_number);
+		communityDto dto = new communityDto();
+		dto.setCommunity_title(community_title);
+		dto.setCommunity_content(community_content);
+		dto.setCommunity_contents_number(contents_number);
+		dto.setCommunity_member_name(member_name);
+		dto.setCommunity_member_id(member_id);
+		
+		
+		int result = communityService.community_write(dto);
+		
+		if(result > 0) {
+			model.addAttribute("alert","글 작성이 성공하였습니다");
+			return "redirect:/community?contents_number=" +contents_number;
+		} else {
+			model.addAttribute("alert","글 작성이 실패하였습니다");
+			return "/community";
+		}
 	}
 
 	

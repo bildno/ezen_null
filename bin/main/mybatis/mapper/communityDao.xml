@@ -14,6 +14,20 @@
 	 	select * from community where community_number = #{param1}
 	 </select>
 	 
+	 <insert id="community_write" parameterType="com.study.springboot.dto.noticeDto">
+	 	insert into community values
+	 	(coummnity_idx.nextval,
+	 	#{community_title},
+	 	#{community_content},
+	 	sysdate,
+	 	#{community_member_name},
+	 	#{community_member_id},
+	 	#{community_contents_number},
+	 	0
+	 	)
+	 </insert>
+
+	 
 	
 	
 

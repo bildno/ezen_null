@@ -31,4 +31,14 @@ public class communityService {
 		return community_content;
 	}
 	
+	
+	public int community_write(communityDto dto) {
+		
+		int result = icommunityDao.community_write(dto);
+		
+		return result;
+		
+	}
+	
+	
 }

@@ -2,6 +2,10 @@
 	width: 30px;
 }
 
+.container {
+	font-family: 'Noto Sans KR', sans-serif;
+	margin-left: 0;
+}
 .ad_wrap {
     display: flex;
     flex-flow: row wrap;
@@ -9,21 +13,25 @@
 }
 
 /* 컨테이너 - 부트스트랩 */
-#space_FAQ_h1 {
+#space_host_h1 {
 	font-family: 'Do Hyeon', sans-serif;
 	margin-left: 50px;
-	margin-top: 80px;
+	margin-top: 50px;
 	font-size: 50px;
 	text-align: center;
 }
 
-#space_FAQ_h2 {
+#space_host_h2 {
 	font-family: 'Do Hyeon', sans-serif;
     font-weight: 300;
 	font-size: 20px;
 	margin-left: 50px;
 	color: rgb(37, 49, 109);
 	text-align: center;
+}
+.container {
+	margin-top: 150px;
+	margin-bottom: 100px;
 }
 
 .contents {
@@ -90,7 +98,7 @@
 	border: 0;
 	background-color: rgb(238, 238, 238);
 	padding: 10px 20px 10px 20px;
-	border-radius: 5px;
+	border-radius: 5px
 }
 
 .search_table {
@@ -131,6 +139,11 @@
 	width: 80%;
 }
 
+.sectionlist > .ad_section {
+	margin-top:200px;
+	margin-bottom:150px;
+}
+
 .ad_asideli {
     list-style: none;
     padding: 20px;
@@ -147,21 +160,21 @@
 .ad_aside a:hover {
     text-decoration: none;
 }
-.ad_btn {
-	border: 0;
-	background-color: rgb(238, 238, 238);
-	padding: 10px 20px 10px 20px;
-	border-radius: 5px;
-	margin-top: 30px;
+.tit {
+	margin: 10px 0 10px 0;
 }
-.btn_FAQdel {
-	border: 0;
-	background-color: rgb(238, 238, 238);
-	padding: 10px 20px 10px 20px;
-	border-radius: 5px;
+.write_tit {
+	font-family : 'Noto Sans KR' , sans-serif;
+	font-size: 20px;
 }
-
-
+.btn_revise {
+	display: flex;
+	justify-content: end;
+	margin-bottom: 50px;
+}
+.btn_revise input {
+	margin-right: 5px;
+}
 /* 모바일화면 */
 @media screen and (max-width:767px) and (orientation:portrait) {
     /* .list {
@@ -170,12 +183,13 @@
     } */
     .ad_wrap {
         display: block;
-        margin-top: 0;
     }
     .ad_aside {
         display: flex;
         flex-flow: row wrap;
     }
+    
+
 }
 
 /* 태블릿 화면 */
@@ -186,7 +200,6 @@
     } */
     .ad_wrap {
         display: block;
-        margin-top: 0;
     }
     .ad_aside {
         display: flex;

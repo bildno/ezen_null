@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <link rel="stylesheet" href="css/admin/ad_FAQ.css">
 
 <div class="ad_wrap">
@@ -40,6 +43,7 @@
 				</div>
 			</div>
 
+
 			<div>
 				<p class="txt_primary">
 					총 <em>0</em>건이 검색되었습니다.
@@ -48,21 +52,31 @@
 					<tr>
 						<th>번호</th>
 						<th>제목</th>
-						<th>작성자</th>
 						<th>작성일시</th>
-						<th>삭제</th>
+						<th>?</th>
 					</tr>
+				<c:forEach var="dto" items="${ faq_list }">
 					<tr>
-						<td>1</td>
-						<td>효율적인 이용방법 3가지</td>
-						<td>홀깅동</td>
-						<td>2022-09-15</td>
+						<td onclick="location.href='/ad_FAQ_info?faq_number=${ dto.faq_number }'" style="cursor: pointer;">${ dto.faq_number }</td>
+						<td onclick="location.href='/ad_FAQ_info?faq_number=${ dto.faq_number }'" style="cursor: pointer;">${ dto.faq_title }</td>
+						<td onclick="location.href='/ad_FAQ_info?faq_number=${ dto.faq_number }'" style="cursor: pointer;">
+						<fmt:formatDate value="${ dto.faq_date }" pattern = "yyyy-MM-dd HH:mm:ss"/></td>
 						<td>
-							<button class="btn_FAQdel">삭제</button>
+							<button class="btn_FAQdel" onclick="location.href='/ad_FAQ_delete?faq_number=${ dto.faq_number }'">삭제</button>
 						</td>
 					</tr>
+				</c:forEach>
+				<tr>
+					<td></td><td></td><td></td>
+					<td>
+						<input class="ad_btn" type="button" value="작성" onclick="location.href='/ad_FAQ_write'">
+					</td>
+				</tr>
 				</table>
+				
 			</div>
+
+			
 			<div class="container-fluid">
 				<div class="row" style="justify-content: center; margin-top: 30px;">
 					<ul class="pagination">
@@ -95,39 +109,5 @@
 		</div>
 
 	</div>
-	<!-- <div class="ad_section">
-            <table class="ad_sectiontb" style="width: 100%">
-                <tr>
-                    <th colspan="2">
-                        <h1>1:1문의 관리</h1>
-                    </th>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <hr>
-                    </td>
-                </tr>
-                <tr>
-                    <th class="ad_sectionth">문의 내용</th>
-                    <td style="width: 600px; height: 200px;">
-                        <textarea 
-                            style="resize: none; border-radius: 5px; width:100%; height:100%;" disabled>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates labore in odio aliquam a rem, harum necessitatibus cupiditate. Voluptates tenetur excepturi vitae quasi aliquam accusamus nisi? Ipsa nam minus temporibus?</textarea>
-                    </td>
-                </tr>
-                <tr>
-                    <th class="ad_sectionth">답변 내용</th>
-                    <td style="width: 600px; height: 400px;">
-                        <textarea
-                        style="resize: none; border-radius: 5px; width:100%; height:100%;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat eligendi odit nam autem! Nostrum neque ea dicta quaerat vitae non odit, ullam excepturi impedit, consequuntur laboriosam ratione amet molestias. Omnis!Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat eligendi odit nam autem! Nostrum neque ea dicta quaerat vitae non odit, ullam excepturi impedit, consequuntur laboriosam ratione amet molestias. Omnis!Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat eligendi odit nam autem! Nostrum neque ea dicta quaerat vitae non odit, ullam excepturi impedit, consequuntur laboriosam ratione amet molestias. Omnis!</textarea>
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td class="ad_btn_td">
-                        <input class="ad_btn" type="button" value="답변하기" onclick="location.href='/one2one_writeAction'">
-                    </td>
-                </tr>
-            </table>
-        </div> -->
 
 </div>

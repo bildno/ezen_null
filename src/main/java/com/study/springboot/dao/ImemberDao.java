@@ -29,4 +29,6 @@ public interface ImemberDao {
 	public int phone_change(String member_phone, String member_id);
 	
 	public int host_find(String member_id);
+	
+	
 }
