@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="/css/contents/community_info.css">
 
 <div class="container">
+	<c:forEach var="dtowo" items="${ community_contents}">
 	<h1>컨텐츠 상세 페이지</h1>
 	<h2>
 		커뮤니티 정보를 확인하세요 <img src="/img/service/space_icon.png" alt="space_icon"
@@ -53,14 +54,16 @@
 		
 		<form action="community_infoAction" method="post">
 			<div class="section22">
+		
 				<div class="con22" style="padding: 40px 40px 0 40px;">
 					<!-- 게시글 보기 -->
-					<c:forEach var="dtowo" items="${ community_contents}">
+					
 					<input name="community_number" type="hidden" value="${dtowo.community_number}">
-					<textarea name="comm_info" class="contents" readonly="readonly" id="comm_info" cols="90" rows="10"
-						style="resize: none; width: 100%;">${dtowo.community_content}</textarea>
+					<div name="comm_info" class="contents"  id="comm_info" 
+						style="resize: none; width: 100%; height: 300px">${dtowo.community_content}</div>
+						
 					<hr>
-					</c:forEach>
+					
 					
 					<!-- 댓글보기 -->
 					<div>
@@ -79,12 +82,14 @@
 							<button id="reple_btn" style="float: right;">답글달기</button> 
 					</div>				
 				</div>
+				
 			</div>
 		</form>
 		
 		
 		</div>
 	</div>
-	<button id="list_btn" type="submit" style="float: right;" onclick="location.href='/community'">리스트</button>
+	<button id="list_btn" type="button" style="float: right;" onclick="location.href='/community?contents_number=${dtowo.community_contents_number}'" >리스트</button>
+	</c:forEach>
 </div>
 <!-- container -->

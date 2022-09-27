@@ -86,12 +86,20 @@
 			</table>
 		</div>
 
-		
+		<%
+		String member_id = (String) session.getAttribute("member_id");
+		if(member_id != null) {
+		%>
 		<div id=Btn_write>
-			<input type="button" id="btn_write" value="글쓰기">
+			<input type="button" id="btn_write" value="글쓰기" onclick="location.href='/community_write'">
 		</div>
-
-
+		<%
+		} else{
+		%>
+			
+		<%
+		}
+		%>
 
 		<div class="pagenavi">
 			<nav aria-label="Page navigation example community">
