@@ -24,5 +24,18 @@
 	</select>
 <insert id="notice_write" parameterType="com.study.springboot.dto.noticeDto">
 		insert into notice values(notice_idx.nextval,#{notice_title},#{notice_content},#{notice_contents_number},sysdate)
-	</insert>
+</insert>
+	
+	
+<select id="ad_notice_info" resultType="com.study.springboot.dto.noticeDto">
+		select * from notice where notice_number = #{ param1 }
+</select>
+
+<update id="ad_notice_update" parameterType="com.study.springboot.dto.noticeDto">
+	  update notice set 
+	  	notice_title=#{ notice_title },
+	  	notice_content=#{ notice_content },
+	  	notice_contents_number=#{ notice_contents_number }
+      WHERE notice_number=#{ notice_number }
+	</update>
 </mapper>

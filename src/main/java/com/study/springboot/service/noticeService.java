@@ -26,5 +26,12 @@ public class noticeService {
 		int result = inoticeDao.notice_write(dto);
 		return result;
 	}
+	
+	public List<noticeDto>ad_notice_info(String notice_number) {
+
+		List<noticeDto>ad_notice_info = inoticeDao.ad_notice_info(notice_number);
+
+		return ad_notice_info;
+	}
 
 }

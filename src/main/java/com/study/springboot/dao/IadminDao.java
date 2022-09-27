@@ -13,7 +13,7 @@ public interface IadminDao {
 	public List<adminDto>one2onepage( String startRowNum, String endRowNum );
 	
 	
-	public List<adminDto>notice_list();
+//	public List<adminDto>notice_list();
 	public List<adminDto>noticepage( String startRowNum, String endRowNum );
 	public int noticeDelete(int num);
 	
