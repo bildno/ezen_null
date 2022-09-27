@@ -694,97 +694,225 @@ public class Mycontroller {
 		multipartResolver.setDefaultEncoding("utf-8");
 		return multipartResolver;
 	}
-
-	@Autowired
-	fileUploadService fileUploadService;
-
-	@RequestMapping(value = "/uploadMultiFileOk", method = RequestMethod.POST)
-	public String uploadMultiFileOk(@RequestParam("host_name") String host_name_,
-			@RequestParam("room") String host_contents_number_, @RequestParam("host_onerow") String host_onerow_,
-			@RequestParam("host_des") String host_des_, @RequestParam("host_caution") String host_caution_,
-			@RequestParam("zip") String host_zip_, @RequestParam("addr1") String host_location_,
-			@RequestParam("addr2") String host_location_detail_, @RequestParam("host_price") String host_price_,
-			@RequestParam("host_bnumber") String host_bnumber_, @RequestParam("host_headcount") String host_headcount_,
-			@RequestParam(value = "user_id", required = false, defaultValue = "") String user_id,
-			@RequestParam(value = "user_pw", required = false, defaultValue = "") String user_pw,
-			@RequestParam(value = "filename", required = false) MultipartFile[] filelist, HttpServletRequest request,
+ @Autowired
+ fileUploadService fileUploadService;
+	
+	@RequestMapping(value="/uploadMultiFileOk", method = RequestMethod.POST)
+	public String uploadMultiFileOk( 
+			@RequestParam("host_name") String host_name_,
+			@RequestParam("room") int host_contents_number_,
+			@RequestParam("host_onerow") String host_onerow_,
+			@RequestParam("host_des") String host_des_,
+			@RequestParam("host_caution") String host_caution_,
+			@RequestParam("zip") String host_zip_,
+			@RequestParam("addr1") String host_location_,
+			@RequestParam("addr2") String host_location_detail_,
+			@RequestParam("host_price") int host_price_,
+			@RequestParam("host_bnumber") int host_bnumber_, 
+			@RequestParam("host_headcount") int host_headcount_,
+			@RequestParam(value="filename2", required=false) MultipartFile File_title,
+			@RequestParam(value="filename", required=false) MultipartFile[] filelist,
+			HttpServletRequest request,
 			Model model) {
-
+		
 		HttpSession session = request.getSession();
 		String member_id = (String) session.getAttribute("member_id");
-
+		
 		int result = 0;
-
-		String host_name = host_name_;
-		System.out.println(host_name);
-		String host_contents_number = host_contents_number_;
-		System.out.println(host_contents_number);
-		String host_onerow = host_onerow_;
-		System.out.println(host_onerow);
-		String host_des = host_des_;
-		System.out.println(host_des);
-		String host_caution = host_caution_;
-		System.out.println(host_caution);
-		String host_zip = host_zip_;
-		System.out.println(host_zip);
-		String host_location = host_location_;
-		System.out.println(host_location);
-		String host_location_detail = host_location_detail_;
-		System.out.println(host_location_detail);
-		String host_price = host_price_;
-		System.out.println(host_price);
-		String host_bnumber = host_bnumber_;
-		System.out.println(host_bnumber);
-		String host_headcount = host_headcount_;
-		System.out.println(host_headcount);
-
-		// hostenter 이미지 테이블 따로 설계
-
-		System.out.println("filelist:" + filelist);
-		for (MultipartFile file : filelist) {
-			System.out.println("filename:" + file);
-
-			String upload_url = fileUploadService.restore(file);
-			// 한 개의 파일 처리코드를 여기에
-			System.out.println("upload_url:" + upload_url);
+		int qq = 0;
+		
+		 String host_name = host_name_; 
+		 System.out.println(host_name);
+		 int host_contents_number = host_contents_number_; 
+		 System.out.println(host_contents_number);
+		 String host_onerow = host_onerow_; 
+		 System.out.println(host_onerow);
+		 String host_des = host_des_; 
+		 System.out.println(host_des);
+		 String host_caution = host_caution_; 
+		 System.out.println(host_caution);
+		 String host_zip = host_zip_; 
+		 System.out.println(host_zip);
+		 String host_location = host_location_; 
+		 System.out.println(host_location);
+		 String host_location_detail = host_location_detail_; 
+		 System.out.println(host_location_detail);
+		 int host_price = host_price_; 
+		 System.out.println(host_price);
+		 int host_bnumber = host_bnumber_; 
+		 System.out.println(host_bnumber);
+		 int host_headcount = host_headcount_; 
+		 System.out.println(host_headcount);
+		
+		 String upload_url_title = fileUploadService.restore(File_title);
+	
+	
+		 
+		 
 			try {
-				result = hostenterService.insert_hostenter(host_contents_number, host_name, host_des, host_caution,
-						host_zip, host_location, host_location_detail, host_price, member_id, host_bnumber,
-						host_headcount, host_onerow);
-				System.out.println(result + "1번");
+				result = hostenterService.insert_hostenter(
+						upload_url_title,
+						host_contents_number,
+						host_name,
+						host_des,
+						host_caution,
+						host_zip,
+						host_location,
+						host_location_detail,
+						host_price,
+						host_headcount,
+						member_id,
+						host_bnumber,
+						host_onerow);
+			
 			} catch (Exception e) {
-				// TODO: handle exception
+				
 			}
-
-			if (result == 1) {
-				if (upload_url != null) {
-					if (upload_url.length() > 0) {
-						result = hostenter_imgDaoService.hostenter_img_up(host_name_, member_id, upload_url);
+			
+			if(result == 1) {
+				for( MultipartFile file : filelist) {
+					System.out.println("filelist:" + filelist);
+					System.out.println("filename:" + file);
+					String upload_url = fileUploadService.restore(file);
+					System.out.println( "upload_url:" + upload_url );
+					
+				if( upload_url != null ) {
+					if( upload_url.length() > 0 ) {
+						result = hostenter_imgDaoService.hostenter_img_up(host_name_,member_id,upload_url);
 						System.out.println("업로드 성공!");
-						model.addAttribute("mainPage", "host/host.jsp");
-						return "index";
-
-					} else {
-						System.out.println("업로드 실패!");
-						model.addAttribute("mainPage", "host/enter_host.jsp");
+					
+						
+					}else {
+						System.out.println("업로드 실패!");	
+						model.addAttribute("mainPage","host/enter_host.jsp");
 						return "index";
 					}
-				} else {
+				}else {
 					System.out.println("업로드 실패!");
-					model.addAttribute("mainPage", "host/enter_host.jsp");
+					model.addAttribute("mainPage","host/enter_host.jsp");
 					return "index";
 				}
 
-			} else {
-				model.addAttribute("mainPage", "host/enter_host.jsp");
-				return "index";
 			}
+			
 
+		}else {
+			System.out.println("DB연동 실패 2");
+			model.addAttribute("mainPage","host/enter_host.jsp");
+			return "index";
 		}
+		
+		
+		model.addAttribute("mainPage","host/host.jsp");
+		return "redirect:/mypage_host";
+		
 
-		model.addAttribute("mainPage", "host/enter_host.jsp");
-		return "index";
-
+		
+		 
 	}
+	
+	@RequestMapping(value="/udateuploadMultiFileOk", method = RequestMethod.POST)
+	public String udateuploadMultiFileOk( 
+			@RequestParam("hostenter_name") String host_name_0,
+			@RequestParam("host_name") String host_name_,
+			@RequestParam("room") int host_contents_number_,
+			@RequestParam("host_onerow") String host_onerow_,
+			@RequestParam("host_des") String host_des_,
+			@RequestParam("host_caution") String host_caution_,
+			@RequestParam("host_price") int host_price_,
+			@RequestParam("host_bnumber") int host_bnumber_, 
+			@RequestParam("host_headcount") int host_headcount_,
+			@RequestParam(value="filename2", required=false) MultipartFile File_title,
+			@RequestParam(value="filename", required=false) MultipartFile[] filelist,
+			HttpServletRequest request,
+			Model model) {
+		
+		HttpSession session = request.getSession();
+		String member_id = (String) session.getAttribute("member_id");
+		
+		int result = 0;
+		int qq = 0;
+		
+		System.out.println(host_name_0);
+		 String host_name = host_name_; 
+		 System.out.println(host_name);
+		 int host_contents_number = host_contents_number_; 
+		 System.out.println(host_contents_number);
+		 String host_onerow = host_onerow_; 
+		 System.out.println(host_onerow);
+		 String host_des = host_des_; 
+		 System.out.println(host_des);
+		 String host_caution = host_caution_; 
+		 System.out.println(host_caution);
+		 int host_price = host_price_; 
+		 System.out.println(host_price);
+		 int host_bnumber = host_bnumber_; 
+		 System.out.println(host_bnumber);
+		 int host_headcount = host_headcount_; 
+		 System.out.println(host_headcount);
+		String host_name_1 = host_name_0;
+		 String upload_url_title = fileUploadService.restore(File_title);
+	
+	
+		 
+		 
+			try {
+				result = hostenterService.update_hostenter(
+						upload_url_title,
+						host_contents_number,
+						host_name,
+						host_des,
+						host_caution,
+						host_price,
+						host_headcount,
+						host_bnumber,
+						host_onerow,
+						host_name_1);
+			
+			} catch (Exception e) {
+				
+			}
+			
+			if(result == 1) {
+				for( MultipartFile file : filelist) {
+					System.out.println("filelist:" + filelist);
+					System.out.println("filename:" + file);
+					String upload_url = fileUploadService.restore(file);
+					System.out.println( "upload_url:" + upload_url );
+					
+				if( upload_url != null ) {
+					if( upload_url.length() > 0 ) {
+						result = hostenter_imgDaoService.hostenter_img_update(upload_url,host_name_);
+						System.out.println("업로드 성공!");
+					
+						
+					}else {
+						System.out.println("업로드 실패!");	
+						model.addAttribute("mainPage","host/enter_host.jsp");
+						return "index";
+					}
+				}else {
+					System.out.println("업로드 실패!");
+					model.addAttribute("mainPage","host/enter_host.jsp");
+					return "index";
+				}
 
+			}
+			
+
+		}else {
+			System.out.println("DB연동 실패 2");
+			model.addAttribute("mainPage","host/enter_host.jsp");
+			return "index";
+		}
+		
+		
+		model.addAttribute("mainPage","host/host.jsp");
+		return "redirect:/mypage_host";
+		
+
+		
+		 
+	}
 }
+	
