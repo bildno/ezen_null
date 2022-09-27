@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <link rel="stylesheet" href="css/admin/ad_FAQ.css">
 
 <div class="ad_wrap">
@@ -40,6 +43,7 @@
 				</div>
 			</div>
 
+
 			<div>
 				<p class="txt_primary">
 					총 <em>0</em>건이 검색되었습니다.
@@ -48,21 +52,24 @@
 					<tr>
 						<th>번호</th>
 						<th>제목</th>
-						<th>작성자</th>
 						<th>작성일시</th>
-						<th>삭제</th>
+						<th>?</th>
 					</tr>
-					<tr>
-						<td>1</td>
-						<td>효율적인 이용방법 3가지</td>
-						<td>홀깅동</td>
-						<td>2022-09-15</td>
+				<c:forEach var="dto" items="${ faq_list }">
+					<tr onclick="location.href='/ad_FAQ_update?faq_number=${ dto.faq_number }'" style="cursor: pointer;">
+						<td>${ dto.faq_number }</td>
+						<td>${ dto.faq_title }</td>
+						<td>${ dto.faq_date }</td>
 						<td>
 							<button class="btn_FAQdel">삭제</button>
 						</td>
 					</tr>
+				</c:forEach>
 				</table>
+				<input class="ad_btn" type="button" value="작성" onclick="location.href='/ad_FAQ_write'">
 			</div>
+
+			
 			<div class="container-fluid">
 				<div class="row" style="justify-content: center; margin-top: 30px;">
 					<ul class="pagination">

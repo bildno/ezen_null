@@ -4,22 +4,34 @@
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-    
+
 <mapper namespace="com.study.springboot.dao.IfaqDao">
 
-<select id="faq" resultType="com.study.springboot.dto.faqDto">
-	select * from faq
-</select>
-<select id="faqpage" resultType="com.study.springboot.dto.faqDto">
+	<select id="faq" resultType="com.study.springboot.dto.faqDto">
+		select * from faq
+	</select>
+	<select id="faqpage"
+		resultType="com.study.springboot.dto.faqDto">
 		SELECT * FROM
-	    (
-	        SELECT 
-	            ROWNUM AS RNUM, faq.*
-	        FROM
-	            faq
-	        ORDER BY faq_date desc
-	    )
+		(
+		SELECT
+		ROWNUM AS RNUM, faq.*
+		FROM
+		faq
+		ORDER BY faq_date desc
+		)
 		WHERE RNUM BETWEEN #{param1} AND #{param2}
 	</select>
+
+
+ 	<select id="ad_FAQ_update" resultType="com.study.springboot.dto.faqDto">
+		select * from faq where faq_number = #{ param1 }
+	</select>
+
+
+ 	<insert id="ad_FAQ_write">
+		insert into faq (faq_number, faq_title, faq_content, faq_contents_number, faq_date)
+		values(faq_idx.nextval, #{ faq_title }, #{ faq_content }, #{ faq_contents_number }, sysdate)
+	</insert>
 
 </mapper>

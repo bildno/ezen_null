@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <link rel="stylesheet" href="css/admin/ad_FAQ_write.css">
 <!-- include libraries(jQuery, bootstrap) -->
 <link
@@ -46,6 +48,19 @@
 				alt="space_icon" id="space_icon">
 		</h2>
 
+	
+		<div class="ad_section">
+			<div class="write_tit">도움말 > 글쓰기</div>
+			
+<c:forEach var="dto" items="${ ad_FAQ_update }">
+			<div class="tit">
+				<input type="text" placeholder="제목을 입력하시오." value="${ dto.faq_title }" style="width: 100%;">
+			</div>
+			<div class="form-group">
+				<label for="exampleInputPassword1"></label>
+				<textarea class="form-control" name="content" rows="3" id="content">${ dto.faq_content }</textarea>
+
+
 		<div class="ad_section">
 			<div class="write_tit">도움말 > 글쓰기</div>
 			<div class="tit">
@@ -54,6 +69,7 @@
 			<div class="form-group">
 				<label for="exampleInputPassword1">Content</label>
 				<textarea class="form-control" name="content" rows="3" id="content"></textarea>
+
 
 				<!-- include summernote-ko-KR -->
 				<script src="/summernote/lang/summernote-ko-KR.js"></script>
@@ -68,6 +84,14 @@
 					});
 				</script>
 
+</c:forEach>
+			</div>
+			<div class="btn_revise">
+
+			<input class="ad_btn_revise" type="button" value="수정" onclick="location.href='/ad_FAQ'">
+			<input class="ad_btn_revise" type="button" value="삭제" onclick="location.href='/ad_FAQ'">
+
+
 			</div>
 			<div class="btn_revise">
 			<input class="ad_btn_revise" type="button" value="작성"
@@ -76,6 +100,7 @@
 				onclick="location.href='/ad_FAQ'">
 				<input class="ad_btn_revise" type="button" value="삭제"
 				onclick="location.href='/ad_FAQ'">
+
 			</div>
 
 		</div>
