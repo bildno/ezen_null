@@ -24,6 +24,7 @@ import com.study.springboot.dto.adminDto;
 import com.study.springboot.dto.communityDto;
 import com.study.springboot.dto.contentsDto;
 import com.study.springboot.dto.faqDto;
+import com.study.springboot.dto.hostenterDto;
 import com.study.springboot.dto.memberDto;
 import com.study.springboot.dto.noticeDto;
 import com.study.springboot.dto.one2oneDto;
@@ -657,8 +658,17 @@ public class Mycontroller {
 
 	/* 공간대여 */
 	@RequestMapping("/spacelist_host")
-	public String spacelist_host(Model model) {
-
+	public String spacelist_host(
+			HttpServletRequest request,
+			Model model) {
+		
+		HttpSession session = request.getSession();
+		String member_id = (String) session.getAttribute("member_id");
+		
+		List<hostenterDto> enter_list = hostenterService.select_space(member_id);
+		
+		
+		model.addAttribute("enter_list",enter_list);
 		model.addAttribute("mainPage", "host/spacelist_host.jsp");
 		return "index";
 	}
