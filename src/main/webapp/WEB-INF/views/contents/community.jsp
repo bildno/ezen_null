@@ -13,8 +13,9 @@
 			${ dto.contents_content }<img src="/img/service/space_icon.png"
 				alt="space_icon" id="space_icon">
 		</h2>
+			
 		<hr>
-	</c:forEach>
+</c:forEach>
 	<div class="aaaa">
 		<button class="spacelistbtn" onclick="location.href='/spacerent'">더보기</button>
 	</div>
@@ -71,7 +72,7 @@
 					<th style="width: 5%;"><span>조회수</span></th>
 				</tr>
 
-				<c:forEach var="dto" items="${ communityload }">
+				<c:forEach var="dto" items="${ communitylist }">
 					<tr>
 						<td><span>${ dto.community_number }</span></td>
 						<td><input type="text" name="con_text" id="con_text"
@@ -100,27 +101,42 @@
 		<%
 		}
 		%>
-
-		<div class="pagenavi">
-			<nav aria-label="Page navigation example community">
-				<ul class="pagination">
-					<li class="page-item"><a class="page-link" href="#"
-						aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
-					</a></li>
-					<li class="page-item"><a class="page-link" href="#">1</a></li>
-					<li class="page-item"><a class="page-link" href="#">2</a></li>
-					<li class="page-item"><a class="page-link" href="#">3</a></li>
-					<li class="page-item"><a class="page-link" href="#">4</a></li>
-					<li class="page-item"><a class="page-link" href="#">5</a></li>
-					<li class="page-item"><a class="page-link" href="#"
-						aria-label="Next"> <span aria-hidden="true">&raquo;</span>
-					</a></li>
-				</ul>
-			</nav>
-		</div>
+	<c:forEach var="dto" items="${ contentsload }">
+	
+	<div class="container-fluid">
+		<div class="row" style="justify-content: center; margin-top:30px;">
+		  <ul class="pagination">
+		    
+		    <li class="page-item <c:if test="${ page_commu == 1 }">disabled</c:if>">
+		    	<a class="page-link" href="/community?contents_number=${dto.contents_number}&page_commu=${page_commu-1}">Previous</a>
+		    </li>
+		    
+		    <li class="page-item <c:if test="${ page_commu == 1 }">active</c:if>">
+		    	<a class="page-link" href="/community?contents_number=${dto.contents_number}&page_commu=1">1</a>
+		    </li>
+		    <li class="page-item <c:if test="${ page_commu == 2 }">active</c:if>">
+		    	<a class="page-link" href="/community?contents_number=${dto.contents_number}&page_commu=2">2</a>
+		    </li>
+		    <li class="page-item <c:if test="${ page_commu == 3 }">active</c:if>">
+		    	<a class="page-link" href="/community?contents_number=${dto.contents_number}&page_commu=3">3</a>
+		    </li>
+		    <li class="page-item <c:if test="${ page_commu == 4 }">active</c:if>">
+		    	<a class="page-link" href="/community?contents_number=${dto.contents_number}&page_commu=4">4</a>
+		    </li>
+		    <li class="page-item <c:if test="${ page_commu == 5 }">active</c:if>">
+		    	<a class="page-link" href="/community?contents_number=${dto.contents_number}&page_commu=5">5</a>
+		    </li>
+		    <li class="page-item <c:if test="${ page_commu == 5 }">disabled</c:if>">
+		    	<a class="page-link" href="/community?contents_number=${dto.contents_number}&page_commu=${page_commu+1}">Next</a>
+		    </li>
+		  </ul>
+		</div> 
+	</div>
+	</c:forEach>
 	</div>
 
-
+	
+	
 
 </div>
 <!-- container -->

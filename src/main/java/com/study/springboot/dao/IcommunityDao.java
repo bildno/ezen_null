@@ -16,4 +16,6 @@ public interface IcommunityDao {
 	
 	public int community_write(communityDto dto);
 	
+	public List<communityDto> community_page(String startRowNum_community, String endRowNum_community, String contents_number);
+	
 }

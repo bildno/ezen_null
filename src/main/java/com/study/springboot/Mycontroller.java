@@ -18,6 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import com.study.springboot.dao.IadminDao;
+import com.study.springboot.dao.IcommunityDao;
 import com.study.springboot.dao.IfaqDao;
 import com.study.springboot.dao.InoticeDao;
 import com.study.springboot.dao.IreplyDao;
@@ -844,25 +845,52 @@ public class Mycontroller {
 
 	/* ----------------------------------------- contents 폴더 */
 	/* 게시글리스트 */
+	@Autowired
+	private IcommunityDao icommunityDao;
+	
 	@RequestMapping("/community")
-	public String community(@RequestParam("contents_number") String contents_number,
+	public String community(@RequestParam(value = "contents_number") String contents_number,
 			@RequestParam(value = "community_number", required = false) String community_number,
+			@RequestParam(value="page_commu",required = false)String page_commu,
 			HttpServletRequest request, Model model) {
-
+		
+		if(page_commu == null) {
+			page_commu = "1";
+		}
+		
 		
 		request.getSession().setAttribute("community_number", community_number);
 		request.getSession().setAttribute("contents_number", contents_number);
+		
 
 		List<contentsDto> contentsload = contentsService.contentsload(contents_number);
-		List<communityDto> communityload = communityService.communityload(contents_number);
 
-		model.addAttribute("contentsload", contentsload);
-		model.addAttribute("communityload", communityload);
-		System.out.println(contentsload);
-		System.out.println(communityload);
 
-		model.addAttribute("mainPage", "contents/community.jsp");
-		return "index";
+		model.addAttribute("contentsload", contentsload); //제목부분
+		model.addAttribute("page_commu",page_commu); // 페이지부분
+
+		
+        int num_page_size = 5; //한페이지당 Row갯수
+		int num_page_no_commu = Integer.parseInt( page_commu ); //page번호 1,2,3,4
+		
+		
+		
+		int startRowNum_community = (num_page_no_commu - 1) * num_page_size + 1; // 1, 6, 11 페이지 시작 줄번호
+		int endRowNum_community = (num_page_no_commu * num_page_size);           // 5, 10, 15 페이지 끝 줄번호
+
+		
+		
+		// row 1~5 까지...
+		List<communityDto> communitylist = icommunityDao.community_page(String.valueOf(startRowNum_community), String.valueOf(endRowNum_community),contents_number );
+		
+
+		
+		model.addAttribute("communitylist",communitylist);
+		 model.addAttribute("mainPage", "contents/community.jsp");
+		 
+		 return "index";
+		
+		
 	}
 	
 	
@@ -887,7 +915,7 @@ public class Mycontroller {
 		HttpSession session = request.getSession();
 		String member_id = (String) session.getAttribute("member_id");
 		
-		System.out.println(contents_number);
+	
 		communityDto dto = new communityDto();
 		dto.setCommunity_title(community_title);
 		dto.setCommunity_content(community_content);
@@ -972,6 +1000,10 @@ public class Mycontroller {
 		
 
 	}
+	
+	
+
+	
 
 	/* 공간대여(일반회원) */
 	@RequestMapping("/spacerent")
