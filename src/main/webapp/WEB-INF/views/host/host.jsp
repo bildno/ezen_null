@@ -27,15 +27,10 @@
 				</div>
 
 				<div class="mypage_mylist">
-					<p>
-						<a id="mypage_a" href="/reserveList"><b>예약 내역</b></a>
-					<p>
-						<a id="mypage_a" href="/mylist"><b>리뷰 관리</b></a>
-					<p>
-						<a id="mypage_a" href="/one2one"><b>정산</b></a>
-					<p>
-						<a id="mypage_a" href="/mywish"><b>공간 정보 관리</b></a>
-					<p>
+					<a href="/reserve_host">예약 내역</a><p>
+	                <a href="">리뷰 관리</a><p>
+	                <a href="#">정산</a><p>
+	                <a href="/spacelist_host">공간 정보 관리</a>
 				</div>
 			</div>
 			

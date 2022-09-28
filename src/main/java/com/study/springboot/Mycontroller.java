@@ -964,9 +964,9 @@ public class Mycontroller {
 		
 		// row 1~5 까지...
 		List<communityDto> communitylist = icommunityDao.community_page(String.valueOf(startRowNum_community), String.valueOf(endRowNum_community),contents_number );
-		
+		List<hostenterDto> space_list = hostenterService.contents_space(contents_number);
 
-		
+		model.addAttribute("space_list", space_list);
 		model.addAttribute("communitylist",communitylist);
 		 model.addAttribute("mainPage", "contents/community.jsp");
 		 
@@ -1088,8 +1088,12 @@ public class Mycontroller {
 
 	/* 공간대여(일반회원) */
 	@RequestMapping("/spacerent")
-	public String spacerent(Model model) {
-
+	public String spacerent(
+			@RequestParam("contents_number") String contents_number,
+			Model model) {
+	
+		List<hostenterDto> space_list = hostenterService.contents_space(contents_number);
+		model.addAttribute("space_list",space_list);
 		model.addAttribute("mainPage", "contents/spacerent.jsp");
 		return "index";
 	}

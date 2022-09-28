@@ -15,38 +15,24 @@
 		</h2>
 			
 		<hr>
-</c:forEach>
-	<div class="aaaa">
-		<button class="spacelistbtn" onclick="location.href='/spacerent'">더보기</button>
-	</div>
 
+	<div class="aaaa">
+		<button class="spacelistbtn" onclick="location.href='/spacerent?contents_number=${dto.contents_number}'">더보기</button>
+	</div>
+	</c:forEach>
 	<div class="space_list">
 		<div class="row">
-			<div class="community1 col-md-4"
-				onclick="location.href='/space_info'" id="communi1">
-				<a href="#"> <img class="community1-img1" src="img/host/cat.png"
-					alt="contents1">
-					<div name="membername" id="membername">
-						<h3 id="comh3">고산 gym</h3>
-					</div>
-				</a>
-			</div>
-			<div class="community1 col-md-4" id="communi1">
-				<a href="#"> <img class="community1-img1" src="img/host/cat.png"
-					alt="contents1" id="communi1">
-					<div name="membername" id="membername">
-						<h3 id="comh3">민락 요가원</h3>
-					</div>
-				</a>
-			</div>
-			<div class="community1 col-md-4" id="communi1">
-				<a href="#"> <img class="community1-img1" src="img/host/cat.png"
-					alt="contents1">
-					<div name="membername" id="membername">
-						<h3 id="comh3">양주 댄스연습실</h3>
-					</div>
-				</a>
-			</div>
+			<c:forEach var="space" items="${space_list }" begin="0"  end="2">
+				<div class="community1 col-md-4"
+					onclick="location.href='/space_info'" id="communi1">
+					<a href="#"> <img class="community1-img1"
+						src="${space.hostenter_title_img }" alt="contents1">
+						<div name="membername" id="membername">
+							<h3 id="comh3">${space.hostenter_name }</h3>
+						</div>
+					</a>
+				</div>
+			</c:forEach>
 		</div>
 	</div>
 	<hr>
