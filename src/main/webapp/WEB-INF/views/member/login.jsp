@@ -33,7 +33,8 @@
 <div class="container">
 	<h1 id="login_h1">로그인</h1>
 	<div class="contents">
-        <form id="myform" action="loginAction">
+	
+        <form id="myform" action="loginAction" method="post">
 		<div>
 			<input class="id" type="text" placeholder="아이디" id="lo_name" name="lo_name">
 		</div>
@@ -57,6 +58,7 @@
 			<input type="submit" value="login" id="loginbtn">
 		</div>
     </form>
+    
 		<div class="joingo">
 			<p class="yet">아직 스페이스 그라운드 회원이 아니신가요?</p>
 			<a id="find_a" href="member_join" style="margin-bottom: 30px;">회원가입</a>

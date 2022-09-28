@@ -102,10 +102,10 @@ public class memberService {
 		dto.setMember_pw(member_pw);
 		dto.setMember_email(member_email);
 		dto.setMember_phone(member_phone);
-		dto.setMember_gender(member_host);
+		dto.setMember_gender(member_gender);
 		dto.setMember_name(member_name);
 		dto.setMember_host(member_host);
-		
+	
 		try {
 			result = imemberDao.join_member(dto);
 		} catch (Exception e) {

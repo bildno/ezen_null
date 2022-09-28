@@ -27,6 +27,7 @@ import com.study.springboot.dto.communityDto;
 import com.study.springboot.dto.contentsDto;
 import com.study.springboot.dto.faqDto;
 import com.study.springboot.dto.hostenterDto;
+import com.study.springboot.dto.hostenter_imgDto;
 import com.study.springboot.dto.memberDto;
 import com.study.springboot.dto.noticeDto;
 import com.study.springboot.dto.one2oneDto;
@@ -398,19 +399,23 @@ public class Mycontroller {
 			HttpServletRequest request, Model model) {
 
 		int result = memberService.login(member_id, member_pw);
-		int member_host = memberService.host_find(member_id);
-
+	
 		if (result == 1) {
-
 			model.addAttribute("mainPage", "main.jsp");
-			request.getSession().setAttribute("member_host", member_host);
-			request.getSession().setAttribute("member_id", member_id);
-			return "index";
-		} else {
+			int member_host = memberService.host_find(member_id);
+			
+			// 호스트 계정판별
+			if(member_host == 1) {
+				request.getSession().setAttribute("member_host", member_host);
+			}
 
+			request.getSession().setAttribute("member_id", member_id);
+			return "index";	
+		} else {
+			System.out.println("asdasdsadasdsadssadassdadsaasdadsd"+result);
 			model.addAttribute("mainPage", "member/login.jsp");
 			return "index";
-		}
+		} 
 
 	}
 
@@ -801,6 +806,74 @@ public class Mycontroller {
 		}
 	}
 
+	/* 호스트이름 변경 */
+	@RequestMapping("/hostnamechange")
+	public String hostnamechange(@RequestParam("member_name") String member_name, Map<String, Object> map,
+			HttpServletRequest request, Model model) {
+		System.out.println(member_name);
+		HttpSession session = request.getSession();
+
+		String member_id = (String) session.getAttribute("member_id");
+
+		System.out.println(member_id);
+
+		map.put("member_name", member_name);
+		map.put("member_id", member_id);
+
+		System.out.println(map);
+
+		int name_change = memberService.name_change(map);
+		System.out.println(name_change);
+
+		if (name_change == 1) {
+			return "redirect:/mypage_host";
+		} else {
+			return "redirect:/mypage_host";
+		}
+	}
+//	------------------------------------------------------------------
+	// 호스트email변경
+		@RequestMapping("/hostemailchange")
+		public String hostemailchange(@RequestParam("member_email") String member_newemail, HttpServletRequest request,
+				Model model) {
+			HttpSession session = request.getSession();
+			String member_id = (String) session.getAttribute("member_id");
+			System.out.println(member_id);
+
+			int newemail = memberService.email_change(member_newemail, member_id);
+			System.out.println(newemail);
+
+			if (newemail == 1) {
+				return "redirect:/mypage_host";
+			} else {
+				return "redirect:/mypage_host";
+			}
+		}
+//		------------------------------------------------------------------
+//		호스트전화번호변경
+		@RequestMapping("/hostphonechange")
+		public String hostphonechange(@RequestParam("member_phone") String member_newphone, HttpServletRequest request,
+				Model model) {
+			HttpSession session = request.getSession();
+			String member_id = (String) session.getAttribute("member_id");
+
+			System.out.println(member_id);
+
+			int newphone = memberService.phone_change(member_newphone, member_id);
+
+			System.out.println(newphone);
+
+			if (newphone == 1) {
+				System.out.println(member_newphone);
+				return "redirect:/mypage_host";
+			} else {
+				return "redirect:/mypage_host";
+			}
+		}
+//		------------------------------------------------------------------
+		
+	
+	
 	/* 공간대여 */
 	@RequestMapping("/spacelist_host")
 	public String spacelist_host(
@@ -826,10 +899,19 @@ public class Mycontroller {
 		return "index";
 	}
 
-	/* 공간상세 */
 	@RequestMapping("/space_info_host")
-	public String space_info_host(Model model) {
-
+	public String space_info_host(
+			HttpServletRequest request,
+			@RequestParam("host_name") String hostenter_img_title,
+			Model model) {
+		HttpSession session = request.getSession();
+		String member_id = (String) session.getAttribute("member_id");
+		
+		
+		List<hostenter_imgDto> img_list = hostenter_imgDaoService.hostenter_img_sel(hostenter_img_title);
+		List<hostenterDto> detail_list = hostenterService.detail_space(hostenter_img_title);
+		model.addAttribute("img_list",img_list);
+		model.addAttribute("detail_list",detail_list);
 		model.addAttribute("mainPage", "host/space_info_host.jsp");
 		return "index";
 	}
