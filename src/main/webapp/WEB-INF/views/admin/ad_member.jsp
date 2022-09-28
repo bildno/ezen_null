@@ -75,13 +75,16 @@
 							<th>전화번호</th>
 							<th>성별</th>
 						</tr>
+						<c:forEach var="dto" items="${member_list}" varStatus="">
 						<tr>
-							<td>das</td>
-							<td>ads</td>
-							<td>das</td>
-							<td>ads</td>
-							<td>ads</td>
+							<td>${ dto.member_id }</td>
+							<td>${ dto.member_pw }</td>
+							<td>${ dto.member_name }</td>
+							<td>${ dto.member_email }</td>
+							<td>${ dto.member_phone }</td>
+							<td>${ dto.member_gender }</td>
 						</tr>
+						</c:forEach>
 					</table>
 				</div>
 				<div class="container-fluid">
