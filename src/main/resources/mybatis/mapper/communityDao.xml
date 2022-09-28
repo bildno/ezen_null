@@ -26,6 +26,22 @@
 	 	0
 	 	)
 	 </insert>
+	  
+	 <select id="community_page" resultType="com.study.springboot.dto.communityDto">
+	 		SELECT * FROM
+	    (
+	        SELECT 
+	            ROWNUM AS RNUM, community.*
+	        FROM
+	            community
+	       where COMMUNITY_CONTENTS_NUMBER = #{param3}
+	    )
+		WHERE RNUM BETWEEN #{param1} AND #{param2}
+
+	 </select>
+	 
+	 
+	 
 
 	 
 	

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <link rel="stylesheet" href="css/contents/spacerent.css">
 <div class="container">
 	<h1>공간 리스트</h1>
@@ -14,25 +15,17 @@
 	</div>
 
 	<div id="spacelist" class="row">
-		<div style="cursor: pointer" onclick="location.href='/space_info'" class="col-4 spacebox">
-			<img class="spacelist_img" src="img/공간.jpg" alt="">
-			<div>
-				<textarea id="space_exp" rows="" cols="" readonly="readonly">asdas</textarea>
+		<c:forEach var="dto" items="${space_list }">
+			<div style="cursor: pointer" onclick="location.href='/space_info'"
+				class="col-4 spacebox">
+				<img class="spacelist_img" src="${dto.hostenter_title_img }" alt="">
+				<div>
+					<textarea id="space_exp" rows="" cols="" readonly="readonly">${dto.hostenter_name}</textarea>
+				</div>
 			</div>
-		</div>
-		<div class="col-4 spacebox">
-			<img class="spacelist_img" src="img/공간.jpg" alt="">
-			<div>
-				<textarea id="space_exp" rows="" cols="" readonly="readonly">asdas</textarea>
-			</div>
-		</div>
-		<div class="col-4 spacebox">
-			<img class="spacelist_img" src="img/공간.jpg" alt="">
-			<div>
-				<textarea id="space_exp" rows="" cols="" readonly="readonly">asdas</textarea>
-			</div>
-		</div>
+		</c:forEach>
 
+		
 
 	</div>
 </div>

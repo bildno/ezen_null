@@ -18,6 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import com.study.springboot.dao.IadminDao;
+import com.study.springboot.dao.IcommunityDao;
 import com.study.springboot.dao.IfaqDao;
 import com.study.springboot.dao.ImemberDao;
 import com.study.springboot.dao.InoticeDao;
@@ -27,6 +28,7 @@ import com.study.springboot.dto.communityDto;
 import com.study.springboot.dto.contentsDto;
 import com.study.springboot.dto.faqDto;
 import com.study.springboot.dto.hostenterDto;
+import com.study.springboot.dto.hostenter_imgDto;
 import com.study.springboot.dto.memberDto;
 import com.study.springboot.dto.noticeDto;
 import com.study.springboot.dto.one2oneDto;
@@ -438,19 +440,23 @@ public class Mycontroller {
 			HttpServletRequest request, Model model) {
 
 		int result = memberService.login(member_id, member_pw);
-		int member_host = memberService.host_find(member_id);
-
+	
 		if (result == 1) {
-
 			model.addAttribute("mainPage", "main.jsp");
-			request.getSession().setAttribute("member_host", member_host);
-			request.getSession().setAttribute("member_id", member_id);
-			return "index";
-		} else {
+			int member_host = memberService.host_find(member_id);
+			
+			// 호스트 계정판별
+			if(member_host == 1) {
+				request.getSession().setAttribute("member_host", member_host);
+			}
 
+			request.getSession().setAttribute("member_id", member_id);
+			return "index";	
+		} else {
+			System.out.println("asdasdsadasdsadssadassdadsaasdadsd"+result);
 			model.addAttribute("mainPage", "member/login.jsp");
 			return "index";
-		}
+		} 
 
 	}
 
@@ -841,6 +847,74 @@ public class Mycontroller {
 		}
 	}
 
+	/* 호스트이름 변경 */
+	@RequestMapping("/hostnamechange")
+	public String hostnamechange(@RequestParam("member_name") String member_name, Map<String, Object> map,
+			HttpServletRequest request, Model model) {
+		System.out.println(member_name);
+		HttpSession session = request.getSession();
+
+		String member_id = (String) session.getAttribute("member_id");
+
+		System.out.println(member_id);
+
+		map.put("member_name", member_name);
+		map.put("member_id", member_id);
+
+		System.out.println(map);
+
+		int name_change = memberService.name_change(map);
+		System.out.println(name_change);
+
+		if (name_change == 1) {
+			return "redirect:/mypage_host";
+		} else {
+			return "redirect:/mypage_host";
+		}
+	}
+//	------------------------------------------------------------------
+	// 호스트email변경
+		@RequestMapping("/hostemailchange")
+		public String hostemailchange(@RequestParam("member_email") String member_newemail, HttpServletRequest request,
+				Model model) {
+			HttpSession session = request.getSession();
+			String member_id = (String) session.getAttribute("member_id");
+			System.out.println(member_id);
+
+			int newemail = memberService.email_change(member_newemail, member_id);
+			System.out.println(newemail);
+
+			if (newemail == 1) {
+				return "redirect:/mypage_host";
+			} else {
+				return "redirect:/mypage_host";
+			}
+		}
+//		------------------------------------------------------------------
+//		호스트전화번호변경
+		@RequestMapping("/hostphonechange")
+		public String hostphonechange(@RequestParam("member_phone") String member_newphone, HttpServletRequest request,
+				Model model) {
+			HttpSession session = request.getSession();
+			String member_id = (String) session.getAttribute("member_id");
+
+			System.out.println(member_id);
+
+			int newphone = memberService.phone_change(member_newphone, member_id);
+
+			System.out.println(newphone);
+
+			if (newphone == 1) {
+				System.out.println(member_newphone);
+				return "redirect:/mypage_host";
+			} else {
+				return "redirect:/mypage_host";
+			}
+		}
+//		------------------------------------------------------------------
+		
+	
+	
 	/* 공간대여 */
 	@RequestMapping("/spacelist_host")
 	public String spacelist_host(
@@ -866,10 +940,19 @@ public class Mycontroller {
 		return "index";
 	}
 
-	/* 공간상세 */
 	@RequestMapping("/space_info_host")
-	public String space_info_host(Model model) {
-
+	public String space_info_host(
+			HttpServletRequest request,
+			@RequestParam("host_name") String hostenter_img_title,
+			Model model) {
+		HttpSession session = request.getSession();
+		String member_id = (String) session.getAttribute("member_id");
+		
+		
+		List<hostenter_imgDto> img_list = hostenter_imgDaoService.hostenter_img_sel(hostenter_img_title);
+		List<hostenterDto> detail_list = hostenterService.detail_space(hostenter_img_title);
+		model.addAttribute("img_list",img_list);
+		model.addAttribute("detail_list",detail_list);
 		model.addAttribute("mainPage", "host/space_info_host.jsp");
 		return "index";
 	}
@@ -885,27 +968,53 @@ public class Mycontroller {
 
 	/* ----------------------------------------- contents 폴더 */
 	/* 게시글리스트 */
+	@Autowired
+	private IcommunityDao icommunityDao;
+	
 	@RequestMapping("/community")
-	public String community(@RequestParam("contents_number") String contents_number,
+	public String community(@RequestParam(value = "contents_number") String contents_number,
 			@RequestParam(value = "community_number", required = false) String community_number,
+			@RequestParam(value="page_commu",required = false)String page_commu,
 			HttpServletRequest request, Model model) {
-
+		
+		if(page_commu == null) {
+			page_commu = "1";
+		}
+		
 		
 		request.getSession().setAttribute("community_number", community_number);
 		request.getSession().setAttribute("contents_number", contents_number);
+		
 
 		List<contentsDto> contentsload = contentsService.contentsload(contents_number);
-		List<communityDto> communityload = communityService.communityload(contents_number);
 
-		model.addAttribute("contentsload", contentsload);
-		model.addAttribute("communityload", communityload);
-		System.out.println(contentsload);
-		System.out.println(communityload);
 
-		model.addAttribute("mainPage", "contents/community.jsp");
-		return "index";
+		model.addAttribute("contentsload", contentsload); //제목부분
+		model.addAttribute("page_commu",page_commu); // 페이지부분
+
+		
+        int num_page_size = 5; //한페이지당 Row갯수
+		int num_page_no_commu = Integer.parseInt( page_commu ); //page번호 1,2,3,4
+		
+		
+		
+		int startRowNum_community = (num_page_no_commu - 1) * num_page_size + 1; // 1, 6, 11 페이지 시작 줄번호
+		int endRowNum_community = (num_page_no_commu * num_page_size);           // 5, 10, 15 페이지 끝 줄번호
+
+		
+		
+		// row 1~5 까지...
+		List<communityDto> communitylist = icommunityDao.community_page(String.valueOf(startRowNum_community), String.valueOf(endRowNum_community),contents_number );
+		List<hostenterDto> space_list = hostenterService.contents_space(contents_number);
+
+		model.addAttribute("space_list", space_list);
+		model.addAttribute("communitylist",communitylist);
+		 model.addAttribute("mainPage", "contents/community.jsp");
+		 
+		 return "index";
+		
+		
 	}
-	
 	
 	
 	/* 게시글 글쓰기 */
@@ -928,7 +1037,7 @@ public class Mycontroller {
 		HttpSession session = request.getSession();
 		String member_id = (String) session.getAttribute("member_id");
 		
-		System.out.println(contents_number);
+	
 		communityDto dto = new communityDto();
 		dto.setCommunity_title(community_title);
 		dto.setCommunity_content(community_content);
@@ -1013,11 +1122,19 @@ public class Mycontroller {
 		
 
 	}
+	
+	
+
+	
 
 	/* 공간대여(일반회원) */
 	@RequestMapping("/spacerent")
-	public String spacerent(Model model) {
-
+	public String spacerent(
+			@RequestParam("contents_number") String contents_number,
+			Model model) {
+	
+		List<hostenterDto> space_list = hostenterService.contents_space(contents_number);
+		model.addAttribute("space_list",space_list);
 		model.addAttribute("mainPage", "contents/spacerent.jsp");
 		return "index";
 	}

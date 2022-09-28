@@ -25,6 +25,11 @@
     		)
     		
     	</insert>
+    	
+    <select id="contents_space" resultType="com.study.springboot.dto.hostenterDto">
+    	select * from hostenter where hostenter_contents_number = #{param1}
+    </select>
+    
     
     <select id="select_space" resultType="com.study.springboot.dto.hostenterDto">
     	select * from hostenter where hostenter_member_id = #{param1} 
