@@ -976,7 +976,6 @@ public class Mycontroller {
 	}
 	
 	
-	
 	/* 게시글 글쓰기 */
 	@RequestMapping("/community_write")
 	public String community_write(Model model) {
