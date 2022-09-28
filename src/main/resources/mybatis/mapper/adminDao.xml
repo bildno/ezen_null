@@ -42,5 +42,9 @@
 	  DELETE FROM notice 
 	  WHERE notice_number=#{ param1 }
 	</delete>
-
+	
+	<!-- member -->
+	<select id="member_list" resultType="com.study.springboot.dto.memberDto">
+		select * from member where member_host = 0
+	</select>
 </mapper>
