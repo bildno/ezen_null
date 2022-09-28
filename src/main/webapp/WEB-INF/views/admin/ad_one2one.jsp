@@ -54,7 +54,7 @@
 				<table class="search_table">
 					<tr>
 						<th>번호</th>
-						<!-- <th>제목</th> -->
+						<th>제목</th>
 						<th>내용</th>
 						<th>아이디</th>
 						<th>작성일시</th>
@@ -62,7 +62,7 @@
 			<c:forEach var="dto" items="${ one2one_list}" varStatus="">
 					<tr>
 						<td>${dto.one2one_number}</td>
-						<%-- <td>${dto.one2one_title}추가해야됨</td> --%>
+						<td>${dto.one2one_title}</td>
 						<td>${dto.one2one_content}</td>
 						<td>${dto.one2one_member_id}</td>
 						<td>${dto.one2one_date}</td>

@@ -114,4 +114,18 @@ public class memberService {
 		}
 		return result;
 	}
+//// 관리자 회원 조회
+//	public List<memberDto> ad_member_list() {
+//		
+//		List<memberDto> ad_host_list = imemberDao.ad_member_list();
+//		
+//		return ad_host_list;
+//	}
+//// 관리자 호스트 조회
+//	public List<memberDto> ad_host_list() {
+//		
+//		List<memberDto> ad_host_list = imemberDao.ad_host_list();
+//		
+//		return ad_host_list;
+//	}
 }

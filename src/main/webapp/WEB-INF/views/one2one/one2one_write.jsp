@@ -12,18 +12,8 @@
 	<div class="o2owrite_tb">
 		<table>
 			<tr>
-				<th>문의 유형</th>
-				<td><select class="selectbox" name="type1" id="type1">
-						<option value="1" disabled selected>선택해주세요</option>
-						<option value="2">dd</option>
-						<option value="3">dd</option>
-						<option value="4">dd</option>
-				</select> <select class="selectbox" name="type2" id="type2">
-						<option value="1" disabled selected>선택해주세요</option>
-						<option value="2">dd</option>
-						<option value="3">dd</option>
-						<option value="4">dd</option>
-				</select></td>
+				<th>문의 제목</th>
+				<td><input id="ask" type="text" placeholder="문의 제목을 입력하세요" style="width:99%""></td>
 			</tr>
 			<tr>
 				<th>문의 내용</th>

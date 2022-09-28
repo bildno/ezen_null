@@ -19,6 +19,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import com.study.springboot.dao.IadminDao;
 import com.study.springboot.dao.IfaqDao;
+import com.study.springboot.dao.ImemberDao;
 import com.study.springboot.dao.InoticeDao;
 import com.study.springboot.dao.IreplyDao;
 import com.study.springboot.dto.adminDto;
@@ -94,22 +95,62 @@ public class Mycontroller {
 
 	@Autowired
 	private IreplyDao ireplyDao;
+	
+	@Autowired
+	private ImemberDao imemberDao;
+	
 
 	/* ----------------------------------------- admin 폴더 */
 
 	@RequestMapping("/ad_member")
-	public String ad_member(Model model) {
+	public String ad_member(@RequestParam(value="page",required=false) String page,
+		Model model) {
+	
+	if( page == null) {
+		page = "1";
+	}
+	
+	model.addAttribute("page", page);
+	
+	int num_page_size = 5; //한페이지당 Row갯수
+	int num_page_no = Integer.parseInt( page ); //page번호 1,2,3,4
+	int startRowNum = (num_page_no - 1) * num_page_size + 1; // 1, 6, 11 페이지 시작 줄번호		
+	int endRowNum = (num_page_no * num_page_size);	// 5, 10, 15 페이지 끝 줄번호
+	
+	List<memberDto>ad_member_page = imemberDao.ad_member_page(String.valueOf(startRowNum), String.valueOf(endRowNum) );
+	System.out.println(ad_member_page);
 
-		model.addAttribute("mainPage", "admin/ad_member.jsp");
-		return "index";
+	model.addAttribute("ad_member_page", ad_member_page);
+	model.addAttribute("mainPage", "admin/ad_member.jsp"); 
+	
+	return "index";
+		
 	}
 
 	@RequestMapping("/ad_host")
-	public String ad_host(Model model) {
+	public String ad_host(@RequestParam(value="page",required=false) String page,
+			Model model) {
+		
+		if( page == null) {
+			page = "1";
+		}
+		
+		model.addAttribute("page", page);
+		
+		int num_page_size = 5; //한페이지당 Row갯수
+		int num_page_no = Integer.parseInt( page ); //page번호 1,2,3,4
+		int startRowNum = (num_page_no - 1) * num_page_size + 1; // 1, 6, 11 페이지 시작 줄번호		
+		int endRowNum = (num_page_no * num_page_size);	// 5, 10, 15 페이지 끝 줄번호
+		
+		List<memberDto>ad_host_page = imemberDao.ad_host_page(String.valueOf(startRowNum), String.valueOf(endRowNum) );
+		System.out.println(ad_host_page);
 
-		model.addAttribute("mainPage", "admin/ad_host.jsp");
+		model.addAttribute("ad_host_page", ad_host_page);
+		model.addAttribute("mainPage", "admin/ad_host.jsp"); 
+		
 		return "index";
-	}
+			
+		}
 
 	@Autowired
 	private IadminDao iadminDao;

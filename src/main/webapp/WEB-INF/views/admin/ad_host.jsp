@@ -66,7 +66,7 @@
 							<th>전화번호</th>
 							<th>성별</th>
 						</tr>
-						<c:forEach var="dto" items="${host_list}" varStatus="">
+						<c:forEach var="dto" items="${ad_host_page}" varStatus="">
 						<tr>
 							<td>${ dto.member_id }</td>
 							<td>${ dto.member_pw }</td>

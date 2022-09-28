@@ -65,8 +65,41 @@
 		SET	member_phone = #{ param1 }
 		where member_id = #{ param2 }
 	</update>
-
-
-
+	<!-- member -->
+	<select id="ad_member_list" resultType="com.study.springboot.dto.memberDto">
+		select * from member where member_host = 0
+	</select>
+	
+	<!-- host -->
+	<select id="ad_host_list" resultType="com.study.springboot.dto.memberDto">
+		select * from member where member_host = 1
+	</select>
+	
+	<select id="ad_member_page"
+		resultType="com.study.springboot.dto.memberDto">
+		SELECT * FROM
+		(
+		SELECT
+		ROWNUM AS RNUM, member.*
+		FROM
+		member
+		where member_host = 0
+		)
+		WHERE RNUM BETWEEN #{param1} AND #{param2} 
+	</select>
+	
+	
+	<select id="ad_host_page"
+		resultType="com.study.springboot.dto.memberDto">
+		SELECT * FROM
+		(
+		SELECT
+		ROWNUM AS RNUM, member.*
+		FROM
+		member
+		where member_host = 1
+		)
+		WHERE RNUM BETWEEN #{param1} AND #{param2}
+	</select>
 
 </mapper>

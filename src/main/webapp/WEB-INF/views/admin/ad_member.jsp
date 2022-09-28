@@ -75,7 +75,7 @@
 							<th>전화번호</th>
 							<th>성별</th>
 						</tr>
-						<c:forEach var="dto" items="${member_list}" varStatus="">
+						<c:forEach var="dto" items="${ad_member_page}" varStatus="">
 						<tr>
 							<td>${ dto.member_id }</td>
 							<td>${ dto.member_pw }</td>
@@ -84,6 +84,7 @@
 							<td>${ dto.member_phone }</td>
 							<td>${ dto.member_gender }</td>
 						</tr>
+						
 						</c:forEach>
 					</table>
 				</div>
