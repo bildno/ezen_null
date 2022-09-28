@@ -39,7 +39,7 @@
 <div class="container">
 	<h1 id="pwchange_h1">비밀번호 변경</h1>
 	<div class="contents">
-        <form  id="myform" action="pwchangeAction">
+        <form  id="myform" action="pwchangeAction" method="post">
 		<div>
 			<input class="now_pass" type="password" placeholder="현재 비밀번호" id="now_pass">
 		</div>

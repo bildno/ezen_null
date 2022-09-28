@@ -205,7 +205,7 @@
 			alt="space_icon" id="space_icon">
 	</h2>
 	<div class="contents">
-		<form name="join" action="/joinAction" onsubmit="return Validation();">
+		<form name="join" action="/joinAction" onsubmit="return Validation();" method="post">
 			<div id="insert">
 				<div>
 					<input type="text" placeholder="이름" name="name" id="usern">
