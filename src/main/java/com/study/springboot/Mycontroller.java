@@ -26,6 +26,7 @@ import com.study.springboot.dto.communityDto;
 import com.study.springboot.dto.contentsDto;
 import com.study.springboot.dto.faqDto;
 import com.study.springboot.dto.hostenterDto;
+import com.study.springboot.dto.hostenter_imgDto;
 import com.study.springboot.dto.memberDto;
 import com.study.springboot.dto.noticeDto;
 import com.study.springboot.dto.one2oneDto;
@@ -825,10 +826,19 @@ public class Mycontroller {
 		return "index";
 	}
 
-	/* 공간상세 */
 	@RequestMapping("/space_info_host")
-	public String space_info_host(Model model) {
-
+	public String space_info_host(
+			HttpServletRequest request,
+			@RequestParam("host_name") String hostenter_img_title,
+			Model model) {
+		HttpSession session = request.getSession();
+		String member_id = (String) session.getAttribute("member_id");
+		
+		
+		List<hostenter_imgDto> img_list = hostenter_imgDaoService.hostenter_img_sel(hostenter_img_title);
+		List<hostenterDto> detail_list = hostenterService.detail_space(hostenter_img_title);
+		model.addAttribute("img_list",img_list);
+		model.addAttribute("detail_list",detail_list);
 		model.addAttribute("mainPage", "host/space_info_host.jsp");
 		return "index";
 	}
