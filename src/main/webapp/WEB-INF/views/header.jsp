@@ -66,65 +66,61 @@
 			</h1>
 			<div class="search" style="margin-top: 15px;">
 				<input type="text" id="text" placeholder="원하시는 공간을 입력해보세요">
-				
+
 				<%
 				String member_id = (String) session.getAttribute("member_id");
-				if(member_id != null) {
-					%>
-						<input type="button" id="mychk_btn" value="출석체크 하러가기" onclick="location.href='/mycheck'">
-						<% 
-				}else{
-						%>
-							
-					    <% 
-				}
-					    %>
-						
+				if (member_id != null) {
+				%>
+				<input type="button" id="mychk_btn" value="출석체크 하러가기"
+					onclick="location.href='/mycheck'">
+				<%
+				} else { }
+				%>
 
-
-				
 			</div>
 
 			<div id="sidelist" class="sidelist">
-		
 				<%
 				//null체크
-				if (member_id != null) { //로그인 상태
+					if (member_id != null) { //로그인 상태
 				%>
-					 <a href="/mypage">마이페이지</a>
-					 <a href="/logoutAction">로그아웃</a>
+					<a href="/mypage">마이페이지</a> <a href="/logoutAction">로그아웃</a>
 				<%
-				} else { //로그아웃 상태
+					} else { //로그아웃 상태
 				%>
-					<a href="/login"> <img src="img/member/login.png" alt=""style="width: 20px" /></a>
+					<a href="/login"> <img src="img/member/login.png" alt=""
+					style="width: 20px" /></a>
 				<%
-				}
+					}
 				%>
-				  <a href="/main">홈</a> 
-				  <a href="/service">고객센터</a> 
-				  <a href="/one2one">one2one</a>
-				 <%
+					<a href="/main">홈</a> 
+					<a href="/service">고객센터</a> 
+					<a href="/one2one">one2one</a>
+					<a href="/mypage_host">호스트 마이페이지</a>
+				<%
 				//null체크
-				if (member_id != null) { //로그인 상태
+					if (member_id != null) { //로그인 상태
+						if (member_id.equals("admin") ) { //로그인 상태
 				%>
-					 <a href="/mypage_host">호스트 마이페이지</a>
+				
+					<a href="/ad_member">관리자페이지 확인용용</a>
 				<%
-				} else { //로그아웃 상태
+					} else { //로그아웃 상태
+						
 				%>
-					
 				<%
-				}
+						}
+					}
 				%>
-				  <a href="/ad_member">관리자페이지 확인용용</a>
 				
 			</div>
-	
+
 			<img class="liston" src="/img/sidelisticon.png" alt="sidelisticon"
 				id="sidelisticon" onclick="sideon()" />
 
 		</div>
 	</div>
-	
+
 	<img src="/img/topmove.png" alt="" class="movetopbtn" />
 
 
