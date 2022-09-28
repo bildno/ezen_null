@@ -805,6 +805,74 @@ public class Mycontroller {
 		}
 	}
 
+	/* 호스트이름 변경 */
+	@RequestMapping("/hostnamechange")
+	public String hostnamechange(@RequestParam("member_name") String member_name, Map<String, Object> map,
+			HttpServletRequest request, Model model) {
+		System.out.println(member_name);
+		HttpSession session = request.getSession();
+
+		String member_id = (String) session.getAttribute("member_id");
+
+		System.out.println(member_id);
+
+		map.put("member_name", member_name);
+		map.put("member_id", member_id);
+
+		System.out.println(map);
+
+		int name_change = memberService.name_change(map);
+		System.out.println(name_change);
+
+		if (name_change == 1) {
+			return "redirect:/mypage_host";
+		} else {
+			return "redirect:/mypage_host";
+		}
+	}
+//	------------------------------------------------------------------
+	// 호스트email변경
+		@RequestMapping("/hostemailchange")
+		public String hostemailchange(@RequestParam("member_email") String member_newemail, HttpServletRequest request,
+				Model model) {
+			HttpSession session = request.getSession();
+			String member_id = (String) session.getAttribute("member_id");
+			System.out.println(member_id);
+
+			int newemail = memberService.email_change(member_newemail, member_id);
+			System.out.println(newemail);
+
+			if (newemail == 1) {
+				return "redirect:/mypage_host";
+			} else {
+				return "redirect:/mypage_host";
+			}
+		}
+//		------------------------------------------------------------------
+//		호스트전화번호변경
+		@RequestMapping("/hostphonechange")
+		public String hostphonechange(@RequestParam("member_phone") String member_newphone, HttpServletRequest request,
+				Model model) {
+			HttpSession session = request.getSession();
+			String member_id = (String) session.getAttribute("member_id");
+
+			System.out.println(member_id);
+
+			int newphone = memberService.phone_change(member_newphone, member_id);
+
+			System.out.println(newphone);
+
+			if (newphone == 1) {
+				System.out.println(member_newphone);
+				return "redirect:/mypage_host";
+			} else {
+				return "redirect:/mypage_host";
+			}
+		}
+//		------------------------------------------------------------------
+		
+	
+	
 	/* 공간대여 */
 	@RequestMapping("/spacelist_host")
 	public String spacelist_host(
