@@ -397,19 +397,23 @@ public class Mycontroller {
 			HttpServletRequest request, Model model) {
 
 		int result = memberService.login(member_id, member_pw);
-		int member_host = memberService.host_find(member_id);
-
+	
 		if (result == 1) {
-
 			model.addAttribute("mainPage", "main.jsp");
-			request.getSession().setAttribute("member_host", member_host);
-			request.getSession().setAttribute("member_id", member_id);
-			return "index";
-		} else {
+			int member_host = memberService.host_find(member_id);
+			
+			// 호스트 계정판별
+			if(member_host == 1) {
+				request.getSession().setAttribute("member_host", member_host);
+			}
 
+			request.getSession().setAttribute("member_id", member_id);
+			return "index";	
+		} else {
+			System.out.println("asdasdsadasdsadssadassdadsaasdadsd"+result);
 			model.addAttribute("mainPage", "member/login.jsp");
 			return "index";
-		}
+		} 
 
 	}
 
