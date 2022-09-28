@@ -93,4 +93,12 @@ public class hostenterService {
 
 		return result;
 	}
+	public List<hostenterDto> contents_space(String hostenter_contents_number){
+		
+		List<hostenterDto> space_list = ihostenterDao.contents_space(hostenter_contents_number);
+		
+	
+		return space_list;
+	}
+	
 }

@@ -17,4 +17,5 @@ public interface IhostenterDao {
 	
 	public int update_hostenter(hostenterDto dto, String host_name_0);
 	
+	public List<hostenterDto> contents_space(String hostenter_contents_number);
 }

@@ -140,13 +140,16 @@ public class Mycontroller {
 	}
 
 	@RequestMapping("/ad_notice")
-	public String ad_notice(@RequestParam(value="page",required=false) String page,
+	public String ad_notice(
+			
+			@RequestParam(value="page",required=false) String page,
 			Model model) {
 		
 		if( page == null) {
 			page = "1";
 		}
 		
+	
 		model.addAttribute("page", page);
 		
 		int num_page_size = 5; //한페이지당 Row갯수
@@ -407,7 +410,6 @@ public class Mycontroller {
 			request.getSession().setAttribute("member_id", member_id);
 			return "index";
 		} else {
-
 			model.addAttribute("mainPage", "member/login.jsp");
 			return "index";
 		}
@@ -863,9 +865,10 @@ public class Mycontroller {
 		request.getSession().setAttribute("community_number", community_number);
 		request.getSession().setAttribute("contents_number", contents_number);
 
+		List<hostenterDto> space_list = hostenterService.contents_space(contents_number);
 		List<contentsDto> contentsload = contentsService.contentsload(contents_number);
 		List<communityDto> communityload = communityService.communityload(contents_number);
-
+		model.addAttribute("space_list", space_list);
 		model.addAttribute("contentsload", contentsload);
 		model.addAttribute("communityload", communityload);
 		System.out.println(contentsload);
@@ -985,8 +988,13 @@ public class Mycontroller {
 
 	/* 공간대여(일반회원) */
 	@RequestMapping("/spacerent")
-	public String spacerent(Model model) {
+	public String spacerent(
+			@RequestParam("contents_number") String contents_number,
+			Model model) {
 
+		
+		List<hostenterDto> space_list = hostenterService.contents_space(contents_number);
+		model.addAttribute("space_list",space_list);
 		model.addAttribute("mainPage", "contents/spacerent.jsp");
 		return "index";
 	}

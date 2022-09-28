@@ -100,9 +100,6 @@
 				<%
 				}
 				%>
-				
-				
-				
 				  <a href="/main">홈</a> 
 				  <a href="/service">고객센터</a> 
 				  <a href="/one2one">one2one</a>
