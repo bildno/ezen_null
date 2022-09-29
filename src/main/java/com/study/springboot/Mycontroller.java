@@ -59,8 +59,18 @@ public class Mycontroller {
 	}
 
 	@RequestMapping("/main")
-	public String main(Model model) {
-
+	public String main(HttpServletRequest request,Model model) {
+		
+		List<communityDto> community_seqs1 = communityService.community_seq1();
+		List<communityDto> community_seqs2 = communityService.community_seq2();
+		List<communityDto> community_seqs3 = communityService.community_seq3();
+		List<communityDto> community_seqs4 = communityService.community_seq4();
+		
+		
+		model.addAttribute("community_seqs1",community_seqs1);
+		model.addAttribute("community_seqs2",community_seqs2);
+		model.addAttribute("community_seqs3",community_seqs3);
+		model.addAttribute("community_seqs4",community_seqs4);
 		model.addAttribute("mainPage", "main.jsp");
 		return "index";
 	}
@@ -100,6 +110,9 @@ public class Mycontroller {
 	
 	@Autowired
 	private ImemberDao imemberDao;
+	
+	@Autowired
+	private communityService communityservice;
 	
 
 	/* ----------------------------------------- admin 폴더 */
@@ -744,8 +757,11 @@ public class Mycontroller {
 		List<one2one_answerDto> one2oneanswer_list = one2one_answerService.one2one_answer(member_id);
 
 		model.addAttribute("one2one_list", one2one_list);
+		System.out.println("gg");
+		
+		model.addAttribute("one2oneanswer_list", one2oneanswer_list);
+		
 		System.out.println(one2oneanswer_list);
-		model.addAttribute("qwer", one2oneanswer_list);
 
 		model.addAttribute("mainPage", "one2one/one2one.jsp");
 		return "index";
@@ -973,15 +989,16 @@ public class Mycontroller {
 	
 	@RequestMapping("/community")
 	public String community(@RequestParam(value = "contents_number") String contents_number,
-			@RequestParam(value = "community_number", required = false) String community_number,
+			@RequestParam(value="community_number",required = false) String community_number,
 			@RequestParam(value="page_commu",required = false)String page_commu,
-			HttpServletRequest request, Model model) {
+			
+			HttpServletRequest request, Model model)  {
 		
 		if(page_commu == null) {
 			page_commu = "1";
 		}
 		
-		
+	
 		request.getSession().setAttribute("community_number", community_number);
 		request.getSession().setAttribute("contents_number", contents_number);
 		
@@ -1010,6 +1027,11 @@ public class Mycontroller {
 		model.addAttribute("space_list", space_list);
 		model.addAttribute("communitylist",communitylist);
 		 model.addAttribute("mainPage", "contents/community.jsp");
+		 
+		 
+		
+		 
+		 
 		 
 		 return "index";
 		
@@ -1062,7 +1084,7 @@ public class Mycontroller {
 	/* 게시글 내용,댓글 보기 */
 	@RequestMapping("/community_info")
 	public String community_info(@RequestParam("community_number")String community_number
-			,HttpServletRequest request, Model model) {
+			,HttpServletRequest request, Model model) throws Exception {
 
 		HttpSession session = request.getSession();
 		String member_id = (String) session.getAttribute("member_id");
@@ -1072,7 +1094,7 @@ public class Mycontroller {
 		
 		List<communityDto> community_contents = communityService.community_content(community_number);
 
-
+		
 		
 		model.addAttribute("replyView", replyViewlist);
 		model.addAttribute("mainPage", "contents/community_info.jsp");
@@ -1081,6 +1103,8 @@ public class Mycontroller {
 		model.addAttribute("mainPage", "contents/community_info.jsp");
 		
 		
+		//조회수 올리기 실행
+		 communityService.community_hit(community_number);
 	
 		return "index";
 
@@ -1123,8 +1147,6 @@ public class Mycontroller {
 
 	}
 	
-	
-
 	
 
 	/* 공간대여(일반회원) */
