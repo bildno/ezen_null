@@ -26,12 +26,19 @@
 					<hr>
 				</div>
 
+				
 				<div class="mypage_mylist">
-					<a href="/reserve_host">예약 내역</a><p>
-	                <a href="">리뷰 관리</a><p>
-	                <a href="#">정산</a><p>
-	                <a href="/spacelist_host">공간 정보 관리</a>
+					<p>
+						<a id="mypage_a" href="/reserveList"><b>예약 내역</b></a>
+					<p>
+						<a id="mypage_a" href="#"><b>리뷰 관리</b></a>
+					<p>
+						<a id="mypage_a" href="#"><b>정산</b></a>
+					<p>
+						<a id="mypage_a" href="/spacelist_host"><b>공간 정보 관리</b></a>
+					<p>
 				</div>
+				
 			</div>
 			
 			<div class="mypage_section2" style="padding: 40px">
