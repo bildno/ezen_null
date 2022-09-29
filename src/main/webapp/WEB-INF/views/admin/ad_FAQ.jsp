@@ -28,20 +28,26 @@
 				id="space_icon">
 		</h2>
 		<div class="contents">
+		
+		<form action="/ad_FAQ">
+		
 			<div class="search_box">
 				<ul class="search_box_ul">
 					<li>
-						<p>검색항목</p> <select>
-							<option value="title">제목</option>
-							<option value="name">작성자</option>
-					</select> &nbsp;&nbsp;<input type="text" name="search_contents"
+						<p>검색항목</p> 
+						<select name="search_type">
+							<option value="faq_title">제목</option>
+							<option value="faq_content">내용</option>
+						</select> &nbsp;&nbsp;
+						<input type="text" name="search_contents"
 						id="search_contents">
 					</li>
 				</ul>
 				<div class="search_btn">
-					<button>검색</button>
+					<button type="submit">검색</button>
 				</div>
 			</div>
+		</form>
 
 
 			<div>
@@ -53,7 +59,7 @@
 						<th>번호</th>
 						<th>제목</th>
 						<th>작성일시</th>
-						<th>?</th>
+						<th></th>
 					</tr>
 				<c:forEach var="dto" items="${ faq_list }">
 					<tr>

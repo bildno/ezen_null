@@ -283,7 +283,12 @@ public class Mycontroller {
 //	FAQ 리스트
 	@RequestMapping("/ad_FAQ")
 	public String ad_FAQ(@RequestParam(value="page",required=false) String page,
+			@RequestParam(value="search_type",required=false) String search_type, // 검색타입
+			@RequestParam(value="search_contents",required=false) String search_contents, // 검색내용
 			Model model) {
+		
+		System.out.println(search_type);
+		System.out.println(search_contents);
 		
 		if( page == null) {
 			page = "1";
@@ -298,10 +303,25 @@ public class Mycontroller {
 		
 		List<faqDto> faq_list = faqDao.faqpage(String.valueOf(startRowNum_faq), String.valueOf(endRowNum_faq) );
 		System.out.println(faq_list);
+		List<faqDto> faq_search;
+		
+		/* search */
+		if(search_type != null) {
+			
+			System.out.println("aaaaaaa");
+			faq_search = faqService.faq_search(search_type, search_contents);
+			model.addAttribute("faq_list", faq_search);
+				
+		}else {
+			
+			System.out.println("bbbbbbb");
+			model.addAttribute("faq_list", faq_list);
+			
+		}
 
-		model.addAttribute("faq_list", faq_list);
-		model.addAttribute("mainPage", "admin/ad_FAQ.jsp");
-		return "index";
+			System.out.println("cccccc");
+			model.addAttribute("mainPage", "admin/ad_FAQ.jsp");
+			return "index";
 	}
 	
 //	FAQ 확인, 삭제

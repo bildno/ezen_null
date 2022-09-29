@@ -22,4 +22,6 @@ public interface IfaqDao {
 	
 	public int ad_FAQ_update(String faq_number, String faq_title, String faq_content);
 	
+	public List<faqDto> faq_search(String search_type, String search_contents);
+	
 }
