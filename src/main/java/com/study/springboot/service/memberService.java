@@ -36,6 +36,23 @@ public class memberService {
 		return memberlist;
 	}
 	
+//	일반멤버검색
+	public List<memberDto> member_search(String search_type, String search_contents) {
+		
+		List<memberDto> member_search = imemberDao.member_search(search_type, search_contents);
+		
+		return member_search;
+	}
+	
+//	호스트검색
+	
+	public List<memberDto> host_search(String search_type, String search_contents) {
+		
+		List<memberDto> host_search = imemberDao.host_search(search_type, search_contents);
+		
+		return host_search;
+	}
+	
 //	아이디찾기
 	public String idfind(String member_name,String member_phone) {
 		

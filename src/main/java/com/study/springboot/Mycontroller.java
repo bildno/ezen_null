@@ -118,7 +118,9 @@ public class Mycontroller {
 	/* ----------------------------------------- admin 폴더 */
 
 	@RequestMapping("/ad_member")
-	public String ad_member(@RequestParam(value="page",required=false) String page,
+	public String ad_member(@RequestParam(value="page", required=false) String page,
+			@RequestParam(value="search_type", required=false) String search_type,
+			@RequestParam(value="search_contents", required=false) String search_contents,
 		Model model) {
 	
 	if( page == null) {
@@ -132,18 +134,27 @@ public class Mycontroller {
 	int startRowNum = (num_page_no - 1) * num_page_size + 1; // 1, 6, 11 페이지 시작 줄번호		
 	int endRowNum = (num_page_no * num_page_size);	// 5, 10, 15 페이지 끝 줄번호
 	
-	List<memberDto>ad_member_page = imemberDao.ad_member_page(String.valueOf(startRowNum), String.valueOf(endRowNum) );
+	List<memberDto> ad_member_page = imemberDao.ad_member_page(String.valueOf(startRowNum), String.valueOf(endRowNum) );
 	System.out.println(ad_member_page);
-
-	model.addAttribute("ad_member_page", ad_member_page);
-	model.addAttribute("mainPage", "admin/ad_member.jsp"); 
+	List<memberDto> member_search;
+	
+	if(search_type != null) {
+		member_search = memberService.member_search(search_type, search_contents);
+		model.addAttribute("ad_member_page", member_search);
+	}else {
+		model.addAttribute("ad_member_page", ad_member_page);
+	}	
+	
+	model.addAttribute("mainPage", "admin/ad_member.jsp");
 	
 	return "index";
 		
 	}
 
 	@RequestMapping("/ad_host")
-	public String ad_host(@RequestParam(value="page",required=false) String page,
+	public String ad_host(@RequestParam(value="page", required=false) String page,
+			@RequestParam(value="search_type", required=false) String search_type,
+			@RequestParam(value="search_contents", required=false) String search_contents,
 			Model model) {
 		
 		if( page == null) {
@@ -157,10 +168,18 @@ public class Mycontroller {
 		int startRowNum = (num_page_no - 1) * num_page_size + 1; // 1, 6, 11 페이지 시작 줄번호		
 		int endRowNum = (num_page_no * num_page_size);	// 5, 10, 15 페이지 끝 줄번호
 		
-		List<memberDto>ad_host_page = imemberDao.ad_host_page(String.valueOf(startRowNum), String.valueOf(endRowNum) );
+		List<memberDto> ad_host_page = imemberDao.ad_host_page(String.valueOf(startRowNum), String.valueOf(endRowNum) );
 		System.out.println(ad_host_page);
+		
+		List<memberDto> host_search;
+		
+		if(search_type != null) {
+			host_search = memberService.host_search(search_type, search_contents);
+			model.addAttribute("ad_host_page", host_search);
+		}else {
+			model.addAttribute("ad_host_page", ad_host_page);
+		}
 
-		model.addAttribute("ad_host_page", ad_host_page);
 		model.addAttribute("mainPage", "admin/ad_host.jsp"); 
 		
 		return "index";
@@ -172,6 +191,8 @@ public class Mycontroller {
 	
 	@RequestMapping("/ad_one2one")
 	public String ad_one2one(@RequestParam(value="page",required=false) String page,
+			@RequestParam(value="search_type",required=false) String search_type,
+			@RequestParam(value="search_contents",required=false) String search_contents,
 			Model model) {
 		
 		if( page == null) {
@@ -187,10 +208,18 @@ public class Mycontroller {
 		
 		List<adminDto>one2one_list = iadminDao.one2onepage(String.valueOf(startRowNum), String.valueOf(endRowNum) );
 		System.out.println(one2one_list);
-	
-		model.addAttribute("one2one_list", one2one_list);
-		model.addAttribute("mainPage", "admin/ad_one2one.jsp"); 
 		
+		List<one2oneDto> one2one_search;
+		
+		/* search */
+		if(search_type != null) {
+			one2one_search = one2oneService.one2one_search(search_type, search_contents);
+			model.addAttribute("one2one_list", one2one_search);
+		}else {
+			model.addAttribute("one2one_list", one2one_list);
+		}
+		
+		model.addAttribute("mainPage", "admin/ad_one2one.jsp");
 		return "index";
 	}
 
@@ -1095,43 +1124,31 @@ public class Mycontroller {
 			page_commu = "1";
 		}
 		
-	
 		request.getSession().setAttribute("community_number", community_number);
 		request.getSession().setAttribute("contents_number", contents_number);
 		
 
 		List<contentsDto> contentsload = contentsService.contentsload(contents_number);
 
-
 		model.addAttribute("contentsload", contentsload); //제목부분
 		model.addAttribute("page_commu",page_commu); // 페이지부분
 
-		
         int num_page_size = 5; //한페이지당 Row갯수
 		int num_page_no_commu = Integer.parseInt( page_commu ); //page번호 1,2,3,4
-		
-		
 		
 		int startRowNum_community = (num_page_no_commu - 1) * num_page_size + 1; // 1, 6, 11 페이지 시작 줄번호
 		int endRowNum_community = (num_page_no_commu * num_page_size);           // 5, 10, 15 페이지 끝 줄번호
 
-		
-		
+
 		// row 1~5 까지...
 		List<communityDto> communitylist = icommunityDao.community_page(String.valueOf(startRowNum_community), String.valueOf(endRowNum_community),contents_number );
 		List<hostenterDto> space_list = hostenterService.contents_space(contents_number);
 
 		model.addAttribute("space_list", space_list);
 		model.addAttribute("communitylist",communitylist);
-		 model.addAttribute("mainPage", "contents/community.jsp");
-		 
-		 
-		
-		 
-		 
-		 
-		 return "index";
-		
+		model.addAttribute("mainPage", "contents/community.jsp");
+
+		return "index";
 		
 	}
 	
@@ -1332,10 +1349,7 @@ public class Mycontroller {
 		 System.out.println(host_headcount);
 		
 		 String upload_url_title = fileUploadService.restore(File_title);
-	
-	
-		 
-		 
+
 			try {
 				result = hostenterService.insert_hostenter(
 						upload_url_title,
@@ -1393,9 +1407,6 @@ public class Mycontroller {
 		model.addAttribute("mainPage","host/host.jsp");
 		return "redirect:/mypage_host";
 		
-
-		
-		 
 	}
 	
 	@RequestMapping(value="/udateuploadMultiFileOk", method = RequestMethod.POST)
@@ -1437,12 +1448,10 @@ public class Mycontroller {
 		 System.out.println(host_bnumber);
 		 int host_headcount = host_headcount_; 
 		 System.out.println(host_headcount);
-		String host_name_1 = host_name_0;
+		 String host_name_1 = host_name_0;
 		 String upload_url_title = fileUploadService.restore(File_title);
 	
-	
-		 
-		 
+
 			try {
 				result = hostenterService.update_hostenter(
 						upload_url_title,
@@ -1492,8 +1501,7 @@ public class Mycontroller {
 			model.addAttribute("mainPage","host/enter_host.jsp");
 			return "index";
 		}
-		
-		
+
 		model.addAttribute("mainPage","host/host.jsp");
 		return "redirect:/mypage_host";
 		

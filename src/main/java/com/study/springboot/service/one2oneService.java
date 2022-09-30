@@ -25,4 +25,11 @@ public class one2oneService {
 		int result = ione2oneDao.one2one_write(dto);
 		return result;
 	}
+	
+	public List<one2oneDto> one2one_search(String search_type, String search_contents) {
+		
+		List<one2oneDto> one2one_search = ione2oneDao.one2one_search(search_type, search_contents);
+		
+		return one2one_search;
+	}
 }

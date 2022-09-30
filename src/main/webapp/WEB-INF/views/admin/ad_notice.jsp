@@ -29,7 +29,7 @@
 		</h2>
 		<div class="contents">
 		
-		<form action="/ad_noticesearch">
+		<form action="/ad_noticesearch" method="post">
 			<div class="search_box">
 				<ul class="search_box_ul">
 					<li>
@@ -52,6 +52,7 @@
 			<div>
 				<p class="txt_primary">
 					총 <em>0</em>건이 검색되었습니다.
+					<a href="/ad_notice">전체보기</a>
 				</p>
 				<table class="search_table">
 					<tr>
