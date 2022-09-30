@@ -506,7 +506,19 @@ public class Mycontroller {
 		int result = memberService.login(member_id, member_pw);
 	
 		if (result == 1) {
+			List<communityDto> community_seqs1 = communityService.community_seq1();
+			List<communityDto> community_seqs2 = communityService.community_seq2();
+			List<communityDto> community_seqs3 = communityService.community_seq3();
+			List<communityDto> community_seqs4 = communityService.community_seq4();
+			
+			
+			model.addAttribute("community_seqs1",community_seqs1);
+			model.addAttribute("community_seqs2",community_seqs2);
+			model.addAttribute("community_seqs3",community_seqs3);
+			model.addAttribute("community_seqs4",community_seqs4);
+			
 			model.addAttribute("mainPage", "main.jsp");
+			
 			int member_host = memberService.host_find(member_id);
 			
 			// 호스트 계정판별
@@ -528,7 +540,18 @@ public class Mycontroller {
 	public String logoutAction(HttpServletRequest request, Model model) {
 
 		request.getSession().invalidate();
-
+		
+		List<communityDto> community_seqs1 = communityService.community_seq1();
+		List<communityDto> community_seqs2 = communityService.community_seq2();
+		List<communityDto> community_seqs3 = communityService.community_seq3();
+		List<communityDto> community_seqs4 = communityService.community_seq4();
+		
+		
+		model.addAttribute("community_seqs1",community_seqs1);
+		model.addAttribute("community_seqs2",community_seqs2);
+		model.addAttribute("community_seqs3",community_seqs3);
+		model.addAttribute("community_seqs4",community_seqs4);
+		
 		model.addAttribute("mainPage", "main.jsp");
 		return "index";
 	}
