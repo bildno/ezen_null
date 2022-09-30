@@ -21,11 +21,7 @@
 		ROWNUM AS RNUM, faq.*
 		FROM
 		faq
-<<<<<<< HEAD
-		ORDER BY RNUM desc
-=======
 		ORDER BY faq_number desc
->>>>>>> main
 		)
 		WHERE RNUM BETWEEN #{param1} AND #{param2}
 		

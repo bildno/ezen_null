@@ -813,10 +813,6 @@ public class Mycontroller {
 		model.addAttribute("one2oneanswer_list", one2oneanswer_list);
 		
 		System.out.println(one2oneanswer_list);
-<<<<<<< HEAD
-		model.addAttribute("one2oneanswer_list", one2oneanswer_list);
-=======
->>>>>>> main
 
 		model.addAttribute("mainPage", "one2one/one2one.jsp");
 		return "index";
