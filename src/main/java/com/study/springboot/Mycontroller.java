@@ -279,6 +279,48 @@ public class Mycontroller {
 		model.addAttribute("mainPage", "admin/ad_notice_info.jsp");
 		return "index";
 	}
+	
+//	notice 검색
+	@RequestMapping("/ad_noticesearch")
+	public String ad_noticesearch(@RequestParam(value="page",required=false) String page,
+			@RequestParam("search_type") String search_type,
+			@RequestParam("search_contents") String search_contents,
+			Model model) {
+		
+		if( page == null) {
+			page = "1";
+		}
+		
+		int num_page_size = 5; //한페이지당 Row갯수
+		int num_page_no = Integer.parseInt( page ); //page번호 1,2,3,4
+		int startRowNum_notice = (num_page_no - 1) * num_page_size + 1; // 1, 6, 11 페이지 시작 줄번호		
+		int endRowNum_notice = (num_page_no * num_page_size);	// 5, 10, 15 페이지 끝 줄번호
+		
+		List<noticeDto> notice_list = noticeDao.noticepage(String.valueOf(startRowNum_notice), String.valueOf(endRowNum_notice) );
+		System.out.println(notice_list);
+		List<noticeDto> ad_noticesearch;
+		
+//		List<noticeDto> ad_noticesearch = noticeService.ad_noticesearch(search_type, search_contents);
+//		System.out.println(search_type+"==타입==");
+//		System.out.println(search_contents+"==검색내용==");
+//		System.out.println(ad_noticesearch+"==검색결과==");
+//		
+//		model.addAttribute("notice_list", ad_noticesearch);
+//		model.addAttribute("mainPage", "admin/ad_notice");
+		
+		if(search_type != null) {
+			ad_noticesearch = noticeService.ad_noticesearch(search_type, search_contents);
+			model.addAttribute("notice_list", ad_noticesearch);
+				
+		}else {
+			model.addAttribute("notice_list", notice_list);
+		}
+
+			System.out.println("화면출력");
+			model.addAttribute("mainPage", "admin/ad_notice.jsp");
+			return "index";
+	}
+
 
 //	FAQ 리스트
 	@RequestMapping("/ad_FAQ")
@@ -307,19 +349,14 @@ public class Mycontroller {
 		
 		/* search */
 		if(search_type != null) {
-			
-			System.out.println("aaaaaaa");
 			faq_search = faqService.faq_search(search_type, search_contents);
 			model.addAttribute("faq_list", faq_search);
 				
 		}else {
-			
-			System.out.println("bbbbbbb");
 			model.addAttribute("faq_list", faq_list);
-			
 		}
 
-			System.out.println("cccccc");
+			System.out.println("화면출력");
 			model.addAttribute("mainPage", "admin/ad_FAQ.jsp");
 			return "index";
 	}
@@ -372,12 +409,6 @@ public class Mycontroller {
 		else {
 			return "<script>alert('삭제실패') history.back();</script>";
 		}
-		
-		
-//		model.addAttribute("mainPage", "admin/ad_FAQ.jsp");
-//		return "index";
-		
-		
 		
 	}
 

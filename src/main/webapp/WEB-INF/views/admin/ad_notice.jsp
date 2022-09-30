@@ -28,15 +28,16 @@
 				alt="space_icon" id="space_icon">
 		</h2>
 		<div class="contents">
+		
+		<form action="/ad_noticesearch">
 			<div class="search_box">
 				<ul class="search_box_ul">
 					<li>
 						<p style="min-width: 20%;">검색항목</p> 
-						<select>
-							<option value="name">이름</option>
-							<option value="rnum">예약번호</option>
-							<option value="phone">전화번호</option>
-							<option value="email">이메일</option>
+						<select name="search_type">
+							<option value="notice_title">제목</option>
+							<option value="notice_content">내용</option>
+							<option value="notice_contents_number">클래스번호</option>
 						</select> &nbsp;&nbsp; 
 						<input type="text" name="search_contents"
 						id="search_contents" style="width: 100%;">
@@ -46,6 +47,7 @@
 					<button>검색</button>
 				</div>
 			</div>
+		</form>
 
 			<div>
 				<p class="txt_primary">
@@ -57,7 +59,7 @@
 						<th>제목</th>
 						<th>클래스</th>
 						<th>작성일시</th>
-						<th>삭제</th>
+						<th></th>
 					</tr>
 				<c:forEach var="dto" items="${notice_list}" varStatus="">
 					<tr>
@@ -71,11 +73,19 @@
 						</td>
 					</tr>
 					</c:forEach>
+					<tr>
+					<td></td><td></td><td></td><td></td>
+					<td>
+						<input class="ad_btn" type="button" value="작성" onclick="location.href='/ad_notice_write'">
+					</td>
+				</tr>
 				</table>
 			</div>
-			<div>
+			
+			<!-- <div>
 			<input type="button" onclick="location.href='/ad_notice_write'" value="글쓰기">
-			</div>
+			</div> -->
+			
 			<div class="container-fluid">
 				<div class="row" style="justify-content: center; margin-top: 30px;">
 					<ul class="pagination">

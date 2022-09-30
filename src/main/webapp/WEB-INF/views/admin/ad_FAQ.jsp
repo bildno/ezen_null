@@ -29,8 +29,7 @@
 		</h2>
 		<div class="contents">
 		
-		<form action="/ad_FAQ">
-		
+		<form action="/ad_FAQ" method="post">		
 			<div class="search_box">
 				<ul class="search_box_ul">
 					<li>

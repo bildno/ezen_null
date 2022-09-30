@@ -7,10 +7,11 @@
 
 <mapper namespace="com.study.springboot.dao.IfaqDao">
 
+<!-- 	
 	<select id="faq" resultType="com.study.springboot.dto.faqDto">
-		select * from faq ORDER BY faq_number desc
-	</select>
-	
+		select * from faq ORDER BY faq_date desc
+	</select> 
+-->
 	
 	<select id="faqpage"
 		resultType="com.study.springboot.dto.faqDto">
@@ -20,7 +21,7 @@
 		ROWNUM AS RNUM, faq.*
 		FROM
 		faq
-		ORDER BY faq_date asc
+		ORDER BY faq_number desc
 		)
 		WHERE RNUM BETWEEN #{param1} AND #{param2}
 	</select>
@@ -52,6 +53,6 @@
     <!-- 검색 param1(select): search_type  //   param2(input): search_contents-->
     <select id="faq_search" resultType="com.study.springboot.dto.faqDto">
 		select * from faq where ${ param1 } like '%'||#{ param2 }||'%'
-</select>
+	</select>
 
 </mapper>

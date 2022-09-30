@@ -34,4 +34,10 @@ public class noticeService {
 		return ad_notice_info;
 	}
 
+	public List<noticeDto>ad_noticesearch(String search_type, String search_contents) {
+		
+		List<noticeDto>ad_noticesearch = inoticeDao.ad_noticesearch(search_type, search_contents);
+		
+		return ad_noticesearch;
+	}
 }

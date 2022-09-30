@@ -6,7 +6,6 @@ import org.apache.ibatis.annotations.Mapper;
 
 import com.study.springboot.dto.faqDto;
 
-
 @Mapper
 public interface IfaqDao {
 
