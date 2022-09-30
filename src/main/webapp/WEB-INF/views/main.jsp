@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%-- <%@ page trimDirectiveWhitespaces="true" %>  --%>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -153,126 +155,105 @@
 
 					<div class="since1">
 						<h1>
-							<img src="/img/star.png" alt="star" style="width: 25px;">전지현
+							<img src="/img/star.png" alt="star" style="width: 25px;">Active community
 						</h1>
+						<c:forEach var="best1" items="${community_seqs1}">
 						<div class="sintxt">
 							<table id="main_table" border=1 style="border-color: lightgray;">
 
 								<ul class="best-table" >
 									<tr style="list-style: none; cursor:pointer"
 										onMouseOver="this.style.backgroundColor='#eeeeee'"
-										onMouseOut="this.style.backgroundColor='#FFFFFF'" >
+										onMouseOut="this.style.backgroundColor='#FFFFFF'" 
+										onclick="location.href='community_info?community_number=${best1.community_number}'"
+										>
 										<td>
-											<li>1231231233</li>
+											<li>${best1.community_title}</li>
 										</td>
-										<td>조회수</td>
-									</tr>
-									<tr style="list-style: none; cursor:pointer"
-										onMouseOver="this.style.backgroundColor='#eeeeee'"
-										onMouseOut="this.style.backgroundColor='#FFFFFF'">
-										<td>
-											<li>123123123</li>
-										</td>
-										<td>조회수</td>
+										<td>${best1.community_hit}</td>
 									</tr>
 								</ul>
 
 							</table>
 						</div>
+						</c:forEach>
 					</div>
 					<hr>
 
 					<div class="since1">
 						<h1>
-							<img src="/img/star.png" alt="star" style="width: 25px;">변요한
+							<img src="/img/star.png" alt="star" style="width: 25px;">Shooting community
 						</h1>
+						<c:forEach var="best2" items="${community_seqs2}">
+						<div class="sintxt">
+							<table id="main_table" border=1 style="border-color: lightgray;">
+								<ul>
+									<tr style="list-style: none; cursor:pointer" 
+										onMouseOver="this.style.backgroundColor='#eeeeee'"
+										onMouseOut="this.style.backgroundColor='#FFFFFF'"
+										onclick="location.href='community_info?community_number=${best2.community_number}'"				
+										>
+										<td>
+											<li>${best2.community_title}</li>
+										</td>
+										<td>${best2.community_hit}</td>
+									</tr>
+								</ul>
+
+							</table>
+						</div>
+						</c:forEach>
+					</div>
+					<hr>
+
+					<div class="since1">
+						<h1>
+							<img src="/img/star.png" alt="star" style="width: 25px;">Party community
+						</h1>
+						<c:forEach var="best3" items="${community_seqs3}">
 						<div class="sintxt">
 							<table id="main_table" border=1 style="border-color: lightgray;">
 
 								<ul>
 									<tr style="list-style: none; cursor:pointer" 
 										onMouseOver="this.style.backgroundColor='#eeeeee'"
-										onMouseOut="this.style.backgroundColor='#FFFFFF'">
+										onMouseOut="this.style.backgroundColor='#FFFFFF'"
+										onclick="location.href='community_info?community_number=${best3.community_number}'"
+										>
 										<td>
-											<li>123123123</li>
+											<li>${best3.community_title}</li>
 										</td>
-										<td>조회수</td>
-									</tr>
-									<tr style="list-style: none; cursor:pointer" 
-										onMouseOver="this.style.backgroundColor='#eeeeee'"
-										onMouseOut="this.style.backgroundColor='#FFFFFF'">
-										<td>
-											<li>123123123</li>
-										</td>
-										<td>조회수</td>
+										<td>${best3.community_hit}</td>
 									</tr>
 								</ul>
-
 							</table>
 						</div>
+						</c:forEach>
 					</div>
 					<hr>
 
 					<div class="since1">
 						<h1>
-							<img src="/img/star.png" alt="star" style="width: 25px;">김혜수
+							<img src="/img/star.png" alt="star" style="width: 25px;">Gallery community
 						</h1>
+						<c:forEach var="best4" items="${community_seqs4}">
 						<div class="sintxt">
 							<table id="main_table" border=1 style="border-color: lightgray;">
-
 								<ul>
 									<tr style="list-style: none; cursor:pointer" 
 										onMouseOver="this.style.backgroundColor='#eeeeee'"
-										onMouseOut="this.style.backgroundColor='#FFFFFF'">
+										onMouseOut="this.style.backgroundColor='#FFFFFF'"
+										onclick="location.href='community_info?community_number=${best4.community_number}'"
+										>
 										<td>
-											<li>123123123</li>
+											<li>${best4.community_title}</li>
 										</td>
-										<td>조회수</td>
-									</tr>
-									<tr style="list-style: none; cursor:pointer" 
-										onMouseOver="this.style.backgroundColor='#eeeeee'"
-										onMouseOut="this.style.backgroundColor='#FFFFFF'">
-										<td>
-											<li>123123123</li>
-										</td>
-										<td>조회수</td>
+										<td>${best4.community_hit}</td>
 									</tr>
 								</ul>
-
 							</table>
 						</div>
-					</div>
-					<hr>
-
-					<div class="since1">
-						<h1>
-							<img src="/img/star.png" alt="star" style="width: 25px;">이다희
-						</h1>
-						<div class="sintxt">
-							<table id="main_table" border=1 style="border-color: lightgray;">
-
-								<ul>
-									<tr style="list-style: none; cursor:pointer" 
-										onMouseOver="this.style.backgroundColor='#eeeeee'"
-										onMouseOut="this.style.backgroundColor='#FFFFFF'">
-										<td>
-											<li>123123123</li>
-										</td>
-										<td>조회수</td>
-									</tr>
-									<tr style="list-style: none; cursor:pointer" 
-										onMouseOver="this.style.backgroundColor='#eeeeee'"
-										onMouseOut="this.style.backgroundColor='#FFFFFF'">
-										<td>
-											<li>123123123</li>
-										</td>
-										<td>조회수</td>
-									</tr>
-								</ul>
-
-							</table>
-
-						</div>
+						</c:forEach>
 						<hr>
 						<!-- <img src="/img/topmove.png" alt="" class="movetopbtn" /> -->
 					</div>

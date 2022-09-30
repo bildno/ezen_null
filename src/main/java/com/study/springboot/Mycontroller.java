@@ -59,8 +59,18 @@ public class Mycontroller {
 	}
 
 	@RequestMapping("/main")
-	public String main(Model model) {
-
+	public String main(HttpServletRequest request,Model model) {
+		
+		List<communityDto> community_seqs1 = communityService.community_seq1();
+		List<communityDto> community_seqs2 = communityService.community_seq2();
+		List<communityDto> community_seqs3 = communityService.community_seq3();
+		List<communityDto> community_seqs4 = communityService.community_seq4();
+		
+		
+		model.addAttribute("community_seqs1",community_seqs1);
+		model.addAttribute("community_seqs2",community_seqs2);
+		model.addAttribute("community_seqs3",community_seqs3);
+		model.addAttribute("community_seqs4",community_seqs4);
 		model.addAttribute("mainPage", "main.jsp");
 		return "index";
 	}
@@ -100,6 +110,9 @@ public class Mycontroller {
 	
 	@Autowired
 	private ImemberDao imemberDao;
+	
+	@Autowired
+	private communityService communityservice;
 	
 
 	/* ----------------------------------------- admin 폴더 */
@@ -283,7 +296,12 @@ public class Mycontroller {
 //	FAQ 리스트
 	@RequestMapping("/ad_FAQ")
 	public String ad_FAQ(@RequestParam(value="page",required=false) String page,
+			@RequestParam(value="search_type",required=false) String search_type, // 검색타입
+			@RequestParam(value="search_contents",required=false) String search_contents, // 검색내용
 			Model model) {
+		
+		System.out.println(search_type);
+		System.out.println(search_contents);
 		
 		if( page == null) {
 			page = "1";
@@ -298,10 +316,25 @@ public class Mycontroller {
 		
 		List<faqDto> faq_list = faqDao.faqpage(String.valueOf(startRowNum_faq), String.valueOf(endRowNum_faq) );
 		System.out.println(faq_list);
+		List<faqDto> faq_search;
+		
+		/* search */
+		if(search_type != null) {
+			
+			System.out.println("aaaaaaa");
+			faq_search = faqService.faq_search(search_type, search_contents);
+			model.addAttribute("faq_list", faq_search);
+				
+		}else {
+			
+			System.out.println("bbbbbbb");
+			model.addAttribute("faq_list", faq_list);
+			
+		}
 
-		model.addAttribute("faq_list", faq_list);
-		model.addAttribute("mainPage", "admin/ad_FAQ.jsp");
-		return "index";
+			System.out.println("cccccc");
+			model.addAttribute("mainPage", "admin/ad_FAQ.jsp");
+			return "index";
 	}
 	
 //	FAQ 확인, 삭제
@@ -742,12 +775,13 @@ public class Mycontroller {
 
 		List<one2oneDto> one2one_list = one2oneService.one2one_list(member_id);
 		List<one2one_answerDto> one2oneanswer_list = one2one_answerService.one2one_answer(member_id);
-		
-		System.out.println(one2oneanswer_list);
 
 		model.addAttribute("one2one_list", one2one_list);
-	
-		model.addAttribute("qwer", one2oneanswer_list);
+		System.out.println("gg");
+		
+		model.addAttribute("one2oneanswer_list", one2oneanswer_list);
+		
+		System.out.println(one2oneanswer_list);
 
 		model.addAttribute("mainPage", "one2one/one2one.jsp");
 		return "index";
@@ -975,15 +1009,16 @@ public class Mycontroller {
 	
 	@RequestMapping("/community")
 	public String community(@RequestParam(value = "contents_number") String contents_number,
-			@RequestParam(value = "community_number", required = false) String community_number,
+			@RequestParam(value="community_number",required = false) String community_number,
 			@RequestParam(value="page_commu",required = false)String page_commu,
-			HttpServletRequest request, Model model) {
+			
+			HttpServletRequest request, Model model)  {
 		
 		if(page_commu == null) {
 			page_commu = "1";
 		}
 		
-		
+	
 		request.getSession().setAttribute("community_number", community_number);
 		request.getSession().setAttribute("contents_number", contents_number);
 		
@@ -1012,6 +1047,11 @@ public class Mycontroller {
 		model.addAttribute("space_list", space_list);
 		model.addAttribute("communitylist",communitylist);
 		 model.addAttribute("mainPage", "contents/community.jsp");
+		 
+		 
+		
+		 
+		 
 		 
 		 return "index";
 		
@@ -1064,7 +1104,7 @@ public class Mycontroller {
 	/* 게시글 내용,댓글 보기 */
 	@RequestMapping("/community_info")
 	public String community_info(@RequestParam("community_number")String community_number
-			,HttpServletRequest request, Model model) {
+			,HttpServletRequest request, Model model) throws Exception {
 
 		HttpSession session = request.getSession();
 		String member_id = (String) session.getAttribute("member_id");
@@ -1074,7 +1114,7 @@ public class Mycontroller {
 		
 		List<communityDto> community_contents = communityService.community_content(community_number);
 
-
+		
 		
 		model.addAttribute("replyView", replyViewlist);
 		model.addAttribute("mainPage", "contents/community_info.jsp");
@@ -1083,6 +1123,8 @@ public class Mycontroller {
 		model.addAttribute("mainPage", "contents/community_info.jsp");
 		
 		
+		//조회수 올리기 실행
+		 communityService.community_hit(community_number);
 	
 		return "index";
 
@@ -1127,8 +1169,6 @@ public class Mycontroller {
 	
 	
 
-	
-
 	/* 공간대여(일반회원) */
 	@RequestMapping("/spacerent")
 	public String spacerent(
@@ -1143,12 +1183,8 @@ public class Mycontroller {
 
 	/* 공간상세(일반회원) */
 	@RequestMapping("/space_info")
-	public String space_info(@RequestParam("hostenter_number") int hostenter_number,
-			Model model) {
-		
-		List<hostenterDto> space_info = hostenterService.space_info(hostenter_number);
+	public String space_info(Model model) {
 
-		model.addAttribute("space_info",space_info);
 		model.addAttribute("mainPage", "contents/space_info.jsp");
 		return "index";
 	}
@@ -1214,7 +1250,9 @@ public class Mycontroller {
 		 System.out.println(host_headcount);
 		
 		 String upload_url_title = fileUploadService.restore(File_title);
-
+	
+	
+		 
 		 
 			try {
 				result = hostenterService.insert_hostenter(
@@ -1349,7 +1387,7 @@ public class Mycontroller {
 					
 				if( upload_url != null ) {
 					if( upload_url.length() > 0 ) {
-						result = 0;
+						result = hostenter_imgDaoService.hostenter_img_update(upload_url,host_name_);
 						System.out.println("업로드 성공!");
 					
 						

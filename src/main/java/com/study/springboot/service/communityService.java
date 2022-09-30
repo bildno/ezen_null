@@ -40,5 +40,39 @@ public class communityService {
 		
 	}
 	
+	//조회수 올리기
+	public int community_hit(String community_number)throws Exception {
+		
+		
+		return icommunityDao.community_hit(community_number);
+	}
+	
+	
+	//메인 베스트 게시글
+	public List<communityDto> community_seq1() {
+		
+		List<communityDto> community_seqs = icommunityDao.community_seq1();
+		
+		return community_seqs;
+	}
+	public List<communityDto> community_seq2() {
+		
+		List<communityDto> community_seqs = icommunityDao.community_seq2();
+		
+		return community_seqs;
+	}
+	public List<communityDto> community_seq3() {
+		
+		List<communityDto> community_seqs = icommunityDao.community_seq3();
+		
+		return community_seqs;
+	}
+	public List<communityDto> community_seq4() {
+		
+		List<communityDto> community_seqs = icommunityDao.community_seq4();
+		
+		return community_seqs;
+	}
+	
 	
 }

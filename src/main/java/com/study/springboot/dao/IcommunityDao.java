@@ -18,4 +18,11 @@ public interface IcommunityDao {
 	
 	public List<communityDto> community_page(String startRowNum_community, String endRowNum_community, String contents_number);
 	
+	public int community_hit(String community_number);
+	
+	public List <communityDto> community_seq1();
+	public List <communityDto> community_seq2();
+	public List <communityDto> community_seq3();
+	public List <communityDto> community_seq4();
+	
 }

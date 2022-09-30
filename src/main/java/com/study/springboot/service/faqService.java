@@ -54,6 +54,14 @@ public class faqService {
 		return ad_FAQ_update;
 	}
 	
+	/* faq 검색 */
+	public List<faqDto> faq_search(String search_type, String search_contents) {
+		
+		List<faqDto> faq_search = ifaqDao.faq_search(search_type, search_contents);
+		
+		return faq_search;
+	}
+	
 
 
 }
