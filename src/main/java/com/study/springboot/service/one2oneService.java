@@ -21,4 +21,8 @@ public class one2oneService {
 		return one2one_list;
 	}
 	
+	public int one2one_write(one2oneDto dto) {
+		int result = ione2oneDao.one2one_write(dto);
+		return result;
+	}
 }

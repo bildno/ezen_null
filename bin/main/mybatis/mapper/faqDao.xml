@@ -20,9 +20,10 @@
 		ROWNUM AS RNUM, faq.*
 		FROM
 		faq
-		ORDER BY faq_date desc
+		ORDER BY RNUM desc
 		)
 		WHERE RNUM BETWEEN #{param1} AND #{param2}
+		
 	</select>
 
 

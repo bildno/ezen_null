@@ -10,24 +10,24 @@
 	<hr />
 
 	<div class="o2owrite_tb">
+	<form method="post" action="/one2one_writeAction">
 		<table>
 			<tr>
 				<th>문의 제목</th>
-				<td><input id="ask" type="text" placeholder="문의 제목을 입력하세요" style="width:99%""></td>
+				<td><input id="ask" type="text" placeholder="문의 제목을 입력하세요" style="width:99%" name="one2one_title"></td>
 			</tr>
 			<tr>
 				<th>문의 내용</th>
-				<td><textarea name="ask" id="ask" rows="15"
-						style="resize: none;"></textarea></td>
+				<td><textarea id="ask" rows="15"
+						style="resize: none;" name="one2one_content"></textarea></td>
 			</tr>
 		</table>
 
 		<div class="write">
-			<input class="writebtn" type="button" value="문의하기"
-				onclick="location.href='/one2one_writeAction'">
+			<input class="writebtn" type="submit" value="문의하기">
 			<input class="writebtn" type="button" value="취소"
 				onclick="location.href='/one2one'">
 		</div>
-
+	</form>
 	</div>
 </div>
