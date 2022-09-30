@@ -16,32 +16,29 @@
 			id="space_icon">
 	</h2>
 	<div class=contents>
-	<c:forEach var="dto" items="${one2one_list}">
+	<c:forEach var="dto" items="${one2one_list}" varStatus="status">
 		<button class="accordion" id="o_num${dto.one2one_number}" value="${dto.one2one_number}" name="one2one_number">
 		<div id="one_list_div">
 		<span id="list_span">
 		  ${dto.one2one_content}
-		</span> 
-		<span id="list_span_id">
-		  ${dto.one2one_member_id}
 		</span> 
 		<span id="list_span_date">
 		  ${dto.one2one_date}
 		</span>
 		</div> 
 		</button>
-		</c:forEach>
 		
 				
 		<div class="panel">
-		<c:forEach var="dto2" items="${qwer}">
 			<p id="o_ans1" >
 			<span id="list_anspan">
-			${dto2.one2oneanswer_content }
+			${one2oneanswer_list[status.index].one2oneanswer_content }
 			</span>
 			</p>
+		</div>
 		</c:forEach>	
 		</div>
+	
 
 
 		<br>
@@ -73,4 +70,3 @@
 			});
 		}
 	</script>
-</div>

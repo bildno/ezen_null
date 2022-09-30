@@ -24,6 +24,7 @@
 		ORDER BY faq_number desc
 		)
 		WHERE RNUM BETWEEN #{param1} AND #{param2}
+		
 	</select>
 
 

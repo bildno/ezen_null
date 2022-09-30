@@ -33,7 +33,7 @@
 #one_list_div{
 	display:flex;
 	flex-direction: row;
-	justify-content: space-around;
+	justify-content: space-between;
 }
 #list_span_date{
 	font-size: 15px;

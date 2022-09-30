@@ -827,10 +827,33 @@ public class Mycontroller {
 	}
 
 	@RequestMapping("/one2one_writeAction")
-	public String one2one_writeAction(Model model) {
-
-		model.addAttribute("mainPage", "one2one/one2one.jsp");
-		return "index";
+	public String ad_one2one_writeAction(HttpServletRequest request, Model model) {
+		
+		HttpSession session = request.getSession();
+		String one2one_member_id = (String) session.getAttribute("member_id");
+		
+		String one2one_title = request.getParameter("one2one_title");
+		String one2one_content = request.getParameter("one2one_content");
+		
+		
+		System.out.println("one2one_title:"+one2one_title);
+		System.out.println("one2one_content:"+one2one_content);
+		System.out.println("one2one_member_id:"+one2one_member_id);
+		
+		one2oneDto dto = new one2oneDto();
+		dto.setOne2one_title(one2one_title);
+		dto.setOne2one_content(one2one_content);
+		dto.setOne2one_member_id(one2one_member_id);
+		
+		int result = one2oneService.one2one_write(dto);
+		System.out.println("result:" + result);
+		if( result > 0 ) {
+			model.addAttribute("alert", "글작성이 성공하였습니다.");
+			return "redirect:/one2one";  
+		}else {
+			model.addAttribute("alert", "글작성이 실패하였습니다.");
+			return "/one2one"; 
+		}
 	}
 	/* ----------------------------------------- */
 
