@@ -643,9 +643,14 @@ public class Mycontroller {
 		String member_id = (String) session.getAttribute("member_id");
 
 		List<reviewDto> reviewlist = reviewService.select_review(member_id);
-		System.out.println(reviewlist);
+		List<communityDto> commulist = communityService.select_commu(member_id);
+		List<replyDto> replylist = replyService.select_reply(member_id);
+		
+		
 
 		model.addAttribute("reviewlist", reviewlist);
+		model.addAttribute("commulist",commulist);
+		model.addAttribute("replylist",replylist);
 		model.addAttribute("mainPage", "member/mylist.jsp");
 		return "index";
 	}
@@ -657,6 +662,7 @@ public class Mycontroller {
 		model.addAttribute("mainPage", "member/myreview.jsp");
 		return "index";
 	}
+	
 
 	/* 내찜내역 */
 	@RequestMapping("/mywish")

@@ -36,7 +36,8 @@
 	            community
 	       where COMMUNITY_CONTENTS_NUMBER = #{param3}
 	    )
-		WHERE RNUM BETWEEN #{param1} AND #{param2}
+		WHERE RNUM BETWEEN #{param1} AND #{param2} ORDER BY COMMUNITY_NUMBER DESC
+		
 
 	 </select>
 	 
@@ -88,7 +89,11 @@
 	</select>
 	
 	 
+	 <select id="select_commu" resultType="com.study.springboot.dto.communityDto">
+	 	
+	 	select * from community where community_member_id = #{param1}	 
 	 
+	 </select>
 	 
 
 	 

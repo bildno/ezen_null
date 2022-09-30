@@ -22,29 +22,29 @@
     <div class="myreview">
     		<h4><b>리뷰</b></h4>
     		<hr>
-    		<c:forEach var="dto" items="${reviewlist }">
-    		<a href="/myreview">${dto.review_content }</a><br>
+    		<c:forEach var="dto1" items="${reviewlist }">
+    		<a href="/myreview">${dto1.review_content }</a><br>
     		</c:forEach>
             
+	<!-- 페이지네이션 -->
+	
             
     </div>
     <hr>
     <div class="myboard">
     		<h4><b>게시글</b></h4>
     		<hr>
-            <a href="#">내가 작성한 게시글1</a><br>
-            <a href="#">내가 작성한 게시글2</a><br>
-            <a href="#">내가 작성한 게시글3</a><br>
-            <a href="#">내가 작성한 게시글4</a>
+			<c:forEach var="dto2" items="${commulist}">
+			<a href="/community_info">${dto2.community_title}</a><br>
+			</c:forEach>
     </div>
     <hr>
       <div class="myboard">
     		<h4><b>댓글</b></h4>
     		<hr>
-            <a href="#">내가 작성한 댓글1</a><br>
-            <a href="#">내가 작성한 댓글2</a><br>
-            <a href="#">내가 작성한 댓글3</a><br>
-            <a href="#">내가 작성한 댓글4</a>
+			<c:forEach var="dto3" items="${replylist}">
+			<a href="/community_info">${dto3.reply_content}</a><br>
+			</c:forEach>
     </div>
     <hr />
     <div class="enter">

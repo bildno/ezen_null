@@ -75,4 +75,12 @@ public class communityService {
 	}
 	
 	
+	//마이페이지 나의활동
+	public List<communityDto> select_commu(String member_id) {
+		
+		List<communityDto> commulist = icommunityDao.select_commu(member_id);
+		
+		return commulist;
+	}
+	
 }

@@ -38,6 +38,15 @@ public class replyService {
 		
 		
 	}
+	
+	
+	//마이페이지 내가작성한 댓글
+	public List<replyDto> select_reply(String member_id) {
+		
+		List<replyDto> replylist = ireplyDao.select_reply(member_id);
+		
+		return replylist;
+	}
 
 	
 }
