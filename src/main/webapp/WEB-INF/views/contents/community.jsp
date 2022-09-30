@@ -24,7 +24,7 @@
 		<div class="row">
 			<c:forEach var="space" items="${space_list }" begin="0"  end="2">
 				<div class="community1 col-md-4"
-					onclick="location.href='/space_info'" id="communi1">
+					onclick="location.href='/space_info?hostenter_number=${space.hostenter_number }'" id="communi1">
 					<a href="#"> <img class="community1-img1"
 						src="${space.hostenter_title_img }" alt="contents1">
 						<div name="membername" id="membername">

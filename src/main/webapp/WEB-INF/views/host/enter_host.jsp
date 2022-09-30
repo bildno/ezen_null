@@ -205,12 +205,14 @@ function fileReset2(form){
             <div class="small">
                 <h3 id="small">*최대 500자</h3>
             </div>
-            <input type="text" placeholder="공간을 상세하게 소개해주세요" id="host_input_des" name="host_des">
+            <textarea rows="20" cols="200" placeholder="공간을 상세하게 소개해주세요"id="host_input_des" name="host_des"></textarea>
+           <!--  <input type="text" placeholder="공간을 상세하게 소개해주세요" id="host_input_des" name="host_des"> -->
         </div>
 
         <div class="space_host_caution">
             <h3 id="space_host_h3">공간 예약 시 주의사항</h3>
-            <input type="text" placeholder="게스트들이 확인해야 하는 주의사항을 상세히 써주세요" id="host_input" name="host_caution">
+           <textarea rows="20" cols="100" placeholder="게스트들이 확인해야 하는 주의사항을 상세히 써주세요" id="host_input" name="host_caution"></textarea>
+            <!-- <input type="text" placeholder="게스트들이 확인해야 하는 주의사항을 상세히 써주세요" id="host_input" name="host_caution" style="height: 300px "> -->
         </div>
 
 

@@ -6,7 +6,6 @@ import org.apache.ibatis.annotations.Mapper;
 
 import com.study.springboot.dto.faqDto;
 
-
 @Mapper
 public interface IfaqDao {
 
@@ -21,5 +20,7 @@ public interface IfaqDao {
 	public int ad_FAQ_delete(String faq_number);
 	
 	public int ad_FAQ_update(String faq_number, String faq_title, String faq_content);
+	
+	public List<faqDto> faq_search(String search_type, String search_contents);
 	
 }

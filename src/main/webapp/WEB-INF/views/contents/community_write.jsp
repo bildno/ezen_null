@@ -65,10 +65,6 @@
 			<div class="btn_revise">
 			<input class="ad_btn_revise" type="submit" value="작성"
 				>
-			<input class="ad_btn_revise" type="button" value="수정"
-				onclick="location.href='/community'">
-				<input class="ad_btn_revise" type="button" value="삭제"
-				onclick="location.href='/community'">
 			</div>
 		</form>
 		</div>
