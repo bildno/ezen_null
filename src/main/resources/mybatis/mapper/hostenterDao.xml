@@ -25,6 +25,10 @@
     		)
     		
     	</insert>
+    <select id="space_info" resultType="com.study.springboot.dto.hostenterDto">
+    	select * from hostenter where hostenter_number = #{param1}
+    </select>	
+    	
     	
     <select id="contents_space" resultType="com.study.springboot.dto.hostenterDto">
     	select * from hostenter where hostenter_contents_number = #{param1}
@@ -39,28 +43,17 @@
     	select * from hostenter where hostenter_name = #{param1} 
     </select>
     
-    <update id="update_hostenter" >
-    	<!-- update hostenter set hostenter_title_img = #{hostenter_title_img},
-    						 hostenter_contents_number = #{hostenter_contents_number},
-    						 hostenter_name = #{hostenter_name},
-    						 hostenter_description = #{hostenter_description},
-    						 hostenter_caution = #{hostenter_caution}, 
-    						 hostenter_price = #{hostenter_price},
-    						 hostenter_headcount = #{hostenter_headcount}, 
-    						 hostenter_bnumber = #{hostenter_bnumber},
-    						 hostenter_onerow = #{hostenter_onerow}
-    						 where hostenter_name = #{param1} -->
-    						 
-    		update hostenter set hostenter_title_img = #{hostenter_title_img},
-    							 hostenter_contents_number = #{hostenter_contents_number},
-    							 hostenter_name = #{hostenter_name},
-    							 hostenter_description = #{hostenter_description},
-    							 hostenter_caution = #{hostenter_caution},
-    							 hostenter_price = #{hostenter_price},
-    							 hostenter_headcount = #{hostenter_headcount},
-    							 hostenter_bnumber = #{hostenter_bnumber},
-    							 hostenter_onerow = #{hostenter_onerow}
-    						 	 where hostenter_name = #{param2}
+    <update id="space_update">
+    	update hostenter set hostenter_title_img = #{param1},
+    	 					 hostenter_contents_number = #{param2},
+    						 hostenter_name = #{param3},
+    						 hostenter_description = #{param4},
+    						 hostenter_caution = #{param5},
+    						 hostenter_price = #{param6},
+    						 hostenter_headcount = #{param7},
+    						 hostenter_bnumber = #{param9}, 
+    						 hostenter_onerow = #{param9},
+    						 where hostenter_member_id = #{param10}
     </update>
     
     </mapper>

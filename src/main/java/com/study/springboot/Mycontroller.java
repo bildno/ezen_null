@@ -742,9 +742,11 @@ public class Mycontroller {
 
 		List<one2oneDto> one2one_list = one2oneService.one2one_list(member_id);
 		List<one2one_answerDto> one2oneanswer_list = one2one_answerService.one2one_answer(member_id);
+		
+		System.out.println(one2oneanswer_list);
 
 		model.addAttribute("one2one_list", one2one_list);
-		System.out.println(one2oneanswer_list);
+	
 		model.addAttribute("qwer", one2oneanswer_list);
 
 		model.addAttribute("mainPage", "one2one/one2one.jsp");
@@ -1141,8 +1143,12 @@ public class Mycontroller {
 
 	/* 공간상세(일반회원) */
 	@RequestMapping("/space_info")
-	public String space_info(Model model) {
+	public String space_info(@RequestParam("hostenter_number") int hostenter_number,
+			Model model) {
+		
+		List<hostenterDto> space_info = hostenterService.space_info(hostenter_number);
 
+		model.addAttribute("space_info",space_info);
 		model.addAttribute("mainPage", "contents/space_info.jsp");
 		return "index";
 	}
@@ -1208,9 +1214,7 @@ public class Mycontroller {
 		 System.out.println(host_headcount);
 		
 		 String upload_url_title = fileUploadService.restore(File_title);
-	
-	
-		 
+
 		 
 			try {
 				result = hostenterService.insert_hostenter(
@@ -1345,7 +1349,7 @@ public class Mycontroller {
 					
 				if( upload_url != null ) {
 					if( upload_url.length() > 0 ) {
-						result = hostenter_imgDaoService.hostenter_img_update(upload_url,host_name_);
+						result = 0;
 						System.out.println("업로드 성공!");
 					
 						

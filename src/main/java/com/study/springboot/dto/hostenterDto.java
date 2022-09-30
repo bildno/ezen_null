@@ -5,6 +5,7 @@ import lombok.Data;
 @Data
 public class hostenterDto {
 	
+	private int hostenter_number;
 	private String hostenter_title_img;
 	private int hostenter_contents_number;
 	private String hostenter_name;
