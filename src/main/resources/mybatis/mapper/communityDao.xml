@@ -28,16 +28,14 @@
 	 </insert>
 	  
 	 <select id="community_page" resultType="com.study.springboot.dto.communityDto">
-	 		SELECT * FROM
-	    (
-	        SELECT 
-	            ROWNUM AS RNUM, community.*
-	        FROM
-	            community
-	       where COMMUNITY_CONTENTS_NUMBER = #{param3}
-	    )
-		WHERE RNUM BETWEEN #{param1} AND #{param2} ORDER BY COMMUNITY_NUMBER DESC
-		
+	 
+	
+SELECT * FROM (
+        SELECT temp_table.*, ROWNUM as rnum FROM (
+               SELECT * FROM COMMUNITY WHERE COMMUNITY_CONTENTS_NUMBER = #{param3} 
+               ORDER BY COMMUNITY_NUMBER DESC 
+               ) temp_table )  WHERE rnum &gt;= #{param1} and rnum &lt;= #{param2}
+        
 
 	 </select>
 	 
