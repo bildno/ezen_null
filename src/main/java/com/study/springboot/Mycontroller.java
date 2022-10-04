@@ -186,7 +186,7 @@ public class Mycontroller {
 		int endRowNum = (num_page_no * num_page_size);	// 5, 10, 15 페이지 끝 줄번호
 		
 		List<adminDto>one2one_list = iadminDao.one2onepage(String.valueOf(startRowNum), String.valueOf(endRowNum) );
-		System.out.println(one2one_list);
+//		System.out.println(one2one_list);
 	
 		model.addAttribute("one2one_list", one2one_list);
 		model.addAttribute("mainPage", "admin/ad_one2one.jsp"); 
@@ -210,7 +210,7 @@ public class Mycontroller {
 		int endRowNum = (num_page_no * num_page_size);	// 5, 10, 15 페이지 끝 줄번호
 		
 		List<adminDto>notice_list = iadminDao.noticepage(String.valueOf(startRowNum), String.valueOf(endRowNum) );
-		System.out.println(notice_list);
+//		System.out.println(notice_list);
 	
 		model.addAttribute("notice_list", notice_list);
 		model.addAttribute("mainPage", "admin/ad_notice.jsp"); 
@@ -461,19 +461,49 @@ public class Mycontroller {
 	}
 
 	@RequestMapping("/ad_one2one_answer")
-	public String ad_one2one_answer(Model model) {
-
+	public String ad_one2one_answer(@RequestParam("one2one_number") String one2one_number,
+			Model model) {
+		
+		List<one2oneDto>ad_one2one_answer = one2oneService.ad_one2one_answer(one2one_number);
+		System.out.println(ad_one2one_answer);
+		
+		model.addAttribute("ad_one2one_answer", ad_one2one_answer);
 		model.addAttribute("mainPage", "admin/ad_one2one_answer.jsp");
 		return "index";
 	}
+//	one2one answer 작성
+	@RequestMapping("/one2one_answer_write")
+	public String one2one_answer_write(
+			@RequestParam("one2oneanswer_content") String one2oneanswer_content, 
+			@RequestParam("one2one_number") String one2one_number,
+			HttpServletRequest request, Model model, one2one_answerDto dto) {
+		
+		HttpSession session = request.getSession();
+		String member_id = (String) session.getAttribute("member_id");
+		System.out.println(member_id);
+		System.out.println(one2one_number);
+		System.out.println(one2oneanswer_content);
+		System.out.println(member_id);
+		
+		dto.setOne2oneanswer_content(one2oneanswer_content);
+		dto.setOne2oneanswer_one2one_number(one2one_number);
+		dto.setOne2oneanswer_member_id(member_id);
+		
 
-	@RequestMapping("/ad_notice_write")
-	public String ad_notice_write(Model model) {
+		int result = one2one_answerService.one2one_answer_write(
+				one2oneanswer_content, one2one_number, member_id);
+		System.out.println("result" + result);
 
-		model.addAttribute("mainPage", "admin/ad_notice_write.jsp");
-		return "index";
+		if (result == 0) {
+			System.out.println("실패");
+			return "redirect:/ad_one2one";
+			
+		} else {
+			System.out.println("성공");
+			return "redirect:/ad_one2one";
+		}
+
 	}
-
 	@RequestMapping("/ad_FAQ_write")
 	public String ad_FAQ_write(Model model) {
 

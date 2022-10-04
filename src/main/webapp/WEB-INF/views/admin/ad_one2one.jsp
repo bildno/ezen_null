@@ -59,13 +59,13 @@
 						<th>아이디</th>
 						<th>작성일시</th>
 					</tr>
-			<c:forEach var="dto" items="${ one2one_list}" varStatus="">
+			<c:forEach var="dto" items="${one2one_list}" varStatus="">
 					<tr>
-						<td>${dto.one2one_number}</td>
-						<td>${dto.one2one_title}</td>
-						<td>${dto.one2one_content}</td>
-						<td>${dto.one2one_member_id}</td>
-						<td>${dto.one2one_date}</td>
+						<td onclick="location.href='/ad_one2one_answer?one2one_number=${ dto.one2one_number }'" style="cursor: pointer;">${dto.one2one_number}</td>
+						<td onclick="location.href='/ad_one2one_answer?one2one_number=${ dto.one2one_number }'" style="cursor: pointer;">${dto.one2one_title}</td>
+						<td onclick="location.href='/ad_one2one_answer?one2one_number=${ dto.one2one_number }'" style="cursor: pointer;">${dto.one2one_content}</td>
+						<td onclick="location.href='/ad_one2one_answer?one2one_number=${ dto.one2one_number }'" style="cursor: pointer;">${dto.one2one_member_id}</td>
+						<td onclick="location.href='/ad_one2one_answer?one2one_number=${ dto.one2one_number }'" style="cursor: pointer;">${dto.one2one_date}</td>
 					</tr>
 			</c:forEach>
 				</table>

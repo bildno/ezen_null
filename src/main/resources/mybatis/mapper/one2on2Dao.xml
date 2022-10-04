@@ -10,8 +10,16 @@
 		select * from one2one where one2one_member_id = #{param1}
 	</select>
 	
+	<select id="ad_one2one_answer" resultType="com.study.springboot.dto.one2oneDto">
+		select * from one2one where one2one_number = #{param1}
+	</select>
+	
 	<insert id="one2one_write" parameterType="com.study.springboot.dto.one2oneDto">
 		insert into one2one values(one2one_idx.nextval,#{one2one_title},#{one2one_content},sysdate,#{one2one_member_id})
 	</insert>
 	
+<!-- 	<select id="ad_one2one_write"
+		resultType="com.study.springboot.dto.one2oneDto">
+		select * from one2one where one2one_number = #{ param1 }
+	</select> -->
 </mapper>    
