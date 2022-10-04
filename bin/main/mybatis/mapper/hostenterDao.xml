@@ -43,17 +43,6 @@
     	select * from hostenter where hostenter_name = #{param1} 
     </select>
     
-    <update id="space_update">
-    	update hostenter set hostenter_title_img = #{param1},
-    	 					 hostenter_contents_number = #{param2},
-    						 hostenter_name = #{param3},
-    						 hostenter_description = #{param4},
-    						 hostenter_caution = #{param5},
-    						 hostenter_price = #{param6},
-    						 hostenter_headcount = #{param7},
-    						 hostenter_bnumber = #{param9}, 
-    						 hostenter_onerow = #{param9},
-    						 where hostenter_member_id = #{param10}
-    </update>
+  
     
     </mapper>

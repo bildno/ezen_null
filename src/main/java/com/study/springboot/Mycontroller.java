@@ -1421,17 +1421,7 @@ public class Mycontroller {
 		 
 		 
 			try {
-				result = hostenterService.update_hostenter(
-						upload_url_title,
-						host_contents_number,
-						host_name,
-						host_des,
-						host_caution,
-						host_price,
-						host_headcount,
-						host_bnumber,
-						host_onerow,
-						host_name_1);
+				result = 0;
 			
 			} catch (Exception e) {
 				
