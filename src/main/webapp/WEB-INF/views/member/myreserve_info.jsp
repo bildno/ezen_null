@@ -154,17 +154,7 @@
 				</div>
 			</div>
 		</div>
-		<iframe id="map" class="map"
-			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3155.
-			164599740011!2d127.0426239156514!3d37.739282521972946!2m3!1f0!2f0!3f0!3m2!
-			1i1024!2i768!4f13.1!3m3!1m2!1s0x357cc730e7a0a4e5%3A0xcea407a2baced2ee!2z7J
-			207KCg7Lu07ZOo7YSw7ZWZ7JuQIOydmOygleu2gOy6oO2NvOyKpA!5e0!3m2!1sko!2skr!4v16
-			63034928101!5m2!1sko!2skr"
-			width="100%" height="450" style="border: 0; margin-bottom: 50px;"
-			allowfullscreen="" loading="lazy"
-			referrerpolicy="no-referrer-when-downgrade"> </iframe>
-
-
+		
 		
 		<div id="btn_box">
 			<button style="right: 0; margin-left: 50px;">확인</button>

@@ -18,4 +18,8 @@
     		update hostenter_img set hostenter_img = ${param1} where hostenter_img_name = ${parma2}
     	</update>
     
+    	<delete id="delete_img">
+    		delete from hostenter_img where hostenter_img_name = #{param1} 
+    	</delete>
+    
     </mapper>
