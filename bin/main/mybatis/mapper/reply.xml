@@ -18,9 +18,16 @@
 
 
 <select id="select_reply" resultType="com.study.springboot.dto.replyDto">
-	
 	select * from reply where reply_member_id = #{param1}
+</select>
 
+
+<select id="myreply_page" resultType="com.study.springboot.dto.replyDto">
+		SELECT * FROM (
+	    SELECT temp_table.*, ROWNUM as rnum FROM (
+	    SELECT * FROM REPLY WHERE REPLY_MEMBER_ID = #{param3} 
+	    ORDER BY REPLY_COMMUNTY_NUMBER DESC
+	    ) temp_table ) WHERE rnum &gt;= #{param1} and rnum &lt;= #{param2}
 </select>
 
 </mapper>    

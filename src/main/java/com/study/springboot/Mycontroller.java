@@ -23,6 +23,7 @@ import com.study.springboot.dao.IfaqDao;
 import com.study.springboot.dao.ImemberDao;
 import com.study.springboot.dao.InoticeDao;
 import com.study.springboot.dao.IreplyDao;
+import com.study.springboot.dao.IreviewDao;
 import com.study.springboot.dto.adminDto;
 import com.study.springboot.dto.communityDto;
 import com.study.springboot.dto.contentsDto;
@@ -702,18 +703,64 @@ public class Mycontroller {
 	}
 
 	/* 내가쓴글리뷰_나의활동 */
+	@Autowired IreviewDao ireviewDao;
 	@RequestMapping("/mylist")
-	public String mylist(HttpServletRequest request, Model model) {
-
+	public String mylist(@RequestParam(value="mycommu_page",required = false)String mycommu_page,
+			@RequestParam(value="myreview_page",required = false)String myreview_page,
+			@RequestParam(value="myreply_page",required = false) String myreply_page,
+			HttpServletRequest request, Model model) {
+			
+		if(mycommu_page == null) {
+			mycommu_page = "1";
+		}
+		
+		if(myreview_page == null) {
+			myreview_page = "1";
+		}
+		
+		if(myreply_page == null) {
+			myreply_page = "1";
+		}
+		
+		model.addAttribute("mycommu_page",mycommu_page);
+		model.addAttribute("myreview_page",myreview_page);
+		model.addAttribute("myreply_page",myreply_page);
+		
+		
 		HttpSession session = request.getSession();
 		String member_id = (String) session.getAttribute("member_id");
+		System.out.println(member_id);
+		
+		int num_page_size = 5; //한페이지당 Row갯수
+		
+		int num_page_no_commu = Integer.parseInt( mycommu_page );
+		int num_page_no_review = Integer.parseInt( myreview_page ); //page번호 1,2,3,4
+		int num_page_no_reply = Integer.parseInt( myreply_page);
+		
+		int startRowNum_community = (num_page_no_commu - 1) * num_page_size + 1;
+		int startRowNum_review = (num_page_no_review - 1) * num_page_size + 1;// 1, 6, 11 페이지 시작 줄번호
+		int startRowNum_reply = (num_page_no_reply - 1) * num_page_size + 1;
+		
+		int endRowNum_community = (num_page_no_commu * num_page_size);   
+		int endRowNum_review = (num_page_no_review * num_page_size); // 5, 10, 15 페이지 끝 줄번호
+		int endRowNum_reply = (num_page_no_reply * num_page_size);
 
+
+		// row 1~5 까지...
+		List<communityDto> mycommu_pagelist = icommunityDao.mycommu_page(String.valueOf(startRowNum_community), String.valueOf(endRowNum_community),member_id);
+		List<reviewDto> myreview_pagelist = ireviewDao.myreview_page(String.valueOf(startRowNum_review), String.valueOf(endRowNum_review),member_id);
+		List<replyDto> myreply_pagelist = ireplyDao.myreply_page(String.valueOf(startRowNum_reply), String.valueOf(endRowNum_reply),member_id);
+		
 		List<reviewDto> reviewlist = reviewService.select_review(member_id);
 		List<communityDto> commulist = communityService.select_commu(member_id);
 		List<replyDto> replylist = replyService.select_reply(member_id);
 		
 		
-
+		
+		model.addAttribute("mycommu_pagelist",mycommu_pagelist);
+		model.addAttribute("myreview_pagelist",myreview_pagelist);
+		model.addAttribute("myreply_pagelist",myreply_pagelist);
+		
 		model.addAttribute("reviewlist", reviewlist);
 		model.addAttribute("commulist",commulist);
 		model.addAttribute("replylist",replylist);
@@ -722,6 +769,7 @@ public class Mycontroller {
 	}
 
 	/* 내가쓴리뷰 */
+	
 	@RequestMapping("/myreview")
 	public String myreview(Model model) {
 
