@@ -2,6 +2,11 @@
 	margin-top: 150px;
 }
 
+.container-fluid{
+	
+}
+
+
 #service_h1 {
 	font-family: 'Do Hyeon', sans-serif;
 	margin-left: 50px;
@@ -30,7 +35,6 @@
 .tb_notice {
 	text-align: center;
 	width: 1000px;
-	border: 0.5px solid rgb(238, 238, 238);
 	font-family: 'Noto Sans KR', sans-serif;
 	font-weight: 300;
 	align-content: center;
