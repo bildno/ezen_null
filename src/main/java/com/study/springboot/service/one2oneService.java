@@ -26,10 +26,18 @@ public class one2oneService {
 		return result;
 	}
 	
-	public List<one2oneDto> one2one_search(String search_type, String search_contents) {
-		
-		List<one2oneDto> one2one_search = ione2oneDao.one2one_search(search_type, search_contents);
-		
-		return one2one_search;
+//	public List<one2oneDto>ad_one2one_write(String one2one_number) {
+//
+//		List<one2oneDto>ad_one2one_write = ione2oneDao.ad_one2one_write(one2one_number);
+//
+//		return ad_one2one_write;
+//	}
+
+	public List<one2oneDto>ad_one2one_answer(String one2one_number) {
+
+		List<one2oneDto>ad_one2one_answer = ione2oneDao.ad_one2one_answer(one2one_number);
+
+		return ad_one2one_answer;
 	}
+	
 }

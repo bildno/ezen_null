@@ -21,4 +21,8 @@ public class one2one_answerService {
 			return one2oneanswer_list;
 			
 		}
+	public int one2one_answer_write(String one2oneanswer_content, String one2one_number, String member_id ) {
+			int result = ione2one_answerDao.one2one_answer_write(one2oneanswer_content, one2one_number, member_id);
+			return result;
+	}
 }
