@@ -29,7 +29,7 @@
 	  
 	 <select id="community_page" resultType="com.study.springboot.dto.communityDto">
 	 
-	
+	<!-- temp_table은 임시테이블 정해진 값-->
 SELECT * FROM (
         SELECT temp_table.*, ROWNUM as rnum FROM (
                SELECT * FROM COMMUNITY WHERE COMMUNITY_CONTENTS_NUMBER = #{param3} 
