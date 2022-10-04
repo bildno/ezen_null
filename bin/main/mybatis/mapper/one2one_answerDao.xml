@@ -9,7 +9,11 @@
 	<select id="one2one_answer" resultType="com.study.springboot.dto.one2one_answerDto">
 		select * from one2oneanswer where one2oneanswer_member_id = #{param1}
 	</select>
-
+	<insert id="one2one_answer_write"
+		parameterType="com.study.springboot.dto.one2one_answerDto">
+		insert into one2oneanswer 
+		values(#{param1},sysdate,#{param2},#{param3})
+	</insert>
 </mapper>	
 	
 	

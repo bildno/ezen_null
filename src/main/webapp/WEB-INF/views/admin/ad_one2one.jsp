@@ -27,29 +27,33 @@
 				id="space_icon">
 		</h2>
 		<div class="contents">
+		
+		<form action="/ad_one2one" method="post">
 			<div class="search_box">
 				<ul class="search_box_ul">
 					<li>
 						<p style="min-width: 20%;">검색항목</p> 
-						<select>
-							<option value="name">이름</option>
-							<option value="rnum">예약번호</option>
-							<option value="phone">전화번호</option>
-							<option value="email">이메일</option>
+						<select name="search_type">
+							<option value="one2one_member_id">아이디</option>	
+							<option value="one2one_title">제목</option>
+							<option value="one2one_content">내용</option>
+							<option value="one2one_date">작성일</option>
 						</select> &nbsp;&nbsp; 
 					<input type="text" name="search_contents"
 						id="search_contents" style="width: 100%;">
 					</li>
 				</ul>
 				<div class="search_btn">
-					<button>검색</button>
+					<button type="submit">검색</button>
 				</div>
 			</div>
+		</form>
 
 			<div>
 			
 				<p class="txt_primary">
 					총 <em>0</em>건이 검색되었습니다.
+					<a href="/ad_one2one">전체보기</a>
 				</p>
 				<table class="search_table">
 					<tr>
@@ -59,13 +63,13 @@
 						<th>아이디</th>
 						<th>작성일시</th>
 					</tr>
-			<c:forEach var="dto" items="${ one2one_list}" varStatus="">
+			<c:forEach var="dto" items="${one2one_list}" varStatus="">
 					<tr>
-						<td>${dto.one2one_number}</td>
-						<td>${dto.one2one_title}</td>
-						<td>${dto.one2one_content}</td>
-						<td>${dto.one2one_member_id}</td>
-						<td>${dto.one2one_date}</td>
+						<td onclick="location.href='/ad_one2one_answer?one2one_number=${ dto.one2one_number }'" style="cursor: pointer;">${dto.one2one_number}</td>
+						<td onclick="location.href='/ad_one2one_answer?one2one_number=${ dto.one2one_number }'" style="cursor: pointer;">${dto.one2one_title}</td>
+						<td onclick="location.href='/ad_one2one_answer?one2one_number=${ dto.one2one_number }'" style="cursor: pointer;">${dto.one2one_content}</td>
+						<td onclick="location.href='/ad_one2one_answer?one2one_number=${ dto.one2one_number }'" style="cursor: pointer;">${dto.one2one_member_id}</td>
+						<td onclick="location.href='/ad_one2one_answer?one2one_number=${ dto.one2one_number }'" style="cursor: pointer;">${dto.one2one_date}</td>
 					</tr>
 			</c:forEach>
 				</table>
