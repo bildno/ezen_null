@@ -16,4 +16,7 @@ public interface IreplyDao {
 	
 //	public String community_hit(String contents_number);
 	
+	
+	public List<replyDto> select_reply(String member_id);
+	
 }

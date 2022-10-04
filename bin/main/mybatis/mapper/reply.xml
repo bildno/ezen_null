@@ -16,4 +16,11 @@
 	values(#{reply_content},#{reply_member_id},#{reply_community_number},reply_idx.nextval)
 </insert>
 
+
+<select id="select_reply" resultType="com.study.springboot.dto.replyDto">
+	
+	select * from reply where reply_member_id = #{param1}
+
+</select>
+
 </mapper>    

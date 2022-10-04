@@ -30,8 +30,12 @@ public interface ImemberDao {
 	
 	public int host_find(String member_id);
 	
-	public List<memberDto>ad_member_page(String startRowNum, String endRowNum );
+	public List<memberDto> ad_member_page(String startRowNum, String endRowNum );
 
-	public List<memberDto>ad_host_page(String startRowNum, String endRowNum );
+	public List<memberDto> ad_host_page(String startRowNum, String endRowNum );
+	
+	public List<memberDto> host_search(String search_type, String search_contents);
+	
+	public List<memberDto> member_search(String search_type, String search_contents);
 	
 }

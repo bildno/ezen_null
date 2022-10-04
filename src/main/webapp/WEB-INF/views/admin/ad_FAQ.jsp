@@ -52,6 +52,7 @@
 			<div>
 				<p class="txt_primary">
 					총 <em>0</em>건이 검색되었습니다.
+					<a href="/ad_FAQ">전체보기</a>
 				</p>
 				<table class="search_table">
 					<tr>

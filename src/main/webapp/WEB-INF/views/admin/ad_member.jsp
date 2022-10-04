@@ -36,35 +36,35 @@
 					alt="space_icon" id="space_icon">
 			</h2>
 			<div class="contents">
+			
+			<form action="ad_member" method="post">
 				<div class="search_box">
-				
 				<div>
-				
 					<ul class="search_box_ul">
 						<li>
 							<p style="min-width: 20%;">검색항목</p>
-							<select>
-								<option value="name">이름</option>
-								<option value="rnum">예약번호</option>
-								<option value="phone">전화번호</option>
-								<option value="email">이메일</option>
+							<select name="search_type">
+								<option value="member_name">이름</option>
+								<option value="member_id">아이디</option>
+								<option value="member_phone">전화번호</option>
+								<option value="member_email">이메일</option>
+								<option value="member_gender">성별</option>
 						</select> &nbsp;&nbsp;
 						<input type="text" name="search_contents"
 							id="search_contents" style="width: 100%;">
-
 						</li>
 					</ul>
 					<div class="search_btn">
-						<button>검색</button>
+						<button type="submit">검색</button>
 					</div>
-					
-					</div>
-					
 				</div>
+				</div>
+			</form>
 
 				<div>
 					<p class="txt_primary">
 						총 <em>0</em>건이 검색되었습니다.
+						<a href="/ad_member">전체보기</a>
 					</p>
 					<table class="search_table">
 						<tr>
