@@ -15,7 +15,18 @@ public interface IhostenterDao {
 	
 	public List<hostenterDto> detail_space(String hostenter_name);
 	
-
+	public int update_space(String hostenter_title_img,
+							String hostenter_name,
+							int hostenter_contents_number,
+							String hostenter_onerow,
+							String hostenter_description,
+							String hosteter_caution,
+							int hostenter_price,
+							int hostenter_bnumber,
+							int hostenter_headcount,
+							int hostenter_number
+			
+			);
 	
 	public List<hostenterDto> contents_space(String hostenter_contents_number);
 	

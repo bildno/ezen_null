@@ -15,4 +15,6 @@ public interface Ihostenter_imgDao {
 	
 	public int hostenter_img_update(String hostenter_img, String hostenter_img_name);
 
+	public int delete_img(String hostenter_img_name);
+	
 }

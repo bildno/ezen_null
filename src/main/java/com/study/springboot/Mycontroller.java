@@ -110,9 +110,7 @@ public class Mycontroller {
 	
 	@Autowired
 	private ImemberDao imemberDao;
-	
-	@Autowired
-	private communityService communityservice;
+
 	
 
 	/* ----------------------------------------- admin 폴더 */
@@ -1454,7 +1452,7 @@ public class Mycontroller {
 	
 	@RequestMapping(value="/udateuploadMultiFileOk", method = RequestMethod.POST)
 	public String udateuploadMultiFileOk( 
-			@RequestParam("hostenter_name") String host_name_0,
+			@RequestParam("hostenter_number") int hostenter_number,
 			@RequestParam("host_name") String host_name_,
 			@RequestParam("room") int host_contents_number_,
 			@RequestParam("host_onerow") String host_onerow_,
@@ -1463,6 +1461,7 @@ public class Mycontroller {
 			@RequestParam("host_price") int host_price_,
 			@RequestParam("host_bnumber") int host_bnumber_, 
 			@RequestParam("host_headcount") int host_headcount_,
+			@RequestParam("none_hostenter_name") String hostenter_name,
 			@RequestParam(value="filename2", required=false) MultipartFile File_title,
 			@RequestParam(value="filename", required=false) MultipartFile[] filelist,
 			HttpServletRequest request,
@@ -1474,7 +1473,8 @@ public class Mycontroller {
 		int result = 0;
 		int qq = 0;
 		
-		System.out.println(host_name_0);
+		 String upload_url_title = fileUploadService.restore(File_title);
+		 System.out.println(upload_url_title);
 		 String host_name = host_name_; 
 		 System.out.println(host_name);
 		 int host_contents_number = host_contents_number_; 
@@ -1491,12 +1491,27 @@ public class Mycontroller {
 		 System.out.println(host_bnumber);
 		 int host_headcount = host_headcount_; 
 		 System.out.println(host_headcount);
-		 String host_name_1 = host_name_0;
-		 String upload_url_title = fileUploadService.restore(File_title);
+		 System.out.println(hostenter_number);
+		System.out.println(hostenter_name);
 	
 
 			try {
-				result = 0;
+				int oo = hostenter_imgDaoService.delete_img(hostenter_name);
+				System.out.println(oo);
+				if(oo > 0) {
+					System.out.println("삭제성공");
+				}
+				result = hostenterService.update_space(upload_url_title, 
+													   host_name, 
+													   host_contents_number, 
+													   host_onerow, 
+													   host_des,
+													   host_caution, 
+													   host_price,
+													   host_bnumber, 
+													   host_headcount, 
+													   hostenter_number);
+				
 			
 			} catch (Exception e) {
 				
@@ -1508,6 +1523,12 @@ public class Mycontroller {
 					System.out.println("filename:" + file);
 					String upload_url = fileUploadService.restore(file);
 					System.out.println( "upload_url:" + upload_url );
+				
+					
+						
+				result = hostenter_imgDaoService.hostenter_img_up(host_name_,member_id,upload_url);
+					
+					
 					
 				if( upload_url != null ) {
 					if( upload_url.length() > 0 ) {

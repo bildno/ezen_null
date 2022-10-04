@@ -152,7 +152,8 @@ function fileReset2(form){
 
 	<c:forEach var="dto" items="${ detail_list}" >
 <form action="udateuploadMultiFileOk?hostenter_name=${dto.hostenter_name }" method="post" enctype="multipart/form-data" onsubmit="return confirmFileExtension(imgFile.value);">
-
+		<input type="hidden" value="${dto.hostenter_number}" name="hostenter_number" />
+		<<input type="hidden" value="${dto.hostenter_name }" name="none_hostenter_name" />>
 		<h1 id="space_host_h1">공간 상세정보</h1>
 		<h2 id="space_host_h2">
 			호스트의 공간 상세정보 페이지입니다 <img src="/img/service/space_icon.png"
