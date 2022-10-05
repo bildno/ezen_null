@@ -71,8 +71,9 @@
 				String member_id = (String) session.getAttribute("member_id");
 				if (member_id != null) {
 				%>
-				<input type="button" id="mychk_btn" value="출석체크 하러가기"
-					onclick="location.href='/mycheck'">
+				<img alt="체크" src="img/chk.png"
+				id="mychk_img" onclick="location.href='/mycheck'">
+				
 				<%
 				} else { }
 				%>

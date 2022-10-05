@@ -453,3 +453,9 @@ video {
 	cursor: pointer;
 	height: 50px
 }
+
+#mychk_img {
+	width:45px;
+	margin-bottom:10px;
+	cursor:pointer
+}
