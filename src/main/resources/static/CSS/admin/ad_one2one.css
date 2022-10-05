@@ -2,14 +2,11 @@
 	width: 30px;
 }
 
-.container {
-	font-family: 'Noto Sans KR', sans-serif;
-	margin-left: 0;
-}
 .ad_wrap {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 /* 컨테이너 - 부트스트랩 */

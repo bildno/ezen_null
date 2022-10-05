@@ -27,20 +27,19 @@
 		</span>
 		</div> 
 		</button>
-		
-				
+		<c:set var="number" value="${dto.one2one_number}" />
+		<c:set var="answer_number" value="${one2oneanswer_list[status.index].one2oneanswer_one2one_number }" />
 		<div class="panel">
 			<p id="o_ans1" >
 			<span id="list_anspan">
+			<c:if test="${number eq answer_number}">		
 			${one2oneanswer_list[status.index].one2oneanswer_content }
+			</c:if>
 			</span>
 			</p>
 		</div>
 		</c:forEach>	
 		</div>
-	
-
-
 		<br>
 		<div class="write">
 			<input class="writebtn" type="button" value="글쓰기"

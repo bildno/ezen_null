@@ -21,6 +21,9 @@ public interface IcommunityDao {
 	public List<communityDto> community_page(String startRowNum_community, String endRowNum_community, String contents_number);
 	
 	
+	public List<communityDto> mycommu_page(String startRowNum_community, String endRowNum_community,String member_id);
+	
+	
 	public int community_hit(String community_number);
 	
 	public List <communityDto> community_seq1();

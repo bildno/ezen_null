@@ -21,6 +21,7 @@
 		select member_host from member
 		where member_id = #{param1}
 	</select>
+
 	<!-- 아이디찾기 -->
 	<select id="idfind" resultType="String">
 		select member_id from member
@@ -65,6 +66,12 @@
 		SET	member_phone = #{ param1 }
 		where member_id = #{ param2 }
 	</update>
+	
+	<!-- 나의활동 -->
+
+	
+	
+	
 	<!-- member -->
 	<select id="ad_member_list" resultType="com.study.springboot.dto.memberDto">
 		select * from member where member_host = 0

@@ -22,31 +22,127 @@
     <div class="myreview">
     		<h4><b>리뷰</b></h4>
     		<hr>
-    		<c:forEach var="dto1" items="${reviewlist }">
+    		<c:forEach var="dto1" items="${myreview_pagelist }">
     		<a href="/myreview">${dto1.review_content }</a><br>
     		</c:forEach>
-            
-	<!-- 페이지네이션 -->
-	
-            
     </div>
+    
+    	<div>
+		<div class="container-fluid">
+		<div class="row" style="justify-content: center; margin-top:30px;">
+		  <ul class="pagination">
+		    
+		    <li class="page-item <c:if test="${ myreview_page == 1 }">disabled</c:if>">
+		    	<a class="page-link" href="/mylist?myreview_page=${myreview_page-1}">Previous</a>
+		    </li>
+		    <li class="page-item <c:if test="${ myreview_page == 1 }">active</c:if>">
+		    	<a class="page-link" href="/mylist?myreview_page=1">1</a>
+		    </li>
+		    <li class="page-item <c:if test="${ myreview_page == 2 }">active</c:if>">
+		    	<a class="page-link" href="/mylist?myreview_page=2">2</a>
+		    </li>
+		    <li class="page-item <c:if test="${ myreview_page == 3 }">active</c:if>">
+		    	<a class="page-link" href="/mylist?myreview_page=3">3</a>
+		    </li>
+		    <li class="page-item <c:if test="${ myreview_page == 4 }">active</c:if>">
+		    	<a class="page-link" href="/mylist?myreview_page=4">4</a>
+		    </li>
+		    <li class="page-item <c:if test="${ myreview_page == 5 }">active</c:if>">
+		    	<a class="page-link" href="/mylist?myreview_page=5">5</a>
+		    </li>
+		    <li class="page-item <c:if test="${ myreview_page == 5 }">disabled</c:if>">
+		    	<a class="page-link" href="/mylist?myreview_page=${myreview_page+1}">Next</a>
+		    </li>
+		  </ul>
+		</div> 
+	</div>
+	</div>
+	
+	
     <hr>
     <div class="myboard">
     		<h4><b>게시글</b></h4>
     		<hr>
-			<c:forEach var="dto2" items="${commulist}">
+			<c:forEach var="dto2" items="${mycommu_pagelist}">
 			<a href="/community_info">${dto2.community_title}</a><br>
 			</c:forEach>
     </div>
+    
+    <div>
+   
+	<div class="container-fluid">
+		<div class="row" style="justify-content: center; margin-top:30px;">
+		  <ul class="pagination">
+		    
+		    <li class="page-item <c:if test="${ mycommu_page == 1 }">disabled</c:if>">
+		    	<a class="page-link" href="/mylist?mycommu_page=${mycommu_page-1}">Previous</a>
+		    </li>
+		    <li class="page-item <c:if test="${ mycommu_page == 1 }">active</c:if>">
+		    	<a class="page-link" href="/mylist?mycommu_page=1">1</a>
+		    </li>
+		    <li class="page-item <c:if test="${ mycommu_page == 2 }">active</c:if>">
+		    	<a class="page-link" href="/mylist?mycommu_page=2">2</a>
+		    </li>
+		    <li class="page-item <c:if test="${ mycommu_page == 3 }">active</c:if>">
+		    	<a class="page-link" href="/mylist?mycommu_page=3">3</a>
+		    </li>
+		    <li class="page-item <c:if test="${ mycommu_page == 4 }">active</c:if>">
+		    	<a class="page-link" href="/mylist?mycommu_page=4">4</a>
+		    </li>
+		    <li class="page-item <c:if test="${ mycommu_page == 5 }">active</c:if>">
+		    	<a class="page-link" href="/mylist?mycommu_page=5">5</a>
+		    </li>
+		    <li class="page-item <c:if test="${ mycommu_page == 5 }">disabled</c:if>">
+		    	<a class="page-link" href="/mylist?mycommu_page=${mycommu_page+1}">Next</a>
+		    </li>
+		  </ul>
+		</div> 
+	</div>
+	
+    </div>
+    
+    
     <hr>
       <div class="myboard">
     		<h4><b>댓글</b></h4>
     		<hr>
-			<c:forEach var="dto3" items="${replylist}">
+			<c:forEach var="dto3" items="${myreply_pagelist}">
 			<a href="/community_info">${dto3.reply_content}</a><br>
 			</c:forEach>
     </div>
-    <hr />
+    
+        <div>
+		<div class="container-fluid">
+		<div class="row" style="justify-content: center; margin-top:30px;">
+		  <ul class="pagination">
+		    
+		    <li class="page-item <c:if test="${ myreply_page == 1 }">disabled</c:if>">
+		    	<a class="page-link" href="/mylist?myreply_page=${myreply_page-1}">Previous</a>
+		    </li>
+		    <li class="page-item <c:if test="${ myreply_page == 1 }">active</c:if>">
+		    	<a class="page-link" href="/mylist?myreply_page=1">1</a>
+		    </li>
+		    <li class="page-item <c:if test="${ myreply_page == 2 }">active</c:if>">
+		    	<a class="page-link" href="/mylist?myreply_page=2">2</a>
+		    </li>
+		    <li class="page-item <c:if test="${ myreply_page == 3 }">active</c:if>">
+		    	<a class="page-link" href="/mylist?myreply_page=3">3</a>
+		    </li>
+		    <li class="page-item <c:if test="${ myreply_page == 4 }">active</c:if>">
+		    	<a class="page-link" href="/mylist?myreply_page=4">4</a>
+		    </li>
+		    <li class="page-item <c:if test="${ myreply_page == 5 }">active</c:if>">
+		    	<a class="page-link" href="/mylist?myreply_page=5">5</a>
+		    </li>
+		    <li class="page-item <c:if test="${ myreply_page == 5 }">disabled</c:if>">
+		    	<a class="page-link" href="/mylist?myreply_page=${myreply_page+1}">Next</a>
+		    </li>
+		  </ul>
+		</div> 
+	</div>
+	</div>
+    
+    <hr/>
     <div class="enter">
         <input type="button" value="확인" id="review_btn" onclick="location.href='/mypage'"> 
         <input type="button" value="취소" id="review_btn" onclick="location.href='/mypage'">

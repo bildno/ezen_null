@@ -42,6 +42,7 @@
 			</c:forEach>
 				
 	<!-- pagination 부트 스트랩 사용 -->
+	<div class = contain_bottom1>
 	<div class="container-fluid">
 		<div class="row" style="justify-content: center; margin-top:30px;">
 		  <ul class="pagination">
@@ -70,6 +71,7 @@
 		    </li>
 		  </ul>
 		</div> 
+	</div>
 	</div>
 </div>
 
@@ -105,6 +107,7 @@
 			</div>
 		</div>
 	</div>
+	<div class = contain_bottom>
 	<div class="container-fluid">
 		<div class="row" style="justify-content: center; margin-top:30px;">
 		  <ul class="pagination">
@@ -133,6 +136,7 @@
 		    </li>
 		  </ul>
 		</div> 
+	</div>
 	</div>
 </div>
 <!-- pagination 부트 스트랩 사용 -->

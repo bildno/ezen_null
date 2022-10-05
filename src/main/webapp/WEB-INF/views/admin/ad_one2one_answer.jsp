@@ -22,14 +22,15 @@
 	</div>
 	<div class="sectionlist">
 
-		<h1 id="space_host_h1">1 : 1 문의</h1>
+		<h1 id="space_host_h1" >1 : 1 문의</h1>
 		<h2 id="space_host_h2">
 			1 : 1 문의관리페이지입니다. <img src="/img/service/space_icon.png" alt="space_icon"
 				id="space_icon">
 		</h2>
 			<div class="ad_section">
-				<table class="ad_sectiontb">
+				<table class="ad_sectiontb" align="center">
 				<c:forEach var="dto" items="${ ad_one2one_answer }" varStatus="status">
+
 					<tr>
 						<td colspan="2">
 							<hr>

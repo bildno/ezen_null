@@ -19,4 +19,7 @@ public interface IreplyDao {
 	
 	public List<replyDto> select_reply(String member_id);
 	
+	
+	public List<replyDto> myreply_page(String startRowNum_reply, String endRowNum_reply,String member_id);
+	
 }

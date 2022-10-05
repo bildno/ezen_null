@@ -21,6 +21,8 @@
     width: 60%;
     margin: 40px 20% 40px 20%;
     font-family: Noto Sans KR;
+    margin-bottom:50px;
+    
 }
 .myreview a:link {
 	text-decoration: none;
@@ -56,6 +58,7 @@
     width: 60%;
     margin: 40px 20% 40px 20%;
     font-family: Noto Sans KR;
+    margin-bottom:50px;
 }
 .myboard a {
 	color: black;
