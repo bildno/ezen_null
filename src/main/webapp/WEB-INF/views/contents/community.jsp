@@ -23,10 +23,10 @@
 	<div class="space_list">
 		<div class="row" style="width: 90%">
 			<c:forEach var="space" items="${space_list }" begin="0"  end="2">
-				<div class="community1 col-md-4" style="height: 150px;"
+				<div class="community1 col-md-4" style="height: 150px; margin-top: 10px; margin-bottom: 10px"
 					onclick="location.href='/space_info?hostenter_number=${space.hostenter_number }'" id="communi1">
 					<a href="#"> <img class="community1-img1"
-						src="${space.hostenter_title_img }" alt="contents1" style="height: 100%; width: 100%" >
+						src="${space.hostenter_title_img }" alt="contents1" style="height: 100%; width: 70%; border-radius: 5px" >
 						<div name="membername" id="membername">
 							<h3 id="comh3">${space.hostenter_name }</h3>
 						</div>

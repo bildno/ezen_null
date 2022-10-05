@@ -22,14 +22,15 @@
 	</div>
 	<div class="sectionlist">
 
-		<h1 id="space_host_h1">1 : 1 문의</h1>
+		<h1 id="space_host_h1" >1 : 1 문의</h1>
 		<h2 id="space_host_h2">
 			1 : 1 문의관리페이지입니다. <img src="/img/service/space_icon.png" alt="space_icon"
 				id="space_icon">
 		</h2>
 			<div class="ad_section">
-				<table class="ad_sectiontb">
-				<c:forEach var="dto" items="${ ad_one2one_answer }">
+				<table class="ad_sectiontb" align="center">
+				<c:forEach var="dto" items="${ ad_one2one_answer }" varStatus="status">
+
 					<tr>
 						<td colspan="2">
 							<hr>
@@ -50,18 +51,17 @@
 				<form method="post" action="/one2one_answer_write">
 				<input type="hidden" value="${dto.one2one_number}" name="one2one_number">
 				<input type="hidden" value="${dto.one2one_member_id}" name="one2one_member_id">
+				
 				<tr>
 					<th class="ad_sectionth">답변 내용</th>
 					<td style="width: 93%; height: 400px;"><textarea
-							name="one2oneanswer_content" style="resize: none; border-radius: 5px; width: 100%; height: 100%;"></textarea>
-					</td>
+							name="one2oneanswer_content" style="resize: none; border-radius: 5px; width: 100%; height: 100%;">${ad_one2oneanswer_list[status.index].one2oneanswer_content }</textarea>
+				</td>
 				</tr>
-
 				<tr>
-						<td></td>
 						<td class="ad_btn_td"><input class="ad_btn" type="submit"
 							value="답변하기"></td>
-					</tr>
+				</tr>
 				</form>
 				</c:forEach>
 				</table>

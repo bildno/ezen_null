@@ -14,6 +14,9 @@
 		insert into one2oneanswer 
 		values(#{param1},sysdate,#{param2},#{param3})
 	</insert>
+	<select id="ad_one2oneanswer_list" resultType="com.study.springboot.dto.one2one_answerDto">
+		select * from one2oneanswer where one2oneanswer_one2one_number = #{param1}
+	</select>
 </mapper>	
 	
 	
