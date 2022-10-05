@@ -587,8 +587,10 @@ public class Mycontroller {
 			// 호스트 계정판별
 			if(member_host == 1) {
 				request.getSession().setAttribute("member_host", member_host);
+			}else {
+				request.getSession().setAttribute("member_host", 0);
 			}
-
+			
 			request.getSession().setAttribute("member_id", member_id);
 			return "index";	
 		} else {
@@ -1014,9 +1016,9 @@ public class Mycontroller {
 
 		HttpSession session = request.getSession();
 		String member_id = (String) session.getAttribute("member_id");
-
+		System.out.println(member_id + "  asdas");
 		int member_host = (int) session.getAttribute("member_host");
-
+		System.out.println(member_host);
 		List<memberDto> member_list = memberService.mypageload(member_id);
 
 		if (member_host == 1) {
@@ -1025,8 +1027,12 @@ public class Mycontroller {
 			return "index";
 		} else {
 			model.addAttribute("mainPage", "main.jsp");
-			return "index";
+			return "redirect:main";
 		}
+		
+		
+		
+		
 	}
 
 	/* 호스트이름 변경 */
