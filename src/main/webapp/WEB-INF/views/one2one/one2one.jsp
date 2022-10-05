@@ -47,6 +47,8 @@
 				onclick="location.href='/one2one_write'">
 			<input class="writebtn" type="button" value="취소"
 				onclick="location.href='/mypage'">
+			<%-- <button class=" btn_ad_notice"
+			onclick="location.href='one2oneDelete?num=${dto.notice_number}'">삭제</button> --%>
 		</div>
 
 	</div>
