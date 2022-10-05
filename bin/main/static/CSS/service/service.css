@@ -38,6 +38,7 @@
 	font-family: 'Noto Sans KR', sans-serif;
 	font-weight: 300;
 	align-content: center;
+	
 }
 
 .notice {
@@ -101,4 +102,10 @@ li>.page-link {
 	height:3px;
 	border: none;
 	border-radius:5px;
+}
+.contain_bottom {
+	margin-bottom:70px;
+}
+.contain_bottom1{
+	margin-bottom:70px;
 }
