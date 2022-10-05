@@ -111,9 +111,7 @@ public class Mycontroller {
 	
 	@Autowired
 	private ImemberDao imemberDao;
-	
-	@Autowired
-	private communityService communityservice;
+
 	
 
 	/* ----------------------------------------- admin 폴더 */
@@ -208,7 +206,6 @@ public class Mycontroller {
 		int endRowNum = (num_page_no * num_page_size);	// 5, 10, 15 페이지 끝 줄번호
 		
 		List<adminDto>one2one_list = iadminDao.one2onepage(String.valueOf(startRowNum), String.valueOf(endRowNum) );
-		System.out.println(one2one_list);
 		
 		List<one2oneDto> one2one_search;
 		
@@ -223,7 +220,51 @@ public class Mycontroller {
 		model.addAttribute("mainPage", "admin/ad_one2one.jsp");
 		return "index";
 	}
+	@RequestMapping("/ad_one2one_answer")
+	public String ad_one2one_answer(@RequestParam("one2one_number") String one2one_number,
+			HttpServletRequest request, Model model) {
+		
+		List<one2oneDto> ad_one2one_answer = one2oneService.ad_one2one_answer(one2one_number);
+		System.out.println(ad_one2one_answer);
+		
+		
+		model.addAttribute("ad_one2one_answer", ad_one2one_answer);
+		model.addAttribute("mainPage", "admin/ad_one2one_answer.jsp");
+		return "index";
+	}
+	
+//	one2one answer 작성
+	@RequestMapping("/one2one_answer_write")
+	public String one2one_answer_write(
+			@RequestParam("one2oneanswer_content") String one2oneanswer_content, 
+			@RequestParam("one2one_number") String one2one_number,
+			@RequestParam("one2one_member_id") String one2one_member_id,
+			HttpServletRequest request, Model model, one2one_answerDto dto) {
+		
 
+		System.out.println(one2one_number);
+		System.out.println(one2oneanswer_content);
+		System.out.println(one2one_member_id);
+		
+		dto.setOne2oneanswer_content(one2oneanswer_content);
+		dto.setOne2oneanswer_one2one_number(one2one_number);
+		dto.setOne2oneanswer_member_id(one2one_member_id);
+		
+
+		int result = one2one_answerService.one2one_answer_write(
+				one2oneanswer_content, one2one_number, one2one_member_id);
+		System.out.println("result" + result);
+
+		if (result == 0) {
+			System.out.println("실패");
+			return "redirect:/ad_one2one";
+			
+		} else {
+			System.out.println("성공");
+			return "redirect:/ad_one2one";
+		}
+
+	}
 	@RequestMapping("/ad_notice")
 	public String ad_notice(@RequestParam(value="page",required=false) String page,
 			Model model) {
@@ -490,50 +531,6 @@ public class Mycontroller {
 		return "index";
 	}
 
-	@RequestMapping("/ad_one2one_answer")
-	public String ad_one2one_answer(@RequestParam("one2one_number") String one2one_number,
-			Model model) {
-		
-		List<one2oneDto>ad_one2one_answer = one2oneService.ad_one2one_answer(one2one_number);
-		System.out.println(ad_one2one_answer);
-		
-		model.addAttribute("ad_one2one_answer", ad_one2one_answer);
-		model.addAttribute("mainPage", "admin/ad_one2one_answer.jsp");
-		return "index";
-	}
-//	one2one answer 작성
-	@RequestMapping("/one2one_answer_write")
-	public String one2one_answer_write(
-			@RequestParam("one2oneanswer_content") String one2oneanswer_content, 
-			@RequestParam("one2one_number") String one2one_number,
-			HttpServletRequest request, Model model, one2one_answerDto dto) {
-		
-		HttpSession session = request.getSession();
-		String member_id = (String) session.getAttribute("member_id");
-		System.out.println(member_id);
-		System.out.println(one2one_number);
-		System.out.println(one2oneanswer_content);
-		System.out.println(member_id);
-		
-		dto.setOne2oneanswer_content(one2oneanswer_content);
-		dto.setOne2oneanswer_one2one_number(one2one_number);
-		dto.setOne2oneanswer_member_id(member_id);
-		
-
-		int result = one2one_answerService.one2one_answer_write(
-				one2oneanswer_content, one2one_number, member_id);
-		System.out.println("result" + result);
-
-		if (result == 0) {
-			System.out.println("실패");
-			return "redirect:/ad_one2one";
-			
-		} else {
-			System.out.println("성공");
-			return "redirect:/ad_one2one";
-		}
-
-	}
 	@RequestMapping("/ad_notice_write")
 	public String ad_notice_write(Model model) {
 
@@ -1502,7 +1499,7 @@ public class Mycontroller {
 	
 	@RequestMapping(value="/udateuploadMultiFileOk", method = RequestMethod.POST)
 	public String udateuploadMultiFileOk( 
-			@RequestParam("hostenter_name") String host_name_0,
+			@RequestParam("hostenter_number") int hostenter_number,
 			@RequestParam("host_name") String host_name_,
 			@RequestParam("room") int host_contents_number_,
 			@RequestParam("host_onerow") String host_onerow_,
@@ -1511,6 +1508,7 @@ public class Mycontroller {
 			@RequestParam("host_price") int host_price_,
 			@RequestParam("host_bnumber") int host_bnumber_, 
 			@RequestParam("host_headcount") int host_headcount_,
+			@RequestParam("none_hostenter_name") String hostenter_name,
 			@RequestParam(value="filename2", required=false) MultipartFile File_title,
 			@RequestParam(value="filename", required=false) MultipartFile[] filelist,
 			HttpServletRequest request,
@@ -1522,7 +1520,8 @@ public class Mycontroller {
 		int result = 0;
 		int qq = 0;
 		
-		System.out.println(host_name_0);
+		 String upload_url_title = fileUploadService.restore(File_title);
+		 System.out.println(upload_url_title);
 		 String host_name = host_name_; 
 		 System.out.println(host_name);
 		 int host_contents_number = host_contents_number_; 
@@ -1539,12 +1538,27 @@ public class Mycontroller {
 		 System.out.println(host_bnumber);
 		 int host_headcount = host_headcount_; 
 		 System.out.println(host_headcount);
-		 String host_name_1 = host_name_0;
-		 String upload_url_title = fileUploadService.restore(File_title);
+		 System.out.println(hostenter_number);
+		System.out.println(hostenter_name);
 	
 
 			try {
-				result = 0;
+				int oo = hostenter_imgDaoService.delete_img(hostenter_name);
+				System.out.println(oo);
+				if(oo > 0) {
+					System.out.println("삭제성공");
+				}
+				result = hostenterService.update_space(upload_url_title, 
+													   host_name, 
+													   host_contents_number, 
+													   host_onerow, 
+													   host_des,
+													   host_caution, 
+													   host_price,
+													   host_bnumber, 
+													   host_headcount, 
+													   hostenter_number);
+				
 			
 			} catch (Exception e) {
 				
@@ -1556,6 +1570,12 @@ public class Mycontroller {
 					System.out.println("filename:" + file);
 					String upload_url = fileUploadService.restore(file);
 					System.out.println( "upload_url:" + upload_url );
+				
+					
+						
+				result = hostenter_imgDaoService.hostenter_img_up(host_name_,member_id,upload_url);
+					
+					
 					
 				if( upload_url != null ) {
 					if( upload_url.length() > 0 ) {
@@ -1592,3 +1612,5 @@ public class Mycontroller {
 	}
 }
 	
+
+

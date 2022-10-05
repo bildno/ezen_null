@@ -44,5 +44,11 @@ public class hostenter_imgDaoService {
 		return result;
 		
 	}
+	
+	public int delete_img(String hostenter_img_name) {
+		int result = ihostenter_imgDao.delete_img(hostenter_img_name);
+		
+		return result;
+	}
 
 }

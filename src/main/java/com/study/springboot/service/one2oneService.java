@@ -33,9 +33,9 @@ public class one2oneService {
 //		return ad_one2one_write;
 //	}
 
-	public List<one2oneDto> ad_one2one_answer(String one2one_number) {
+	public List<one2oneDto>ad_one2one_answer(String one2one_number) {
 
-		List<one2oneDto> ad_one2one_answer = ione2oneDao.ad_one2one_answer(one2one_number);
+		List<one2oneDto>ad_one2one_answer = ione2oneDao.ad_one2one_answer(one2one_number);
 
 		return ad_one2one_answer;
 	}

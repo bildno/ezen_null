@@ -77,4 +77,38 @@ public class hostenterService {
 		return space_info;
 	}
 	
+	public int update_space(String hostenter_title_img,
+			String hostenter_name,
+			int hostenter_contents_number,
+			String hostenter_onerow,
+			String hostenter_description,
+			String hosteter_caution,
+			int hostenter_price,
+			int hostenter_bnumber,
+			int hostenter_headcount,
+			int hostenter_number
+			) {
+		
+		int result = 0;
+		
+		try {
+			result = ihostenterDao.update_space(hostenter_title_img,
+												hostenter_name, 
+												hostenter_contents_number, 
+												hostenter_onerow, 
+												hostenter_description, 
+												hosteter_caution, 
+												hostenter_price, 
+												hostenter_bnumber, 
+												hostenter_headcount, 
+												hostenter_number);
+			System.out.println("service " + result);
+		} catch (Exception e) {
+			System.out.println("실패");
+			return result;
+		}
+		
+		return result;
+	}
+	
 }

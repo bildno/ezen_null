@@ -24,7 +24,6 @@ li {
 .header {
 	display: flex;
 	background-color: rgb(37, 49, 109);
-	color: red;
 	justify-content: space-between;
 }
 

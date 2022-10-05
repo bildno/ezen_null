@@ -26,8 +26,9 @@
 	border: 1px solid rgb(238, 238, 238);
 	border-radius: 5px;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     text-align: center;
+    
 }
 .aaaa {
     display: flex;
