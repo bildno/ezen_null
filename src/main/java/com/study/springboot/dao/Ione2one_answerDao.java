@@ -10,5 +10,5 @@ import com.study.springboot.dto.one2one_answerDto;
 public interface Ione2one_answerDao {
 	
 	public List<one2one_answerDto> one2one_answer(String member_id);
-	public int one2one_answer_write(String one2oneanswer_content, String one2one_number, String member_id);
+	public int one2one_answer_write(String one2oneanswer_content, String one2one_number, String one2one_member_id);
 }

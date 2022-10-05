@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="css/admin/ad_member.css">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <div class="ad_wrap">
 	<div class="ad_aside">
@@ -26,8 +28,8 @@
 				id="space_icon">
 		</h2>
 			<div class="ad_section">
-			<c:forEach var="dto" items=${ ad_one2one_answer }>
 				<table class="ad_sectiontb">
+				<c:forEach var="dto" items="${ ad_one2one_answer }">
 					<tr>
 						<td colspan="2">
 							<hr>
@@ -46,8 +48,8 @@
 							disabled>${dto.one2one_content}</textarea></td>
 				</tr>
 				<form method="post" action="/one2one_answer_write">
-				<input type="hidden" name="one2one_number">
-				<input type="hidden" name="member_id">
+				<input type="hidden" value="${dto.one2one_number}" name="one2one_number">
+				<input type="hidden" value="${dto.one2one_member_id}" name="one2one_member_id">
 				<tr>
 					<th class="ad_sectionth">답변 내용</th>
 					<td style="width: 93%; height: 400px;"><textarea
@@ -61,8 +63,9 @@
 							value="답변하기"></td>
 					</tr>
 				</form>
-				</table>
 				</c:forEach>
+				</table>
+				
 			</div>
 
 	</div>
