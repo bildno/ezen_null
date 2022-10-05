@@ -11,6 +11,7 @@
     flex-flow: row wrap;
     justify-content: center;
     margin-top: 80px;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 /* 컨테이너 - 부트스트랩 */
