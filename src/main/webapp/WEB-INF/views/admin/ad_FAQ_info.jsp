@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<link rel="stylesheet" href="css/admin/ad_FAQ_write.css">
+
 <!-- include libraries(jQuery, bootstrap) -->
 <link
 	href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css"
@@ -23,10 +23,11 @@
 		$('#summernote').summernote();
 	});
 </script>
+<link rel="stylesheet" href="css/admin/ad_FAQ_write.css">
 
 <div class="ad_wrap">
-	<div class="ad_aside">
-		<!-- <div class="ad_asidetb"> -->
+	<!-- <div class="ad_aside">
+		<div class="ad_asidetb">
 		<a href="/ad_member">
 			<li class="ad_asideli" style="cursor: pointer">회원정보관리</li>
 		</a> <a href="/ad_host">
@@ -38,8 +39,8 @@
 		</a> <a href="/ad_FAQ">
 			<li class="ad_asideli" style="cursor: pointer">도움말 관리</li>
 		</a>
-		<!-- </div> -->
-	</div>
+		</div>
+	</div> -->
 	<div class="sectionlist">
 
 		<h1 id="space_host_h1">도움말 관리</h1>
@@ -75,11 +76,9 @@
 				</script>
 
 			</div>
-			<div class="btn_revise">
-
-			<input class="ad_btn_revise" type="submit" value="수정"></form>
-			<input class="ad_btn_revise" type="button" value="삭제" onclick="location.href='/ad_FAQ_delete?faq_number=${ dto.faq_number }'">
-
+			<div class="ad_btn">
+				<input class="ad_btn_write" type="submit" value="수정"></form>
+				<input class="ad_btn_back" type="button" value="삭제" onclick="location.href='/ad_FAQ_delete?faq_number=${ dto.faq_number }'">
 			</div>
 
 </c:forEach>			

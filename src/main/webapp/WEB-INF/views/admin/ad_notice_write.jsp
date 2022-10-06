@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<link rel="stylesheet" href="css/admin/ad_notice_write.css">
+
 <!-- include libraries(jQuery, bootstrap) -->
 <link
 	href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css"
@@ -14,6 +14,8 @@
 <link
 	href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css"
 	rel="stylesheet">
+	
+
 <script
 	src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
 <script>
@@ -21,11 +23,11 @@
 		$('#summernote').summernote();
 	});
 </script>
-
+<link rel="stylesheet" href="css/admin/ad_notice_write.css">
 <div class="ad_wrap">
 	<div class="ad_aside">
 		<!-- <div class="ad_asidetb"> -->
-		<a href="/ad_member">
+<!-- 		<a href="/ad_member">
 			<li class="ad_asideli" style="cursor: pointer">회원정보관리</li>
 		</a> <a href="/ad_host">
 			<li class="ad_asideli" style="cursor: pointer">호스트정보 관리</li>
@@ -35,7 +37,7 @@
 			<li class="ad_asideli" style="cursor: pointer">공지사항 관리</li>
 		</a> <a href="/ad_FAQ">
 			<li class="ad_asideli" style="cursor: pointer">도움말 관리</li>
-		</a>
+		</a> -->
 		<!-- </div> -->
 	</div>
 	<div class="sectionlist">
@@ -47,6 +49,7 @@
 		</h2>
 
 		<div class="ad_section">
+		
 		<form method="post" action="/ad_notice_writeAction">
 			<div class="write_tit">공지사항 > 글쓰기</div>
 			<div class="tit">
@@ -73,14 +76,12 @@
 				</script>
 
 			</div>
-			<div class="btn_revise">
-			<input class="ad_btn_revise" type="submit" value="작성"
-				onclick="location.href='/ad_notice'">
-			<input class="ad_btn_revise" type="button" value="수정"
-				onclick="location.href='/ad_notice'">
-				<input class="ad_btn_revise" type="button" value="삭제"
-				onclick="location.href='/ad_notice'">
+			<div class="ad_btn">
+				<input type="submit" class="ad_btn_write" value="작성" onclick="location.href='/ad_notice'">
+				<input type="button" class="ad_btn_back" value="뒤로가기" onclick="location.href='/ad_notice'">
 			</div>
+			
+
 		</form>
 		</div>
 

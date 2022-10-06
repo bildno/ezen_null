@@ -69,7 +69,7 @@
 						<td onclick="location.href='/ad_notice_info?notice_number=${ dto.notice_number }'" style="cursor: pointer;">${dto.notice_contents_number}</td>
 						<td onclick="location.href='/ad_notice_info?notice_number=${ dto.notice_number }'" style="cursor: pointer;">${dto.notice_date}</td>
 						<td>
-							<button class=" btn_ad_notice" 
+							<button class="btn_ad_notice" 
 							onclick="location.href='noticeDelete?num=${dto.notice_number}'">삭제</button>
 						</td>
 					</tr>
