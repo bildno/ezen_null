@@ -277,7 +277,6 @@ public class Mycontroller {
 			@RequestParam("one2oneanswer_one2one_number") String one2oneanswer_one2one_number,
 			Model model
 			) {
-		
 
 		int result = ione2one_answerDao.ad_one2oneanswer_update(one2oneanswer_content, one2oneanswer_one2one_number);
 		if( result != 1 ) {
@@ -285,7 +284,7 @@ public class Mycontroller {
 			return "<script>alert('수정 실패');history.back();</script>";
 		}else {
 			System.out.println("수정 성공!");
-			return "redirect:/one2one";
+			return "redirect:/ad_one2one";
 		}
 		
 	}
@@ -1000,7 +999,7 @@ public class Mycontroller {
 	}
 
 	@RequestMapping("/one2one_writeAction")
-	public String ad_one2one_writeAction(HttpServletRequest request, Model model) {
+	public String one2one_writeAction(HttpServletRequest request, Model model) {
 		
 		HttpSession session = request.getSession();
 		String one2one_member_id = (String) session.getAttribute("member_id");
