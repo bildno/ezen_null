@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<link rel="stylesheet" href="css/admin/ad_FAQ_write.css">
+
 <!-- include libraries(jQuery, bootstrap) -->
 <link
 	href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css"
@@ -23,6 +23,10 @@
 		$('#summernote').summernote();
 	});
 </script>
+
+
+<script src="/summernote/lang/summernote-ko-KR.js"></script>
+<link rel="stylesheet" href="css/admin/ad_FAQ_write.css">
 
 <div class="ad_wrap">
 	<div class="ad_aside">
@@ -62,10 +66,10 @@
 			<div class="form-group">
 				<label for="exampleInputPassword1" >Content</label>
 				<textarea name="notice_content" class="form-control" name="notice_content" rows="3" id="content">${ dto.notice_content }</textarea>
-
+</div>
 
 				<!-- include summernote-ko-KR -->
-				<script src="/summernote/lang/summernote-ko-KR.js"></script>
+				
 
 				<script type="text/javascript">
 					$(document).ready(function() {
@@ -85,6 +89,8 @@
 			</div>
 			</form>
 		</div>
+		</c:forEach>
+</div>
 
-</c:forEach>
-	</div>
+	
+	

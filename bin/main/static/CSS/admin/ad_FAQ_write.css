@@ -142,6 +142,8 @@
 }
 
 .ad_asideli {
+	 font-family: 'Noto Sans KR', sans-serif;
+	 font-size: 20px;
     list-style: none;
     padding: 20px;
 }

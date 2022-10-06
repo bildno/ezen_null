@@ -75,7 +75,7 @@ li {
 	transform: translateY(-5px);
 }
 
-#text {
+#text_search {
 	border-radius: 10px;
 	margin: 20px;
 	width: 400px;
@@ -87,6 +87,7 @@ li {
 	background-size: 20px;
 	background-position: 10px center;
 	padding: 0 35px;
+	font-size: 16px;
 }
 
 #text:focus {
