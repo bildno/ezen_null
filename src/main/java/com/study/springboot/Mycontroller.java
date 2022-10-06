@@ -984,6 +984,8 @@ public class Mycontroller {
 		model.addAttribute("one2one_list", one2one_list);
 		model.addAttribute("one2oneanswer_list", one2oneanswer_list);
 		
+		System.out.println("zz");
+		System.out.println(one2one_list);
 		System.out.println(one2oneanswer_list);
 
 		model.addAttribute("mainPage", "one2one/one2one.jsp");

@@ -27,7 +27,8 @@
 		</div> 
 	</c:if>
 	
-	<c:forEach var="dto" items="${one2one_list}" varStatus="status">
+	<c:forEach var="dto" items="${one2one_list}">
+	
 		<button class="accordion" id="o_num${dto.one2one_number}" value="${dto.one2one_number}" name="one2one_number">
 		<div id="one_list_div">
 		<span id="list_span">
@@ -41,20 +42,30 @@
 		</div> 
 		</button>
 		<c:set var="number" value="${dto.one2one_number}" />
-		<c:set var="loop_flag" value="false" />
-		<c:forEach var="answer" items = "${one2oneanswer_list }">
+		
+		<c:forEach var="answer" items ="${one2oneanswer_list }">
+	
 		<c:set var="answer_number" value="${answer.one2oneanswer_one2one_number }" />
 		<div class="panel">
 			<p id="o_ans1" >
 			<span id="list_anspan">
-			<c:if test="${number eq answer_number}">		
+			<%-- ${dto.one2one_number}
+			${answer.one2oneanswer_one2one_number }	
+			<c:if test="${number eq answer_number}">	
 			${answer.one2oneanswer_content }
 			<c:set var="loop_flag" value="true" />
 			</c:if>
 			<c:if test="${number ne answer_number}">		
 				등록된 문의 답변이 없습니다.
-			</c:if>	
-			
+			</c:if>	 --%>
+			<c:choose>
+			<c:when test="${number eq answer_number}">
+			${answer.one2oneanswer_content }
+			</c:when>
+			<c:otherwise>
+			등록된 문의 답변이 없습니다.
+			</c:otherwise>
+			</c:choose>
 			</span>
 			</p>
 		</div>

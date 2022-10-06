@@ -64,7 +64,7 @@
 						<th>작성일시</th>
 						<th>관리</th>
 					</tr>
-			<c:forEach var="dto" items="${one2one_list}" varStatus="">
+			<c:forEach var="dto" items="${one2one_list}">
 					<tr>
 						<td onclick="location.href='/ad_one2one_answer?one2one_number=${ dto.one2one_number }'" style="cursor: pointer;">${dto.one2one_number}</td>
 						<td onclick="location.href='/ad_one2one_answer?one2one_number=${ dto.one2one_number }'" style="cursor: pointer;">${dto.one2one_title}</td>
