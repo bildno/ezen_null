@@ -62,6 +62,7 @@
 						<th>내용</th>
 						<th>아이디</th>
 						<th>작성일시</th>
+						<th>관리</th>
 					</tr>
 			<c:forEach var="dto" items="${one2one_list}" varStatus="">
 					<tr>
@@ -70,7 +71,9 @@
 						<td onclick="location.href='/ad_one2one_answer?one2one_number=${ dto.one2one_number }'" style="cursor: pointer;">${dto.one2one_content}</td>
 						<td onclick="location.href='/ad_one2one_answer?one2one_number=${ dto.one2one_number }'" style="cursor: pointer;">${dto.one2one_member_id}</td>
 						<td onclick="location.href='/ad_one2one_answer?one2one_number=${ dto.one2one_number }'" style="cursor: pointer;">${dto.one2one_date}</td>
+						<td><input type="button" value="삭제" onclick="location.href='ad_one2oneDelete?num=${dto.one2one_number}'"></td>
 					</tr>
+					
 			</c:forEach>
 				</table>
 			</div>

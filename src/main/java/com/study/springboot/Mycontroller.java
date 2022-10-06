@@ -272,6 +272,7 @@ public class Mycontroller {
 	}
 	@Autowired
 	private Ione2one_answerDao ione2one_answerDao;
+	@Autowired
 	private Ione2oneDao ione2oneDao;
 	
 	@RequestMapping("/ad_one2oneanswer_update")
@@ -288,23 +289,25 @@ public class Mycontroller {
 			return "<script>alert('수정 실패');history.back();</script>";
 		}else {
 			System.out.println("수정 성공!");
-			return "redirect:/ad_one2one";
+			return "redirect:/one2one";
 		}
 		
 	}
-	@RequestMapping("/one2oneDelete")
-	public String one2oneDelete(@RequestParam("num") int num) {
+	
+	@RequestMapping("/ad_one2oneDelete")
+	public String ad_one2oneDelete(@RequestParam("num") int num) {
 		System.out.println("호출");
 		System.out.println(num);
+		int num2 = num;
 		int result2 = ione2one_answerDao.one2oneanswer_Delete( num );
 		System.out.println(result2);
-		int result1 = ione2oneDao.one2one_Delete( num );
+		int result1 = ione2oneDao.one2one_Delete( num2 );
 	
 		System.out.println(result1);
 		System.out.println(result2);
 		
 		if( result1 != 1 && result2 != 1) {
-			return "/ad_one2one";
+			return "redirect:/ad_one2one";
 		}else {
 			return "redirect:/ad_one2one";   
 		}
@@ -1038,6 +1041,24 @@ public class Mycontroller {
 		}else {
 			model.addAttribute("alert", "글작성이 실패하였습니다.");
 			return "/one2one"; 
+		}
+	}
+	@RequestMapping("/one2oneDelete")
+	public String one2oneDelete(@RequestParam("num") int num) {
+		System.out.println("호출");
+		System.out.println(num);
+		int num2 = num;
+		int result2 = ione2one_answerDao.one2oneanswer_Delete( num );
+		System.out.println(result2);
+		int result1 = ione2oneDao.one2one_Delete( num2 );
+	
+		System.out.println(result1);
+		System.out.println(result2);
+		
+		if( result1 != 1 && result2 != 1) {
+			return "redirect:/one2one";
+		}else {
+			return "redirect:/one2one";   
 		}
 	}
 	/* ----------------------------------------- */

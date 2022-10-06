@@ -35,26 +35,30 @@
 		</span> 
 		<span id="list_span_date">
 		  ${dto.one2one_date}
-		</span>
-		<span>
-		<input type="button" value="삭제" onclick="location.href='one2oneDelete?num=${dto.one2one_number}'">
+		<input type="button" value="삭제" onclick="location.href='one2oneDelete?num=${dto.one2one_number}'" 
+		style="margin-left: 10px;">
 		</span>
 		</div> 
 		</button>
 		<c:set var="number" value="${dto.one2one_number}" />
-		<c:set var="answer_number" value="${one2oneanswer_list[status.index].one2oneanswer_one2one_number }" />
+		<c:set var="loop_flag" value="false" />
+		<c:forEach var="answer" items = "${one2oneanswer_list }">
+		<c:set var="answer_number" value="${answer.one2oneanswer_one2one_number }" />
 		<div class="panel">
 			<p id="o_ans1" >
 			<span id="list_anspan">
 			<c:if test="${number eq answer_number}">		
-			${one2oneanswer_list[status.index].one2oneanswer_content }
+			${answer.one2oneanswer_content }
+			<c:set var="loop_flag" value="true" />
 			</c:if>
 			<c:if test="${number ne answer_number}">		
 				등록된 문의 답변이 없습니다.
-			</c:if>
+			</c:if>	
+			
 			</span>
 			</p>
 		</div>
+		</c:forEach>
 		</c:forEach>	
 		</div>
 		<br>
