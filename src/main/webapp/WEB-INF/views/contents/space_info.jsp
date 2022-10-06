@@ -43,6 +43,18 @@
 					<span class="sr-only">Next</span>
 				</button>
 			</div>
+
+			<!-- 찜 버튼 -->
+			<div id=zzim_button>
+			<div id=zzim_btn>
+				<button class="w-btn-outline w-btn-blue-outline" type="button" 
+				onclick="location.href='/zzim_doAction?hostenter_number=${dto.hostenter_number}'" id="zzim_update" >
+					찜 하기
+				</button>
+			</div>
+			</div>
+
+
 			<hr>
 			<div class="space_host_name">
 				<h1 id="space_host_tit">${dto.hostenter_name }</h1>
@@ -165,9 +177,7 @@
 			    	  });
 			    }
 			  
-			  
-			  
-			  
+
 			  </script>
 
 			<div id="s_qna">

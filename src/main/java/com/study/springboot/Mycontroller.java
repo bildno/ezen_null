@@ -36,6 +36,7 @@ import com.study.springboot.dto.one2oneDto;
 import com.study.springboot.dto.one2one_answerDto;
 import com.study.springboot.dto.replyDto;
 import com.study.springboot.dto.reviewDto;
+import com.study.springboot.dto.wishDto;
 import com.study.springboot.service.communityService;
 import com.study.springboot.service.contentsService;
 import com.study.springboot.service.faqService;
@@ -47,6 +48,8 @@ import com.study.springboot.service.one2oneService;
 import com.study.springboot.service.one2one_answerService;
 import com.study.springboot.service.replyService;
 import com.study.springboot.service.reviewService;
+import com.study.springboot.service.wishService;
+
 
 @Controller
 public class Mycontroller {
@@ -111,6 +114,9 @@ public class Mycontroller {
 	
 	@Autowired
 	private ImemberDao imemberDao;
+	
+	@Autowired
+	private wishService wishService;
 
 	
 
@@ -1380,8 +1386,71 @@ public class Mycontroller {
 
 		model.addAttribute("space_info",space_info);
 		model.addAttribute("mainPage", "contents/space_info.jsp");
+		
+		
+	
+		
 		return "index";
 	}
+	
+	
+    // 찜 하기
+	@RequestMapping("/zzim_doAction")
+		public String zzim_doAction(@RequestParam("hostenter_number") String hostenter_number,
+				HttpServletRequest request, Model model) {
+		System.out.println("gg");
+		
+		HttpSession session = request.getSession();
+		String member_id = (String)session.getAttribute("member_id");
+		
+
+		
+		int exist_result = wishService.zzim_exist( hostenter_number, member_id);
+		
+		if(exist_result == 0) {
+		
+		wishDto dto = new wishDto();
+		dto.setMy_wish_member_id(member_id);
+		dto.setMy_wish_hostenter_number(hostenter_number);
+		int result = wishService.zzim_do(dto); 
+		
+		
+		
+		if(result > 0) {
+			
+			
+			return "redirect:/space_info?hostenter_number="+hostenter_number;
+			
+		} 
+		else {
+			model.addAttribute("alert","로그인 먼저 해주세요");
+			return "/space_info";
+		} 
+		
+		
+		}
+		
+		
+		
+		else {
+			System.out.println("실패");
+			
+			return "redirect:main";
+		}
+
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	/* ----------------------------------------- */
 
@@ -1502,6 +1571,7 @@ public class Mycontroller {
 		
 		model.addAttribute("mainPage","host/host.jsp");
 		return "redirect:/mypage_host";
+		
 		
 	}
 	
