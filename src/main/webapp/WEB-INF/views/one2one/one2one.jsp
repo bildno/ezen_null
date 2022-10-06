@@ -20,10 +20,13 @@
 		<button class="accordion" id="o_num${dto.one2one_number}" value="${dto.one2one_number}" name="one2one_number">
 		<div id="one_list_div">
 		<span id="list_span">
-		  ${dto.one2one_content}
+		  ${dto.one2one_title}
 		</span> 
 		<span id="list_span_date">
 		  ${dto.one2one_date}
+		</span>
+		<span>
+		<input type="button" value="삭제" onclick="location.href='one2oneDelete?num=${dto.one2one_number}'">
 		</span>
 		</div> 
 		</button>
@@ -44,10 +47,6 @@
 		<div class="write">
 			<input class="writebtn" type="button" value="글쓰기"
 				onclick="location.href='/one2one_write'">
-			<input class="writebtn" type="button" value="취소"
-				onclick="location.href='/mypage'">
-			<%-- <button class=" btn_ad_notice"
-			onclick="location.href='one2oneDelete?num=${dto.notice_number}'">삭제</button> --%>
 		</div>
 
 	</div>
