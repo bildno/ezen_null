@@ -225,9 +225,12 @@ public class Mycontroller {
 			HttpServletRequest request, Model model) {
 		
 		List<one2oneDto> ad_one2one_answer = one2oneService.ad_one2one_answer(one2one_number);
+		List<one2one_answerDto>ad_one2oneanswer_list = one2one_answerService.ad_one2oneanswer_list(one2one_number);
+
 		System.out.println(ad_one2one_answer);
+		System.out.println(ad_one2oneanswer_list);
 		
-		
+		model.addAttribute("ad_one2oneanswer_list", ad_one2oneanswer_list);
 		model.addAttribute("ad_one2one_answer", ad_one2one_answer);
 		model.addAttribute("mainPage", "admin/ad_one2one_answer.jsp");
 		return "index";
@@ -949,9 +952,8 @@ public class Mycontroller {
 		List<one2oneDto> one2one_list = one2oneService.one2one_list(member_id);
 		List<one2one_answerDto> one2oneanswer_list = one2one_answerService.one2one_answer(member_id);
 
-		model.addAttribute("one2one_list", one2one_list);
-	
 		
+		model.addAttribute("one2one_list", one2one_list);
 		model.addAttribute("one2oneanswer_list", one2oneanswer_list);
 		
 		System.out.println(one2oneanswer_list);
