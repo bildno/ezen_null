@@ -69,7 +69,6 @@ public class Mycontroller {
 		List<communityDto> community_seqs3 = communityService.community_seq3();
 		List<communityDto> community_seqs4 = communityService.community_seq4();
 		
-		
 		model.addAttribute("community_seqs1",community_seqs1);
 		model.addAttribute("community_seqs2",community_seqs2);
 		model.addAttribute("community_seqs3",community_seqs3);
@@ -113,9 +112,7 @@ public class Mycontroller {
 	
 	@Autowired
 	private ImemberDao imemberDao;
-
 	
-
 	/* ----------------------------------------- admin 폴더 */
 
 	@RequestMapping("/ad_member")
@@ -246,7 +243,6 @@ public class Mycontroller {
 			@RequestParam("one2one_member_id") String one2one_member_id,
 			HttpServletRequest request, Model model, one2one_answerDto dto) {
 		
-
 		System.out.println(one2one_number);
 		System.out.println(one2oneanswer_content);
 		System.out.println(one2one_member_id);
@@ -431,14 +427,6 @@ public class Mycontroller {
 		System.out.println(notice_list);
 		List<noticeDto> ad_noticesearch;
 		
-//		List<noticeDto> ad_noticesearch = noticeService.ad_noticesearch(search_type, search_contents);
-//		System.out.println(search_type+"==타입==");
-//		System.out.println(search_contents+"==검색내용==");
-//		System.out.println(ad_noticesearch+"==검색결과==");
-//		
-//		model.addAttribute("notice_list", ad_noticesearch);
-//		model.addAttribute("mainPage", "admin/ad_notice");
-		
 		if(search_type != null) {
 			ad_noticesearch = noticeService.ad_noticesearch(search_type, search_contents);
 			model.addAttribute("notice_list", ad_noticesearch);
@@ -451,7 +439,6 @@ public class Mycontroller {
 			model.addAttribute("mainPage", "admin/ad_notice.jsp");
 			return "index";
 	}
-
 
 //	FAQ 리스트
 	@RequestMapping("/ad_FAQ")
@@ -518,9 +505,7 @@ public class Mycontroller {
 		System.out.println(faq_title);
 		System.out.println(faq_content);
 		
-		
 		int ad_FAQ_update = faqService.ad_FAQ_update(faq_title, faq_content, faq_number);
-		
 		
 		System.out.println(ad_FAQ_update);
 		
@@ -540,7 +525,6 @@ public class Mycontroller {
 		else {
 			return "<script>alert('삭제실패') history.back();</script>";
 		}
-		
 	}
 
 //	FAQ 작성
@@ -555,7 +539,6 @@ public class Mycontroller {
 		
 		dto.setFaq_title(faq_title);
 		dto.setFaq_content(faq_content);
-		
 
 		int result = faqService.ad_FAQ_write(dto);
 		System.out.println("result" + result);
@@ -621,8 +604,7 @@ public class Mycontroller {
 			List<communityDto> community_seqs2 = communityService.community_seq2();
 			List<communityDto> community_seqs3 = communityService.community_seq3();
 			List<communityDto> community_seqs4 = communityService.community_seq4();
-			
-			
+
 			model.addAttribute("community_seqs1",community_seqs1);
 			model.addAttribute("community_seqs2",community_seqs2);
 			model.addAttribute("community_seqs3",community_seqs3);
@@ -771,8 +753,7 @@ public class Mycontroller {
 		model.addAttribute("mycommu_page",mycommu_page);
 		model.addAttribute("myreview_page",myreview_page);
 		model.addAttribute("myreply_page",myreply_page);
-		
-		
+
 		HttpSession session = request.getSession();
 		String member_id = (String) session.getAttribute("member_id");
 		System.out.println(member_id);
@@ -791,7 +772,6 @@ public class Mycontroller {
 		int endRowNum_review = (num_page_no_review * num_page_size); // 5, 10, 15 페이지 끝 줄번호
 		int endRowNum_reply = (num_page_no_reply * num_page_size);
 
-
 		// row 1~5 까지...
 		List<communityDto> mycommu_pagelist = icommunityDao.mycommu_page(String.valueOf(startRowNum_community), String.valueOf(endRowNum_community),member_id);
 		List<reviewDto> myreview_pagelist = ireviewDao.myreview_page(String.valueOf(startRowNum_review), String.valueOf(endRowNum_review),member_id);
@@ -800,8 +780,6 @@ public class Mycontroller {
 		List<reviewDto> reviewlist = reviewService.select_review(member_id);
 		List<communityDto> commulist = communityService.select_commu(member_id);
 		List<replyDto> replylist = replyService.select_reply(member_id);
-		
-		
 		
 		model.addAttribute("mycommu_pagelist",mycommu_pagelist);
 		model.addAttribute("myreview_pagelist",myreview_pagelist);
@@ -913,6 +891,13 @@ public class Mycontroller {
 	public String mycheck(Model model) {
 
 		model.addAttribute("mainPage", "member/mycheck.jsp");
+		return "index";
+	}
+	
+	@RequestMapping("/mycheck2")
+	public String mycheck2(Model model) {
+
+		model.addAttribute("mainPage", "member/mycheck2.jsp");
 		return "index";
 	}
 
@@ -1141,10 +1126,7 @@ public class Mycontroller {
 			model.addAttribute("mainPage", "main.jsp");
 			return "redirect:main";
 		}
-		
-		
-		
-		
+
 	}
 
 	/* 호스트이름 변경 */
@@ -1213,8 +1195,6 @@ public class Mycontroller {
 		}
 //		------------------------------------------------------------------
 		
-	
-	
 	/* 공간대여 */
 	@RequestMapping("/spacelist_host")
 	public String spacelist_host(
@@ -1284,7 +1264,6 @@ public class Mycontroller {
 		
 		request.getSession().setAttribute("community_number", community_number);
 		request.getSession().setAttribute("contents_number", contents_number);
-		
 
 		List<contentsDto> contentsload = contentsService.contentsload(contents_number);
 
@@ -1310,7 +1289,6 @@ public class Mycontroller {
 		
 	}
 	
-	
 	/* 게시글 글쓰기 */
 	@RequestMapping("/community_write")
 	public String community_write(Model model) {
@@ -1318,7 +1296,6 @@ public class Mycontroller {
 		model.addAttribute("mainPage", "contents/community_write.jsp");
 		return "index";
 	}
-	
 	
 	@RequestMapping("/community_writeAction")
 	public String community_writeAction(
@@ -1331,14 +1308,12 @@ public class Mycontroller {
 		HttpSession session = request.getSession();
 		String member_id = (String) session.getAttribute("member_id");
 		
-	
 		communityDto dto = new communityDto();
 		dto.setCommunity_title(community_title);
 		dto.setCommunity_content(community_content);
 		dto.setCommunity_contents_number(contents_number);
 		dto.setCommunity_member_name(member_name);
 		dto.setCommunity_member_id(member_id);
-		
 		
 		int result = communityService.community_write(dto);
 		
@@ -1351,8 +1326,6 @@ public class Mycontroller {
 		}
 	}
 
-	
-	
 	/* 게시글 내용,댓글 보기 */
 	@RequestMapping("/community_info")
 	public String community_info(@RequestParam("community_number")String community_number
@@ -1361,29 +1334,23 @@ public class Mycontroller {
 		HttpSession session = request.getSession();
 		String member_id = (String) session.getAttribute("member_id");
 		
-		
 		List<replyDto> replyViewlist = replyService.replyView(community_number);
 		
 		List<communityDto> community_contents = communityService.community_content(community_number);
 
-		
-		
 		model.addAttribute("replyView", replyViewlist);
 		model.addAttribute("mainPage", "contents/community_info.jsp");
 		
 		model.addAttribute("community_contents", community_contents);
 		model.addAttribute("mainPage", "contents/community_info.jsp");
 		
-		
 		//조회수 올리기 실행
-		 communityService.community_hit(community_number);
+		communityService.community_hit(community_number);
 	
 		return "index";
 
 	}
 
-	
-	
 	/* 댓글 달기 */
 	@RequestMapping("/community_infoAction")
 	public String community_infoAction(
@@ -1391,8 +1358,6 @@ public class Mycontroller {
 			//form안에 있어서 community_number 가져올 수 있음
 			@RequestParam( "community_number") String community_number,
 			replyDto dto, HttpServletRequest request, Model model) {
-
-		
 
 		HttpSession session = request.getSession();
 		String member_id = (String) session.getAttribute("member_id");
@@ -1402,24 +1367,19 @@ public class Mycontroller {
 		dto.setReply_community_number(community_number);
 		dto.setReply_content(reply_content);
 
-
+		int result = ireplyDao.replyInsert(dto); System.out.println(result);
 		
-		 int result = ireplyDao.replyInsert(dto); System.out.println(result);
-		 
-		 
-		 if(result !=1) { 
+		if(result !=1) { 
 			 
-			 return "<script> alert('댓글 실패'); location.back(); </script>"; } 
+			return "<script> alert('댓글 실패'); location.back(); </script>"; } 
 		 
-		 else {		
+		else {		
 
-			return "redirect:/community_info?community_number="+community_number;
-		 }
+		return "redirect:/community_info?community_number="+community_number;
 		
+		}
 
 	}
-	
-	
 
 	/* 공간대여(일반회원) */
 	@RequestMapping("/spacerent")
@@ -1483,30 +1443,30 @@ public class Mycontroller {
 		int result = 0;
 		int qq = 0;
 		
-		 String host_name = host_name_; 
-		 System.out.println(host_name);
-		 int host_contents_number = host_contents_number_; 
-		 System.out.println(host_contents_number);
-		 String host_onerow = host_onerow_; 
-		 System.out.println(host_onerow);
-		 String host_des = host_des_; 
-		 System.out.println(host_des);
-		 String host_caution = host_caution_; 
-		 System.out.println(host_caution);
-		 String host_zip = host_zip_; 
-		 System.out.println(host_zip);
-		 String host_location = host_location_; 
-		 System.out.println(host_location);
-		 String host_location_detail = host_location_detail_; 
-		 System.out.println(host_location_detail);
-		 int host_price = host_price_; 
-		 System.out.println(host_price);
-		 int host_bnumber = host_bnumber_; 
-		 System.out.println(host_bnumber);
-		 int host_headcount = host_headcount_; 
-		 System.out.println(host_headcount);
+		String host_name = host_name_; 
+		System.out.println(host_name);
+		int host_contents_number = host_contents_number_; 
+		System.out.println(host_contents_number);
+		String host_onerow = host_onerow_; 
+		System.out.println(host_onerow);
+		String host_des = host_des_; 
+		System.out.println(host_des);
+		String host_caution = host_caution_; 
+		System.out.println(host_caution);
+		String host_zip = host_zip_; 
+		System.out.println(host_zip);
+		String host_location = host_location_; 
+		System.out.println(host_location);
+		String host_location_detail = host_location_detail_; 
+		System.out.println(host_location_detail);
+		int host_price = host_price_; 
+		System.out.println(host_price);
+		int host_bnumber = host_bnumber_; 
+		System.out.println(host_bnumber);
+		int host_headcount = host_headcount_; 
+		System.out.println(host_headcount);
 		
-		 String upload_url_title = fileUploadService.restore(File_title);
+		String upload_url_title = fileUploadService.restore(File_title);
 
 			try {
 				result = hostenterService.insert_hostenter(
@@ -1540,7 +1500,6 @@ public class Mycontroller {
 						result = hostenter_imgDaoService.hostenter_img_up(host_name_,member_id,upload_url);
 						System.out.println("업로드 성공!");
 					
-						
 					}else {
 						System.out.println("업로드 실패!");	
 						model.addAttribute("mainPage","host/enter_host.jsp");
@@ -1553,14 +1512,12 @@ public class Mycontroller {
 				}
 
 			}
-			
 
 		}else {
 			System.out.println("DB연동 실패 2");
 			model.addAttribute("mainPage","host/enter_host.jsp");
 			return "index";
 		}
-		
 		
 		model.addAttribute("mainPage","host/host.jsp");
 		return "redirect:/mypage_host";
@@ -1590,27 +1547,26 @@ public class Mycontroller {
 		int result = 0;
 		int qq = 0;
 		
-		 String upload_url_title = fileUploadService.restore(File_title);
-		 System.out.println(upload_url_title);
-		 String host_name = host_name_; 
-		 System.out.println(host_name);
-		 int host_contents_number = host_contents_number_; 
-		 System.out.println(host_contents_number);
-		 String host_onerow = host_onerow_; 
-		 System.out.println(host_onerow);
-		 String host_des = host_des_; 
-		 System.out.println(host_des);
-		 String host_caution = host_caution_; 
-		 System.out.println(host_caution);
-		 int host_price = host_price_; 
-		 System.out.println(host_price);
-		 int host_bnumber = host_bnumber_; 
-		 System.out.println(host_bnumber);
-		 int host_headcount = host_headcount_; 
-		 System.out.println(host_headcount);
-		 System.out.println(hostenter_number);
+		String upload_url_title = fileUploadService.restore(File_title);
+		System.out.println(upload_url_title);
+		String host_name = host_name_; 
+		System.out.println(host_name);
+		int host_contents_number = host_contents_number_; 
+		System.out.println(host_contents_number);
+		String host_onerow = host_onerow_; 
+		System.out.println(host_onerow);
+		String host_des = host_des_; 
+		System.out.println(host_des);
+		String host_caution = host_caution_; 
+		System.out.println(host_caution);
+		int host_price = host_price_; 
+		System.out.println(host_price);
+		int host_bnumber = host_bnumber_; 
+		System.out.println(host_bnumber);
+		int host_headcount = host_headcount_; 
+		System.out.println(host_headcount);
+		System.out.println(hostenter_number);
 		System.out.println(hostenter_name);
-	
 
 			try {
 				int oo = hostenter_imgDaoService.delete_img(hostenter_name);
@@ -1628,8 +1584,7 @@ public class Mycontroller {
 													   host_bnumber, 
 													   host_headcount, 
 													   hostenter_number);
-				
-			
+
 			} catch (Exception e) {
 				
 			}
@@ -1640,19 +1595,13 @@ public class Mycontroller {
 					System.out.println("filename:" + file);
 					String upload_url = fileUploadService.restore(file);
 					System.out.println( "upload_url:" + upload_url );
-				
 					
-						
 				result = hostenter_imgDaoService.hostenter_img_up(host_name_,member_id,upload_url);
-					
-					
-					
+
 				if( upload_url != null ) {
 					if( upload_url.length() > 0 ) {
 						result = 0;
 						System.out.println("업로드 성공!");
-					
-						
 					}else {
 						System.out.println("업로드 실패!");	
 						model.addAttribute("mainPage","host/enter_host.jsp");
@@ -1665,8 +1614,7 @@ public class Mycontroller {
 				}
 
 			}
-			
-
+				
 		}else {
 			System.out.println("DB연동 실패 2");
 			model.addAttribute("mainPage","host/enter_host.jsp");
@@ -1675,11 +1623,8 @@ public class Mycontroller {
 
 		model.addAttribute("mainPage","host/host.jsp");
 		return "redirect:/mypage_host";
-		
-
-		
-		 
 	}
+
 }
 	
 

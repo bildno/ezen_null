@@ -76,6 +76,7 @@
 				<span id="chk_span">
 				<img alt="체크" src="img/chk.png"
 				id="mychk_img" onclick="location.href='/mycheck'">
+				
 				<span class = "arrow_box">출석하세요!</span>
 				</span>
 				<%
