@@ -26,8 +26,8 @@
 </script>
 
 <div class="ad_wrap">
-	<div class="ad_aside">
-		<!-- <div class="ad_asidetb"> -->
+	<!-- <div class="ad_aside">
+		<div class="ad_asidetb">
 		<a href="/ad_member">
 			<li class="ad_asideli" style="cursor: pointer">회원정보관리</li>
 		</a> <a href="/ad_host">
@@ -39,8 +39,8 @@
 		</a> <a href="/ad_FAQ">
 			<li class="ad_asideli" style="cursor: pointer">도움말 관리</li>
 		</a>
-		<!-- </div> -->
-	</div>
+		</div>
+	</div> -->
 	<div class="sectionlist">
 	
 <form action="/ad_FAQ_writeAction" method="post">
@@ -76,8 +76,9 @@
 					</script>
 
 				</div>
-				<div class="btn_revise">
-					<input class="ad_btn_revise" type="submit" value="작성">
+				<div class="ad_btn">
+					<input type="submit" class="ad_btn_write" value="작성">
+					<input type="button" class="ad_btn_back" value="뒤로가기" onclick="location.href='/ad_FAQ'">
 				</div>
 			</div>
 	</div>
