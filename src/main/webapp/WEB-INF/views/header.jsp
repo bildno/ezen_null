@@ -62,12 +62,12 @@
 <body>
 	<div class="header">
 		<div class="small_header deactive">
-			<h1>
+			
 				<a href="/main"><img src="/img/로고 진짜최종 완성본.png" id="logo">
 				</a>
-			</h1>
+			
 			<div class="search" style="margin-top: 15px;">
-				<input type="text" id="text" placeholder="원하시는 공간을 입력해보세요">
+				<input type="text" id="text_search" placeholder="원하시는 공간을 입력해보세요">
 
 				<%
 				String member_id = (String) session.getAttribute("member_id");

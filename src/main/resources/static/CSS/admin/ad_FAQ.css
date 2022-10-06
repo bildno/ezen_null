@@ -3,7 +3,7 @@
 }
 
 .ad_wrap {
-    display: flex;
+    display: flex; 
     flex-flow: row wrap;
     justify-content: center;
     font-family: 'Noto Sans KR', sans-serif;

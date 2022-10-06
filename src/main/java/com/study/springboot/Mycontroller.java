@@ -22,6 +22,8 @@ import com.study.springboot.dao.IcommunityDao;
 import com.study.springboot.dao.IfaqDao;
 import com.study.springboot.dao.ImemberDao;
 import com.study.springboot.dao.InoticeDao;
+import com.study.springboot.dao.Ione2oneDao;
+import com.study.springboot.dao.Ione2one_answerDao;
 import com.study.springboot.dao.IreplyDao;
 import com.study.springboot.dao.IreviewDao;
 import com.study.springboot.dto.adminDto;
@@ -264,6 +266,45 @@ public class Mycontroller {
 		}
 
 	}
+	@Autowired
+	private Ione2one_answerDao ione2one_answerDao;
+	private Ione2oneDao ione2oneDao;
+	
+	@RequestMapping("/ad_one2oneanswer_update")
+	public String ad_one2oneanswer_update(
+			@RequestParam("one2oneanswer_content") String one2oneanswer_content,
+			@RequestParam("one2oneanswer_one2one_number") String one2oneanswer_one2one_number,
+			Model model
+			) {
+		
+
+		int result = ione2one_answerDao.ad_one2oneanswer_update(one2oneanswer_content, one2oneanswer_one2one_number);
+		if( result != 1 ) {
+			System.out.println("수정 실패했지만 아쉽습니다.");
+			return "<script>alert('수정 실패');history.back();</script>";
+		}else {
+			System.out.println("수정 성공!");
+			return "redirect:/ad_one2one";
+		}
+		
+	}
+	@RequestMapping("/one2oneDelete")
+	public String one2oneDelete(@RequestParam("num") int num) {
+		System.out.println("호출");
+		System.out.println(num);
+		int result2 = ione2one_answerDao.one2oneanswer_Delete( num );
+		System.out.println(result2);
+		int result1 = ione2oneDao.one2one_Delete( num );
+	
+		System.out.println(result1);
+		System.out.println(result2);
+		
+		if( result1 != 1 && result2 != 1) {
+			return "/ad_one2one";
+		}else {
+			return "redirect:/ad_one2one";   
+		}
+	}
 	@RequestMapping("/ad_notice")
 	public String ad_notice(@RequestParam(value="page",required=false) String page,
 			Model model) {
@@ -293,7 +334,7 @@ public class Mycontroller {
 	
 	@RequestMapping("/ad_notice_update")
 	@ResponseBody
-	public String contentAction(
+	public String ad_notice_update(
 			@RequestParam("notice_title") String notice_title,
 			@RequestParam("notice_number") String notice_number,
 			@RequestParam("notice_contents_number") String notice_contents_number,

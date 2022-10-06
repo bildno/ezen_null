@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<link rel="stylesheet" href="css/admin/ad_FAQ_write.css">
+
 <!-- include libraries(jQuery, bootstrap) -->
 <link
 	href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css"
@@ -23,6 +23,7 @@
 		$('#summernote').summernote();
 	});
 </script>
+<link rel="stylesheet" href="css/admin/ad_FAQ_write.css">
 
 <div class="ad_wrap">
 	<!-- <div class="ad_aside">

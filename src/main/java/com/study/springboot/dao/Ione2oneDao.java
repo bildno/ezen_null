@@ -13,4 +13,5 @@ public interface Ione2oneDao {
 	public int one2one_write(one2oneDto dto);
 	public List<one2oneDto>ad_one2one_answer(String one2one_number);
 	public List<one2oneDto> one2one_search(String search_type, String search_contents);
+	public int one2one_Delete(int num);
 }

@@ -6,6 +6,7 @@
 	<!-- c태그 꼭 써야 foreach문 사용 가능 -->	
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %> 
 
 <link rel="stylesheet" href="css/one2one/one2one.css">
 
@@ -16,14 +17,27 @@
 			id="space_icon">
 	</h2>
 	<div class=contents>
+	<c:set var="list"  value="${one2one_list }"/>
+	<c:set var="flist" value="${fn:length(list) }"/>
+	<c:if test="${flist == 0 }">
+		<div id="one_list_div">
+		<span id="list_span">
+		  등록된 1 : 1 문의가 없습니다.
+		</span> 
+		</div> 
+	</c:if>
+	
 	<c:forEach var="dto" items="${one2one_list}" varStatus="status">
 		<button class="accordion" id="o_num${dto.one2one_number}" value="${dto.one2one_number}" name="one2one_number">
 		<div id="one_list_div">
 		<span id="list_span">
-		  ${dto.one2one_content}
+		  ${dto.one2one_title}
 		</span> 
 		<span id="list_span_date">
 		  ${dto.one2one_date}
+		</span>
+		<span>
+		<input type="button" value="삭제" onclick="location.href='one2oneDelete?num=${dto.one2one_number}'">
 		</span>
 		</div> 
 		</button>
@@ -35,6 +49,9 @@
 			<c:if test="${number eq answer_number}">		
 			${one2oneanswer_list[status.index].one2oneanswer_content }
 			</c:if>
+			<c:if test="${number ne answer_number}">		
+				등록된 문의 답변이 없습니다.
+			</c:if>
 			</span>
 			</p>
 		</div>
@@ -44,10 +61,6 @@
 		<div class="write">
 			<input class="writebtn" type="button" value="글쓰기"
 				onclick="location.href='/one2one_write'">
-			<input class="writebtn" type="button" value="취소"
-				onclick="location.href='/mypage'">
-			<%-- <button class=" btn_ad_notice"
-			onclick="location.href='one2oneDelete?num=${dto.notice_number}'">삭제</button> --%>
 		</div>
 
 	</div>
