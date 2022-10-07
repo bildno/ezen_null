@@ -42,6 +42,10 @@
 		<c:set var="answer_number" value="${one2oneanswer_list[status.index].one2oneanswer_one2one_number }" />
 		<div class="panel">
 			<p id="o_ans1" >
+			
+			
+			
+			
 			<span id="list_anspan">
 			<c:if test="${number eq answer_number}">		
 			${one2oneanswer_list[status.index].one2oneanswer_content }
