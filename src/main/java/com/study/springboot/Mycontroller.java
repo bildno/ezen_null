@@ -1,5 +1,6 @@
 package com.study.springboot;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -35,6 +36,7 @@ import com.study.springboot.dto.hostenter_imgDto;
 import com.study.springboot.dto.memberDto;
 import com.study.springboot.dto.noticeDto;
 import com.study.springboot.dto.one2oneDto;
+import com.study.springboot.dto.one2oneDtoAndAnswer;
 import com.study.springboot.dto.one2one_answerDto;
 import com.study.springboot.dto.replyDto;
 import com.study.springboot.dto.reviewDto;
@@ -980,13 +982,41 @@ public class Mycontroller {
 		List<one2oneDto> one2one_list = one2oneService.one2one_list(member_id);
 		List<one2one_answerDto> one2oneanswer_list = one2one_answerService.one2one_answer(member_id);
 
+		List<one2oneDtoAndAnswer> one2oneDtoAndAnswer_list = new ArrayList<one2oneDtoAndAnswer>(); 
+		
+
+		for( one2oneDto dto : one2one_list) {
+			for( one2one_answerDto answerDto : one2oneanswer_list) {
+				if( dto.getOne2one_number().trim().equals( answerDto.getOne2oneanswer_one2one_number().trim() ) ) {
+					one2oneDtoAndAnswer newDto = new one2oneDtoAndAnswer();
+					newDto.setOne2one_answerDto(answerDto);
+					newDto.setOne2oneDto( dto );		
+					one2oneDtoAndAnswer_list.add(newDto);
+				}
+				
+				
+					
+			}
+			
+		}
+		
+		
+		
+		/*
+		 * System.out.println("xx"); System.out.println( "one2oneDtoAndAnswer_list:" +
+		 * one2oneDtoAndAnswer_list);
+		 */
+		
 		
 		model.addAttribute("one2one_list", one2one_list);
 		model.addAttribute("one2oneanswer_list", one2oneanswer_list);
+		model.addAttribute("one2oneDtoAndAnswer_list", one2oneDtoAndAnswer_list);
 		
-		System.out.println("zz");
-		System.out.println(one2one_list);
-		System.out.println(one2oneanswer_list);
+		//model.addAttribute(member_id, one2oneanswer_list)
+		/*
+		 * System.out.println("qwer"); System.out.println(one2one_list);
+		 * System.out.println(one2oneanswer_list);
+		 */
 
 		model.addAttribute("mainPage", "one2one/one2one.jsp");
 		return "index";

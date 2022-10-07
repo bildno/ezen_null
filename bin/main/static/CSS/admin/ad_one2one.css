@@ -41,6 +41,13 @@
 	border: 1px solid rgb(238, 238, 238);
 	border-radius: 10px;
 }
+/* 버튼 */
+.ad_btn_back {
+	border: 0;
+	background-color: rgb(238, 238, 238);
+	padding: 10px 20px 10px 20px;
+	border-radius: 5px;
+}
 /* 검색박스 */
 .search_box {
 	border: 1px solid rgb(37, 49, 109);
