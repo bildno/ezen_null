@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 <link rel="stylesheet" href="css/member/mywish.css">
 <link rel="stylesheet"
@@ -12,13 +15,16 @@
 		찜 목록을 확인해주세요 <img src="/img/service/space_icon.png" alt="space_icon"
 			id="space_icon">
 	</h2>
+	
+	
 	<div class="w_contents">
 		<div class="contents">
+		<c:forEach var="dto" items="${wish_list}">
 			<div class="wish">
-				<input type="text" value="찜내역1" readonly>
+				<input type="text" value="${dto.hostenter_name}" readonly>
 				<button class="detail">세부내역</button>
 			</div>
-			<div class="wish">
+			<!-- <div class="wish">
 				<input type="text" value="찜내역2" readonly>
 				<button class="detail">세부내역</button>
 			</div>
@@ -33,7 +39,8 @@
 			<div class="wish5">
 				<input type="text" value="찜내역5" readonly>
 				<button class="detail">세부내역</button>
-			</div>
+			</div> -->
+		</c:forEach>
 		</div>
 		
 		<div class="wish_cancel">

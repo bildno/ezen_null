@@ -55,5 +55,18 @@
                          hostenter_headcount = #{param9}
                          where hostenter_number = #{param10}
   	</update>
+  	
+  	
+  	
+  	<update id= "zzim_count">
+  		update hostenter set hostenter_wish = hostenter_wish+1 where hostenter_number = #{param1}
+  	</update>
+  	
+  	
+  	<select id="wish_list" resultType="com.study.springboot.dto.hostenterDto">
+  		select * from hostenter where HOSTENTER_NUMBER in 
+  		(select MY_WISH_HOSTENTER_NUMBER from my_wish 
+  		where MY_WISH_MEMBER_ID = #{param})
+  	</select>
     
     </mapper>

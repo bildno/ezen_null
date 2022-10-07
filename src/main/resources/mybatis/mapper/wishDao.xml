@@ -6,17 +6,19 @@
     
 <mapper namespace="com.study.springboot.dao.IwishDao" >  
 
-
+<!-- 찜하기 -->
 <insert id="zzim_do" parameterType="com.study.springboot.dto.wishDto">
 	insert into my_wish (my_wish_number,my_wish_hostenter_number,my_wish_member_id)
 	values(my_wish_idx.nextval, #{my_wish_hostenter_number},#{my_wish_member_id})
 	
 </insert>
 
-
+<!-- 찜 중복 확인  -->
 <select id="zzim_exist" resultType="_int">
 	select count(*) from my_wish where my_wish_hostenter_number = #{param1} and my_wish_member_id = #{param2}
 </select>
+
+
 
 
 </mapper> 

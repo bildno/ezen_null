@@ -18,12 +18,13 @@ public class wishService {
 		return result;
 	}
 	
-	//찜 중복
+	//찜 중복 확인
 	public int zzim_exist(String hostenter_number,String member_id) {
 		int result = iwishDao.zzim_exist(hostenter_number,member_id);
 		return result;
 	}
 	
+
 	
 
 	

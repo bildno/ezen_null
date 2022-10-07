@@ -788,8 +788,14 @@ public class Mycontroller {
 
 	/* 내찜내역 */
 	@RequestMapping("/mywish")
-	public String mywish(Model model) {
-
+	public String mywish(HttpServletRequest request,Model model) {
+		
+		HttpSession session = request.getSession();
+		String member_id = (String) session.getAttribute("member_id");
+		
+		List<hostenterDto> wish_list = hostenterService.wish_list(member_id);
+		
+		model.addAttribute("wish_list",wish_list);
 		model.addAttribute("mainPage", "member/mywish.jsp");
 		return "index";
 	}
@@ -1396,62 +1402,53 @@ public class Mycontroller {
 	
     // 찜 하기
 	@RequestMapping("/zzim_doAction")
-		public String zzim_doAction(@RequestParam("hostenter_number") String hostenter_number,
-				HttpServletRequest request, Model model) {
-		System.out.println("gg");
-		
+	@ResponseBody
+	public String zzim_doAction( @RequestParam("hostenter_number") String hostenter_number,
+			                     HttpServletRequest request, Model model) throws Exception {
+	
+
 		HttpSession session = request.getSession();
 		String member_id = (String)session.getAttribute("member_id");
 		
-
-		
 		int exist_result = wishService.zzim_exist( hostenter_number, member_id);
 		
+	
+		//로그인 되지 않았을 시에 찜 데이터 안 들어가도록(즉 1대입)
+		if(member_id == null) {
+			exist_result = 1;
+		}
+		
+		//데이터에 찜 기록이 존재하지 않을 때(즉 exist_result는 0)
 		if(exist_result == 0) {
 		
-		wishDto dto = new wishDto();
-		dto.setMy_wish_member_id(member_id);
-		dto.setMy_wish_hostenter_number(hostenter_number);
-		int result = wishService.zzim_do(dto); 
+			wishDto dto = new wishDto();
+			dto.setMy_wish_member_id(member_id);
+			dto.setMy_wish_hostenter_number(hostenter_number);
+			int result = wishService.zzim_do(dto); 
 		
-		
-		
-		if(result > 0) {
 			
+			//만약 result가 1이 되면 찜 데이터 들어감
+			if(result != 0) {
+				
+				
+				hostenterService.zzim_count(hostenter_number);
+				
+				return "<script> alert('찜이 정상적으로 되었습니다 (˵ •̀ ᴗ - ˵ ) ✧'); location.href='/main' </script>";
+                //return "redirect:/space_info?hostenter_number="+hostenter_number;
 			
-			return "redirect:/space_info?hostenter_number="+hostenter_number;
-			
+			} else {
+				return "<script> alert('로그인 먼저 해주세요'); location.back(); </script>"; 
+			} 
 		} 
+		
+		//데이터에 찜 기록이 존재
 		else {
-			model.addAttribute("alert","로그인 먼저 해주세요");
-			return "/space_info";
-		} 
-		
-		
+			
+			return "<script> alert('찜이 불가능합니다 ŏ̥̥̥̥םŏ̥̥̥̥'); location.href='/main'</script>";
 		}
 		
-		
-		
-		else {
-			System.out.println("실패");
-			
-			return "redirect:main";
-		}
-
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 	/* ----------------------------------------- */
 
 	/*-------------------------------------------*/
