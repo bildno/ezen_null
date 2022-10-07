@@ -21,7 +21,8 @@
     		#{hostenter_headcount},
     		#{hostenter_member_id},
     		#{hostenter_bnumber},
-    		#{hostenter_onerow}
+    		#{hostenter_onerow},
+    		0
     		)
     		
     	</insert>
