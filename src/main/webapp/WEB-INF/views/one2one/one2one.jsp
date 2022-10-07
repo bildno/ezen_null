@@ -48,6 +48,10 @@
 		<c:set var="answer_number" value="${answer.one2oneanswer_one2one_number }" />
 		<div class="panel">
 			<p id="o_ans1" >
+			
+			
+			
+			
 			<span id="list_anspan">
 			<%-- ${dto.one2one_number}
 			${answer.one2oneanswer_one2one_number }	
