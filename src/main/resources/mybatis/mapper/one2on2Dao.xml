@@ -10,6 +10,10 @@
 		select * from one2one where one2one_member_id = #{param1}
 	</select>
 	
+	<select id="one2one_list2" resultType="com.study.springboot.dto.one2oneDto">
+		select * from one2one where ONE2ONE_NUMBER not in(select ONE2ONEANSWER_ONE2ONE_NUMBER from ONE2ONEANSWER where  ONE2ONEANSWER_MEMBER_ID =#{param1}) and ONE2ONE_MEMBER_ID = #{param1}
+	</select>
+	
 	<select id="ad_one2one_answer" resultType="com.study.springboot.dto.one2oneDto">
 		select * from one2one where one2one_number = #{param1}
 	</select>

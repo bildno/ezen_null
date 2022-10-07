@@ -20,7 +20,14 @@ public class one2oneService {
 
 		return one2one_list;
 	}
+	public List<one2oneDto> one2one_list2(String member_id) {
 
+		List<one2oneDto> one2one_list2 = ione2oneDao.one2one_list2(member_id);
+
+		return one2one_list2;
+	}
+	
+	
 	public int one2one_write(one2oneDto dto) {
 		int result = ione2oneDao.one2one_write(dto);
 		return result;

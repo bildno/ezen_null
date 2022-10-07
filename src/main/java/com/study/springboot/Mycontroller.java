@@ -981,8 +981,8 @@ public class Mycontroller {
 
 		List<one2oneDto> one2one_list = one2oneService.one2one_list(member_id);
 		List<one2one_answerDto> one2oneanswer_list = one2one_answerService.one2one_answer(member_id);
-
-		List<one2oneDtoAndAnswer> one2oneDtoAndAnswer_list = new ArrayList<one2oneDtoAndAnswer>(); 
+		List<one2oneDto> one2one_list2 = one2oneService.one2one_list2(member_id);
+ 		List<one2oneDtoAndAnswer> one2oneDtoAndAnswer_list = new ArrayList<one2oneDtoAndAnswer>(); 
 		
 
 		for( one2oneDto dto : one2one_list) {
@@ -992,10 +992,7 @@ public class Mycontroller {
 					newDto.setOne2one_answerDto(answerDto);
 					newDto.setOne2oneDto( dto );		
 					one2oneDtoAndAnswer_list.add(newDto);
-				}
-				
-				
-					
+				}			
 			}
 			
 		}
@@ -1008,7 +1005,7 @@ public class Mycontroller {
 		 */
 		
 		
-		model.addAttribute("one2one_list", one2one_list);
+		model.addAttribute("one2one_list", one2one_list2);
 		model.addAttribute("one2oneanswer_list", one2oneanswer_list);
 		model.addAttribute("one2oneDtoAndAnswer_list", one2oneDtoAndAnswer_list);
 		
