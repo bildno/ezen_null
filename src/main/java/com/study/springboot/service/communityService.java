@@ -43,7 +43,6 @@ public class communityService {
 	//조회수 올리기
 	public int community_hit(String community_number)throws Exception {
 		
-		
 		return icommunityDao.community_hit(community_number);
 	}
 	
