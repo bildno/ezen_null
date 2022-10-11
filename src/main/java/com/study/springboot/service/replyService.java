@@ -21,13 +21,13 @@ public class replyService {
 	}
 	
 	//댓글 달기
-	public int replyInsert(String reply_content, String reply_member_id, String reply_communty_number ) {
+	public int replyInsert(String reply_content, String reply_member_id, String reply_community_number ) {
 		
 		int result = 0;
 		replyDto dto = new replyDto();
 		dto.setReply_content(reply_content);
 		dto.setReply_member_id(reply_member_id);
-		dto.setReply_communty_number(reply_communty_number);
+		dto.setReply_community_number(reply_community_number);
 		
 		try {
 			result = ireplyDao.replyInsert(dto);
