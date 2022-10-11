@@ -78,7 +78,7 @@
 					<div>		
 					<input type="hidden"  name="reply_idx" />
 						<textarea name="commu_info" id="comm_info" cols="90" rows="2"
-							style="resize: none;" class="com_info2">게시글 댓글</textarea>
+							style="resize: none;" class="com_info2"></textarea>
 							<%
 							String member_id = (String) session.getAttribute("member_id");
 							if(member_id != null) {

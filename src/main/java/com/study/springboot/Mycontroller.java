@@ -1362,33 +1362,28 @@ public class Mycontroller {
 	public String community_infoAction(
 			@RequestParam("commu_info") String reply_content,
 			//form안에 있어서 community_number 가져올 수 있음
-			@RequestParam( "community_number") String communty_number,
+			@RequestParam( "community_number") String community_number,
 			replyDto dto, HttpServletRequest request, Model model) {
-
-		
 
 		HttpSession session = request.getSession();
 		String member_id = (String) session.getAttribute("member_id");
 		
 
 		dto.setReply_member_id(member_id);
-		dto.setReply_communty_number(communty_number);
+		dto.setReply_community_number(community_number);
 		dto.setReply_content(reply_content);
 
-
+		int result = ireplyDao.replyInsert(dto); System.out.println(result);
 		
-		 int result = ireplyDao.replyInsert(dto); System.out.println(result);
-		 
-		 
-		 if(result !=1) { 
+		if(result !=1) { 
 			 
-			 return "<script> alert('댓글 실패'); location.back(); </script>"; } 
+			return "<script> alert('댓글 실패'); location.back(); </script>"; } 
 		 
-		 else {		
+		else {		
 
-			return "redirect:/community_info?community_number="+communty_number;
-		 }
+		return "redirect:/community_info?community_number="+community_number;
 		
+		}
 
 	}
 	
