@@ -56,5 +56,9 @@
                          hostenter_headcount = #{param9}
                          where hostenter_number = #{param10}
   	</update>
+  	
+  	<select id="search" resultType="com.study.springboot.dto.hostenterDto">
+  		select * from hostenter where hostenter_name like '%' || #{param1} || '%' 
+  	</select>
     
     </mapper>

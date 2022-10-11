@@ -19,18 +19,20 @@
 					<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
 				</ol>
 				<div class="carousel-inner">
-					<div class="carousel-item active">
-						<img src="/img/host/roof.jpg" class="d-block w-100" alt="..."
+				<c:forEach var="dto22" items="${img_list}" varStatus="status">
+				<c:if test="${status.count eq 1}" >
+					<div class="carousel-item active" >
+						<img src="${dto22.hostenter_img }" class="d-block w-100" alt="..."
 							id="host_img1">
 					</div>
-					<div class="carousel-item">
-						<img src="img/host/room1.jpg" class="d-block w-100" alt="..."
-							id="host_img2">
-					</div>
-					<div class="carousel-item">
-						<img src="img/host/roof3.jpg" class="d-block w-100" alt="..."
-							id="host_img3">
-					</div>
+				</c:if>
+				<c:if test="${status.count ne 1}">
+				<div class="carousel-item">
+						<img src="${dto22.hostenter_img }" class="d-block w-100" alt="..."
+							id="host_img1">
+				</div>
+				</c:if>
+				</c:forEach>
 				</div>
 				<button class="carousel-control-prev" type="button"
 					data-target="#carouselExampleIndicators" data-slide="prev">
@@ -105,7 +107,7 @@
 			</div>
 			<div class="inner">
 				<div class="sp_location">
-					<p class="sp_name">강남 클럽 파티룸 쉘터 DJ파티</p>
+					<p class="sp_name">${dto.hostenter_name }</p>
 					<p class="sp_address">${dto.hostenter_location }
 						${dto.hostenter_location_detail }</p>
 					<p class="sp_homepage">

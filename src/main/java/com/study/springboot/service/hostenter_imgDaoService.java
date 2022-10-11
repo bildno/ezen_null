@@ -50,5 +50,12 @@ public class hostenter_imgDaoService {
 		
 		return result;
 	}
+	
+	public List<hostenter_imgDto> img_sel(String hostenter_img_name) {
+		List<hostenter_imgDto> img_list = ihostenter_imgDao.img_sel(hostenter_img_name);
+		
+		return img_list;
+		
+	}
 
 }

@@ -24,14 +24,14 @@
 				<span id="list_span"> 등록된 1 : 1 문의가 없습니다. </span>
 			</div>
 		</c:if>
-		
+				<h3 class="sub_title">답변 문의</h3>
 		<c:forEach var="dto" items="${one2oneDtoAndAnswer_list}">
 				<button class="accordion" id="o_num${dto.one2oneDto.one2one_number }  "
 				value="${dto.one2oneDto.one2one_number }" name="one2one_number">
 				<div id="one_list_div">
 					<span id="list_span"> ${dto.one2oneDto.one2one_title }  </span> <span
 						id="list_span_date"> ${dto.one2oneDto.one2one_date }  <input
-						type="button" value="삭제"
+						type="button" value="삭제" class="deletebtn"
 						onclick="location.href='one2oneDelete?num=${dto.one2oneDto.one2one_number }'"
 						style="margin-left: 10px;">
 					</span>
@@ -43,7 +43,10 @@
 						</p>
 					</div>
 		</c:forEach>
-		<h2>미답변 문의</h2>
+		<br>
+		<br>
+		<br>
+		<h3 class="sub_title">미답변 문의</h3>
 		<c:forEach var="dto2" items="${one2one_list }" >
 		<c:set var="number" value="${dto.one2one_number }" />
 		<button class="accordion" id="o_num${dto2.one2one_number }"
@@ -51,7 +54,7 @@
 				<div id="one_list_div">
 					<span id="list_span"> ${dto2.one2one_title } </span> <span
 						id="list_span_date"> ${dto2.one2one_date }  <input
-						type="button" value="삭제"
+						type="button" value="삭제" class="deletebtn"
 						onclick="location.href='one2oneDelete?num=${dto2.one2one_number }'"
 						style="margin-left: 10px;">
 					</span>
@@ -63,17 +66,13 @@
 						</p>
 					</div>
 		</c:forEach>
-		
-		
 	</div>
 	<br>
 	<div class="write">
 		<input class="writebtn" type="button" value="글쓰기"
 			onclick="location.href='/one2one_write'">
 	</div>
-
 </div>
-
 <script>
 	var acc = document.getElementsByClassName("accordion");
 	var i;

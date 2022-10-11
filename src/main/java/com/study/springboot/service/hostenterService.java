@@ -111,4 +111,11 @@ public class hostenterService {
 		return result;
 	}
 	
+	public List<hostenterDto> search(String search){
+		
+		List<hostenterDto> search_result = ihostenterDao.search(search);
+		
+		return search_result;
+	}
+	
 }

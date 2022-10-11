@@ -17,4 +17,6 @@ public interface Ihostenter_imgDao {
 
 	public int delete_img(String hostenter_img_name);
 	
+	List<hostenter_imgDto> img_sel(String hostenter_img_name);
+	
 }

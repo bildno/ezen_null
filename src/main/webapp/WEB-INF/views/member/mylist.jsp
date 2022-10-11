@@ -9,9 +9,6 @@
 
 
 <div class="container">
-
-	
-	
     <h1 class="mylist">나의 활동</h1>
     <h2 id="mylist_exp">
 		나의 활동을 확인해주세요
@@ -64,7 +61,7 @@
     		<h4><b>게시글</b></h4>
     		<hr>
 			<c:forEach var="dto2" items="${mycommu_pagelist}">
-			<a href="/community_info">${dto2.community_title}</a><br>
+			<a href="/community_info?community_number=${dto2.community_number}">${dto2.community_title}</a><br>
 			</c:forEach>
     </div>
     

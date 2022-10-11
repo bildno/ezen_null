@@ -32,4 +32,6 @@ public interface IhostenterDao {
 	
 	
 	public List<hostenterDto> space_info(int hostenter_number);
+	
+	public List<hostenterDto> search(String search);
 }
