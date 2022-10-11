@@ -55,20 +55,15 @@
 	});
 </script>
 
-
-
-
 </head>
 <body>
 	<div class="header">
 		<div class="small_header deactive">
-			
 				<a href="/main"><img src="/img/로고 진짜최종 완성본.png" id="logo">
 				</a>
-			
+			<form action="searchAction">
 			<div class="search" style="margin-top: 15px;">
-				<input type="text" id="text_search" placeholder="원하시는 공간을 입력해보세요">
-
+				<input type="text" id="text_search" name="search" placeholder="원하시는 공간을 입력해보세요">
 				<%
 				String member_id = (String) session.getAttribute("member_id");
 				if (member_id != null) {
@@ -76,14 +71,13 @@
 				<span id="chk_span">
 				<img alt="체크" src="img/chk.png"
 				id="mychk_img" onclick="location.href='/mycheck'">
-				
 				<span class = "arrow_box">출석하세요!</span>
 				</span>
 				<%
 				} else { }
 				%>
-
 			</div>
+		</form>
 
 			<div id="sidelist" class="sidelist">
 				<%
@@ -105,11 +99,6 @@
 				%>
 					<a href="/main">홈</a> 
 					<a href="/service">고객센터</a> 
-
-
-
-
-
 				<%
 				//null체크
 					if (member_id != null) { //로그인 상태
@@ -127,16 +116,11 @@
 				%>
 				
 			</div>
-
 			<img class="liston" src="/img/sidelisticon.png" alt="sidelisticon"
 				id="sidelisticon" onclick="sideon()" />
-
 		</div>
 	</div>
-
 	<img src="/img/topmove.png" alt="" class="movetopbtn" />
-
-
 	<script>
 	const $topBtn = document.querySelector(".movetopbtn");
 

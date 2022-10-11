@@ -9,9 +9,6 @@
 
 
 <div class="container">
-
-	
-	
     <h1 class="mylist">나의 활동</h1>
     <h2 id="mylist_exp">
 		나의 활동을 확인해주세요

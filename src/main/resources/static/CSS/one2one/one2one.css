@@ -28,7 +28,17 @@
 	width: 80%;
 	margin: 100px 10% 150px 10%;
 }
-
+.deletebtn{
+	border: none;
+	border-radius: 5px;
+	width: 70px;
+	padding: 10px;
+	font-size: 13px;
+	background-color: rgb(238, 238, 238);
+	font-family: 'Noto Sans KR';
+	margin-top:20px;
+	margin-left: 15px;
+}
 
 #one_list_div{
 	display:flex;
@@ -129,32 +139,6 @@ list_anspan
 	justify-content: end;
 }
 
-/* .sidelist a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 15px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
+.sub_title{
+	color: gray;
 }
-
-.sidelist a:hover {
-    color:  rgb(238, 238, 238);
-}
-
-.sidelist .listoff {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-}
-
-.liston {
-    font-size: 20px;
-    cursor: pointer;
-    z-index: 1;
-    background-color: white;
-    color: black;
-    padding: 10px 15px;
-    border: none;
-} */
