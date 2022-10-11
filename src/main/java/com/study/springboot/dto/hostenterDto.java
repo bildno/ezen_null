@@ -19,6 +19,8 @@ public class hostenterDto {
 	private String hostenter_member_id;
 	private int hostenter_bnumber;
 	private String hostenter_onerow;
+	private int hostenter_wish;
+	
 	
 	
 	

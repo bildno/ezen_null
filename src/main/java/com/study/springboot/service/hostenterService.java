@@ -77,6 +77,34 @@ public class hostenterService {
 		return space_info;
 	}
 	
+	//찜 카운트
+	public int zzim_count(String hostenter_wish)throws Exception {
+		
+		return ihostenterDao.zzim_count(hostenter_wish);
+		
+	}
+	
+	//찜 목록
+	public List<hostenterDto> wish_list(String member_id) {
+		
+		List<hostenterDto> wish_list = ihostenterDao.wish_list(member_id);
+		
+		return wish_list;
+ 	}
+	
+	
+	//찜 카운트 view
+	public int view_count(int hostenter_number) {
+		
+		int view_count = ihostenterDao.view_count(hostenter_number);
+		
+		return view_count;
+	}
+	
+	
+	
+	
+	
 	public int update_space(String hostenter_title_img,
 			String hostenter_name,
 			int hostenter_contents_number,

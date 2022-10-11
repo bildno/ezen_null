@@ -27,6 +27,7 @@ import com.study.springboot.dao.Ione2oneDao;
 import com.study.springboot.dao.Ione2one_answerDao;
 import com.study.springboot.dao.IreplyDao;
 import com.study.springboot.dao.IreviewDao;
+import com.study.springboot.dao.IwishDao;
 import com.study.springboot.dto.adminDto;
 import com.study.springboot.dto.communityDto;
 import com.study.springboot.dto.contentsDto;
@@ -40,6 +41,7 @@ import com.study.springboot.dto.one2oneDtoAndAnswer;
 import com.study.springboot.dto.one2one_answerDto;
 import com.study.springboot.dto.replyDto;
 import com.study.springboot.dto.reviewDto;
+import com.study.springboot.dto.wishDto;
 import com.study.springboot.service.communityService;
 import com.study.springboot.service.contentsService;
 import com.study.springboot.service.faqService;
@@ -51,6 +53,8 @@ import com.study.springboot.service.one2oneService;
 import com.study.springboot.service.one2one_answerService;
 import com.study.springboot.service.replyService;
 import com.study.springboot.service.reviewService;
+import com.study.springboot.service.wishService;
+
 
 @Controller
 public class Mycontroller {
@@ -114,6 +118,16 @@ public class Mycontroller {
 	
 	@Autowired
 	private ImemberDao imemberDao;
+<<<<<<< HEAD
+=======
+	
+	@Autowired
+	private wishService wishService;
+	
+	@Autowired
+	private IwishDao iwishDao;
+
+>>>>>>> DO
 	
 	/* ----------------------------------------- admin 폴더 */
 
@@ -782,6 +796,11 @@ public class Mycontroller {
 		List<communityDto> commulist = communityService.select_commu(member_id);
 		List<replyDto> replylist = replyService.select_reply(member_id);
 		
+<<<<<<< HEAD
+=======
+		System.out.println(myreply_pagelist);
+		
+>>>>>>> DO
 		model.addAttribute("mycommu_pagelist",mycommu_pagelist);
 		model.addAttribute("myreview_pagelist",myreview_pagelist);
 		model.addAttribute("myreply_pagelist",myreply_pagelist);
@@ -805,11 +824,36 @@ public class Mycontroller {
 
 	/* 내찜내역 */
 	@RequestMapping("/mywish")
-	public String mywish(Model model) {
-
+	public String mywish(HttpServletRequest request,Model model) {
+		
+		HttpSession session = request.getSession();
+		String member_id = (String) session.getAttribute("member_id");
+		
+		List<hostenterDto> wish_list = hostenterService.wish_list(member_id);
+		
+		model.addAttribute("wish_list",wish_list);
 		model.addAttribute("mainPage", "member/mywish.jsp");
 		return "index";
 	}
+	
+    // 찜 삭제	
+	@RequestMapping("/zzim_delete")
+	@ResponseBody
+	public String zzim_delete(@RequestParam("my_wish_hostenter_number") int my_wish_hostenter_number) {
+		
+		int result = iwishDao.zzim_delete(my_wish_hostenter_number);
+		
+		if(result !=1) {
+			return "<script> alert('찜 삭제가 불가능합니다 ŏ̥̥̥̥םŏ̥̥̥̥'); location.href='/mywish'</script>";
+		}
+		else {
+			return "<script> alert('찜이 정상적으로 삭제되었습니다 (˵ •̀ ᴗ - ˵ ) ✧'); location.href='/mywish'</script>";
+		}
+			
+		
+	}
+	
+	
 
 	/* 아이디찾기 */
 	@RequestMapping("/idfind")
@@ -1384,7 +1428,7 @@ public class Mycontroller {
 	public String community_infoAction(
 			@RequestParam("commu_info") String reply_content,
 			//form안에 있어서 community_number 가져올 수 있음
-			@RequestParam( "community_number") String community_number,
+			@RequestParam( "community_number") String communty_number,
 			replyDto dto, HttpServletRequest request, Model model) {
 
 		HttpSession session = request.getSession();
@@ -1392,7 +1436,7 @@ public class Mycontroller {
 		
 
 		dto.setReply_member_id(member_id);
-		dto.setReply_community_number(community_number);
+		dto.setReply_communty_number(communty_number);
 		dto.setReply_content(reply_content);
 
 		int result = ireplyDao.replyInsert(dto); System.out.println(result);
@@ -1403,7 +1447,12 @@ public class Mycontroller {
 		 
 		else {		
 
+<<<<<<< HEAD
 		return "redirect:/community_info?community_number="+community_number;
+=======
+			return "redirect:/community_info?community_number="+communty_number;
+		 }
+>>>>>>> DO
 		
 		}
 
@@ -1426,13 +1475,72 @@ public class Mycontroller {
 	public String space_info(@RequestParam("hostenter_number") int hostenter_number,
 			Model model) {
 		
+		int view_count = hostenterService.view_count(hostenter_number);
 		List<hostenterDto> space_info = hostenterService.space_info(hostenter_number);
 
 		model.addAttribute("space_info",space_info);
+		model.addAttribute("view_count",view_count);
 		model.addAttribute("mainPage", "contents/space_info.jsp");
+		
+		
+	
+		
 		return "index";
 	}
+	
+	
+    // 찜 하기
+	@RequestMapping("/zzim_doAction")
+	@ResponseBody
+	public String zzim_doAction( @RequestParam("hostenter_number") String hostenter_number,
+			                     HttpServletRequest request, Model model) throws Exception {
+	
 
+		HttpSession session = request.getSession();
+		String member_id = (String)session.getAttribute("member_id");
+		
+		int exist_result = wishService.zzim_exist( hostenter_number, member_id);
+		
+	
+		//로그인 되지 않았을 시에 찜 데이터 안 들어가도록(즉 1대입)
+		if(member_id == null) {
+			exist_result = 1;
+		}
+		
+		//데이터에 찜 기록이 존재하지 않을 때(즉 exist_result는 0)
+		if(exist_result == 0) {
+		
+			wishDto dto = new wishDto();
+			dto.setMy_wish_member_id(member_id);
+			dto.setMy_wish_hostenter_number(hostenter_number);
+			int result = wishService.zzim_do(dto); 
+		
+			
+			//만약 result가 1이 되면 찜 데이터 들어감
+			if(result != 0) {
+				
+				
+				hostenterService.zzim_count(hostenter_number);
+				
+				return "<script> alert('찜이 정상적으로 되었습니다 (˵ •̀ ᴗ - ˵ ) ✧'); location.href='/main' </script>";
+                //return "redirect:/space_info?hostenter_number="+hostenter_number;
+			
+			} else {
+				return "<script> alert('로그인 먼저 해주세요'); location.back(); </script>"; 
+			} 
+		} 
+		
+		//데이터에 찜 기록이 존재
+		else {
+			
+			return "<script> alert('찜이 불가능합니다 ŏ̥̥̥̥םŏ̥̥̥̥'); location.href='/main'</script>";
+		}
+		
+	}
+	
+
+
+	
 	/* ----------------------------------------- */
 
 	/*-------------------------------------------*/
@@ -1549,6 +1657,7 @@ public class Mycontroller {
 		
 		model.addAttribute("mainPage","host/host.jsp");
 		return "redirect:/mypage_host";
+		
 		
 	}
 	
