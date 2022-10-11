@@ -8,7 +8,6 @@
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 
-
 <div class="container">
 	<h1 id="wish_h1">찜 목록</h1>
 	<h2 id="wish_h2">
@@ -20,10 +19,13 @@
 	<div class="w_contents">
 		<div class="contents">
 		<c:forEach var="dto" items="${wish_list}">
+		<form action="/zzim_delete">
 			<div class="wish">
 				<input type="text" value="${dto.hostenter_name}" readonly>
-				<button class="detail">세부내역</button>
+				<button class="detail" type="button" onclick="return submit2(this.form)">세부내역</button>
+				<button type="submit" class="detail" value="${dto.hostenter_number}" name="my_wish_hostenter_number">삭제</button>	
 			</div>
+			
 			<!-- <div class="wish">
 				<input type="text" value="찜내역2" readonly>
 				<button class="detail">세부내역</button>
@@ -40,8 +42,10 @@
 				<input type="text" value="찜내역5" readonly>
 				<button class="detail">세부내역</button>
 			</div> -->
+		</form>	
 		</c:forEach>
 		</div>
+		
 		
 		<div class="wish_cancel">
 			<input class="wish_cancel2" type="button" value="취소"
@@ -49,3 +53,11 @@
 		</div>
 	</div>
 </div>
+
+<script> 
+  function submit2(frm) { 
+    frm.action=''; 
+    frm.submit(); 
+    return true; 
+  } 
+</script> 

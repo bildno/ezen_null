@@ -93,6 +93,16 @@ public class hostenterService {
  	}
 	
 	
+	//찜 카운트 view
+	public int view_count(int hostenter_number) {
+		
+		int view_count = ihostenterDao.view_count(hostenter_number);
+		
+		return view_count;
+	}
+	
+	
+	
 	
 	
 	public int update_space(String hostenter_title_img,

@@ -332,5 +332,23 @@ input[id="ch"]:checked{
     transform: scale(1.3);
 }
 
+#done_zzim{
+	 font-family: 'Noto Sans KR', sans-serif;
+	 weight: 300;
+	 font-size: 18px;
+}
+
+#done_done{
+	display: flex;
+	flex-direction:row;
+	justify-content:center;
+	margin-bottom:20px;
+}
+
+#love{
+	width:25px;
+	margin-bottom:3px;
+}
+
 
 

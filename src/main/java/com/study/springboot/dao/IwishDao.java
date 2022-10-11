@@ -11,6 +11,8 @@ public interface IwishDao {
 	
 	public int zzim_exist(String hostenter_number,String member_id);
 	
+	public int zzim_delete(int my_wish_hostenter_number);
+	
 
 
 }

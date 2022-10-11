@@ -37,4 +37,6 @@ public interface IhostenterDao {
 	
 	public List<hostenterDto> wish_list(String member_id);
 	
+	public int view_count(int hostenter_number);
+	
 }

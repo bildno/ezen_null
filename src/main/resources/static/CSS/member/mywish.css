@@ -24,7 +24,7 @@
 }
 .contents {
     font-family : 'Noto Sans KR' , sans-serif;
-    width: 60%;
+    width: 80%;
     margin: 40px 20% 40px 20%;
     padding: 65px;
     text-align: center;
@@ -37,7 +37,7 @@
    
 }
 .wish input {
-    width: 80%;
+    width: 70%;
     padding:2%;
     border:1px solid lightgrey;
     border-radius:5px;
@@ -90,3 +90,4 @@
     margin-left:10px;
 	
 }
+

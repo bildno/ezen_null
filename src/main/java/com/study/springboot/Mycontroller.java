@@ -24,6 +24,7 @@ import com.study.springboot.dao.ImemberDao;
 import com.study.springboot.dao.InoticeDao;
 import com.study.springboot.dao.IreplyDao;
 import com.study.springboot.dao.IreviewDao;
+import com.study.springboot.dao.IwishDao;
 import com.study.springboot.dto.adminDto;
 import com.study.springboot.dto.communityDto;
 import com.study.springboot.dto.contentsDto;
@@ -117,6 +118,9 @@ public class Mycontroller {
 	
 	@Autowired
 	private wishService wishService;
+	
+	@Autowired
+	private IwishDao iwishDao;
 
 	
 
@@ -763,7 +767,7 @@ public class Mycontroller {
 		List<communityDto> commulist = communityService.select_commu(member_id);
 		List<replyDto> replylist = replyService.select_reply(member_id);
 		
-		
+		System.out.println(myreply_pagelist);
 		
 		model.addAttribute("mycommu_pagelist",mycommu_pagelist);
 		model.addAttribute("myreview_pagelist",myreview_pagelist);
@@ -799,6 +803,25 @@ public class Mycontroller {
 		model.addAttribute("mainPage", "member/mywish.jsp");
 		return "index";
 	}
+	
+    // 찜 삭제	
+	@RequestMapping("/zzim_delete")
+	@ResponseBody
+	public String zzim_delete(@RequestParam("my_wish_hostenter_number") int my_wish_hostenter_number) {
+		
+		int result = iwishDao.zzim_delete(my_wish_hostenter_number);
+		
+		if(result !=1) {
+			return "<script> alert('찜 삭제가 불가능합니다 ŏ̥̥̥̥םŏ̥̥̥̥'); location.href='/mywish'</script>";
+		}
+		else {
+			return "<script> alert('찜이 정상적으로 삭제되었습니다 (˵ •̀ ᴗ - ˵ ) ✧'); location.href='/mywish'</script>";
+		}
+			
+		
+	}
+	
+	
 
 	/* 아이디찾기 */
 	@RequestMapping("/idfind")
@@ -1339,7 +1362,7 @@ public class Mycontroller {
 	public String community_infoAction(
 			@RequestParam("commu_info") String reply_content,
 			//form안에 있어서 community_number 가져올 수 있음
-			@RequestParam( "community_number") String community_number,
+			@RequestParam( "community_number") String communty_number,
 			replyDto dto, HttpServletRequest request, Model model) {
 
 		
@@ -1349,7 +1372,7 @@ public class Mycontroller {
 		
 
 		dto.setReply_member_id(member_id);
-		dto.setReply_community_number(community_number);
+		dto.setReply_communty_number(communty_number);
 		dto.setReply_content(reply_content);
 
 
@@ -1363,7 +1386,7 @@ public class Mycontroller {
 		 
 		 else {		
 
-			return "redirect:/community_info?community_number="+community_number;
+			return "redirect:/community_info?community_number="+communty_number;
 		 }
 		
 
@@ -1388,9 +1411,11 @@ public class Mycontroller {
 	public String space_info(@RequestParam("hostenter_number") int hostenter_number,
 			Model model) {
 		
+		int view_count = hostenterService.view_count(hostenter_number);
 		List<hostenterDto> space_info = hostenterService.space_info(hostenter_number);
 
 		model.addAttribute("space_info",space_info);
+		model.addAttribute("view_count",view_count);
 		model.addAttribute("mainPage", "contents/space_info.jsp");
 		
 		
@@ -1448,6 +1473,9 @@ public class Mycontroller {
 		}
 		
 	}
+	
+
+
 	
 	/* ----------------------------------------- */
 
