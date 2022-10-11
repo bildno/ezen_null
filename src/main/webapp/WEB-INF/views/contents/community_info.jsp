@@ -56,9 +56,9 @@
 			<div class="section22">
 		
 				<div class="con22" style="padding: 40px 40px 0 40px;">
-					<!-- 게시글 보기 -->
 					
-					<input name="community_number" type="hidden" value="${dtowo.community_number}">
+					<!-- 게시글 보기 -->
+					<input name="communty_number" type="hidden" value="${dtowo.community_number}">
 					<div name="comm_info" class="contents"  id="comm_info" 
 						style="resize: none; width: 100%; height: 300px">${dtowo.community_content}</div>
 						

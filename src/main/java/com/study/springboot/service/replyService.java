@@ -27,7 +27,7 @@ public class replyService {
 		replyDto dto = new replyDto();
 		dto.setReply_content(reply_content);
 		dto.setReply_member_id(reply_member_id);
-		dto.setReply_community_number(reply_community_number);
+		dto.setReply_communty_number(reply_community_number);
 		
 		try {
 			result = ireplyDao.replyInsert(dto);
