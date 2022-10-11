@@ -39,4 +39,6 @@ public interface IhostenterDao {
 	
 	public int view_count(int hostenter_number);
 	
+	public List<hostenterDto> search(String search);
+	
 }

@@ -16,7 +16,7 @@
 
 	<div id="spacelist" class="row">
 		<c:forEach var="dto" items="${search_result }">
-			<div style="cursor: pointer" onclick="location.href='/space_info?hostenter_number=${dto.hostenter_number }&hostenter_name=${dto.hostenter_name }'"
+			<div style="cursor: pointer" onclick="location.href='/space_info?hostenter_number=${dto.hostenter_number }&hostenter_name=${dto.hostenter_name}'"
 				class="col-4 spacebox">
 				<img class="spacelist_img" src="${dto.hostenter_title_img }" alt="">
 				<div>

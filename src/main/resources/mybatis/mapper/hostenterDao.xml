@@ -75,7 +75,9 @@
   		where MY_WISH_MEMBER_ID = #{param})
   	</select>
   	
-  	
+  	<select id="search" resultType="com.study.springboot.dto.hostenterDto">
+  		select * from hostenter where hostenter_name like '%' || #{param1} || '%' 
+  	</select>
   	
   	
     
