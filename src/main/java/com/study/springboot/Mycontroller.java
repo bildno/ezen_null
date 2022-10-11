@@ -118,8 +118,6 @@ public class Mycontroller {
 	
 	@Autowired
 	private ImemberDao imemberDao;
-<<<<<<< HEAD
-=======
 	
 	@Autowired
 	private wishService wishService;
@@ -127,7 +125,7 @@ public class Mycontroller {
 	@Autowired
 	private IwishDao iwishDao;
 
->>>>>>> DO
+
 	
 	/* ----------------------------------------- admin 폴더 */
 
@@ -796,11 +794,7 @@ public class Mycontroller {
 		List<communityDto> commulist = communityService.select_commu(member_id);
 		List<replyDto> replylist = replyService.select_reply(member_id);
 		
-<<<<<<< HEAD
-=======
-		System.out.println(myreply_pagelist);
-		
->>>>>>> DO
+
 		model.addAttribute("mycommu_pagelist",mycommu_pagelist);
 		model.addAttribute("myreview_pagelist",myreview_pagelist);
 		model.addAttribute("myreply_pagelist",myreply_pagelist);
@@ -1447,12 +1441,8 @@ public class Mycontroller {
 		 
 		else {		
 
-<<<<<<< HEAD
-		return "redirect:/community_info?community_number="+community_number;
-=======
 			return "redirect:/community_info?community_number="+communty_number;
-		 }
->>>>>>> DO
+
 		
 		}
 
