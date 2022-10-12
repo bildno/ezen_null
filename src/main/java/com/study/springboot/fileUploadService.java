@@ -36,8 +36,14 @@ public class fileUploadService {
 			SAVE_PATH = savepath;
 			PREFIX_URL = savepath;
 			
+			if(multipartFile.getOriginalFilename() == "") {
+				System.out.println("0 리턴");
+				return "0";
+			}
 			// 파일 정보
 			String originFilename = multipartFile.getOriginalFilename();
+		
+			
 			String extName
 				= originFilename.substring(originFilename.lastIndexOf("."), originFilename.length());
 			Long size = multipartFile.getSize();

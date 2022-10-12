@@ -15,7 +15,6 @@
 			id="space_icon">
 	</h2>
 	
-	
 	<div class="w_contents">
 		<div class="contents">
 		<c:forEach var="dto" items="${wish_list}">

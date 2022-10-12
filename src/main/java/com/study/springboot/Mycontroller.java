@@ -1229,7 +1229,19 @@ public class Mycontroller {
 		}
 //		------------------------------------------------------------------
 		
-	
+		@RequestMapping("searchAction")
+		public String searchAction(
+				@RequestParam("search") String search,
+				Model model) {
+			
+			List<hostenterDto> search_result = hostenterService.search(search);
+			
+			
+			model.addAttribute("search_result",search_result);
+			System.out.println("전달");
+			model.addAttribute("mainPage","search_result.jsp");
+			return "index";
+		}
 	
 	/* 공간대여 */
 	@RequestMapping("/spacelist_host")
@@ -1447,18 +1459,18 @@ public class Mycontroller {
 	/* 공간상세(일반회원) */
 	@RequestMapping("/space_info")
 	public String space_info(@RequestParam("hostenter_number") int hostenter_number,
+							 @RequestParam("hostenter_name") String hostenter_name,
 			Model model) {
 		
-		int view_count = hostenterService.view_count(hostenter_number);
+		System.out.println(hostenter_name);
 		List<hostenterDto> space_info = hostenterService.space_info(hostenter_number);
-
+		System.out.println(space_info);
+		List<hostenter_imgDto> img_list = hostenter_imgDaoService.img_sel(hostenter_name);
+		System.out.println("aaaa");
+		System.out.println(img_list);
+		model.addAttribute("img_list",img_list);
 		model.addAttribute("space_info",space_info);
-		model.addAttribute("view_count",view_count);
 		model.addAttribute("mainPage", "contents/space_info.jsp");
-		
-		
-	
-		
 		return "index";
 	}
 	
@@ -1655,13 +1667,15 @@ public class Mycontroller {
 			HttpServletRequest request,
 			Model model) {
 		
+	
+		
 		HttpSession session = request.getSession();
 		String member_id = (String) session.getAttribute("member_id");
 		
 		int result = 0;
 		int qq = 0;
 		
-		System.out.println(File_title);
+		
 		
 		 String upload_url_title = fileUploadService.restore(File_title);
 		 System.out.println(upload_url_title);
@@ -1684,6 +1698,10 @@ public class Mycontroller {
 		 System.out.println(hostenter_number);
 		System.out.println(hostenter_name);
 	
+		if(upload_url_title.equals("0")) {
+			upload_url_title = hostenterService.select_title(hostenter_number);
+		}
+		
 
 			try {
 				int oo = hostenter_imgDaoService.delete_img(hostenter_name);

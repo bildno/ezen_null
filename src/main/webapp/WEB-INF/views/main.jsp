@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%-- <%@ page trimDirectiveWhitespaces="true" %>  --%>
 
@@ -98,42 +98,46 @@
 	<div class="main">
 
 
-			<div class="section1" onclick="location.href='community?contents_number=1'" 
-				style="cursor: pointer;">
-				<div class="con1" name="contents_number" value="1">
-					<img class="con-img1" src="img/yoga.jpg" alt="contents1">
-					<h2 id="main_h2">Active Class</h2>
-				</div>
-			</div>
-
-			<div class="section2" onclick="location.href='community?contents_number=2'"
-				style="cursor: pointer;">
-				<div class="con2">
-					<img class="con-img1" src="img/cafe.jpg" alt="contents2">
-					<h2 id="main_h2">Shooting Class</h2>
-				</div>
-			</div>
-
-			<div class="section3" onclick="location.href='community?contents_number=3'"
-				style="cursor: pointer;">
-				<div class="con3">
-					<img class="con-img1" src="img/party.jpg" alt="contents3">
-					<h2 id="main_h2">Party Class</h2>
-				</div>
-			</div>
-
-			<div class="section4" onclick="location.href='community?contents_number=4'"
-				style="cursor: pointer;">
-				<div class="con4">
-					<img class="con-img1" src="img/갤러리.jpg" alt="contents4">
-					<h2 id="main_h2">Gallery Class</h2>
-				</div>
+		<div class="section1"
+			onclick="location.href='community?contents_number=1'"
+			style="cursor: pointer;">
+			<div class="con1" name="contents_number" value="1">
+				<img class="con-img1" src="img/yoga.jpg" alt="contents1">
+				<h2 id="main_h2">Active Class</h2>
 			</div>
 		</div>
-		
 
+		<div class="section2"
+			onclick="location.href='community?contents_number=2'"
+			style="cursor: pointer;">
+			<div class="con2">
+				<img class="con-img1" src="img/cafe.jpg" alt="contents2">
+				<h2 id="main_h2">Shooting Class</h2>
+			</div>
+		</div>
 
+		<div class="section3"
+			onclick="location.href='community?contents_number=3'"
+			style="cursor: pointer;">
+			<div class="con3">
+				<img class="con-img1" src="img/party.jpg" alt="contents3">
+				<h2 id="main_h2">Party Class</h2>
+			</div>
+		</div>
+
+		<div class="section4"
+			onclick="location.href='community?contents_number=4'"
+			style="cursor: pointer;">
+			<div class="con4">
+				<img class="con-img1" src="img/갤러리.jpg" alt="contents4">
+				<h2 id="main_h2">Gallery Class</h2>
+			</div>
+		</div>
 	</div>
+
+
+
+</div>
 </div>
 
 <div id="banner">
@@ -155,107 +159,110 @@
 
 					<div class="since1">
 						<h1>
-							<img src="/img/star.png" alt="star" style="width: 25px;">Active community
+							<img src="/img/star.png" alt="star" style="width: 25px;">Active
+							community
 						</h1>
-						<c:forEach var="best1" items="${community_seqs1}">
+
 						<div class="sintxt">
+
 							<table id="main_table" border=1 style="border-color: lightgray;">
-
-								<ul class="best-table" >
-									<tr style="list-style: none; cursor:pointer"
-										onMouseOver="this.style.backgroundColor='#eeeeee'"
-										onMouseOut="this.style.backgroundColor='#FFFFFF'" 
-										onclick="location.href='community_info?community_number=${best1.community_number}'"
-										>
-										<td>
-											<li>${best1.community_title}</li>
-										</td>
-										<td>${best1.community_hit}</td>
-									</tr>
-								</ul>
-
+								<c:forEach var="best1" items="${community_seqs1}">
+									<ul class="best-table">
+										<tr style="list-style: none; cursor: pointer"
+											onMouseOver="this.style.backgroundColor='#eeeeee'"
+											onMouseOut="this.style.backgroundColor='#FFFFFF'"
+											onclick="location.href='community_info?community_number=${best1.community_number}'">
+											<td>
+												<li>${best1.community_title}</li>
+											</td>
+											<td>${best1.community_hit}</td>
+										</tr>
+									</ul>
+								</c:forEach>
 							</table>
+
 						</div>
-						</c:forEach>
+
 					</div>
 					<hr>
 
 					<div class="since1">
 						<h1>
-							<img src="/img/star.png" alt="star" style="width: 25px;">Shooting community
+							<img src="/img/star.png" alt="star" style="width: 25px;">Shooting
+							community
 						</h1>
-						<c:forEach var="best2" items="${community_seqs2}">
+
 						<div class="sintxt">
 							<table id="main_table" border=1 style="border-color: lightgray;">
-								<ul>
-									<tr style="list-style: none; cursor:pointer" 
-										onMouseOver="this.style.backgroundColor='#eeeeee'"
-										onMouseOut="this.style.backgroundColor='#FFFFFF'"
-										onclick="location.href='community_info?community_number=${best2.community_number}'"				
-										>
-										<td>
-											<li>${best2.community_title}</li>
-										</td>
-										<td>${best2.community_hit}</td>
-									</tr>
-								</ul>
-
+								<c:forEach var="best2" items="${community_seqs2}">
+									<ul>
+										<tr style="list-style: none; cursor: pointer"
+											onMouseOver="this.style.backgroundColor='#eeeeee'"
+											onMouseOut="this.style.backgroundColor='#FFFFFF'"
+											onclick="location.href='community_info?community_number=${best2.community_number}'">
+											<td>
+												<li>${best2.community_title}</li>
+											</td>
+											<td>${best2.community_hit}</td>
+										</tr>
+									</ul>
+								</c:forEach>
 							</table>
 						</div>
-						</c:forEach>
+
 					</div>
 					<hr>
 
 					<div class="since1">
 						<h1>
-							<img src="/img/star.png" alt="star" style="width: 25px;">Party community
+							<img src="/img/star.png" alt="star" style="width: 25px;">Party
+							community
 						</h1>
-						<c:forEach var="best3" items="${community_seqs3}">
+
 						<div class="sintxt">
 							<table id="main_table" border=1 style="border-color: lightgray;">
-
-								<ul>
-									<tr style="list-style: none; cursor:pointer" 
-										onMouseOver="this.style.backgroundColor='#eeeeee'"
-										onMouseOut="this.style.backgroundColor='#FFFFFF'"
-										onclick="location.href='community_info?community_number=${best3.community_number}'"
-										>
-										<td>
-											<li>${best3.community_title}</li>
-										</td>
-										<td>${best3.community_hit}</td>
-									</tr>
-								</ul>
+								<c:forEach var="best3" items="${community_seqs3}">
+									<ul>
+										<tr style="list-style: none; cursor: pointer"
+											onMouseOver="this.style.backgroundColor='#eeeeee'"
+											onMouseOut="this.style.backgroundColor='#FFFFFF'"
+											onclick="location.href='community_info?community_number=${best3.community_number}'">
+											<td>
+												<li>${best3.community_title}</li>
+											</td>
+											<td>${best3.community_hit}</td>
+										</tr>
+									</ul>
+								</c:forEach>
 							</table>
 						</div>
-						</c:forEach>
+
 					</div>
 					<hr>
 
 					<div class="since1">
 						<h1>
-							<img src="/img/star.png" alt="star" style="width: 25px;">Gallery community
+							<img src="/img/star.png" alt="star" style="width: 25px;">Gallery
+							community
 						</h1>
-						<c:forEach var="best4" items="${community_seqs4}">
-						<div class="sintxt">
-							<table id="main_table" border=1 style="border-color: lightgray;">
-								<ul>
-									<tr style="list-style: none; cursor:pointer" 
-										onMouseOver="this.style.backgroundColor='#eeeeee'"
-										onMouseOut="this.style.backgroundColor='#FFFFFF'"
-										onclick="location.href='community_info?community_number=${best4.community_number}'"
-										>
-										<td>
-											<li>${best4.community_title}</li>
-										</td>
-										<td>${best4.community_hit}</td>
-									</tr>
-								</ul>
-							</table>
-						</div>
-						</c:forEach>
+							<div class="sintxt">
+								<table id="main_table" border=1 style="border-color: lightgray;">
+									<c:forEach var="best4" items="${community_seqs4}">
+									<ul>
+										<tr style="list-style: none; cursor: pointer"
+											onMouseOver="this.style.backgroundColor='#eeeeee'"
+											onMouseOut="this.style.backgroundColor='#FFFFFF'"
+											onclick="location.href='community_info?community_number=${best4.community_number}'">
+											<td>
+												<li>${best4.community_title}</li>
+											</td>
+											<td>${best4.community_hit}</td>
+										</tr>
+									</ul>
+									</c:forEach>
+								</table>
+							</div>
 						<hr>
-						<!-- <img src="/img/topmove.png" alt="" class="movetopbtn" /> -->
 					</div>
 
 				</div>
