@@ -1462,14 +1462,14 @@ public class Mycontroller {
 							 @RequestParam("hostenter_name") String hostenter_name,
 			Model model) {
 		
-		System.out.println(hostenter_name);
+
 		List<hostenterDto> space_info = hostenterService.space_info(hostenter_number);
-		System.out.println(space_info);
 		List<hostenter_imgDto> img_list = hostenter_imgDaoService.img_sel(hostenter_name);
-		System.out.println("aaaa");
-		System.out.println(img_list);
+		int view_count = hostenterService.view_count(hostenter_number);
+		
 		model.addAttribute("img_list",img_list);
 		model.addAttribute("space_info",space_info);
+		model.addAttribute("view_count",view_count);
 		model.addAttribute("mainPage", "contents/space_info.jsp");
 		return "index";
 	}
