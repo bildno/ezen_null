@@ -1479,6 +1479,7 @@ public class Mycontroller {
 	@RequestMapping("/zzim_doAction")
 	@ResponseBody
 	public String zzim_doAction( @RequestParam("hostenter_number") String hostenter_number,
+								 @RequestParam("hostenter_name")String hostenter_name,	
 			                     HttpServletRequest request, Model model) throws Exception {
 	
 
@@ -1508,7 +1509,7 @@ public class Mycontroller {
 				
 				hostenterService.zzim_count(hostenter_number);
 				
-				return "<script> alert('찜이 정상적으로 되었습니다 (˵ •̀ ᴗ - ˵ ) ✧'); location.href='/main' </script>";
+				return "<script> alert('찜이 정상적으로 되었습니다 (˵ •̀ ᴗ - ˵ ) ✧'); location.href='/space_info?hostenter_number="+hostenter_number+"&hostenter_name="+hostenter_name+"'</script>";
                 //return "redirect:/space_info?hostenter_number="+hostenter_number;
 			
 			} else {
