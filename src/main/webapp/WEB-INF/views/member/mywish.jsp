@@ -15,9 +15,12 @@
 			id="space_icon">
 	</h2>
 	
+<<<<<<< HEAD
 	<!-- '삭제'는 타입을 submit으로 해서 form action대로 실행됨 -->
 	<!-- 세부사항은 타입을 그냥 button으로 만들어서 onclick에 걸어준 주소로 이동됨 -->
 
+=======
+>>>>>>> gyu
 	<div class="w_contents">
 		<div class="contents">
 		<c:forEach var="dto" items="${wish_list}">

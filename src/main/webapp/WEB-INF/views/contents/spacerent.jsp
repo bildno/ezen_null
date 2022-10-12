@@ -18,7 +18,7 @@
 		<c:forEach var="dto" items="${space_list }">
 			<div style="cursor: pointer" onclick="location.href='/space_info?hostenter_number=${dto.hostenter_number }&hostenter_name=${dto.hostenter_name }'"
 				class="col-4 spacebox">
-				<img class="spacelist_img" src="${dto.hostenter_title_img }" alt="">
+				<img class="spacelist_img" src="${dto.hostenter_title_img }" alt="" style="width: 250px; height: 190px"> 
 				<div>
 					<textarea id="space_exp" rows="" cols="" readonly="readonly">${dto.hostenter_name}</textarea>
 				</div>
