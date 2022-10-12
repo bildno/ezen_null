@@ -21,11 +21,7 @@
 	<insert id="one2one_write" parameterType="com.study.springboot.dto.one2oneDto">
 		insert into one2one values(one2one_idx.nextval,#{one2one_title},#{one2one_content},sysdate,#{one2one_member_id})
 	</insert>
-	
-<!-- 	<select id="ad_one2one_write"
-		resultType="com.study.springboot.dto.one2oneDto">
-		select * from one2one where one2one_number = #{ param1 }
-	</select> -->
+
 	<!-- 검색 param1(select): search_type  //   param2(input): search_contents-->
     <select id="one2one_search" resultType="com.study.springboot.dto.one2oneDto">
 		select * from one2one where ${ param1 } like '%'||#{ param2 }||'%'
