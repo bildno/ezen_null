@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.study.springboot.dao.Imypage_imgDao">
+	
+	<insert id="up_file_title">
+		insert into mypage_img values(mypage_img_idx.nextval,#{mypage_img_member_id},#{mypage_img})
+	</insert>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</mapper>    

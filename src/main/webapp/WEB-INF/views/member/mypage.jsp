@@ -22,7 +22,13 @@
 					<img class="mypage_con-img1" src="img/host/cat.png" alt="contents1">
 					<p>
 					<div name="imgchange" style="font-size: 10px;">
-						<a id="mypage_a" href="#">사진변경</a>
+						
+						<!-- 사진 불러오기 -->
+						<form action="uploadFileok" method="post">
+							<input type="file" name="fileok" accept="image/*" />
+							<button type="submit">저장</button>
+						</form>
+
 					</div>
 					<p>
 					<div name="membername">${ dto.member_name }</div>

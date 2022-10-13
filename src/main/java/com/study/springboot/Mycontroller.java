@@ -48,6 +48,7 @@ import com.study.springboot.service.faqService;
 import com.study.springboot.service.hostenterService;
 import com.study.springboot.service.hostenter_imgDaoService;
 import com.study.springboot.service.memberService;
+import com.study.springboot.service.mypage_imgService;
 import com.study.springboot.service.noticeService;
 import com.study.springboot.service.one2oneService;
 import com.study.springboot.service.one2one_answerService;
@@ -913,6 +914,37 @@ public class Mycontroller {
 		model.addAttribute("mainPage", "member/mycheck.jsp");
 		return "index";
 	}
+	
+//	사진 불러오기
+	@Autowired
+	fileUploadService fileUploadservice;
+	
+	@Autowired
+	private mypage_imgService mypage_imgService;
+	
+	@RequestMapping(value="/uploadFileok",method=RequestMethod.POST)
+	public String uploadFileok(
+			
+	@RequestParam(value="fileok",required=false)MultipartFile file_title,
+	HttpServletRequest request, Model model) {
+		
+		HttpSession session = request.getSession();
+		String member_id = (String)session.getAttribute("member_id");	
+		String up_file_title2 = fileUploadservice.restore(file_title);
+		
+		int result = mypage_imgService.up_file_title(member_id,up_file_title2);
+		
+		model.addAttribute("mainPage","main.jsp");
+		
+		return "index";
+	}
+			
+			
+			
+	
+	
+	
+	
 
 	/* 이름변경 */
 	@RequestMapping("/namechangeAction")
