@@ -17,14 +17,7 @@
 			id="space_icon">
 	</h2>
 	<div class=contents>
-		<c:set var="list" value="${one2one_list }" />
-		<c:set var="flist" value="${fn:length(list) }" />
-		<c:if test="${flist == 0 }">
-			<div id="one_list_div">
-				<h3 class="sub_title"> 등록된 1 : 1 문의가 없습니다. </h3>
-			</div>
-		</c:if>
-		<c:if test="${flist != 0 }">
+	
 				<h3 class="sub_title">답변 문의</h3>
 		<c:forEach var="dto" items="${one2oneDtoAndAnswer_list}">
 				<button class="accordion" id="o_num${dto.one2oneDto.one2one_number }  "
@@ -67,7 +60,7 @@
 						</p>
 					</div>
 		</c:forEach>
-		</c:if>
+	
 	</div>
 	
 	<br>
