@@ -59,8 +59,15 @@
 					
 					<!-- 게시글 보기 -->
 					<input name="communty_number" type="hidden" value="${dtowo.community_number}">
+					<div name ="com_info" id="com_info">
+
+					<span>🌏ID : </span>
+						${dtowo.community_member_id}
+					</div>
 					<div name="comm_info" class="contents"  id="comm_info" 
-						style="resize: none; width: 100%; height: 300px">${dtowo.community_content}</div>
+						style="resize: none; width: 100%; height: 300px">
+						${dtowo.community_content}
+					</div>		
 						
 					<hr>
 					
@@ -68,6 +75,15 @@
 					<!-- 댓글보기 -->
 					<div>
 					<c:forEach var="dtowe" items="${replyView}">
+						<div id="repl">
+							<span>
+							 ⦁ 
+							</span>
+							${dtowe.reply_member_id}
+							<span>
+								님
+							</span>
+						</div>
 						<div id="reple">
 							${dtowe.reply_content}
 						</div>
