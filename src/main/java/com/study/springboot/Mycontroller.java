@@ -1,10 +1,8 @@
 package com.study.springboot;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -19,9 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
-import org.springframework.web.servlet.ModelAndView;
 
-import com.study.springboot.Vo.Room;
 import com.study.springboot.dao.IadminDao;
 import com.study.springboot.dao.IcommunityDao;
 import com.study.springboot.dao.IfaqDao;
@@ -58,6 +54,8 @@ import com.study.springboot.service.one2one_answerService;
 import com.study.springboot.service.replyService;
 import com.study.springboot.service.reviewService;
 import com.study.springboot.service.wishService;
+
+
 @Controller
 public class Mycontroller {
 
@@ -1310,22 +1308,6 @@ public class Mycontroller {
 		model.addAttribute("mainPage", "host/space_info_host.jsp");
 		return "index";
 	}
-	
-	@RequestMapping("/delete_space")
-	public String delete_space(@RequestParam("hostenter_number") int hostenter_number,
-							   @RequestParam("hostenter_img_name") String hostenter_img_name,
-			Model model
-			){
-		
-		int result = hostenter_imgDaoService.delete_img(hostenter_img_name);
-		
-		int result2 = hostenterService.delete_space(hostenter_number);
-		
-	
-		return "redirect:/mypage_host";
-		
-	}
-	
 
 	/* 예약내역관리 */
 	@RequestMapping("/reserve_host")
@@ -1352,19 +1334,12 @@ public class Mycontroller {
 			page_commu = "1";
 		}
 		
-		
 		request.getSession().setAttribute("community_number", community_number);
 		request.getSession().setAttribute("contents_number", contents_number);
 		
-	
-		
-		
+
 		List<contentsDto> contentsload = contentsService.contentsload(contents_number);
-		List<noticeDto> notice_list = noticeService.contents_notice(contents_number);
-		System.out.println(notice_list);
-		
-	
-		model.addAttribute("notice_list",notice_list);
+
 		model.addAttribute("contentsload", contentsload); //제목부분
 		model.addAttribute("page_commu",page_commu); // 페이지부분
 
@@ -1448,24 +1423,25 @@ public class Mycontroller {
 	
 	/* 게시글 내용,댓글 보기 */
 	@RequestMapping("/community_info")
-	public String community_info(@RequestParam("community_number")String community_number,
-								 @RequestParam("contents_number") String contents_number,
-			HttpServletRequest request, Model model) throws Exception {
+	public String community_info(@RequestParam("community_number")String community_number
+			,HttpServletRequest request, Model model) throws Exception {
 
 		HttpSession session = request.getSession();
 		String member_id = (String) session.getAttribute("member_id");
 		
-		System.out.println(contents_number+"콘텐츠넘버");
-		List<hostenterDto> space_top_hit = hostenterService.space_top_hit(contents_number);
+		
 		List<replyDto> replyViewlist = replyService.replyView(community_number);
 		
 		List<communityDto> community_contents = communityService.community_content(community_number);
 
 		
-		model.addAttribute("space_top_hit",space_top_hit);
+		
 		model.addAttribute("replyView", replyViewlist);
+		model.addAttribute("mainPage", "contents/community_info.jsp");
+		
 		model.addAttribute("community_contents", community_contents);
 		model.addAttribute("mainPage", "contents/community_info.jsp");
+		
 		
 		//조회수 올리기 실행
 		 communityService.community_hit(community_number);
@@ -1731,7 +1707,7 @@ public class Mycontroller {
 			HttpServletRequest request,
 			Model model) {
 		
-	System.out.println(File_title);
+	
 		
 		HttpSession session = request.getSession();
 		String member_id = (String) session.getAttribute("member_id");
@@ -1830,91 +1806,11 @@ public class Mycontroller {
 
 		model.addAttribute("mainPage","host/host.jsp");
 		return "redirect:/mypage_host";
+		
+
+		
 		 
 	}
-	
-	/* 채팅부분 */
-/*---------------------------------------------------------------------------------------------------------------*/
-	List<Room> roomList = new ArrayList<Room>();
-	static int roomNumber = 0;
-	
-	@RequestMapping("/chat")
-	public String chat(Model model) {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("chat");
-		
-		return "index";
-	}
-	
-	/**
-	 * 방 페이지
-	 * @return
-	 */
-	@RequestMapping("/room")
-	public ModelAndView room() {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("room");
-		return mv;
-	}
-	
-	/**
-	 * 방 생성하기
-	 * @param params
-	 * @return
-	 */
-	@RequestMapping("/createRoom")
-	public @ResponseBody List<Room> createRoom(@RequestParam HashMap<Object, Object> params){
-		String roomName = (String) params.get("roomName");
-		if(roomName != null && !roomName.trim().equals("")) {
-			Room room = new Room();
-			room.setRoomNumber(++roomNumber);
-			room.setRoomName(roomName);
-			roomList.add(room);
-		}
-		return roomList;
-	}
-	
-	/**
-	 * 방 정보가져오기
-	 * @param params
-	 * @return
-	 */
-	@RequestMapping("/getRoom")
-	public @ResponseBody List<Room> getRoom(@RequestParam HashMap<Object, Object> params){
-		return roomList;
-	}
-	
-	/**
-	 * 채팅방
-	 * @return
-	 */
-	@RequestMapping("/moveChating")
-	public ModelAndView chating(@RequestParam HashMap<Object, Object> params,
-			HttpServletRequest request,
-			Model model
-			) {
-		
-		HttpSession session = request.getSession();
-		String member_id = (String) session.getAttribute("member_id");
-		
-		List<memberDto> memberlist = memberService.mypageload(member_id);
-		
-		model.addAttribute("memberlist",memberlist);
-		ModelAndView mv = new ModelAndView();
-		int roomNumber = Integer.parseInt((String) params.get("roomNumber"));
-		
-		List<Room> new_list = roomList.stream().filter(o->o.getRoomNumber()==roomNumber).collect(Collectors.toList());
-		if(new_list != null && new_list.size() > 0) {
-			mv.addObject("roomName", params.get("roomName"));
-			mv.addObject("roomNumber", params.get("roomNumber"));
-			mv.setViewName("chat");
-		}else {
-			mv.setViewName("room");
-		}
-		return mv;
-	}
-	
-	
 }
 	
 

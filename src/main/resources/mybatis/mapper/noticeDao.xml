@@ -47,9 +47,4 @@
     <select id="ad_noticesearch" resultType="com.study.springboot.dto.noticeDto">
 		select * from notice where ${ param1 } like '%'||#{ param2 }||'%'
 	</select>
-	
-	<select id="contents_notice" resultType="com.study.springboot.dto.noticeDto">
-		select * from notice where notice_contents_number = #{param1}
-	</select>
-	
 </mapper>

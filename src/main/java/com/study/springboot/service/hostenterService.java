@@ -153,18 +153,4 @@ public class hostenterService {
 		return result;
 	}
 	
-	public List<hostenterDto> space_top_hit(String hostenter_contents_number){
-		
-		List<hostenterDto> space_top_hit = ihostenterDao.space_top_hit(hostenter_contents_number);
-		
-		return space_top_hit;
-	}
-	
-	public int delete_space(int hostenter_number) {
-		
-		int result = ihostenterDao.delete_space(hostenter_number);	
-		
-		return result;
-	}
-	
 }

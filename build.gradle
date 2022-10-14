@@ -19,27 +19,23 @@ repositories {
 //Gradle파일을 수정하면, 반드시! 저장후 Refresh Gradle Project로 반영해야 됨.
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.springframework.boot:spring-boot-starter-web-services'
-  implementation 'org.springframework.boot:spring-boot-starter-websocket'
-	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.2'
-	implementation 'org.springframework.boot:spring-boot-starter-quartz'
-	implementation 'javax.servlet:jstl'
-	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
-	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.1'
+	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	
 	runtimeOnly 'com.oracle.database.jdbc:ojdbc8'
-
-implementation group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
-	   // gson : Google에서 제공하는 json 포맷 관련 라이브러리
-    
-    
-    
-    	implementation 'commons-io:commons-io:2.6'
+	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper' 
+	implementation 'javax.servlet:jstl'
+	
+	
+	//! 파일 업로드 관련된 라이브러리 
+	implementation 'commons-io:commons-io:2.6'
 	implementation 'commons-fileupload:commons-fileupload:1.4'
-    
+	
+	   // gson : Google에서 제공하는 json 포맷 관련 라이브러리
     implementation 'com.google.code.gson:gson:2.8.2'
 	
 		//jar파일 직접 링크할 때 추가하는 의존성. add build path하지 않아도 됨.
