@@ -707,7 +707,20 @@ public class Mycontroller {
 		model.addAttribute("mainPage", "member/mypage.jsp");
 		return "index";
 	}
-
+	@RequestMapping("/resign")
+	public String resign(HttpServletRequest request) {
+		
+		HttpSession session = request.getSession();
+		String member_id = (String) session.getAttribute("member_id");
+		
+		System.out.println(member_id);
+		int result = memberService.resign( member_id );
+		if( result != 1) {
+			return "/mypage";
+		}else {
+			return "redirect:/mypage";   
+		}
+	}
 	/* 예약내역 */
 	@RequestMapping("/reserveList")
 	public String reserveList(Model model) {
@@ -797,7 +810,20 @@ public class Mycontroller {
 		model.addAttribute("mainPage", "member/myreview.jsp");
 		return "index";
 	}
-	
+	@RequestMapping("/deletereply")
+	public String deletereply(@RequestParam("reply_number") int reply_number) {
+		int result = ireplyDao.deletereply( reply_number );
+		
+		System.out.println("reply_number=" + reply_number);
+		System.out.println("result=" + result);
+		System.out.println("zz");
+		
+		if( result != 1) {
+			return "redirect:/mylist";
+		} else {
+			return "redirect:/mylist";
+		}
+	}
 
 	/* 내찜내역 */
 	@RequestMapping("/mywish")
@@ -1040,8 +1066,6 @@ public class Mycontroller {
 			return "redirect:/one2one";   
 		}
 	}
-	
-
 	/* 1:1작성 */
 	@RequestMapping("/one2one_write")
 	public String one2one_write(Model model) {
@@ -1362,7 +1386,23 @@ public class Mycontroller {
 		return "index";
 		
 	}
-	
+	@RequestMapping("/deletecommu")
+	public String deletecommu(@RequestParam("community_number") int community_number) {
+		System.out.println(community_number);
+		int result1 = ireplyDao.deletereplyA( community_number );
+		int result2 = icommunityDao.deletecommu( community_number );
+		
+		
+		
+		System.out.println(result1);
+		System.out.println(result2);
+		
+		if( result1 != 1 && result2 != 1) {
+			return "redirect:/mylist";
+		}else {
+			return "redirect:/mylist";   
+		}
+	}
 	
 	/* 게시글 글쓰기 */
 	@RequestMapping("/community_write")

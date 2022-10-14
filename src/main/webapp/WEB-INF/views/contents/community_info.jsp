@@ -54,7 +54,7 @@
 						<div id="reple">
 							${dtowe.reply_content}
 						</div>
-					</c:forEach>	
+					</c:forEach>
 					</div>
 					
 					<!-- 댓글 달기 -->
@@ -77,7 +77,6 @@
 							
 					</div>				
 				</div>
-				
 			</div>
 		</form>
 		

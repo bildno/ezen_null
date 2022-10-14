@@ -1,53 +1,105 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
-    
+
 <link rel="stylesheet" href="css/member/mycheck.css">
 
-<!-- calendar를 위한 라이브러리들 지우면 안됨 -->
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src='https://fullcalendar.io/releases/fullcalendar/3.9.0/lib/moment.min.js'></script>
-<link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css'rel='stylesheet'/>
-<link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.print.css' rel='stylesheet' media='print'/>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js'></script>
+<meta charset='utf-8' />
+<!-- 화면 해상도에 따라 글자 크기 대응(모바일 대응) -->
+<meta name="viewport"
+	content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<!-- jquery CDN -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- fullcalendar CDN -->
+<link
+	href='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.css'
+	rel='stylesheet' />
+<script
+	src='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.js'></script>
+<!-- fullcalendar 언어 CDN -->
+<script
+	src='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/locales-all.min.js'></script>
 
 
+<!-- calendar 태그 -->
+<div id='calendar-wrap'>
+	<div id='calendar1'></div>
+</div>
 
-<script type="text/javascript">
-$(document).ready(function(){
-	  $('#calendar').fullCalendar({
-	    header: {
-	      right: 'custom2 prevYear,prev,next,nextYear'
-	    },
-        // 출석체크를 위한 버튼 생성
-	    customButtons: { 
-	        custom2: {
-	          text: '출석체크하기',
-	          id: 'check',
-	          click: function() {
-	        	  
-                    // ajax 통신으로 출석 정보 저장하기 
-                    // POST "/users/attendances" -> { status: "success", date:"2018-07-01"}
-                    // 통신 성공시 버튼 바꾸고, property disabled 만들기 
-                    
-	          }
-	        }
-	    },
-       // 달력 정보 가져오기 
-	    eventSources: [
-	    	{
-				// ajax 통신으로 달력 정보 가져오기 
-                // GET "/users/attendances" -> {dateList:[ date: "2016-03-21", ... ]}
-				color: 'purple',   
-			 	textColor: 'white' 
-	    	}
-	    ]
-	  }); 
-});
+<script>
+	(function() {
+		$(function() {
+			// calendar element 취득
+			var calendarEl = $('#calendar1')[0];
+			// full-calendar 생성하기
+			var calendar = new FullCalendar.Calendar(calendarEl, {
+				// 해더에 표시할 툴바
+				headerToolbar : {
+					//left: 'prev,next today',
+					//center: 'title',
+					right : 'custom1'
+				/* dayGridMonth,timeGridWeek,timeGridDay,listWeek 월, 주, 일, 일정목록 추가삭제가능 */
+				},
+				//initialDate: '2022-10-15', // 초기 날짜 설정 (설정하지 않으면 오늘 날짜가 보인다.)
+				locale : 'ko', // 한국어 설정
+				//editable: true, // 수정 가능
+				//droppable: true,  // 드래그 가능
+				// drop: function(arg) { // 드래그 엔 드롭 성공시
+				//   // 드래그 박스에서 아이템을 삭제한다.
+				//   arg.draggedEl.parentNode.removeChild(arg.draggedEl);
+				// },
+				customButtons : {
+					custom1 : {
+						text : '출석확인',
+						click : function() {
+							//alert('출석확인 클릭');
+							idCheckDay();
+						}
+					}
+				}
+				
+
+			/* events : [
+			  {
+			    title: '출석',
+			    start: '2022-10-01'
+			  }
+			  {
+			    title: '출석',
+			    start: '2022-10-03'
+			  }
+			] */
+			});
+			// 캘린더 랜더링
+			calendar.render();
+		});
+	})();
+
+	function idCheckDay() {
+		alert("출석확인!");
+
+		var calendarEl = document.getElementById('calendar1');
+		var request = $.ajax({
+			url : "/mycheck/event",
+			method : "GET",
+		});
+		request.done(function(data) {
+			var calendar = new FullCalendar.Calendar(calendarEl, {
+				initialView : 'dayGridMonth',
+				events : data,
+				locale : 'ko',
+			//headerToolbar: {
+			//left: 'prev,next today',
+			//center: 'title',
+			//right: 'prev,next'
+			/* dayGridMonth,timeGridWeek,timeGridDay,listWeek 월, 주, 일, 일정목록 추가삭제가능 */
+			//}
+			});
+			calendar.render();
+		});
+	}
 </script>
 
 
-    <div class="container calendar-container" class=chk_calendar style="margin-top:160px; margin-bottom:100px;" >
-        <div id="calendar" style="max-width:900px; margin:40px auto;"></div>
-    </div>

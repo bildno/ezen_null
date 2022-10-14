@@ -118,5 +118,14 @@
 		)
 		WHERE RNUM BETWEEN #{param1} AND #{param2}
 	</select>
+	<delete id="resign">
+		delete from member where member_id = #{param1} 
+	</delete>
+
+	
+<!-- 	<select id="mycheckAction">
+	
+	</select> -->
+
 
 </mapper>
