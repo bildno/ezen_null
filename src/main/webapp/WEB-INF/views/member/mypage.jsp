@@ -8,6 +8,22 @@
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 
+<<script type="text/javascript">
+function readURL(input) {
+	  if (input.files && input.files[0]) {
+	    var reader = new FileReader();
+	    reader.onload = function(e) {
+	      document.getElementById('img_pre').src = e.target.result;
+	    };
+	    reader.readAsDataURL(input.files[0]);
+	  } else {
+	    document.getElementById('img_pre').src = "";
+	  }
+	}
+
+
+</script>
+
 
 <c:forEach var="dto" items="${ memberlist }">
 	<div class="container">
@@ -19,14 +35,20 @@
 		<div class="mypage_section" style="margin-top: 50px;">
 			<div class="mypage_section1">
 				<div class="mypage_con1">
-					<img class="mypage_con-img1" src="img/host/cat.png" alt="contents1">
+				<c:forEach var="filedto" items="${sel_myimg}">
+					<img class="mypage_con-img1" src="${filedto.mypage_img}" alt="contents1" id="img_pre">
+				</c:forEach>					
 					<p>
 					<div name="imgchange" style="font-size: 10px;">
 						
 						<!-- 사진 불러오기 -->
-						<form action="uploadFileok" method="post">
-							<input type="file" name="fileok" accept="image/*" />
-							<button type="submit">저장</button>
+						<form action="uploadFileok" method="post"
+							enctype="multipart/form-data">
+								<div class="fileimg">
+								<label for="fileok">파일선택</label>	
+								  <input type="file" name="fileok" accept="image/*"  id="fileok" onchange="readURL(this)"/>
+								  <button type="submit" id=filesave>저장</button>
+							    </div>
 						</form>
 
 					</div>

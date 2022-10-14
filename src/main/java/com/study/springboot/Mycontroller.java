@@ -35,6 +35,7 @@ import com.study.springboot.dto.faqDto;
 import com.study.springboot.dto.hostenterDto;
 import com.study.springboot.dto.hostenter_imgDto;
 import com.study.springboot.dto.memberDto;
+import com.study.springboot.dto.mypage_imgDto;
 import com.study.springboot.dto.noticeDto;
 import com.study.springboot.dto.one2oneDto;
 import com.study.springboot.dto.one2oneDtoAndAnswer;
@@ -700,7 +701,9 @@ public class Mycontroller {
 		String member_id = (String) session.getAttribute("member_id");
 
 		List<memberDto> memberlist = memberService.mypageload(member_id);
-
+		List<mypage_imgDto> sel_myimg = mypage_imgService.view_file_title(member_id);
+		
+		model.addAttribute("sel_myimg",sel_myimg);
 		model.addAttribute("memberlist", memberlist);
 
 		model.addAttribute("mainPage", "member/mypage.jsp");
@@ -928,13 +931,28 @@ public class Mycontroller {
 	@RequestParam(value="fileok",required=false)MultipartFile file_title,
 	HttpServletRequest request, Model model) {
 		
+		
 		HttpSession session = request.getSession();
 		String member_id = (String)session.getAttribute("member_id");	
-		String up_file_title2 = fileUploadservice.restore(file_title);
+		String up_file_title2 = fileUploadservice.restore(file_title);	
 		
-		int result = mypage_imgService.up_file_title(member_id,up_file_title2);
+		int result = mypage_imgService.up_file_title(member_id,up_file_title2);	
 		
-		model.addAttribute("mainPage","main.jsp");
+		if(result != 0) {
+		
+		int delete = mypage_imgService.delete_file(member_id);	
+		result = mypage_imgService.up_file_title(member_id,up_file_title2);
+		
+		}
+		
+
+		List<mypage_imgDto> sel_myimg = mypage_imgService.view_file_title(member_id);
+		List<memberDto> memberlist = memberService.mypageload(member_id);
+
+		
+		model.addAttribute("memberlist", memberlist);
+		model.addAttribute("sel_myimg",sel_myimg);
+		model.addAttribute("mainPage","member/mypage.jsp");
 		
 		return "index";
 	}
