@@ -13,39 +13,22 @@
 	</h2>
 	<hr>
 	
+	
 	<div class="main">
 		<div class="asidecomm">
 			<div class="section11">
-				<div class="con11">
-					<a href="#"> <img class="con-img1" src="img/host/cat.png"
+				<c:forEach var="space_dto" items="${space_top_hit }">
+				<div class="con11" onclick="location.href='/space_info?hostenter_number=${space_dto.hostenter_number}&hostenter_name=${hostenter_name }'">
+					<a href="#"> <img class="con-img1" src="${space_dto.hostenter_title_img }"
 						alt="contents1" id="cominfo">
 						<div name="membername" id="membername">
                         	<h3 id="comh3">
-                            강남 파티룸
+                           ${space_dto.hostenter_name }
                             </h3>
 						</div>
 					</a>
 				</div>
-				<div class="con11">
-					<a href="#"> <img class="con-img1" src="img/host/cat.png"
-						alt="contents1" id="cominfo">
-						<div name="membername" id="membername">
-                        	<h3 id="comh3">
-                            홍대 루프탑
-                            </h3>
-						</div>
-					</a>
-				</div>
-				<div class="con11">
-					<a href="#"> <img class="con-img1" src="img/host/cat.png"
-						alt="contents1" id="cominfo">
-						<div name="membername" id="membername">
-                        	<h3 id="comh3">
-                            건대라운지
-                            </h3>
-						</div>
-					</a>
-				</div>
+				</c:forEach>
 			</div>
 		</div>
 
@@ -71,7 +54,7 @@
 						<div id="reple">
 							${dtowe.reply_content}
 						</div>
-					</c:forEach>
+					</c:forEach>	
 					</div>
 					
 					<!-- 댓글 달기 -->
@@ -94,6 +77,7 @@
 							
 					</div>				
 				</div>
+				
 			</div>
 		</form>
 		

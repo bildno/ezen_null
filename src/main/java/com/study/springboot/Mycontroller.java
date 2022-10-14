@@ -1308,6 +1308,21 @@ public class Mycontroller {
 		model.addAttribute("mainPage", "host/space_info_host.jsp");
 		return "index";
 	}
+	@RequestMapping("/delete_space")
+	public String delete_space(@RequestParam("hostenter_number") int hostenter_number,
+							   @RequestParam("hostenter_img_name") String hostenter_img_name,
+			Model model
+			){
+		
+		int result = hostenter_imgDaoService.delete_img(hostenter_img_name);
+		
+		int result2 = hostenterService.delete_space(hostenter_number);
+		
+	
+		return "redirect:/mypage_host";
+		
+	}
+	
 
 	/* 예약내역관리 */
 	@RequestMapping("/reserve_host")
@@ -1339,7 +1354,8 @@ public class Mycontroller {
 		
 
 		List<contentsDto> contentsload = contentsService.contentsload(contents_number);
-
+		List<noticeDto> notice_list = noticeService.contents_notice(contents_number);
+		model.addAttribute("notice_list",notice_list);
 		model.addAttribute("contentsload", contentsload); //제목부분
 		model.addAttribute("page_commu",page_commu); // 페이지부분
 
@@ -1423,19 +1439,21 @@ public class Mycontroller {
 	
 	/* 게시글 내용,댓글 보기 */
 	@RequestMapping("/community_info")
-	public String community_info(@RequestParam("community_number")String community_number
-			,HttpServletRequest request, Model model) throws Exception {
+	public String community_info(@RequestParam("community_number")String community_number,
+	 @RequestParam("contents_number") String contents_number,
+			HttpServletRequest request, Model model) throws Exception {
 
 		HttpSession session = request.getSession();
 		String member_id = (String) session.getAttribute("member_id");
 		
-		
+			System.out.println(contents_number+"콘텐츠넘버");
+		List<hostenterDto> space_top_hit = hostenterService.space_top_hit(contents_number);
 		List<replyDto> replyViewlist = replyService.replyView(community_number);
 		
 		List<communityDto> community_contents = communityService.community_content(community_number);
 
 		
-		
+			model.addAttribute("space_top_hit",space_top_hit);
 		model.addAttribute("replyView", replyViewlist);
 		model.addAttribute("mainPage", "contents/community_info.jsp");
 		

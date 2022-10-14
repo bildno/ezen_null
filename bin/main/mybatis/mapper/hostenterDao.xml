@@ -82,5 +82,13 @@
   	<select id="select_title" resultType="String">
   		select HOSTENTER_TITLE_IMG from hostenter where hostenter_number=#{param1}
   	</select>
+  	
+  	<select id="space_top_hit" resultType="com.study.springboot.dto.hostenterDto">
+  		select * from hostenter where HOSTENTER_CONTENTS_NUMBER=#{param1} and rownum &lt;=3 order by hostenter_wish desc
+  	</select>
+    
+    <delete id="delete_space">
+    	delete from hostenter where hostenter_number = #{param1}
+    </delete>
     
     </mapper>
