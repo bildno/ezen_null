@@ -41,7 +41,7 @@
 						<a id="mypage_a" href="/mywish"><b>ZZIM 한 공간</b></a>
 					<p>
 						<span id="zzimimg"><img src="/img/member/zzim.png"
-							alt="zzim" /> X ?</span>
+							alt="zzim" /> ${ dto.member_check } </span>
 				</div>
 			</div>
 

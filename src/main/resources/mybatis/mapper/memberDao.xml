@@ -121,4 +121,11 @@
 	<delete id="resign">
 		delete from member where member_id = #{param1} 
 	</delete>
+
+	
+<!-- 	<select id="mycheckAction">
+	
+	</select> -->
+
+
 </mapper>
