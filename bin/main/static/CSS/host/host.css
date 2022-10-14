@@ -146,8 +146,14 @@
 .enter_host {
 	border: none;
 	font-family: 'Noto Sans KR';
-	font-size: 100px;
+	font-size: 20px;
 	padding: 5px;
 	background-color: white;
 	color: navy;
+	margin-top:20px;
+}
+
+.modify_pass{
+	margin-left:200px;
+
 }
