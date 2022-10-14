@@ -6,18 +6,20 @@
 	<c:forEach var="dto" items="${space_info }">
 		<h1 id="space_host_h1">공간 상세페이지</h1>
 		<h2 id="space_host_h2">
-			호스트의 공간 상세페이지입니다 <img src="/img/service/space_icon.png"
+			공간 상세페이지입니다 <img src="/img/service/space_icon.png"
 				alt="space_icon" id="space_icon">
 		</h2>
 		<div class=contents_wrapper>
 			<div id="carouselExampleIndicators" class="carousel slide"
 				data-ride="carousel" id="name_host_carousel">
+				
 				<ol class="carousel-indicators">
-					<li data-target="#carouselExampleIndicators" data-slide-to="0"
+				<c:forEach var="dto11" items="${img_list}" varStatus="status2">
+					<li data-target="#carouselExampleIndicators" data-slide-to="${status.count }"
 						class="active"></li>
-					<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-					<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+					</c:forEach>
 				</ol>
+				
 				<div class="carousel-inner">
 				<c:forEach var="dto22" items="${img_list}" varStatus="status">
 				<c:if test="${status.count eq 1}" >
@@ -45,7 +47,8 @@
 					<span class="sr-only">Next</span>
 				</button>
 			</div>
-
+			
+			
 			<!-- 찜 버튼 -->
 			<div id=zzim_button>
 			<div id=done_done>
@@ -58,7 +61,8 @@
 				</button>
 			</div>
 			</div>
-
+			
+			
 
 			<hr>
 			<div class="space_host_name">
@@ -128,7 +132,7 @@
 					<p class="sp_homepage">
 						<a href="http://partyroomshelter.com/index.php" target="_blank">http://partyroomshelter.com/index.php</a>
 					</p>
-					<!---->
+	
 				</div>
 				<div class="row callbox">
 					<div class="col col6">
@@ -181,8 +185,6 @@
 			    	    label: "공간 위치"
 			    	  });
 			    }
-			  
-
 			  </script>
 
 			<div id="s_qna">

@@ -41,4 +41,5 @@ public interface IhostenterDao {
 	
 	public List<hostenterDto> search(String search);
 	
+	public String select_title(int hostenter_number);
 }

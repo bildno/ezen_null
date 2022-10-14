@@ -80,6 +80,7 @@
 		</form>
 
 			<div id="sidelist" class="sidelist">
+				<a href="/main">홈</a> 
 				<%
 				//null체크
 					if (member_id != null) { //로그인 상태
@@ -97,7 +98,7 @@
 				<%
 					}
 				%>
-					<a href="/main">홈</a> 
+				
 					<a href="/service">고객센터</a> 
 				<%
 				//null체크

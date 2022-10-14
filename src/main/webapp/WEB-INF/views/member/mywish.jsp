@@ -14,38 +14,21 @@
 		찜 목록을 확인해주세요 <img src="/img/service/space_icon.png" alt="space_icon"
 			id="space_icon">
 	</h2>
-	
-	
+	<!-- '삭제'는 타입을 submit으로 해서 form action대로 실행됨 -->
+	<!-- 세부사항은 타입을 그냥 button으로 만들어서 onclick에 걸어준 주소로 이동됨 -->
 	<div class="w_contents">
 		<div class="contents">
 		<c:forEach var="dto" items="${wish_list}">
 		<form action="/zzim_delete">
 			<div class="wish">
 				<input type="text" value="${dto.hostenter_name}" readonly>
-				<button class="detail" type="button" onclick="return submit2(this.form)">세부내역</button>
+				<button class="detail" type="button" onclick="location.href='/space_info?hostenter_number=${dto.hostenter_number}&hostenter_name=${dto.hostenter_name }'">세부내역</button>
 				<button type="submit" class="detail" value="${dto.hostenter_number}" name="my_wish_hostenter_number">삭제</button>	
-			</div>
-			
-			<!-- <div class="wish">
-				<input type="text" value="찜내역2" readonly>
-				<button class="detail">세부내역</button>
-			</div>
-			<div class="wish">
-				<input type="text" value="찜내역3" readonly>
-				<button class="detail">세부내역</button>
-			</div>
-			<div class="wish">
-				<input type="text" value="찜내역4" readonly>
-				<button class="detail">세부내역</button>
-			</div>
-			<div class="wish5">
-				<input type="text" value="찜내역5" readonly>
-				<button class="detail">세부내역</button>
-			</div> -->
+			</div>	
+	
 		</form>	
 		</c:forEach>
 		</div>
-		
 		
 		<div class="wish_cancel">
 			<input class="wish_cancel2" type="button" value="취소"
@@ -54,10 +37,4 @@
 	</div>
 </div>
 
-<script> 
-  function submit2(frm) { 
-    frm.action=''; 
-    frm.submit(); 
-    return true; 
-  } 
-</script> 
+

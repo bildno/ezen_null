@@ -146,4 +146,11 @@ public class hostenterService {
 		return search_result;
 	}
 	
+	public String select_title(int hostenter_number) {
+		
+		String result = ihostenterDao.select_title(hostenter_number);
+		
+		return result;
+	}
+	
 }
