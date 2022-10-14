@@ -118,5 +118,10 @@
 		)
 		WHERE RNUM BETWEEN #{param1} AND #{param2}
 	</select>
+	
+	
+<!-- 	<select id="mycheckAction">
+	
+	</select> -->
 
 </mapper>
