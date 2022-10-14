@@ -29,5 +29,13 @@
 	    ORDER BY REPLY_COMMUNTY_NUMBER DESC
 	    ) temp_table ) WHERE rnum &gt;= #{param1} and rnum &lt;= #{param2}
 </select>
-
+<delete id="deletereply">
+	  DELETE FROM reply 
+	  WHERE reply_number=#{ param1 }
+</delete>
+	
+<delete id="deletereplyA">
+	  DELETE FROM reply 
+	  WHERE reply_communty_number=#{ param1 }
+</delete>
 </mapper>    

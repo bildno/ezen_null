@@ -22,4 +22,9 @@ public interface IreplyDao {
 	
 	public List<replyDto> myreply_page(String startRowNum_reply, String endRowNum_reply,String member_id);
 	
+	public int deletereply(int reply_number);
+	
+	public int deletereplyA(int community_number);
+	
+	
 }
