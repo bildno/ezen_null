@@ -21,4 +21,6 @@ public interface InoticeDao {
 	
 	public List<noticeDto>ad_noticesearch(String search_type, String search_contents);
 	
+	public List<noticeDto> contents_notice(String notice_contents_number);
+	
 }

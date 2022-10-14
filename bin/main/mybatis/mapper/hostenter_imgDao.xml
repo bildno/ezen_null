@@ -26,4 +26,6 @@
     		delete from hostenter_img where hostenter_img_name = #{param1} 
     	</delete>
     
+    
+    
     </mapper>
