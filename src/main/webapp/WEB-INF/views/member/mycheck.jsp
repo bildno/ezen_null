@@ -61,7 +61,7 @@
 				}
 				
 
-			/* events : [
+			 events : [
 			  {
 			    title: '출석',
 			    start: '2022-10-01'
@@ -70,7 +70,7 @@
 			    title: '출석',
 			    start: '2022-10-03'
 			  }
-			] */
+			] 
 			});
 			// 캘린더 랜더링
 			calendar.render();

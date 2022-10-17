@@ -18,14 +18,14 @@ public class CalendarService {
         event.put("title", "?????????");
         event.put("color", "red");
         event.put("textColor", "black");
-        //event.put("end",LocalDate.now());
+        event.put("end",LocalDate.now());
         eventList.add(event);
         
-		/*
-		 * event = new HashMap<String, Object>(); event.put("start",
-		 * LocalDate.now().plusDays(3)); event.put("title", "test2");
-		 * event.put("end",LocalDate.now().plusDays(4)); eventList.add(event);
-		 */
+		
+		 event = new HashMap<String, Object>(); event.put("start",
+		 LocalDate.now().plusDays(3)); event.put("title", "test2");
+		 event.put("end",LocalDate.now().plusDays(4)); eventList.add(event);
+		 
         
         return eventList;
     }
