@@ -3,7 +3,38 @@
 <link rel="stylesheet" href="css/member/join.css">
 
 <!--  회원가입 유효성 검사 -->
-<script type="text/javascript">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script type="text/javascript">	
+
+/* 아이디 중복체크 */
+$('#userid"').keyup(function(){
+	let userid = $('#userid"').val();
+		
+	$.ajax({
+		url : "${cpath}/idCheckAction",
+		type : "post",
+		data : {id: id},
+		dataType : 'json',
+		success : function(result){
+			if(result == 1){
+				$("#id_feedback").html('이미 사용중인 아이디입니다.');
+				$("#id_feedback").attr('color','#dc3545');
+			} else{
+				$("#id_feedback").html('사용할 수 있는 아이디입니다.');
+				$("#id_feedback").attr('color','#2fb380');
+			} 
+		},
+		error : function(){
+			alert("서버요청실패");
+		}
+	})
+		 
+})
+
+
+
  
         function Validation() {
     	
@@ -187,6 +218,9 @@
 	}
 
         </script>
+        
+        
+        
 
 <script type="text/javascript">
         	function checkall(){
@@ -220,6 +254,7 @@
 				<div>
 					<input type="text" placeholder="아이디" name="id" id="userid">
 				</div>
+				<div><font id="id_feedback" size="2"></font></div>		
 				<div>
 					<input type="password" placeholder="비밀번호" name="password"
 						id="userPs">

@@ -98,7 +98,7 @@
 				<%
 					}
 				%>
-				
+					<a href="/member_join">회원가입</a>
 					<a href="/service">고객센터</a> 
 				<%
 				//null체크
