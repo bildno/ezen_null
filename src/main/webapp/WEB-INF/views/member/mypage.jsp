@@ -42,11 +42,11 @@ function readURL(input) {
 					<div name="imgchange" style="font-size: 10px;">
 						
 						<!-- 사진 불러오기 -->
-						<form action="uploadFileok" method="post"
+						<form action="/uploadFileok" method="post"
 							enctype="multipart/form-data">
 								<div class="fileimg">
 								<label for="fileok">파일선택</label>	
-								  <input type="file" name="fileok" accept="image/*"  id="fileok" onchange="readURL(this)"/>
+								  <input type="file" name="fileok" accept="image/*" id="fileok" onchange="readURL(this)"/>
 								  <button type="submit" id=filesave>저장</button>
 							    </div>
 						</form>
