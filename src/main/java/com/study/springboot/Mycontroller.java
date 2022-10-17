@@ -1406,9 +1406,6 @@ public class Mycontroller {
 			page_commu = "1";
 		}
 		
-		request.getSession().setAttribute("community_number", community_number);
-		request.getSession().setAttribute("contents_number", contents_number);
-		
 
 		List<contentsDto> contentsload = contentsService.contentsload(contents_number);
 		List<noticeDto> notice_list = noticeService.contents_notice(contents_number);
