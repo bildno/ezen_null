@@ -937,12 +937,12 @@ public class Mycontroller {
 	}
 
 	/* 출석체크 */
-	@RequestMapping("/mycheck")
-	public String mycheck(Model model) {
-
-		model.addAttribute("mainPage", "member/mycheck.jsp");
-		return "index";
-	}
+//	@RequestMapping("/mycheck")
+//	public String mycheck(Model model) {
+//
+//		model.addAttribute("mainPage", "member/mycheck.jsp");
+//		return "index";
+//	}
 
 	/* 이름변경 */
 	@RequestMapping("/namechangeAction")
