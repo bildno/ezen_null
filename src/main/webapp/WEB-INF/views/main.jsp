@@ -145,8 +145,28 @@
 	</video>
 	<h1 class="banner_ad">지금 바로</h1>
 	<h2 class="banner_ad2">4개의 클래스와 공간에서 즐겨보세요</h2>
-	<img alt="더보기" src="/img/더보기.png" id="more" onclick="popup()"
-		style="cursor: pointer;">
+	<%
+	    String member_id = (String) session.getAttribute("member_id");
+		if(member_id != null) {
+	%>
+	
+	<img alt="더보기" src="/img/더보기.png" id="more" 
+	onclick="location.href='searchAction?search='" style="cursor: pointer;">
+	
+	<%
+		} else {
+			
+	%>
+		<img alt="더보기" src="/img/더보기.png" id="more" 
+		style="cursor: pointer;"
+		onclick="popup()">
+	<% 	
+		}
+		
+	%>
+
+	
+
 </div>
 
 <div class="hits">

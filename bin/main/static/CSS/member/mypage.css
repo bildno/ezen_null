@@ -142,3 +142,36 @@
 	background-color: white;
 	color: navy;
 }
+
+#fileok{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip:rect(0,0,0,0);
+  border: 0;
+
+}
+
+#filesave{
+	margin-top:10px;
+	margin-right:10px;
+	border: 1px solid rgb(238, 238, 238);
+	border-radius: 5px;
+	padding:5px 10px 5px 10px;
+}
+
+.fileimg label {
+  display: inline-block;
+  padding: 5px 10px 5px 10px;
+  font-size: 15px;
+  line-height: normal;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid rgb(238, 238, 238);
+  border-radius: 5px;
+	
+}
+

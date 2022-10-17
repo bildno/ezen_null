@@ -39,6 +39,7 @@ import com.study.springboot.dto.faqDto;
 import com.study.springboot.dto.hostenterDto;
 import com.study.springboot.dto.hostenter_imgDto;
 import com.study.springboot.dto.memberDto;
+import com.study.springboot.dto.mypage_imgDto;
 import com.study.springboot.dto.noticeDto;
 import com.study.springboot.dto.one2oneDto;
 import com.study.springboot.dto.one2oneDtoAndAnswer;
@@ -52,6 +53,7 @@ import com.study.springboot.service.faqService;
 import com.study.springboot.service.hostenterService;
 import com.study.springboot.service.hostenter_imgDaoService;
 import com.study.springboot.service.memberService;
+import com.study.springboot.service.mypage_imgService;
 import com.study.springboot.service.noticeService;
 import com.study.springboot.service.one2oneService;
 import com.study.springboot.service.one2one_answerService;
@@ -703,7 +705,9 @@ public class Mycontroller {
 		String member_id = (String) session.getAttribute("member_id");
 
 		List<memberDto> memberlist = memberService.mypageload(member_id);
-
+		List<mypage_imgDto> sel_myimg = mypage_imgService.view_file_title(member_id);
+		
+		model.addAttribute("sel_myimg",sel_myimg);
 		model.addAttribute("memberlist", memberlist);
 
 		model.addAttribute("mainPage", "member/mypage.jsp");
@@ -946,6 +950,52 @@ public class Mycontroller {
 		model.addAttribute("mainPage", "member/mycheck.jsp");
 		return "index";
 	}
+	
+//	사진 불러오기
+	@Autowired
+	fileUploadService fileUploadservice;
+	
+	@Autowired
+	private mypage_imgService mypage_imgService;
+	
+	@RequestMapping(value="/uploadFileok",method=RequestMethod.POST)
+	public String uploadFileok(
+			
+	@RequestParam(value="fileok",required=false)MultipartFile file_title,
+	HttpServletRequest request, Model model) {
+		
+		
+		HttpSession session = request.getSession();
+		String member_id = (String)session.getAttribute("member_id");	
+		String up_file_title2 = fileUploadservice.restore(file_title);	
+		
+		int result = mypage_imgService.up_file_title(member_id,up_file_title2);	
+		
+		if(result != 0) {
+		
+		int delete = mypage_imgService.delete_file(member_id);	
+		result = mypage_imgService.up_file_title(member_id,up_file_title2);
+		
+		}
+		
+
+		List<mypage_imgDto> sel_myimg = mypage_imgService.view_file_title(member_id);
+		List<memberDto> memberlist = memberService.mypageload(member_id);
+
+		
+		model.addAttribute("memberlist", memberlist);
+		model.addAttribute("sel_myimg",sel_myimg);
+		model.addAttribute("mainPage","member/mypage.jsp");
+		
+		return "index";
+	}
+			
+			
+			
+	
+	
+	
+	
 
 	/* 이름변경 */
 	@RequestMapping("/namechangeAction")
@@ -1544,6 +1594,7 @@ public class Mycontroller {
 	@RequestMapping("/zzim_doAction")
 	@ResponseBody
 	public String zzim_doAction( @RequestParam("hostenter_number") String hostenter_number,
+								 @RequestParam("hostenter_name")String hostenter_name,	
 			                     HttpServletRequest request, Model model) throws Exception {
 	
 
@@ -1573,7 +1624,7 @@ public class Mycontroller {
 				
 				hostenterService.zzim_count(hostenter_number);
 				
-				return "<script> alert('찜이 정상적으로 되었습니다 (˵ •̀ ᴗ - ˵ ) ✧'); location.href='/main' </script>";
+				return "<script> alert('찜이 정상적으로 되었습니다 (˵ •̀ ᴗ - ˵ ) ✧'); location.href='/space_info?hostenter_number="+hostenter_number+"&hostenter_name="+hostenter_name+"'</script>";
                 //return "redirect:/space_info?hostenter_number="+hostenter_number;
 			
 			} else {

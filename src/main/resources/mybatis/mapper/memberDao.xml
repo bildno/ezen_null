@@ -17,6 +17,8 @@
 		select * from member where member_id = #{param1}
 	</select>
 	
+
+	
 	<select id="host_find" resultType="_int">
 		select member_host from member
 		where member_id = #{param1}
