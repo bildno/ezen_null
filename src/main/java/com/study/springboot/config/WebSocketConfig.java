@@ -12,6 +12,12 @@ import com.study.springboot.handler.SocketHandler;
 @EnableWebSocket
 public class WebSocketConfig implements WebSocketConfigurer{
 
+	
+	
+	
+	
+	
+	
 	@Autowired
 	SocketHandler socketHandler;
 	

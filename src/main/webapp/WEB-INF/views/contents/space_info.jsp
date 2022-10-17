@@ -56,7 +56,7 @@
 			</div>
 			<div id=zzim_btn>
 				<button class="w-btn-outline w-btn-blue-outline" type="button" 
-				onclick="location.href='/zzim_doAction?hostenter_number=${dto.hostenter_number}'" id="zzim_update" >
+				onclick="location.href='/zzim_doAction?hostenter_number=${dto.hostenter_number}&hostenter_name=${dto.hostenter_name}'" id="zzim_update" >
 					찜 하기
 				</button>
 			</div>

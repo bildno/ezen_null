@@ -177,3 +177,19 @@
 	float: right;
 	font-family: 'Noto Sans KR', sans-serif;
 }
+
+#com_info{
+	margin-bottom:10px;
+	padding:5px;
+	width:150px;
+	font-family: 'Noto Sans KR', sans-serif; 
+	font-weight:500;
+
+}
+
+#repl{
+	font-family: 'Noto Sans KR', sans-serif; 
+	font-weight:300;
+	color:gray;
+	font-size:15px;
+}
