@@ -100,6 +100,10 @@
 	 	select * from community where community_member_id = #{param1}	 
 	 
 	 </select>
+	 <delete id="deletecommu">
+	  DELETE FROM community 
+	  WHERE community_number=#{ param1 }
+	</delete>
 	 
 
 	 

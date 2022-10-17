@@ -61,7 +61,10 @@
     		<h4><b>게시글</b></h4>
     		<hr>
 			<c:forEach var="dto2" items="${mycommu_pagelist}">
+			<div class="replytable">
 			<a href="/community_info?community_number=${dto2.community_number}">${dto2.community_title}</a><br>
+			<input type="button" value="삭제" onclick="location.href='/deletecommu?community_number=${dto2.community_number}'">
+			</div>
 			</c:forEach>
     </div>
     
@@ -104,8 +107,10 @@
     		<h4><b>댓글</b></h4>
     		<hr>
 			<c:forEach var="dto3" items="${myreply_pagelist}">
+			<div class="replytable">
 			<a href="/community_info?community_number=${dto3.reply_communty_number}">${dto3.reply_content}</a><br>
-			
+			<input type="button" value="삭제" onclick="location.href='/deletereply?reply_number=${dto3.reply_number}'">
+			</div>
 			</c:forEach>
     </div>
     

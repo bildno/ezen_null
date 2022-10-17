@@ -69,7 +69,7 @@
 			<div class="carousel-caption" style="margin-bottom: 120px;">
 				<!-- carousel-caption이라는 예약어 따로 추가시킴 -->
 				<p id="intro">Space Ground는 누구나 즐길 수 있는</p>
-				<h1 id="info">복합 커뮤니티 & 공간대여 플랫폼입니다</h1>
+				<h1 id="info">복합 커뮤니티 & 공간소개 플랫폼입니다</h1>
 				<div class="playstore">
 					<img src="img/google.png" alt="android" id="google"
 						onclick="playstore();"> <img src="img/apple.png" alt="apple"

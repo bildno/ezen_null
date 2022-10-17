@@ -60,7 +60,7 @@ function readURL(input) {
 
 				<div class="mypage_mylist">
 					<p>
-						<a id="mypage_a" href="/reserveList"><b>예약 내역</b></a>
+						<a id="mypage_a" href="/room"><b>자유채팅방</b></a>
 					<p>
 						<a id="mypage_a" href="/mylist"><b>나의 활동</b></a>
 					<p>
@@ -69,7 +69,7 @@ function readURL(input) {
 						<a id="mypage_a" href="/mywish"><b>ZZIM 한 공간</b></a>
 					<p>
 						<span id="zzimimg"><img src="/img/member/zzim.png"
-							alt="zzim" /> X ?</span>
+							alt="zzim" /> ${ dto.member_check } </span>
 				</div>
 			</div>
 
@@ -175,6 +175,18 @@ function readURL(input) {
 							}
 						}
 					</script>
+					<script>
+						function delete_check(/resign) {
+							var answer;
+							//페이지를 이동하기 전에 confirm()을 사용해 다시 한번 확인한다.
+							//확인을 선택하면 answer에  true, 취소를 선택하면 false 값이 들어간다.
+							answer = confirm("데이터를 삭제하시겠습니까?");
+							//확인을 선택한 경우 자바스크립트를 호출할 때 같이 넘어온 url이라는 변수에 들어있는 주소로 페이지 이동
+							if (answer == true) {
+								location = /resign;
+							}
+						}
+					</script>
 
 					<table class="profile">
 						<tr>
@@ -245,9 +257,11 @@ function readURL(input) {
 							<th>비밀번호</th>
 							<td colspan=2><a id="mypage_a" href="/pwchange">변경하기</a></td>
 						</tr>
-
+						<tr>
+							<td></td>
+							<th><a id="mypage_a" href="/resign">탈퇴하기</a></th>
+						</tr>
 					</table>
-
 				</div>
 			</div>
 		</div>

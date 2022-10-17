@@ -1,8 +1,10 @@
 package com.study.springboot;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -17,7 +19,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
+import org.springframework.web.servlet.ModelAndView;
 
+import com.study.springboot.Vo.Room;
 import com.study.springboot.dao.IadminDao;
 import com.study.springboot.dao.IcommunityDao;
 import com.study.springboot.dao.IfaqDao;
@@ -709,7 +713,20 @@ public class Mycontroller {
 		model.addAttribute("mainPage", "member/mypage.jsp");
 		return "index";
 	}
-
+	@RequestMapping("/resign")
+	public String resign(HttpServletRequest request) {
+		
+		HttpSession session = request.getSession();
+		String member_id = (String) session.getAttribute("member_id");
+		
+		System.out.println(member_id);
+		int result = memberService.resign( member_id );
+		if( result != 1) {
+			return "/mypage";
+		}else {
+			return "redirect:/mypage";   
+		}
+	}
 	/* 예약내역 */
 	@RequestMapping("/reserveList")
 	public String reserveList(Model model) {
@@ -799,7 +816,20 @@ public class Mycontroller {
 		model.addAttribute("mainPage", "member/myreview.jsp");
 		return "index";
 	}
-	
+	@RequestMapping("/deletereply")
+	public String deletereply(@RequestParam("reply_number") int reply_number) {
+		int result = ireplyDao.deletereply( reply_number );
+		
+		System.out.println("reply_number=" + reply_number);
+		System.out.println("result=" + result);
+		System.out.println("zz");
+		
+		if( result != 1) {
+			return "redirect:/mylist";
+		} else {
+			return "redirect:/mylist";
+		}
+	}
 
 	/* 내찜내역 */
 	@RequestMapping("/mywish")
@@ -1088,8 +1118,6 @@ public class Mycontroller {
 			return "redirect:/one2one";   
 		}
 	}
-	
-
 	/* 1:1작성 */
 	@RequestMapping("/one2one_write")
 	public String one2one_write(Model model) {
@@ -1334,6 +1362,21 @@ public class Mycontroller {
 		model.addAttribute("mainPage", "host/space_info_host.jsp");
 		return "index";
 	}
+	@RequestMapping("/delete_space")
+	public String delete_space(@RequestParam("hostenter_number") int hostenter_number,
+							   @RequestParam("hostenter_img_name") String hostenter_img_name,
+			Model model
+			){
+		
+		int result = hostenter_imgDaoService.delete_img(hostenter_img_name);
+		
+		int result2 = hostenterService.delete_space(hostenter_number);
+		
+	
+		return "redirect:/mypage_host";
+		
+	}
+	
 
 	/* 예약내역관리 */
 	@RequestMapping("/reserve_host")
@@ -1365,7 +1408,8 @@ public class Mycontroller {
 		
 
 		List<contentsDto> contentsload = contentsService.contentsload(contents_number);
-
+		List<noticeDto> notice_list = noticeService.contents_notice(contents_number);
+		model.addAttribute("notice_list",notice_list);
 		model.addAttribute("contentsload", contentsload); //제목부분
 		model.addAttribute("page_commu",page_commu); // 페이지부분
 
@@ -1387,7 +1431,23 @@ public class Mycontroller {
 		return "index";
 		
 	}
-	
+	@RequestMapping("/deletecommu")
+	public String deletecommu(@RequestParam("community_number") int community_number) {
+		System.out.println(community_number);
+		int result1 = ireplyDao.deletereplyA( community_number );
+		int result2 = icommunityDao.deletecommu( community_number );
+		
+		
+		
+		System.out.println(result1);
+		System.out.println(result2);
+		
+		if( result1 != 1 && result2 != 1) {
+			return "redirect:/mylist";
+		}else {
+			return "redirect:/mylist";   
+		}
+	}
 	
 	/* 게시글 글쓰기 */
 	@RequestMapping("/community_write")
@@ -1433,19 +1493,21 @@ public class Mycontroller {
 	
 	/* 게시글 내용,댓글 보기 */
 	@RequestMapping("/community_info")
-	public String community_info(@RequestParam("community_number")String community_number
-			,HttpServletRequest request, Model model) throws Exception {
+	public String community_info(@RequestParam("community_number")String community_number,
+	 @RequestParam("contents_number") String contents_number,
+			HttpServletRequest request, Model model) throws Exception {
 
 		HttpSession session = request.getSession();
 		String member_id = (String) session.getAttribute("member_id");
 		
-		
+			System.out.println(contents_number+"콘텐츠넘버");
+		List<hostenterDto> space_top_hit = hostenterService.space_top_hit(contents_number);
 		List<replyDto> replyViewlist = replyService.replyView(community_number);
 		
 		List<communityDto> community_contents = communityService.community_content(community_number);
 
 		
-		
+			model.addAttribute("space_top_hit",space_top_hit);
 		model.addAttribute("replyView", replyViewlist);
 		model.addAttribute("mainPage", "contents/community_info.jsp");
 		
@@ -1512,14 +1574,14 @@ public class Mycontroller {
 							 @RequestParam("hostenter_name") String hostenter_name,
 			Model model) {
 		
-
+		System.out.println(hostenter_name);
 		List<hostenterDto> space_info = hostenterService.space_info(hostenter_number);
+		System.out.println(space_info);
 		List<hostenter_imgDto> img_list = hostenter_imgDaoService.img_sel(hostenter_name);
-		int view_count = hostenterService.view_count(hostenter_number);
-		
+		System.out.println("aaaa");
+		System.out.println(img_list);
 		model.addAttribute("img_list",img_list);
 		model.addAttribute("space_info",space_info);
-		model.addAttribute("view_count",view_count);
 		model.addAttribute("mainPage", "contents/space_info.jsp");
 		return "index";
 	}
@@ -1822,6 +1884,87 @@ public class Mycontroller {
 		
 		 
 	}
+	/* 채팅부분 */
+/*---------------------------------------------------------------------------------------------------------------*/
+	List<Room> roomList = new ArrayList<Room>();
+	static int roomNumber = 0;
+	
+	@RequestMapping("/chat")
+	public String chat(Model model) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("chat");
+		
+		return "index";
+	}
+	
+	/**
+	 * 방 페이지
+	 * @return
+	 */
+	@RequestMapping("/room")
+	public ModelAndView room() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("room");
+		return mv;
+	}
+	
+	/**
+	 * 방 생성하기
+	 * @param params
+	 * @return
+	 */
+	@RequestMapping("/createRoom")
+	public @ResponseBody List<Room> createRoom(@RequestParam HashMap<Object, Object> params){
+		String roomName = (String) params.get("roomName");
+		if(roomName != null && !roomName.trim().equals("")) {
+			Room room = new Room();
+			room.setRoomNumber(++roomNumber);
+			room.setRoomName(roomName);
+			roomList.add(room);
+		}
+		return roomList;
+	}
+	
+	/**
+	 * 방 정보가져오기
+	 * @param params
+	 * @return
+	 */
+	@RequestMapping("/getRoom")
+	public @ResponseBody List<Room> getRoom(@RequestParam HashMap<Object, Object> params){
+		return roomList;
+	}
+	
+	/**
+	 * 채팅방
+	 * @return
+	 */
+	@RequestMapping("/moveChating")
+	public ModelAndView chating(@RequestParam HashMap<Object, Object> params,
+			HttpServletRequest request,
+			Model model
+			) {
+		
+		HttpSession session = request.getSession();
+		String member_id = (String) session.getAttribute("member_id");
+		
+		List<memberDto> memberlist = memberService.mypageload(member_id);
+		
+		model.addAttribute("memberlist",memberlist);
+		ModelAndView mv = new ModelAndView();
+		int roomNumber = Integer.parseInt((String) params.get("roomNumber"));
+		
+		List<Room> new_list = roomList.stream().filter(o->o.getRoomNumber()==roomNumber).collect(Collectors.toList());
+		if(new_list != null && new_list.size() > 0) {
+			mv.addObject("roomName", params.get("roomName"));
+			mv.addObject("roomNumber", params.get("roomNumber"));
+			mv.setViewName("chat");
+		}else {
+			mv.setViewName("room");
+		}
+		return mv;
+	}
+	
 }
 	
 

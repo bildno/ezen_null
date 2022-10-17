@@ -38,4 +38,6 @@ public interface ImemberDao {
 	
 	public List<memberDto> member_search(String search_type, String search_contents);
 	
+	public int resign(String member_id);
+	
 }

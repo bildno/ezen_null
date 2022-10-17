@@ -12,5 +12,6 @@ public class memberDto {
 	private String member_gender;
 	private String member_name;
 	private String member_host;
+	private String member_check;
 	
 }

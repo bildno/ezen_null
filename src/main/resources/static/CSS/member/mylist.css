@@ -67,3 +67,11 @@
 	text-decoration: none;
 
 }
+.replytable {
+	display: flex;
+	justify-content: space-between;
+}
+.replytable input {
+	background-color: white;
+	border: 0px;
+}

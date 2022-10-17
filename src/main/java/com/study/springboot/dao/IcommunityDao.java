@@ -34,4 +34,7 @@ public interface IcommunityDao {
 	
 	public List<communityDto> select_commu(String member_id);
 	
+	public int deletecommu(int community_number);
+	
+	
 }

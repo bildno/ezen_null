@@ -145,4 +145,11 @@ public class memberService {
 //		
 //		return ad_host_list;
 //	}
+	
+//  회원탈퇴
+	public int resign(String member_id) {
+		int result = imemberDao.resign(member_id);
+		
+		return result;
+	}
 }

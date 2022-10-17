@@ -42,4 +42,8 @@ public interface IhostenterDao {
 	public List<hostenterDto> search(String search);
 	
 	public String select_title(int hostenter_number);
+	
+	public List<hostenterDto> space_top_hit(String hostenter_contents_number);
+	
+	public int delete_space(int hostenter_number);
 }
