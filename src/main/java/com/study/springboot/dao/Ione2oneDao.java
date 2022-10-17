@@ -15,4 +15,5 @@ public interface Ione2oneDao {
 	public List<one2oneDto> one2one_search(String search_type, String search_contents);
 	public int one2one_Delete(int num);
 	public List<one2oneDto> one2one_list2(String member_id);
+	public int one2onedeleteid(String member_id);
 }

@@ -105,6 +105,10 @@
 	  WHERE community_number=#{ param1 }
 	</delete>
 	 
+	 <delete id="deletecommuid">
+	  DELETE FROM community 
+	  WHERE community_member_id=#{ param1 }
+	</delete>
 
 	 
 	

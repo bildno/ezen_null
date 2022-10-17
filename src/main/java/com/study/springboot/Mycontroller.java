@@ -716,8 +716,11 @@ public class Mycontroller {
 		String member_id = (String) session.getAttribute("member_id");
 		
 		System.out.println(member_id);
-		int result = memberService.resign( member_id );
-		if( result != 1) {
+		int result1 = ireplyDao.deletereplyid2( member_id );
+		int result2 = ireplyDao.deletereplyid( member_id );
+		int result3 = icommunityDao.deletecommuid( member_id );
+		int result4 = memberService.resign( member_id );
+		if( result1 != 1 && result2 != 1 && result3 != 1 && result4 != 1) {
 			return "/mypage";
 		}else {
 			return "redirect:/mypage";   

@@ -36,5 +36,7 @@ public interface IcommunityDao {
 	
 	public int deletecommu(int community_number);
 	
+	public int deletecommuid(String memeber_id);
+	
 	
 }
