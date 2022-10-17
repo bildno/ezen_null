@@ -191,7 +191,7 @@
 										<tr style="list-style: none; cursor: pointer"
 											onMouseOver="this.style.backgroundColor='#eeeeee'"
 											onMouseOut="this.style.backgroundColor='#FFFFFF'"
-											onclick="location.href='community_info?community_number=${best1.community_number}'">
+											onclick="location.href='community_info?community_number=${best1.community_number}&contents_number=${best1.community_contents_number }'">
 											<td>
 												<li>${best1.community_title}</li>
 											</td>
@@ -219,7 +219,7 @@
 										<tr style="list-style: none; cursor: pointer"
 											onMouseOver="this.style.backgroundColor='#eeeeee'"
 											onMouseOut="this.style.backgroundColor='#FFFFFF'"
-											onclick="location.href='community_info?community_number=${best2.community_number}'">
+											onclick="location.href='community_info?community_number=${best2.community_number}&contents_number=${best2.community_contents_number }'">
 											<td>
 												<li>${best2.community_title}</li>
 											</td>
@@ -246,7 +246,7 @@
 										<tr style="list-style: none; cursor: pointer"
 											onMouseOver="this.style.backgroundColor='#eeeeee'"
 											onMouseOut="this.style.backgroundColor='#FFFFFF'"
-											onclick="location.href='community_info?community_number=${best3.community_number}'">
+											onclick="location.href='community_info?community_number=${best3.community_number}&contents_number=${best3.community_contents_number }'">
 											<td>
 												<li>${best3.community_title}</li>
 											</td>
@@ -272,7 +272,7 @@
 										<tr style="list-style: none; cursor: pointer"
 											onMouseOver="this.style.backgroundColor='#eeeeee'"
 											onMouseOut="this.style.backgroundColor='#FFFFFF'"
-											onclick="location.href='community_info?community_number=${best4.community_number}'">
+											onclick="location.href='community_info?community_number=${best4.community_number}&contents_number=${best4.community_contents_number }'">
 											<td>
 												<li>${best4.community_title}</li>
 											</td>

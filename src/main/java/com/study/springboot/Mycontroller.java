@@ -1489,8 +1489,13 @@ public class Mycontroller {
 	
 	/* 게시글 글쓰기 */
 	@RequestMapping("/community_write")
-	public String community_write(Model model) {
+	public String community_write(
+			@RequestParam("contents_number") String contents_number,
+			Model model,HttpServletRequest request) {
 
+		request.getSession().setAttribute("contents_number", contents_number);
+	
+		
 		model.addAttribute("mainPage", "contents/community_write.jsp");
 		return "index";
 	}
@@ -1538,7 +1543,7 @@ public class Mycontroller {
 		HttpSession session = request.getSession();
 		String member_id = (String) session.getAttribute("member_id");
 		
-			System.out.println(contents_number+"콘텐츠넘버");
+			
 		List<hostenterDto> space_top_hit = hostenterService.space_top_hit(contents_number);
 		List<replyDto> replyViewlist = replyService.replyView(community_number);
 		
@@ -1570,6 +1575,7 @@ public class Mycontroller {
 			@RequestParam( "communty_number") String community_number,
 			replyDto dto, HttpServletRequest request, Model model) {
 
+		System.out.println(contents_number);
 		HttpSession session = request.getSession();
 		String member_id = (String) session.getAttribute("member_id");
 		

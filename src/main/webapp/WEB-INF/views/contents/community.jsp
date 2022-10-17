@@ -18,7 +18,7 @@
 
 		<div class="aaaa">
 			<button class="spacelistbtn"
-				onclick="location.href='/spacerent?contents_number=${dto.contents_number}'">더보기</button>
+				onclick="location.href='/spacerent?contents_number=${dto221.contents_number}'">더보기</button>
 		</div>
 	
 	<div class="space_list">
@@ -112,7 +112,7 @@
 		%>
 		<div id=Btn_write>
 			<input type="button" id="btn_write" value="글쓰기"
-				onclick="location.href='/community_write'">
+				onclick="location.href='/community_write?contents_number=${dto221.contents_number}'">
 		</div>
 		<%
 		} else {
