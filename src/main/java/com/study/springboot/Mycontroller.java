@@ -1431,6 +1431,44 @@ public class Mycontroller {
 		return "index";
 		
 	}
+	@RequestMapping("/community_search")
+	public String community_search(@RequestParam(value = "contents_number") String contents_number,
+			@RequestParam(value="page_commu",required = false)String page_commu,
+			@RequestParam(value = "title", required = false) String search_title,
+			@RequestParam(value = "contents", required = false) String search_contents,
+			HttpServletRequest request, Model model)  {
+		
+		if(page_commu == null) {
+			page_commu = "1";
+		}
+		
+
+		List<contentsDto> contentsload = contentsService.contentsload(contents_number);
+		List<noticeDto> notice_list = noticeService.contents_notice(contents_number);
+		model.addAttribute("notice_list",notice_list);
+		model.addAttribute("contentsload", contentsload); //제목부분
+		model.addAttribute("page_commu",page_commu); // 페이지부분
+
+        int num_page_size = 5; //한페이지당 Row갯수
+		int num_page_no_commu = Integer.parseInt( page_commu ); //page번호 1,2,3,4
+		
+		int startRowNum_community = (num_page_no_commu - 1) * num_page_size + 1; // 1, 6, 11 페이지 시작 줄번호
+		int endRowNum_community = (num_page_no_commu * num_page_size);           // 5, 10, 15 페이지 끝 줄번호
+
+
+		// row 1~5 까지...
+		List<communityDto> communitylist = icommunityDao.community_page_search(String.valueOf(startRowNum_community), String.valueOf(endRowNum_community),contents_number,search_title,search_contents );
+		List<hostenterDto> space_list = hostenterService.contents_space(contents_number);
+
+		model.addAttribute("space_list", space_list);
+		model.addAttribute("communitylist",communitylist);
+		model.addAttribute("mainPage", "contents/community.jsp");
+
+		return "index";
+		
+	}
+	
+	
 	@RequestMapping("/deletecommu")
 	public String deletecommu(@RequestParam("community_number") int community_number) {
 		System.out.println(community_number);

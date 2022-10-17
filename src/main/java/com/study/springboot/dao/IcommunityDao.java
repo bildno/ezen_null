@@ -39,4 +39,5 @@ public interface IcommunityDao {
 	public int deletecommuid(String memeber_id);
 	
 	
+	public List<communityDto> community_page_search(String startRowNum_community, String endRowNum_community, String contents_number,String title, String contents );
 }

@@ -66,12 +66,15 @@
 		</div>
 	</div>
 <hr>
-	<div id="selectbox">
-		<input type="text" placeholder="키워드"> <input type="text"
-			placeholder="인원">
-		<button>검색</button>
-	</div>
 
+<form action="/community_search">
+	<div id="selectbox">
+		<input type="text" name="title" placeholder="제목"> 
+		<input type="text" name="contents"placeholder="내용">
+			<input type="hidden" name="contents_number" value="${dto221.contents_number }" />
+		<button type="submit">검색</button>
+	</div>
+</form>
 	<!-- <div class="sectioncomm"> -->
 	<div class="section22">
 
