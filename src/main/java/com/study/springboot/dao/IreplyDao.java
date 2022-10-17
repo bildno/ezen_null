@@ -26,5 +26,9 @@ public interface IreplyDao {
 	
 	public int deletereplyA(int community_number);
 	
+	public int deletereplyid(String member_id);
+	
+	public int deletereplyid2(String member_id);
+	
 	
 }

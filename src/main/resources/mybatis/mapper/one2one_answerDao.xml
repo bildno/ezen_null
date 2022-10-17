@@ -28,6 +28,11 @@
 	  DELETE FROM one2oneanswer 
 	  WHERE one2oneanswer_one2one_number=#{ param1 }
 	</delete>
+	
+	<delete id="one2oneanswerdeleteid">
+	  DELETE FROM one2oneanswer 
+	  WHERE one2oneanswer_member_id=#{ param1 }
+	</delete>
 </mapper>	
 	
 	

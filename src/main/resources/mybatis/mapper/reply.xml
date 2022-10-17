@@ -36,6 +36,16 @@
 	
 <delete id="deletereplyA">
 	  DELETE FROM reply 
-	  WHERE reply_communty_number=#{ param1 }
+	  WHERE reply_communty_number=#{param1}
 </delete>
+
+<delete id="deletereplyid">
+	  delete from reply where REPLY_COMMUNTY_NUMBER in (select community_number from community where community_member_id = #{param1})
+</delete>
+
+<delete id="deletereplyid2">
+	  DELETE FROM reply 
+	  WHERE reply_member_id=#{ param1 }
+</delete>
+
 </mapper>    
