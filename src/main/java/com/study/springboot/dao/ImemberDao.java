@@ -40,4 +40,7 @@ public interface ImemberDao {
 	
 	public int resign(String member_id);
 	
+	public int idCheck(String member_id);
+	
+	
 }
