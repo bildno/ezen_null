@@ -40,4 +40,8 @@ public interface IcommunityDao {
 	
 	
 	public List<communityDto> community_page_search(String startRowNum_community, String endRowNum_community, String contents_number,String title, String contents );
+	
+	
+
+	
 }

@@ -10,4 +10,8 @@
 		select * from contents where contents_number = #{ param1 }
 	</select>
 
+	<select id="select_content" resultType="String">
+	 	select contents_content from CONTENTS where contents_number = #{param1}
+	</select>
+
 </mapper>

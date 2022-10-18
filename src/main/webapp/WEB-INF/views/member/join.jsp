@@ -230,11 +230,11 @@
 				</div>
 
 				<div class="gender" id="gender_female">
-					<input type="radio" name="room" value="female" />여성
+					<input type="radio" name="room" value="1" />여성
 				</div>
 
 				<div class="gender" id="gender_male">
-					<input type="radio" name="room" value="male" />남성
+					<input type="radio" name="room" value="0" />남성
 				</div>
 			</div>
 

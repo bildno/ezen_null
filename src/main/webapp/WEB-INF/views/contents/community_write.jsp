@@ -38,22 +38,11 @@
 				<input type="text" placeholder="제목을 입력하시오." style="width: 100%;"name="commu_title">
 			</div>
 			<div class="tit">
-				<input type="text" value="<%switch (contents_number){
-					case "1":%>요가 클래스입니다.<%;
-						break;
-					case "2":%>풋살 클래스입니다.<%;
-						break;
-					case "3":%>음악 클래스입니다.<%;
-					break;
-					case "4":%>요리 클래스입니다.<%;
-					break;
-					}
-				%>
-				"   style="width: 100%;">
+				<input type="text" value="${contents_title }" style="width: 100%;">
 				<input type="hidden" name="commu_contents_number" value="<%=contents_number %>" />
 			</div>
 			<div class="tit">
-				<input type="text" placeholder="이름을 입력하시오." value="<%=session_id%>"  style="width: 100%;"name="commu_name" readonly="readonly">
+				<input type="text" value="<%=session_id%>"  style="width: 100%;"name="commu_name" readonly="readonly">
 			</div>
 			<div class="form-group">
 				<label for="exampleInputPassword1" >Content</label>

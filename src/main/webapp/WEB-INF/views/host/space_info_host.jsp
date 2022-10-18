@@ -232,14 +232,14 @@ function fileReset2(form){
 				<div class="small">
 					<h3 id="small">*최대 500자</h3>
 				</div>
-				<input type="text" value="${dto.hostenter_description }"
-					id="host_input_des" name="host_des">
+				<textarea type="text" 
+					id="host_input_des" name="host_des">${dto.hostenter_description }</textarea>
 			</div>
 
 			<div class="space_host_caution">
 				<h3 id="space_host_h3">공간 예약 시 주의사항</h3>
-				<input type="text" value="${dto.hostenter_caution }" id="host_input"
-					name="host_caution">
+				<textarea type="text" id="host_input_des"
+					name="host_caution">${dto.hostenter_caution }</textarea>
 			</div>
 
 			<div class="space_host_img">

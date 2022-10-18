@@ -1494,8 +1494,10 @@ public class Mycontroller {
 			Model model,HttpServletRequest request) {
 
 		request.getSession().setAttribute("contents_number", contents_number);
-	
-		
+		System.out.println(contents_number);
+		String contents_title = contentsService.select_content(contents_number);
+		System.out.println(contents_title);
+		model.addAttribute("contents_title",contents_title);
 		model.addAttribute("mainPage", "contents/community_write.jsp");
 		return "index";
 	}
@@ -1575,7 +1577,7 @@ public class Mycontroller {
 			@RequestParam( "communty_number") String community_number,
 			replyDto dto, HttpServletRequest request, Model model) {
 
-		System.out.println(contents_number);
+	
 		HttpSession session = request.getSession();
 		String member_id = (String) session.getAttribute("member_id");
 		

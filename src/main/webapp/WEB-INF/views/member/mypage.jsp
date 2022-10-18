@@ -8,7 +8,7 @@
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 
-<<script type="text/javascript">
+<script type="text/javascript">
 function readURL(input) {
 	  if (input.files && input.files[0]) {
 	    var reader = new FileReader();
