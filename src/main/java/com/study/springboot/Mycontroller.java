@@ -696,6 +696,23 @@ public class Mycontroller {
 			return "redirect:/member_join";
 		}
 	}
+	
+	@RequestMapping("idcheck")
+	@ResponseBody
+	public String idcheck( @RequestParam("member_id")String member_id,
+			HttpServletRequest request, Model model) {
+		
+		int result = memberService.idcheck(member_id);
+		
+		if(result >=1) {
+			return("1");
+		}else {
+			return("0");
+		}
+	}
+	
+	
+	
 
 	/* 마이페이지 */
 	@RequestMapping("/mypage")
@@ -1573,9 +1590,10 @@ public class Mycontroller {
 			@RequestParam("commu_info") String reply_content,
 			//form안에 있어서 community_number 가져올 수 있음
 			@RequestParam( "communty_number") String community_number,
+			@RequestParam("contents_number") String contents_number, 
 			replyDto dto, HttpServletRequest request, Model model) {
 
-		System.out.println(contents_number);
+
 		HttpSession session = request.getSession();
 		String member_id = (String) session.getAttribute("member_id");
 		
@@ -1584,7 +1602,7 @@ public class Mycontroller {
 		dto.setReply_communty_number(community_number);
 		dto.setReply_content(reply_content);
 
-		int result = ireplyDao.replyInsert(dto); System.out.println(result);
+		int result = ireplyDao.replyInsert(dto); 
 		
 		if(result !=1) { 
 			 
@@ -1592,7 +1610,7 @@ public class Mycontroller {
 		 
 		else {		
 
-		return "redirect:/community_info?community_number="+community_number;
+		return "redirect:/community_info?community_number="+community_number+"&contents_number="+contents_number;
 		
 		}
 
@@ -1618,14 +1636,14 @@ public class Mycontroller {
 							 @RequestParam("hostenter_name") String hostenter_name,
 			Model model) {
 		
-		System.out.println(hostenter_name);
+
 		List<hostenterDto> space_info = hostenterService.space_info(hostenter_number);
-		System.out.println(space_info);
 		List<hostenter_imgDto> img_list = hostenter_imgDaoService.img_sel(hostenter_name);
-		System.out.println("aaaa");
-		System.out.println(img_list);
+		int view_count = hostenterService.view_count(hostenter_number);
+		
 		model.addAttribute("img_list",img_list);
 		model.addAttribute("space_info",space_info);
+		model.addAttribute("view_count",view_count);
 		model.addAttribute("mainPage", "contents/space_info.jsp");
 		return "index";
 	}

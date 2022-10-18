@@ -101,3 +101,11 @@
 #gender_male{
 	margin-bottom: 20px
 }
+#id_check{
+	padding: 5px;
+	border: 1px solid rgb(238, 238, 238);
+	border-radius: 5px;
+	font-size:7px;
+	margin-left:5px;
+
+}

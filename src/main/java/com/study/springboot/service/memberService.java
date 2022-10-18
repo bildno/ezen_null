@@ -131,6 +131,22 @@ public class memberService {
 		}
 		return result;
 	}
+	
+	
+	public int idcheck(String member_id) {
+		
+		int result = 0;
+		try {
+			result = imemberDao.idcheck(member_id);
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return result;
+	}
+	
+	
 //// 관리자 회원 조회
 //	public List<memberDto> ad_member_list() {
 //		

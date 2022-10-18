@@ -94,12 +94,14 @@
 					} else { //로그아웃 상태
 				%>
 					<a href="/login"> <img src="img/member/login.png" alt=""
-					style="width: 20px" /></a>
+					style="width: 20px" /></a>								
+				    <a href="/member_join">회원가입</a> 
 				<%
 					}
 				%>
 				<a href="/main">홈</a> 
-					<a href="/service">고객센터</a> 
+				<a href="/service">고객센터</a>
+				 
 				<%
 				//null체크
 					if (member_id != null) { //로그인 상태
@@ -110,7 +112,10 @@
 				<%
 					} else { //로그아웃 상태
 						
+						
 				%>
+
+				
 				<%
 						}
 					}
