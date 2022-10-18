@@ -253,8 +253,8 @@ $('#userid"').keyup(function(){
 				</div>
 				<div>
 					<input type="text" placeholder="아이디" name="id" id="userid">
-				</div>
-				<div><font id="id_feedback" size="2"></font></div>		
+					<button id="id_check">아이디 중복 확인</button>
+				</div>	
 				<div>
 					<input type="password" placeholder="비밀번호" name="password"
 						id="userPs">
