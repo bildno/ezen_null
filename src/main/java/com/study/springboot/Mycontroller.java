@@ -748,12 +748,12 @@ public class Mycontroller {
 		String member_id = (String) session.getAttribute("member_id");
 		
 		System.out.println(member_id);
-		int result1 = ione2one_answerDao.one2oneanswerdeleteid( member_id );
-		int result2 = ione2oneDao.one2onedeleteid( member_id );
-		int result3 = ireplyDao.deletereplyid2( member_id );
-		int result4 = ireplyDao.deletereplyid( member_id );
-		int result5 = icommunityDao.deletecommuid( member_id );
-		int result6 = iwishDao.zzimdeleteid( member_id );
+		ione2one_answerDao.one2oneanswerdeleteid( member_id );
+		ione2oneDao.one2onedeleteid( member_id );
+		ireplyDao.deletereplyid2( member_id );
+		ireplyDao.deletereplyid( member_id );
+		icommunityDao.deletecommuid( member_id );
+		iwishDao.zzimdeleteid( member_id );
 		int result7 = imypage_imgDao.deletefileselect(member_id);
 		System.out.println(result7);
 		if(result7 == 1) {
