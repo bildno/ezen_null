@@ -92,12 +92,6 @@
 					readonly="readonly" disabled="disabled">${dto.hostenter_description }</textarea>
 			</p>
 
-			<div>
-				<h4 id="space_host_sotit">시설안내</h4>
-			</div>
-			<div class="divide">
-				<hr class="line">
-			</div>
 			<div class="info_wrapper"></div>
 			<div>
 				<h4 id="space_host_sotit" class="sotiit">주의사항</h4>

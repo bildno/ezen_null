@@ -14,17 +14,16 @@
 		</h2>
 		<div class="mypage_section" style="margin-top: 50px;">
 			<div class="mypage_section1">
+			<c:forEach var="imgdto" items="${sel_myimg }">
 				<div class="mypage_con1">
-					<img class="mypage_con-img1" src="img/host/cat.png" alt="contents1">
+					<img class="mypage_con-img1" src="${imgdto.mypage_img }" alt="contents1">
 					<p>
-					<div name="imgchange" style="font-size: 10px;">
-						<a id="mypage_a" href="#">사진변경</a>
-					</div>
 					<p>
 					<div name="membername">${ dto.member_name }</div>
 					<p>
 					<hr>
 				</div>
+				</c:forEach>
 
 				
 				<div class="mypage_mylist">
@@ -211,7 +210,7 @@
 
 						<tr>
 							<th>비밀번호</th>
-							<td colspan=2><a href="/pwchange" class="modify_pass">변경하기</a></td>
+							<td colspan=2><a  id="od2" href="/pwchange" class="modify_pass">변경하기</a></td>
 						</tr>
 						<tr>
 							<td colspan=3>

@@ -8,7 +8,7 @@
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 
-<<script type="text/javascript">
+<script type="text/javascript">
 function readURL(input) {
 	  if (input.files && input.files[0]) {
 	    var reader = new FileReader();
@@ -255,7 +255,7 @@ function readURL(input) {
 
 						<tr>
 							<th>비밀번호</th>
-							<td colspan=2><a id="mypage_a" href="/pwchange">변경하기</a></td>
+							<td colspan=2><a id="od2" href="/pwchange">변경하기</a></td>
 						</tr>
 						<tr>
 							<td></td>

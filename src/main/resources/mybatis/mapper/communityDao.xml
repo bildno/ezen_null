@@ -42,7 +42,7 @@
 	    SELECT temp_table.*, ROWNUM as rnum FROM (
 	    SELECT * FROM COMMUNITY WHERE COMMUNITY_CONTENTS_NUMBER = #{param3}
 	    ORDER BY COMMUNITY_NUMBER DESC
-	    ) temp_table ) WHERE rnum &gt;= #{param1} and rnum &lt;= #{param2} and community_title like '%' || #{param4} || '%' or community_content like '%'|| #{param5} || '%' 
+	    ) temp_table ) WHERE rnum &gt;= #{param1} and rnum &lt;= #{param2} and community_title like '%' || #{param4} || '%' and community_content like '%'|| #{param5} || '%' 
 	 </select>
 	 
 	 <select id="mycommu_page" resultType="com.study.springboot.dto.communityDto">
@@ -118,7 +118,7 @@
 	  WHERE community_member_id=#{ param1 }
 	</delete>
 
-	 
+
 	
 	
 

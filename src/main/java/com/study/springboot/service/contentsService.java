@@ -21,4 +21,11 @@ public class contentsService {
 		return contentsload;
 
 	}
+	
+	public String select_content(String contents_number) {
+		
+		String result = icontentsDao.select_content(contents_number);
+		
+		return result;
+	}
 }

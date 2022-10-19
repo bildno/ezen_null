@@ -42,8 +42,8 @@
 	<!-- 회원가입 -->
 	<insert id="join_member" parameterType="com.study.springboot.dto.memberDto">
 		insert into
-		member(member_id,member_pw,member_email,member_phone,member_gender,member_name,member_host)
-		values(#{member_id},#{member_pw},#{member_email},#{member_phone},#{member_gender},#{member_name},#{member_host})
+		member(member_id,member_pw,member_email,member_phone,member_gender,member_name,member_host,member_joindate)
+		values(#{member_id},#{member_pw},#{member_email},#{member_phone},#{member_gender},#{member_name},#{member_host}, sysdate)
 	</insert>
 	
 	<!-- 아이디 중복체크 -->
