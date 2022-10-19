@@ -1281,8 +1281,10 @@ public class Mycontroller {
 		int member_host = (int) session.getAttribute("member_host");
 		System.out.println(member_host);
 		List<memberDto> member_list = memberService.mypageload(member_id);
+		List<mypage_imgDto> sel_myimg = mypage_imgService.view_file_title(member_id);
 
 		if (member_host == 1) {
+			model.addAttribute("sel_myimg",sel_myimg);
 			model.addAttribute("member_list", member_list);
 			model.addAttribute("mainPage", "host/host.jsp");
 			return "index";
@@ -1547,7 +1549,8 @@ public class Mycontroller {
 
 		request.getSession().setAttribute("contents_number", contents_number);
 	
-		
+		String contents_title = contentsService.select_content(contents_number);
+		model.addAttribute("contents_title",contents_title);
 		model.addAttribute("mainPage", "contents/community_write.jsp");
 		return "index";
 	}
@@ -1935,16 +1938,28 @@ public class Mycontroller {
 				
 			}
 			
+	int i = 0;
 			if(result == 1) {
 				for( MultipartFile file : filelist) {
+					
+					System.out.println("들어옴");
 					System.out.println("filelist:" + filelist);
 					System.out.println("filename:" + file);
 					String upload_url = fileUploadService.restore(file);
-					System.out.println( "upload_url:" + upload_url );
+					System.out.println(upload_url + "qweqrqwer");
+					
+					if(!upload_url.equals("0")) {
+						if(i == 0) {
+							hostenter_imgDaoService.delete_img(hostenter_name);
+							i++;
+													}
+					result = hostenter_imgDaoService.hostenter_img_up(host_name_,member_id,upload_url);
+						
+					}
 				
 					
 						
-				result = hostenter_imgDaoService.hostenter_img_up(host_name_,member_id,upload_url);
+				
 					
 					
 					
@@ -1959,10 +1974,6 @@ public class Mycontroller {
 						model.addAttribute("mainPage","host/enter_host.jsp");
 						return "index";
 					}
-				}else {
-					System.out.println("업로드 실패!");
-					model.addAttribute("mainPage","host/enter_host.jsp");
-					return "index";
 				}
 
 			}
