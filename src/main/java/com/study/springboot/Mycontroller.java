@@ -699,6 +699,23 @@ public class Mycontroller {
 			return "redirect:/member_join";
 		}
 	}
+	
+	@RequestMapping("idcheck")
+	@ResponseBody
+	public String idcheck( @RequestParam("member_id")String member_id,
+			HttpServletRequest request, Model model) {
+		
+		int result = memberService.idcheck(member_id);
+		
+		if(result >=1) {
+			return("1");
+		}else {
+			return("0");
+		}
+	}
+	
+	
+	
 
 	/* 마이페이지 */
 	@RequestMapping("/mypage")
@@ -1466,6 +1483,44 @@ public class Mycontroller {
 		return "index";
 		
 	}
+	@RequestMapping("/community_search")
+	public String community_search(@RequestParam(value = "contents_number") String contents_number,
+			@RequestParam(value="page_commu",required = false)String page_commu,
+			@RequestParam(value = "title", required = false) String search_title,
+			@RequestParam(value = "contents", required = false) String search_contents,
+			HttpServletRequest request, Model model)  {
+		
+		if(page_commu == null) {
+			page_commu = "1";
+		}
+		
+
+		List<contentsDto> contentsload = contentsService.contentsload(contents_number);
+		List<noticeDto> notice_list = noticeService.contents_notice(contents_number);
+		model.addAttribute("notice_list",notice_list);
+		model.addAttribute("contentsload", contentsload); //제목부분
+		model.addAttribute("page_commu",page_commu); // 페이지부분
+
+        int num_page_size = 5; //한페이지당 Row갯수
+		int num_page_no_commu = Integer.parseInt( page_commu ); //page번호 1,2,3,4
+		
+		int startRowNum_community = (num_page_no_commu - 1) * num_page_size + 1; // 1, 6, 11 페이지 시작 줄번호
+		int endRowNum_community = (num_page_no_commu * num_page_size);           // 5, 10, 15 페이지 끝 줄번호
+
+
+		// row 1~5 까지...
+		List<communityDto> communitylist = icommunityDao.community_page_search(String.valueOf(startRowNum_community), String.valueOf(endRowNum_community),contents_number,search_title,search_contents );
+		List<hostenterDto> space_list = hostenterService.contents_space(contents_number);
+
+		model.addAttribute("space_list", space_list);
+		model.addAttribute("communitylist",communitylist);
+		model.addAttribute("mainPage", "contents/community.jsp");
+
+		return "index";
+		
+	}
+	
+	
 	@RequestMapping("/deletecommu")
 	public String deletecommu(@RequestParam("community_number") int community_number) {
 		System.out.println(community_number);
@@ -1486,8 +1541,13 @@ public class Mycontroller {
 	
 	/* 게시글 글쓰기 */
 	@RequestMapping("/community_write")
-	public String community_write(Model model) {
+	public String community_write(
+			@RequestParam("contents_number") String contents_number,
+			Model model,HttpServletRequest request) {
 
+		request.getSession().setAttribute("contents_number", contents_number);
+	
+		
 		model.addAttribute("mainPage", "contents/community_write.jsp");
 		return "index";
 	}
@@ -1535,7 +1595,7 @@ public class Mycontroller {
 		HttpSession session = request.getSession();
 		String member_id = (String) session.getAttribute("member_id");
 		
-			System.out.println(contents_number+"콘텐츠넘버");
+			
 		List<hostenterDto> space_top_hit = hostenterService.space_top_hit(contents_number);
 		List<replyDto> replyViewlist = replyService.replyView(community_number);
 		
@@ -1565,7 +1625,9 @@ public class Mycontroller {
 			@RequestParam("commu_info") String reply_content,
 			//form안에 있어서 community_number 가져올 수 있음
 			@RequestParam( "communty_number") String community_number,
+			@RequestParam("contents_number") String contents_number, 
 			replyDto dto, HttpServletRequest request, Model model) {
+
 
 		HttpSession session = request.getSession();
 		String member_id = (String) session.getAttribute("member_id");
@@ -1575,7 +1637,7 @@ public class Mycontroller {
 		dto.setReply_communty_number(community_number);
 		dto.setReply_content(reply_content);
 
-		int result = ireplyDao.replyInsert(dto); System.out.println(result);
+		int result = ireplyDao.replyInsert(dto); 
 		
 		if(result !=1) { 
 			 
@@ -1583,7 +1645,7 @@ public class Mycontroller {
 		 
 		else {		
 
-		return "redirect:/community_info?community_number="+community_number;
+		return "redirect:/community_info?community_number="+community_number+"&contents_number="+contents_number;
 		
 		}
 
@@ -1609,14 +1671,14 @@ public class Mycontroller {
 							 @RequestParam("hostenter_name") String hostenter_name,
 			Model model) {
 		
-		System.out.println(hostenter_name);
+
 		List<hostenterDto> space_info = hostenterService.space_info(hostenter_number);
-		System.out.println(space_info);
 		List<hostenter_imgDto> img_list = hostenter_imgDaoService.img_sel(hostenter_name);
-		System.out.println("aaaa");
-		System.out.println(img_list);
+		int view_count = hostenterService.view_count(hostenter_number);
+		
 		model.addAttribute("img_list",img_list);
 		model.addAttribute("space_info",space_info);
+		model.addAttribute("view_count",view_count);
 		model.addAttribute("mainPage", "contents/space_info.jsp");
 		return "index";
 	}

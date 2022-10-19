@@ -36,6 +36,14 @@
 	    ) temp_table ) WHERE rnum &gt;= #{param1} and rnum &lt;= #{param2}
 	 </select>
 	 
+	  <select id="community_page_search" resultType="com.study.springboot.dto.communityDto">
+	    <!-- temp_table은 임시테이블 정해진 값-->
+	    SELECT * FROM (
+	    SELECT temp_table.*, ROWNUM as rnum FROM (
+	    SELECT * FROM COMMUNITY WHERE COMMUNITY_CONTENTS_NUMBER = #{param3}
+	    ORDER BY COMMUNITY_NUMBER DESC
+	    ) temp_table ) WHERE rnum &gt;= #{param1} and rnum &lt;= #{param2} and community_title like '%' || #{param4} || '%' or community_content like '%'|| #{param5} || '%' 
+	 </select>
 	 
 	 <select id="mycommu_page" resultType="com.study.springboot.dto.communityDto">
 	    <!-- temp_table은 임시테이블 정해진 값-->

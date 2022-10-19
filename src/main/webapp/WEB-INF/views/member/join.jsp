@@ -1,10 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page trimDirectiveWhitespaces="true" %> 	
 <link rel="stylesheet" href="css/member/join.css">
 
 <!--  회원가입 유효성 검사 -->
-<script type="text/javascript">
- 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script type="text/javascript">	
+
+
         function Validation() {
     	
         //정규식 부분입니다
@@ -187,6 +192,45 @@
 	}
 
         </script>
+        
+        
+<script type="text/javascript">
+	
+	function idcheck() {
+		
+
+		var member_id = $('#userid').val();
+		
+		$.ajax({
+		
+			url : 'http://localhost:8090/idcheck?member_id='+ member_id,
+			type : 'get',
+			success : function(data) {
+				console.log("1 = 중복됨, 0 = 중복안됨 : "+ data);							
+				
+				var data_num = Number(data);
+				if(data_num >=1) {
+					
+					alert("아이디가 중복됩니다");
+					$('#member_id_check').val("no");
+				}else {
+					alert("사용 가능한 아이디입니다.");
+					$('member_id_check').val("yes");
+				}
+				error : function fail() {
+					console.log("실패");
+				}
+				
+			}
+		})
+		
+	}
+
+
+</script>        
+        
+        
+        
 
 <script type="text/javascript">
         	function checkall(){
@@ -219,7 +263,10 @@
 				</div>
 				<div>
 					<input type="text" placeholder="아이디" name="id" id="userid">
-				</div>
+					<input  id="id_check" type="button" onclick="idcheck();" value="아이디 중복 확인">
+					<!-- <button onclick="idcheck();">아이디 중복 확인</button> -->
+					<input type="hidden" name="member_id_check" id="member_id_check" value="no">
+				</div>	
 				<div>
 					<input type="password" placeholder="비밀번호" name="password"
 						id="userPs">

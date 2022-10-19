@@ -73,6 +73,9 @@
 					</c:forEach>	
 					</div>
 					
+					<input type="hidden" value="${dtowo.community_contents_number}" name="contents_number">
+					</input>
+					
 					<!-- 댓글 달기 -->
 					<div>		
 					<input type="hidden"  name="reply_idx" />

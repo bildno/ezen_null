@@ -90,16 +90,17 @@ li {
 	font-size: 16px;
 }
 
-#text:focus {
+#text_search:focus {
 	outline: 0.5px solid rgb(151, 210, 236);
 }
 
 .sidelist {
+   /*  display:none; */
 	width: 0;
 	position: fixed;
 	z-index: 1;
 	background-color: rgb(238, 238, 238);
-	height: 400px;
+	height: 48%;
 	top: 0;
 	right: 0;
 	color: black;
@@ -116,12 +117,14 @@ li {
 	height: 45px;
 	top: 30px;
 	right: 30px;
+	display:flex;
+	column-gap: 10px;
 }
 
 .sidelist a {
-	padding: 8px 8px 8px 32px;
+	padding: 20px 8px 8px 32px;
 	text-decoration: none;
-	font-size: 15px;
+	font-size: 20px;
 	color: #818181;
 	display: block;
 	transition: 0.3s;
@@ -498,3 +501,9 @@ video {
 #mychk_img:hover + span.arrow_box {
 	display: block;
 }
+
+/* .emphasized {
+    box-shadow : rgba(0,0,0,0.5) 0 0 0 9999px;
+}
+ */
+
