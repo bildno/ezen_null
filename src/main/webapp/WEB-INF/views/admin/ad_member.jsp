@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <link rel="stylesheet" href="css/admin/ad_member.css">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 
 	<div class="ad_wrap">
@@ -49,6 +50,7 @@
 								<option value="member_phone">전화번호</option>
 								<option value="member_email">이메일</option>
 								<option value="member_gender">성별</option>
+								<option value="member_date">가입일</option>
 						</select> &nbsp;&nbsp;
 						<input type="text" name="search_contents"
 							id="search_contents" style="width: 100%;">
@@ -74,6 +76,7 @@
 							<th>이메일</th>
 							<th>전화번호</th>
 							<th>성별</th>
+							<th>가입일</th>
 						</tr>
 						<c:forEach var="dto" items="${ad_member_page}" varStatus="">
 						<tr>
@@ -83,6 +86,7 @@
 							<td>${ dto.member_email }</td>
 							<td>${ dto.member_phone }</td>
 							<td>${ dto.member_gender }</td>
+							<td>${ dto.member_joindate }</td>
 						</tr>
 						
 						</c:forEach>
