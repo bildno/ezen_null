@@ -255,7 +255,7 @@ function readURL(input) {
 
 						<tr>
 							<th>비밀번호</th>
-							<td colspan=2><a id="mypage_a" href="/pwchange">변경하기</a></td>
+							<td colspan=2><a id="od2" href="/pwchange">변경하기</a></td>
 						</tr>
 						<tr>
 							<td></td>

@@ -19,6 +19,11 @@
         // 이미지 유효성 검사
         function confirmFileExtension(file) {
             console.log(file);
+            if($(#imgFile).val()==""){
+            	  alert("업로드 되었습니다.");
+            	  return true;
+            }
+            
             var reg = /(.*?)\.(jpg|jpeg|png|gif|bmp|JPG|PNG|JPEG|GIF|BMP)$/;
             if (file.match(reg)) {
                 alert("업로드 되었습니다.");
@@ -278,7 +283,7 @@ function fileReset2(form){
 				</div>
 				<div class="cancel">
 					<button type="button" id="btnfn"
-						onclick="window.open('/mypage_host')">취소</button>
+						onclick="location.href='/mypage_host'">취소</button>
 				</div>
 			</div>
 		</form>

@@ -1229,8 +1229,10 @@ public class Mycontroller {
 		int member_host = (int) session.getAttribute("member_host");
 		System.out.println(member_host);
 		List<memberDto> member_list = memberService.mypageload(member_id);
+		List<mypage_imgDto> sel_myimg = mypage_imgService.view_file_title(member_id);
 
 		if (member_host == 1) {
+			model.addAttribute("sel_myimg",sel_myimg);
 			model.addAttribute("member_list", member_list);
 			model.addAttribute("mainPage", "host/host.jsp");
 			return "index";
@@ -1826,7 +1828,7 @@ public class Mycontroller {
 			HttpServletRequest request,
 			Model model) {
 		
-	
+	System.out.println(filelist.length + "파일 길이 222");
 		
 		HttpSession session = request.getSession();
 		String member_id = (String) session.getAttribute("member_id");
@@ -1861,13 +1863,14 @@ public class Mycontroller {
 			upload_url_title = hostenterService.select_title(hostenter_number);
 		}
 		
+		
 
 			try {
-				int oo = hostenter_imgDaoService.delete_img(hostenter_name);
-				System.out.println(oo);
-				if(oo > 0) {
-					System.out.println("삭제성공");
-				}
+		
+			
+			
+				
+				
 				result = hostenterService.update_space(upload_url_title, 
 													   host_name, 
 													   host_contents_number, 
@@ -1884,16 +1887,28 @@ public class Mycontroller {
 				
 			}
 			
+			int i = 0;
 			if(result == 1) {
 				for( MultipartFile file : filelist) {
+					
+					System.out.println("들어옴");
 					System.out.println("filelist:" + filelist);
 					System.out.println("filename:" + file);
 					String upload_url = fileUploadService.restore(file);
-					System.out.println( "upload_url:" + upload_url );
+					System.out.println(upload_url + "qweqrqwer");
+					
+					if(!upload_url.equals("0")) {
+						if(i == 0) {
+							hostenter_imgDaoService.delete_img(hostenter_name);
+							i++;
+						}
+					result = hostenter_imgDaoService.hostenter_img_up(host_name_,member_id,upload_url);
+						
+					}
 				
 					
 						
-				result = hostenter_imgDaoService.hostenter_img_up(host_name_,member_id,upload_url);
+				
 					
 					
 					
@@ -1908,10 +1923,6 @@ public class Mycontroller {
 						model.addAttribute("mainPage","host/enter_host.jsp");
 						return "index";
 					}
-				}else {
-					System.out.println("업로드 실패!");
-					model.addAttribute("mainPage","host/enter_host.jsp");
-					return "index";
 				}
 
 			}
