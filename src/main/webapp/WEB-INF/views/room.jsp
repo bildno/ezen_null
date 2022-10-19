@@ -19,8 +19,9 @@
 		.container h1{
 			text-align: left;
 			padding: 5px 5px 5px 15px;
-			color: #FFBB00;
-			border-left: 3px solid #FFBB00;
+			color: rgb(151, 210, 236);
+			font-family: 'Noto Sans KR', sans-serif;
+			border-left: 3px solid rgb(151, 210, 236);
 			margin-bottom: 20px;
 		}
 		.roomContainer{
@@ -33,15 +34,20 @@
 			border: none;
 		}
 		.roomList th{
-			border: 1px solid #FFBB00;
+			border: 1px solid rgb(151, 210, 236);
+			padding: 10px;			
 			background-color: #fff;
-			color: #FFBB00;
+			font-family: 'Noto Sans KR', sans-serif;
+			font-weight:300;
+
 		}
 		.roomList td{
-			border: 1px solid #FFBB00;
+			border: 1px solid rgb(151, 210, 236);
 			background-color: #fff;
 			text-align: left;
-			color: #FFBB00;
+			font-family: 'Noto Sans KR', sans-serif;
+			font-weight:300;
+
 		}
 		.roomList .num{
 			width: 75px;
@@ -55,21 +61,33 @@
 			text-align: center;
 		}
 		button{
-			background-color: #FFBB00;
-			font-size: 14px;
-			color: #000;
-			border: 1px solid #000;
+			background-color: rgb(151, 210, 236);
+			font-family: 'Noto Sans KR', sans-serif;
+			font-size: 15px;
+	        font-weight:300;
+	        width:80px;
+			border: none;
 			border-radius: 5px;
-			padding: 3px;
+			padding: 8px;
 			margin: 3px;
 		}
 		.inputTable th{
 			padding: 5px;
+			font-family: 'Noto Sans KR', sans-serif;
+			font-weight:300;
 		}
 		.inputTable input{
 			width: 330px;
 			height: 25px;
+			padding:5px;
 		}
+		
+		.inputTable input:focus {
+		
+		outline: 3px solid #fff;
+		
+		}
+		
 	</style>
 </head>
 
@@ -143,9 +161,9 @@
 		<div>
 			<table class="inputTable">
 				<tr>
-					<th>방 제목</th>
+					<th>방명</th>
 					<th><input type="text" name="roomName" id="roomName"></th>
-					<th><button id="createRoom">방 만들기</button></th>
+					<th><button id="createRoom">만들기</button></th>
 				</tr>
 			</table>
 		</div>

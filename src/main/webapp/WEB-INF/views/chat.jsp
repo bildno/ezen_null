@@ -18,8 +18,8 @@
 		.container h1{
 			text-align: left;
 			padding: 5px 5px 5px 15px;
-			color: #FFBB00;
-			border-left: 3px solid #FFBB00;
+			color: rgb(151, 210, 236);
+			border-left: 3px solid rgb(151, 210, 236);
 			margin-bottom: 20px;
 		}
 		.chating{
@@ -39,9 +39,56 @@
 		input{
 			width: 330px;
 			height: 25px;
+			padding:10px;
 		}
 		#yourMsg{
 			display: none;
+		}
+		
+		.inputTable th{
+			padding: 5px;
+			font-family: 'Noto Sans KR', sans-serif;
+			font-weight:300;
+		}
+		
+		.inputTable input{
+			width: 340px;
+			height: 25px;
+			padding:15px;
+		}
+		
+		.inputTable input:focus {
+		
+		outline: 3px solid #fff;
+		
+		}
+		
+		#sendBtn {
+		
+			background-color: rgb(151, 210, 236);
+			font-family: 'Noto Sans KR', sans-serif;
+			font-size: 15px;
+	        font-weight:300;
+	        width:80px;
+			border: none;
+			border-radius: 5px;
+			padding: 8px;
+			margin: 3px;
+		
+		}
+		
+		
+		#startBtn{
+		
+			background-color: rgb(151, 210, 236);
+			font-family: 'Noto Sans KR', sans-serif;
+			font-size: 15px;
+	        font-weight:300;
+	        width:80px;
+			border: none;
+			border-radius: 5px;
+			padding: 8px;
+			margin: 3px;
 		}
 	</style>
 
@@ -128,16 +175,16 @@
 		<div id="yourName">
 			<table class="inputTable">
 				<tr>
-					<th>사용자명</th>
+					<th>User</th>
 					<th><input type="text" name="userName" id="userName" value="${dto.member_name }" readonly="readonly"></th>
-					<th><button onclick="chatName()" id="startBtn">채팅방입장</button></th>
+					<th><button onclick="chatName()" id="startBtn">입장</button></th>
 				</tr>
 			</table>
 		</div>
 		<div id="yourMsg">
 			<table class="inputTable">
 				<tr>
-					<th>메시지</th>
+					<th>내용</th>
 					<th><input id="chatting" placeholder="보내실 메시지를 입력하세요."></th>
 					<th><button onclick="send()" id="sendBtn">보내기</button></th>
 				</tr>
