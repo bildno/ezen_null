@@ -31,4 +31,8 @@
 	  WHERE one2one_number=#{ param1 }
 	</delete>
 	
+	<delete id="one2onedeleteid">
+	  DELETE FROM one2one WHERE one2one_member_id=#{ param1 }
+	</delete>
+	
 </mapper>    

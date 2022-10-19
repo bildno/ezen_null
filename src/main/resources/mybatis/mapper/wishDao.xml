@@ -26,5 +26,10 @@
 </delete>
 
 
+<!-- 회원탈퇴 -->
+<delete id="zzimdeleteid">
+	delete from my_wish where my_wish_member_id = #{param1}
+</delete>
+
 
 </mapper> 

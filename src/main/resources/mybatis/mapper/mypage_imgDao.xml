@@ -17,10 +17,19 @@
 		select * from mypage_img where mypage_img_member_id = #{param1}
 	</select>
 	
+	
 	<!-- 사진삭제하기 -->
 	<delete id="delete_file">
 		delete from mypage_img where mypage_img_member_id = #{param1}
 	</delete> 
+	
+	<!-- 회원탈퇴 -->
+	<delete id="deletefileid">
+		delete from mypage_img where mypage_img_member_id = #{param1}
+	</delete> 
+	<select id="deletefileselect" resultType="_int">
+		SELECT count(*) from mypage_img where mypage_img_member_id = #{param1}
+	</select>
 	
 	
 

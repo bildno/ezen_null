@@ -46,4 +46,8 @@ public interface IhostenterDao {
 	public List<hostenterDto> space_top_hit(String hostenter_contents_number);
 	
 	public int delete_space(int hostenter_number);
+	
+	public int spacedeleteid(String member_id);
+	
+	public int deletespaceselect(String member_id);
 }

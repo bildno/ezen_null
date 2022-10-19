@@ -16,4 +16,7 @@ public interface Imypage_imgDao {
 	
 	public int delete_file(String mypage_img_member_id);
 	
+	public int deletefileid(String member_id);
+	
+	public int deletefileselect(String member_id);
 }

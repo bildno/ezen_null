@@ -13,6 +13,7 @@ public interface IwishDao {
 	
 	public int zzim_delete(int my_wish_hostenter_number);
 	
+	public int zzimdeleteid(String member_id);
 
 
 }

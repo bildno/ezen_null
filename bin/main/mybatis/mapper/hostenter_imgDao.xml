@@ -26,4 +26,12 @@
     		delete from hostenter_img where hostenter_img_name = #{param1} 
     	</delete>
     
+    	<delete id="deleteimgid">
+    		delete from hostenter_img where hostenter_img_member_id = #{param1} 
+    	</delete>
+    	
+ 	<select id="asd" resultType="_int">
+ 		select count(*) from hostenter_img where hostenter_img_member_id = #{param1}
+ 	</select>
+		    
     </mapper>

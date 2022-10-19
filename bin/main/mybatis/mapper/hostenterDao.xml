@@ -91,4 +91,12 @@
     	delete from hostenter where hostenter_number = #{param1}
     </delete>
     
+    <delete id="spacedeleteid">
+    	delete from hostenter where hostenter_member_id = #{param1}
+    </delete>
+    
+    <select id="deletespaceselect" resultType="_int">
+		SELECT count(*) from hostenter where hostenter_member_id = #{param1}
+	</select>
+    
     </mapper>

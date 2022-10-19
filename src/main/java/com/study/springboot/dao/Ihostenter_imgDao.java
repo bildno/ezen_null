@@ -19,4 +19,7 @@ public interface Ihostenter_imgDao {
 	
 	List<hostenter_imgDto> img_sel(String hostenter_img_name);
 	
+	public int deleteimgid(String member_id);
+	
+	public int asd(String member_id);
 }

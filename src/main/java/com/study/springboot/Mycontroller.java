@@ -25,7 +25,10 @@ import com.study.springboot.Vo.Room;
 import com.study.springboot.dao.IadminDao;
 import com.study.springboot.dao.IcommunityDao;
 import com.study.springboot.dao.IfaqDao;
+import com.study.springboot.dao.IhostenterDao;
+import com.study.springboot.dao.Ihostenter_imgDao;
 import com.study.springboot.dao.ImemberDao;
+import com.study.springboot.dao.Imypage_imgDao;
 import com.study.springboot.dao.InoticeDao;
 import com.study.springboot.dao.Ione2oneDao;
 import com.study.springboot.dao.Ione2one_answerDao;
@@ -713,23 +716,55 @@ public class Mycontroller {
 		model.addAttribute("mainPage", "member/mypage.jsp");
 		return "index";
 	}
-	@RequestMapping("/resign")
+
+	@Autowired
+	private Imypage_imgDao imypage_imgDao;
+	@Autowired
+	private Ihostenter_imgDao ihostenter_imgDao;
+	@Autowired
+	private IhostenterDao ihostenterDao;
+	
+@RequestMapping("/resign")
 	public String resign(HttpServletRequest request) {
 		
 		HttpSession session = request.getSession();
 		String member_id = (String) session.getAttribute("member_id");
 		
 		System.out.println(member_id);
-		int result1 = ireplyDao.deletereplyid2( member_id );
-		int result2 = ireplyDao.deletereplyid( member_id );
-		int result3 = icommunityDao.deletecommuid( member_id );
-		int result4 = memberService.resign( member_id );
-		if( result1 != 1 && result2 != 1 && result3 != 1 && result4 != 1) {
-			return "/mypage";
+		int result1 = ione2one_answerDao.one2oneanswerdeleteid( member_id );
+		int result2 = ione2oneDao.one2onedeleteid( member_id );
+		int result3 = ireplyDao.deletereplyid2( member_id );
+		int result4 = ireplyDao.deletereplyid( member_id );
+		int result5 = icommunityDao.deletecommuid( member_id );
+		int result6 = iwishDao.zzimdeleteid( member_id );
+		int result7 = imypage_imgDao.deletefileselect(member_id);
+		System.out.println(result7);
+		if(result7 == 1) {
+			imypage_imgDao.deletefileid( member_id );
+		}
+		System.out.println("다음");
+		
+		int result8 = ihostenter_imgDao.asd(member_id);
+		System.out.println(result8);
+		if(result8 > 0) {
+			ihostenter_imgDao.deleteimgid( member_id );
+		}
+		
+		int result9 = ihostenterDao.deletespaceselect(member_id);
+		System.out.println(result9);
+		if(result9 > 0) {
+			ihostenterDao.spacedeleteid( member_id );
+		}
+		
+		
+		int result10 = memberService.resign( member_id );
+		if( result10 == 1) {
+			request.getSession().invalidate();
+			return "redirect:/main";
 		}else {
 			return "redirect:/mypage";   
 		}
-	}
+}
 	/* 예약내역 */
 	@RequestMapping("/reserveList")
 	public String reserveList(Model model) {
