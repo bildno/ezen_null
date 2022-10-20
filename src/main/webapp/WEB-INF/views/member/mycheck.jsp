@@ -6,6 +6,17 @@
 
 <link rel="stylesheet" href="css/member/mycheck.css">
 
+
+
+
+
+
+
+
+
+
+
+
 <meta charset='utf-8' />
 <!-- 화면 해상도에 따라 글자 크기 대응(모바일 대응) -->
 <meta name="viewport"
