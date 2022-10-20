@@ -7,19 +7,17 @@
 <head>
 <style>
 @import
-	url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap')
-	;
+	url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
 
 @import
 	url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
 
 @import
-	url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500&display=swap')
-	;
+	url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500&display=swap');
 </style>
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="css/member/mycheck.css">
-<link rel="stylesheet"
+<link rel="stylesheet"  
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 
 <script
@@ -58,7 +56,7 @@
         	document.getElementById("sidelist").style.width = "300px";
             target.addClass('emphasized');
         }); 
-
+       
         // 사이드바 외부를 클릭하면 사이드바 닫힘
         $(document).mouseup(function (e){
             if(target.has(e.target).length==0) {
