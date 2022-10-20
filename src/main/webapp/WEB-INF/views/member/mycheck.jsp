@@ -7,16 +7,6 @@
 <link rel="stylesheet" href="css/member/mycheck.css">
 
 
-
-
-
-
-
-
-
-
-
-
 <meta charset='utf-8' />
 <!-- 화면 해상도에 따라 글자 크기 대응(모바일 대응) -->
 <meta name="viewport"
@@ -38,7 +28,6 @@
 <div id='calendar-wrap'>
 	<div id='calendar1'></div>
 </div>
-
 
 <script>
 	$(document).ready(function() {
@@ -66,10 +55,10 @@
 				// },
 				customButtons : {
 					custom1 : {
-						text : '출석확인',
+						text : '출석확인1',
 						click : function() {
 							//alert('출석확인 클릭');
-							idCheckDay();
+							//idCheckDay();
 						}
 					}
 				}
@@ -119,11 +108,11 @@
 		},
 			customButtons : {
 				custom1 : {
-					text : '출석완료'
-					/* click : function() {
+					text : '출석확인2',
+					click : function() {
 						//alert('출석확인 클릭');
 						idCheckDay();
-					} */
+					}
 				}
 			}
 		});
@@ -164,5 +153,3 @@
 		});
 	}
 </script>
-
-
