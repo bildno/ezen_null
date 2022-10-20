@@ -243,7 +243,7 @@ function fileReset2(form){
 
 
         <div class="space_host_bnum">
-            <h3 id="space_host_h3">사업자등록번호</h3>
+            <h3 id="space_host_h3">사업자등록번호(-제외하고 입력해주세요)</h3>
             <input type="text" placeholder="사업자등록번호를 입력해주세요" id="host_input" name="host_bnumber">
         </div>
 

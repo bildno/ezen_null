@@ -1679,6 +1679,7 @@ public class Mycontroller {
 			Model model) {
 	
 		List<hostenterDto> space_list = hostenterService.contents_space(contents_number);
+		System.out.println(contents_number);
 		model.addAttribute("space_list",space_list);
 		model.addAttribute("contents_number",contents_number);
 		model.addAttribute("mainPage", "contents/spacerent.jsp");
