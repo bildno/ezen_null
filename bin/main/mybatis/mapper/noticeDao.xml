@@ -49,7 +49,7 @@
 	</select>
 	
 	<select id="contents_notice" resultType="com.study.springboot.dto.noticeDto">
-		select * from notice where notice_contents_number = #{param1}
+		select * from notice where notice_contents_number = #{param1} and rownum &lt;= 3
 	</select>
 	
 </mapper>

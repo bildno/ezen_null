@@ -23,8 +23,9 @@
 				<button class="accordion" id="o_num${dto.one2oneDto.one2one_number }  "
 				value="${dto.one2oneDto.one2one_number }" name="one2one_number">
 				<div id="one_list_div">
-					<span id="list_span"> ${dto.one2oneDto.one2one_title }  </span> <span
-						id="list_span_date"> ${dto.one2oneDto.one2one_date }  <input
+					<span id="list_span"> ${dto.one2oneDto.one2one_title }</span> 
+					<span id="list_span_date"> ${dto.one2oneDto.one2one_date }  
+					<input
 						type="button" value="삭제" class="deletebtn"
 						onclick="location.href='one2oneDelete?num=${dto.one2oneDto.one2one_number }'"
 						style="margin-left: 10px;">

@@ -47,6 +47,11 @@ implementation group: 'com.googlecode.json-simple', name: 'json-simple', version
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 	
 }
+bootWar {
+  archiveName("CompanyWebBootwar.war")
+}
+
+
 
 test {
 	useJUnitPlatform()
