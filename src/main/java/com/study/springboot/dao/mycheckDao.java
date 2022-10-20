@@ -20,7 +20,7 @@ public interface mycheckDao {
 	
 	public List<mycheckDto> mycheck_list(String member_id);
 	
-	public int insertMycheck(mycheckDto dto);
+//	public int insertMycheck(mycheckDto dto);
 
 	
 }

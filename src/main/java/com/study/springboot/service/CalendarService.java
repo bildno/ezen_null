@@ -30,7 +30,8 @@ public class CalendarService {
     	
     	String member_id = (String)request.getSession().getAttribute("member_id");
 		List<mycheckDto> mycheck_list = mycheckDao.mycheck_list(member_id);
-		System.out.println("---------"+mycheck_list+"-----------");
+		System.out.println("---------mycheck_list = "+mycheck_list+"---  service  ---------");
+		System.out.println("member_id = "+member_id);
 
 		String pattern = "yyyy-MM-dd";
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
@@ -58,16 +59,17 @@ public class CalendarService {
     	event_today.put("textColor", "black");
 		eventList.add(event_today);
 		
-		System.out.println("1111111111111"+eventList);
+		System.out.println("현재날짜 ========"+event_today);
+		System.out.println("전체출석 ======== "+eventList);
 //		System.out.println("222222222222"+getEventList(request));
 
     	return eventList;
 
     }
-	public int insertMycheck(mycheckDto dto) {
-		int insertMycheck = mycheckDao.insertMycheck(dto);
-		return insertMycheck;
-	}
+//	public int insertMycheck(mycheckDto dto) {
+//		int insertMycheck = mycheckDao.insertMycheck(dto);
+//		return insertMycheck;
+//	}
 
    
     
