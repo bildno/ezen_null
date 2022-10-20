@@ -107,11 +107,11 @@
 		},
 			customButtons : {
 				custom1 : {
-					text : '출석확인',
-					click : function() {
+					text : '출석완료'
+					/* click : function() {
 						//alert('출석확인 클릭');
 						idCheckDay();
-					}
+					} */
 				}
 			}
 		});

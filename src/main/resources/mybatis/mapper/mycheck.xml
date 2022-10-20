@@ -19,6 +19,7 @@
 	<insert id="insertMycheck" parameterType="com.study.springboot.dto.mycheckDto">
 		insert into mycheck
 		values( mycheck_idx.nextval, #{ mycheck_member_id }, sysdate )
+		
 	</insert>
 
 </mapper>
