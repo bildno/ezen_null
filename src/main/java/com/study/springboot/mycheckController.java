@@ -49,8 +49,24 @@ public class mycheckController {
 	
 	@GetMapping("/event") //ajax 데이터 전송 URL
     public @ResponseBody List<Map<String, Object>> getEvent(HttpServletRequest request){
-
+		System.out.println("hello");
 		return calendarService.getEventList(request);
     }
+	
+	
+
+	@GetMapping("/checkEvent") //ajax 데이터 전송 URL
+    public @ResponseBody List<Map<String, Object>> checkEvent(HttpServletRequest request){
+
+		return calendarService.checkEventclick(request);
+    }
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }
