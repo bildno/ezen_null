@@ -28,7 +28,7 @@
 				
 				<div class="mypage_mylist">
 					<p>
-						<a id="mypage_a" href="/reserveList"><b>예약 내역</b></a>
+						<a id="mypage_a" href="/#"><b>예약 내역</b></a>
 					<p>
 						<a id="mypage_a" href="#"><b>리뷰 관리</b></a>
 					<p>
@@ -225,7 +225,8 @@
 
 			
 			</div>
+			</div>
 	</c:forEach>
-</div>
+
 
 
