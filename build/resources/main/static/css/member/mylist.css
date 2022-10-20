@@ -1,0 +1,77 @@
+.container {
+	margin-top:150px;
+	margin-bottom:100px;
+}
+.mylist {
+    margin: 100px 25% 20px 20%;
+    font-family: 'Do Hyeon', sans-serif;
+}
+
+#mylist_exp{
+	font-family: 'Do Hyeon', sans-serif; 
+    font-weight: 300; 
+    margin-left: 220px;
+    font-size: 20px; 
+    color: rgb(37, 49, 109)
+}
+#space_icon{
+    width: 30px;
+}
+.myreview {
+    width: 60%;
+    margin: 40px 20% 40px 20%;
+    font-family: Noto Sans KR;
+    margin-bottom:50px;
+    
+}
+.myreview a:link {
+	text-decoration: none;
+}
+.myreview a {
+	color: black;
+}
+
+#review_btn{
+	background-color: rgb(238, 238, 238);
+    border: 1px solid lightgray;
+	font-family : 'Noto Sans KR';
+	font-weight : 300;
+    padding: 10px 5px 10px 5px;
+    border-radius: 3px;
+    padding: 5px;
+    font-size: 13px;
+}
+
+.enter {
+    display: flex;
+    justify-content: end;
+
+    margin-bottom: 40px;
+    font-family: Noto Sans KR;
+    
+}
+.enter > :nth-child(1) {
+    margin-right: 20px;
+}
+
+.myboard {
+    width: 60%;
+    margin: 40px 20% 40px 20%;
+    font-family: Noto Sans KR;
+    margin-bottom:50px;
+}
+.myboard a {
+	color: black;
+}
+.myboard a:link{
+	text-decoration: none;
+
+}
+.replytable {
+	display: flex;
+	justify-content: space-between;
+}
+.replytable input {
+	background-color: white;
+	border: 0px;
+}

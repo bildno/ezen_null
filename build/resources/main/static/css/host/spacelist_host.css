@@ -1,0 +1,94 @@
+.container{
+    margin-top: 150px;
+    margin-bottom: 100px;
+    
+
+}
+.container h1{
+    text-align: left;
+	margin-left: 50px;
+	font-family: 'Do Hyeon', sans-serif;
+}
+
+#host_list_exp{
+	font-family: 'Do Hyeon', sans-serif;
+	font-weight: 300;
+	margin-left: 50px;
+	font-size: 20px;
+	color: rgb(37, 49, 109)
+}
+
+#space_icon {
+	width: 30px;
+}
+#selectbox{
+    display: flex;
+    justify-content: end;
+	width: 100%;
+	font-family: 'Noto Sans KR', sans-serif;
+
+}
+#selectbox button{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(238, 238, 238);
+}
+#selectbox input{
+ width: 10%;
+ border-radius: 5px;
+ padding: 10px;
+ border: 1px solid rgb(238, 238, 238);
+ margin-right: 10px; 
+}
+#selectbox input:focus{
+	outline: none;
+}
+#spacelist{
+    border: 1px solid rgb(238, 238, 238);
+    border-radius: 5px;
+    margin-top: 30px;
+
+}
+
+.spacelist_img{
+	width: 250px;
+	border-radius: 5px;
+}
+.spacebox{
+	display:flex;
+	justify-content:space-around;
+	flex-flow:row wrap;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	cursor: pointer;
+	
+	
+}
+
+
+.ho_space_list2 {
+	border: none;
+	border-radius: 5px;
+	width: 70px;
+	padding: 10px;
+	font-size: 13px;
+	background-color: rgb(238, 238, 238);
+	font-family: 'Noto Sans KR';
+}
+
+.ho_space_list{
+	display:flex;
+	flex-direction:row-reverse;
+	margin-top:100px;
+}
+
+#space_exp{
+width : 250px;
+resize: none;	
+border: 1px solid rgb(238, 238, 238); 
+border-radius: 5px;
+	
+}
+#space_exp:hover {
+	outline: none;
+}
