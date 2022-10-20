@@ -1530,7 +1530,7 @@ public class Mycontroller {
 		System.out.println(contents_number);
 		System.out.println(search_name);
 		System.out.println(search_headcount);
-		List<hostenterDto> hostenterlist = ihostenterDao.space_search(contents_number,search_name,search_headcount);
+		List<hostenterDto> hostenterlist = ihostenterDao.space_search(contents_number,search_headcount,search_name);
 		model.addAttribute("contents_number",contents_number);
 		model.addAttribute("hostenterlist", hostenterlist);
 		model.addAttribute("mainPage", "contents/spacerent.jsp");
