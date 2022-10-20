@@ -1,0 +1,144 @@
+.container {
+	margin-top: 150px;
+	margin-bottom: 100px;
+}
+
+#one2one_h1 {
+	font-family: 'Do Hyeon', sans-serif;
+	margin-left: 50px;
+	margin-top: 50px;
+	font-size: 50px;
+}
+
+#one2one_h2 {
+	font-family: 'Do Hyeon', sans-serif;
+	font-weight: 300;
+	font-size: 20px;
+	margin-left: 50px;
+	color: rgb(37, 49, 109)
+}
+
+#space_icon {
+	width: 30px;
+}
+
+.contents {
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: 300;
+	width: 80%;
+	margin: 100px 10% 150px 10%;
+}
+.deletebtn{
+	border: none;
+	border-radius: 5px;
+	width: 70px;
+	padding: 10px;
+	font-size: 13px;
+	background-color: rgb(238, 238, 238);
+	font-family: 'Noto Sans KR';
+	margin-top:20px;
+	margin-left: 15px;
+}
+
+#one_list_div{
+	display:flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+#list_span_date{
+	font-size: 15px;
+	margin-top:3px;
+}
+#list_span{
+	font-size: 15px;
+	margin-top:30px;
+}
+
+
+
+.accordion {
+	background-color: #FFFFFF;
+	cursor: pointer;
+	padding: 16px;
+	width: 100%;
+	outline: none;
+	text-align: left;
+	transition: 0.4s;
+	border: none;
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size: 18px;
+	font-weight: 300;
+	color: black;
+	text-decoration: none;
+}
+
+list_anspan
+
+.accordion:hover {
+	background-color: #F5F5F5;
+}
+
+.actives {
+	background-color: lightgray;
+}
+
+.accordion:after {
+	float: right;
+	margin-left: 5px;
+}
+
+#o_ans1{
+	font-family: 'Noto Sans KR', sans-serif;
+	display:flex;
+	flex-direction:row;
+	justify-content:center;
+	font-weight: 500;
+    background-color: #FFFFFF;
+	cursor: pointer;
+	padding: 16px;
+	width: 100%;
+	outline: none;
+	text-align: left;
+	transition: 0.4s;
+	border: none;
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size: 18px;
+	font-weight: 300;
+	color: black;
+	text-decoration: none;
+}
+
+.panel {
+	padding: 0 16px;
+	background-color: #FFFFFF;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.2s ease-out;
+	border-bottom: 1px solid #EEEEEE;
+}
+
+
+
+.writebtn {
+	border: none;
+	border-radius: 5px;
+	width: 70px;
+	padding: 10px;
+	font-size: 13px;
+	background-color: rgb(238, 238, 238);
+	font-family: 'Noto Sans KR';
+	margin-top:20px;
+	margin-left: 15px;
+
+	
+}
+
+.write {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: end;
+}
+
+.sub_title{
+	color: gray;
+}
