@@ -29,10 +29,12 @@
 </div>
 
 <script>
-	(function() {
+	$(document).ready(function() {
+
 		$(function() {
 			// calendar element 취득
 			var calendarEl = $('#calendar1')[0];
+
 			// full-calendar 생성하기
 			var calendar = new FullCalendar.Calendar(calendarEl, {
 				// 해더에 표시할 툴바
@@ -59,22 +61,62 @@
 						}
 					}
 				}
-				
 
-			 events : [
+
+/* 			events : [
 			  {
 			    title: '출석',
 			    start: '2022-10-01'
+			    imageurl:"/img/star.png"
 			  }
 			  {
 			    title: '출석',
 			    start: '2022-10-03'
 			  }
-			] 
+			] */
+				
+				
+				
 			});
 			// 캘린더 랜더링
 			calendar.render();
 		});
+		var calendarEl = document.getElementById('calendar1');
+		var request= $.ajax({
+		url : "/mycheck/event",
+		method : "GET",
+		//dataType : "json",
+		
+		data : {
+			mycheck_number : "mycheck_number",
+			myheck_member_id :"myheck_member_id",
+			mycheck_date : "mycheck_date"
+		}
+
+	});
+	request.done(function(data) {
+		var calendar = new FullCalendar.Calendar(calendarEl, {
+			//initialView : 'dayGridMonth',
+			events : data,
+			locale : 'ko',
+		headerToolbar: {
+		//left: 'prev,next today',
+		//center: 'title',
+		right: 'custom1'
+		// dayGridMonth,timeGridWeek,timeGridDay,listWeek 월, 주, 일, 일정목록 추가삭제가능 */
+		},
+			customButtons : {
+				custom1 : {
+					text : '출석확인',
+					click : function() {
+						//alert('출석확인 클릭');
+						idCheckDay();
+					}
+				}
+			}
+		});
+		calendar.render();
+	});
 	})();
 
 	function idCheckDay() {
@@ -82,8 +124,17 @@
 
 		var calendarEl = document.getElementById('calendar1');
 		var request = $.ajax({
-			url : "/mycheck/event",
+			url : "/mycheck/checkEvent",
 			method : "GET",
+			//dataType : "json",
+			
+			data : {
+				mycheck_number : "mycheck_number",
+				myheck_member_id :"myheck_member_id",
+				mycheck_date : "mycheck_date"
+			}
+
+			
 		});
 		request.done(function(data) {
 			var calendar = new FullCalendar.Calendar(calendarEl, {

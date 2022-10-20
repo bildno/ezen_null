@@ -69,6 +69,7 @@
 							<th>이메일</th>
 							<th>전화번호</th>
 							<th>성별</th>
+							<th>가입일</th>
 						</tr>
 						<c:forEach var="dto" items="${ad_host_page}" varStatus="">
 						<tr>
@@ -78,6 +79,7 @@
 							<td>${ dto.member_email }</td>
 							<td>${ dto.member_phone }</td>
 							<td>${ dto.member_gender }</td>
+							<td>${ dto.member_joindate }</td>
 						</tr>
 						</c:forEach>
 					</table>

@@ -1039,7 +1039,7 @@ public class Mycontroller {
 		model.addAttribute("sel_myimg",sel_myimg);
 		model.addAttribute("mainPage","member/mypage.jsp");
 		
-		return "index";
+		return "redirect:/mypage";
 	}
 			
 			
