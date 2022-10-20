@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.study.springboot.dao.IcontentsDao">
+	
+ 	<select id="contentsload" resultType="com.study.springboot.dto.contentsDto">
+		select * from contents where contents_number = #{ param1 }
+	</select>
+
+	<select id="select_content" resultType="String">
+	 	select contents_content from CONTENTS where contents_number = #{param1}
+	</select>
+
+</mapper>

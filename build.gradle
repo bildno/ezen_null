@@ -48,7 +48,7 @@ implementation group: 'com.googlecode.json-simple', name: 'json-simple', version
 	
 }
 bootWar {
-  archiveName("CompanyWebBootwar.war")
+  archiveName("ezen_null.war")
 }
 
 

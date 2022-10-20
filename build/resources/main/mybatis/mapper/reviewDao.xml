@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.study.springboot.dao.IreviewDao">
+
+	<select id="select_review"
+		resultType="com.study.springboot.dto.reviewDto">
+		select * from review where review_member_id = #{param1}
+	</select>
+	
+	<select id="myreview_page" resultType="com.study.springboot.dto.reviewDto">
+	 	SELECT * FROM (
+	    SELECT temp_table.*, ROWNUM as rnum FROM (
+	    SELECT * FROM REVIEW WHERE REVIEW_MEMBER_ID = #{param3} 
+	    ORDER BY REVIEW_NUMBER DESC
+	    ) temp_table ) WHERE rnum &gt;= #{param1} and rnum &lt;= #{param2}
+	</select> 
+
+</mapper>

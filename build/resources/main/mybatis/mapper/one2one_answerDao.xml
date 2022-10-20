@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.study.springboot.dao.Ione2one_answerDao">
+
+	<select id="one2one_answer" resultType="com.study.springboot.dto.one2one_answerDto">
+		select * from one2oneanswer where one2oneanswer_member_id = #{param1}
+	</select>
+	<insert id="one2one_answer_write"
+		parameterType="com.study.springboot.dto.one2one_answerDto">
+		insert into one2oneanswer 
+		values(#{param1},sysdate,#{param2},#{param3})
+	</insert>
+	<select id="ad_one2oneanswer_list" resultType="com.study.springboot.dto.one2one_answerDto">
+		select * from one2oneanswer where one2oneanswer_one2one_number = #{param1}
+	</select>
+	<update id="ad_one2oneanswer_update"
+		parameterType="com.study.springboot.dto.one2one_answerDto">
+		update one2oneanswer set
+		one2oneanswer_content=#{param1},
+		one2oneanswer_date=sysdate
+		WHERE one2oneanswer_one2one_number=#{param2}
+	</update>
+	<delete id="one2oneanswer_Delete">
+	  DELETE FROM one2oneanswer 
+	  WHERE one2oneanswer_one2one_number=#{ param1 }
+	</delete>
+	
+	<delete id="one2oneanswerdeleteid">
+	  DELETE FROM one2oneanswer 
+	  WHERE one2oneanswer_member_id=#{ param1 }
+	</delete>
+</mapper>	
+	
+	
