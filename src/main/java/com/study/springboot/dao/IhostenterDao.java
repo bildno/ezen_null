@@ -50,4 +50,7 @@ public interface IhostenterDao {
 	public int spacedeleteid(String member_id);
 	
 	public int deletespaceselect(String member_id);
+	
+	public List<hostenterDto>space_search(String contents_number,String name, String headcount );
+
 }

@@ -1521,7 +1521,23 @@ public class Mycontroller {
 		return "index";
 		
 	}
-	
+	@RequestMapping("/space_search")
+	public String community_search(@RequestParam(value = "contents_number") String contents_number,
+			@RequestParam(value = "name", required = false) String search_name,
+			@RequestParam(value = "headcount", required = false) String search_headcount,
+			HttpServletRequest request, Model model)  {
+
+		System.out.println(contents_number);
+		System.out.println(search_name);
+		System.out.println(search_headcount);
+		List<hostenterDto> hostenterlist = ihostenterDao.space_search(contents_number,search_name,search_headcount);
+		model.addAttribute("contents_number",contents_number);
+		model.addAttribute("hostenterlist", hostenterlist);
+		model.addAttribute("mainPage", "contents/spacerent.jsp");
+
+		return "index";
+		
+	}
 	
 	@RequestMapping("/deletecommu")
 	public String deletecommu(@RequestParam("community_number") int community_number) {
@@ -1664,6 +1680,7 @@ public class Mycontroller {
 	
 		List<hostenterDto> space_list = hostenterService.contents_space(contents_number);
 		model.addAttribute("space_list",space_list);
+		model.addAttribute("contents_number",contents_number);
 		model.addAttribute("mainPage", "contents/spacerent.jsp");
 		return "index";
 	}
