@@ -37,7 +37,7 @@
 				class="col-4 spacebox">
 				<img class="spacelist_img" src="${dto.hostenter_title_img }" alt="" style="width: 250px; height: 190px"> 
 				<div>
-					<textarea id="space_exp" rows="" cols="" readonly="readonly" style="font-family:  'Noto Sans KR', sans-serif; border: none; cursor: pointer">${dto.hostenter_name}</textarea>
+					<textarea id="space_exp" rows="" cols="" readonly="readonly" style="font-family:'Noto Sans KR', sans-serif; border: none; cursor: pointer">${dto.hostenter_name}</textarea>
 				</div>
 			</div>
 		</c:forEach>
