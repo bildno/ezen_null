@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <link rel="stylesheet" href="css/contents/spacerent.css">
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 	function Value() {
 		
 		var pattern_num = /^[0-9]*$/;	// 정규식 부분
@@ -22,7 +22,7 @@
 		
 		}
 	
-</script>
+</script> -->
 
 
 
@@ -37,7 +37,7 @@
 	<form action="/space_search" onsubmit="return Value();" method="post">
 	<div id="selectbox">
 		<input type="text" name="headcount" placeholder="인원" id="headcount">
-		<input type="text" name="name" placeholder="키워드" id="keyword"> 
+		<input type="text" name="search_name" placeholder="키워드" id="keyword"> 
 		<input type="hidden" value="${contents_number }" name="contents_number">
 			<c:forEach var="dt" items="${hostenterlist }" varStatus="dto">
 			</c:forEach>
