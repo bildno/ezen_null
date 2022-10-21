@@ -16,7 +16,7 @@
 	
 	<div class="main">
 		<div class="asidecomm">
-			<div class="section11">
+			<div class="section11"  >
 				<c:forEach var="space_dto" items="${space_top_hit }">
 				<div class="con11" onclick="location.href='/space_info?hostenter_number=${space_dto.hostenter_number}&hostenter_name=${hostenter_name }'">
 					<a href="#"> <img class="con-img1" src="${space_dto.hostenter_title_img }"
@@ -51,25 +51,26 @@
 						style="resize: none; width: 100%; height: 300px">
 						${dtowo.community_content}
 					</div>		
-						
-					<hr>
 					
 					
 					<!-- 댓글보기 -->
 					<div>
 					<c:forEach var="dtowe" items="${replyView}">
 						<div id="repl">
-							<span>
+							<span class="reple_span">
 							 ⦁ 
 							</span>
+							<span class="reple_span">
 							${dtowe.reply_member_id}
-							<span>
+							</span>
+							<span class="reple_span">
 								님
 							</span>
-						</div>
-						<div id="reple">
+							<span class="content_span">
 							${dtowe.reply_content}
+							</span>
 						</div>
+						<hr />
 					</c:forEach>	
 					</div>
 					
