@@ -21,24 +21,6 @@ public class CalendarService {
 	@Autowired
 	mycheckDao mycheckDao;
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-//	@Autowired
-//	private mycheckDao mycheckDao;
-
 	public List<Map<String, Object>> getEventList(HttpServletRequest request) {
 
 		String member_id = (String) request.getSession().getAttribute("member_id");
@@ -53,14 +35,17 @@ public class CalendarService {
 		// db저장값
 		for (int i = 0; i < mycheck_list.size(); i++) {
 			Map<String, Object> event = new HashMap<String, Object>();
+			//Map<String,Object> image = new HashMap<String, Object>();
+			
 			System.out.println(i + "  ===========");
 			String date = simpleDateFormat.format(mycheck_list.get(i).getMycheck_date());
 			System.out.println(date);
 			event.put("start", date);
-			event.put("title", "??????????????????");
-			event.put("color", "red");
-			event.put("textColor", "black");
+			
+			event.put("title", "💌💟💤💦💖💌💟💤💦💖");
+			//event.put("textColor", "black");
 			eventList.add(event);
+			
 
 			// System.out.println(event);
 
@@ -93,7 +78,7 @@ public class CalendarService {
 		String pattern = "yyyy-MM-dd";
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
 
-		// db저장값
+		// 출석기록 db저장값
 		for (int i = 0; i < mycheck_list.size(); i++) {
 
 			Map<String, Object> event = new HashMap<String, Object>();

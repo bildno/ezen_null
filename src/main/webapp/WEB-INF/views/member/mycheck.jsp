@@ -39,12 +39,12 @@
 			// full-calendar 생성하기
 			var calendar = new FullCalendar.Calendar(calendarEl, {
 				// 해더에 표시할 툴바
-				headerToolbar : {
+				//headerToolbar : {
 					//left: 'prev,next today',
 					//center: 'title',
-					right : 'custom1'
-				/* dayGridMonth,timeGridWeek,timeGridDay,listWeek 월, 주, 일, 일정목록 추가삭제가능 */
-				},
+					//right : 'custom1'
+				// dayGridMonth,timeGridWeek,timeGridDay,listWeek 월, 주, 일, 일정목록 추가삭제가능 */
+				//},
 				//initialDate: '2022-10-15', // 초기 날짜 설정 (설정하지 않으면 오늘 날짜가 보인다.)
 				locale : 'ko', // 한국어 설정
 				//editable: true, // 수정 가능
@@ -53,7 +53,7 @@
 				//   // 드래그 박스에서 아이템을 삭제한다.
 				//   arg.draggedEl.parentNode.removeChild(arg.draggedEl);
 				// },
-				customButtons : {
+				/* customButtons : {
 					custom1 : {
 						text : '출석확인1',
 						click : function() {
@@ -61,7 +61,7 @@
 							//idCheckDay();
 						}
 					}
-				}
+				} */
 
 
 /* 			events : [
@@ -75,26 +75,30 @@
 			    start: '2022-10-03'
 			  }
 			] */
-				
-				
-				
+
 			});
+			
+			
 			// 캘린더 랜더링
 			calendar.render();
 		});
+		
+		
+		
 		var calendarEl = document.getElementById('calendar1');
 		var request= $.ajax({
 		url : "/mycheck/event",
-		method : "GET",
+		method : "GET"
 		//dataType : "json",
 		
-		data : {
-			mycheck_number : "mycheck_number",
-			myheck_member_id :"myheck_member_id",
-			mycheck_date : "mycheck_date"
-		}
+		/* data : {
+			mycheck_number : "1",
+			myheck_member_id :"1",
+			mycheck_date : "1"
+		} */
 
 	});
+		
 	request.done(function(data) {
 		var calendar = new FullCalendar.Calendar(calendarEl, {
 			//initialView : 'dayGridMonth',
@@ -108,11 +112,13 @@
 		},
 			customButtons : {
 				custom1 : {
-					text : '출석확인2',
+					text : '출석 chechechecheck',
 					click : function() {
 						//alert('출석확인 클릭');
+						
 						idCheckDay();
 					}
+		
 				}
 			}
 		});
@@ -121,7 +127,7 @@
 	})();
 
 	function idCheckDay() {
-		alert("출석확인!");
+		alert("확인~");
 
 		var calendarEl = document.getElementById('calendar1');
 		var request = $.ajax({
@@ -130,11 +136,11 @@
 			//dataType : "json",
 			
 			data : {
-				mycheck_number : "mycheck_number",
-				myheck_member_id :"myheck_member_id",
-				mycheck_date : "mycheck_date"
+				mycheck_number : "1",
+				myheck_member_id :"1",
+				mycheck_date : "1"
 			}
-
+		
 			
 		});
 		request.done(function(data) {
@@ -142,6 +148,7 @@
 				initialView : 'dayGridMonth',
 				events : data,
 				locale : 'ko',
+
 			//headerToolbar: {
 			//left: 'prev,next today',
 			//center: 'title',
