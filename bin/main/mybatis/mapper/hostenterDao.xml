@@ -103,7 +103,7 @@
 	    <!-- temp_table은 임시테이블 정해진 값-->
 	    SELECT * FROM hostenter WHERE 
 	    HOSTENTER_CONTENTS_NUMBER = #{param1} and
-	    HOSTENTER_HEADCOUNT &gt;= #{param2} and HOSTENTER_NAME like '%' || #{param3} || '%'
+	    HOSTENTER_HEADCOUNT &gt;= #{param2} and HOSTENTER_NAME like '%' ||#{param3}||'%'
 	 </select>
 	 
 	 <select id="space_contents_number" resultType="String">
