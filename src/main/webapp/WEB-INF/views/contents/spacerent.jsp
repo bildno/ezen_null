@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %> 
 <link rel="stylesheet" href="css/contents/spacerent.css">
 
 <!-- <script type="text/javascript">
@@ -46,6 +48,10 @@
 	</form>
 	
 	<div id="spacelist" class="row">
+	<c:if test="${fn:length(space_list) == 0 and fn:length(hostenterlist) == 0 }">
+	<h2>검색된 공간이 없습니다.</h2>
+	
+	</c:if>
 	<c:forEach var="dto" items="${space_list }">
 			<div style="cursor: pointer" onclick="location.href='/space_info?hostenter_number=${dto.hostenter_number }&hostenter_name=${dto.hostenter_name }'"
 				class="col-4 spacebox">
@@ -70,4 +76,3 @@
 
 	</div>
 
-</div>
