@@ -112,6 +112,8 @@ public class CalendarService {
 		mycheckDto dto = new mycheckDto();
 		dto.setMycheck_member_id(member_id);
 		int insertMycheck = mycheckDao.insertMycheck(dto);
+		
+		// 현재날짜
 		Map<String, Object> event_today = new HashMap<String, Object>();
 		event_today.put("start", LocalDate.now());
 		event_today.put("title", "??????????????????");
