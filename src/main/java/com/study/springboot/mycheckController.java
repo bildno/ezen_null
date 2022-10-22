@@ -20,17 +20,7 @@ import com.study.springboot.service.CalendarService;
 @Controller
 @RequestMapping("/mycheck")
 public class mycheckController {
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	@Autowired
 	mycheckDao mycheckDao;
 	
@@ -70,13 +60,7 @@ public class mycheckController {
 
 		return calendarService.checkEventclick(request);
     }
-	
-	
-	
-	
-	
-	
-	
+
 	
 	
 }
