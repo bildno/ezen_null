@@ -1,13 +1,17 @@
 /* * {
     border: 1px solid black;
-} */
-.container h1{
-	text-align: left;
-	margin-left: 50px;
-	font-family: 'Do Hyeon', sans-serif;
+}  */
+.container {
+	margin-top: 150px;
+	margin-bottom: 100px;
 }
 
-#host_exp{
+#zzimimg img {
+	width: 30px;
+	height: 30px;
+}
+
+#mypage_exp {
 	font-family: 'Do Hyeon', sans-serif;
 	font-weight: 300;
 	margin-left: 50px;
@@ -15,105 +19,141 @@
 	color: rgb(37, 49, 109)
 }
 
-.host_con1 hr{
-	margin: 3% 20% 0 20%;
-}
-
-#h_name,#s_name{
-	font-family: 'Noto Sans KR', sans-serif;
-
-	
-}
-
-#ho_name{
-	font-family: 'Noto Sans KR', sans-serif;
-
-}
-
 #space_icon {
 	width: 30px;
 }
 
-.container{
-	margin-top: 150px;
-	margin-bottom: 100px;
-	font-family: 'Noto Sans KR', sans-serif;
-}
-.section {
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-}
-a {
-    color: rgb(37, 49, 109);
-    text-decoration: none;
-}
-.hostlist a:hover {
-    text-decoration: none;
-    
-}
-a:visited {
-    text-decoration: none;
-    color:  rgb(37, 49, 109);
+#mypage_h1 {
+	font-family: 'Do Hyeon', sans-serif;
+	font-weight: 500;
+	margin-left: 50px;
+	margin-top: 100px;
+	font-size: 50px;
+	display: flex;
+	flex-flow: row nowrap;
 }
 
-a:hover{
+.mypage_section {
+	font-family: Noto Sans KR;
+}
+
+.mypage_section {
+	display: flex;
+	justify-content: center;
+}
+
+#mypage_a{
+	text-decoration: none;
+}
+#mypage_a {
+	 color: rgb(37, 49, 109);
+}
+
+.mypage_mylist a:hover {
+	text-decoration: none;
+	color: rgb(37, 49, 109);
+}
+
+.mypage_section1 {
+	width: 30%;
+	height: 70%;
+	display: inline-block;
+	margin-right: 50px;
+	text-align: center;
+	border: 1px solid rgb(238, 238, 238);
+	border-radius: 5px;
+	margin-bottom: 50px;
+}
+
+.mypage_mylist {
+	padding-bottom: 20px;
+}
+
+.mypage_con1 {
+	overflow: hidden;
+	height: 300px;
+}
+
+.mypage_con1 hr {
+	margin: 0 20% 0 20%;
+}
+
+.mypage_con-img1 {
+	margin-top: 40px;
+	width: 50%;
+	height: 40%;
+	object-fit: fill;
+	border-radius: 5px;
+}
+
+.mypage_section2 {
+	width: 60%;
+	 align-self: center; 
+	border: 1px solid rgb(238, 238, 238);
+	border-radius: 5px;
+}
+
+.mypage_con2 table {
+	width: 100%;
+	height: 300px;
+	
+	font-family: 'Noto Sans KR', sans-serif; 
+}
+
+.mypage_con2 th, td {
+	text-align: center;
+}
+
+.mypage_con2 a:hover {
 	text-decoration: none;
 }
 
-.host_section1 {
-    width: 30%;
-    height: 70%;
-    display: inline-block;
-    margin-right: 50px;
-    text-align: center;
-  	border : 1px solid rgb(238, 238, 238); 
-  	border-radius: 5px;
-  
+.mypage_con2 a:visited {
+	text-decoration: none;
+	color: black;
 }
 
-.hostlist {
-    padding-bottom: 20px;
-    
+.mypage_con2 table {
+	border-radius: 5px;
+}
+.profile td {
+	width:200px;
+}
+#od, #ofd, #namechange {
+	border: none;
+	font-family: 'Noto Sans KR';
+	padding: 5px;
+	background-color: white;
+	color: navy;
 }
 
-.host_con1 {
-    overflow: hidden;
-    height: 300px;
+#od1, #ofd1, #mailchange {
+	border: none;
+	font-family: 'Noto Sans KR';
+	padding: 5px;
+	background-color: white;
+	color: navy;
 }
 
-.host_con-img1 {
-    margin-top: 40px;
-    width: 50%;
-    height: 40%;
-    object-fit: fill;
-    border-radius: 5px;
+#od2, #ofd2, #phonechange {
+	border: none;
+	font-family: 'Noto Sans KR';
+	padding: 5px;
+	background-color: white;
+	color: navy;
 }
 
-.host_section2 {
-    width: 60%;
-    align-self: center;
-   border : 1px solid rgb(238, 238, 238); 
-  	border-radius: 5px;
+.enter_host {
+	border: none;
+	font-family: 'Noto Sans KR';
+	font-size: 20px;
+	padding: 5px;
+	background-color: white;
+	color: navy;
+	margin-top:20px;
 }
 
-.host_con2 table {
-    width: 100%;
-    height: 300px;
-}
-.host_con2 th, td {
-    padding-left: 20px;
-}
-.con2 a:hover {
-    text-decoration: none;
-}
+.modify_pass{
+	margin-left:200px;
 
-button[type=submit] {
-    float: right;
-    margin-right: 50px;
-    margin-bottom: 50px;
-	border : none;
-	border-radius : 5px;
-	padding : 10px;
-	background-color: rgb(238, 238, 238);
 }

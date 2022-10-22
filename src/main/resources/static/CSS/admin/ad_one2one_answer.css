@@ -1,15 +1,11 @@
 #space_icon {
 	width: 30px;
 }
-
-.container {
-	font-family: 'Noto Sans KR', sans-serif;
-	margin-left: 0;
-}
 .ad_wrap {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 /* 컨테이너 - 부트스트랩 */
@@ -29,11 +25,6 @@
 	color: rgb(37, 49, 109);
 	text-align: center;
 }
-.container {
-	margin-top: 150px;
-	margin-bottom: 100px;
-}
-
 .contents {
 	width: 100%;
 	font-family: 'Noto Sans KR', sans-serif;
@@ -44,6 +35,24 @@
 	border: 1px solid rgb(238, 238, 238);
 	border-radius: 10px;
 }
+.ad_btn {
+	float: right;
+	margin-bottom: 20px;
+}
+.ad_btn_write {
+	border: 0;
+	background-color: rgb(238, 238, 238);
+	padding: 10px 20px 10px 20px;
+	border-radius: 5px;
+	margin-right: 20px;
+}
+.ad_btn_back{
+	border: 0;
+	background-color: rgb(238, 238, 238);
+	padding: 10px 20px 10px 20px;
+	border-radius: 5px;
+}
+
 /* 검색박스 */
 .search_box {
 	border: 1px solid rgb(37, 49, 109);
@@ -156,7 +165,9 @@
     text-decoration: none;
 }
 
-
+.ad_section{
+	text-align: center;
+}
 /* 모바일화면 */
 @media screen and (max-width:767px) and (orientation:portrait) {
     /* .list {

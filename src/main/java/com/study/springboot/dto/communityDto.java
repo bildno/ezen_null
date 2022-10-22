@@ -12,6 +12,8 @@ public class communityDto {
 	private String community_content;
 	private Date community_date;
 	private String community_member_name;
+	private String community_member_id;
+	private int community_contents_number;
 	private int community_hit;
 
 }

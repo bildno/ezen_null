@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="css/admin/ad_host.css">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 	<div class="ad_wrap">
         <div class="ad_aside">
@@ -33,28 +34,32 @@
 					alt="space_icon" id="space_icon">
 			</h2>
 			<div class="contents">
+			
+			<form action="ad_host">
 				<div class="search_box">
 					<ul class="search_box_ul">
 						<li>
-							<p style="min-width: 20%;">검색항목</p> <select>
-								<option value="name">이름</option>
-								<option value="rnum">예약번호</option>
-								<option value="phone">전화번호</option>
-								<option value="email">이메일</option>
-						</select> &nbsp;&nbsp;
+							<p style="min-width: 20%;">검색항목</p> 
+							<select name="search_type">
+								<option value="member_name">이름</option>
+								<option value="member_id">아이디</option>
+								<option value="member_phone">전화번호</option>
+								<option value="member_email">이메일</option>
+							</select> &nbsp;&nbsp;
 						<input type="text" name="search_contents"
 							id="search_contents" style="width: 100%;">
-
 						</li>
 					</ul>
 					<div class="search_btn">
 						<button>검색</button>
 					</div>
 				</div>
+			</form>
 
 				<div>
 					<p class="txt_primary">
 						총 <em>0</em>건이 검색되었습니다.
+						<a href="/ad_host">전체보기</a>
 					</p>
 					<table class="search_table">
 						<tr>
@@ -64,34 +69,50 @@
 							<th>이메일</th>
 							<th>전화번호</th>
 							<th>성별</th>
+							<th>가입일</th>
 						</tr>
+						<c:forEach var="dto" items="${ad_host_page}" varStatus="">
 						<tr>
-							<td>das</td>
-							<td>ads</td>
-							<td>das</td>
-							<td>ads</td>
-							<td>ads</td>
-							<td>ads</td>
+							<td>${ dto.member_id }</td>
+							<td>${ dto.member_pw }</td>
+							<td>${ dto.member_name }</td>
+							<td>${ dto.member_email }</td>
+							<td>${ dto.member_phone }</td>
+							<td>${ dto.member_gender }</td>
+							<td>${ dto.member_joindate }</td>
 						</tr>
+						</c:forEach>
 					</table>
 				</div>
-				<div class="pagenavi">
-					<nav aria-label="Page navigation example community">
-						<ul class="pagination">
-							<li class="page-item"><a class="page-link" href="#"
-								aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
-							</a></li>
-							<li class="page-item"><a class="page-link" href="#">1</a></li>
-							<li class="page-item"><a class="page-link" href="#">2</a></li>
-							<li class="page-item"><a class="page-link" href="#">3</a></li>
-							<li class="page-item"><a class="page-link" href="#">4</a></li>
-							<li class="page-item"><a class="page-link" href="#">5</a></li>
-							<li class="page-item"><a class="page-link" href="#"
-								aria-label="Next"> <span aria-hidden="true">&raquo;</span>
-							</a></li>
-						</ul>
-					</nav>
+				<div class="container-fluid">
+				<div class="row" style="justify-content: center; margin-top: 30px;">
+					<ul class="pagination">
+
+						<li class="page-item <c:if test="${ page == 1 }">disabled</c:if>">
+							<a class="page-link" href="/ad_host?page=${page-1}">Previous</a>
+						</li>
+
+						<li class="page-item <c:if test="${ page == 1 }">active</c:if>">
+							<a class="page-link" href="/ad_host?page=1">1</a>
+						</li>
+						<li class="page-item <c:if test="${ page == 2 }">active</c:if>">
+							<a class="page-link" href="/ad_host?page=2">2</a>
+						</li>
+						<li class="page-item <c:if test="${ page == 3 }">active</c:if>">
+							<a class="page-link" href="/ad_host?page=3">3</a>
+						</li>
+						<li class="page-item <c:if test="${ page == 4 }">active</c:if>">
+							<a class="page-link" href="/ad_host?page=4">4</a>
+						</li>
+						<li class="page-item <c:if test="${ page == 5 }">active</c:if>">
+							<a class="page-link" href="/ad_host?page=5">5</a>
+						</li>
+						<li class="page-item <c:if test="${ page == 5 }">disabled</c:if>">
+							<a class="page-link" href="/ad_host?page=${page+1}">Next</a>
+						</li>
+					</ul>
 				</div>
+			</div>
 			</div>
 
 		</div>

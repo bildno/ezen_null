@@ -17,10 +17,13 @@
 		select * from member where member_id = #{param1}
 	</select>
 	
+
+	
 	<select id="host_find" resultType="_int">
 		select member_host from member
 		where member_id = #{param1}
 	</select>
+
 	<!-- 아이디찾기 -->
 	<select id="idfind" resultType="String">
 		select member_id from member
@@ -39,11 +42,16 @@
 	<!-- 회원가입 -->
 	<insert id="join_member" parameterType="com.study.springboot.dto.memberDto">
 		insert into
-		member(member_id,member_pw,member_email,member_phone,member_gender,member_name,member_host)
-		values(#{member_id},#{member_pw},#{member_email},#{member_phone},#{member_gender},#{member_name},#{member_host})
+		member(member_id,member_pw,member_email,member_phone,member_gender,member_name,member_host,member_joindate)
+		values(#{member_id},#{member_pw},#{member_email},#{member_phone},#{member_gender},#{member_name},#{member_host}, sysdate)
 	</insert>
-
-
+	
+	<!-- 아이디 중복체크 -->
+	<select id="idcheck" resultType="_int">
+		select count(*) from member where member_id = #{param1}
+	</select>
+	
+	
 	<!-- 마이페이지 -->
 	<!-- 이름변경 -->
 	<update id="name_change" parameterType="HashMap">
@@ -65,8 +73,76 @@
 		SET	member_phone = #{ param1 }
 		where member_id = #{ param2 }
 	</update>
+	
+	<!-- 나의활동 -->
 
+	
+	
+	
+	<!-- member -->
+	<select id="ad_member_list" resultType="com.study.springboot.dto.memberDto">
+		select * from member where member_host = 0
+	</select>
+	
+	<!-- 일반 member 검색 param1(select): search_type  // param2(input): search_contents-->
+    <select id="member_search" resultType="com.study.springboot.dto.memberDto">
+		select * from member where ${ param1 } like '%'||#{ param2 }||'%' and member_host = 0
+	</select>
+	
+	<!-- host -->
+	<select id="ad_host_list" resultType="com.study.springboot.dto.memberDto">
+		select * from member where member_host = 1
+	</select>
+	
+	<!-- host 검색 param1(select): search_type  //   param2(input): search_contents-->
+    <select id="host_search" resultType="com.study.springboot.dto.memberDto">
+		select * from member where ${ param1 } like '%'||#{ param2 }||'%' and member_host = 1
+	</select>
+	
+	<select id="ad_member_page"
+		resultType="com.study.springboot.dto.memberDto">
+		<!-- SELECT * FROM
+		(
+		SELECT
+		ROWNUM AS RNUM, member.*
+		FROM
+		member
+		where member_host = 0
+		)
+		WHERE RNUM BETWEEN #{param1} AND #{param2}  -->
+		SELECT * FROM (
+		SELECT temp_table.*, ROWNUM as rnum FROM (
+		SELECT * FROM member
+		ORDER BY member_joindate DESC
+		) temp_table ) WHERE rnum &gt;= #{ param1 } and rnum &lt;= #{ param2 }
+	</select>
+	
+	
+	<select id="ad_host_page"
+		resultType="com.study.springboot.dto.memberDto">
+<!-- 		SELECT * FROM
+		(
+		SELECT
+		ROWNUM AS RNUM, member.*
+		FROM
+		member
+		where member_host = 1
+		)
+		WHERE RNUM BETWEEN #{param1} AND #{param2} -->
+		SELECT * FROM (
+		SELECT temp_table.*, ROWNUM as rnum FROM (
+		SELECT * FROM member
+		ORDER BY member_joindate DESC
+		) temp_table ) WHERE rnum &gt;= #{ param1 } and rnum &lt;= #{ param2 }
+	</select>
+	<delete id="resign">
+		delete from member where member_id = #{param1} 
+	</delete>
 
+	
+<!-- 	<select id="mycheckAction">
+	
+	</select> -->
 
 
 </mapper>

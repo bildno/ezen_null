@@ -24,7 +24,7 @@
 	</form>
 		<div>
 			<input style="text-align: left;" class="idknow" type="text"
-				placeholder="아이디 : " value= "${idfind}">
+				placeholder="아이디 : " value="${idfind}">
 		</div>
 		<hr>
 		<div>

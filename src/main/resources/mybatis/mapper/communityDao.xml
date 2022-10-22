@@ -10,6 +10,116 @@
 		select * from community where community_contents_number = #{ param1 }
 	</select>
 	
+	 <select id="community_content" resultType="com.study.springboot.dto.communityDto">
+	 	select * from community where community_number = #{param1}
+	 </select>
+	 
+	 <insert id="community_write" parameterType="com.study.springboot.dto.communityDto">
+	 	insert into community values
+	 	(coummnity_idx.nextval,
+	 	#{community_title},
+	 	#{community_content},
+	 	sysdate,
+	 	#{community_member_name},
+	 	#{community_member_id},
+	 	#{community_contents_number},
+	 	0
+	 	)
+	 </insert>
+	  
+	 <select id="community_page" resultType="com.study.springboot.dto.communityDto">
+	    <!-- temp_table은 임시테이블 정해진 값-->
+	    SELECT * FROM (
+	    SELECT temp_table.*, ROWNUM as rnum FROM (
+	    SELECT * FROM COMMUNITY WHERE COMMUNITY_CONTENTS_NUMBER = #{param3}
+	    ORDER BY COMMUNITY_NUMBER DESC
+	    ) temp_table ) WHERE rnum &gt;= #{param1} and rnum &lt;= #{param2}
+	 </select>
+	 
+	  <select id="community_page_search" resultType="com.study.springboot.dto.communityDto">
+	    <!-- temp_table은 임시테이블 정해진 값-->
+	    SELECT * FROM (
+	    SELECT temp_table.*, ROWNUM as rnum FROM (
+	    SELECT * FROM COMMUNITY WHERE COMMUNITY_CONTENTS_NUMBER = #{param3}
+	    ORDER BY COMMUNITY_NUMBER DESC
+	    ) temp_table ) WHERE rnum &gt;= #{param1} and rnum &lt;= #{param2} and community_title like '%' || #{param4} || '%' and community_content like '%'|| #{param5} || '%' 
+	 </select>
+	 
+	 <select id="mycommu_page" resultType="com.study.springboot.dto.communityDto">
+	    <!-- temp_table은 임시테이블 정해진 값-->
+	    SELECT * FROM (
+	    SELECT temp_table.*, ROWNUM as rnum FROM (
+	    SELECT * FROM COMMUNITY WHERE COMMUNITY_MEMBER_ID = #{param3} 
+	    ORDER BY COMMUNITY_NUMBER DESC
+	    ) temp_table ) WHERE rnum &gt;= #{param1} and rnum &lt;= #{param2}
+	 </select>
+	 
+
+	  
+	 <update id = "community_hit">
+	 	update community set community_hit=community_hit+1 where community_number = #{param1}
+	 </update>
+	 
+	 
+	<!-- best게시글 -->
+	<select id="community_seq1"
+		resultType="com.study.springboot.dto.communityDto">
+		select rownum,
+		a.*
+		from
+		(select * from community a order by community_hit desc)
+		a
+		where rownum &lt;= 2 and community_contents_number = 1
+	</select>
+
+	<select id="community_seq2"
+		resultType="com.study.springboot.dto.communityDto">
+		select rownum,
+		a.*
+		from
+		(select * from community a order by community_hit desc)
+		a
+		where rownum &lt;= 2 and community_contents_number = 2
+	</select>
+
+	<select id="community_seq3"
+		resultType="com.study.springboot.dto.communityDto">
+		select rownum,
+		a.*
+		from
+		(select * from community a order by community_hit desc)
+		a
+		where rownum &lt;= 2 and community_contents_number = 3
+	</select>
+
+	<select id="community_seq4"
+		resultType="com.study.springboot.dto.communityDto">
+		select rownum,
+		a.*
+		from
+		(select * from community a order by community_hit desc)
+		a
+		where rownum &lt;= 2 and community_contents_number = 4
+	</select>
+	
+	 
+	 <select id="select_commu" resultType="com.study.springboot.dto.communityDto">
+	 	
+	 	select * from community where community_member_id = #{param1}	 
+	 
+	 </select>
+	 <delete id="deletecommu">
+	  DELETE FROM community 
+	  WHERE community_number=#{ param1 }
+	</delete>
+	 
+	 <delete id="deletecommuid">
+	  DELETE FROM community 
+	  WHERE community_member_id=#{ param1 }
+	</delete>
+
+
+	
 	
 
 </mapper>

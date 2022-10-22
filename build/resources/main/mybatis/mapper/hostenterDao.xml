@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    <mapper namespace="com.study.springboot.dao.IhostenterDao">
+    	
+    	<insert id="insert_hostenter" parameterType="com.study.springboot.dto.hostenterDto">	
+    		insert into hostenter values(
+    		hostenter_idx.nextval,
+    		#{hostenter_title_img},
+    		#{hostenter_contents_number},
+    		#{hostenter_name},
+    		#{hostenter_description},
+    		#{hostenter_caution},
+    		#{hostenter_zipcode},
+    		#{hostenter_location},
+    		#{hostenter_location_detail},
+    		#{hostenter_price},
+    		#{hostenter_headcount},
+    		#{hostenter_member_id},
+    		#{hostenter_bnumber},
+    		#{hostenter_onerow},
+    		0
+    		)
+    		
+    	</insert>
+    <select id="space_info" resultType="com.study.springboot.dto.hostenterDto">
+    	select * from hostenter where hostenter_number = #{param1}
+    </select>	
+    	
+    	
+    <select id="contents_space" resultType="com.study.springboot.dto.hostenterDto">
+    	select * from hostenter where hostenter_contents_number = #{param1}
+    </select>
+    
+    
+    <select id="select_space" resultType="com.study.springboot.dto.hostenterDto">
+    	select * from hostenter where hostenter_member_id = #{param1} 
+    </select>
+    
+     <select id="detail_space" resultType="com.study.springboot.dto.hostenterDto">
+    	select * from hostenter where hostenter_name = #{param1} 
+    </select>
+    
+  	<update id="update_space">
+  		 update hostenter set hostenter_title_img = #{param1},
+                         hostenter_name = #{param2},
+                         hostenter_contents_number = #{param3},
+                         hostenter_onerow = #{param4},
+                         hostenter_description = #{param5},
+                         hostenter_caution = #{param6},
+                         hostenter_price = #{param7},
+                         hostenter_bnumber = #{param8},
+                         hostenter_headcount = #{param9}
+                         where hostenter_number = #{param10}
+  	</update>
+  	
+  	
+  	<!-- 찜 개수를 올려줌 -->
+  	<update id= "zzim_count">
+  		update hostenter set hostenter_wish = hostenter_wish+1 where hostenter_number = #{param1}
+  	</update>
+  	
+  	<!-- 찜 개수가 올라간 걸 뽑아옴 -->
+  	<select id="view_count" resultType="_int">
+  		select hostenter_wish from hostenter where hostenter_number = #{param1}
+  	</select>
+  	
+  	
+  	<select id="wish_list" resultType="com.study.springboot.dto.hostenterDto">
+  		select * from hostenter where HOSTENTER_NUMBER in 
+  		(select MY_WISH_HOSTENTER_NUMBER from my_wish 
+  		where MY_WISH_MEMBER_ID = #{param})
+  	</select>
+  	
+  	<select id="search" resultType="com.study.springboot.dto.hostenterDto">
+  		select * from hostenter where hostenter_name like '%' || #{param1} || '%' 
+  	</select>
+  	
+  	<select id="select_title" resultType="String">
+  		select HOSTENTER_TITLE_IMG from hostenter where hostenter_number=#{param1}
+  	</select>
+  	
+  	<select id="space_top_hit" resultType="com.study.springboot.dto.hostenterDto">
+  		select * from hostenter where HOSTENTER_CONTENTS_NUMBER=#{param1} and rownum &lt;=3 order by hostenter_wish desc
+  	</select>
+    
+    <delete id="delete_space">
+    	delete from hostenter where hostenter_number = #{param1}
+    </delete>
+    
+    <delete id="spacedeleteid">
+    	delete from hostenter where hostenter_member_id = #{param1}
+    </delete>
+    
+    <select id="deletespaceselect" resultType="_int">
+		SELECT count(*) from hostenter where hostenter_member_id = #{param1}
+	</select>
+    
+    </mapper>

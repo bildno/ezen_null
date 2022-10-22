@@ -2,14 +2,11 @@
 	width: 30px;
 }
 
-.container {
-	font-family: 'Noto Sans KR', sans-serif;
-	margin-left: 0;
-}
 .ad_wrap {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 /* 컨테이너 - 부트스트랩 */
@@ -29,10 +26,7 @@
 	color: rgb(37, 49, 109);
 	text-align: center;
 }
-.container {
-	margin-top: 150px;
-	margin-bottom: 100px;
-}
+
 
 .contents {
 	width: 100%;

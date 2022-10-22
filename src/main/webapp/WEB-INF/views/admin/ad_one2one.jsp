@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="css/admin/ad_one2one.css">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <div class="ad_wrap">
 	<div class="ad_aside">
@@ -26,135 +27,86 @@
 				id="space_icon">
 		</h2>
 		<div class="contents">
+		
+		<form action="/ad_one2one" method="post">
 			<div class="search_box">
 				<ul class="search_box_ul">
 					<li>
 						<p style="min-width: 20%;">검색항목</p> 
-						<select>
-							<option value="name">이름</option>
-							<option value="rnum">예약번호</option>
-							<option value="phone">전화번호</option>
-							<option value="email">이메일</option>
+						<select name="search_type">
+							<option value="one2one_member_id">아이디</option>	
+							<option value="one2one_title">제목</option>
+							<option value="one2one_content">내용</option>
+							<option value="one2one_date">작성일</option>
 						</select> &nbsp;&nbsp; 
 					<input type="text" name="search_contents"
 						id="search_contents" style="width: 100%;">
 					</li>
 				</ul>
 				<div class="search_btn">
-					<button>검색</button>
+					<button type="submit">검색</button>
 				</div>
 			</div>
+		</form>
 
 			<div>
+			
 				<p class="txt_primary">
 					총 <em>0</em>건이 검색되었습니다.
+					<a href="/ad_one2one">전체보기</a>
 				</p>
 				<table class="search_table">
 					<tr>
 						<th>번호</th>
 						<th>제목</th>
+						<th>내용</th>
 						<th>아이디</th>
 						<th>작성일시</th>
+						<th>관리</th>
 					</tr>
+			<c:forEach var="dto" items="${one2one_list}">
 					<tr>
-						<td>1</td>
-						<td>도와주세요</td>
-						<td>help119</td>
-						<td>2022-09-15</td>
+						<td onclick="location.href='/ad_one2one_answer?one2one_number=${ dto.one2one_number }'" style="cursor: pointer;">${dto.one2one_number}</td>
+						<td onclick="location.href='/ad_one2one_answer?one2one_number=${ dto.one2one_number }'" style="cursor: pointer;">${dto.one2one_title}</td>
+						<td onclick="location.href='/ad_one2one_answer?one2one_number=${ dto.one2one_number }'" style="cursor: pointer;">${dto.one2one_content}</td>
+						<td onclick="location.href='/ad_one2one_answer?one2one_number=${ dto.one2one_number }'" style="cursor: pointer;">${dto.one2one_member_id}</td>
+						<td onclick="location.href='/ad_one2one_answer?one2one_number=${ dto.one2one_number }'" style="cursor: pointer;">${dto.one2one_date}</td>
+						<td><input class="ad_btn_back" type="button" value="삭제" onclick="location.href='ad_one2oneDelete?num=${dto.one2one_number}'" ></td>
 					</tr>
-					<tr>
-						<td>1</td>
-						<td>도와주세요</td>
-						<td>help119</td>
-						<td>2022-09-15</td>
-					</tr>
-					<tr>
-						<td>1</td>
-						<td>도와주세요</td>
-						<td>help119</td>
-						<td>2022-09-15</td>
-					</tr>
-					<tr>
-						<td>1</td>
-						<td>도와주세요</td>
-						<td>help119</td>
-						<td>2022-09-15</td>
-					</tr>
-					<tr>
-						<td>1</td>
-						<td>도와주세요</td>
-						<td>help119</td>
-						<td>2022-09-15</td>
-					</tr>
-					<tr>
-						<td>1</td>
-						<td>도와주세요</td>
-						<td>help119</td>
-						<td>2022-09-15</td>
-					</tr>
-					<tr>
-						<td>1</td>
-						<td>도와주세요</td>
-						<td>help119</td>
-						<td>2022-09-15</td>
-					</tr>
-
+					
+			</c:forEach>
 				</table>
 			</div>
-			<div class="pagenavi">
-				<nav aria-label="Page navigation example community">
+			<div class="container-fluid">
+				<div class="row" style="justify-content: center; margin-top: 30px;">
 					<ul class="pagination">
-						<li class="page-item"><a class="page-link" href="#"
-							aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
-						</a></li>
-						<li class="page-item"><a class="page-link" href="#">1</a></li>
-						<li class="page-item"><a class="page-link" href="#">2</a></li>
-						<li class="page-item"><a class="page-link"
-							href="/ad_one2one_answer">3</a></li>
-						<li class="page-item"><a class="page-link" href="#">4</a></li>
-						<li class="page-item"><a class="page-link" href="#">5</a></li>
-						<li class="page-item"><a class="page-link" href="#"
-							aria-label="Next"> <span aria-hidden="true">&raquo;</span>
-						</a></li>
+						<li class="page-item <c:if test="${ page == 1 }">disabled</c:if>">
+							<a class="page-link" href="/ad_one2one?page=${page-1}">Previous</a>
+						</li>
+
+						<li class="page-item <c:if test="${ page == 1 }">active</c:if>">
+							<a class="page-link" href="/ad_one2one?page=1">1</a>
+						</li>
+						<li class="page-item <c:if test="${ page == 2 }">active</c:if>">
+							<a class="page-link" href="/ad_one2one?page=2">2</a>
+						</li>
+						<li class="page-item <c:if test="${ page == 3 }">active</c:if>">
+							<a class="page-link" href="/ad_one2one?page=3">3</a>
+						</li>
+						<li class="page-item <c:if test="${ page == 4 }">active</c:if>">
+							<a class="page-link" href="/ad_one2one?page=4">4</a>
+						</li>
+						<li class="page-item <c:if test="${ page == 5 }">active</c:if>">
+							<a class="page-link" href="/ad_one2one?page=5">5</a>
+						</li>
+						<li class="page-item <c:if test="${ page == 5 }">disabled</c:if>">
+							<a class="page-link" href="/ad_one2one?page=${page+1}">Next</a>
+						</li>
 					</ul>
-				</nav>
+				</div>
 			</div>
 		</div>
 
 	</div>
-	<!-- <div class="ad_section">
-            <table class="ad_sectiontb" style="width: 100%">
-                <tr>
-                    <th colspan="2">
-                        <h1>1:1문의 관리</h1>
-                    </th>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <hr>
-                    </td>
-                </tr>
-                <tr>
-                    <th class="ad_sectionth">문의 내용</th>
-                    <td style="width: 600px; height: 200px;">
-                        <textarea 
-                            style="resize: none; border-radius: 5px; width:100%; height:100%;" disabled>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates labore in odio aliquam a rem, harum necessitatibus cupiditate. Voluptates tenetur excepturi vitae quasi aliquam accusamus nisi? Ipsa nam minus temporibus?</textarea>
-                    </td>
-                </tr>
-                <tr>
-                    <th class="ad_sectionth">답변 내용</th>
-                    <td style="width: 600px; height: 400px;">
-                        <textarea
-                        style="resize: none; border-radius: 5px; width:100%; height:100%;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat eligendi odit nam autem! Nostrum neque ea dicta quaerat vitae non odit, ullam excepturi impedit, consequuntur laboriosam ratione amet molestias. Omnis!Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat eligendi odit nam autem! Nostrum neque ea dicta quaerat vitae non odit, ullam excepturi impedit, consequuntur laboriosam ratione amet molestias. Omnis!Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat eligendi odit nam autem! Nostrum neque ea dicta quaerat vitae non odit, ullam excepturi impedit, consequuntur laboriosam ratione amet molestias. Omnis!</textarea>
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td class="ad_btn_td">
-                        <input class="ad_btn" type="button" value="답변하기" onclick="location.href='/one2one_writeAction'">
-                    </td>
-                </tr>
-            </table>
-        </div> -->
 
 </div>

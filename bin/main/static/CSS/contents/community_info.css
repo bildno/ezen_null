@@ -55,6 +55,7 @@
 	text-align: center;
 	border: 1px solid rgb(238, 238, 238);
 	border-radius: 5px;
+	height:500px;
 }
 
 .con11 {
@@ -135,6 +136,7 @@
 #comm_info {
 	border: 1px solid rgb(238, 238, 238);
 	border-radius: 5px;
+	margin-bottom: 15px;
 	
 }
 #comm_info:nth-child(1){
@@ -155,13 +157,20 @@
 }
 #reple{
 	border:none;
-	margin-top: 15px;
-	margin-bottom : 10px;
+	margin-top: 10px;
+	margin-bottom : 5x;
 	border-bottom: 1px solid rgb(238, 238, 238);
 	border-radius: 5px;
 	padding: 10px;
-	
+	display: flex;
+	justify-content: space-between;	
 }
+#reple input {
+	border: 0px;
+	background-color: white;
+	
+
+	}
 #reple_btn{
 	margin-top : 5px;
 	border: 1px solid rgb(238, 238, 238);
@@ -169,4 +178,23 @@
 	padding: 10px;
 	float: right;
 	font-family: 'Noto Sans KR', sans-serif;
+}
+
+#com_info{
+	margin-bottom:10px;
+	padding:5px;
+	width:150px;
+	font-family: 'Noto Sans KR', sans-serif; 
+	font-weight:500;
+
+}
+
+#repl>.reple_span{
+	font-family: 'Noto Sans KR', sans-serif; 
+	font-weight:300;
+	color:gray;
+	font-size:15px;
+}
+.content_span{
+	font-family: 'Noto Sans KR', sans-serif; 
 }

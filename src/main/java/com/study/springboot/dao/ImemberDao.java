@@ -29,4 +29,17 @@ public interface ImemberDao {
 	public int phone_change(String member_phone, String member_id);
 	
 	public int host_find(String member_id);
+	
+	public List<memberDto> ad_member_page(String startRowNum, String endRowNum );
+
+	public List<memberDto> ad_host_page(String startRowNum, String endRowNum );
+	
+	public List<memberDto> host_search(String search_type, String search_contents);
+	
+	public List<memberDto> member_search(String search_type, String search_contents);
+	
+	public int resign(String member_id);
+	
+	public int idcheck(String member_id);
+	
 }

@@ -2,21 +2,18 @@
 	width: 30px;
 }
 
-.container {
-	font-family: 'Noto Sans KR', sans-serif;
-	margin-left: 0;
-}
 .ad_wrap {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 /* 컨테이너 - 부트스트랩 */
 #space_host_h1 {
 	font-family: 'Do Hyeon', sans-serif;
 	margin-left: 50px;
-	margin-top: 50px;
+	margin-top: 100px;
 	font-size: 50px;
 	text-align: center;
 }
@@ -28,10 +25,6 @@
 	margin-left: 50px;
 	color: rgb(37, 49, 109);
 	text-align: center;
-}
-.container {
-	margin-top: 150px;
-	margin-bottom: 100px;
 }
 
 .contents {
@@ -121,40 +114,10 @@
 	margin-top: 50px;
 }
 
-.list {
-    display: flex;
-    flex-flow: row nowrap;
-    text-align: center;
-}
-.asidelist {
-	margin-top: 20%;
-	margin-left: 22%;
-}
-.asidelist td {
-	width: 100%;
-	height: 50px;
-	font-family : 'Noto Sans KR' , sans-serif;
-}
 .sectionlist {
 	width: 80%;
 }
 
-.ad_asideli {
-    list-style: none;
-    padding: 20px;
-}
-.ad_asideli:hover {
-    width: 100%;
-    background-color: beige;
-}
-.ad_aside {
-    /* background-color: rgb(227, 227, 252); */
-    margin-top: 150px;
-    /* min-width: 20%; */
-}
-.ad_aside a:hover {
-    text-decoration: none;
-}
 .tit {
 	margin: 10px 0 10px 0;
 }
@@ -162,13 +125,23 @@
 	font-family : 'Noto Sans KR' , sans-serif;
 	font-size: 20px;
 }
-.btn_revise {
-	display: flex;
-	justify-content: end;
-	margin-bottom: 50px;
+/* 버튼 */
+.ad_btn {
+	float: right;
+	margin-bottom: 20px;
 }
-.btn_revise input {
-	margin-right: 5px;
+.ad_btn_write {
+	border: 0;
+	background-color: rgb(238, 238, 238);
+	padding: 10px 20px 10px 20px;
+	border-radius: 5px;
+	margin-right: 20px;
+}
+.ad_btn_back{
+	border: 0;
+	background-color: rgb(238, 238, 238);
+	padding: 10px 20px 10px 20px;
+	border-radius: 5px;
 }
 /* 모바일화면 */
 @media screen and (max-width:767px) and (orientation:portrait) {

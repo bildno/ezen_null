@@ -36,6 +36,23 @@ public class memberService {
 		return memberlist;
 	}
 	
+//	일반멤버검색
+	public List<memberDto> member_search(String search_type, String search_contents) {
+		
+		List<memberDto> member_search = imemberDao.member_search(search_type, search_contents);
+		
+		return member_search;
+	}
+	
+//	호스트검색
+	
+	public List<memberDto> host_search(String search_type, String search_contents) {
+		
+		List<memberDto> host_search = imemberDao.host_search(search_type, search_contents);
+		
+		return host_search;
+	}
+	
 //	아이디찾기
 	public String idfind(String member_name,String member_phone) {
 		
@@ -102,16 +119,53 @@ public class memberService {
 		dto.setMember_pw(member_pw);
 		dto.setMember_email(member_email);
 		dto.setMember_phone(member_phone);
-		dto.setMember_gender(member_host);
+		dto.setMember_gender(member_gender);
 		dto.setMember_name(member_name);
 		dto.setMember_host(member_host);
-		
+	
 		try {
 			result = imemberDao.join_member(dto);
 		} catch (Exception e) {
 			
 			e.printStackTrace();
 		}
+		return result;
+	}
+	
+	
+	public int idcheck(String member_id) {
+		
+		int result = 0;
+		try {
+			result = imemberDao.idcheck(member_id);
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return result;
+	}
+	
+	
+//// 관리자 회원 조회
+//	public List<memberDto> ad_member_list() {
+//		
+//		List<memberDto> ad_host_list = imemberDao.ad_member_list();
+//		
+//		return ad_host_list;
+//	}
+//// 관리자 호스트 조회
+//	public List<memberDto> ad_host_list() {
+//		
+//		List<memberDto> ad_host_list = imemberDao.ad_host_list();
+//		
+//		return ad_host_list;
+//	}
+	
+//  회원탈퇴
+	public int resign(String member_id) {
+		int result = imemberDao.resign(member_id);
+		
 		return result;
 	}
 }

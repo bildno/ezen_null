@@ -1,13 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.study.springboot.dao.InoticeDao">
 
-	<select id="notice" resultType="com.study.springboot.dto.noticeDto">
+	<select id="notice"
+		resultType="com.study.springboot.dto.noticeDto">
 		select * from notice
 	</select>
 
+	<!-- 번호순 정렬 // temp_table은 임시테이블 // 정해진 값 -->
+	<select id="noticepage"
+		resultType="com.study.springboot.dto.noticeDto">
+		SELECT * FROM (
+		SELECT temp_table.*, ROWNUM as rnum FROM (
+		SELECT * FROM notice
+		ORDER BY notice_date DESC
+		) temp_table ) WHERE rnum &gt;= #{ param1 } and rnum &lt;= #{ param2 }
+	</select>
+	
+	<insert id="notice_write"
+		parameterType="com.study.springboot.dto.noticeDto">
+		insert into notice
+		values(notice_idx.nextval,#{notice_title},#{notice_content},#{notice_contents_number},sysdate)
+	</insert>
+
+
+	<select id="ad_notice_info"
+		resultType="com.study.springboot.dto.noticeDto">
+		select * from notice where notice_number = #{ param1 }
+	</select>
+
+	<update id="ad_notice_update"
+		parameterType="com.study.springboot.dto.noticeDto">
+		update notice set
+		notice_title=#{ notice_title },
+		notice_content=#{ notice_content },
+		notice_contents_number=#{ notice_contents_number }
+		WHERE notice_number=#{ notice_number }
+	</update>
+	
+	<!-- 검색 param1(select): search_type  //   param2(input): search_contents-->
+    <select id="ad_noticesearch" resultType="com.study.springboot.dto.noticeDto">
+		select * from notice where ${ param1 } like '%'||#{ param2 }||'%'
+	</select>
+	
+	<select id="contents_notice" resultType="com.study.springboot.dto.noticeDto">
+		select * from notice where notice_contents_number = #{param1} and rownum &lt;= 3
+	</select>
+	
 </mapper>

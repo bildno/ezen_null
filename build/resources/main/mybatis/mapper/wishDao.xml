@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.study.springboot.dao.IwishDao" >  
+
+<!-- 찜하기 -->
+<insert id="zzim_do" parameterType="com.study.springboot.dto.wishDto">
+	insert into my_wish (my_wish_number,my_wish_hostenter_number,my_wish_member_id)
+	values(my_wish_idx.nextval, #{my_wish_hostenter_number},#{my_wish_member_id})
+	
+</insert>
+
+
+<!-- 찜 중복 확인  -->
+<select id="zzim_exist" resultType="_int">
+	select count(*) from my_wish where my_wish_hostenter_number = #{param1} and my_wish_member_id = #{param2}
+</select>
+
+
+<!-- 찜 삭제 -->
+<delete id="zzim_delete">
+	delete from my_wish where my_wish_hostenter_number = #{param1}
+</delete>
+
+
+<!-- 회원탈퇴 -->
+<delete id="zzimdeleteid">
+	delete from my_wish where my_wish_member_id = #{param1}
+</delete>
+
+
+</mapper> 

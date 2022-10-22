@@ -13,5 +13,25 @@
     	<select id="hostenter_img_sel" resultType="com.study.springboot.dto.hostenterDto">
     		select hostenter_img from hostenter_img where hostenter_img_name = '${param1}'
     	</select>
+    	
+    	<select id="img_sel" resultType="com.study.springboot.dto.hostenter_imgDto">
+    		select * from hostenter_img where hostenter_img_name = #{param1}
+    	</select>
     
+    	<update id="hostenter_img_update">
+    		update hostenter_img set hostenter_img = ${param1} where hostenter_img_name = ${parma2}
+    	</update>
+    
+    	<delete id="delete_img">
+    		delete from hostenter_img where hostenter_img_name = #{param1} 
+    	</delete>
+    
+    	<delete id="deleteimgid">
+    		delete from hostenter_img where hostenter_img_member_id = #{param1} 
+    	</delete>
+    	
+ 	<select id="asd" resultType="_int">
+ 		select count(*) from hostenter_img where hostenter_img_member_id = #{param1}
+ 	</select>
+		    
     </mapper>
