@@ -14,7 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 @Component
 public class fileUploadService {
 	
-	private static String SAVE_PATH = "/upload/";
+	private static String SAVE_PATH = "c:/upload/";
 	private static String PREFIX_URL = "/upload/";
 	
 	public String restore(MultipartFile multipartFile) {
@@ -26,6 +26,7 @@ public class fileUploadService {
 		//C:\Users\Gi7A-00\Documents\sprintboot\ex13_FileUploadWithParam\src\main\resources\static\ upload
 		try {
 			String savepath = ResourceUtils.getFile("classpath:static/upload/").toPath().toString();
+			String savepath2 = ResourceUtils.getFile("c:/upload/").toPath().toString();
 			System.out.println("savepath:" + savepath);
 			
 			savepath = savepath.replace("\\", "/");
@@ -33,7 +34,7 @@ public class fileUploadService {
 			savepath = savepath.replace("/bin/main/static", "/src/main/resources/static");
 			System.out.println("savepath3 : " + savepath);
 			//C:/Users/i7D/Documents/springboot/ex13_FileUploadWithParam/src/main/resources/static/upload
-			SAVE_PATH = savepath;
+			SAVE_PATH = savepath2;
 			PREFIX_URL = savepath;
 			
 			if(multipartFile.getOriginalFilename() == "") {
@@ -88,8 +89,7 @@ public class fileUploadService {
 		
 	// 파일을 실제로 write 하는 메서드
 	private void writeFile(MultipartFile multipartFile, String saveFileName) throws IOException{
-		System.out.println("savefile:" + SAVE_PATH + "/" + saveFileName );
-		
+		System.out.println("savefile:" + SAVE_PATH + "  /  " + saveFileName );
 		//C:/Users/i7D/Documents/springboot/ex13_FileUploadWithParam/src/main/resources/static/upload/20210114121803123.jpg
 		byte[] data = multipartFile.getBytes();
 		FileOutputStream fos = new FileOutputStream(SAVE_PATH + "/" + saveFileName);

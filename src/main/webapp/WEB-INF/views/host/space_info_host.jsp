@@ -160,7 +160,7 @@ function fileReset2(form){
 
 
 
-			<img id="title_img" src="${dto.hostenter_title_img }" alt=""
+			<img id="title_img" src="${dto.hostenter_title_img }" alt="${dto.hostenter_title_img }"
 				style="width: 250px; height: 170px" />
 
 			<div class="space_host_img">
