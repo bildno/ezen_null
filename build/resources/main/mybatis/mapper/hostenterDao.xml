@@ -98,5 +98,16 @@
     <select id="deletespaceselect" resultType="_int">
 		SELECT count(*) from hostenter where hostenter_member_id = #{param1}
 	</select>
-    
+	
+    <select id="space_search" resultType="com.study.springboot.dto.hostenterDto">
+	    <!-- temp_table은 임시테이블 정해진 값-->
+	    SELECT * FROM hostenter WHERE 
+	    HOSTENTER_CONTENTS_NUMBER = #{param1} and
+	    HOSTENTER_HEADCOUNT &gt;= #{param2} and HOSTENTER_NAME like '%' ||#{param3}||'%'
+	 </select>
+	 
+	 <select id="space_contents_number" resultType="String">
+	 	select HOSTENTER_CONTENTS_NUMBER from hostenter WHERE 
+	    HOSTENTER_CONTENTS_NUMBER = #{param1}
+	 </select>
     </mapper>
