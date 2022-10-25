@@ -9,10 +9,12 @@ public class WebMvcConfig implements WebMvcConfigurer{
 
 	@Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		
 		/*
 		 * registry.addResourceHandler("/upload/**")
 		 * .addResourceLocations("file:///home/ubuntu/ezen_null/upload/");
 		 */
+		 
         
         //.addResourceLocations("file:///var/upload/"); //리눅스 배포환경
     }
