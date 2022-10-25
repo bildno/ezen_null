@@ -15,5 +15,5 @@ public interface IwishDao {
 	
 	public int zzimdeleteid(String member_id);
 
-
+	
 }

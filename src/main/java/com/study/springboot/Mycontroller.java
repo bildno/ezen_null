@@ -1425,8 +1425,9 @@ public class Mycontroller {
 			Model model
 			){
 		
-		int result = hostenter_imgDaoService.delete_img(hostenter_img_name);
 		
+		int delete = iwishDao.zzim_delete(hostenter_number);
+		int result = hostenter_imgDaoService.delete_img(hostenter_img_name);
 		int result2 = hostenterService.delete_space(hostenter_number);
 		
 	
