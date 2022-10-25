@@ -134,12 +134,13 @@
 			url : "/mycheck/checkEvent",
 			method : "GET",
 			//dataType : "json",
-			
-			data : {
+						
+			/* data : {
 				mycheck_number : "1",
 				myheck_member_id :"1",
 				mycheck_date : "1"
-			}
+			} */
+		
 		
 			
 		});
