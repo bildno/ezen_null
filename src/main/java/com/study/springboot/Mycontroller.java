@@ -1379,12 +1379,12 @@ public class Mycontroller {
 		}
 		
 		@RequestMapping("/space_search2")
-		public String community_search2(@RequestParam(value = "contents_number") String contents_number,
+		public String community_search2(
 				@RequestParam(value = "search_name", required = false) String search_name,
 				@RequestParam(value = "headcount", required = false) String search_headcount,
 				HttpServletRequest request, Model model)  {
 
-			System.out.println(contents_number+" 콘텐츠 넘버");
+		
 			System.out.println(search_name +" 제목 검색");
 			System.out.println(search_headcount + "인원 검색");
 			if(search_headcount.equals("")) {
@@ -1393,7 +1393,6 @@ public class Mycontroller {
 			}
 			
 			List<hostenterDto> hostenterlist = ihostenterDao.space_search2(search_headcount,search_name);
-			model.addAttribute("contents_number",contents_number);
 			model.addAttribute("hostenterlist", hostenterlist);
 			model.addAttribute("mainPage", "search_result.jsp");
 
