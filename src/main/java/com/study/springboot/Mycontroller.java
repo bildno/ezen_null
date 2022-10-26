@@ -704,7 +704,7 @@ public class Mycontroller {
 	@ResponseBody
 	public String idcheck( @RequestParam("member_id")String member_id,
 			HttpServletRequest request, Model model) {
-		
+		System.out.println("id체크 받음"+ member_id);
 		int result = memberService.idcheck(member_id);
 		
 		if(result >=1) {
@@ -1395,6 +1395,29 @@ public class Mycontroller {
 			List<hostenterDto> hostenterlist = ihostenterDao.space_search2(search_headcount,search_name);
 			model.addAttribute("hostenterlist", hostenterlist);
 			model.addAttribute("mainPage", "search_result.jsp");
+
+			return "index";
+			
+		}
+		@RequestMapping("/space_search3")
+		public String community_search3(
+				@RequestParam(value = "search_name", required = false) String search_name,
+				@RequestParam(value = "headcount", required = false) String search_headcount,
+				HttpServletRequest request, Model model)  {
+			
+			HttpSession session = request.getSession();
+			String member_id = (String) session.getAttribute("member_id");
+		
+			System.out.println(search_name +" 제목 검색");
+			System.out.println(search_headcount + "인원 검색");
+			if(search_headcount.equals("")) {
+				search_headcount = "1";
+				System.out.println(search_headcount + "null 수정");
+			}
+			
+			List<hostenterDto> hostenterlist = ihostenterDao.space_search3(member_id,search_headcount,search_name);
+			model.addAttribute("hostenterlist", hostenterlist);
+			model.addAttribute("mainPage", "host/spacelist_host.jsp");
 
 			return "index";
 			

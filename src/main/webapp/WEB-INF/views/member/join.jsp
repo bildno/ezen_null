@@ -203,7 +203,7 @@
 		
 		$.ajax({
 		
-			url : 'http://3.34.21.88:8090//idcheck?member_id='+ member_id,
+			url : 'http://3.34.21.88:8090/idcheck?member_id='+ member_id,
 			type : 'get',
 			success : function(data) {
 				console.log("1 = 중복됨, 0 = 중복안됨 : "+ data);							
