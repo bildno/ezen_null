@@ -77,10 +77,16 @@ public class hostenterService {
 		return space_info;
 	}
 	
-	//찜 카운트
-	public int zzim_count(String hostenter_wish)throws Exception {
+	//찜 카운트 + 
+	public int zzim_count1(String hostenter_wish)throws Exception {
 		
-		return ihostenterDao.zzim_count(hostenter_wish);
+		return ihostenterDao.zzim_count1(hostenter_wish);
+		
+	}
+	//찜 카운트 -
+	public int zzim_count2(int hostenter_wish)throws Exception {
+		
+		return ihostenterDao.zzim_count2(hostenter_wish);
 		
 	}
 	

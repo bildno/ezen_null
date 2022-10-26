@@ -59,15 +59,18 @@
   	
   	
   	<!-- 찜 개수를 올려줌 -->
-  	<update id= "zzim_count">
+  	<update id= "zzim_count1">
   		update hostenter set hostenter_wish = hostenter_wish+1 where hostenter_number = #{param1}
+  	</update>
+  	
+  	<update id= "zzim_count2">
+  		update hostenter set hostenter_wish = hostenter_wish-1 where hostenter_number = #{param1}
   	</update>
   	
   	<!-- 찜 개수가 올라간 걸 뽑아옴 -->
   	<select id="view_count" resultType="_int">
   		select hostenter_wish from hostenter where hostenter_number = #{param1}
   	</select>
-  	
   	
   	<select id="wish_list" resultType="com.study.springboot.dto.hostenterDto">
   		select * from hostenter where HOSTENTER_NUMBER in 

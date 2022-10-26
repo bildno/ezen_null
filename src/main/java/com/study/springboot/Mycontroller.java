@@ -900,23 +900,6 @@ public class Mycontroller {
 		return "index";
 	}
 	
-    // 찜 삭제	
-	@RequestMapping("/zzim_delete")
-	@ResponseBody
-	public String zzim_delete(@RequestParam("my_wish_hostenter_number") int my_wish_hostenter_number) {
-		
-		int result = iwishDao.zzim_delete(my_wish_hostenter_number);
-		
-		if(result !=1) {
-			return "<script> alert('찜 삭제가 불가능합니다 ŏ̥̥̥̥םŏ̥̥̥̥'); location.href='/mywish'</script>";
-		}
-		else {
-			return "<script> alert('찜이 정상적으로 삭제되었습니다 (˵ •̀ ᴗ - ˵ ) ✧'); location.href='/mywish'</script>";
-		}
-			
-		
-	}
-	
 	
 
 	/* 아이디찾기 */
@@ -1759,13 +1742,13 @@ public class Mycontroller {
 			dto.setMy_wish_member_id(member_id);
 			dto.setMy_wish_hostenter_number(hostenter_number);
 			int result = wishService.zzim_do(dto); 
-		
+			
 			
 			//만약 result가 1이 되면 찜 데이터 들어감
 			if(result != 0) {
 				
 				
-				hostenterService.zzim_count(hostenter_number);
+				hostenterService.zzim_count1(hostenter_number);
 				
 				return "<script> alert('찜이 정상적으로 되었습니다 (˵ •̀ ᴗ - ˵ ) ✧'); location.href='/space_info?hostenter_number="+hostenter_number+"&hostenter_name="+hostenter_name+"'</script>";
                 //return "redirect:/space_info?hostenter_number="+hostenter_number;
@@ -1782,6 +1765,29 @@ public class Mycontroller {
 		}
 		
 	}
+	 // 찜 삭제	
+		@RequestMapping("/zzim_delete")
+		@ResponseBody
+		public String zzim_delete(
+				@RequestParam("hostenter_number") int hostenter_number) {
+			
+			int result = iwishDao.zzim_delete(hostenter_number);
+			
+			if(result !=1) {
+				return "<script> alert('찜 삭제가 불가능합니다 ŏ̥̥̥̥םŏ̥̥̥̥'); location.href='/mywish'</script>";
+			}
+			else {
+				try {
+					hostenterService.zzim_count2(hostenter_number);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				return "<script> alert('찜이 정상적으로 삭제되었습니다 (˵ •̀ ᴗ - ˵ ) ✧'); location.href='/mywish'</script>";
+			}
+				
+			
+		}
 	
 
 
