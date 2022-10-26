@@ -85,12 +85,18 @@
 		var request = $.ajax({
 			url : "/mycheck/checkEvent",
 			method : "GET",
+			
 
 		});
 		request.done(function(data) {
 			var calendar = new FullCalendar.Calendar(calendarEl, {
 				initialView : 'dayGridMonth',
 				events : data,
+				
+				eventContent : {
+					  html: `<img src="./img/apple.png" class="event-icon first" />`
+				},
+				
 				locale : 'ko',
 
 			//headerToolbar: {

@@ -36,7 +36,7 @@ public class CalendarService {
 			String date = simpleDateFormat.format(mycheck_list.get(i).getMycheck_date());
 			event.put("start", date);
 			event.put("color", "transparent");
-			event.put("imageurl", "./img/apple.png");
+			//event.put("imageurl", "./img/apple.png");
 			//event.put("textColor", "black");
 			eventList.add(event);
 			
@@ -77,7 +77,8 @@ public class CalendarService {
 			Map<String, Object> event = new HashMap<String, Object>();
 			String date = simpleDateFormat.format(mycheck_list.get(i).getMycheck_date());
 			event.put("start", date);
-			event.put("title", "💌💟💤💦💖💌💟💤💦💖");
+			event.put("color", "transparent");
+			//event.put("title", "💌💟💤💦💖💌💟💤💦💖");
 			//event.put("color", "red");
 			//event.put("textColor", "black");
 			eventList.add(event);
@@ -106,7 +107,8 @@ public class CalendarService {
 				int insertMycheck = mycheckDao.insertMycheck(dto);
 				event_today.put("start", LocalDate.now());
 				System.out.println(a+"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-				event_today.put("title", "💌💟💤💦💖💌💟💤💦💖");
+				event_today.put("color", "transparent");
+				//event_today.put("title", "💌💟💤💦💖💌💟💤💦💖");
 				eventList.add(event_today);
 			}
 		}else {
@@ -117,7 +119,8 @@ public class CalendarService {
 			int insertMycheck = mycheckDao.insertMycheck(dto);
 			event_today.put("start", LocalDate.now());
 			System.out.println(a+"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-			event_today.put("title", "💌💟💤💦💖💌💟💤💦💖");
+			event_today.put("color", "transparent");
+			//event_today.put("title", "💌💟💤💦💖💌💟💤💦💖");
 			eventList.add(event_today);
 		}
 		
