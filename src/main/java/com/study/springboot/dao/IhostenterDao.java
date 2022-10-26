@@ -57,4 +57,6 @@ public interface IhostenterDao {
 	
 	public List<hostenterDto>space_search2(String headcount, String name);
 
+	public List<hostenterDto>space_search3(String member_id,String headcount, String name);
+
 }

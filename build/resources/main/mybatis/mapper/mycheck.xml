@@ -10,7 +10,7 @@
 	<!-- 출석리스트 -->
  	<select id="mycheck_list"
 		resultType="com.study.springboot.dto.mycheckDto">
-		select * from mycheck where mycheck_member_id = #{ param1 }
+		select * from mycheck where mycheck_member_id = #{ param1 } ORDER BY MYCHECK_DATE ASC
 	</select>
 
 
@@ -19,6 +19,7 @@
 	<insert id="insertMycheck" parameterType="com.study.springboot.dto.mycheckDto">
 		insert into mycheck
 		values( mycheck_idx.nextval, #{ mycheck_member_id }, sysdate )
+		
 	</insert>
 
 </mapper>

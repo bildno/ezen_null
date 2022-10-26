@@ -44,7 +44,7 @@
 		
 		var calendarEl = document.getElementById('calendar1');
 		var request = $.ajax({		// Ajax 통신을 한후 request에다가 통신후 return받은 값을 넣어줌
-			url : "/mycheck/event",
+			url : "http://3.34.21.88:8090/mycheck/event",
 			method : "GET"
 		});
 
@@ -83,7 +83,7 @@
 
 		var calendarEl = document.getElementById('calendar1');
 		var request = $.ajax({
-			url : "/mycheck/checkEvent",
+			url : "http://3.34.21.88:8090/mycheck/checkEvent",
 			method : "GET",
 			
 
