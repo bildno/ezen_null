@@ -12,6 +12,8 @@
 			호스트님의 정보를 확인해주세요 ! <img src="/img/service/space_icon.png"
 				alt="space_icon" id="space_icon">
 		</h2>
+		
+		
 		<div class="mypage_section" style="margin-top: 50px;">
 			<div class="mypage_section1">
 			<c:forEach var="imgdto" items="${sel_myimg }">
