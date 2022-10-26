@@ -30,101 +30,53 @@
 </div>
 
 <script>
-	$(document).ready(function() {
+	$(document).ready(function() { // 객체가 준비가 될때 function을 실행함
 
-		$(function() {
-			// calendar element 취득
-			var calendarEl = $('#calendar1')[0];
-
-			// full-calendar 생성하기
-			var calendar = new FullCalendar.Calendar(calendarEl, {
-				// 해더에 표시할 툴바
-				//headerToolbar : {
-					//left: 'prev,next today',
-					//center: 'title',
-					//right : 'custom1'
-				// dayGridMonth,timeGridWeek,timeGridDay,listWeek 월, 주, 일, 일정목록 추가삭제가능 */
-				//},
-				//initialDate: '2022-10-15', // 초기 날짜 설정 (설정하지 않으면 오늘 날짜가 보인다.)
-				locale : 'ko', // 한국어 설정
-				//editable: true, // 수정 가능
-				//droppable: true,  // 드래그 가능
-				// drop: function(arg) { // 드래그 엔 드롭 성공시
-				//   // 드래그 박스에서 아이템을 삭제한다.
-				//   arg.draggedEl.parentNode.removeChild(arg.draggedEl);
-				// },
-				/* customButtons : {
-					custom1 : {
-						text : '출석확인1',
-						click : function() {
-							//alert('출석확인 클릭');
-							//idCheckDay();
-						}
-					}
-				} */
-
-
-/* 			events : [
-			  {
-			    title: '출석',
-			    start: '2022-10-01'
-			    imageurl:"/img/star.png"
-			  }
-			  {
-			    title: '출석',
-			    start: '2022-10-03'
-			  }
-			] */
-
+		$(function() {		// 제이쿼리형식의 function을 만들어 실행
+			var calendarEl = $('#calendar1')[0];	// id로 calendar1된 객체를 얻어와서 calendarEl 변수에다가 넣어줌
+			var calendar = new FullCalendar.Calendar(calendarEl, {	// script로 선언한 라이브러리에서 FullCalendar 클래스를 불러와 calendar로 넣어줌 
+				locale : 'ko', // FullCalendar 클래스 안에 Calendar 메소드에있는 속성값에 설정을 ko로 해줌 즉, 한국어로 바꿈
 			});
-			
-			
-			// 캘린더 랜더링
-			calendar.render();
+			calendar.render();	// calendar를 실행해주는 함수
 		});
 		
 		
 		
 		var calendarEl = document.getElementById('calendar1');
-		var request= $.ajax({
-		url : "/mycheck/event",
-		method : "GET"
-		//dataType : "json",
-		
-		/* data : {
-			mycheck_number : "1",
-			myheck_member_id :"1",
-			mycheck_date : "1"
-		} */
-
-	});
-		
-	request.done(function(data) {
-		var calendar = new FullCalendar.Calendar(calendarEl, {
-			//initialView : 'dayGridMonth',
-			events : data,
-			locale : 'ko',
-		headerToolbar: {
-		//left: 'prev,next today',
-		//center: 'title',
-		right: 'custom1'
-		// dayGridMonth,timeGridWeek,timeGridDay,listWeek 월, 주, 일, 일정목록 추가삭제가능 */
-		},
-			customButtons : {
-				custom1 : {
-					text : '출석 chechechecheck',
-					click : function() {
-						//alert('출석확인 클릭');
-						
-						idCheckDay();
-					}
-		
-				}
-			}
+		var request = $.ajax({		// Ajax 통신을 한후 request에다가 통신후 return받은 값을 넣어줌
+			url : "/mycheck/event",
+			method : "GET"
 		});
-		calendar.render();
+
+		request.done(function(data) { // ajax 통신이 완료 되면 function을 실행
+			var calendar = new FullCalendar.Calendar(calendarEl, {
+				//initialView : 'dayGridMonth',
+				events : data,
+				eventContent : {
+					  html: `<img src="./img/apple.png" class="event-icon first" />`
+				},
+				locale : 'ko',
+			headerToolbar: {
+			//left: 'prev,next today',
+			//center: 'title',
+			right: 'custom1'
+			// dayGridMonth,timeGridWeek,timeGridDay,listWeek 월, 주, 일, 일정목록 추가삭제가능 */
+			},
+				customButtons : {
+					custom1 : {
+						text : '출석 chechechecheck',
+						click : function() {
+							//alert('출석확인 클릭');
+							
+							idCheckDay();
+						}
+			
+					}
+				}
+			});
+			calendar.render();
+		});
 	});
-	})();
 
 	function idCheckDay() {
 		alert("확인~");
@@ -133,15 +85,7 @@
 		var request = $.ajax({
 			url : "/mycheck/checkEvent",
 			method : "GET",
-			//dataType : "json",
-			
-			data : {
-				mycheck_number : "1",
-				myheck_member_id :"1",
-				mycheck_date : "1"
-			}
-		
-			
+
 		});
 		request.done(function(data) {
 			var calendar = new FullCalendar.Calendar(calendarEl, {

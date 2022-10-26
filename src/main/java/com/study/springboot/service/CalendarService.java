@@ -25,9 +25,6 @@ public class CalendarService {
 
 		String member_id = (String) request.getSession().getAttribute("member_id");
 		List<mycheckDto> mycheck_list = mycheckDao.mycheck_list(member_id);
-		System.out.println("---------mycheck_list = " + mycheck_list + "---  service  ---------");
-		System.out.println("member_id = " + member_id);
-
 		String pattern = "yyyy-MM-dd";
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
 		List<Map<String, Object>> eventList = new ArrayList<Map<String, Object>>();
@@ -36,13 +33,10 @@ public class CalendarService {
 		for (int i = 0; i < mycheck_list.size(); i++) {
 			Map<String, Object> event = new HashMap<String, Object>();
 			//Map<String,Object> image = new HashMap<String, Object>();
-			
-			System.out.println(i + "  ===========");
 			String date = simpleDateFormat.format(mycheck_list.get(i).getMycheck_date());
-			System.out.println(date);
 			event.put("start", date);
-			
-			event.put("title", "💌💟💤💦💖💌💟💤💦💖");
+			event.put("color", "transparent");
+			event.put("imageurl", "./img/apple.png");
 			//event.put("textColor", "black");
 			eventList.add(event);
 			
@@ -71,9 +65,8 @@ public class CalendarService {
 	public List<Map<String, Object>> checkEventclick(HttpServletRequest request) {
 		List<Map<String, Object>> eventList = new ArrayList<Map<String, Object>>();
 		String member_id = (String) request.getSession().getAttribute("member_id");
+		
 		List<mycheckDto> mycheck_list = mycheckDao.mycheck_list(member_id);
-		System.out.println("---------mycheck_list = " + mycheck_list + "---  service  ---------");
-		System.out.println("member_id = " + member_id);
 
 		String pattern = "yyyy-MM-dd";
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
@@ -82,29 +75,57 @@ public class CalendarService {
 		for (int i = 0; i < mycheck_list.size(); i++) {
 
 			Map<String, Object> event = new HashMap<String, Object>();
-			System.out.println(i + "  ===========");
 			String date = simpleDateFormat.format(mycheck_list.get(i).getMycheck_date());
-			System.out.println(date);
 			event.put("start", date);
-			event.put("title", "??????????????????");
-			event.put("color", "red");
-			event.put("textColor", "black");
+			event.put("title", "💌💟💤💦💖💌💟💤💦💖");
+			//event.put("color", "red");
+			//event.put("textColor", "black");
 			eventList.add(event);
 
 			// System.out.println(event);
 
 		}
-		mycheckDto dto = new mycheckDto();
-		dto.setMycheck_member_id(member_id);
-		int insertMycheck = mycheckDao.insertMycheck(dto);
 		
-		// 현재날짜
-		Map<String, Object> event_today = new HashMap<String, Object>();
-		event_today.put("start", LocalDate.now());
-		event_today.put("title", "??????????????????");
-		event_today.put("color", "red");
-		event_today.put("textColor", "black");
-		eventList.add(event_today);
+		mycheckDto dto = new mycheckDto();
+		
+		dto.setMycheck_member_id(member_id);
+		
+		System.out.println("hello : "+ mycheck_list.size());
+		System.out.println("hello : "+ (mycheck_list.size() == 0));
+		
+		if(mycheck_list.size() != 0) {
+			//event_today.put("start", LocalDate.now());
+			// 현재날짜
+			LocalDate a = LocalDate.now();
+			Map<String, Object> event_today = new HashMap<String, Object>();
+			String date = simpleDateFormat.format(mycheck_list.get(mycheck_list.size()-1).getMycheck_date());
+			
+			LocalDate date2 = LocalDate.parse(date);
+			
+			if(!a.isEqual(date2)) {
+				int insertMycheck = mycheckDao.insertMycheck(dto);
+				event_today.put("start", LocalDate.now());
+				System.out.println(a+"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+				event_today.put("title", "💌💟💤💦💖💌💟💤💦💖");
+				eventList.add(event_today);
+			}
+		}else {
+			//event_today.put("start", LocalDate.now());
+			// 현재날짜
+			LocalDate a = LocalDate.now();
+			Map<String, Object> event_today = new HashMap<String, Object>();
+			int insertMycheck = mycheckDao.insertMycheck(dto);
+			event_today.put("start", LocalDate.now());
+			System.out.println(a+"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+			event_today.put("title", "💌💟💤💦💖💌💟💤💦💖");
+			eventList.add(event_today);
+		}
+		
+		//event_today.put("color", "red");
+		//event_today.put("textColor", "black");
+		
+		//eventList.add(event_today);
+		
 
 		return eventList;
 

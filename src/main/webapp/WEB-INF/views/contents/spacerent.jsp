@@ -36,7 +36,7 @@
 			id="space_icon">
 	</h2>
 	
-	<form action="/space_search" onsubmit="return Value();" method="post">
+	<form action="/space_search2" onsubmit="return Value();" method="post">
 	<div id="selectbox">
 		<input type="text" name="headcount" placeholder="인원" id="headcount">
 		<input type="text" name="search_name" placeholder="키워드" id="keyword"> 
