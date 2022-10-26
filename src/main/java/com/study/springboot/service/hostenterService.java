@@ -82,6 +82,8 @@ public class hostenterService {
 		
 		return ihostenterDao.zzim_count1(hostenter_wish);
 		
+		
+		
 	}
 	//찜 카운트 -
 	public int zzim_count2(int hostenter_wish)throws Exception {
