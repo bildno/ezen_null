@@ -21,9 +21,10 @@
 		<c:forEach var="dto" items="${wish_list}">
 		<form action="/zzim_delete">
 			<div class="wish">
+		
 				<input type="text" value="${dto.hostenter_name}" readonly>
 				<button class="detail" type="button" onclick="location.href='/space_info?hostenter_number=${dto.hostenter_number}&hostenter_name=${dto.hostenter_name }'">세부내역</button>
-				<button type="submit" class="detail" value="${dto.hostenter_number}" name="my_wish_hostenter_number">삭제</button>	
+				<button type="submit" name="hostenter_number" class="detail" value="${dto.hostenter_number}" name="my_wish_hostenter_number">삭제</button>	
 			</div>	
 	
 		</form>	

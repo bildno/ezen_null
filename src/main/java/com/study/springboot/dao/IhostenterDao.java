@@ -33,7 +33,9 @@ public interface IhostenterDao {
 	
 	public List<hostenterDto> space_info(int hostenter_number);
 	
-	public int zzim_count(String hostenter_wish);
+	public int zzim_count1(String hostenter_wish);
+	
+	public int zzim_count2(int hostenter_wish);
 	
 	public List<hostenterDto> wish_list(String member_id);
 	
