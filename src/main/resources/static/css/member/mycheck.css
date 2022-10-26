@@ -1,0 +1,21 @@
+/* body {
+	margin-top: 40px;
+	font-size: 14px;
+	font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+} */
+
+#calendar-wrap {
+	margin-top: 200px;
+
+	margin-bottom: 200px;
+}
+
+#calendar1 {
+	max-width: 1100px;
+	margin: 0 auto;
+}
+
+.event-icon {
+  width:100%;
+  height: 100%;
+}

@@ -34,8 +34,9 @@ public class CalendarService {
 			Map<String, Object> event = new HashMap<String, Object>();
 			//Map<String,Object> image = new HashMap<String, Object>();
 			String date = simpleDateFormat.format(mycheck_list.get(i).getMycheck_date());
-			event.put("start", date);			
-			event.put("title", "출석 db");
+			event.put("start", date);
+			event.put("color", "transparent");
+			event.put("imageurl", "./img/apple.png");
 			//event.put("textColor", "black");
 			eventList.add(event);
 			
