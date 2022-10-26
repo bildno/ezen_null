@@ -14,6 +14,8 @@
 		</h2>
 		
 		
+		
+		
 		<div class="mypage_section" style="margin-top: 50px;">
 			<div class="mypage_section1">
 			<c:forEach var="imgdto" items="${sel_myimg }">
