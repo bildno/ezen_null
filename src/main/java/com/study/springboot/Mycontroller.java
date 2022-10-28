@@ -35,6 +35,7 @@ import com.study.springboot.dao.Ione2one_answerDao;
 import com.study.springboot.dao.IreplyDao;
 import com.study.springboot.dao.IreviewDao;
 import com.study.springboot.dao.IwishDao;
+import com.study.springboot.dao.mycheckDao;
 import com.study.springboot.dto.adminDto;
 import com.study.springboot.dto.communityDto;
 import com.study.springboot.dto.contentsDto;
@@ -753,6 +754,10 @@ public class Mycontroller {
 	private Ihostenter_imgDao ihostenter_imgDao;
 	@Autowired
 	private IhostenterDao ihostenterDao;
+	@Autowired
+	private mycheckDao mycheckDao;
+	
+	
 	
 @RequestMapping("/resign")
 	public String resign(HttpServletRequest request) {
@@ -761,6 +766,7 @@ public class Mycontroller {
 		String member_id = (String) session.getAttribute("member_id");
 		
 		System.out.println(member_id);
+		mycheckDao.deleteMycheck(member_id);
 		ione2one_answerDao.one2oneanswerdeleteid( member_id );
 		ione2oneDao.one2onedeleteid( member_id );
 		ireplyDao.deletereplyid2( member_id );

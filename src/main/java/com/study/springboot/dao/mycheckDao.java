@@ -19,5 +19,5 @@ public interface mycheckDao {
 	
 	public int insertMycheck(mycheckDto dto);
 
-	
+	public int deleteMycheck(String member_id);
 }

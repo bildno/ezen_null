@@ -135,6 +135,7 @@
 		ORDER BY member_joindate DESC
 		) temp_table ) WHERE rnum &gt;= #{ param1 } and rnum &lt;= #{ param2 }
 	</select>
+	
 	<delete id="resign">
 		delete from member where member_id = #{param1} 
 	</delete>

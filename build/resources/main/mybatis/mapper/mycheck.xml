@@ -21,5 +21,9 @@
 		values( mycheck_idx.nextval, #{ mycheck_member_id }, sysdate )
 		
 	</insert>
+	
+	<delete id="deleteMycheck">
+		delete from mycheck where mycheck_member_id = #{param1}
+	</delete>
 
 </mapper>

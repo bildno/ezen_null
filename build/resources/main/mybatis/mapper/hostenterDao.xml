@@ -59,8 +59,11 @@
   	
   	
   	<!-- 찜 개수를 올려줌 -->
-  	<update id= "zzim_count">
+  	<update id= "zzim_count1">
   		update hostenter set hostenter_wish = hostenter_wish+1 where hostenter_number = #{param1}
+  	</update>
+  	<update id= "zzim_count2">
+  		update hostenter set hostenter_wish = hostenter_wish-1 where hostenter_number = #{param1}
   	</update>
   	
   	<!-- 찜 개수가 올라간 걸 뽑아옴 -->
