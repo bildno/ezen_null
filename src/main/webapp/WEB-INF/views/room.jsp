@@ -167,6 +167,19 @@
 				</tr>
 			</table>
 		</div>
+		<input type="button" value="나가기"  onclick="location.href='/mypage'" 
+		style="
+		background-color: rgb(151, 210, 236);
+			font-family: 'Noto Sans KR', sans-serif;
+			font-size: 15px;
+	        font-weight:300;
+	        width:80px;
+			border: none;
+			border-radius: 5px;
+			padding: 8px;
+			margin: 3px;
+			float: right;
+			"/>
 	</div>
 </body>
 </html>
