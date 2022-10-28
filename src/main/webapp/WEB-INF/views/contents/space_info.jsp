@@ -61,8 +61,15 @@
 				</button>
 			</div>
 			</div>
-			
-			
+            <script>
+            function adjustHeight() {
+            var textEle = $('textarea');
+            textEle[0].style.height = 'auto';
+            var textEleHeight = textEle.prop('scrollHeight');
+            textEle.css('height', textEleHeight);
+            ;
+			</script>
+
 
 			<hr>
 			<div class="space_host_name">
