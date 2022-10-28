@@ -1,2 +1,8 @@
 Manifest-Version: 1.0
+Main-Class: org.springframework.boot.loader.WarLauncher
+Start-Class: com.study.springboot.EzenNullApplication
+Spring-Boot-Version: 2.6.2
+Spring-Boot-Classes: WEB-INF/classes/
+Spring-Boot-Lib: WEB-INF/lib/
+Spring-Boot-Layers-Index: WEB-INF/layers.idx
 

@@ -16,7 +16,7 @@
 	
 	<div class="main">
 		<div class="asidecomm">
-			<div class="section11"  >
+			<div class="section11" >
 				<c:forEach var="space_dto" items="${space_top_hit }">
 				<div class="con11" onclick="location.href='/space_info?hostenter_number=${space_dto.hostenter_number}&hostenter_name=${space_dto.hostenter_name }'">
 					<a href="#"> <img class="com-img1" src="${space_dto.hostenter_title_img }"
@@ -48,8 +48,8 @@
 						${dtowo.community_member_id}
 					</div>
 					<div name="comm_info" class="contents"  id="comm_info" 
-						style="resize: none; width: 100%; height: 300px">
-						${dtowo.community_content}
+						style="resize: none; width: 100%;">
+							${dtowo.community_content}
 					</div>		
 					
 					

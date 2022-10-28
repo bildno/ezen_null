@@ -108,9 +108,9 @@
 			</div>
 			<div>
 				<textarea rows="15" cols="100"
-					style="border: none; resize: none; cursor: none; background-color: white;"
-					readonly="readonly" style="border: none; resize: none; bac "
-					readonly="readonly" disabled="disabled">${dto.hostenter_caution }</textarea>
+					style="border: none; resize: none;  background-color: white;"
+					readonly="readonly" style="border: none; resize: none;" 
+					>${dto.hostenter_caution }</textarea>
 			</div>
 			<div>
 				<h4 id="space_host_sotit" class="refund_title">환불규정</h4>
