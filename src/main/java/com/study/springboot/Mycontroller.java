@@ -294,6 +294,19 @@ public class Mycontroller {
 		}
 
 	}
+	
+	@RequestMapping("/ad_one2oneDelete")
+	public String ad_one2oneDelete(Model model,
+			@RequestParam("num") int one2one_number
+			) {
+		
+		ione2one_answerDao.one2oneanswer_Delete(one2one_number);
+		ione2oneDao.one2one_Delete(one2one_number);
+		
+		
+		return "redirect:/ad_one2one";
+	}
+	
 	@RequestMapping("/ad_notice")
 	public String ad_notice(@RequestParam(value="page",required=false) String page,
 			Model model) {
