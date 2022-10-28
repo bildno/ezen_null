@@ -10,7 +10,7 @@
 					id="footera" href="" style="color: grey;">유민 </a></b> <b><a
 					id="footera" href="" style="color: grey;">용단옥</a></b> <b><a
 					id="footera" href="" style="color: grey;">이진규</a></b> <b><a
-					id="footera" href="" style="color: grey;">이젠..널..</a></b>
+					href="" style="color: grey;">이젠..널..</a></b>
 			</div>
 			<hr>
 			<div class="footer2">

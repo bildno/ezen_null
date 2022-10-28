@@ -18,7 +18,7 @@
 		<div class="asidecomm">
 			<div class="section11"  >
 				<c:forEach var="space_dto" items="${space_top_hit }">
-				<div class="con11" onclick="location.href='/space_info?hostenter_number=${space_dto.hostenter_number}&hostenter_name=${hostenter_name }'">
+				<div class="con11" onclick="location.href='/space_info?hostenter_number=${space_dto.hostenter_number}&hostenter_name=${space_dto.hostenter_name }'">
 					<a href="#"> <img class="com-img1" src="${space_dto.hostenter_title_img }"
 						alt="contents1" id="cominfo" height="150px">
 						<div name="membername" id="membername">
