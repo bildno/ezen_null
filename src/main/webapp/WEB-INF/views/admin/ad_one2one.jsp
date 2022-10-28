@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<link rel="stylesheet" href="css/admin/ad_one2one.css">
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<link rel="stylesheet" href="css/admin/ad_one2one.css">
 <div class="ad_wrap">
 	<div class="ad_aside">
 		<!-- <div class="ad_asidetb"> -->

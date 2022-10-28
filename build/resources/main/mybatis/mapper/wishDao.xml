@@ -10,7 +10,6 @@
 <insert id="zzim_do" parameterType="com.study.springboot.dto.wishDto">
 	insert into my_wish (my_wish_number,my_wish_hostenter_number,my_wish_member_id)
 	values(my_wish_idx.nextval, #{my_wish_hostenter_number},#{my_wish_member_id})
-	
 </insert>
 
 
