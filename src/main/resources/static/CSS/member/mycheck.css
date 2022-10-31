@@ -15,8 +15,8 @@
 }
 
 .event-icon {
-	height: 100%;
-	width: 100%;
+	height: 50%;
+	width: 50%;
 }
 
 /* 토요일 */
@@ -34,4 +34,8 @@
 .fc-day-sun a {
 	color: red;
 	text-decoration: none;
+}
+.fc-h-event .fc-event-main {
+	display: flex;
+    justify-content: center;
 }

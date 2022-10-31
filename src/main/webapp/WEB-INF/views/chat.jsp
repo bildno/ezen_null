@@ -38,7 +38,6 @@
 		}
 		input{
 			width: 330px;
-			height: 25px;
 			padding:10px;
 		}
 		#yourMsg{

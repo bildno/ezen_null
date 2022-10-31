@@ -2004,7 +2004,7 @@ public class Mycontroller {
 		 int host_headcount = host_headcount_; 
 		 System.out.println(host_headcount);
 		 System.out.println(hostenter_number);
-		System.out.println(hostenter_name);
+		System.out.println(hostenter_name+"asdasdasdasdasdasdasd");
 	
 		if(upload_url_title.equals("0")) {
 			upload_url_title = hostenterService.select_title(hostenter_number);
@@ -2012,11 +2012,8 @@ public class Mycontroller {
 		
 
 			try {
-				int oo = hostenter_imgDaoService.delete_img(hostenter_name);
-				System.out.println(oo);
-				if(oo > 0) {
-					System.out.println("삭제성공");
-				}
+			
+				
 				result = hostenterService.update_space(upload_url_title, 
 													   host_name, 
 													   host_contents_number, 
@@ -2045,10 +2042,13 @@ public class Mycontroller {
 					
 					if(!upload_url.equals("0")) {
 						if(i == 0) {
-							hostenter_imgDaoService.delete_img(hostenter_name);
+							System.out.println("삭제!!!!!!!!!!!!!!!");
+							hostenter_imgDaoService.delete_img(hostenter_name);			
 							i++;
-													}
-					result = hostenter_imgDaoService.hostenter_img_up(host_name_,member_id,upload_url);
+					}
+						System.out.println("0이 아님");
+						result = hostenter_imgDaoService.hostenter_img_up(hostenter_name,member_id,upload_url);
+						
 						
 					}
 				

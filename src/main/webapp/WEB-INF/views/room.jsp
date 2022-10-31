@@ -78,7 +78,6 @@
 		}
 		.inputTable input{
 			width: 330px;
-			height: 25px;
 			padding:5px;
 		}
 		

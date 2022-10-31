@@ -258,8 +258,8 @@ function readURL(input) {
 							<td colspan=2><a id="od2" href="/pwchange">변경하기</a></td>
 						</tr>
 						<tr>
-							<td></td>
-							<th><a id="mypage_a" href="/resign">탈퇴하기</a></th>
+							<td></td>			
+							<th colspan="2"><a id="mypage_a" href="/resign">탈퇴하기</a></th>
 						</tr>
 					</table>
 				</div>

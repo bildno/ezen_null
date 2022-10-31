@@ -53,7 +53,7 @@
 				//initialView : 'dayGridMonth',
 				events : data,
 				eventContent : {
-					  html: `<img src="./img/apple.png" class="event-icon first" />`
+					  html: `<img src="./img/attendance.png" class="event-icon first" />`
 				},
 				locale : 'ko',
 			headerToolbar: {
@@ -94,7 +94,7 @@
 				events : data,
 				
 				eventContent : {
-					  html: `<img src="./img/apple.png" class="event-icon first" />`
+					  html: `<img src="./img/attendance.png" class="event-icon first" />`
 				},
 				
 				locale : 'ko',
